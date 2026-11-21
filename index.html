@@ -3,462 +3,686 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LinguaStudio — Phòng luyện phát âm & Giao tiếp bản xứ đa ngôn ngữ</title>
-  <link rel="stylesheet" href="style.css">
+  <title>LinguaStudio — Học Phát Âm & Giao Tiếp Bản Xứ (JP, EN, KR, CN)</title>
+  <meta name="description" content="Nền tảng luyện phát âm đa giác quan, giao tiếp bản xứ và phòng luyện âm thanh thời gian thực cho tiếng Nhật, Anh, Hàn, Trung.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase v10 Compat SDK (CDN) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 </head>
-<body class="dark-theme">
-  <!-- Top Navigation Header -->
-  <header class="app-header">
-    <div class="header-container">
-      <div class="logo-area">
-        <div class="logo-icon">
-          <span class="logo-symbol">✦</span>
+<body class="theme-dark">
+  <!-- 60FPS Ambient Aurora & Particle Canvas -->
+  <canvas id="ambientCanvas" class="ambient-canvas" style="position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none !important; z-index: -1;"></canvas>
+
+  <div class="app-container" style="position: relative; z-index: 1;">
+    <!-- Top Header -->
+    <header class="app-header glass-card">
+      <div class="brand">
+        <div class="logo-orb">
+          <span class="orb-core"></span>
+          <span class="orb-ring"></span>
         </div>
-        <div class="logo-text">
-          <h1>Lingua<span class="gradient-text">Studio</span></h1>
-          <p class="tagline" data-i18n="tagline">Ngữ âm • Giao tiếp đường phố • Phòng luyện Shadowing</p>
+        <div class="brand-text">
+          <div class="brand-row">
+            <h1 class="brand-title">LinguaStudio</h1>
+            <span class="badge-pro">PRO 2.0</span>
+          </div>
+          <p class="brand-subtitle" id="appSubtitle" data-i18n="appSubtitle">Luyện Phát Âm & Giao Tiếp Bản Xứ (JP • EN • KR • CN)</p>
         </div>
       </div>
 
-      <!-- Language Switcher Bar -->
-      <div class="language-bar" role="tablist" aria-label="Select Target Language">
-        <button class="lang-pill active" data-lang="ja-JP" aria-selected="true" title="Japanese">
-          <span class="flag">🇯🇵</span>
-          <span class="lang-label">Japanese</span>
-          <span class="script-badge">日本語</span>
-        </button>
-        <button class="lang-pill" data-lang="en-US" aria-selected="false" title="American English">
-          <span class="flag">🇺🇸</span>
-          <span class="lang-label">English</span>
-          <span class="script-badge">US-IPA</span>
-        </button>
-        <button class="lang-pill" data-lang="ko-KR" aria-selected="false" title="Korean">
-          <span class="flag">🇰🇷</span>
-          <span class="lang-label">Korean</span>
-          <span class="script-badge">한국어</span>
-        </button>
-        <button class="lang-pill" data-lang="zh-CN" aria-selected="false" title="Chinese Mandarin">
-          <span class="flag">🇨🇳</span>
-          <span class="lang-label">Chinese</span>
-          <span class="script-badge">普通话</span>
-        </button>
+      <!-- Scalable Animated Language Dropdown -->
+      <div class="lang-selector-area">
+        <span class="lang-label" data-i18n="targetLangLabel">Ngôn ngữ mục tiêu:</span>
+        <div class="lang-dropdown-wrapper" id="langDropdownWrapper">
+          <button type="button" class="lang-dropdown-trigger glass-pill" id="langDropdownTrigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="trigger-flag" id="triggerFlag">🇯🇵</span>
+            <div class="trigger-info">
+              <span class="trigger-name" id="triggerName">Tiếng Nhật</span>
+              <span class="trigger-native" id="triggerNative">日本語</span>
+            </div>
+            <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          
+          <div class="lang-dropdown-menu glass-card" id="langDropdownMenu" role="listbox" tabindex="-1">
+            <!-- Rendered dynamically via app.js -->
+          </div>
+        </div>
       </div>
 
       <!-- Header Utilities -->
-      <div class="header-utils">
-        <div class="ui-lang-switch" role="group" aria-label="Giao diện / UI Language">
-          <button class="ui-lang-btn active" data-ui-lang="vi" title="Tiếng Việt">VI</button>
-          <button class="ui-lang-btn" data-ui-lang="en" title="English">EN</button>
-        </div>
-        <button id="btnOpenBookmarks" class="icon-btn" title="Saved Expressions" aria-label="Saved Expressions">
-          <span class="btn-icon">★</span>
-          <span class="btn-text" data-i18n="savedBtn">Đã lưu</span>
-          <span class="badge" id="bookmarkCount">0</span>
+      <div class="header-actions">
+        <!-- Friends / Study Buddies Button -->
+        <button class="icon-btn-text glass-pill" id="btnOpenFriends" title="Danh sách bạn học">
+          <span class="btn-icon">👥</span>
+          <span class="btn-label" data-i18n="friendsListBtn">Bạn học</span>
+          <span class="count-badge" id="friendsCountBadge">0</span>
         </button>
-        <button id="btnOpenWeakSpots" class="icon-btn accent" title="Weak Spots Review" aria-label="Weak Spots Review">
-          <span class="btn-icon">🎯</span>
-          <span class="btn-text" data-i18n="weakSpotsBtn">Điểm yếu</span>
-          <span class="badge" id="weakSpotCount">0</span>
-        </button>
-      </div>
-    </div>
-  </header>
 
-  <!-- Main Navigation Tabs -->
-  <nav class="main-nav" aria-label="Main Navigation">
-    <div class="nav-container">
+        <!-- Bookmarks Button -->
+        <button class="icon-btn-text glass-pill" id="btnOpenBookmarks" title="Sổ tay đã lưu">
+          <span class="btn-icon">⭐</span>
+          <span class="btn-label" data-i18n="savedBookmarks">Đã lưu</span>
+          <span class="count-badge" id="bookmarkCountBadge">0</span>
+        </button>
+
+        <!-- Weak Spots Button -->
+        <button class="icon-btn-text glass-pill" id="btnOpenWeakSpots" title="Điểm cần cải thiện">
+          <span class="btn-icon">🎯</span>
+          <span class="btn-label" data-i18n="weakPoints">Cần sửa</span>
+          <span class="count-badge warning" id="weakSpotsCountBadge">0</span>
+        </button>
+
+        <!-- UI Language Switcher (VI / EN) -->
+        <div class="ui-locale-toggle glass-pill">
+          <button class="locale-btn active" data-locale="vi">VI</button>
+          <span class="locale-divider">|</span>
+          <button class="locale-btn" data-locale="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs with Spring-Physics Sliding Indicator -->
+    <nav class="main-nav glass-card" aria-label="Main Navigation">
+      <div class="nav-indicator-pill" id="navIndicatorPill"></div>
       <button class="nav-tab active" data-tab="tab-alphabet" id="tabBtnAlphabet">
         <span class="tab-icon">🔤</span>
-        <span class="tab-title" data-i18n="tabAlphabetTitle">Bảng chữ cái & Âm thanh</span>
-        <span class="tab-desc" data-i18n="tabAlphabetDesc">Bảng ngữ âm & khẩu hình miệng</span>
+        <span class="tab-text" data-i18n="tabAlphabet">Bảng âm & Chữ cái</span>
       </button>
       <button class="nav-tab" data-tab="tab-expressions" id="tabBtnExpressions">
-        <span class="tab-icon">⚡</span>
-        <span class="tab-title" data-i18n="tabExpressionsTitle">Giao tiếp bản xứ</span>
-        <span class="tab-desc" data-i18n="tabExpressionsDesc">Sách giáo khoa vs. Tiếng lóng thực tế</span>
+        <span class="tab-icon">💬</span>
+        <span class="tab-text" data-i18n="tabExpressions">Giao tiếp bản xứ</span>
       </button>
       <button class="nav-tab" data-tab="tab-lab" id="tabBtnLab">
         <span class="tab-icon">🎙️</span>
-        <span class="tab-title" data-i18n="tabLabTitle">Phòng luyện phát âm</span>
-        <span class="tab-desc" data-i18n="tabLabDesc">Nhận diện giọng nói & So sánh cao độ</span>
+        <span class="tab-text" data-i18n="tabLab">Phòng thu phát âm AI</span>
       </button>
-    </div>
-  </nav>
+      <button class="nav-tab" data-tab="tab-community" id="tabBtnCommunity">
+        <span class="tab-icon">🌐</span>
+        <span class="tab-text" data-i18n="tabCommunity">Cộng đồng Online</span>
+        <span class="live-pulse-dot" title="Real-time"></span>
+      </button>
+    </nav>
 
-  <!-- Notification / Voice Engine Status Banner -->
-  <div class="status-banner" id="statusBanner" style="display: none;">
-    <div class="status-content">
-      <span class="status-icon" id="statusIcon">ℹ️</span>
-      <span class="status-text" id="statusText">Hệ thống phát âm đã sẵn sàng.</span>
-      <button class="status-dismiss" id="statusDismiss" aria-label="Dismiss">✕</button>
-    </div>
-  </div>
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
 
-  <!-- App Main Content Views -->
-  <main class="app-main">
-    
-    <!-- ============================================== -->
-    <!-- TAB 1: ALPHABET & SOUNDS (Interactive Chart)   -->
-    <!-- ============================================== -->
-    <section class="tab-pane active" id="tab-alphabet" role="tabpanel" aria-labelledby="tabBtnAlphabet">
-      <div class="pane-header">
-        <div class="pane-title-group">
-          <h2 data-i18n="alphabetHeaderTitle">Bảng ngữ âm & Chữ cái tương tác</h2>
-          <p class="pane-subtitle" id="alphabetSubtitle" data-i18n="alphabetHeaderSubtitle">Khám phá bảng ký tự, ký hiệu phiên âm quốc tế IPA và hướng dẫn chi tiết vị trí môi, răng, lưỡi.</p>
-        </div>
-        <div class="sub-filter-group" id="alphabetSubFilters">
-          <!-- Populated dynamically -->
-        </div>
-      </div>
-
-      <div class="alphabet-workspace">
-        <!-- Sound Tiles Grid -->
-        <div class="chart-container">
-          <div class="chart-grid-header">
-            <span class="grid-counter" id="gridCounter">Hiển thị âm</span>
-            <span class="grid-hint" data-i18n="gridHint">💡 Nhấp vào bất kỳ ô nào để nghe phát âm và xem hướng dẫn khẩu hình</span>
-          </div>
-          <div class="sound-grid" id="soundGrid">
-            <!-- Tiles rendered via app.js -->
-          </div>
+      <!-- ================= TAB 1: BẢNG ÂM & CHỮ CÁI ================= -->
+      <section class="tab-pane active" id="tab-alphabet">
+        <!-- Sub-tabs for Alphabet / Scripts -->
+        <div class="subtabs-bar" id="alphabetSubTabs">
+          <!-- Dynamically populated based on active language -->
         </div>
 
-        <!-- Detail Inspector Card -->
-        <aside class="sound-inspector" id="soundInspector">
-          <div class="inspector-card glass-panel" id="inspectorCard">
-            <div class="inspector-hero">
-              <div class="char-display-box">
-                <span class="hero-char" id="inspectChar">あ</span>
-                <button class="audio-circle-btn" id="inspectAudioBtn" title="Phát âm (1.0x)">
-                  <span class="audio-icon">🔊</span>
-                </button>
-              </div>
-              <div class="hero-phonetics">
-                <div class="phonetic-badge-row">
-                  <span class="badge-romaji" id="inspectRomaji">a</span>
-                  <span class="badge-ipa" id="inspectIpa">[a]</span>
-                  <span class="badge-group" id="inspectGroup">Vowels</span>
-                </div>
-                <h3 id="inspectTitle" data-i18n="phoneticProfile">Hồ sơ ngữ âm</h3>
-              </div>
-            </div>
-
-            <div class="inspector-section">
-              <h4>
-                <span class="sec-icon">👄</span> <span data-i18n="mouthTonguePlacement">Khẩu hình môi & Vị trí đặt lưỡi</span>
-              </h4>
-              <p class="mechanics-text" id="inspectMouthTip">
-                Mở miệng tự nhiên, thả lỏng lưỡi nằm phẳng. Phát âm nguyên âm ngắn, dứt khoát, không tròn môi.
-              </p>
-            </div>
-
-            <div class="inspector-section">
-              <h4>
-                <span class="sec-icon">📖</span> <span data-i18n="exampleVocabulary">Từ vựng ví dụ</span>
-              </h4>
-              <div class="example-word-card">
-                <div class="word-info">
-                  <span class="word-native" id="inspectWordNative">雨 (あめ)</span>
-                  <span class="word-reading" id="inspectWordReading">ame</span>
-                  <span class="word-meaning" id="inspectWordMeaning">Mưa</span>
-                </div>
-                <button class="btn-mini-play" id="inspectWordPlayBtn" title="Nghe từ ví dụ">
-                  <span>🔊</span> <span data-i18n="listenBtn">Nghe</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="inspector-section tip-box">
-              <span class="tip-icon">✨</span>
-              <div class="tip-content">
-                <strong data-i18n="nativeProTip">Mẹo từ người bản xứ:</strong>
-                <p id="inspectProTip">Chú ý độ dài nguyên âm. Trong tiếng Nhật, kéo dài nguyên âm làm tăng gấp đôi trường độ (mora) và thay đổi nghĩa hoàn toàn!</p>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- TAB 2: NATIVE SPEAKING STYLES (Textbook vs Real)-->
-    <!-- ============================================== -->
-    <section class="tab-pane" id="tab-expressions" role="tabpanel" aria-labelledby="tabBtnExpressions">
-      <div class="pane-header">
-        <div class="pane-title-group">
-          <h2 data-i18n="expressionsHeaderTitle">Sách giáo khoa vs. Giao tiếp đường phố thực tế</h2>
-          <p class="pane-subtitle" data-i18n="expressionsHeaderSubtitle">Hiểu rõ sự khác biệt giữa câu từ trong sách ngữ pháp và cách người bản xứ trò chuyện ngoài đời thực.</p>
-        </div>
-
-        <div class="expression-controls">
-          <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="expressionSearch" placeholder="Tìm kiếm tình huống, từ khóa, bản dịch..." aria-label="Search expressions">
-          </div>
-        </div>
-      </div>
-
-      <!-- Situation Filter Pills -->
-      <div class="situation-pills" id="situationPills">
-        <!-- Rendered dynamically -->
-      </div>
-
-      <!-- Expression Cards List -->
-      <div class="expressions-list" id="expressionsList">
-        <!-- Rendered dynamically via app.js -->
-      </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- TAB 3: PRONUNCIATION & SHADOWING LAB           -->
-    <!-- ============================================== -->
-    <section class="tab-pane" id="tab-lab" role="tabpanel" aria-labelledby="tabBtnLab">
-      <div class="lab-workspace">
-        
-        <!-- Lab Control Column: Sentence Selection & Inputs -->
-        <div class="lab-column lab-input-panel glass-panel">
-          <div class="lab-panel-header">
-            <h3><span>🎯</span> <span data-i18n="labMaterial">Nội dung luyện tập</span></h3>
-            <div class="mode-switch">
-              <button class="mode-btn active" id="btnModeCurated" data-i18n="curated">Mẫu có sẵn</button>
-              <button class="mode-btn" id="btnModeCustom" data-i18n="customText">Tự nhập câu</button>
-            </div>
-          </div>
-
-          <!-- Curated Selector View -->
-          <div class="curated-view" id="curatedView">
-            <label for="sentenceSelect" class="input-label" data-i18n="selectSentenceLabel">Chọn câu bản xứ mẫu:</label>
-            <div class="custom-select-wrapper">
-              <select id="sentenceSelect" class="form-select">
-                <!-- Populated via app.js -->
-              </select>
-            </div>
-
-            <div class="sentence-quick-tags" id="sentenceTags">
-              <!-- Render level / tags -->
-            </div>
-          </div>
-
-          <!-- Custom Text View -->
-          <div class="custom-view" id="customView" style="display: none;">
-            <label for="customTextInput" class="input-label" data-i18n="typeSentenceLabel">Nhập hoặc dán câu bạn muốn luyện:</label>
-            <textarea id="customTextInput" class="form-textarea" rows="3" placeholder="Nhập văn bản bằng ngôn ngữ đang chọn..."></textarea>
-            <button class="btn-secondary" id="btnApplyCustomText" data-i18n="setAsTarget">Đặt làm câu mẫu</button>
-          </div>
-
-          <!-- Target Card Display -->
-          <div class="target-sentence-card" id="targetSentenceCard">
-            <div class="target-header">
-              <span class="target-badge" data-i18n="targetSentence">CÂU MẪU CẦN LUYỆN</span>
-              <span class="target-level-pill" id="targetLevelBadge">Cơ bản</span>
-            </div>
-            
-            <div class="target-text-wrapper">
-              <p class="target-text-native" id="labTargetText">これ、いくらですか？</p>
-              <p class="target-text-phonetic" id="labTargetPhonetic">Kore, ikura desu ka?</p>
-              <p class="target-text-trans" id="labTargetTrans">Cái này giá bao nhiêu?</p>
-            </div>
-
-            <!-- Pitch & Stress Visualizer -->
-            <div class="pitch-stress-box" id="pitchStressBox">
-              <div class="pitch-header">
-                <span class="pitch-icon">📈</span>
-                <span class="pitch-label" id="labAccentType" data-i18n="pitchContourTitle">Ngữ điệu & Cao độ (Pitch Accent / Rhythm):</span>
-              </div>
-              <div class="pitch-track" id="labPitchTrack">
-                <!-- Visual pitch blocks rendered dynamically -->
-              </div>
-              <p class="pitch-text-hint" id="labPitchHintText">Atamadaka: Cao độ hạ nhanh sau nốt cao ban đầu.</p>
-            </div>
-
-            <!-- Phonetic Tips Box -->
-            <div class="lab-tips-box" id="labTipsBox">
-              <span class="tips-icon">💡</span>
-              <p id="labTipsContent">Âm 'u' trong 'desu' hầu như bị nuốt âm, phát âm tựa như 'dess ka'.</p>
-            </div>
-          </div>
-
-          <!-- Native Audio Deck -->
-          <div class="audio-deck glass-panel">
-            <div class="deck-top">
-              <span class="deck-label" data-i18n="nativeSpeakerTts">Giọng đọc bản xứ (TTS):</span>
-              <div class="speed-slider-group">
-                <label for="ttsSpeedSlider"><span data-i18n="speed">Tốc độ:</span> <span id="speedValueDisplay" class="speed-display">1.0x</span></label>
-                <input type="range" id="ttsSpeedSlider" min="0.5" max="1.2" step="0.1" value="1.0" class="range-slider">
-              </div>
-            </div>
-
-            <div class="deck-controls">
-              <button class="btn-play-native" id="btnPlayNativeTts">
-                <span class="play-icon">▶</span>
-                <span class="play-label" data-i18n="listenNative">Nghe mẫu</span>
-              </button>
-              <button class="btn-play-slow" id="btnPlayNativeSlow">
-                <span>🐢</span> <span data-i18n="slowSpeed">0.7x Chậm</span>
-              </button>
-              <button class="btn-toggle-loop" id="btnToggleLoop" title="Lặp lại">
-                <span id="loopStatusIcon">🔁</span> <span data-i18n="loop">Lặp lại:</span> Tắt
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Lab Speech Recognition & Evaluation Column -->
-        <div class="lab-column lab-eval-panel glass-panel">
-          <div class="lab-panel-header">
-            <h3><span>🎙️</span> <span data-i18n="shadowingDiffTitle">Luyện Shadowing & So khớp phát âm</span></h3>
-            <span class="lab-status-tag" id="recognitionStatusTag" data-i18n="micReady">Micro sẵn sàng</span>
-          </div>
-
-          <!-- Recording Control Deck -->
-          <div class="recording-stage">
-            <button class="btn-record-large" id="btnRecordMic" aria-label="Bắt đầu ghi âm">
-              <div class="mic-halo" id="micHalo"></div>
-              <div class="mic-inner">
-                <span class="mic-icon" id="micMainIcon">🎤</span>
-              </div>
-            </button>
-            <p class="recording-prompt" id="recordingPrompt" data-i18n="clickToRecord">Nhấp để ghi âm & Kiểm tra phát âm</p>
-            <p class="recording-subhint" id="recordingSubhint" data-i18n="speakClearly">Nói rõ ràng vào tai nghe hoặc micro của bạn</p>
-
-            <div class="sim-mic-wrapper" id="simMicWrapper" style="display: none;">
-              <span class="sim-hint" data-i18n="simHint">Trình duyệt không hỗ trợ Web Speech? Nhập văn bản để thử nghiệm bộ so khớp:</span>
-              <div class="sim-input-row">
-                <input type="text" id="simSpeechInput" placeholder="Nhập câu bạn vừa nói để kiểm tra độ khớp..." class="form-input">
-                <button class="btn-primary" id="btnSimDiff" data-i18n="testDiff">So khớp</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Evaluation Results Stage -->
-          <div class="eval-results-stage" id="evalResultsStage" style="display: none;">
-            <div class="score-card">
-              <div class="score-circle-wrapper">
-                <svg class="score-ring" viewBox="0 0 100 100">
-                  <circle class="score-ring-bg" cx="50" cy="50" r="42"></circle>
-                  <circle class="score-ring-progress" id="scoreRingProgress" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"></circle>
+        <div class="alphabet-layout">
+          <!-- Left: Sounds Matrix -->
+          <div class="sounds-stage glass-card">
+            <div class="stage-toolbar">
+              <div class="search-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                <div class="score-circle-text">
-                  <span class="score-num" id="evalScoreNum">0%</span>
-                  <span class="score-label" data-i18n="match">CHÍNH XÁC</span>
-                </div>
+                <input type="text" id="soundSearchInput" placeholder="Tìm âm, từ mẫu, romaji..." data-i18n-placeholder="searchPlaceholder">
               </div>
-
-              <div class="score-summary">
-                <h4 id="evalGradeTitle">Đang chấm điểm...</h4>
-                <p id="evalGradeFeedback">So sánh câu nói của bạn bên dưới với câu mẫu.</p>
-                <div class="score-metrics-row">
-                  <span class="metric-badge match"><strong id="metricMatchCount">0</strong> <span data-i18n="matchedCount">Đúng</span></span>
-                  <span class="metric-badge missed"><strong id="metricMissCount">0</strong> <span data-i18n="missedCount">Chưa chuẩn</span></span>
-                </div>
+              <div class="sound-stats" id="soundStatsText">
+                Hiển thị 46 âm
               </div>
             </div>
 
-            <!-- Speech Diff Visualizer -->
-            <div class="diff-viewer-section">
-              <div class="diff-label-row">
-                <span class="diff-section-title" data-i18n="visualDiffTitle">So sánh ngữ âm & Từ trực quan:</span>
-                <span class="diff-legend">
-                  <span class="legend-item match" data-i18n="legendMatch">● Phát âm chuẩn</span>
-                  <span class="legend-item miss" data-i18n="legendMiss">● Cần điều chỉnh</span>
-                </span>
-              </div>
-
-              <div class="diff-chip-grid" id="diffChipGrid">
-                <!-- Color-coded diff tokens rendered dynamically -->
-              </div>
-            </div>
-
-            <!-- Raw Speech Recognition Transcript -->
-            <div class="transcript-box">
-              <div class="transcript-header">
-                <span class="tx-icon">🔊</span>
-                <span data-i18n="whatMicHeard">Micro đã ghi nhận:</span>
-              </div>
-              <p class="transcript-text" id="evalTranscriptText">"..."</p>
-            </div>
-
-            <!-- Action Buttons for Weak Spots -->
-            <div class="eval-actions-bar">
-              <button class="btn-action-weakspot" id="btnSaveToWeakSpots">
-                <span>🎯</span> <span data-i18n="saveToWeakSpots">Lưu vào Điểm yếu</span>
-              </button>
-              <button class="btn-action-retry" id="btnRetrySentence">
-                <span>🔄</span> <span data-i18n="tryAgain">Thử lại</span>
-              </button>
+            <!-- Grid container for sound cards -->
+            <div class="sounds-grid" id="soundsGrid">
+              <!-- Rendered via JS -->
             </div>
           </div>
 
-          <!-- Empty placeholder when no test has run yet -->
-          <div class="eval-placeholder" id="evalPlaceholder">
-            <div class="placeholder-art">🗣️</div>
-            <h4 data-i18n="readyForVoiceCheck">Sẵn sàng kiểm tra giọng nói</h4>
-            <p data-i18n="readyVoiceCheckDesc">Lắng nghe mẫu bản xứ ở bên trái, sau đó nhấp vào biểu tượng micro để đọc theo (Shadowing). Công nghệ so khớp thời gian thực sẽ chấm điểm và chỉ rõ từng từ bạn cần cải thiện.</p>
-          </div>
+          <!-- Right: Interactive Sound Inspector Card -->
+          <div class="sound-inspector glass-card" id="inspectorCard">
+            <div class="inspector-empty-state" id="inspectorEmptyState">
+              <div class="empty-icon">🎧</div>
+              <p data-i18n="inspectorEmpty">Chọn một âm bất kỳ từ bảng bên trái để xem mô tả khẩu hình và luyện nghe.</p>
+            </div>
 
+            <div class="inspector-detail" id="inspectorDetail" style="display: none;">
+              <div class="inspector-header">
+                <div class="char-giant-box">
+                  <span class="char-giant" id="inspectChar">あ</span>
+                  <span class="romaji-badge" id="inspectRomaji">a</span>
+                </div>
+                <div class="inspector-meta">
+                  <h3 class="inspect-title" id="inspectTitle">Hiragana</h3>
+                  <p class="inspect-type" id="inspectType">Nguyên âm cơ bản</p>
+                  <div class="action-row">
+                    <button class="icon-btn-round" id="btnToggleBookmark" title="Lưu vào sổ tay">
+                      <span id="bookmarkIcon">⭐</span>
+                    </button>
+                    <button class="icon-btn-round warning" id="btnToggleWeakSpot" title="Đánh dấu cần luyện lại">
+                      <span id="weakSpotIcon">🎯</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Animated SVG Articulation & Acoustic Visualizer -->
+              <div class="articulatory-visualizer" id="articulatoryVisualizer">
+                <div class="visualizer-header">
+                  <span class="v-label" data-i18n="articulatoryGuide">Mô phỏng khẩu hình & sóng âm</span>
+                  <span class="v-status" id="vAcousticStatus">Sẵn sàng</span>
+                </div>
+                <div class="svg-stage">
+                  <svg id="articulationSvg" viewBox="0 0 320 160" width="100%" height="160">
+                    <defs>
+                      <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.8" />
+                        <stop offset="50%" stop-color="#06b6d4" stop-opacity="1" />
+                        <stop offset="100%" stop-color="#10b981" stop-opacity="0.8" />
+                      </linearGradient>
+                      <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                    </defs>
+                    <!-- Background Grid -->
+                    <line x1="20" y1="80" x2="300" y2="80" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4" />
+                    <!-- Head & Mouth Silhouette Graphic -->
+                    <path class="mouth-profile" d="M 40 30 Q 80 30 100 50 Q 110 65 115 75 Q 125 78 140 75 Q 150 82 135 88 Q 115 88 105 105 Q 85 130 40 135" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- Tongue Shape (Dynamic) -->
+                    <path id="tongueShape" d="M 75 110 Q 95 100 115 85 Q 120 95 100 115 Z" fill="rgba(236,72,153,0.3)" stroke="#ec4899" stroke-width="2"/>
+                    <!-- Resonance Air Cavity Indicator -->
+                    <circle id="resonanceAir" cx="130" cy="80" r="14" fill="rgba(6,182,212,0.2)" stroke="#06b6d4" stroke-width="2" class="air-ring"/>
+                    <!-- Dynamic Soundwave Paths -->
+                    <path id="acousticWave1" class="wave-path" d="M 145 80 Q 170 50 200 80 T 255 80 T 300 80" fill="none" stroke="url(#waveGrad)" stroke-width="3" filter="url(#glowFilter)"/>
+                    <path id="acousticWave2" class="wave-path" d="M 145 80 Q 170 110 200 80 T 255 80 T 300 80" fill="none" stroke="rgba(6,182,212,0.4)" stroke-width="1.8"/>
+                  </svg>
+                </div>
+                <div class="mouth-tips" id="inspectMouthTip">
+                  Mở khẩu hình miệng tự nhiên, thả lỏng quai hàm, lưỡi nằm ở đáy khoang miệng.
+                </div>
+              </div>
+
+              <!-- Audio Player Controls with Dual Speeds -->
+              <div class="audio-controls-block">
+                <div class="speed-buttons">
+                  <button class="btn-play-sound" id="btnPlayNormal">
+                    <span class="play-icon">▶</span>
+                    <span class="play-label" data-i18n="listenNormal">Nghe chuẩn 1.0x</span>
+                  </button>
+                  <button class="btn-play-sound slow" id="btnPlaySlow">
+                    <span class="play-icon">🐢</span>
+                    <span class="play-label" data-i18n="listenSlow">Nghe chậm 0.7x</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Example Words Section -->
+              <div class="example-words-section">
+                <h4 class="section-subtitle" data-i18n="exampleWordsTitle">Từ vựng minh họa:</h4>
+                <div class="example-words-list" id="exampleWordsList">
+                  <!-- Populated via JS -->
+                </div>
+              </div>
+
+              <!-- Practice in Lab Hook Button -->
+              <div class="inspector-footer">
+                <button class="btn-action-primary" id="btnPracticeThisInLab">
+                  <span class="btn-icon">🎙️</span>
+                  <span data-i18n="practiceInLab">Luyện nói âm này trong Lab</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB 2: GIAO TIẾP BẢN XỨ & CỤM TỪ ================= -->
+      <section class="tab-pane" id="tab-expressions">
+        <!-- Sub-tab Switcher: Cụm từ thông dụng (Key Phrases) vs Câu giao tiếp thực tế (Full Sentences) -->
+        <div class="expressions-subtabs" id="expressionsSubTabs">
+          <button class="exp-subtab-btn active" data-exptab="phrases" id="expSubTabPhrases">
+            <span class="icon">🧩</span>
+            <span data-i18n="subtabPhrases">Cụm từ thông dụng (Key Phrases)</span>
+          </button>
+          <button class="exp-subtab-btn" data-exptab="sentences" id="expSubTabSentences">
+            <span class="icon">💬</span>
+            <span data-i18n="subtabSentences">Câu giao tiếp thực tế (Full Sentences)</span>
+          </button>
         </div>
 
-      </div>
-    </section>
+        <!-- VIEW A: Key Phrases / Chunks -->
+        <div class="expressions-view" id="phrasesView">
+          <div class="phrases-header-banner glass-card">
+            <div class="banner-text">
+              <h2 class="banner-title" data-i18n="phrasesBannerTitle">Cụm từ then chốt & Khối diễn đạt (Building Blocks)</h2>
+              <p class="banner-desc" data-i18n="phrasesBannerDesc">Những cụm từ "cửa miệng" người bản xứ dùng hàng ngày để mở đầu câu, chuyển ý và phản xạ tự nhiên.</p>
+            </div>
+          </div>
 
-  </main>
+          <div class="phrases-list" id="phrasesList">
+            <!-- Rendered dynamically via app.js -->
+          </div>
+        </div>
 
-  <!-- ============================================== -->
-  <!-- MODAL / DRAWER: WEAK SPOTS REVIEW              -->
-  <!-- ============================================== -->
+        <!-- VIEW B: Full Sentences / Native Expressions -->
+        <div class="expressions-view" id="sentencesView" style="display: none;">
+          <!-- Category Filter Pills -->
+          <div class="situation-pills-bar" id="situationPills">
+            <!-- Dynamically populated from data categories -->
+          </div>
+
+          <!-- Native Expression Comparison Cards -->
+          <div class="expressions-list" id="expressionsList">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB 3: PHÒNG THU PHÁT ÂM AI ================= -->
+      <section class="tab-pane" id="tab-lab">
+        <div class="lab-layout">
+          <!-- Left: Practice Prompt & Waveform -->
+          <div class="lab-card glass-card">
+            <div class="lab-header">
+              <span class="lab-badge" data-i18n="labBadge">Phòng Luyện Phát Âm AI</span>
+              <div class="sentence-selector-wrap">
+                <label for="labSentenceSelect" data-i18n="chooseSentence">Chọn mẫu câu:</label>
+                <select id="labSentenceSelect" class="glass-select">
+                  <!-- Populated via JS -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Target Sentence Display -->
+            <div class="target-sentence-box">
+              <div class="target-main" id="labTargetText">こんにちは</div>
+              <div class="target-phonetic" id="labTargetPhonetic">Konnichiwa</div>
+              <div class="target-meaning" id="labTargetMeaning">Xin chào (buổi trưa / thông dụng)</div>
+              
+              <div class="target-audio-row">
+                <button class="icon-btn-round" id="btnLabListenNormal" title="Nghe bản xứ 1.0x">
+                  <span>▶ 1.0x</span>
+                </button>
+                <button class="icon-btn-round" id="btnLabListenSlow" title="Nghe chậm 0.7x">
+                  <span>🐢 0.7x</span>
+                </button>
+                <span class="target-hint" data-i18n="listenNativeHint">Nghe giọng bản xứ trước khi ghi âm</span>
+              </div>
+            </div>
+
+            <!-- Interactive Recording Stage with Live Waveform Canvas -->
+            <div class="recording-stage">
+              <div class="waveform-canvas-container">
+                <canvas id="micWaveformCanvas" class="mic-waveform-canvas" width="600" height="120"></canvas>
+                <div class="canvas-grid-lines"></div>
+              </div>
+
+              <div class="mic-controls">
+                <button class="btn-mic-main" id="btnToggleRecord">
+                  <span class="mic-pulse-ring"></span>
+                  <span class="mic-icon" id="micIconSymbol">🎙️</span>
+                  <span class="mic-status-text" id="micStatusText" data-i18n="pressToSpeak">Nhấn để Nói</span>
+                </button>
+              </div>
+
+              <div class="recording-status-banner" id="recStatusBanner">
+                <span class="status-indicator"></span>
+                <span id="recStatusMessage" data-i18n="micReady">Micro sẵn sàng. Hãy cấp quyền microphone nếu trình duyệt yêu cầu.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: AI Evaluation & Feedback Panel -->
+          <div class="lab-feedback-card glass-card" id="labFeedbackPanel">
+            <div class="feedback-header">
+              <h3 data-i18n="aiFeedbackTitle">Kết quả Phân Tích AI</h3>
+              <span class="eval-mode-badge" id="evalModeBadge">Web Speech Engine</span>
+            </div>
+
+            <div class="feedback-body" id="feedbackBody">
+              <div class="feedback-placeholder" id="feedbackPlaceholder">
+                <div class="placeholder-icon">📊</div>
+                <p data-i18n="feedbackEmpty">Hãy bấm "Nhấn để Nói" và đọc câu mẫu bên trái để nhận chấm điểm ngữ âm chi tiết.</p>
+              </div>
+
+              <div class="feedback-results" id="feedbackResults" style="display: none;">
+                <!-- Overall Accuracy Score Ring -->
+                <div class="score-summary-row">
+                  <div class="score-circle" id="scoreCircle">
+                    <svg viewBox="0 0 100 100" class="circle-svg">
+                      <circle cx="50" cy="50" r="40" class="circle-bg" />
+                      <circle cx="50" cy="50" r="40" class="circle-fill" id="scoreCircleFill" />
+                    </svg>
+                    <div class="score-number-box">
+                      <span class="score-num" id="scoreNumber">92</span>
+                      <span class="score-unit">%</span>
+                    </div>
+                  </div>
+                  <div class="score-details">
+                    <div class="rating-badge" id="scoreRatingBadge">Xuất sắc</div>
+                    <p class="score-desc" id="scoreFeedbackSummary">Phát âm rất tự nhiên và chuẩn xác!</p>
+                  </div>
+                </div>
+
+                <!-- Speech Recognized Text -->
+                <div class="recognized-text-box">
+                  <span class="box-label" data-i18n="recognizedLabel">Máy nhận diện được:</span>
+                  <div class="recognized-content" id="recognizedText">こんにちは</div>
+                </div>
+
+                <!-- Word-by-Word Alignment Breakdown -->
+                <div class="alignment-breakdown">
+                  <span class="box-label" data-i18n="phonemeBreakdown">Chi tiết từng âm / từ:</span>
+                  <div class="token-chips" id="tokenChipsContainer">
+                    <!-- Populated via JS -->
+                  </div>
+                </div>
+
+                <!-- Coaching Advice -->
+                <div class="coaching-advice-box">
+                  <div class="advice-header">
+                    <span class="advice-icon">💡</span>
+                    <strong data-i18n="coachingAdvice">Lời khuyên khẩu hình:</strong>
+                  </div>
+                  <p class="advice-content" id="coachingAdviceText">
+                    Âm gió của bạn khá tốt. Hãy chú ý giữ cao độ đồng đều hơn ở phần cuối câu.
+                  </p>
+                </div>
+
+                <!-- Action to Save to Weak Spots or Practice Next -->
+                <div class="feedback-actions">
+                  <button class="btn-action-secondary" id="btnSaveLabWeakSpot">
+                    <span data-i18n="markWeakSpot">Đánh dấu cần luyện lại</span>
+                  </button>
+                  <button class="btn-action-primary" id="btnNextLabSentence">
+                    <span data-i18n="nextSentence">Luyện câu tiếp theo ➔</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB 4: REAL-TIME ONLINE COMMUNITY ================= -->
+      <section class="tab-pane" id="tab-community">
+        <div class="community-layout">
+          <!-- Top Community Bar: Connection status & User Profile Badge -->
+          <div class="community-top-bar glass-card">
+            <div class="community-status-group">
+              <div class="connection-status-pill" id="rtdbConnectionPill">
+                <span class="status-dot online"></span>
+                <span class="status-label" id="rtdbStatusText">Đang kết nối Firebase RTDB...</span>
+              </div>
+              <div class="total-online-badge">
+                <span class="badge-icon">👥</span>
+                <span id="totalOnlineCount">0</span>
+                <span data-i18n="learnersOnline">học viên online</span>
+              </div>
+            </div>
+
+            <!-- Current User Profile Badge -->
+            <div class="user-profile-badge" id="btnEditProfile">
+              <div class="user-avatar" id="currentUserAvatar">🐱</div>
+              <div class="user-info">
+                <div class="user-nickname" id="currentUserNickname">Học viên mới</div>
+                <div class="user-meta" id="currentUserMeta">Bản xứ: VI • Học: JP</div>
+              </div>
+              <span class="edit-profile-icon" title="Chỉnh sửa hồ sơ">✏️</span>
+            </div>
+          </div>
+
+          <!-- Room Selector Cards (ja, en, ko, zh) -->
+          <div class="rooms-hub">
+            <div class="room-card active" data-room="ja" id="roomCard-ja">
+              <div class="room-flag">🇯🇵</div>
+              <div class="room-details">
+                <div class="room-name-row">
+                  <h3 class="room-title" data-i18n="roomJaTitle">Phòng Tiếng Nhật</h3>
+                  <span class="sonar-wrapper">
+                    <span class="sonar-ring"></span>
+                    <span class="sonar-dot"></span>
+                  </span>
+                </div>
+                <p class="room-desc" data-i18n="roomJaDesc">Luyện phát âm Kana & đàm thoại Tokyo</p>
+              </div>
+              <div class="room-online-count" id="roomCount-ja">0 online</div>
+            </div>
+
+            <div class="room-card" data-room="en" id="roomCard-en">
+              <div class="room-flag">🇺🇸</div>
+              <div class="room-details">
+                <div class="room-name-row">
+                  <h3 class="room-title" data-i18n="roomEnTitle">Phòng Tiếng Anh</h3>
+                  <span class="sonar-wrapper">
+                    <span class="sonar-ring"></span>
+                    <span class="sonar-dot"></span>
+                  </span>
+                </div>
+                <p class="room-desc" data-i18n="roomEnDesc">IPA, ngữ điệu & Slang đường phố Mỹ</p>
+              </div>
+              <div class="room-online-count" id="roomCount-en">0 online</div>
+            </div>
+
+            <div class="room-card" data-room="ko" id="roomCard-ko">
+              <div class="room-flag">🇰🇷</div>
+              <div class="room-details">
+                <div class="room-name-row">
+                  <h3 class="room-title" data-i18n="roomKoTitle">Phòng Tiếng Hàn</h3>
+                  <span class="sonar-wrapper">
+                    <span class="sonar-ring"></span>
+                    <span class="sonar-dot"></span>
+                  </span>
+                </div>
+                <p class="room-desc" data-i18n="roomKoDesc">Hangul, âm bật hơi & đàm thoại Seoul</p>
+              </div>
+              <div class="room-online-count" id="roomCount-ko">0 online</div>
+            </div>
+
+            <div class="room-card" data-room="zh" id="roomCard-zh">
+              <div class="room-flag">🇨🇳</div>
+              <div class="room-details">
+                <div class="room-name-row">
+                  <h3 class="room-title" data-i18n="roomZhTitle">Phòng Tiếng Trung</h3>
+                  <span class="sonar-wrapper">
+                    <span class="sonar-ring"></span>
+                    <span class="sonar-dot"></span>
+                  </span>
+                </div>
+                <p class="room-desc" data-i18n="roomZhDesc">4 Thanh điệu, Pinyin & Chữ Hán cơ bản</p>
+              </div>
+              <div class="room-online-count" id="roomCount-zh">0 online</div>
+            </div>
+          </div>
+
+          <!-- Main Exchange Chat & Online Users Workspace -->
+          <div class="community-workspace">
+            <!-- Left: Real-Time Chat Stream -->
+            <div class="chat-panel glass-card">
+              <div class="chat-header">
+                <div class="chat-title-group">
+                  <span class="active-room-flag" id="chatRoomFlag">🇯🇵</span>
+                  <div>
+                    <h3 class="chat-room-title" id="chatRoomTitle">Phòng Tiếng Nhật (日本語)</h3>
+                    <p class="chat-room-topic" id="chatRoomTopic" data-i18n="chatTopicHint">Thảo luận phát âm, từ vựng và kết bạn luyện nói</p>
+                  </div>
+                </div>
+                <div class="chat-tools">
+                  <button class="icon-btn-round" id="btnToggleOnlineList" title="Xem ai đang online">
+                    <span>👥</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Messages Stream Container -->
+              <div class="chat-stream" id="chatStream">
+                <!-- Rendered dynamically from Firebase RTDB -->
+              </div>
+
+              <!-- Message Input Bar with Voice-to-Text Support -->
+              <form class="chat-input-bar" id="chatMessageForm">
+                <div class="input-actions-left">
+                  <!-- Speech Recognition Dictation Button -->
+                  <button type="button" class="btn-voice-input" id="btnVoiceDictate" title="Nói để nhập văn bản (Voice-to-Text)">
+                    <span class="voice-icon">🎤</span>
+                  </button>
+                </div>
+                <input type="text" class="chat-text-input" id="chatTextInput" placeholder="Nhập tin nhắn hoặc bấm mic để nói..." data-i18n-placeholder="chatInputPlaceholder" autocomplete="off" maxlength="300">
+                <button type="submit" class="btn-send-message" id="btnSendMessage" title="Gửi tin nhắn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+            <!-- Right: Real-time Online Users Sidebar -->
+            <aside class="online-users-sidebar glass-card" id="onlineUsersSidebar">
+              <div class="sidebar-header">
+                <h4 data-i18n="onlineInRoom">Đang online trong phòng</h4>
+                <span class="users-count-tag" id="sidebarRoomCount">0</span>
+              </div>
+              <div class="online-users-list" id="onlineUsersList">
+                <!-- Rendered dynamically via presence -->
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- App Footer -->
+    <footer class="app-footer">
+      <p data-i18n="footerText">LinguaStudio Pro 2.0 • Đa giác quan • Thời gian thực • Hoạt động độc lập trên trình duyệt.</p>
+    </footer>
+  </div>
+
+  <!-- ================= OVERLAYS & DRAWERS ================= -->
+
+  <!-- Drawer: Weak Spots (Cần sửa) -->
   <div class="drawer-overlay" id="weakSpotsOverlay">
-    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="weakSpotsTitle">
+    <div class="drawer-panel glass-card">
       <div class="drawer-header">
-        <div class="drawer-title-group">
+        <div class="header-left">
           <span class="drawer-icon">🎯</span>
-          <h3 id="weakSpotsTitle" data-i18n="weakSpotsTitle">Ôn tập điểm yếu</h3>
+          <h3 data-i18n="weakSpotsTitle">Điểm Phát Âm Cần Sửa</h3>
         </div>
-        <button class="drawer-close" id="btnCloseWeakSpots" aria-label="Close Weak Spots">✕</button>
+        <button class="drawer-close" id="btnCloseWeakSpots">✕</button>
       </div>
-
-      <div class="drawer-body">
-        <p class="drawer-subhead" data-i18n="weakSpotsSubhead">Các câu phát âm chưa chuẩn (dưới 80%) hoặc được bạn đánh dấu để luyện tập thêm.</p>
-        <div class="weak-spots-list" id="weakSpotsList">
-          <!-- Populated from localStorage -->
-        </div>
+      <div class="drawer-content" id="weakSpotsList">
+        <!-- Rendered via JS -->
       </div>
-
       <div class="drawer-footer">
-        <button class="btn-ghost text-danger" id="btnClearWeakSpots" data-i18n="clearAll">Xóa tất cả</button>
-        <button class="btn-primary" id="btnCloseWeakSpotsBottom" data-i18n="done">Đóng</button>
+        <button class="btn-action-secondary" id="btnClearWeakSpots" data-i18n="clearAll">Xóa tất cả</button>
       </div>
     </div>
   </div>
 
-  <!-- ============================================== -->
-  <!-- MODAL / DRAWER: BOOKMARKED NATIVE EXPRESSIONS  -->
-  <!-- ============================================== -->
+  <!-- Drawer: Bookmarks (Đã lưu) -->
   <div class="drawer-overlay" id="bookmarksOverlay">
-    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="bookmarksTitle">
+    <div class="drawer-panel glass-card">
       <div class="drawer-header">
-        <div class="drawer-title-group">
-          <span class="drawer-icon">★</span>
-          <h3 id="bookmarksTitle" data-i18n="bookmarksTitle">Mẫu câu giao tiếp đã lưu</h3>
+        <div class="header-left">
+          <span class="drawer-icon">⭐</span>
+          <h3 data-i18n="bookmarksTitle">Sổ Tay Âm & Cụm Từ Đã Lưu</h3>
         </div>
-        <button class="drawer-close" id="btnCloseBookmarks" aria-label="Close Saved Expressions">✕</button>
+        <button class="drawer-close" id="btnCloseBookmarks">✕</button>
       </div>
-
-      <div class="drawer-body">
-        <p class="drawer-subhead" data-i18n="bookmarksSubhead">Bộ sưu tập các cặp câu giao tiếp đường phố và sách giáo khoa yêu thích của bạn.</p>
-        <div class="bookmarks-list" id="bookmarksList">
-          <!-- Populated from localStorage -->
-        </div>
+      <div class="drawer-content" id="bookmarksList">
+        <!-- Rendered via JS -->
       </div>
-
       <div class="drawer-footer">
-        <button class="btn-ghost text-danger" id="btnClearBookmarks" data-i18n="clearAll">Xóa tất cả</button>
-        <button class="btn-primary" id="btnCloseBookmarksBottom" data-i18n="done">Đóng</button>
+        <button class="btn-action-secondary" id="btnClearBookmarks" data-i18n="clearAll">Xóa tất cả</button>
       </div>
     </div>
   </div>
+
+  <!-- Drawer: Friends / Study Buddies (Bạn học) -->
+  <div class="drawer-overlay" id="friendsOverlay">
+    <div class="drawer-panel glass-card">
+      <div class="drawer-header">
+        <div class="header-left">
+          <span class="drawer-icon">👥</span>
+          <h3 data-i18n="friendsTitle">Danh Sách Bạn Học</h3>
+        </div>
+        <button class="drawer-close" id="btnCloseFriends">✕</button>
+      </div>
+      <div class="drawer-content" id="friendsList">
+        <!-- Rendered via JS -->
+      </div>
+      <div class="drawer-footer">
+        <p class="friends-footer-note" data-i18n="friendsNote">Kết bạn với học viên trong phòng chat để cùng nhau luyện phát âm.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: User Profile Setup -->
+  <div class="modal-overlay" id="profileModalOverlay">
+    <div class="modal-card glass-card">
+      <div class="modal-header">
+        <h3 data-i18n="profileModalTitle">Hồ Sơ Học Viên Của Bạn</h3>
+        <button class="modal-close" id="btnCloseProfileModal">✕</button>
+      </div>
+      <form class="modal-body" id="profileForm">
+        <div class="form-group">
+          <label for="profileNickname" data-i18n="profileNicknameLabel">Biệt danh / Tên hiển thị:</label>
+          <input type="text" id="profileNickname" class="glass-input" required maxlength="25" placeholder="Ví dụ: Minh_Tokyo">
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="profileAvatarLabel">Chọn Biểu Tượng:</label>
+          <div class="avatar-selector" id="avatarSelector">
+            <button type="button" class="avatar-option active" data-avatar="🐱">🐱</button>
+            <button type="button" class="avatar-option" data-avatar="🦊">🦊</button>
+            <button type="button" class="avatar-option" data-avatar="🐼">🐼</button>
+            <button type="button" class="avatar-option" data-avatar="🦁">🦁</button>
+            <button type="button" class="avatar-option" data-avatar="🚀">🚀</button>
+            <button type="button" class="avatar-option" data-avatar="⭐">⭐</button>
+            <button type="button" class="avatar-option" data-avatar="🌸">🌸</button>
+            <button type="button" class="avatar-option" data-avatar="🎧">🎧</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="profileNativeLang" data-i18n="profileNativeLangLabel">Tiếng Mẹ Đẻ:</label>
+            <select id="profileNativeLang" class="glass-select">
+              <option value="vi">Tiếng Việt (VI)</option>
+              <option value="en">English (EN)</option>
+              <option value="ja">日本語 (JA)</option>
+              <option value="ko">한국어 (KO)</option>
+              <option value="zh">中文 (ZH)</option>
+            </select>
+          </div>
+
+          <div class="form-group half">
+            <label for="profileTargetLang" data-i18n="profileTargetLangLabel">Đang Tập Trung Học:</label>
+            <select id="profileTargetLang" class="glass-select">
+              <option value="ja">Tiếng Nhật (JA)</option>
+              <option value="en">Tiếng Anh (EN)</option>
+              <option value="ko">Tiếng Hàn (KO)</option>
+              <option value="zh">Tiếng Trung (ZH)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-action-secondary" id="btnCancelProfile" data-i18n="cancelBtn">Hủy</button>
+          <button type="submit" class="btn-action-primary" id="btnSaveProfile" data-i18n="saveProfileBtn">Lưu Hồ Sơ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
 
   <!-- Scripts -->
   <script src="data.js"></script>
