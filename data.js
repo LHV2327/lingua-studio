@@ -36,6 +36,20 @@ const UI_I18N = {
     "expressionsHeaderTitle": "Sách giáo khoa vs. Giao tiếp đường phố thực tế",
     "expressionsHeaderSubtitle": "Hiểu rõ sự khác biệt giữa câu từ trong sách ngữ pháp và cách người bản xứ trò chuyện ngoài đời thực.",
     "searchPlaceholder": "Tìm kiếm tình huống, từ khóa, bản dịch...",
+    "soundSearchPlaceholder": "Tìm chữ cái, romaji, phiên âm...",
+    "savedBookmarks": "Đã lưu",
+    "weakPoints": "Cần sửa",
+    "quickDrillBtn": "Luyện tập nhanh",
+    "daysUnit": "ngày",
+    "chooseSentence": "Chọn mẫu câu luyện:",
+    "tabCampaign": "Lộ trình Ải",
+    "campaignTitle": "Lộ Trình Thám Hiểm Ngôn Ngữ",
+    "campaignSubtitle": "Vượt qua 5 ải thử thách, luyện viết chữ, đánh bại Boss để làm chủ tiếng bản xứ!",
+    "stageBoss": "Đấu Boss Ải",
+    "practiceWriting": "Tập viết chữ",
+    "clearCanvas": "Xóa",
+    "toggleGuide": "Mẫu mờ",
+    "sfxToggle": "SFX",
     "allSituations": "Tất cả tình huống",
     "culturalNuanceTitle": "Sắc thái văn hóa & Hoàn cảnh sử dụng:",
     "usageNoteTitle": "Lưu ý & Ngữ cảnh dùng:",
@@ -159,6 +173,20 @@ const UI_I18N = {
     "expressionsHeaderTitle": "Textbook vs. Real-Life Street Expressions",
     "expressionsHeaderSubtitle": "Understand what classroom manuals teach versus how native speakers actually talk on the streets.",
     "searchPlaceholder": "Search situation, keyword, or translation...",
+    "soundSearchPlaceholder": "Search characters, romaji, IPA...",
+    "savedBookmarks": "Saved",
+    "weakPoints": "Weak Spots",
+    "quickDrillBtn": "Quick Drill",
+    "daysUnit": "days",
+    "chooseSentence": "Choose sentence to practice:",
+    "tabCampaign": "Quest Path",
+    "campaignTitle": "Language Adventure Campaign",
+    "campaignSubtitle": "Conquer 5 stages, trace characters, and defeat Stage Bosses to achieve native mastery!",
+    "stageBoss": "Stage Boss",
+    "practiceWriting": "Practice Writing",
+    "clearCanvas": "Clear",
+    "toggleGuide": "Guide",
+    "sfxToggle": "SFX",
     "allSituations": "All Situations",
     "culturalNuanceTitle": "Cultural Nuance & Social Context:",
     "usageNoteTitle": "Usage & Context Tip:",
@@ -262,1498 +290,5272 @@ const LINGUA_DATA = {
     "scriptName": "Kana & Kanji",
     "proTip_vi": "Lưu ý trường âm (kéo dài nguyên âm) và âm ngắt (っ). Trong tiếng Nhật, kéo dài nguyên âm sẽ tăng gấp đôi trường độ (mora) và làm thay đổi hoàn toàn nghĩa của từ!",
     "proTip_en": "Pay attention to vowel length and small tsu (っ). Stretching a vowel doubles the mora (beat) and completely changes word meanings in Japanese!",
-    "alphabet": {
-      "categories": [
-        {
-          "id": "hiragana",
-          "name_vi": "Hiragana (Bảng chữ mềm - 46 chữ)",
-          "name_en": "Hiragana (ひらがな - 46 characters)",
-          "description_vi": "Bảng chữ biểu âm cơ bản cho từ thuần Nhật và trợ từ ngữ pháp.",
-          "description_en": "The foundational phonetic script used for native words and grammatical particles."
-        },
-        {
-          "id": "katakana",
-          "name_vi": "Katakana (Bảng chữ cứng - 46 chữ)",
-          "name_en": "Katakana (カタカナ - 46 characters)",
-          "description_vi": "Dùng để phiên âm từ mượn tiếng nước ngoài, tên khoa học và nhấn mạnh âm thanh.",
-          "description_en": "Used primarily for foreign loanwords, technical terms, and acoustic emphasis."
-        }
-      ],
-      "items": [
-        {
-          "category": "hiragana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "あ",
-          "romaji": "a",
-          "ipa": "[a]",
-          "mouthTip_vi": "Mở miệng vừa phải, lưỡi thả lỏng tự nhiên. Âm 'a' ngắn và dứt khoát, không tròn môi.",
-          "mouthTip_en": "Open mouth naturally, tongue resting relaxed and flat. Keep vowel short and crisp without rounding lips.",
-          "example": {
-            "word": "雨 (あめ)",
-            "reading": "ame",
-            "meaning_vi": "Cơn mưa",
-            "meaning_en": "Rain"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "い",
-          "romaji": "i",
-          "ipa": "[i]",
-          "mouthTip_vi": "Hai khóe miệng hơi kéo nhẹ sang hai bên như đang cười mỉm. Lưỡi nâng cao gần vòm họng trước.",
-          "mouthTip_en": "Spread mouth corners gently into a smile. High tongue close to the hard palate.",
-          "example": {
-            "word": "犬 (いぬ)",
-            "reading": "inu",
-            "meaning_vi": "Con chó",
-            "meaning_en": "Dog"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "う",
-          "romaji": "u",
-          "ipa": "[ɯᵝ]",
-          "mouthTip_vi": "Môi dẹt ngang tự nhiên, KHÔNG chu tròn môi như âm 'u' tiếng Việt hay tiếng Anh. Lưỡi hơi lùi về sau.",
-          "mouthTip_en": "Lips are compressed horizontally, NOT protruded or rounded like English 'oo'.",
-          "example": {
-            "word": "海 (うみ)",
-            "reading": "umi",
-            "meaning_vi": "Biển cả",
-            "meaning_en": "Ocean"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "え",
-          "romaji": "e",
-          "ipa": "[e̞]",
-          "mouthTip_vi": "Miệng mở vừa phải, lưng lưỡi hơi cong ở giữa. Phát âm 'ê' ngắn, không kéo dài hay lướt âm.",
-          "mouthTip_en": "Mid-open mouth, tongue slightly arched. Distinct from English 'ay'; no diphthong glide.",
-          "example": {
-            "word": "駅 (えき)",
-            "reading": "eki",
-            "meaning_vi": "Nhà ga",
-            "meaning_en": "Train station"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "お",
-          "romaji": "o",
-          "ipa": "[o̞]",
-          "mouthTip_vi": "Môi hơi tròn nhẹ nhưng không nhô ra phía trước. Âm 'ô' thuần khiết, gọn gàng.",
-          "mouthTip_en": "Slightly round lips without protruding. Pure vowel sound, short and unglided.",
-          "example": {
-            "word": "お茶 (おちゃ)",
-            "reading": "ocha",
-            "meaning_vi": "Trà xanh",
-            "meaning_en": "Green tea"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "か",
-          "romaji": "ka",
-          "ipa": "[ka]",
-          "mouthTip_vi": "Gốc lưỡi chạm vào ngạc mềm rồi bật nhẹ ra cùng âm 'a'. Độ bật hơi nhẹ hơn tiếng Anh.",
-          "mouthTip_en": "Back of tongue taps soft palate. Less aspiration than English 'car'.",
-          "example": {
-            "word": "傘 (かさ)",
-            "reading": "kasa",
-            "meaning_vi": "Chiếc ô/dù",
-            "meaning_en": "Umbrella"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "き",
-          "romaji": "ki",
-          "ipa": "[kʲi]",
-          "mouthTip_vi": "Âm 'k' ngạc hóa: mặt lưỡi áp sát ngạc cứng sau đó phát âm 'i'.",
-          "mouthTip_en": "Palatalized 'k'. Tongue blade presses against hard palate followed by tight 'i'.",
-          "example": {
-            "word": "木 (き)",
-            "reading": "ki",
-            "meaning_vi": "Cây cối",
-            "meaning_en": "Tree"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "く",
-          "romaji": "ku",
-          "ipa": "[kɯᵝ]",
-          "mouthTip_vi": "Bật âm 'k' từ ngạc mềm kết hợp môi dẹt không chu.",
-          "mouthTip_en": "Soft palate contact with compressed, unrounded lips.",
-          "example": {
-            "word": "車 (くるま)",
-            "reading": "kuruma",
-            "meaning_vi": "Ô tô / Xe hơi",
-            "meaning_en": "Car"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "け",
-          "romaji": "ke",
-          "ipa": "[ke̞]",
-          "mouthTip_vi": "Bật âm 'k' dứt khoát chuyển sang nguyên âm 'e'.",
-          "mouthTip_en": "Crisp 'k' release into clean mid-vowel 'e'.",
-          "example": {
-            "word": "今朝 (けさ)",
-            "reading": "kesa",
-            "meaning_vi": "Sáng nay",
-            "meaning_en": "This morning"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "こ",
-          "romaji": "ko",
-          "ipa": "[ko̞]",
-          "mouthTip_vi": "Bật âm 'k' nhẹ nhàng rồi tròn miệng phát âm 'o'.",
-          "mouthTip_en": "Light velar stop releasing into pure 'o'.",
-          "example": {
-            "word": "声 (こえ)",
-            "reading": "koe",
-            "meaning_vi": "Giọng nói",
-            "meaning_en": "Voice"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "さ",
-          "romaji": "sa",
-          "ipa": "[sa]",
-          "mouthTip_vi": "Đầu lưỡi gần lợi trên, luồng hơi xát nhẹ qua kẽ răng.",
-          "mouthTip_en": "Tongue tip near alveolar ridge, air hisses gently through teeth.",
-          "example": {
-            "word": "桜 (さくら)",
-            "reading": "sakura",
-            "meaning_vi": "Hoa anh đào",
-            "meaning_en": "Cherry blossom"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "し",
-          "romaji": "shi",
-          "ipa": "[ɕi]",
-          "mouthTip_vi": "Âm xát chân răng ngạc: mặt lưỡi nâng phẳng áp sát ngạc cứng, mềm hơn âm 'sh' tiếng Anh.",
-          "mouthTip_en": "Alveolo-palatal fricative! Softer than English 'sh', tongue blade raised flat.",
-          "example": {
-            "word": "塩 (しお)",
-            "reading": "shio",
-            "meaning_vi": "Muối ăn",
-            "meaning_en": "Salt"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "す",
-          "romaji": "su",
-          "ipa": "[sɨᵝ]",
-          "mouthTip_vi": "Phát âm 's' kết hợp nguyên âm dẹt 'u'. Ở cuối câu như 'desu', âm 'u' thường vô thanh hóa.",
-          "mouthTip_en": "Light unrounded vowel. In suffixes like 'desu', often devoiced / whispered.",
-          "example": {
-            "word": "寿司 (すし)",
-            "reading": "sushi",
-            "meaning_vi": "Món Sushi",
-            "meaning_en": "Sushi"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "せ",
-          "romaji": "se",
-          "ipa": "[se̞]",
-          "mouthTip_vi": "Luồng hơi xát nhẹ qua răng kết hợp mở miệng phát âm 'e'.",
-          "mouthTip_en": "Clear alveolar fricative into open mid vowel 'e'.",
-          "example": {
-            "word": "世界 (せかい)",
-            "reading": "sekai",
-            "meaning_vi": "Thế giới",
-            "meaning_en": "World"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "そ",
-          "romaji": "so",
-          "ipa": "[so̞]",
-          "mouthTip_vi": "Âm 's' mượt mà chuyển nhanh sang 'o'.",
-          "mouthTip_en": "Smooth 's' transition into rounded 'o'.",
-          "example": {
-            "word": "空 (そら)",
-            "reading": "sora",
-            "meaning_vi": "Bầu trời",
-            "meaning_en": "Sky"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "た",
-          "romaji": "ta",
-          "ipa": "[ta]",
-          "mouthTip_vi": "Đầu lưỡi chạm ngạc lợi trên rồi bật nhẹ ra âm 'a'.",
-          "mouthTip_en": "Tongue tip touches alveolar ridge with light release.",
-          "example": {
-            "word": "太陽 (たいよう)",
-            "reading": "taiyou",
-            "meaning_vi": "Mặt trời",
-            "meaning_en": "Sun"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "ち",
-          "romaji": "chi",
-          "ipa": "[t͡ɕi]",
-          "mouthTip_vi": "Âm tắc xát: mặt lưỡi chạm ngạc cứng rồi mở ra khe hẹp xát hơi. Gần như 'chi' nhẹ.",
-          "mouthTip_en": "Alveolo-palatal affricate. Softer than English 'cheep'.",
-          "example": {
-            "word": "地下鉄 (ちかてつ)",
-            "reading": "chikatetsu",
-            "meaning_vi": "Tàu điện ngầm",
-            "meaning_en": "Subway"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "つ",
-          "romaji": "tsu",
-          "ipa": "[t͡sɨᵝ]",
-          "mouthTip_vi": "Giống âm 'ts' trong tiếng Anh 'cats' nhưng kết hợp môi dẹt. Không đọc thành 'su' hay 'chu'.",
-          "mouthTip_en": "Like 'ts' in 'cats', followed by compressed unrounded 'u'.",
-          "example": {
-            "word": "月 (つき)",
-            "reading": "tsuki",
-            "meaning_vi": "Mặt trăng",
-            "meaning_en": "Moon"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "て",
-          "romaji": "te",
-          "ipa": "[te̞]",
-          "mouthTip_vi": "Gõ đầu lưỡi vào chân răng trên rồi nhả ra âm 'e'.",
-          "mouthTip_en": "Clean tap at the gum ridge into 'e'.",
-          "example": {
-            "word": "手 (て)",
-            "reading": "te",
-            "meaning_vi": "Bàn tay",
-            "meaning_en": "Hand"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "と",
-          "romaji": "to",
-          "ipa": "[to̞]",
-          "mouthTip_vi": "Đầu lưỡi chặn hơi nhẹ ở lợi trên rồi thoát ra âm 'o'.",
-          "mouthTip_en": "Light alveolar stop releasing into 'o'.",
-          "example": {
-            "word": "友達 (ともだち)",
-            "reading": "tomodachi",
-            "meaning_vi": "Bạn bè",
-            "meaning_en": "Friend"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "な",
-          "romaji": "na",
-          "ipa": "[na]",
-          "mouthTip_vi": "Đầu lưỡi áp vào lợi trên, hơi thoát qua khoang mũi rồi mở miệng.",
-          "mouthTip_en": "Tongue tip seals upper gum ridge, air escapes nasal cavity.",
-          "example": {
-            "word": "夏 (なつ)",
-            "reading": "natsu",
-            "meaning_vi": "Mùa hè",
-            "meaning_en": "Summer"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "に",
-          "romaji": "ni",
-          "ipa": "[ɲi]",
-          "mouthTip_vi": "Âm mũi ngạc hóa: lưng lưỡi áp sát vòm ngạc cứng, âm thanh trong trẻo.",
-          "mouthTip_en": "Palatalized nasal. Flat tongue blade presses against palate.",
-          "example": {
-            "word": "肉 (にく)",
-            "reading": "niku",
-            "meaning_vi": "Thịt",
-            "meaning_en": "Meat"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "ぬ",
-          "romaji": "nu",
-          "ipa": "[nɯᵝ]",
-          "mouthTip_vi": "Âm mũi 'n' kết hợp nguyên âm dẹt 'u'.",
-          "mouthTip_en": "Alveolar nasal with unrounded lips.",
-          "example": {
-            "word": "沼 (ぬま)",
-            "reading": "numa",
-            "meaning_vi": "Đầm lầy",
-            "meaning_en": "Swamp"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "ね",
-          "romaji": "ne",
-          "ipa": "[ne̞]",
-          "mouthTip_vi": "Phát âm 'n' mượt mà chuyển sang 'e'.",
-          "mouthTip_en": "Smooth nasal glide into 'e'.",
-          "example": {
-            "word": "猫 (ねこ)",
-            "reading": "neko",
-            "meaning_vi": "Con mèo",
-            "meaning_en": "Cat"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "の",
-          "romaji": "no",
-          "ipa": "[no̞]",
-          "mouthTip_vi": "Âm mũi 'n' tròn miệng phát ra 'o'.",
-          "mouthTip_en": "Nasal onset followed by mid-back 'o'.",
-          "example": {
-            "word": "海苔 (のり)",
-            "reading": "nori",
-            "meaning_vi": "Rong biển",
-            "meaning_en": "Seaweed"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "は",
-          "romaji": "ha",
-          "ipa": "[ha]",
-          "mouthTip_vi": "Hơi thở nhẹ nhàng từ thanh quản không cản trở. Khi làm trợ từ đọc là 'wa'.",
-          "mouthTip_en": "Gentle glottal breath. Pronounced 'wa' when used as particle.",
-          "example": {
-            "word": "花 (はな)",
-            "reading": "hana",
-            "meaning_vi": "Bông hoa",
-            "meaning_en": "Flower"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "ひ",
-          "romaji": "hi",
-          "ipa": "[çi]",
-          "mouthTip_vi": "Âm xát ngạc cứng: luồng hơi rít nhẹ giữa lưng lưỡi và vòm ngạc.",
-          "mouthTip_en": "Palatal fricative. Hissing air between arched tongue and palate.",
-          "example": {
-            "word": "光 (ひかり)",
-            "reading": "hikari",
-            "meaning_vi": "Ánh sáng",
-            "meaning_en": "Light"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "ふ",
-          "romaji": "fu",
-          "ipa": "[ɸɯᵝ]",
-          "mouthTip_vi": "Âm xát hai môi: hai môi khép hờ rồi thổi nhẹ hơi ra, KHÔNG cắn răng vào môi dưới như 'f' tiếng Anh!",
-          "mouthTip_en": "Bilabial fricative! Blow gently between lips, teeth NEVER touch lip.",
-          "example": {
-            "word": "富士山 (ふじさん)",
-            "reading": "fujisan",
-            "meaning_vi": "Núi Phú Sĩ",
-            "meaning_en": "Mt. Fuji"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "へ",
-          "romaji": "he",
-          "ipa": "[he̞]",
-          "mouthTip_vi": "Hơi thở thanh môn nhẹ nhàng đi vào 'e'. Làm trợ từ chỉ hướng đọc là 'e'.",
-          "mouthTip_en": "Soft glottal release. Pronounced 'e' as directional particle.",
-          "example": {
-            "word": "部屋 (へや)",
-            "reading": "heya",
-            "meaning_vi": "Căn phòng",
-            "meaning_en": "Room"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "ほ",
-          "romaji": "ho",
-          "ipa": "[ho̞]",
-          "mouthTip_vi": "Thổi nhẹ hơi thanh môn vào 'o'.",
-          "mouthTip_en": "Gentle 'h' into rounded 'o'.",
-          "example": {
-            "word": "星 (ほし)",
-            "reading": "hoshi",
-            "meaning_vi": "Ngôi sao",
-            "meaning_en": "Star"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "ま",
-          "romaji": "ma",
-          "ipa": "[ma]",
-          "mouthTip_vi": "Khép hai môi lại, rung thanh đới cho hơi thoát qua mũi rồi mở môi ra 'a'.",
-          "mouthTip_en": "Close lips, resonate through nose, release into 'a'.",
-          "example": {
-            "word": "町 (まち)",
-            "reading": "machi",
-            "meaning_vi": "Thị trấn / Khu phố",
-            "meaning_en": "Town"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "み",
-          "romaji": "mi",
-          "ipa": "[mʲi]",
-          "mouthTip_vi": "Âm 'm' ngạc hóa: môi khép nhẹ kết hợp khóe miệng kéo ngang sang 'i'.",
-          "mouthTip_en": "Palatalized 'm' transitioning to crisp 'i'.",
-          "example": {
-            "word": "道 (みち)",
-            "reading": "michi",
-            "meaning_vi": "Con đường",
-            "meaning_en": "Path / Road"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "む",
-          "romaji": "mu",
-          "ipa": "[mɯᵝ]",
-          "mouthTip_vi": "Âm môi 'm' mở sang nguyên âm dẹt 'u'.",
-          "mouthTip_en": "Bilabial nasal into compressed 'u'.",
-          "example": {
-            "word": "虫 (むし)",
-            "reading": "mushi",
-            "meaning_vi": "Côn trùng / Sâu bọ",
-            "meaning_en": "Insect"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "め",
-          "romaji": "me",
-          "ipa": "[me̞]",
-          "mouthTip_vi": "Nhả môi 'm' sang nguyên âm 'e'.",
-          "mouthTip_en": "Clean release from lips into 'e'.",
-          "example": {
-            "word": "目 (め)",
-            "reading": "me",
-            "meaning_vi": "Mắt",
-            "meaning_en": "Eye"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "も",
-          "romaji": "mo",
-          "ipa": "[mo̞]",
-          "mouthTip_vi": "Nhả môi 'm' sang nguyên âm tròn 'o'.",
-          "mouthTip_en": "Smooth nasal release into rounded 'o'.",
-          "example": {
-            "word": "森 (もり)",
-            "reading": "mori",
-            "meaning_vi": "Khu rừng",
-            "meaning_en": "Forest"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ya",
-          "group_en": "Y-Line",
-          "char": "や",
-          "romaji": "ya",
-          "ipa": "[ja]",
-          "mouthTip_vi": "Bán nguyên âm 'y': lướt nhanh từ vị trí âm 'i' sang 'a'.",
-          "mouthTip_en": "Palatal glide starting near 'i' and flowing into 'a'.",
-          "example": {
-            "word": "山 (やま)",
-            "reading": "yama",
-            "meaning_vi": "Ngọn núi",
-            "meaning_en": "Mountain"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ya",
-          "group_en": "Y-Line",
-          "char": "ゆ",
-          "romaji": "yu",
-          "ipa": "[jɯᵝ]",
-          "mouthTip_vi": "Lướt từ 'y' sang nguyên âm dẹt 'u'.",
-          "mouthTip_en": "Palatal glide into compressed unrounded 'u'.",
-          "example": {
-            "word": "雪 (ゆき)",
-            "reading": "yuki",
-            "meaning_vi": "Tuyết",
-            "meaning_en": "Snow"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ya",
-          "group_en": "Y-Line",
-          "char": "よ",
-          "romaji": "yo",
-          "ipa": "[jo̞]",
-          "mouthTip_vi": "Lướt từ 'y' sang nguyên âm 'o'.",
-          "mouthTip_en": "Palatal glide into mid-back 'o'.",
-          "example": {
-            "word": "夜 (よる)",
-            "reading": "yoru",
-            "meaning_vi": "Ban đêm",
-            "meaning_en": "Night"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "ら",
-          "romaji": "ra",
-          "ipa": "[ɾa]",
-          "mouthTip_vi": "Âm vỗ chân răng: đầu lưỡi gõ nhẹ một nhịp vào vòm miệng ngay sau răng cửa trên. KHÔNG uốn lưỡi về sau như 'r' tiếng Anh!",
-          "mouthTip_en": "Alveolar flap! Single quick tap right behind front teeth. Never curl back like English 'r'.",
-          "example": {
-            "word": "来週 (らいしゅう)",
-            "reading": "raishuu",
-            "meaning_vi": "Tuần sau",
-            "meaning_en": "Next week"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "り",
-          "romaji": "ri",
-          "ipa": "[ɾʲi]",
-          "mouthTip_vi": "Đầu lưỡi gõ nhanh một nhịp vào ngạc trước kết hợp âm 'i'.",
-          "mouthTip_en": "Palatalized flap with a quick crisp tap.",
-          "example": {
-            "word": "林檎 (りんご)",
-            "reading": "ringo",
-            "meaning_vi": "Quả táo",
-            "meaning_en": "Apple"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "る",
-          "romaji": "ru",
-          "ipa": "[ɾɯᵝ]",
-          "mouthTip_vi": "Gõ đầu lưỡi nhanh rồi chuyển sang môi dẹt 'u'.",
-          "mouthTip_en": "Quick alveolar tap into compressed 'u'.",
-          "example": {
-            "word": "留守 (るす)",
-            "reading": "rusu",
-            "meaning_vi": "Vắng nhà",
-            "meaning_en": "Absence / Away"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "れ",
-          "romaji": "re",
-          "ipa": "[ɾe̞]",
-          "mouthTip_vi": "Gõ đầu lưỡi nhanh rồi nhả sang âm 'e'.",
-          "mouthTip_en": "Single dental tap into clean 'e'.",
-          "example": {
-            "word": "歴史 (れきし)",
-            "reading": "rekishi",
-            "meaning_vi": "Lịch sử",
-            "meaning_en": "History"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "ろ",
-          "romaji": "ro",
-          "ipa": "[ɾo̞]",
-          "mouthTip_vi": "Gõ đầu lưỡi nhanh rồi chuyển sang tròn môi 'o'.",
-          "mouthTip_en": "Alveolar tap releasing into 'o'.",
-          "example": {
-            "word": "廊下 (ろうか)",
-            "reading": "rouka",
-            "meaning_vi": "Hành lang",
-            "meaning_en": "Hallway"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Wa & Âm mũi",
-          "group_en": "W-Line & Nasal",
-          "char": "わ",
-          "romaji": "wa",
-          "ipa": "[ɰa]",
-          "mouthTip_vi": "Môi khép hờ rồi lướt sang 'a', ít chu môi hơn âm 'w' tiếng Anh.",
-          "mouthTip_en": "Soft velar glide into 'a', less lip rounding than English 'w'.",
-          "example": {
-            "word": "私 (わたし)",
-            "reading": "watashi",
-            "meaning_vi": "Tôi",
-            "meaning_en": "I / Me"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Wa & Âm mũi",
-          "group_en": "W-Line & Nasal",
-          "char": "を",
-          "romaji": "wo / o",
-          "ipa": "[o̞]",
-          "mouthTip_vi": "Chỉ dùng làm trợ từ tân ngữ trong ngữ pháp, phát âm giống hệt nguyên âm 'o'.",
-          "mouthTip_en": "Used exclusively as grammatical object particle. Pronounced like 'o'.",
-          "example": {
-            "word": "本を読む (ほんをよむ)",
-            "reading": "hon o yomu",
-            "meaning_vi": "Đọc sách",
-            "meaning_en": "Read a book"
-          }
-        },
-        {
-          "category": "hiragana",
-          "group_vi": "Hàng Wa & Âm mũi",
-          "group_en": "W-Line & Nasal",
-          "char": "ん",
-          "romaji": "n",
-          "ipa": "[ɴ/n/m]",
-          "mouthTip_vi": "Âm mũi độc lập chiếm trọn 1 mora. Vị trí lưỡi thay đổi theo âm kế tiếp (thành m trước p/b, n trước t/d).",
-          "mouthTip_en": "Moraic nasal consonant. Adapts mouth placement to subsequent consonant.",
-          "example": {
-            "word": "日本 (にほん)",
-            "reading": "nihon",
-            "meaning_vi": "Nước Nhật",
-            "meaning_en": "Japan"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "ア",
-          "romaji": "a",
-          "ipa": "[a]",
-          "mouthTip_vi": "Phát âm giống hệt あ. Nét chữ vuông vức, dứt khoát.",
-          "mouthTip_en": "Identical sound to あ. Sharp angular stroke aesthetic.",
-          "example": {
-            "word": "アイス",
-            "reading": "aisu",
-            "meaning_vi": "Kem lạnh",
-            "meaning_en": "Ice cream"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "イ",
-          "romaji": "i",
-          "ipa": "[i]",
-          "mouthTip_vi": "Phát âm giống hệt い. Khóe miệng dẹt nhẹ.",
-          "mouthTip_en": "Identical sound to い. Wide relaxed lips.",
-          "example": {
-            "word": "インターネット",
-            "reading": "intaanetto",
-            "meaning_vi": "Mạng Internet",
-            "meaning_en": "Internet"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "ウ",
-          "romaji": "u",
-          "ipa": "[ɯᵝ]",
-          "mouthTip_vi": "Phát âm giống hệt う. Môi dẹt không chu.",
-          "mouthTip_en": "Identical sound to う. Compressed lips without rounding.",
-          "example": {
-            "word": "ウェブ",
-            "reading": "webu",
-            "meaning_vi": "Trang Web",
-            "meaning_en": "Web"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "エ",
-          "romaji": "e",
-          "ipa": "[e̞]",
-          "mouthTip_vi": "Phát âm giống hệt え. Gọn gàng, không lướt.",
-          "mouthTip_en": "Identical sound to え. Clean vowel without glide.",
-          "example": {
-            "word": "エレベーター",
-            "reading": "erebeetaa",
-            "meaning_vi": "Thang máy",
-            "meaning_en": "Elevator"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Nguyên âm",
-          "group_en": "Vowels",
-          "char": "オ",
-          "romaji": "o",
-          "ipa": "[o̞]",
-          "mouthTip_vi": "Phát âm giống hệt お. Tròn môi tự nhiên.",
-          "mouthTip_en": "Identical sound to お. Short, crisp rounded vowel.",
-          "example": {
-            "word": "オレンジ",
-            "reading": "orenji",
-            "meaning_vi": "Quả cam",
-            "meaning_en": "Orange"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "カ",
-          "romaji": "ka",
-          "ipa": "[ka]",
-          "mouthTip_vi": "Phát âm giống か.",
-          "mouthTip_en": "K-sound with short 'a'.",
-          "example": {
-            "word": "カフェ",
-            "reading": "kafe",
-            "meaning_vi": "Quán cà phê",
-            "meaning_en": "Cafe"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "キ",
-          "romaji": "ki",
-          "ipa": "[kʲi]",
-          "mouthTip_vi": "Phát âm giống き.",
-          "mouthTip_en": "Palatalized 'ki'.",
-          "example": {
-            "word": "キーボード",
-            "reading": "kiiboodo",
-            "meaning_vi": "Bàn phím",
-            "meaning_en": "Keyboard"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "ク",
-          "romaji": "ku",
-          "ipa": "[kɯᵝ]",
-          "mouthTip_vi": "Phát âm giống く.",
-          "mouthTip_en": "Velar stop with unrounded 'u'.",
-          "example": {
-            "word": "クラス",
-            "reading": "kurasu",
-            "meaning_vi": "Lớp học",
-            "meaning_en": "Class"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "ケ",
-          "romaji": "ke",
-          "ipa": "[ke̞]",
-          "mouthTip_vi": "Phát âm giống け.",
-          "mouthTip_en": "Crisp 'ke'.",
-          "example": {
-            "word": "ケーキ",
-            "reading": "keeki",
-            "meaning_vi": "Bánh ngọt",
-            "meaning_en": "Cake"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ka",
-          "group_en": "K-Line",
-          "char": "コ",
-          "romaji": "ko",
-          "ipa": "[ko̞]",
-          "mouthTip_vi": "Phát âm giống こ.",
-          "mouthTip_en": "Rounded velar sound.",
-          "example": {
-            "word": "コーヒー",
-            "reading": "koohii",
-            "meaning_vi": "Cà phê",
-            "meaning_en": "Coffee"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "サ",
-          "romaji": "sa",
-          "ipa": "[sa]",
-          "mouthTip_vi": "Phát âm giống さ.",
-          "mouthTip_en": "Gentle alveolar hiss.",
-          "example": {
-            "word": "サラダ",
-            "reading": "sarada",
-            "meaning_vi": "Món Salad",
-            "meaning_en": "Salad"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "シ",
-          "romaji": "shi",
-          "ipa": "[ɕi]",
-          "mouthTip_vi": "Phát âm giống し. Khác chữ ツ (tsu) ở góc nét bút.",
-          "mouthTip_en": "Soft palatal hiss. Note stroke direction difference from ツ.",
-          "example": {
-            "word": "シャツ",
-            "reading": "shatsu",
-            "meaning_vi": "Áo sơ mi",
-            "meaning_en": "Shirt"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "ス",
-          "romaji": "su",
-          "ipa": "[sɨᵝ]",
-          "mouthTip_vi": "Phát âm giống す.",
-          "mouthTip_en": "Close unrounded vowel.",
-          "example": {
-            "word": "スポーツ",
-            "reading": "supootsu",
-            "meaning_vi": "Thể thao",
-            "meaning_en": "Sports"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "セ",
-          "romaji": "se",
-          "ipa": "[se̞]",
-          "mouthTip_vi": "Phát âm giống せ.",
-          "mouthTip_en": "Alveolar fricative into 'e'.",
-          "example": {
-            "word": "セーター",
-            "reading": "seetaa",
-            "meaning_vi": "Áo len",
-            "meaning_en": "Sweater"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Sa",
-          "group_en": "S-Line",
-          "char": "ソ",
-          "romaji": "so",
-          "ipa": "[so̞]",
-          "mouthTip_vi": "Phát âm giống そ. Nét bút từ trên xuống.",
-          "mouthTip_en": "Top-down stroke, smooth sound.",
-          "example": {
-            "word": "ソファー",
-            "reading": "sofaa",
-            "meaning_vi": "Ghế Sofa",
-            "meaning_en": "Sofa"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "タ",
-          "romaji": "ta",
-          "ipa": "[ta]",
-          "mouthTip_vi": "Phát âm giống た.",
-          "mouthTip_en": "Light burst 'ta'.",
-          "example": {
-            "word": "タクシー",
-            "reading": "takushii",
-            "meaning_vi": "Xe Taxi",
-            "meaning_en": "Taxi"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "チ",
-          "romaji": "chi",
-          "ipa": "[t͡ɕi]",
-          "mouthTip_vi": "Phát âm giống ち.",
-          "mouthTip_en": "Alveolo-palatal 'chi'.",
-          "example": {
-            "word": "チーズ",
-            "reading": "chiizu",
-            "meaning_vi": "Phô mai",
-            "meaning_en": "Cheese"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "ツ",
-          "romaji": "tsu",
-          "ipa": "[t͡sɨᵝ]",
-          "mouthTip_vi": "Phát âm giống つ. Viết từ trên xuống dưới.",
-          "mouthTip_en": "Affricate 'tsu'. Strokes descend downward.",
-          "example": {
-            "word": "ツアー",
-            "reading": "tsuaa",
-            "meaning_vi": "Chuyến du lịch",
-            "meaning_en": "Tour"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "テ",
-          "romaji": "te",
-          "ipa": "[te̞]",
-          "mouthTip_vi": "Phát âm giống て.",
-          "mouthTip_en": "Crisp 'te'.",
-          "example": {
-            "word": "テスト",
-            "reading": "tesuto",
-            "meaning_vi": "Bài kiểm tra",
-            "meaning_en": "Test"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ta",
-          "group_en": "T-Line",
-          "char": "ト",
-          "romaji": "to",
-          "ipa": "[to̞]",
-          "mouthTip_vi": "Phát âm giống と.",
-          "mouthTip_en": "Clean dental stop 'to'.",
-          "example": {
-            "word": "トマト",
-            "reading": "tomato",
-            "meaning_vi": "Cà chua",
-            "meaning_en": "Tomato"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "ナ",
-          "romaji": "na",
-          "ipa": "[na]",
-          "mouthTip_vi": "Phát âm giống な.",
-          "mouthTip_en": "Nasal 'na'.",
-          "example": {
-            "word": "ナイフ",
-            "reading": "naifu",
-            "meaning_vi": "Con dao",
-            "meaning_en": "Knife"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "ニ",
-          "romaji": "ni",
-          "ipa": "[ɲi]",
-          "mouthTip_vi": "Phát âm giống に. Hai nét ngang đơn giản.",
-          "mouthTip_en": "Palatalized 'ni'.",
-          "example": {
-            "word": "ニュース",
-            "reading": "nyuusu",
-            "meaning_vi": "Tin tức",
-            "meaning_en": "News"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "ヌ",
-          "romaji": "nu",
-          "ipa": "[nɯᵝ]",
-          "mouthTip_vi": "Phát âm giống ぬ.",
-          "mouthTip_en": "Nasal 'nu'.",
-          "example": {
-            "word": "ヌードル",
-            "reading": "nuudoru",
-            "meaning_vi": "Mì sợi",
-            "meaning_en": "Noodles"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "ネ",
-          "romaji": "ne",
-          "ipa": "[ne̞]",
-          "mouthTip_vi": "Phát âm giống ね.",
-          "mouthTip_en": "Smooth 'ne'.",
-          "example": {
-            "word": "ネクタイ",
-            "reading": "nekutai",
-            "meaning_vi": "Cà vạt",
-            "meaning_en": "Necktie"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Na",
-          "group_en": "N-Line",
-          "char": "ノ",
-          "romaji": "no",
-          "ipa": "[no̞]",
-          "mouthTip_vi": "Phát âm giống の. Một nét phẩy cong đơn.",
-          "mouthTip_en": "Single diagonal stroke 'no'.",
-          "example": {
-            "word": "ノート",
-            "reading": "nooto",
-            "meaning_vi": "Vở ghi / Laptop",
-            "meaning_en": "Notebook"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "ハ",
-          "romaji": "ha",
-          "ipa": "[ha]",
-          "mouthTip_vi": "Phát âm giống は.",
-          "mouthTip_en": "Gentle 'ha'.",
-          "example": {
-            "word": "ハンバーガー",
-            "reading": "hanbaagaa",
-            "meaning_vi": "Bánh kẹp Hamburger",
-            "meaning_en": "Hamburger"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "ヒ",
-          "romaji": "hi",
-          "ipa": "[çi]",
-          "mouthTip_vi": "Phát âm giống ひ.",
-          "mouthTip_en": "Hissing palatal 'hi'.",
-          "example": {
-            "word": "ヒーター",
-            "reading": "hiitaa",
-            "meaning_vi": "Máy sưởi",
-            "meaning_en": "Heater"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "フ",
-          "romaji": "fu",
-          "ipa": "[ɸɯᵝ]",
-          "mouthTip_vi": "Phát âm giống ふ. Thổi hơi qua hai môi.",
-          "mouthTip_en": "Bilabial breath 'fu'.",
-          "example": {
-            "word": "フォーク",
-            "reading": "fooku",
-            "meaning_vi": "Cái nĩa / Dĩa",
-            "meaning_en": "Fork"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "ヘ",
-          "romaji": "he",
-          "ipa": "[he̞]",
-          "mouthTip_vi": "Phát âm giống へ.",
-          "mouthTip_en": "Glottal 'he'.",
-          "example": {
-            "word": "ヘルメット",
-            "reading": "herumetto",
-            "meaning_vi": "Mũ bảo hiểm",
-            "meaning_en": "Helmet"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ha",
-          "group_en": "H-Line",
-          "char": "ホ",
-          "romaji": "ho",
-          "ipa": "[ho̞]",
-          "mouthTip_vi": "Phát âm giống ほ.",
-          "mouthTip_en": "Rounded 'ho'.",
-          "example": {
-            "word": "ホテル",
-            "reading": "hoteru",
-            "meaning_vi": "Khách sạn",
-            "meaning_en": "Hotel"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "マ",
-          "romaji": "ma",
-          "ipa": "[ma]",
-          "mouthTip_vi": "Phát âm giống ま.",
-          "mouthTip_en": "Lips closed 'ma'.",
-          "example": {
-            "word": "マスク",
-            "reading": "masuku",
-            "meaning_vi": "Khẩu trang",
-            "meaning_en": "Mask"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "ミ",
-          "romaji": "mi",
-          "ipa": "[mʲi]",
-          "mouthTip_vi": "Phát âm giống み. Ba nét chéo song song.",
-          "mouthTip_en": "Crisp 'mi'.",
-          "example": {
-            "word": "ミルク",
-            "reading": "miruku",
-            "meaning_vi": "Sữa tươi",
-            "meaning_en": "Milk"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "ム",
-          "romaji": "mu",
-          "ipa": "[mɯᵝ]",
-          "mouthTip_vi": "Phát âm giống む.",
-          "mouthTip_en": "Compressed 'mu'.",
-          "example": {
-            "word": "ムービー",
-            "reading": "muubii",
-            "meaning_vi": "Bộ phim",
-            "meaning_en": "Movie"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "メ",
-          "romaji": "me",
-          "ipa": "[me̞]",
-          "mouthTip_vi": "Phát âm giống め.",
-          "mouthTip_en": "Crisp 'me'.",
-          "example": {
-            "word": "メニュー",
-            "reading": "menyuu",
-            "meaning_vi": "Thực đơn Menu",
-            "meaning_en": "Menu"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ma",
-          "group_en": "M-Line",
-          "char": "モ",
-          "romaji": "mo",
-          "ipa": "[mo̞]",
-          "mouthTip_vi": "Phát âm giống も.",
-          "mouthTip_en": "Smooth 'mo'.",
-          "example": {
-            "word": "モデル",
-            "reading": "moderu",
-            "meaning_vi": "Người mẫu",
-            "meaning_en": "Model"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ya",
-          "group_en": "Y-Line",
-          "char": "ヤ",
-          "romaji": "ya",
-          "ipa": "[ja]",
-          "mouthTip_vi": "Phát âm giống や.",
-          "mouthTip_en": "Palatal glide 'ya'.",
-          "example": {
-            "word": "ヤード",
-            "reading": "yaado",
-            "meaning_vi": "Sân / Đơn vị Yard",
-            "meaning_en": "Yard"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ya",
-          "group_en": "Y-Line",
-          "char": "ユ",
-          "romaji": "yu",
-          "ipa": "[jɯᵝ]",
-          "mouthTip_vi": "Phát âm giống ゆ.",
-          "mouthTip_en": "Palatal glide 'yu'.",
-          "example": {
-            "word": "ユニフォーム",
-            "reading": "yunifoomu",
-            "meaning_vi": "Đồng phục",
-            "meaning_en": "Uniform"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ya",
-          "group_en": "Y-Line",
-          "char": "ヨ",
-          "romaji": "yo",
-          "ipa": "[jo̞]",
-          "mouthTip_vi": "Phát âm giống よ.",
-          "mouthTip_en": "Palatal glide 'yo'.",
-          "example": {
-            "word": "ヨーグルト",
-            "reading": "yooguruto",
-            "meaning_vi": "Sữa chua Yogurt",
-            "meaning_en": "Yogurt"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "ラ",
-          "romaji": "ra",
-          "ipa": "[ɾa]",
-          "mouthTip_vi": "Phát âm giống ら. Đầu lưỡi gõ nhanh.",
-          "mouthTip_en": "Alveolar tap 'ra'.",
-          "example": {
-            "word": "ラーメン",
-            "reading": "raamen",
-            "meaning_vi": "Mì Ramen",
-            "meaning_en": "Ramen"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "リ",
-          "romaji": "ri",
-          "ipa": "[ɾʲi]",
-          "mouthTip_vi": "Phát âm giống り.",
-          "mouthTip_en": "Crisp 'ri'.",
-          "example": {
-            "word": "リモコン",
-            "reading": "rimokon",
-            "meaning_vi": "Điều khiển từ xa",
-            "meaning_en": "Remote control"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "ル",
-          "romaji": "ru",
-          "ipa": "[ɾɯᵝ]",
-          "mouthTip_vi": "Phát âm giống る.",
-          "mouthTip_en": "Quick tap 'ru'.",
-          "example": {
-            "word": "ルール",
-            "reading": "ruuru",
-            "meaning_vi": "Luật lệ / Quy tắc",
-            "meaning_en": "Rule"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "レ",
-          "romaji": "re",
-          "ipa": "[ɾe̞]",
-          "mouthTip_vi": "Phát âm giống れ.",
-          "mouthTip_en": "Clean tap 're'.",
-          "example": {
-            "word": "レストラン",
-            "reading": "resutoran",
-            "meaning_vi": "Nhà hàng",
-            "meaning_en": "Restaurant"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Ra",
-          "group_en": "R-Line",
-          "char": "ロ",
-          "romaji": "ro",
-          "ipa": "[ɾo̞]",
-          "mouthTip_vi": "Phát âm giống ろ. Hình ô vuông gọn.",
-          "mouthTip_en": "Square shape 'ro'.",
-          "example": {
-            "word": "ロボット",
-            "reading": "robotto",
-            "meaning_vi": "Người máy Robot",
-            "meaning_en": "Robot"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Wa & Âm mũi",
-          "group_en": "W-Line & Nasal",
-          "char": "ワ",
-          "romaji": "wa",
-          "ipa": "[ɰa]",
-          "mouthTip_vi": "Phát âm giống わ.",
-          "mouthTip_en": "Velar glide 'wa'.",
-          "example": {
-            "word": "ワイン",
-            "reading": "wain",
-            "meaning_vi": "Rượu vang",
-            "meaning_en": "Wine"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Wa & Âm mũi",
-          "group_en": "W-Line & Nasal",
-          "char": "ヲ",
-          "romaji": "wo / o",
-          "ipa": "[o̞]",
-          "mouthTip_vi": "Rất hiếm khi dùng trong Katakana hiện đại, hầu hết dùng phiên âm đặc biệt.",
-          "mouthTip_en": "Rarely used in modern Katakana.",
-          "example": {
-            "word": "ヲタク",
-            "reading": "wotaku",
-            "meaning_vi": "Người mê cuồng truyện/game",
-            "meaning_en": "Otaku"
-          }
-        },
-        {
-          "category": "katakana",
-          "group_vi": "Hàng Wa & Âm mũi",
-          "group_en": "W-Line & Nasal",
-          "char": "ン",
-          "romaji": "n",
-          "ipa": "[ɴ/n/m]",
-          "mouthTip_vi": "Phát âm giống ん. Nét bút hất từ dưới lên (khác ソ viết từ trên xuống).",
-          "mouthTip_en": "Upward stroke nasal 'n' (contrasts with top-down ソ).",
-          "example": {
-            "word": "パン",
-            "reading": "pan",
-            "meaning_vi": "Bánh mì",
-            "meaning_en": "Bread"
-          }
-        }
-      ]
-    },
+    "alphabet": [
+      {
+        "id": "hiragana",
+        "labelVi": "Hiragana (Cơ bản)",
+        "labelEn": "Hiragana (Basic)",
+        "descriptionVi": "Trọn bộ 46 chữ cái Hiragana cơ bản tạo nên nền tảng ngữ âm tiếng Nhật.",
+        "descriptionEn": "Full 46 foundational Hiragana characters forming the phonetic core of Japanese.",
+        "items": [
+          {
+            "char": "あ",
+            "romaji": "a",
+            "ipa": "a",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Mở miệng vừa phải, lưỡi thả lỏng tự nhiên. Âm 'a' ngắn và dứt khoát, không tròn môi.",
+            "mouthTipEn": "Open mouth naturally, tongue resting relaxed and flat. Keep vowel short and crisp without rounding lips.",
+            "mouthTip_vi": "Mở miệng vừa phải, lưỡi thả lỏng tự nhiên. Âm 'a' ngắn và dứt khoát, không tròn môi.",
+            "mouthTip_en": "Open mouth naturally, tongue resting relaxed and flat. Keep vowel short and crisp without rounding lips.",
+            "meaningVi": "Chữ Hiragana: あ (a)",
+            "meaningEn": "Hiragana character: あ (a)",
+            "meaning_vi": "Chữ Hiragana: あ (a)",
+            "meaning_en": "Hiragana character: あ (a)",
+            "speechText": "あ",
+            "examples": [
+              {
+                "word": "雨 (あめ)",
+                "reading": "ame",
+                "vi": "Cơn mưa",
+                "en": "Rain",
+                "meaning_vi": "Cơn mưa",
+                "meaning_en": "Rain"
+              }
+            ],
+            "example": {
+              "word": "雨 (あめ)",
+              "reading": "ame",
+              "vi": "Cơn mưa",
+              "en": "Rain",
+              "meaning_vi": "Cơn mưa",
+              "meaning_en": "Rain"
+            }
+          },
+          {
+            "char": "い",
+            "romaji": "i",
+            "ipa": "i",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Hai khóe miệng hơi kéo nhẹ sang hai bên như đang cười mỉm. Lưỡi nâng cao gần vòm họng trước.",
+            "mouthTipEn": "Spread mouth corners gently into a smile. High tongue close to the hard palate.",
+            "mouthTip_vi": "Hai khóe miệng hơi kéo nhẹ sang hai bên như đang cười mỉm. Lưỡi nâng cao gần vòm họng trước.",
+            "mouthTip_en": "Spread mouth corners gently into a smile. High tongue close to the hard palate.",
+            "meaningVi": "Chữ Hiragana: い (i)",
+            "meaningEn": "Hiragana character: い (i)",
+            "meaning_vi": "Chữ Hiragana: い (i)",
+            "meaning_en": "Hiragana character: い (i)",
+            "speechText": "い",
+            "examples": [
+              {
+                "word": "犬 (いぬ)",
+                "reading": "inu",
+                "vi": "Con chó",
+                "en": "Dog",
+                "meaning_vi": "Con chó",
+                "meaning_en": "Dog"
+              }
+            ],
+            "example": {
+              "word": "犬 (いぬ)",
+              "reading": "inu",
+              "vi": "Con chó",
+              "en": "Dog",
+              "meaning_vi": "Con chó",
+              "meaning_en": "Dog"
+            }
+          },
+          {
+            "char": "う",
+            "romaji": "u",
+            "ipa": "ɯᵝ",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Môi dẹt ngang tự nhiên, KHÔNG chu tròn môi như âm 'u' tiếng Việt hay tiếng Anh. Lưỡi hơi lùi về sau.",
+            "mouthTipEn": "Lips are compressed horizontally, NOT protruded or rounded like English 'oo'.",
+            "mouthTip_vi": "Môi dẹt ngang tự nhiên, KHÔNG chu tròn môi như âm 'u' tiếng Việt hay tiếng Anh. Lưỡi hơi lùi về sau.",
+            "mouthTip_en": "Lips are compressed horizontally, NOT protruded or rounded like English 'oo'.",
+            "meaningVi": "Chữ Hiragana: う (u)",
+            "meaningEn": "Hiragana character: う (u)",
+            "meaning_vi": "Chữ Hiragana: う (u)",
+            "meaning_en": "Hiragana character: う (u)",
+            "speechText": "う",
+            "examples": [
+              {
+                "word": "海 (うみ)",
+                "reading": "umi",
+                "vi": "Biển cả",
+                "en": "Ocean",
+                "meaning_vi": "Biển cả",
+                "meaning_en": "Ocean"
+              }
+            ],
+            "example": {
+              "word": "海 (うみ)",
+              "reading": "umi",
+              "vi": "Biển cả",
+              "en": "Ocean",
+              "meaning_vi": "Biển cả",
+              "meaning_en": "Ocean"
+            }
+          },
+          {
+            "char": "え",
+            "romaji": "e",
+            "ipa": "e̞",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Miệng mở vừa phải, lưng lưỡi hơi cong ở giữa. Phát âm 'ê' ngắn, không kéo dài hay lướt âm.",
+            "mouthTipEn": "Mid-open mouth, tongue slightly arched. Distinct from English 'ay'; no diphthong glide.",
+            "mouthTip_vi": "Miệng mở vừa phải, lưng lưỡi hơi cong ở giữa. Phát âm 'ê' ngắn, không kéo dài hay lướt âm.",
+            "mouthTip_en": "Mid-open mouth, tongue slightly arched. Distinct from English 'ay'; no diphthong glide.",
+            "meaningVi": "Chữ Hiragana: え (e)",
+            "meaningEn": "Hiragana character: え (e)",
+            "meaning_vi": "Chữ Hiragana: え (e)",
+            "meaning_en": "Hiragana character: え (e)",
+            "speechText": "え",
+            "examples": [
+              {
+                "word": "駅 (えき)",
+                "reading": "eki",
+                "vi": "Nhà ga",
+                "en": "Train station",
+                "meaning_vi": "Nhà ga",
+                "meaning_en": "Train station"
+              }
+            ],
+            "example": {
+              "word": "駅 (えき)",
+              "reading": "eki",
+              "vi": "Nhà ga",
+              "en": "Train station",
+              "meaning_vi": "Nhà ga",
+              "meaning_en": "Train station"
+            }
+          },
+          {
+            "char": "お",
+            "romaji": "o",
+            "ipa": "o̞",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Môi hơi tròn nhẹ nhưng không nhô ra phía trước. Âm 'ô' thuần khiết, gọn gàng.",
+            "mouthTipEn": "Slightly round lips without protruding. Pure vowel sound, short and unglided.",
+            "mouthTip_vi": "Môi hơi tròn nhẹ nhưng không nhô ra phía trước. Âm 'ô' thuần khiết, gọn gàng.",
+            "mouthTip_en": "Slightly round lips without protruding. Pure vowel sound, short and unglided.",
+            "meaningVi": "Chữ Hiragana: お (o)",
+            "meaningEn": "Hiragana character: お (o)",
+            "meaning_vi": "Chữ Hiragana: お (o)",
+            "meaning_en": "Hiragana character: お (o)",
+            "speechText": "お",
+            "examples": [
+              {
+                "word": "お茶 (おちゃ)",
+                "reading": "ocha",
+                "vi": "Trà xanh",
+                "en": "Green tea",
+                "meaning_vi": "Trà xanh",
+                "meaning_en": "Green tea"
+              }
+            ],
+            "example": {
+              "word": "お茶 (おちゃ)",
+              "reading": "ocha",
+              "vi": "Trà xanh",
+              "en": "Green tea",
+              "meaning_vi": "Trà xanh",
+              "meaning_en": "Green tea"
+            }
+          },
+          {
+            "char": "か",
+            "romaji": "ka",
+            "ipa": "ka",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Gốc lưỡi chạm vào ngạc mềm rồi bật nhẹ ra cùng âm 'a'. Độ bật hơi nhẹ hơn tiếng Anh.",
+            "mouthTipEn": "Back of tongue taps soft palate. Less aspiration than English 'car'.",
+            "mouthTip_vi": "Gốc lưỡi chạm vào ngạc mềm rồi bật nhẹ ra cùng âm 'a'. Độ bật hơi nhẹ hơn tiếng Anh.",
+            "mouthTip_en": "Back of tongue taps soft palate. Less aspiration than English 'car'.",
+            "meaningVi": "Chữ Hiragana: か (ka)",
+            "meaningEn": "Hiragana character: か (ka)",
+            "meaning_vi": "Chữ Hiragana: か (ka)",
+            "meaning_en": "Hiragana character: か (ka)",
+            "speechText": "か",
+            "examples": [
+              {
+                "word": "傘 (かさ)",
+                "reading": "kasa",
+                "vi": "Chiếc ô/dù",
+                "en": "Umbrella",
+                "meaning_vi": "Chiếc ô/dù",
+                "meaning_en": "Umbrella"
+              }
+            ],
+            "example": {
+              "word": "傘 (かさ)",
+              "reading": "kasa",
+              "vi": "Chiếc ô/dù",
+              "en": "Umbrella",
+              "meaning_vi": "Chiếc ô/dù",
+              "meaning_en": "Umbrella"
+            }
+          },
+          {
+            "char": "き",
+            "romaji": "ki",
+            "ipa": "kʲi",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Âm 'k' ngạc hóa: mặt lưỡi áp sát ngạc cứng sau đó phát âm 'i'.",
+            "mouthTipEn": "Palatalized 'k'. Tongue blade presses against hard palate followed by tight 'i'.",
+            "mouthTip_vi": "Âm 'k' ngạc hóa: mặt lưỡi áp sát ngạc cứng sau đó phát âm 'i'.",
+            "mouthTip_en": "Palatalized 'k'. Tongue blade presses against hard palate followed by tight 'i'.",
+            "meaningVi": "Chữ Hiragana: き (ki)",
+            "meaningEn": "Hiragana character: き (ki)",
+            "meaning_vi": "Chữ Hiragana: き (ki)",
+            "meaning_en": "Hiragana character: き (ki)",
+            "speechText": "き",
+            "examples": [
+              {
+                "word": "木 (き)",
+                "reading": "ki",
+                "vi": "Cây cối",
+                "en": "Tree",
+                "meaning_vi": "Cây cối",
+                "meaning_en": "Tree"
+              }
+            ],
+            "example": {
+              "word": "木 (き)",
+              "reading": "ki",
+              "vi": "Cây cối",
+              "en": "Tree",
+              "meaning_vi": "Cây cối",
+              "meaning_en": "Tree"
+            }
+          },
+          {
+            "char": "く",
+            "romaji": "ku",
+            "ipa": "kɯᵝ",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Bật âm 'k' từ ngạc mềm kết hợp môi dẹt không chu.",
+            "mouthTipEn": "Soft palate contact with compressed, unrounded lips.",
+            "mouthTip_vi": "Bật âm 'k' từ ngạc mềm kết hợp môi dẹt không chu.",
+            "mouthTip_en": "Soft palate contact with compressed, unrounded lips.",
+            "meaningVi": "Chữ Hiragana: く (ku)",
+            "meaningEn": "Hiragana character: く (ku)",
+            "meaning_vi": "Chữ Hiragana: く (ku)",
+            "meaning_en": "Hiragana character: く (ku)",
+            "speechText": "く",
+            "examples": [
+              {
+                "word": "車 (くるま)",
+                "reading": "kuruma",
+                "vi": "Ô tô / Xe hơi",
+                "en": "Car",
+                "meaning_vi": "Ô tô / Xe hơi",
+                "meaning_en": "Car"
+              }
+            ],
+            "example": {
+              "word": "車 (くるま)",
+              "reading": "kuruma",
+              "vi": "Ô tô / Xe hơi",
+              "en": "Car",
+              "meaning_vi": "Ô tô / Xe hơi",
+              "meaning_en": "Car"
+            }
+          },
+          {
+            "char": "け",
+            "romaji": "ke",
+            "ipa": "ke̞",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Bật âm 'k' dứt khoát chuyển sang nguyên âm 'e'.",
+            "mouthTipEn": "Crisp 'k' release into clean mid-vowel 'e'.",
+            "mouthTip_vi": "Bật âm 'k' dứt khoát chuyển sang nguyên âm 'e'.",
+            "mouthTip_en": "Crisp 'k' release into clean mid-vowel 'e'.",
+            "meaningVi": "Chữ Hiragana: け (ke)",
+            "meaningEn": "Hiragana character: け (ke)",
+            "meaning_vi": "Chữ Hiragana: け (ke)",
+            "meaning_en": "Hiragana character: け (ke)",
+            "speechText": "け",
+            "examples": [
+              {
+                "word": "今朝 (けさ)",
+                "reading": "kesa",
+                "vi": "Sáng nay",
+                "en": "This morning",
+                "meaning_vi": "Sáng nay",
+                "meaning_en": "This morning"
+              }
+            ],
+            "example": {
+              "word": "今朝 (けさ)",
+              "reading": "kesa",
+              "vi": "Sáng nay",
+              "en": "This morning",
+              "meaning_vi": "Sáng nay",
+              "meaning_en": "This morning"
+            }
+          },
+          {
+            "char": "こ",
+            "romaji": "ko",
+            "ipa": "ko̞",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Bật âm 'k' nhẹ nhàng rồi tròn miệng phát âm 'o'.",
+            "mouthTipEn": "Light velar stop releasing into pure 'o'.",
+            "mouthTip_vi": "Bật âm 'k' nhẹ nhàng rồi tròn miệng phát âm 'o'.",
+            "mouthTip_en": "Light velar stop releasing into pure 'o'.",
+            "meaningVi": "Chữ Hiragana: こ (ko)",
+            "meaningEn": "Hiragana character: こ (ko)",
+            "meaning_vi": "Chữ Hiragana: こ (ko)",
+            "meaning_en": "Hiragana character: こ (ko)",
+            "speechText": "こ",
+            "examples": [
+              {
+                "word": "声 (こえ)",
+                "reading": "koe",
+                "vi": "Giọng nói",
+                "en": "Voice",
+                "meaning_vi": "Giọng nói",
+                "meaning_en": "Voice"
+              }
+            ],
+            "example": {
+              "word": "声 (こえ)",
+              "reading": "koe",
+              "vi": "Giọng nói",
+              "en": "Voice",
+              "meaning_vi": "Giọng nói",
+              "meaning_en": "Voice"
+            }
+          },
+          {
+            "char": "さ",
+            "romaji": "sa",
+            "ipa": "sa",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Đầu lưỡi gần lợi trên, luồng hơi xát nhẹ qua kẽ răng.",
+            "mouthTipEn": "Tongue tip near alveolar ridge, air hisses gently through teeth.",
+            "mouthTip_vi": "Đầu lưỡi gần lợi trên, luồng hơi xát nhẹ qua kẽ răng.",
+            "mouthTip_en": "Tongue tip near alveolar ridge, air hisses gently through teeth.",
+            "meaningVi": "Chữ Hiragana: さ (sa)",
+            "meaningEn": "Hiragana character: さ (sa)",
+            "meaning_vi": "Chữ Hiragana: さ (sa)",
+            "meaning_en": "Hiragana character: さ (sa)",
+            "speechText": "さ",
+            "examples": [
+              {
+                "word": "桜 (さくら)",
+                "reading": "sakura",
+                "vi": "Hoa anh đào",
+                "en": "Cherry blossom",
+                "meaning_vi": "Hoa anh đào",
+                "meaning_en": "Cherry blossom"
+              }
+            ],
+            "example": {
+              "word": "桜 (さくら)",
+              "reading": "sakura",
+              "vi": "Hoa anh đào",
+              "en": "Cherry blossom",
+              "meaning_vi": "Hoa anh đào",
+              "meaning_en": "Cherry blossom"
+            }
+          },
+          {
+            "char": "し",
+            "romaji": "shi",
+            "ipa": "ɕi",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Âm xát chân răng ngạc: mặt lưỡi nâng phẳng áp sát ngạc cứng, mềm hơn âm 'sh' tiếng Anh.",
+            "mouthTipEn": "Alveolo-palatal fricative! Softer than English 'sh', tongue blade raised flat.",
+            "mouthTip_vi": "Âm xát chân răng ngạc: mặt lưỡi nâng phẳng áp sát ngạc cứng, mềm hơn âm 'sh' tiếng Anh.",
+            "mouthTip_en": "Alveolo-palatal fricative! Softer than English 'sh', tongue blade raised flat.",
+            "meaningVi": "Chữ Hiragana: し (shi)",
+            "meaningEn": "Hiragana character: し (shi)",
+            "meaning_vi": "Chữ Hiragana: し (shi)",
+            "meaning_en": "Hiragana character: し (shi)",
+            "speechText": "し",
+            "examples": [
+              {
+                "word": "塩 (しお)",
+                "reading": "shio",
+                "vi": "Muối ăn",
+                "en": "Salt",
+                "meaning_vi": "Muối ăn",
+                "meaning_en": "Salt"
+              }
+            ],
+            "example": {
+              "word": "塩 (しお)",
+              "reading": "shio",
+              "vi": "Muối ăn",
+              "en": "Salt",
+              "meaning_vi": "Muối ăn",
+              "meaning_en": "Salt"
+            }
+          },
+          {
+            "char": "す",
+            "romaji": "su",
+            "ipa": "sɨᵝ",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Phát âm 's' kết hợp nguyên âm dẹt 'u'. Ở cuối câu như 'desu', âm 'u' thường vô thanh hóa.",
+            "mouthTipEn": "Light unrounded vowel. In suffixes like 'desu', often devoiced / whispered.",
+            "mouthTip_vi": "Phát âm 's' kết hợp nguyên âm dẹt 'u'. Ở cuối câu như 'desu', âm 'u' thường vô thanh hóa.",
+            "mouthTip_en": "Light unrounded vowel. In suffixes like 'desu', often devoiced / whispered.",
+            "meaningVi": "Chữ Hiragana: す (su)",
+            "meaningEn": "Hiragana character: す (su)",
+            "meaning_vi": "Chữ Hiragana: す (su)",
+            "meaning_en": "Hiragana character: す (su)",
+            "speechText": "す",
+            "examples": [
+              {
+                "word": "寿司 (すし)",
+                "reading": "sushi",
+                "vi": "Món Sushi",
+                "en": "Sushi",
+                "meaning_vi": "Món Sushi",
+                "meaning_en": "Sushi"
+              }
+            ],
+            "example": {
+              "word": "寿司 (すし)",
+              "reading": "sushi",
+              "vi": "Món Sushi",
+              "en": "Sushi",
+              "meaning_vi": "Món Sushi",
+              "meaning_en": "Sushi"
+            }
+          },
+          {
+            "char": "せ",
+            "romaji": "se",
+            "ipa": "se̞",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Luồng hơi xát nhẹ qua răng kết hợp mở miệng phát âm 'e'.",
+            "mouthTipEn": "Clear alveolar fricative into open mid vowel 'e'.",
+            "mouthTip_vi": "Luồng hơi xát nhẹ qua răng kết hợp mở miệng phát âm 'e'.",
+            "mouthTip_en": "Clear alveolar fricative into open mid vowel 'e'.",
+            "meaningVi": "Chữ Hiragana: せ (se)",
+            "meaningEn": "Hiragana character: せ (se)",
+            "meaning_vi": "Chữ Hiragana: せ (se)",
+            "meaning_en": "Hiragana character: せ (se)",
+            "speechText": "せ",
+            "examples": [
+              {
+                "word": "世界 (せかい)",
+                "reading": "sekai",
+                "vi": "Thế giới",
+                "en": "World",
+                "meaning_vi": "Thế giới",
+                "meaning_en": "World"
+              }
+            ],
+            "example": {
+              "word": "世界 (せかい)",
+              "reading": "sekai",
+              "vi": "Thế giới",
+              "en": "World",
+              "meaning_vi": "Thế giới",
+              "meaning_en": "World"
+            }
+          },
+          {
+            "char": "そ",
+            "romaji": "so",
+            "ipa": "so̞",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Âm 's' mượt mà chuyển nhanh sang 'o'.",
+            "mouthTipEn": "Smooth 's' transition into rounded 'o'.",
+            "mouthTip_vi": "Âm 's' mượt mà chuyển nhanh sang 'o'.",
+            "mouthTip_en": "Smooth 's' transition into rounded 'o'.",
+            "meaningVi": "Chữ Hiragana: そ (so)",
+            "meaningEn": "Hiragana character: そ (so)",
+            "meaning_vi": "Chữ Hiragana: そ (so)",
+            "meaning_en": "Hiragana character: そ (so)",
+            "speechText": "そ",
+            "examples": [
+              {
+                "word": "空 (そら)",
+                "reading": "sora",
+                "vi": "Bầu trời",
+                "en": "Sky",
+                "meaning_vi": "Bầu trời",
+                "meaning_en": "Sky"
+              }
+            ],
+            "example": {
+              "word": "空 (そら)",
+              "reading": "sora",
+              "vi": "Bầu trời",
+              "en": "Sky",
+              "meaning_vi": "Bầu trời",
+              "meaning_en": "Sky"
+            }
+          },
+          {
+            "char": "た",
+            "romaji": "ta",
+            "ipa": "ta",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Đầu lưỡi chạm ngạc lợi trên rồi bật nhẹ ra âm 'a'.",
+            "mouthTipEn": "Tongue tip touches alveolar ridge with light release.",
+            "mouthTip_vi": "Đầu lưỡi chạm ngạc lợi trên rồi bật nhẹ ra âm 'a'.",
+            "mouthTip_en": "Tongue tip touches alveolar ridge with light release.",
+            "meaningVi": "Chữ Hiragana: た (ta)",
+            "meaningEn": "Hiragana character: た (ta)",
+            "meaning_vi": "Chữ Hiragana: た (ta)",
+            "meaning_en": "Hiragana character: た (ta)",
+            "speechText": "た",
+            "examples": [
+              {
+                "word": "太陽 (たいよう)",
+                "reading": "taiyou",
+                "vi": "Mặt trời",
+                "en": "Sun",
+                "meaning_vi": "Mặt trời",
+                "meaning_en": "Sun"
+              }
+            ],
+            "example": {
+              "word": "太陽 (たいよう)",
+              "reading": "taiyou",
+              "vi": "Mặt trời",
+              "en": "Sun",
+              "meaning_vi": "Mặt trời",
+              "meaning_en": "Sun"
+            }
+          },
+          {
+            "char": "ち",
+            "romaji": "chi",
+            "ipa": "t͡ɕi",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Âm tắc xát: mặt lưỡi chạm ngạc cứng rồi mở ra khe hẹp xát hơi. Gần như 'chi' nhẹ.",
+            "mouthTipEn": "Alveolo-palatal affricate. Softer than English 'cheep'.",
+            "mouthTip_vi": "Âm tắc xát: mặt lưỡi chạm ngạc cứng rồi mở ra khe hẹp xát hơi. Gần như 'chi' nhẹ.",
+            "mouthTip_en": "Alveolo-palatal affricate. Softer than English 'cheep'.",
+            "meaningVi": "Chữ Hiragana: ち (chi)",
+            "meaningEn": "Hiragana character: ち (chi)",
+            "meaning_vi": "Chữ Hiragana: ち (chi)",
+            "meaning_en": "Hiragana character: ち (chi)",
+            "speechText": "ち",
+            "examples": [
+              {
+                "word": "地下鉄 (ちかてつ)",
+                "reading": "chikatetsu",
+                "vi": "Tàu điện ngầm",
+                "en": "Subway",
+                "meaning_vi": "Tàu điện ngầm",
+                "meaning_en": "Subway"
+              }
+            ],
+            "example": {
+              "word": "地下鉄 (ちかてつ)",
+              "reading": "chikatetsu",
+              "vi": "Tàu điện ngầm",
+              "en": "Subway",
+              "meaning_vi": "Tàu điện ngầm",
+              "meaning_en": "Subway"
+            }
+          },
+          {
+            "char": "つ",
+            "romaji": "tsu",
+            "ipa": "t͡sɨᵝ",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Giống âm 'ts' trong tiếng Anh 'cats' nhưng kết hợp môi dẹt. Không đọc thành 'su' hay 'chu'.",
+            "mouthTipEn": "Like 'ts' in 'cats', followed by compressed unrounded 'u'.",
+            "mouthTip_vi": "Giống âm 'ts' trong tiếng Anh 'cats' nhưng kết hợp môi dẹt. Không đọc thành 'su' hay 'chu'.",
+            "mouthTip_en": "Like 'ts' in 'cats', followed by compressed unrounded 'u'.",
+            "meaningVi": "Chữ Hiragana: つ (tsu)",
+            "meaningEn": "Hiragana character: つ (tsu)",
+            "meaning_vi": "Chữ Hiragana: つ (tsu)",
+            "meaning_en": "Hiragana character: つ (tsu)",
+            "speechText": "つ",
+            "examples": [
+              {
+                "word": "月 (つき)",
+                "reading": "tsuki",
+                "vi": "Mặt trăng",
+                "en": "Moon",
+                "meaning_vi": "Mặt trăng",
+                "meaning_en": "Moon"
+              }
+            ],
+            "example": {
+              "word": "月 (つき)",
+              "reading": "tsuki",
+              "vi": "Mặt trăng",
+              "en": "Moon",
+              "meaning_vi": "Mặt trăng",
+              "meaning_en": "Moon"
+            }
+          },
+          {
+            "char": "て",
+            "romaji": "te",
+            "ipa": "te̞",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Gõ đầu lưỡi vào chân răng trên rồi nhả ra âm 'e'.",
+            "mouthTipEn": "Clean tap at the gum ridge into 'e'.",
+            "mouthTip_vi": "Gõ đầu lưỡi vào chân răng trên rồi nhả ra âm 'e'.",
+            "mouthTip_en": "Clean tap at the gum ridge into 'e'.",
+            "meaningVi": "Chữ Hiragana: て (te)",
+            "meaningEn": "Hiragana character: て (te)",
+            "meaning_vi": "Chữ Hiragana: て (te)",
+            "meaning_en": "Hiragana character: て (te)",
+            "speechText": "て",
+            "examples": [
+              {
+                "word": "手 (て)",
+                "reading": "te",
+                "vi": "Bàn tay",
+                "en": "Hand",
+                "meaning_vi": "Bàn tay",
+                "meaning_en": "Hand"
+              }
+            ],
+            "example": {
+              "word": "手 (て)",
+              "reading": "te",
+              "vi": "Bàn tay",
+              "en": "Hand",
+              "meaning_vi": "Bàn tay",
+              "meaning_en": "Hand"
+            }
+          },
+          {
+            "char": "と",
+            "romaji": "to",
+            "ipa": "to̞",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Đầu lưỡi chặn hơi nhẹ ở lợi trên rồi thoát ra âm 'o'.",
+            "mouthTipEn": "Light alveolar stop releasing into 'o'.",
+            "mouthTip_vi": "Đầu lưỡi chặn hơi nhẹ ở lợi trên rồi thoát ra âm 'o'.",
+            "mouthTip_en": "Light alveolar stop releasing into 'o'.",
+            "meaningVi": "Chữ Hiragana: と (to)",
+            "meaningEn": "Hiragana character: と (to)",
+            "meaning_vi": "Chữ Hiragana: と (to)",
+            "meaning_en": "Hiragana character: と (to)",
+            "speechText": "と",
+            "examples": [
+              {
+                "word": "友達 (ともだち)",
+                "reading": "tomodachi",
+                "vi": "Bạn bè",
+                "en": "Friend",
+                "meaning_vi": "Bạn bè",
+                "meaning_en": "Friend"
+              }
+            ],
+            "example": {
+              "word": "友達 (ともだち)",
+              "reading": "tomodachi",
+              "vi": "Bạn bè",
+              "en": "Friend",
+              "meaning_vi": "Bạn bè",
+              "meaning_en": "Friend"
+            }
+          },
+          {
+            "char": "な",
+            "romaji": "na",
+            "ipa": "na",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Đầu lưỡi áp vào lợi trên, hơi thoát qua khoang mũi rồi mở miệng.",
+            "mouthTipEn": "Tongue tip seals upper gum ridge, air escapes nasal cavity.",
+            "mouthTip_vi": "Đầu lưỡi áp vào lợi trên, hơi thoát qua khoang mũi rồi mở miệng.",
+            "mouthTip_en": "Tongue tip seals upper gum ridge, air escapes nasal cavity.",
+            "meaningVi": "Chữ Hiragana: な (na)",
+            "meaningEn": "Hiragana character: な (na)",
+            "meaning_vi": "Chữ Hiragana: な (na)",
+            "meaning_en": "Hiragana character: な (na)",
+            "speechText": "な",
+            "examples": [
+              {
+                "word": "夏 (なつ)",
+                "reading": "natsu",
+                "vi": "Mùa hè",
+                "en": "Summer",
+                "meaning_vi": "Mùa hè",
+                "meaning_en": "Summer"
+              }
+            ],
+            "example": {
+              "word": "夏 (なつ)",
+              "reading": "natsu",
+              "vi": "Mùa hè",
+              "en": "Summer",
+              "meaning_vi": "Mùa hè",
+              "meaning_en": "Summer"
+            }
+          },
+          {
+            "char": "に",
+            "romaji": "ni",
+            "ipa": "ɲi",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Âm mũi ngạc hóa: lưng lưỡi áp sát vòm ngạc cứng, âm thanh trong trẻo.",
+            "mouthTipEn": "Palatalized nasal. Flat tongue blade presses against palate.",
+            "mouthTip_vi": "Âm mũi ngạc hóa: lưng lưỡi áp sát vòm ngạc cứng, âm thanh trong trẻo.",
+            "mouthTip_en": "Palatalized nasal. Flat tongue blade presses against palate.",
+            "meaningVi": "Chữ Hiragana: に (ni)",
+            "meaningEn": "Hiragana character: に (ni)",
+            "meaning_vi": "Chữ Hiragana: に (ni)",
+            "meaning_en": "Hiragana character: に (ni)",
+            "speechText": "に",
+            "examples": [
+              {
+                "word": "肉 (にく)",
+                "reading": "niku",
+                "vi": "Thịt",
+                "en": "Meat",
+                "meaning_vi": "Thịt",
+                "meaning_en": "Meat"
+              }
+            ],
+            "example": {
+              "word": "肉 (にく)",
+              "reading": "niku",
+              "vi": "Thịt",
+              "en": "Meat",
+              "meaning_vi": "Thịt",
+              "meaning_en": "Meat"
+            }
+          },
+          {
+            "char": "ぬ",
+            "romaji": "nu",
+            "ipa": "nɯᵝ",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Âm mũi 'n' kết hợp nguyên âm dẹt 'u'.",
+            "mouthTipEn": "Alveolar nasal with unrounded lips.",
+            "mouthTip_vi": "Âm mũi 'n' kết hợp nguyên âm dẹt 'u'.",
+            "mouthTip_en": "Alveolar nasal with unrounded lips.",
+            "meaningVi": "Chữ Hiragana: ぬ (nu)",
+            "meaningEn": "Hiragana character: ぬ (nu)",
+            "meaning_vi": "Chữ Hiragana: ぬ (nu)",
+            "meaning_en": "Hiragana character: ぬ (nu)",
+            "speechText": "ぬ",
+            "examples": [
+              {
+                "word": "沼 (ぬま)",
+                "reading": "numa",
+                "vi": "Đầm lầy",
+                "en": "Swamp",
+                "meaning_vi": "Đầm lầy",
+                "meaning_en": "Swamp"
+              }
+            ],
+            "example": {
+              "word": "沼 (ぬま)",
+              "reading": "numa",
+              "vi": "Đầm lầy",
+              "en": "Swamp",
+              "meaning_vi": "Đầm lầy",
+              "meaning_en": "Swamp"
+            }
+          },
+          {
+            "char": "ね",
+            "romaji": "ne",
+            "ipa": "ne̞",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Phát âm 'n' mượt mà chuyển sang 'e'.",
+            "mouthTipEn": "Smooth nasal glide into 'e'.",
+            "mouthTip_vi": "Phát âm 'n' mượt mà chuyển sang 'e'.",
+            "mouthTip_en": "Smooth nasal glide into 'e'.",
+            "meaningVi": "Chữ Hiragana: ね (ne)",
+            "meaningEn": "Hiragana character: ね (ne)",
+            "meaning_vi": "Chữ Hiragana: ね (ne)",
+            "meaning_en": "Hiragana character: ね (ne)",
+            "speechText": "ね",
+            "examples": [
+              {
+                "word": "猫 (ねこ)",
+                "reading": "neko",
+                "vi": "Con mèo",
+                "en": "Cat",
+                "meaning_vi": "Con mèo",
+                "meaning_en": "Cat"
+              }
+            ],
+            "example": {
+              "word": "猫 (ねこ)",
+              "reading": "neko",
+              "vi": "Con mèo",
+              "en": "Cat",
+              "meaning_vi": "Con mèo",
+              "meaning_en": "Cat"
+            }
+          },
+          {
+            "char": "の",
+            "romaji": "no",
+            "ipa": "no̞",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Âm mũi 'n' tròn miệng phát ra 'o'.",
+            "mouthTipEn": "Nasal onset followed by mid-back 'o'.",
+            "mouthTip_vi": "Âm mũi 'n' tròn miệng phát ra 'o'.",
+            "mouthTip_en": "Nasal onset followed by mid-back 'o'.",
+            "meaningVi": "Chữ Hiragana: の (no)",
+            "meaningEn": "Hiragana character: の (no)",
+            "meaning_vi": "Chữ Hiragana: の (no)",
+            "meaning_en": "Hiragana character: の (no)",
+            "speechText": "の",
+            "examples": [
+              {
+                "word": "海苔 (のり)",
+                "reading": "nori",
+                "vi": "Rong biển",
+                "en": "Seaweed",
+                "meaning_vi": "Rong biển",
+                "meaning_en": "Seaweed"
+              }
+            ],
+            "example": {
+              "word": "海苔 (のり)",
+              "reading": "nori",
+              "vi": "Rong biển",
+              "en": "Seaweed",
+              "meaning_vi": "Rong biển",
+              "meaning_en": "Seaweed"
+            }
+          },
+          {
+            "char": "は",
+            "romaji": "ha",
+            "ipa": "ha",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Hơi thở nhẹ nhàng từ thanh quản không cản trở. Khi làm trợ từ đọc là 'wa'.",
+            "mouthTipEn": "Gentle glottal breath. Pronounced 'wa' when used as particle.",
+            "mouthTip_vi": "Hơi thở nhẹ nhàng từ thanh quản không cản trở. Khi làm trợ từ đọc là 'wa'.",
+            "mouthTip_en": "Gentle glottal breath. Pronounced 'wa' when used as particle.",
+            "meaningVi": "Chữ Hiragana: は (ha)",
+            "meaningEn": "Hiragana character: は (ha)",
+            "meaning_vi": "Chữ Hiragana: は (ha)",
+            "meaning_en": "Hiragana character: は (ha)",
+            "speechText": "は",
+            "examples": [
+              {
+                "word": "花 (はな)",
+                "reading": "hana",
+                "vi": "Bông hoa",
+                "en": "Flower",
+                "meaning_vi": "Bông hoa",
+                "meaning_en": "Flower"
+              }
+            ],
+            "example": {
+              "word": "花 (はな)",
+              "reading": "hana",
+              "vi": "Bông hoa",
+              "en": "Flower",
+              "meaning_vi": "Bông hoa",
+              "meaning_en": "Flower"
+            }
+          },
+          {
+            "char": "ひ",
+            "romaji": "hi",
+            "ipa": "çi",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Âm xát ngạc cứng: luồng hơi rít nhẹ giữa lưng lưỡi và vòm ngạc.",
+            "mouthTipEn": "Palatal fricative. Hissing air between arched tongue and palate.",
+            "mouthTip_vi": "Âm xát ngạc cứng: luồng hơi rít nhẹ giữa lưng lưỡi và vòm ngạc.",
+            "mouthTip_en": "Palatal fricative. Hissing air between arched tongue and palate.",
+            "meaningVi": "Chữ Hiragana: ひ (hi)",
+            "meaningEn": "Hiragana character: ひ (hi)",
+            "meaning_vi": "Chữ Hiragana: ひ (hi)",
+            "meaning_en": "Hiragana character: ひ (hi)",
+            "speechText": "ひ",
+            "examples": [
+              {
+                "word": "光 (ひかり)",
+                "reading": "hikari",
+                "vi": "Ánh sáng",
+                "en": "Light",
+                "meaning_vi": "Ánh sáng",
+                "meaning_en": "Light"
+              }
+            ],
+            "example": {
+              "word": "光 (ひかり)",
+              "reading": "hikari",
+              "vi": "Ánh sáng",
+              "en": "Light",
+              "meaning_vi": "Ánh sáng",
+              "meaning_en": "Light"
+            }
+          },
+          {
+            "char": "ふ",
+            "romaji": "fu",
+            "ipa": "ɸɯᵝ",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Âm xát hai môi: hai môi khép hờ rồi thổi nhẹ hơi ra, KHÔNG cắn răng vào môi dưới như 'f' tiếng Anh!",
+            "mouthTipEn": "Bilabial fricative! Blow gently between lips, teeth NEVER touch lip.",
+            "mouthTip_vi": "Âm xát hai môi: hai môi khép hờ rồi thổi nhẹ hơi ra, KHÔNG cắn răng vào môi dưới như 'f' tiếng Anh!",
+            "mouthTip_en": "Bilabial fricative! Blow gently between lips, teeth NEVER touch lip.",
+            "meaningVi": "Chữ Hiragana: ふ (fu)",
+            "meaningEn": "Hiragana character: ふ (fu)",
+            "meaning_vi": "Chữ Hiragana: ふ (fu)",
+            "meaning_en": "Hiragana character: ふ (fu)",
+            "speechText": "ふ",
+            "examples": [
+              {
+                "word": "富士山 (ふじさん)",
+                "reading": "fujisan",
+                "vi": "Núi Phú Sĩ",
+                "en": "Mt. Fuji",
+                "meaning_vi": "Núi Phú Sĩ",
+                "meaning_en": "Mt. Fuji"
+              }
+            ],
+            "example": {
+              "word": "富士山 (ふじさん)",
+              "reading": "fujisan",
+              "vi": "Núi Phú Sĩ",
+              "en": "Mt. Fuji",
+              "meaning_vi": "Núi Phú Sĩ",
+              "meaning_en": "Mt. Fuji"
+            }
+          },
+          {
+            "char": "へ",
+            "romaji": "he",
+            "ipa": "he̞",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Hơi thở thanh môn nhẹ nhàng đi vào 'e'. Làm trợ từ chỉ hướng đọc là 'e'.",
+            "mouthTipEn": "Soft glottal release. Pronounced 'e' as directional particle.",
+            "mouthTip_vi": "Hơi thở thanh môn nhẹ nhàng đi vào 'e'. Làm trợ từ chỉ hướng đọc là 'e'.",
+            "mouthTip_en": "Soft glottal release. Pronounced 'e' as directional particle.",
+            "meaningVi": "Chữ Hiragana: へ (he)",
+            "meaningEn": "Hiragana character: へ (he)",
+            "meaning_vi": "Chữ Hiragana: へ (he)",
+            "meaning_en": "Hiragana character: へ (he)",
+            "speechText": "へ",
+            "examples": [
+              {
+                "word": "部屋 (へや)",
+                "reading": "heya",
+                "vi": "Căn phòng",
+                "en": "Room",
+                "meaning_vi": "Căn phòng",
+                "meaning_en": "Room"
+              }
+            ],
+            "example": {
+              "word": "部屋 (へや)",
+              "reading": "heya",
+              "vi": "Căn phòng",
+              "en": "Room",
+              "meaning_vi": "Căn phòng",
+              "meaning_en": "Room"
+            }
+          },
+          {
+            "char": "ほ",
+            "romaji": "ho",
+            "ipa": "ho̞",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Thổi nhẹ hơi thanh môn vào 'o'.",
+            "mouthTipEn": "Gentle 'h' into rounded 'o'.",
+            "mouthTip_vi": "Thổi nhẹ hơi thanh môn vào 'o'.",
+            "mouthTip_en": "Gentle 'h' into rounded 'o'.",
+            "meaningVi": "Chữ Hiragana: ほ (ho)",
+            "meaningEn": "Hiragana character: ほ (ho)",
+            "meaning_vi": "Chữ Hiragana: ほ (ho)",
+            "meaning_en": "Hiragana character: ほ (ho)",
+            "speechText": "ほ",
+            "examples": [
+              {
+                "word": "星 (ほし)",
+                "reading": "hoshi",
+                "vi": "Ngôi sao",
+                "en": "Star",
+                "meaning_vi": "Ngôi sao",
+                "meaning_en": "Star"
+              }
+            ],
+            "example": {
+              "word": "星 (ほし)",
+              "reading": "hoshi",
+              "vi": "Ngôi sao",
+              "en": "Star",
+              "meaning_vi": "Ngôi sao",
+              "meaning_en": "Star"
+            }
+          },
+          {
+            "char": "ま",
+            "romaji": "ma",
+            "ipa": "ma",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Khép hai môi lại, rung thanh đới cho hơi thoát qua mũi rồi mở môi ra 'a'.",
+            "mouthTipEn": "Close lips, resonate through nose, release into 'a'.",
+            "mouthTip_vi": "Khép hai môi lại, rung thanh đới cho hơi thoát qua mũi rồi mở môi ra 'a'.",
+            "mouthTip_en": "Close lips, resonate through nose, release into 'a'.",
+            "meaningVi": "Chữ Hiragana: ま (ma)",
+            "meaningEn": "Hiragana character: ま (ma)",
+            "meaning_vi": "Chữ Hiragana: ま (ma)",
+            "meaning_en": "Hiragana character: ま (ma)",
+            "speechText": "ま",
+            "examples": [
+              {
+                "word": "町 (まち)",
+                "reading": "machi",
+                "vi": "Thị trấn / Khu phố",
+                "en": "Town",
+                "meaning_vi": "Thị trấn / Khu phố",
+                "meaning_en": "Town"
+              }
+            ],
+            "example": {
+              "word": "町 (まち)",
+              "reading": "machi",
+              "vi": "Thị trấn / Khu phố",
+              "en": "Town",
+              "meaning_vi": "Thị trấn / Khu phố",
+              "meaning_en": "Town"
+            }
+          },
+          {
+            "char": "み",
+            "romaji": "mi",
+            "ipa": "mʲi",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Âm 'm' ngạc hóa: môi khép nhẹ kết hợp khóe miệng kéo ngang sang 'i'.",
+            "mouthTipEn": "Palatalized 'm' transitioning to crisp 'i'.",
+            "mouthTip_vi": "Âm 'm' ngạc hóa: môi khép nhẹ kết hợp khóe miệng kéo ngang sang 'i'.",
+            "mouthTip_en": "Palatalized 'm' transitioning to crisp 'i'.",
+            "meaningVi": "Chữ Hiragana: み (mi)",
+            "meaningEn": "Hiragana character: み (mi)",
+            "meaning_vi": "Chữ Hiragana: み (mi)",
+            "meaning_en": "Hiragana character: み (mi)",
+            "speechText": "み",
+            "examples": [
+              {
+                "word": "道 (みち)",
+                "reading": "michi",
+                "vi": "Con đường",
+                "en": "Path / Road",
+                "meaning_vi": "Con đường",
+                "meaning_en": "Path / Road"
+              }
+            ],
+            "example": {
+              "word": "道 (みち)",
+              "reading": "michi",
+              "vi": "Con đường",
+              "en": "Path / Road",
+              "meaning_vi": "Con đường",
+              "meaning_en": "Path / Road"
+            }
+          },
+          {
+            "char": "む",
+            "romaji": "mu",
+            "ipa": "mɯᵝ",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Âm môi 'm' mở sang nguyên âm dẹt 'u'.",
+            "mouthTipEn": "Bilabial nasal into compressed 'u'.",
+            "mouthTip_vi": "Âm môi 'm' mở sang nguyên âm dẹt 'u'.",
+            "mouthTip_en": "Bilabial nasal into compressed 'u'.",
+            "meaningVi": "Chữ Hiragana: む (mu)",
+            "meaningEn": "Hiragana character: む (mu)",
+            "meaning_vi": "Chữ Hiragana: む (mu)",
+            "meaning_en": "Hiragana character: む (mu)",
+            "speechText": "む",
+            "examples": [
+              {
+                "word": "虫 (むし)",
+                "reading": "mushi",
+                "vi": "Côn trùng / Sâu bọ",
+                "en": "Insect",
+                "meaning_vi": "Côn trùng / Sâu bọ",
+                "meaning_en": "Insect"
+              }
+            ],
+            "example": {
+              "word": "虫 (むし)",
+              "reading": "mushi",
+              "vi": "Côn trùng / Sâu bọ",
+              "en": "Insect",
+              "meaning_vi": "Côn trùng / Sâu bọ",
+              "meaning_en": "Insect"
+            }
+          },
+          {
+            "char": "め",
+            "romaji": "me",
+            "ipa": "me̞",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Nhả môi 'm' sang nguyên âm 'e'.",
+            "mouthTipEn": "Clean release from lips into 'e'.",
+            "mouthTip_vi": "Nhả môi 'm' sang nguyên âm 'e'.",
+            "mouthTip_en": "Clean release from lips into 'e'.",
+            "meaningVi": "Chữ Hiragana: め (me)",
+            "meaningEn": "Hiragana character: め (me)",
+            "meaning_vi": "Chữ Hiragana: め (me)",
+            "meaning_en": "Hiragana character: め (me)",
+            "speechText": "め",
+            "examples": [
+              {
+                "word": "目 (め)",
+                "reading": "me",
+                "vi": "Mắt",
+                "en": "Eye",
+                "meaning_vi": "Mắt",
+                "meaning_en": "Eye"
+              }
+            ],
+            "example": {
+              "word": "目 (め)",
+              "reading": "me",
+              "vi": "Mắt",
+              "en": "Eye",
+              "meaning_vi": "Mắt",
+              "meaning_en": "Eye"
+            }
+          },
+          {
+            "char": "も",
+            "romaji": "mo",
+            "ipa": "mo̞",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Nhả môi 'm' sang nguyên âm tròn 'o'.",
+            "mouthTipEn": "Smooth nasal release into rounded 'o'.",
+            "mouthTip_vi": "Nhả môi 'm' sang nguyên âm tròn 'o'.",
+            "mouthTip_en": "Smooth nasal release into rounded 'o'.",
+            "meaningVi": "Chữ Hiragana: も (mo)",
+            "meaningEn": "Hiragana character: も (mo)",
+            "meaning_vi": "Chữ Hiragana: も (mo)",
+            "meaning_en": "Hiragana character: も (mo)",
+            "speechText": "も",
+            "examples": [
+              {
+                "word": "森 (もり)",
+                "reading": "mori",
+                "vi": "Khu rừng",
+                "en": "Forest",
+                "meaning_vi": "Khu rừng",
+                "meaning_en": "Forest"
+              }
+            ],
+            "example": {
+              "word": "森 (もり)",
+              "reading": "mori",
+              "vi": "Khu rừng",
+              "en": "Forest",
+              "meaning_vi": "Khu rừng",
+              "meaning_en": "Forest"
+            }
+          },
+          {
+            "char": "や",
+            "romaji": "ya",
+            "ipa": "ja",
+            "groupVi": "Hàng Ya",
+            "groupEn": "Y-Line",
+            "group_vi": "Hàng Ya",
+            "group_en": "Y-Line",
+            "mouthTipVi": "Bán nguyên âm 'y': lướt nhanh từ vị trí âm 'i' sang 'a'.",
+            "mouthTipEn": "Palatal glide starting near 'i' and flowing into 'a'.",
+            "mouthTip_vi": "Bán nguyên âm 'y': lướt nhanh từ vị trí âm 'i' sang 'a'.",
+            "mouthTip_en": "Palatal glide starting near 'i' and flowing into 'a'.",
+            "meaningVi": "Chữ Hiragana: や (ya)",
+            "meaningEn": "Hiragana character: や (ya)",
+            "meaning_vi": "Chữ Hiragana: や (ya)",
+            "meaning_en": "Hiragana character: や (ya)",
+            "speechText": "や",
+            "examples": [
+              {
+                "word": "山 (やま)",
+                "reading": "yama",
+                "vi": "Ngọn núi",
+                "en": "Mountain",
+                "meaning_vi": "Ngọn núi",
+                "meaning_en": "Mountain"
+              }
+            ],
+            "example": {
+              "word": "山 (やま)",
+              "reading": "yama",
+              "vi": "Ngọn núi",
+              "en": "Mountain",
+              "meaning_vi": "Ngọn núi",
+              "meaning_en": "Mountain"
+            }
+          },
+          {
+            "char": "ゆ",
+            "romaji": "yu",
+            "ipa": "jɯᵝ",
+            "groupVi": "Hàng Ya",
+            "groupEn": "Y-Line",
+            "group_vi": "Hàng Ya",
+            "group_en": "Y-Line",
+            "mouthTipVi": "Lướt từ 'y' sang nguyên âm dẹt 'u'.",
+            "mouthTipEn": "Palatal glide into compressed unrounded 'u'.",
+            "mouthTip_vi": "Lướt từ 'y' sang nguyên âm dẹt 'u'.",
+            "mouthTip_en": "Palatal glide into compressed unrounded 'u'.",
+            "meaningVi": "Chữ Hiragana: ゆ (yu)",
+            "meaningEn": "Hiragana character: ゆ (yu)",
+            "meaning_vi": "Chữ Hiragana: ゆ (yu)",
+            "meaning_en": "Hiragana character: ゆ (yu)",
+            "speechText": "ゆ",
+            "examples": [
+              {
+                "word": "雪 (ゆき)",
+                "reading": "yuki",
+                "vi": "Tuyết",
+                "en": "Snow",
+                "meaning_vi": "Tuyết",
+                "meaning_en": "Snow"
+              }
+            ],
+            "example": {
+              "word": "雪 (ゆき)",
+              "reading": "yuki",
+              "vi": "Tuyết",
+              "en": "Snow",
+              "meaning_vi": "Tuyết",
+              "meaning_en": "Snow"
+            }
+          },
+          {
+            "char": "よ",
+            "romaji": "yo",
+            "ipa": "jo̞",
+            "groupVi": "Hàng Ya",
+            "groupEn": "Y-Line",
+            "group_vi": "Hàng Ya",
+            "group_en": "Y-Line",
+            "mouthTipVi": "Lướt từ 'y' sang nguyên âm 'o'.",
+            "mouthTipEn": "Palatal glide into mid-back 'o'.",
+            "mouthTip_vi": "Lướt từ 'y' sang nguyên âm 'o'.",
+            "mouthTip_en": "Palatal glide into mid-back 'o'.",
+            "meaningVi": "Chữ Hiragana: よ (yo)",
+            "meaningEn": "Hiragana character: よ (yo)",
+            "meaning_vi": "Chữ Hiragana: よ (yo)",
+            "meaning_en": "Hiragana character: よ (yo)",
+            "speechText": "よ",
+            "examples": [
+              {
+                "word": "夜 (よる)",
+                "reading": "yoru",
+                "vi": "Ban đêm",
+                "en": "Night",
+                "meaning_vi": "Ban đêm",
+                "meaning_en": "Night"
+              }
+            ],
+            "example": {
+              "word": "夜 (よる)",
+              "reading": "yoru",
+              "vi": "Ban đêm",
+              "en": "Night",
+              "meaning_vi": "Ban đêm",
+              "meaning_en": "Night"
+            }
+          },
+          {
+            "char": "ら",
+            "romaji": "ra",
+            "ipa": "ɾa",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Âm vỗ chân răng: đầu lưỡi gõ nhẹ một nhịp vào vòm miệng ngay sau răng cửa trên. KHÔNG uốn lưỡi về sau như 'r' tiếng Anh!",
+            "mouthTipEn": "Alveolar flap! Single quick tap right behind front teeth. Never curl back like English 'r'.",
+            "mouthTip_vi": "Âm vỗ chân răng: đầu lưỡi gõ nhẹ một nhịp vào vòm miệng ngay sau răng cửa trên. KHÔNG uốn lưỡi về sau như 'r' tiếng Anh!",
+            "mouthTip_en": "Alveolar flap! Single quick tap right behind front teeth. Never curl back like English 'r'.",
+            "meaningVi": "Chữ Hiragana: ら (ra)",
+            "meaningEn": "Hiragana character: ら (ra)",
+            "meaning_vi": "Chữ Hiragana: ら (ra)",
+            "meaning_en": "Hiragana character: ら (ra)",
+            "speechText": "ら",
+            "examples": [
+              {
+                "word": "来週 (らいしゅう)",
+                "reading": "raishuu",
+                "vi": "Tuần sau",
+                "en": "Next week",
+                "meaning_vi": "Tuần sau",
+                "meaning_en": "Next week"
+              }
+            ],
+            "example": {
+              "word": "来週 (らいしゅう)",
+              "reading": "raishuu",
+              "vi": "Tuần sau",
+              "en": "Next week",
+              "meaning_vi": "Tuần sau",
+              "meaning_en": "Next week"
+            }
+          },
+          {
+            "char": "り",
+            "romaji": "ri",
+            "ipa": "ɾʲi",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Đầu lưỡi gõ nhanh một nhịp vào ngạc trước kết hợp âm 'i'.",
+            "mouthTipEn": "Palatalized flap with a quick crisp tap.",
+            "mouthTip_vi": "Đầu lưỡi gõ nhanh một nhịp vào ngạc trước kết hợp âm 'i'.",
+            "mouthTip_en": "Palatalized flap with a quick crisp tap.",
+            "meaningVi": "Chữ Hiragana: り (ri)",
+            "meaningEn": "Hiragana character: り (ri)",
+            "meaning_vi": "Chữ Hiragana: り (ri)",
+            "meaning_en": "Hiragana character: り (ri)",
+            "speechText": "り",
+            "examples": [
+              {
+                "word": "林檎 (りんご)",
+                "reading": "ringo",
+                "vi": "Quả táo",
+                "en": "Apple",
+                "meaning_vi": "Quả táo",
+                "meaning_en": "Apple"
+              }
+            ],
+            "example": {
+              "word": "林檎 (りんご)",
+              "reading": "ringo",
+              "vi": "Quả táo",
+              "en": "Apple",
+              "meaning_vi": "Quả táo",
+              "meaning_en": "Apple"
+            }
+          },
+          {
+            "char": "る",
+            "romaji": "ru",
+            "ipa": "ɾɯᵝ",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Gõ đầu lưỡi nhanh rồi chuyển sang môi dẹt 'u'.",
+            "mouthTipEn": "Quick alveolar tap into compressed 'u'.",
+            "mouthTip_vi": "Gõ đầu lưỡi nhanh rồi chuyển sang môi dẹt 'u'.",
+            "mouthTip_en": "Quick alveolar tap into compressed 'u'.",
+            "meaningVi": "Chữ Hiragana: る (ru)",
+            "meaningEn": "Hiragana character: る (ru)",
+            "meaning_vi": "Chữ Hiragana: る (ru)",
+            "meaning_en": "Hiragana character: る (ru)",
+            "speechText": "る",
+            "examples": [
+              {
+                "word": "留守 (るす)",
+                "reading": "rusu",
+                "vi": "Vắng nhà",
+                "en": "Absence / Away",
+                "meaning_vi": "Vắng nhà",
+                "meaning_en": "Absence / Away"
+              }
+            ],
+            "example": {
+              "word": "留守 (るす)",
+              "reading": "rusu",
+              "vi": "Vắng nhà",
+              "en": "Absence / Away",
+              "meaning_vi": "Vắng nhà",
+              "meaning_en": "Absence / Away"
+            }
+          },
+          {
+            "char": "れ",
+            "romaji": "re",
+            "ipa": "ɾe̞",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Gõ đầu lưỡi nhanh rồi nhả sang âm 'e'.",
+            "mouthTipEn": "Single dental tap into clean 'e'.",
+            "mouthTip_vi": "Gõ đầu lưỡi nhanh rồi nhả sang âm 'e'.",
+            "mouthTip_en": "Single dental tap into clean 'e'.",
+            "meaningVi": "Chữ Hiragana: れ (re)",
+            "meaningEn": "Hiragana character: れ (re)",
+            "meaning_vi": "Chữ Hiragana: れ (re)",
+            "meaning_en": "Hiragana character: れ (re)",
+            "speechText": "れ",
+            "examples": [
+              {
+                "word": "歴史 (れきし)",
+                "reading": "rekishi",
+                "vi": "Lịch sử",
+                "en": "History",
+                "meaning_vi": "Lịch sử",
+                "meaning_en": "History"
+              }
+            ],
+            "example": {
+              "word": "歴史 (れきし)",
+              "reading": "rekishi",
+              "vi": "Lịch sử",
+              "en": "History",
+              "meaning_vi": "Lịch sử",
+              "meaning_en": "History"
+            }
+          },
+          {
+            "char": "ろ",
+            "romaji": "ro",
+            "ipa": "ɾo̞",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Gõ đầu lưỡi nhanh rồi chuyển sang tròn môi 'o'.",
+            "mouthTipEn": "Alveolar tap releasing into 'o'.",
+            "mouthTip_vi": "Gõ đầu lưỡi nhanh rồi chuyển sang tròn môi 'o'.",
+            "mouthTip_en": "Alveolar tap releasing into 'o'.",
+            "meaningVi": "Chữ Hiragana: ろ (ro)",
+            "meaningEn": "Hiragana character: ろ (ro)",
+            "meaning_vi": "Chữ Hiragana: ろ (ro)",
+            "meaning_en": "Hiragana character: ろ (ro)",
+            "speechText": "ろ",
+            "examples": [
+              {
+                "word": "廊下 (ろうか)",
+                "reading": "rouka",
+                "vi": "Hành lang",
+                "en": "Hallway",
+                "meaning_vi": "Hành lang",
+                "meaning_en": "Hallway"
+              }
+            ],
+            "example": {
+              "word": "廊下 (ろうか)",
+              "reading": "rouka",
+              "vi": "Hành lang",
+              "en": "Hallway",
+              "meaning_vi": "Hành lang",
+              "meaning_en": "Hallway"
+            }
+          },
+          {
+            "char": "わ",
+            "romaji": "wa",
+            "ipa": "ɰa",
+            "groupVi": "Hàng Wa & Âm mũi",
+            "groupEn": "W-Line & Nasal",
+            "group_vi": "Hàng Wa & Âm mũi",
+            "group_en": "W-Line & Nasal",
+            "mouthTipVi": "Môi khép hờ rồi lướt sang 'a', ít chu môi hơn âm 'w' tiếng Anh.",
+            "mouthTipEn": "Soft velar glide into 'a', less lip rounding than English 'w'.",
+            "mouthTip_vi": "Môi khép hờ rồi lướt sang 'a', ít chu môi hơn âm 'w' tiếng Anh.",
+            "mouthTip_en": "Soft velar glide into 'a', less lip rounding than English 'w'.",
+            "meaningVi": "Chữ Hiragana: わ (wa)",
+            "meaningEn": "Hiragana character: わ (wa)",
+            "meaning_vi": "Chữ Hiragana: わ (wa)",
+            "meaning_en": "Hiragana character: わ (wa)",
+            "speechText": "わ",
+            "examples": [
+              {
+                "word": "私 (わたし)",
+                "reading": "watashi",
+                "vi": "Tôi",
+                "en": "I / Me",
+                "meaning_vi": "Tôi",
+                "meaning_en": "I / Me"
+              }
+            ],
+            "example": {
+              "word": "私 (わたし)",
+              "reading": "watashi",
+              "vi": "Tôi",
+              "en": "I / Me",
+              "meaning_vi": "Tôi",
+              "meaning_en": "I / Me"
+            }
+          },
+          {
+            "char": "を",
+            "romaji": "wo / o",
+            "ipa": "o̞",
+            "groupVi": "Hàng Wa & Âm mũi",
+            "groupEn": "W-Line & Nasal",
+            "group_vi": "Hàng Wa & Âm mũi",
+            "group_en": "W-Line & Nasal",
+            "mouthTipVi": "Chỉ dùng làm trợ từ tân ngữ trong ngữ pháp, phát âm giống hệt nguyên âm 'o'.",
+            "mouthTipEn": "Used exclusively as grammatical object particle. Pronounced like 'o'.",
+            "mouthTip_vi": "Chỉ dùng làm trợ từ tân ngữ trong ngữ pháp, phát âm giống hệt nguyên âm 'o'.",
+            "mouthTip_en": "Used exclusively as grammatical object particle. Pronounced like 'o'.",
+            "meaningVi": "Chữ Hiragana: を (wo / o)",
+            "meaningEn": "Hiragana character: を (wo / o)",
+            "meaning_vi": "Chữ Hiragana: を (wo / o)",
+            "meaning_en": "Hiragana character: を (wo / o)",
+            "speechText": "を",
+            "examples": [
+              {
+                "word": "本を読む (ほんをよむ)",
+                "reading": "hon o yomu",
+                "vi": "Đọc sách",
+                "en": "Read a book",
+                "meaning_vi": "Đọc sách",
+                "meaning_en": "Read a book"
+              }
+            ],
+            "example": {
+              "word": "本を読む (ほんをよむ)",
+              "reading": "hon o yomu",
+              "vi": "Đọc sách",
+              "en": "Read a book",
+              "meaning_vi": "Đọc sách",
+              "meaning_en": "Read a book"
+            }
+          },
+          {
+            "char": "ん",
+            "romaji": "n",
+            "ipa": "ɴnm",
+            "groupVi": "Hàng Wa & Âm mũi",
+            "groupEn": "W-Line & Nasal",
+            "group_vi": "Hàng Wa & Âm mũi",
+            "group_en": "W-Line & Nasal",
+            "mouthTipVi": "Âm mũi độc lập chiếm trọn 1 mora. Vị trí lưỡi thay đổi theo âm kế tiếp (thành m trước p/b, n trước t/d).",
+            "mouthTipEn": "Moraic nasal consonant. Adapts mouth placement to subsequent consonant.",
+            "mouthTip_vi": "Âm mũi độc lập chiếm trọn 1 mora. Vị trí lưỡi thay đổi theo âm kế tiếp (thành m trước p/b, n trước t/d).",
+            "mouthTip_en": "Moraic nasal consonant. Adapts mouth placement to subsequent consonant.",
+            "meaningVi": "Chữ Hiragana: ん (n)",
+            "meaningEn": "Hiragana character: ん (n)",
+            "meaning_vi": "Chữ Hiragana: ん (n)",
+            "meaning_en": "Hiragana character: ん (n)",
+            "speechText": "ん",
+            "examples": [
+              {
+                "word": "日本 (にほん)",
+                "reading": "nihon",
+                "vi": "Nước Nhật",
+                "en": "Japan",
+                "meaning_vi": "Nước Nhật",
+                "meaning_en": "Japan"
+              }
+            ],
+            "example": {
+              "word": "日本 (にほん)",
+              "reading": "nihon",
+              "vi": "Nước Nhật",
+              "en": "Japan",
+              "meaning_vi": "Nước Nhật",
+              "meaning_en": "Japan"
+            }
+          }
+        ]
+      },
+      {
+        "id": "katakana",
+        "labelVi": "Katakana (Cơ bản)",
+        "labelEn": "Katakana (Basic)",
+        "descriptionVi": "Trọn bộ 46 chữ cái Katakana dùng cho từ mượn quốc tế, tên khoa học và nhấn mạnh.",
+        "descriptionEn": "Full 46 Katakana characters used for foreign loanwords and acoustic emphasis.",
+        "items": [
+          {
+            "char": "ア",
+            "romaji": "a",
+            "ipa": "a",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Phát âm giống hệt あ. Nét chữ vuông vức, dứt khoát.",
+            "mouthTipEn": "Identical sound to あ. Sharp angular stroke aesthetic.",
+            "mouthTip_vi": "Phát âm giống hệt あ. Nét chữ vuông vức, dứt khoát.",
+            "mouthTip_en": "Identical sound to あ. Sharp angular stroke aesthetic.",
+            "meaningVi": "Chữ Katakana: ア (a)",
+            "meaningEn": "Katakana character: ア (a)",
+            "meaning_vi": "Chữ Katakana: ア (a)",
+            "meaning_en": "Katakana character: ア (a)",
+            "speechText": "ア",
+            "examples": [
+              {
+                "word": "アイス",
+                "reading": "aisu",
+                "vi": "Kem lạnh",
+                "en": "Ice cream",
+                "meaning_vi": "Kem lạnh",
+                "meaning_en": "Ice cream"
+              }
+            ],
+            "example": {
+              "word": "アイス",
+              "reading": "aisu",
+              "vi": "Kem lạnh",
+              "en": "Ice cream",
+              "meaning_vi": "Kem lạnh",
+              "meaning_en": "Ice cream"
+            }
+          },
+          {
+            "char": "イ",
+            "romaji": "i",
+            "ipa": "i",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Phát âm giống hệt い. Khóe miệng dẹt nhẹ.",
+            "mouthTipEn": "Identical sound to い. Wide relaxed lips.",
+            "mouthTip_vi": "Phát âm giống hệt い. Khóe miệng dẹt nhẹ.",
+            "mouthTip_en": "Identical sound to い. Wide relaxed lips.",
+            "meaningVi": "Chữ Katakana: イ (i)",
+            "meaningEn": "Katakana character: イ (i)",
+            "meaning_vi": "Chữ Katakana: イ (i)",
+            "meaning_en": "Katakana character: イ (i)",
+            "speechText": "イ",
+            "examples": [
+              {
+                "word": "インターネット",
+                "reading": "intaanetto",
+                "vi": "Mạng Internet",
+                "en": "Internet",
+                "meaning_vi": "Mạng Internet",
+                "meaning_en": "Internet"
+              }
+            ],
+            "example": {
+              "word": "インターネット",
+              "reading": "intaanetto",
+              "vi": "Mạng Internet",
+              "en": "Internet",
+              "meaning_vi": "Mạng Internet",
+              "meaning_en": "Internet"
+            }
+          },
+          {
+            "char": "ウ",
+            "romaji": "u",
+            "ipa": "ɯᵝ",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Phát âm giống hệt う. Môi dẹt không chu.",
+            "mouthTipEn": "Identical sound to う. Compressed lips without rounding.",
+            "mouthTip_vi": "Phát âm giống hệt う. Môi dẹt không chu.",
+            "mouthTip_en": "Identical sound to う. Compressed lips without rounding.",
+            "meaningVi": "Chữ Katakana: ウ (u)",
+            "meaningEn": "Katakana character: ウ (u)",
+            "meaning_vi": "Chữ Katakana: ウ (u)",
+            "meaning_en": "Katakana character: ウ (u)",
+            "speechText": "ウ",
+            "examples": [
+              {
+                "word": "ウェブ",
+                "reading": "webu",
+                "vi": "Trang Web",
+                "en": "Web",
+                "meaning_vi": "Trang Web",
+                "meaning_en": "Web"
+              }
+            ],
+            "example": {
+              "word": "ウェブ",
+              "reading": "webu",
+              "vi": "Trang Web",
+              "en": "Web",
+              "meaning_vi": "Trang Web",
+              "meaning_en": "Web"
+            }
+          },
+          {
+            "char": "エ",
+            "romaji": "e",
+            "ipa": "e̞",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Phát âm giống hệt え. Gọn gàng, không lướt.",
+            "mouthTipEn": "Identical sound to え. Clean vowel without glide.",
+            "mouthTip_vi": "Phát âm giống hệt え. Gọn gàng, không lướt.",
+            "mouthTip_en": "Identical sound to え. Clean vowel without glide.",
+            "meaningVi": "Chữ Katakana: エ (e)",
+            "meaningEn": "Katakana character: エ (e)",
+            "meaning_vi": "Chữ Katakana: エ (e)",
+            "meaning_en": "Katakana character: エ (e)",
+            "speechText": "エ",
+            "examples": [
+              {
+                "word": "エレベーター",
+                "reading": "erebeetaa",
+                "vi": "Thang máy",
+                "en": "Elevator",
+                "meaning_vi": "Thang máy",
+                "meaning_en": "Elevator"
+              }
+            ],
+            "example": {
+              "word": "エレベーター",
+              "reading": "erebeetaa",
+              "vi": "Thang máy",
+              "en": "Elevator",
+              "meaning_vi": "Thang máy",
+              "meaning_en": "Elevator"
+            }
+          },
+          {
+            "char": "オ",
+            "romaji": "o",
+            "ipa": "o̞",
+            "groupVi": "Nguyên âm",
+            "groupEn": "Vowels",
+            "group_vi": "Nguyên âm",
+            "group_en": "Vowels",
+            "mouthTipVi": "Phát âm giống hệt お. Tròn môi tự nhiên.",
+            "mouthTipEn": "Identical sound to お. Short, crisp rounded vowel.",
+            "mouthTip_vi": "Phát âm giống hệt お. Tròn môi tự nhiên.",
+            "mouthTip_en": "Identical sound to お. Short, crisp rounded vowel.",
+            "meaningVi": "Chữ Katakana: オ (o)",
+            "meaningEn": "Katakana character: オ (o)",
+            "meaning_vi": "Chữ Katakana: オ (o)",
+            "meaning_en": "Katakana character: オ (o)",
+            "speechText": "オ",
+            "examples": [
+              {
+                "word": "オレンジ",
+                "reading": "orenji",
+                "vi": "Quả cam",
+                "en": "Orange",
+                "meaning_vi": "Quả cam",
+                "meaning_en": "Orange"
+              }
+            ],
+            "example": {
+              "word": "オレンジ",
+              "reading": "orenji",
+              "vi": "Quả cam",
+              "en": "Orange",
+              "meaning_vi": "Quả cam",
+              "meaning_en": "Orange"
+            }
+          },
+          {
+            "char": "カ",
+            "romaji": "ka",
+            "ipa": "ka",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Phát âm giống か.",
+            "mouthTipEn": "K-sound with short 'a'.",
+            "mouthTip_vi": "Phát âm giống か.",
+            "mouthTip_en": "K-sound with short 'a'.",
+            "meaningVi": "Chữ Katakana: カ (ka)",
+            "meaningEn": "Katakana character: カ (ka)",
+            "meaning_vi": "Chữ Katakana: カ (ka)",
+            "meaning_en": "Katakana character: カ (ka)",
+            "speechText": "カ",
+            "examples": [
+              {
+                "word": "カフェ",
+                "reading": "kafe",
+                "vi": "Quán cà phê",
+                "en": "Cafe",
+                "meaning_vi": "Quán cà phê",
+                "meaning_en": "Cafe"
+              }
+            ],
+            "example": {
+              "word": "カフェ",
+              "reading": "kafe",
+              "vi": "Quán cà phê",
+              "en": "Cafe",
+              "meaning_vi": "Quán cà phê",
+              "meaning_en": "Cafe"
+            }
+          },
+          {
+            "char": "キ",
+            "romaji": "ki",
+            "ipa": "kʲi",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Phát âm giống き.",
+            "mouthTipEn": "Palatalized 'ki'.",
+            "mouthTip_vi": "Phát âm giống き.",
+            "mouthTip_en": "Palatalized 'ki'.",
+            "meaningVi": "Chữ Katakana: キ (ki)",
+            "meaningEn": "Katakana character: キ (ki)",
+            "meaning_vi": "Chữ Katakana: キ (ki)",
+            "meaning_en": "Katakana character: キ (ki)",
+            "speechText": "キ",
+            "examples": [
+              {
+                "word": "キーボード",
+                "reading": "kiiboodo",
+                "vi": "Bàn phím",
+                "en": "Keyboard",
+                "meaning_vi": "Bàn phím",
+                "meaning_en": "Keyboard"
+              }
+            ],
+            "example": {
+              "word": "キーボード",
+              "reading": "kiiboodo",
+              "vi": "Bàn phím",
+              "en": "Keyboard",
+              "meaning_vi": "Bàn phím",
+              "meaning_en": "Keyboard"
+            }
+          },
+          {
+            "char": "ク",
+            "romaji": "ku",
+            "ipa": "kɯᵝ",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Phát âm giống く.",
+            "mouthTipEn": "Velar stop with unrounded 'u'.",
+            "mouthTip_vi": "Phát âm giống く.",
+            "mouthTip_en": "Velar stop with unrounded 'u'.",
+            "meaningVi": "Chữ Katakana: ク (ku)",
+            "meaningEn": "Katakana character: ク (ku)",
+            "meaning_vi": "Chữ Katakana: ク (ku)",
+            "meaning_en": "Katakana character: ク (ku)",
+            "speechText": "ク",
+            "examples": [
+              {
+                "word": "クラス",
+                "reading": "kurasu",
+                "vi": "Lớp học",
+                "en": "Class",
+                "meaning_vi": "Lớp học",
+                "meaning_en": "Class"
+              }
+            ],
+            "example": {
+              "word": "クラス",
+              "reading": "kurasu",
+              "vi": "Lớp học",
+              "en": "Class",
+              "meaning_vi": "Lớp học",
+              "meaning_en": "Class"
+            }
+          },
+          {
+            "char": "ケ",
+            "romaji": "ke",
+            "ipa": "ke̞",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Phát âm giống け.",
+            "mouthTipEn": "Crisp 'ke'.",
+            "mouthTip_vi": "Phát âm giống け.",
+            "mouthTip_en": "Crisp 'ke'.",
+            "meaningVi": "Chữ Katakana: ケ (ke)",
+            "meaningEn": "Katakana character: ケ (ke)",
+            "meaning_vi": "Chữ Katakana: ケ (ke)",
+            "meaning_en": "Katakana character: ケ (ke)",
+            "speechText": "ケ",
+            "examples": [
+              {
+                "word": "ケーキ",
+                "reading": "keeki",
+                "vi": "Bánh ngọt",
+                "en": "Cake",
+                "meaning_vi": "Bánh ngọt",
+                "meaning_en": "Cake"
+              }
+            ],
+            "example": {
+              "word": "ケーキ",
+              "reading": "keeki",
+              "vi": "Bánh ngọt",
+              "en": "Cake",
+              "meaning_vi": "Bánh ngọt",
+              "meaning_en": "Cake"
+            }
+          },
+          {
+            "char": "コ",
+            "romaji": "ko",
+            "ipa": "ko̞",
+            "groupVi": "Hàng Ka",
+            "groupEn": "K-Line",
+            "group_vi": "Hàng Ka",
+            "group_en": "K-Line",
+            "mouthTipVi": "Phát âm giống こ.",
+            "mouthTipEn": "Rounded velar sound.",
+            "mouthTip_vi": "Phát âm giống こ.",
+            "mouthTip_en": "Rounded velar sound.",
+            "meaningVi": "Chữ Katakana: コ (ko)",
+            "meaningEn": "Katakana character: コ (ko)",
+            "meaning_vi": "Chữ Katakana: コ (ko)",
+            "meaning_en": "Katakana character: コ (ko)",
+            "speechText": "コ",
+            "examples": [
+              {
+                "word": "コーヒー",
+                "reading": "koohii",
+                "vi": "Cà phê",
+                "en": "Coffee",
+                "meaning_vi": "Cà phê",
+                "meaning_en": "Coffee"
+              }
+            ],
+            "example": {
+              "word": "コーヒー",
+              "reading": "koohii",
+              "vi": "Cà phê",
+              "en": "Coffee",
+              "meaning_vi": "Cà phê",
+              "meaning_en": "Coffee"
+            }
+          },
+          {
+            "char": "サ",
+            "romaji": "sa",
+            "ipa": "sa",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Phát âm giống さ.",
+            "mouthTipEn": "Gentle alveolar hiss.",
+            "mouthTip_vi": "Phát âm giống さ.",
+            "mouthTip_en": "Gentle alveolar hiss.",
+            "meaningVi": "Chữ Katakana: サ (sa)",
+            "meaningEn": "Katakana character: サ (sa)",
+            "meaning_vi": "Chữ Katakana: サ (sa)",
+            "meaning_en": "Katakana character: サ (sa)",
+            "speechText": "サ",
+            "examples": [
+              {
+                "word": "サラダ",
+                "reading": "sarada",
+                "vi": "Món Salad",
+                "en": "Salad",
+                "meaning_vi": "Món Salad",
+                "meaning_en": "Salad"
+              }
+            ],
+            "example": {
+              "word": "サラダ",
+              "reading": "sarada",
+              "vi": "Món Salad",
+              "en": "Salad",
+              "meaning_vi": "Món Salad",
+              "meaning_en": "Salad"
+            }
+          },
+          {
+            "char": "シ",
+            "romaji": "shi",
+            "ipa": "ɕi",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Phát âm giống し. Khác chữ ツ (tsu) ở góc nét bút.",
+            "mouthTipEn": "Soft palatal hiss. Note stroke direction difference from ツ.",
+            "mouthTip_vi": "Phát âm giống し. Khác chữ ツ (tsu) ở góc nét bút.",
+            "mouthTip_en": "Soft palatal hiss. Note stroke direction difference from ツ.",
+            "meaningVi": "Chữ Katakana: シ (shi)",
+            "meaningEn": "Katakana character: シ (shi)",
+            "meaning_vi": "Chữ Katakana: シ (shi)",
+            "meaning_en": "Katakana character: シ (shi)",
+            "speechText": "シ",
+            "examples": [
+              {
+                "word": "シャツ",
+                "reading": "shatsu",
+                "vi": "Áo sơ mi",
+                "en": "Shirt",
+                "meaning_vi": "Áo sơ mi",
+                "meaning_en": "Shirt"
+              }
+            ],
+            "example": {
+              "word": "シャツ",
+              "reading": "shatsu",
+              "vi": "Áo sơ mi",
+              "en": "Shirt",
+              "meaning_vi": "Áo sơ mi",
+              "meaning_en": "Shirt"
+            }
+          },
+          {
+            "char": "ス",
+            "romaji": "su",
+            "ipa": "sɨᵝ",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Phát âm giống す.",
+            "mouthTipEn": "Close unrounded vowel.",
+            "mouthTip_vi": "Phát âm giống す.",
+            "mouthTip_en": "Close unrounded vowel.",
+            "meaningVi": "Chữ Katakana: ス (su)",
+            "meaningEn": "Katakana character: ス (su)",
+            "meaning_vi": "Chữ Katakana: ス (su)",
+            "meaning_en": "Katakana character: ス (su)",
+            "speechText": "ス",
+            "examples": [
+              {
+                "word": "スポーツ",
+                "reading": "supootsu",
+                "vi": "Thể thao",
+                "en": "Sports",
+                "meaning_vi": "Thể thao",
+                "meaning_en": "Sports"
+              }
+            ],
+            "example": {
+              "word": "スポーツ",
+              "reading": "supootsu",
+              "vi": "Thể thao",
+              "en": "Sports",
+              "meaning_vi": "Thể thao",
+              "meaning_en": "Sports"
+            }
+          },
+          {
+            "char": "セ",
+            "romaji": "se",
+            "ipa": "se̞",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Phát âm giống せ.",
+            "mouthTipEn": "Alveolar fricative into 'e'.",
+            "mouthTip_vi": "Phát âm giống せ.",
+            "mouthTip_en": "Alveolar fricative into 'e'.",
+            "meaningVi": "Chữ Katakana: セ (se)",
+            "meaningEn": "Katakana character: セ (se)",
+            "meaning_vi": "Chữ Katakana: セ (se)",
+            "meaning_en": "Katakana character: セ (se)",
+            "speechText": "セ",
+            "examples": [
+              {
+                "word": "セーター",
+                "reading": "seetaa",
+                "vi": "Áo len",
+                "en": "Sweater",
+                "meaning_vi": "Áo len",
+                "meaning_en": "Sweater"
+              }
+            ],
+            "example": {
+              "word": "セーター",
+              "reading": "seetaa",
+              "vi": "Áo len",
+              "en": "Sweater",
+              "meaning_vi": "Áo len",
+              "meaning_en": "Sweater"
+            }
+          },
+          {
+            "char": "ソ",
+            "romaji": "so",
+            "ipa": "so̞",
+            "groupVi": "Hàng Sa",
+            "groupEn": "S-Line",
+            "group_vi": "Hàng Sa",
+            "group_en": "S-Line",
+            "mouthTipVi": "Phát âm giống そ. Nét bút từ trên xuống.",
+            "mouthTipEn": "Top-down stroke, smooth sound.",
+            "mouthTip_vi": "Phát âm giống そ. Nét bút từ trên xuống.",
+            "mouthTip_en": "Top-down stroke, smooth sound.",
+            "meaningVi": "Chữ Katakana: ソ (so)",
+            "meaningEn": "Katakana character: ソ (so)",
+            "meaning_vi": "Chữ Katakana: ソ (so)",
+            "meaning_en": "Katakana character: ソ (so)",
+            "speechText": "ソ",
+            "examples": [
+              {
+                "word": "ソファー",
+                "reading": "sofaa",
+                "vi": "Ghế Sofa",
+                "en": "Sofa",
+                "meaning_vi": "Ghế Sofa",
+                "meaning_en": "Sofa"
+              }
+            ],
+            "example": {
+              "word": "ソファー",
+              "reading": "sofaa",
+              "vi": "Ghế Sofa",
+              "en": "Sofa",
+              "meaning_vi": "Ghế Sofa",
+              "meaning_en": "Sofa"
+            }
+          },
+          {
+            "char": "タ",
+            "romaji": "ta",
+            "ipa": "ta",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Phát âm giống た.",
+            "mouthTipEn": "Light burst 'ta'.",
+            "mouthTip_vi": "Phát âm giống た.",
+            "mouthTip_en": "Light burst 'ta'.",
+            "meaningVi": "Chữ Katakana: タ (ta)",
+            "meaningEn": "Katakana character: タ (ta)",
+            "meaning_vi": "Chữ Katakana: タ (ta)",
+            "meaning_en": "Katakana character: タ (ta)",
+            "speechText": "タ",
+            "examples": [
+              {
+                "word": "タクシー",
+                "reading": "takushii",
+                "vi": "Xe Taxi",
+                "en": "Taxi",
+                "meaning_vi": "Xe Taxi",
+                "meaning_en": "Taxi"
+              }
+            ],
+            "example": {
+              "word": "タクシー",
+              "reading": "takushii",
+              "vi": "Xe Taxi",
+              "en": "Taxi",
+              "meaning_vi": "Xe Taxi",
+              "meaning_en": "Taxi"
+            }
+          },
+          {
+            "char": "チ",
+            "romaji": "chi",
+            "ipa": "t͡ɕi",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Phát âm giống ち.",
+            "mouthTipEn": "Alveolo-palatal 'chi'.",
+            "mouthTip_vi": "Phát âm giống ち.",
+            "mouthTip_en": "Alveolo-palatal 'chi'.",
+            "meaningVi": "Chữ Katakana: チ (chi)",
+            "meaningEn": "Katakana character: チ (chi)",
+            "meaning_vi": "Chữ Katakana: チ (chi)",
+            "meaning_en": "Katakana character: チ (chi)",
+            "speechText": "チ",
+            "examples": [
+              {
+                "word": "チーズ",
+                "reading": "chiizu",
+                "vi": "Phô mai",
+                "en": "Cheese",
+                "meaning_vi": "Phô mai",
+                "meaning_en": "Cheese"
+              }
+            ],
+            "example": {
+              "word": "チーズ",
+              "reading": "chiizu",
+              "vi": "Phô mai",
+              "en": "Cheese",
+              "meaning_vi": "Phô mai",
+              "meaning_en": "Cheese"
+            }
+          },
+          {
+            "char": "ツ",
+            "romaji": "tsu",
+            "ipa": "t͡sɨᵝ",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Phát âm giống つ. Viết từ trên xuống dưới.",
+            "mouthTipEn": "Affricate 'tsu'. Strokes descend downward.",
+            "mouthTip_vi": "Phát âm giống つ. Viết từ trên xuống dưới.",
+            "mouthTip_en": "Affricate 'tsu'. Strokes descend downward.",
+            "meaningVi": "Chữ Katakana: ツ (tsu)",
+            "meaningEn": "Katakana character: ツ (tsu)",
+            "meaning_vi": "Chữ Katakana: ツ (tsu)",
+            "meaning_en": "Katakana character: ツ (tsu)",
+            "speechText": "ツ",
+            "examples": [
+              {
+                "word": "ツアー",
+                "reading": "tsuaa",
+                "vi": "Chuyến du lịch",
+                "en": "Tour",
+                "meaning_vi": "Chuyến du lịch",
+                "meaning_en": "Tour"
+              }
+            ],
+            "example": {
+              "word": "ツアー",
+              "reading": "tsuaa",
+              "vi": "Chuyến du lịch",
+              "en": "Tour",
+              "meaning_vi": "Chuyến du lịch",
+              "meaning_en": "Tour"
+            }
+          },
+          {
+            "char": "テ",
+            "romaji": "te",
+            "ipa": "te̞",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Phát âm giống て.",
+            "mouthTipEn": "Crisp 'te'.",
+            "mouthTip_vi": "Phát âm giống て.",
+            "mouthTip_en": "Crisp 'te'.",
+            "meaningVi": "Chữ Katakana: テ (te)",
+            "meaningEn": "Katakana character: テ (te)",
+            "meaning_vi": "Chữ Katakana: テ (te)",
+            "meaning_en": "Katakana character: テ (te)",
+            "speechText": "テ",
+            "examples": [
+              {
+                "word": "テスト",
+                "reading": "tesuto",
+                "vi": "Bài kiểm tra",
+                "en": "Test",
+                "meaning_vi": "Bài kiểm tra",
+                "meaning_en": "Test"
+              }
+            ],
+            "example": {
+              "word": "テスト",
+              "reading": "tesuto",
+              "vi": "Bài kiểm tra",
+              "en": "Test",
+              "meaning_vi": "Bài kiểm tra",
+              "meaning_en": "Test"
+            }
+          },
+          {
+            "char": "ト",
+            "romaji": "to",
+            "ipa": "to̞",
+            "groupVi": "Hàng Ta",
+            "groupEn": "T-Line",
+            "group_vi": "Hàng Ta",
+            "group_en": "T-Line",
+            "mouthTipVi": "Phát âm giống と.",
+            "mouthTipEn": "Clean dental stop 'to'.",
+            "mouthTip_vi": "Phát âm giống と.",
+            "mouthTip_en": "Clean dental stop 'to'.",
+            "meaningVi": "Chữ Katakana: ト (to)",
+            "meaningEn": "Katakana character: ト (to)",
+            "meaning_vi": "Chữ Katakana: ト (to)",
+            "meaning_en": "Katakana character: ト (to)",
+            "speechText": "ト",
+            "examples": [
+              {
+                "word": "トマト",
+                "reading": "tomato",
+                "vi": "Cà chua",
+                "en": "Tomato",
+                "meaning_vi": "Cà chua",
+                "meaning_en": "Tomato"
+              }
+            ],
+            "example": {
+              "word": "トマト",
+              "reading": "tomato",
+              "vi": "Cà chua",
+              "en": "Tomato",
+              "meaning_vi": "Cà chua",
+              "meaning_en": "Tomato"
+            }
+          },
+          {
+            "char": "ナ",
+            "romaji": "na",
+            "ipa": "na",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Phát âm giống な.",
+            "mouthTipEn": "Nasal 'na'.",
+            "mouthTip_vi": "Phát âm giống な.",
+            "mouthTip_en": "Nasal 'na'.",
+            "meaningVi": "Chữ Katakana: ナ (na)",
+            "meaningEn": "Katakana character: ナ (na)",
+            "meaning_vi": "Chữ Katakana: ナ (na)",
+            "meaning_en": "Katakana character: ナ (na)",
+            "speechText": "ナ",
+            "examples": [
+              {
+                "word": "ナイフ",
+                "reading": "naifu",
+                "vi": "Con dao",
+                "en": "Knife",
+                "meaning_vi": "Con dao",
+                "meaning_en": "Knife"
+              }
+            ],
+            "example": {
+              "word": "ナイフ",
+              "reading": "naifu",
+              "vi": "Con dao",
+              "en": "Knife",
+              "meaning_vi": "Con dao",
+              "meaning_en": "Knife"
+            }
+          },
+          {
+            "char": "ニ",
+            "romaji": "ni",
+            "ipa": "ɲi",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Phát âm giống に. Hai nét ngang đơn giản.",
+            "mouthTipEn": "Palatalized 'ni'.",
+            "mouthTip_vi": "Phát âm giống に. Hai nét ngang đơn giản.",
+            "mouthTip_en": "Palatalized 'ni'.",
+            "meaningVi": "Chữ Katakana: ニ (ni)",
+            "meaningEn": "Katakana character: ニ (ni)",
+            "meaning_vi": "Chữ Katakana: ニ (ni)",
+            "meaning_en": "Katakana character: ニ (ni)",
+            "speechText": "ニ",
+            "examples": [
+              {
+                "word": "ニュース",
+                "reading": "nyuusu",
+                "vi": "Tin tức",
+                "en": "News",
+                "meaning_vi": "Tin tức",
+                "meaning_en": "News"
+              }
+            ],
+            "example": {
+              "word": "ニュース",
+              "reading": "nyuusu",
+              "vi": "Tin tức",
+              "en": "News",
+              "meaning_vi": "Tin tức",
+              "meaning_en": "News"
+            }
+          },
+          {
+            "char": "ヌ",
+            "romaji": "nu",
+            "ipa": "nɯᵝ",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Phát âm giống ぬ.",
+            "mouthTipEn": "Nasal 'nu'.",
+            "mouthTip_vi": "Phát âm giống ぬ.",
+            "mouthTip_en": "Nasal 'nu'.",
+            "meaningVi": "Chữ Katakana: ヌ (nu)",
+            "meaningEn": "Katakana character: ヌ (nu)",
+            "meaning_vi": "Chữ Katakana: ヌ (nu)",
+            "meaning_en": "Katakana character: ヌ (nu)",
+            "speechText": "ヌ",
+            "examples": [
+              {
+                "word": "ヌードル",
+                "reading": "nuudoru",
+                "vi": "Mì sợi",
+                "en": "Noodles",
+                "meaning_vi": "Mì sợi",
+                "meaning_en": "Noodles"
+              }
+            ],
+            "example": {
+              "word": "ヌードル",
+              "reading": "nuudoru",
+              "vi": "Mì sợi",
+              "en": "Noodles",
+              "meaning_vi": "Mì sợi",
+              "meaning_en": "Noodles"
+            }
+          },
+          {
+            "char": "ネ",
+            "romaji": "ne",
+            "ipa": "ne̞",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Phát âm giống ね.",
+            "mouthTipEn": "Smooth 'ne'.",
+            "mouthTip_vi": "Phát âm giống ね.",
+            "mouthTip_en": "Smooth 'ne'.",
+            "meaningVi": "Chữ Katakana: ネ (ne)",
+            "meaningEn": "Katakana character: ネ (ne)",
+            "meaning_vi": "Chữ Katakana: ネ (ne)",
+            "meaning_en": "Katakana character: ネ (ne)",
+            "speechText": "ネ",
+            "examples": [
+              {
+                "word": "ネクタイ",
+                "reading": "nekutai",
+                "vi": "Cà vạt",
+                "en": "Necktie",
+                "meaning_vi": "Cà vạt",
+                "meaning_en": "Necktie"
+              }
+            ],
+            "example": {
+              "word": "ネクタイ",
+              "reading": "nekutai",
+              "vi": "Cà vạt",
+              "en": "Necktie",
+              "meaning_vi": "Cà vạt",
+              "meaning_en": "Necktie"
+            }
+          },
+          {
+            "char": "ノ",
+            "romaji": "no",
+            "ipa": "no̞",
+            "groupVi": "Hàng Na",
+            "groupEn": "N-Line",
+            "group_vi": "Hàng Na",
+            "group_en": "N-Line",
+            "mouthTipVi": "Phát âm giống の. Một nét phẩy cong đơn.",
+            "mouthTipEn": "Single diagonal stroke 'no'.",
+            "mouthTip_vi": "Phát âm giống の. Một nét phẩy cong đơn.",
+            "mouthTip_en": "Single diagonal stroke 'no'.",
+            "meaningVi": "Chữ Katakana: ノ (no)",
+            "meaningEn": "Katakana character: ノ (no)",
+            "meaning_vi": "Chữ Katakana: ノ (no)",
+            "meaning_en": "Katakana character: ノ (no)",
+            "speechText": "ノ",
+            "examples": [
+              {
+                "word": "ノート",
+                "reading": "nooto",
+                "vi": "Vở ghi / Laptop",
+                "en": "Notebook",
+                "meaning_vi": "Vở ghi / Laptop",
+                "meaning_en": "Notebook"
+              }
+            ],
+            "example": {
+              "word": "ノート",
+              "reading": "nooto",
+              "vi": "Vở ghi / Laptop",
+              "en": "Notebook",
+              "meaning_vi": "Vở ghi / Laptop",
+              "meaning_en": "Notebook"
+            }
+          },
+          {
+            "char": "ハ",
+            "romaji": "ha",
+            "ipa": "ha",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Phát âm giống は.",
+            "mouthTipEn": "Gentle 'ha'.",
+            "mouthTip_vi": "Phát âm giống は.",
+            "mouthTip_en": "Gentle 'ha'.",
+            "meaningVi": "Chữ Katakana: ハ (ha)",
+            "meaningEn": "Katakana character: ハ (ha)",
+            "meaning_vi": "Chữ Katakana: ハ (ha)",
+            "meaning_en": "Katakana character: ハ (ha)",
+            "speechText": "ハ",
+            "examples": [
+              {
+                "word": "ハンバーガー",
+                "reading": "hanbaagaa",
+                "vi": "Bánh kẹp Hamburger",
+                "en": "Hamburger",
+                "meaning_vi": "Bánh kẹp Hamburger",
+                "meaning_en": "Hamburger"
+              }
+            ],
+            "example": {
+              "word": "ハンバーガー",
+              "reading": "hanbaagaa",
+              "vi": "Bánh kẹp Hamburger",
+              "en": "Hamburger",
+              "meaning_vi": "Bánh kẹp Hamburger",
+              "meaning_en": "Hamburger"
+            }
+          },
+          {
+            "char": "ヒ",
+            "romaji": "hi",
+            "ipa": "çi",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Phát âm giống ひ.",
+            "mouthTipEn": "Hissing palatal 'hi'.",
+            "mouthTip_vi": "Phát âm giống ひ.",
+            "mouthTip_en": "Hissing palatal 'hi'.",
+            "meaningVi": "Chữ Katakana: ヒ (hi)",
+            "meaningEn": "Katakana character: ヒ (hi)",
+            "meaning_vi": "Chữ Katakana: ヒ (hi)",
+            "meaning_en": "Katakana character: ヒ (hi)",
+            "speechText": "ヒ",
+            "examples": [
+              {
+                "word": "ヒーター",
+                "reading": "hiitaa",
+                "vi": "Máy sưởi",
+                "en": "Heater",
+                "meaning_vi": "Máy sưởi",
+                "meaning_en": "Heater"
+              }
+            ],
+            "example": {
+              "word": "ヒーター",
+              "reading": "hiitaa",
+              "vi": "Máy sưởi",
+              "en": "Heater",
+              "meaning_vi": "Máy sưởi",
+              "meaning_en": "Heater"
+            }
+          },
+          {
+            "char": "フ",
+            "romaji": "fu",
+            "ipa": "ɸɯᵝ",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Phát âm giống ふ. Thổi hơi qua hai môi.",
+            "mouthTipEn": "Bilabial breath 'fu'.",
+            "mouthTip_vi": "Phát âm giống ふ. Thổi hơi qua hai môi.",
+            "mouthTip_en": "Bilabial breath 'fu'.",
+            "meaningVi": "Chữ Katakana: フ (fu)",
+            "meaningEn": "Katakana character: フ (fu)",
+            "meaning_vi": "Chữ Katakana: フ (fu)",
+            "meaning_en": "Katakana character: フ (fu)",
+            "speechText": "フ",
+            "examples": [
+              {
+                "word": "フォーク",
+                "reading": "fooku",
+                "vi": "Cái nĩa / Dĩa",
+                "en": "Fork",
+                "meaning_vi": "Cái nĩa / Dĩa",
+                "meaning_en": "Fork"
+              }
+            ],
+            "example": {
+              "word": "フォーク",
+              "reading": "fooku",
+              "vi": "Cái nĩa / Dĩa",
+              "en": "Fork",
+              "meaning_vi": "Cái nĩa / Dĩa",
+              "meaning_en": "Fork"
+            }
+          },
+          {
+            "char": "ヘ",
+            "romaji": "he",
+            "ipa": "he̞",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Phát âm giống へ.",
+            "mouthTipEn": "Glottal 'he'.",
+            "mouthTip_vi": "Phát âm giống へ.",
+            "mouthTip_en": "Glottal 'he'.",
+            "meaningVi": "Chữ Katakana: ヘ (he)",
+            "meaningEn": "Katakana character: ヘ (he)",
+            "meaning_vi": "Chữ Katakana: ヘ (he)",
+            "meaning_en": "Katakana character: ヘ (he)",
+            "speechText": "ヘ",
+            "examples": [
+              {
+                "word": "ヘルメット",
+                "reading": "herumetto",
+                "vi": "Mũ bảo hiểm",
+                "en": "Helmet",
+                "meaning_vi": "Mũ bảo hiểm",
+                "meaning_en": "Helmet"
+              }
+            ],
+            "example": {
+              "word": "ヘルメット",
+              "reading": "herumetto",
+              "vi": "Mũ bảo hiểm",
+              "en": "Helmet",
+              "meaning_vi": "Mũ bảo hiểm",
+              "meaning_en": "Helmet"
+            }
+          },
+          {
+            "char": "ホ",
+            "romaji": "ho",
+            "ipa": "ho̞",
+            "groupVi": "Hàng Ha",
+            "groupEn": "H-Line",
+            "group_vi": "Hàng Ha",
+            "group_en": "H-Line",
+            "mouthTipVi": "Phát âm giống ほ.",
+            "mouthTipEn": "Rounded 'ho'.",
+            "mouthTip_vi": "Phát âm giống ほ.",
+            "mouthTip_en": "Rounded 'ho'.",
+            "meaningVi": "Chữ Katakana: ホ (ho)",
+            "meaningEn": "Katakana character: ホ (ho)",
+            "meaning_vi": "Chữ Katakana: ホ (ho)",
+            "meaning_en": "Katakana character: ホ (ho)",
+            "speechText": "ホ",
+            "examples": [
+              {
+                "word": "ホテル",
+                "reading": "hoteru",
+                "vi": "Khách sạn",
+                "en": "Hotel",
+                "meaning_vi": "Khách sạn",
+                "meaning_en": "Hotel"
+              }
+            ],
+            "example": {
+              "word": "ホテル",
+              "reading": "hoteru",
+              "vi": "Khách sạn",
+              "en": "Hotel",
+              "meaning_vi": "Khách sạn",
+              "meaning_en": "Hotel"
+            }
+          },
+          {
+            "char": "マ",
+            "romaji": "ma",
+            "ipa": "ma",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Phát âm giống ま.",
+            "mouthTipEn": "Lips closed 'ma'.",
+            "mouthTip_vi": "Phát âm giống ま.",
+            "mouthTip_en": "Lips closed 'ma'.",
+            "meaningVi": "Chữ Katakana: マ (ma)",
+            "meaningEn": "Katakana character: マ (ma)",
+            "meaning_vi": "Chữ Katakana: マ (ma)",
+            "meaning_en": "Katakana character: マ (ma)",
+            "speechText": "マ",
+            "examples": [
+              {
+                "word": "マスク",
+                "reading": "masuku",
+                "vi": "Khẩu trang",
+                "en": "Mask",
+                "meaning_vi": "Khẩu trang",
+                "meaning_en": "Mask"
+              }
+            ],
+            "example": {
+              "word": "マスク",
+              "reading": "masuku",
+              "vi": "Khẩu trang",
+              "en": "Mask",
+              "meaning_vi": "Khẩu trang",
+              "meaning_en": "Mask"
+            }
+          },
+          {
+            "char": "ミ",
+            "romaji": "mi",
+            "ipa": "mʲi",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Phát âm giống み. Ba nét chéo song song.",
+            "mouthTipEn": "Crisp 'mi'.",
+            "mouthTip_vi": "Phát âm giống み. Ba nét chéo song song.",
+            "mouthTip_en": "Crisp 'mi'.",
+            "meaningVi": "Chữ Katakana: ミ (mi)",
+            "meaningEn": "Katakana character: ミ (mi)",
+            "meaning_vi": "Chữ Katakana: ミ (mi)",
+            "meaning_en": "Katakana character: ミ (mi)",
+            "speechText": "ミ",
+            "examples": [
+              {
+                "word": "ミルク",
+                "reading": "miruku",
+                "vi": "Sữa tươi",
+                "en": "Milk",
+                "meaning_vi": "Sữa tươi",
+                "meaning_en": "Milk"
+              }
+            ],
+            "example": {
+              "word": "ミルク",
+              "reading": "miruku",
+              "vi": "Sữa tươi",
+              "en": "Milk",
+              "meaning_vi": "Sữa tươi",
+              "meaning_en": "Milk"
+            }
+          },
+          {
+            "char": "ム",
+            "romaji": "mu",
+            "ipa": "mɯᵝ",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Phát âm giống む.",
+            "mouthTipEn": "Compressed 'mu'.",
+            "mouthTip_vi": "Phát âm giống む.",
+            "mouthTip_en": "Compressed 'mu'.",
+            "meaningVi": "Chữ Katakana: ム (mu)",
+            "meaningEn": "Katakana character: ム (mu)",
+            "meaning_vi": "Chữ Katakana: ム (mu)",
+            "meaning_en": "Katakana character: ム (mu)",
+            "speechText": "ム",
+            "examples": [
+              {
+                "word": "ムービー",
+                "reading": "muubii",
+                "vi": "Bộ phim",
+                "en": "Movie",
+                "meaning_vi": "Bộ phim",
+                "meaning_en": "Movie"
+              }
+            ],
+            "example": {
+              "word": "ムービー",
+              "reading": "muubii",
+              "vi": "Bộ phim",
+              "en": "Movie",
+              "meaning_vi": "Bộ phim",
+              "meaning_en": "Movie"
+            }
+          },
+          {
+            "char": "メ",
+            "romaji": "me",
+            "ipa": "me̞",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Phát âm giống め.",
+            "mouthTipEn": "Crisp 'me'.",
+            "mouthTip_vi": "Phát âm giống め.",
+            "mouthTip_en": "Crisp 'me'.",
+            "meaningVi": "Chữ Katakana: メ (me)",
+            "meaningEn": "Katakana character: メ (me)",
+            "meaning_vi": "Chữ Katakana: メ (me)",
+            "meaning_en": "Katakana character: メ (me)",
+            "speechText": "メ",
+            "examples": [
+              {
+                "word": "メニュー",
+                "reading": "menyuu",
+                "vi": "Thực đơn Menu",
+                "en": "Menu",
+                "meaning_vi": "Thực đơn Menu",
+                "meaning_en": "Menu"
+              }
+            ],
+            "example": {
+              "word": "メニュー",
+              "reading": "menyuu",
+              "vi": "Thực đơn Menu",
+              "en": "Menu",
+              "meaning_vi": "Thực đơn Menu",
+              "meaning_en": "Menu"
+            }
+          },
+          {
+            "char": "モ",
+            "romaji": "mo",
+            "ipa": "mo̞",
+            "groupVi": "Hàng Ma",
+            "groupEn": "M-Line",
+            "group_vi": "Hàng Ma",
+            "group_en": "M-Line",
+            "mouthTipVi": "Phát âm giống も.",
+            "mouthTipEn": "Smooth 'mo'.",
+            "mouthTip_vi": "Phát âm giống も.",
+            "mouthTip_en": "Smooth 'mo'.",
+            "meaningVi": "Chữ Katakana: モ (mo)",
+            "meaningEn": "Katakana character: モ (mo)",
+            "meaning_vi": "Chữ Katakana: モ (mo)",
+            "meaning_en": "Katakana character: モ (mo)",
+            "speechText": "モ",
+            "examples": [
+              {
+                "word": "モデル",
+                "reading": "moderu",
+                "vi": "Người mẫu",
+                "en": "Model",
+                "meaning_vi": "Người mẫu",
+                "meaning_en": "Model"
+              }
+            ],
+            "example": {
+              "word": "モデル",
+              "reading": "moderu",
+              "vi": "Người mẫu",
+              "en": "Model",
+              "meaning_vi": "Người mẫu",
+              "meaning_en": "Model"
+            }
+          },
+          {
+            "char": "ヤ",
+            "romaji": "ya",
+            "ipa": "ja",
+            "groupVi": "Hàng Ya",
+            "groupEn": "Y-Line",
+            "group_vi": "Hàng Ya",
+            "group_en": "Y-Line",
+            "mouthTipVi": "Phát âm giống や.",
+            "mouthTipEn": "Palatal glide 'ya'.",
+            "mouthTip_vi": "Phát âm giống や.",
+            "mouthTip_en": "Palatal glide 'ya'.",
+            "meaningVi": "Chữ Katakana: ヤ (ya)",
+            "meaningEn": "Katakana character: ヤ (ya)",
+            "meaning_vi": "Chữ Katakana: ヤ (ya)",
+            "meaning_en": "Katakana character: ヤ (ya)",
+            "speechText": "ヤ",
+            "examples": [
+              {
+                "word": "ヤード",
+                "reading": "yaado",
+                "vi": "Sân / Đơn vị Yard",
+                "en": "Yard",
+                "meaning_vi": "Sân / Đơn vị Yard",
+                "meaning_en": "Yard"
+              }
+            ],
+            "example": {
+              "word": "ヤード",
+              "reading": "yaado",
+              "vi": "Sân / Đơn vị Yard",
+              "en": "Yard",
+              "meaning_vi": "Sân / Đơn vị Yard",
+              "meaning_en": "Yard"
+            }
+          },
+          {
+            "char": "ユ",
+            "romaji": "yu",
+            "ipa": "jɯᵝ",
+            "groupVi": "Hàng Ya",
+            "groupEn": "Y-Line",
+            "group_vi": "Hàng Ya",
+            "group_en": "Y-Line",
+            "mouthTipVi": "Phát âm giống ゆ.",
+            "mouthTipEn": "Palatal glide 'yu'.",
+            "mouthTip_vi": "Phát âm giống ゆ.",
+            "mouthTip_en": "Palatal glide 'yu'.",
+            "meaningVi": "Chữ Katakana: ユ (yu)",
+            "meaningEn": "Katakana character: ユ (yu)",
+            "meaning_vi": "Chữ Katakana: ユ (yu)",
+            "meaning_en": "Katakana character: ユ (yu)",
+            "speechText": "ユ",
+            "examples": [
+              {
+                "word": "ユニフォーム",
+                "reading": "yunifoomu",
+                "vi": "Đồng phục",
+                "en": "Uniform",
+                "meaning_vi": "Đồng phục",
+                "meaning_en": "Uniform"
+              }
+            ],
+            "example": {
+              "word": "ユニフォーム",
+              "reading": "yunifoomu",
+              "vi": "Đồng phục",
+              "en": "Uniform",
+              "meaning_vi": "Đồng phục",
+              "meaning_en": "Uniform"
+            }
+          },
+          {
+            "char": "ヨ",
+            "romaji": "yo",
+            "ipa": "jo̞",
+            "groupVi": "Hàng Ya",
+            "groupEn": "Y-Line",
+            "group_vi": "Hàng Ya",
+            "group_en": "Y-Line",
+            "mouthTipVi": "Phát âm giống よ.",
+            "mouthTipEn": "Palatal glide 'yo'.",
+            "mouthTip_vi": "Phát âm giống よ.",
+            "mouthTip_en": "Palatal glide 'yo'.",
+            "meaningVi": "Chữ Katakana: ヨ (yo)",
+            "meaningEn": "Katakana character: ヨ (yo)",
+            "meaning_vi": "Chữ Katakana: ヨ (yo)",
+            "meaning_en": "Katakana character: ヨ (yo)",
+            "speechText": "ヨ",
+            "examples": [
+              {
+                "word": "ヨーグルト",
+                "reading": "yooguruto",
+                "vi": "Sữa chua Yogurt",
+                "en": "Yogurt",
+                "meaning_vi": "Sữa chua Yogurt",
+                "meaning_en": "Yogurt"
+              }
+            ],
+            "example": {
+              "word": "ヨーグルト",
+              "reading": "yooguruto",
+              "vi": "Sữa chua Yogurt",
+              "en": "Yogurt",
+              "meaning_vi": "Sữa chua Yogurt",
+              "meaning_en": "Yogurt"
+            }
+          },
+          {
+            "char": "ラ",
+            "romaji": "ra",
+            "ipa": "ɾa",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Phát âm giống ら. Đầu lưỡi gõ nhanh.",
+            "mouthTipEn": "Alveolar tap 'ra'.",
+            "mouthTip_vi": "Phát âm giống ら. Đầu lưỡi gõ nhanh.",
+            "mouthTip_en": "Alveolar tap 'ra'.",
+            "meaningVi": "Chữ Katakana: ラ (ra)",
+            "meaningEn": "Katakana character: ラ (ra)",
+            "meaning_vi": "Chữ Katakana: ラ (ra)",
+            "meaning_en": "Katakana character: ラ (ra)",
+            "speechText": "ラ",
+            "examples": [
+              {
+                "word": "ラーメン",
+                "reading": "raamen",
+                "vi": "Mì Ramen",
+                "en": "Ramen",
+                "meaning_vi": "Mì Ramen",
+                "meaning_en": "Ramen"
+              }
+            ],
+            "example": {
+              "word": "ラーメン",
+              "reading": "raamen",
+              "vi": "Mì Ramen",
+              "en": "Ramen",
+              "meaning_vi": "Mì Ramen",
+              "meaning_en": "Ramen"
+            }
+          },
+          {
+            "char": "リ",
+            "romaji": "ri",
+            "ipa": "ɾʲi",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Phát âm giống り.",
+            "mouthTipEn": "Crisp 'ri'.",
+            "mouthTip_vi": "Phát âm giống り.",
+            "mouthTip_en": "Crisp 'ri'.",
+            "meaningVi": "Chữ Katakana: リ (ri)",
+            "meaningEn": "Katakana character: リ (ri)",
+            "meaning_vi": "Chữ Katakana: リ (ri)",
+            "meaning_en": "Katakana character: リ (ri)",
+            "speechText": "リ",
+            "examples": [
+              {
+                "word": "リモコン",
+                "reading": "rimokon",
+                "vi": "Điều khiển từ xa",
+                "en": "Remote control",
+                "meaning_vi": "Điều khiển từ xa",
+                "meaning_en": "Remote control"
+              }
+            ],
+            "example": {
+              "word": "リモコン",
+              "reading": "rimokon",
+              "vi": "Điều khiển từ xa",
+              "en": "Remote control",
+              "meaning_vi": "Điều khiển từ xa",
+              "meaning_en": "Remote control"
+            }
+          },
+          {
+            "char": "ル",
+            "romaji": "ru",
+            "ipa": "ɾɯᵝ",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Phát âm giống る.",
+            "mouthTipEn": "Quick tap 'ru'.",
+            "mouthTip_vi": "Phát âm giống る.",
+            "mouthTip_en": "Quick tap 'ru'.",
+            "meaningVi": "Chữ Katakana: ル (ru)",
+            "meaningEn": "Katakana character: ル (ru)",
+            "meaning_vi": "Chữ Katakana: ル (ru)",
+            "meaning_en": "Katakana character: ル (ru)",
+            "speechText": "ル",
+            "examples": [
+              {
+                "word": "ルール",
+                "reading": "ruuru",
+                "vi": "Luật lệ / Quy tắc",
+                "en": "Rule",
+                "meaning_vi": "Luật lệ / Quy tắc",
+                "meaning_en": "Rule"
+              }
+            ],
+            "example": {
+              "word": "ルール",
+              "reading": "ruuru",
+              "vi": "Luật lệ / Quy tắc",
+              "en": "Rule",
+              "meaning_vi": "Luật lệ / Quy tắc",
+              "meaning_en": "Rule"
+            }
+          },
+          {
+            "char": "レ",
+            "romaji": "re",
+            "ipa": "ɾe̞",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Phát âm giống れ.",
+            "mouthTipEn": "Clean tap 're'.",
+            "mouthTip_vi": "Phát âm giống れ.",
+            "mouthTip_en": "Clean tap 're'.",
+            "meaningVi": "Chữ Katakana: レ (re)",
+            "meaningEn": "Katakana character: レ (re)",
+            "meaning_vi": "Chữ Katakana: レ (re)",
+            "meaning_en": "Katakana character: レ (re)",
+            "speechText": "レ",
+            "examples": [
+              {
+                "word": "レストラン",
+                "reading": "resutoran",
+                "vi": "Nhà hàng",
+                "en": "Restaurant",
+                "meaning_vi": "Nhà hàng",
+                "meaning_en": "Restaurant"
+              }
+            ],
+            "example": {
+              "word": "レストラン",
+              "reading": "resutoran",
+              "vi": "Nhà hàng",
+              "en": "Restaurant",
+              "meaning_vi": "Nhà hàng",
+              "meaning_en": "Restaurant"
+            }
+          },
+          {
+            "char": "ロ",
+            "romaji": "ro",
+            "ipa": "ɾo̞",
+            "groupVi": "Hàng Ra",
+            "groupEn": "R-Line",
+            "group_vi": "Hàng Ra",
+            "group_en": "R-Line",
+            "mouthTipVi": "Phát âm giống ろ. Hình ô vuông gọn.",
+            "mouthTipEn": "Square shape 'ro'.",
+            "mouthTip_vi": "Phát âm giống ろ. Hình ô vuông gọn.",
+            "mouthTip_en": "Square shape 'ro'.",
+            "meaningVi": "Chữ Katakana: ロ (ro)",
+            "meaningEn": "Katakana character: ロ (ro)",
+            "meaning_vi": "Chữ Katakana: ロ (ro)",
+            "meaning_en": "Katakana character: ロ (ro)",
+            "speechText": "ロ",
+            "examples": [
+              {
+                "word": "ロボット",
+                "reading": "robotto",
+                "vi": "Người máy Robot",
+                "en": "Robot",
+                "meaning_vi": "Người máy Robot",
+                "meaning_en": "Robot"
+              }
+            ],
+            "example": {
+              "word": "ロボット",
+              "reading": "robotto",
+              "vi": "Người máy Robot",
+              "en": "Robot",
+              "meaning_vi": "Người máy Robot",
+              "meaning_en": "Robot"
+            }
+          },
+          {
+            "char": "ワ",
+            "romaji": "wa",
+            "ipa": "ɰa",
+            "groupVi": "Hàng Wa & Âm mũi",
+            "groupEn": "W-Line & Nasal",
+            "group_vi": "Hàng Wa & Âm mũi",
+            "group_en": "W-Line & Nasal",
+            "mouthTipVi": "Phát âm giống わ.",
+            "mouthTipEn": "Velar glide 'wa'.",
+            "mouthTip_vi": "Phát âm giống わ.",
+            "mouthTip_en": "Velar glide 'wa'.",
+            "meaningVi": "Chữ Katakana: ワ (wa)",
+            "meaningEn": "Katakana character: ワ (wa)",
+            "meaning_vi": "Chữ Katakana: ワ (wa)",
+            "meaning_en": "Katakana character: ワ (wa)",
+            "speechText": "ワ",
+            "examples": [
+              {
+                "word": "ワイン",
+                "reading": "wain",
+                "vi": "Rượu vang",
+                "en": "Wine",
+                "meaning_vi": "Rượu vang",
+                "meaning_en": "Wine"
+              }
+            ],
+            "example": {
+              "word": "ワイン",
+              "reading": "wain",
+              "vi": "Rượu vang",
+              "en": "Wine",
+              "meaning_vi": "Rượu vang",
+              "meaning_en": "Wine"
+            }
+          },
+          {
+            "char": "ヲ",
+            "romaji": "wo / o",
+            "ipa": "o̞",
+            "groupVi": "Hàng Wa & Âm mũi",
+            "groupEn": "W-Line & Nasal",
+            "group_vi": "Hàng Wa & Âm mũi",
+            "group_en": "W-Line & Nasal",
+            "mouthTipVi": "Rất hiếm khi dùng trong Katakana hiện đại, hầu hết dùng phiên âm đặc biệt.",
+            "mouthTipEn": "Rarely used in modern Katakana.",
+            "mouthTip_vi": "Rất hiếm khi dùng trong Katakana hiện đại, hầu hết dùng phiên âm đặc biệt.",
+            "mouthTip_en": "Rarely used in modern Katakana.",
+            "meaningVi": "Chữ Katakana: ヲ (wo / o)",
+            "meaningEn": "Katakana character: ヲ (wo / o)",
+            "meaning_vi": "Chữ Katakana: ヲ (wo / o)",
+            "meaning_en": "Katakana character: ヲ (wo / o)",
+            "speechText": "ヲ",
+            "examples": [
+              {
+                "word": "ヲタク",
+                "reading": "wotaku",
+                "vi": "Người mê cuồng truyện/game",
+                "en": "Otaku",
+                "meaning_vi": "Người mê cuồng truyện/game",
+                "meaning_en": "Otaku"
+              }
+            ],
+            "example": {
+              "word": "ヲタク",
+              "reading": "wotaku",
+              "vi": "Người mê cuồng truyện/game",
+              "en": "Otaku",
+              "meaning_vi": "Người mê cuồng truyện/game",
+              "meaning_en": "Otaku"
+            }
+          },
+          {
+            "char": "ン",
+            "romaji": "n",
+            "ipa": "ɴnm",
+            "groupVi": "Hàng Wa & Âm mũi",
+            "groupEn": "W-Line & Nasal",
+            "group_vi": "Hàng Wa & Âm mũi",
+            "group_en": "W-Line & Nasal",
+            "mouthTipVi": "Phát âm giống ん. Nét bút hất từ dưới lên (khác ソ viết từ trên xuống).",
+            "mouthTipEn": "Upward stroke nasal 'n' (contrasts with top-down ソ).",
+            "mouthTip_vi": "Phát âm giống ん. Nét bút hất từ dưới lên (khác ソ viết từ trên xuống).",
+            "mouthTip_en": "Upward stroke nasal 'n' (contrasts with top-down ソ).",
+            "meaningVi": "Chữ Katakana: ン (n)",
+            "meaningEn": "Katakana character: ン (n)",
+            "meaning_vi": "Chữ Katakana: ン (n)",
+            "meaning_en": "Katakana character: ン (n)",
+            "speechText": "ン",
+            "examples": [
+              {
+                "word": "パン",
+                "reading": "pan",
+                "vi": "Bánh mì",
+                "en": "Bread",
+                "meaning_vi": "Bánh mì",
+                "meaning_en": "Bread"
+              }
+            ],
+            "example": {
+              "word": "パン",
+              "reading": "pan",
+              "vi": "Bánh mì",
+              "en": "Bread",
+              "meaning_vi": "Bánh mì",
+              "meaning_en": "Bread"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dakuten_yoon",
+        "labelVi": "Biến âm & Âm ghép (Dakuten / Yoon)",
+        "labelEn": "Dakuten & Yoon (Sound Variations)",
+        "descriptionVi": "Âm đục (Dakuten: が, ざ, だ, ば), âm bán đục (Handakuten: ぱ) và âm ghép thu nhỏ (Yoon: きゃ, しゃ, ちゃ...).",
+        "descriptionEn": "Voiced sounds (Dakuten), semi-voiced (Handakuten), and contracted glides (Yoon).",
+        "items": [
+          {
+            "char": "が",
+            "romaji": "ga",
+            "ipa": "ɡa",
+            "groupVi": "Hàng G (Dakuten)",
+            "groupEn": "G-row (Dakuten)",
+            "group_vi": "Hàng G (Dakuten)",
+            "group_en": "G-row (Dakuten)",
+            "mouthTipVi": "Gốc lưỡi nâng áp vào ngạc mềm rồi bật nhẹ kết hợp rung mạnh dây thanh quản.",
+            "mouthTipEn": "Back of tongue presses soft palate, voiced plosive release.",
+            "mouthTip_vi": "Gốc lưỡi nâng áp vào ngạc mềm rồi bật nhẹ kết hợp rung mạnh dây thanh quản.",
+            "mouthTip_en": "Back of tongue presses soft palate, voiced plosive release.",
+            "meaningVi": "Âm đục Ga",
+            "meaningEn": "Voiced Ga",
+            "meaning_vi": "Âm đục Ga",
+            "meaning_en": "Voiced Ga",
+            "speechText": "が",
+            "examples": [
+              {
+                "word": "学校 (がっこう)",
+                "reading": "gakkou",
+                "vi": "Trường học",
+                "en": "School",
+                "meaning_vi": "Trường học",
+                "meaning_en": "School"
+              }
+            ],
+            "example": {
+              "word": "学校 (がっこう)",
+              "reading": "gakkou",
+              "vi": "Trường học",
+              "en": "School",
+              "meaning_vi": "Trường học",
+              "meaning_en": "School"
+            }
+          },
+          {
+            "char": "ぎ",
+            "romaji": "gi",
+            "ipa": "ɡi",
+            "groupVi": "Hàng G (Dakuten)",
+            "groupEn": "G-row (Dakuten)",
+            "group_vi": "Hàng G (Dakuten)",
+            "group_en": "G-row (Dakuten)",
+            "mouthTipVi": "Khóe miệng kéo sang hai bên, phát âm g đục kết hợp nguyên âm i.",
+            "mouthTipEn": "Spread lips gently into a smile, voiced velar stop with high vowel i.",
+            "mouthTip_vi": "Khóe miệng kéo sang hai bên, phát âm g đục kết hợp nguyên âm i.",
+            "mouthTip_en": "Spread lips gently into a smile, voiced velar stop with high vowel i.",
+            "meaningVi": "Âm đục Gi",
+            "meaningEn": "Voiced Gi",
+            "meaning_vi": "Âm đục Gi",
+            "meaning_en": "Voiced Gi",
+            "speechText": "ぎ",
+            "examples": [
+              {
+                "word": "銀行 (ぎんこう)",
+                "reading": "ginkou",
+                "vi": "Ngân hàng",
+                "en": "Bank",
+                "meaning_vi": "Ngân hàng",
+                "meaning_en": "Bank"
+              }
+            ],
+            "example": {
+              "word": "銀行 (ぎんこう)",
+              "reading": "ginkou",
+              "vi": "Ngân hàng",
+              "en": "Bank",
+              "meaning_vi": "Ngân hàng",
+              "meaning_en": "Bank"
+            }
+          },
+          {
+            "char": "ぐ",
+            "romaji": "gu",
+            "ipa": "ɡɯ",
+            "groupVi": "Hàng G (Dakuten)",
+            "groupEn": "G-row (Dakuten)",
+            "group_vi": "Hàng G (Dakuten)",
+            "group_en": "G-row (Dakuten)",
+            "mouthTipVi": "Môi hơi hé tự nhiên không chu tròn, gốc lưỡi chạm ngạc mềm rung thanh quản.",
+            "mouthTipEn": "Unrounded lips, voiced velar plosive into compressed u.",
+            "mouthTip_vi": "Môi hơi hé tự nhiên không chu tròn, gốc lưỡi chạm ngạc mềm rung thanh quản.",
+            "mouthTip_en": "Unrounded lips, voiced velar plosive into compressed u.",
+            "meaningVi": "Âm đục Gu",
+            "meaningEn": "Voiced Gu",
+            "meaning_vi": "Âm đục Gu",
+            "meaning_en": "Voiced Gu",
+            "speechText": "ぐ",
+            "examples": [
+              {
+                "word": "具合 (ぐあい)",
+                "reading": "guai",
+                "vi": "Tình trạng sức khỏe",
+                "en": "Condition",
+                "meaning_vi": "Tình trạng sức khỏe",
+                "meaning_en": "Condition"
+              }
+            ],
+            "example": {
+              "word": "具合 (ぐあい)",
+              "reading": "guai",
+              "vi": "Tình trạng sức khỏe",
+              "en": "Condition",
+              "meaning_vi": "Tình trạng sức khỏe",
+              "meaning_en": "Condition"
+            }
+          },
+          {
+            "char": "げ",
+            "romaji": "ge",
+            "ipa": "ɡe",
+            "groupVi": "Hàng G (Dakuten)",
+            "groupEn": "G-row (Dakuten)",
+            "group_vi": "Hàng G (Dakuten)",
+            "group_en": "G-row (Dakuten)",
+            "mouthTipVi": "Mở miệng vừa phải, bật âm g đục vào nguyên âm e dứt khoát.",
+            "mouthTipEn": "Mid-open mouth, crisp voiced ge.",
+            "mouthTip_vi": "Mở miệng vừa phải, bật âm g đục vào nguyên âm e dứt khoát.",
+            "mouthTip_en": "Mid-open mouth, crisp voiced ge.",
+            "meaningVi": "Âm đục Ge",
+            "meaningEn": "Voiced Ge",
+            "meaning_vi": "Âm đục Ge",
+            "meaning_en": "Voiced Ge",
+            "speechText": "げ",
+            "examples": [
+              {
+                "word": "元気 (げんき)",
+                "reading": "genki",
+                "vi": "Khỏe mạnh / Tràn đầy năng lượng",
+                "en": "Energetic / Healthy",
+                "meaning_vi": "Khỏe mạnh / Tràn đầy năng lượng",
+                "meaning_en": "Energetic / Healthy"
+              }
+            ],
+            "example": {
+              "word": "元気 (げんき)",
+              "reading": "genki",
+              "vi": "Khỏe mạnh / Tràn đầy năng lượng",
+              "en": "Energetic / Healthy",
+              "meaning_vi": "Khỏe mạnh / Tràn đầy năng lượng",
+              "meaning_en": "Energetic / Healthy"
+            }
+          },
+          {
+            "char": "ご",
+            "romaji": "go",
+            "ipa": "ɡo",
+            "groupVi": "Hàng G (Dakuten)",
+            "groupEn": "G-row (Dakuten)",
+            "group_vi": "Hàng G (Dakuten)",
+            "group_en": "G-row (Dakuten)",
+            "mouthTipVi": "Môi hơi tròn nhẹ, cuống họng rung âm g chuyển sang o.",
+            "mouthTipEn": "Slightly rounded lips, voiced velar stop into o.",
+            "mouthTip_vi": "Môi hơi tròn nhẹ, cuống họng rung âm g chuyển sang o.",
+            "mouthTip_en": "Slightly rounded lips, voiced velar stop into o.",
+            "meaningVi": "Âm đục Go",
+            "meaningEn": "Voiced Go",
+            "meaning_vi": "Âm đục Go",
+            "meaning_en": "Voiced Go",
+            "speechText": "ご",
+            "examples": [
+              {
+                "word": "ご飯 (ごはん)",
+                "reading": "gohan",
+                "vi": "Cơm / Bữa ăn",
+                "en": "Meal / Rice",
+                "meaning_vi": "Cơm / Bữa ăn",
+                "meaning_en": "Meal / Rice"
+              }
+            ],
+            "example": {
+              "word": "ご飯 (ごはん)",
+              "reading": "gohan",
+              "vi": "Cơm / Bữa ăn",
+              "en": "Meal / Rice",
+              "meaning_vi": "Cơm / Bữa ăn",
+              "meaning_en": "Meal / Rice"
+            }
+          },
+          {
+            "char": "ざ",
+            "romaji": "za",
+            "ipa": "dza",
+            "groupVi": "Hàng Z (Dakuten)",
+            "groupEn": "Z-row (Dakuten)",
+            "group_vi": "Hàng Z (Dakuten)",
+            "group_en": "Z-row (Dakuten)",
+            "mouthTipVi": "Đầu lưỡi chạm chân răng rồi xát rung thanh quản thành za.",
+            "mouthTipEn": "Tongue tip near alveolar ridge with voiced friction.",
+            "mouthTip_vi": "Đầu lưỡi chạm chân răng rồi xát rung thanh quản thành za.",
+            "mouthTip_en": "Tongue tip near alveolar ridge with voiced friction.",
+            "meaningVi": "Âm đục Za",
+            "meaningEn": "Voiced Za",
+            "meaning_vi": "Âm đục Za",
+            "meaning_en": "Voiced Za",
+            "speechText": "ざ",
+            "examples": [
+              {
+                "word": "雑誌 (ざっし)",
+                "reading": "zasshi",
+                "vi": "Tạp chí",
+                "en": "Magazine",
+                "meaning_vi": "Tạp chí",
+                "meaning_en": "Magazine"
+              }
+            ],
+            "example": {
+              "word": "雑誌 (ざっし)",
+              "reading": "zasshi",
+              "vi": "Tạp chí",
+              "en": "Magazine",
+              "meaning_vi": "Tạp chí",
+              "meaning_en": "Magazine"
+            }
+          },
+          {
+            "char": "じ",
+            "romaji": "ji",
+            "ipa": "dʑi",
+            "groupVi": "Hàng Z (Dakuten)",
+            "groupEn": "Z-row (Dakuten)",
+            "group_vi": "Hàng Z (Dakuten)",
+            "group_en": "Z-row (Dakuten)",
+            "mouthTipVi": "Mặt lưỡi nâng sát vòm cứng, phát âm j/gi hữu thanh mềm mại.",
+            "mouthTipEn": "Alveolo-palatal voiced affricate into high vowel i.",
+            "mouthTip_vi": "Mặt lưỡi nâng sát vòm cứng, phát âm j/gi hữu thanh mềm mại.",
+            "mouthTip_en": "Alveolo-palatal voiced affricate into high vowel i.",
+            "meaningVi": "Âm đục Ji",
+            "meaningEn": "Voiced Ji",
+            "meaning_vi": "Âm đục Ji",
+            "meaning_en": "Voiced Ji",
+            "speechText": "じ",
+            "examples": [
+              {
+                "word": "時間 (じかん)",
+                "reading": "jikan",
+                "vi": "Thời gian",
+                "en": "Time",
+                "meaning_vi": "Thời gian",
+                "meaning_en": "Time"
+              }
+            ],
+            "example": {
+              "word": "時間 (じかん)",
+              "reading": "jikan",
+              "vi": "Thời gian",
+              "en": "Time",
+              "meaning_vi": "Thời gian",
+              "meaning_en": "Time"
+            }
+          },
+          {
+            "char": "ず",
+            "romaji": "zu",
+            "ipa": "dzɯ",
+            "groupVi": "Hàng Z (Dakuten)",
+            "groupEn": "Z-row (Dakuten)",
+            "group_vi": "Hàng Z (Dakuten)",
+            "group_en": "Z-row (Dakuten)",
+            "mouthTipVi": "Đầu lưỡi áp sát chân răng trên, thổi luồng khí rung thanh quản.",
+            "mouthTipEn": "Voiced alveolar fricative/affricate before unrounded u.",
+            "mouthTip_vi": "Đầu lưỡi áp sát chân răng trên, thổi luồng khí rung thanh quản.",
+            "mouthTip_en": "Voiced alveolar fricative/affricate before unrounded u.",
+            "meaningVi": "Âm đục Zu",
+            "meaningEn": "Voiced Zu",
+            "meaning_vi": "Âm đục Zu",
+            "meaning_en": "Voiced Zu",
+            "speechText": "ず",
+            "examples": [
+              {
+                "word": "地図 (ちず)",
+                "reading": "chizu",
+                "vi": "Bản đồ",
+                "en": "Map",
+                "meaning_vi": "Bản đồ",
+                "meaning_en": "Map"
+              }
+            ],
+            "example": {
+              "word": "地図 (ちず)",
+              "reading": "chizu",
+              "vi": "Bản đồ",
+              "en": "Map",
+              "meaning_vi": "Bản đồ",
+              "meaning_en": "Map"
+            }
+          },
+          {
+            "char": "ぜ",
+            "romaji": "ze",
+            "ipa": "dze",
+            "groupVi": "Hàng Z (Dakuten)",
+            "groupEn": "Z-row (Dakuten)",
+            "group_vi": "Hàng Z (Dakuten)",
+            "group_en": "Z-row (Dakuten)",
+            "mouthTipVi": "Đầu lưỡi xát nhẹ chân răng trên, rung thanh quản phát âm ze.",
+            "mouthTipEn": "Voiced alveolar fricative into mid front vowel e.",
+            "mouthTip_vi": "Đầu lưỡi xát nhẹ chân răng trên, rung thanh quản phát âm ze.",
+            "mouthTip_en": "Voiced alveolar fricative into mid front vowel e.",
+            "meaningVi": "Âm đục Ze",
+            "meaningEn": "Voiced Ze",
+            "meaning_vi": "Âm đục Ze",
+            "meaning_en": "Voiced Ze",
+            "speechText": "ぜ",
+            "examples": [
+              {
+                "word": "全部 (ぜんぶ)",
+                "reading": "zenbu",
+                "vi": "Tất cả / Toàn bộ",
+                "en": "All",
+                "meaning_vi": "Tất cả / Toàn bộ",
+                "meaning_en": "All"
+              }
+            ],
+            "example": {
+              "word": "全部 (ぜんぶ)",
+              "reading": "zenbu",
+              "vi": "Tất cả / Toàn bộ",
+              "en": "All",
+              "meaning_vi": "Tất cả / Toàn bộ",
+              "meaning_en": "All"
+            }
+          },
+          {
+            "char": "ぞ",
+            "romaji": "zo",
+            "ipa": "dzo",
+            "groupVi": "Hàng Z (Dakuten)",
+            "groupEn": "Z-row (Dakuten)",
+            "group_vi": "Hàng Z (Dakuten)",
+            "group_en": "Z-row (Dakuten)",
+            "mouthTipVi": "Rung thanh quản với vị trí răng tạo luồng khí xát thành zo.",
+            "mouthTipEn": "Voiced alveolar fricative into back vowel o.",
+            "mouthTip_vi": "Rung thanh quản với vị trí răng tạo luồng khí xát thành zo.",
+            "mouthTip_en": "Voiced alveolar fricative into back vowel o.",
+            "meaningVi": "Âm đục Zo",
+            "meaningEn": "Voiced Zo",
+            "meaning_vi": "Âm đục Zo",
+            "meaning_en": "Voiced Zo",
+            "speechText": "ぞ",
+            "examples": [
+              {
+                "word": "家族 (かぞく)",
+                "reading": "kazoku",
+                "vi": "Gia đình",
+                "en": "Family",
+                "meaning_vi": "Gia đình",
+                "meaning_en": "Family"
+              }
+            ],
+            "example": {
+              "word": "家族 (かぞく)",
+              "reading": "kazoku",
+              "vi": "Gia đình",
+              "en": "Family",
+              "meaning_vi": "Gia đình",
+              "meaning_en": "Family"
+            }
+          },
+          {
+            "char": "だ",
+            "romaji": "da",
+            "ipa": "da",
+            "groupVi": "Hàng D (Dakuten)",
+            "groupEn": "D-row (Dakuten)",
+            "group_vi": "Hàng D (Dakuten)",
+            "group_en": "D-row (Dakuten)",
+            "mouthTipVi": "Đầu lưỡi chặn chặt lợi trên rồi bật ra kèm rung thanh quản.",
+            "mouthTipEn": "Alveolar voiced stop released into a.",
+            "mouthTip_vi": "Đầu lưỡi chặn chặt lợi trên rồi bật ra kèm rung thanh quản.",
+            "mouthTip_en": "Alveolar voiced stop released into a.",
+            "meaningVi": "Âm đục Da",
+            "meaningEn": "Voiced Da",
+            "meaning_vi": "Âm đục Da",
+            "meaning_en": "Voiced Da",
+            "speechText": "だ",
+            "examples": [
+              {
+                "word": "大学 (だいがく)",
+                "reading": "daigaku",
+                "vi": "Trường đại học",
+                "en": "University",
+                "meaning_vi": "Trường đại học",
+                "meaning_en": "University"
+              }
+            ],
+            "example": {
+              "word": "大学 (だいがく)",
+              "reading": "daigaku",
+              "vi": "Trường đại học",
+              "en": "University",
+              "meaning_vi": "Trường đại học",
+              "meaning_en": "University"
+            }
+          },
+          {
+            "char": "ぢ",
+            "romaji": "ji (di)",
+            "ipa": "dʑi",
+            "groupVi": "Hàng D (Dakuten)",
+            "groupEn": "D-row (Dakuten)",
+            "group_vi": "Hàng D (Dakuten)",
+            "group_en": "D-row (Dakuten)",
+            "mouthTipVi": "Phát âm giống じ, dùng trong một số từ thuần Nhật có biến âm hàng Ta.",
+            "mouthTipEn": "Pronounced identical to じ in modern Tokyo Japanese.",
+            "mouthTip_vi": "Phát âm giống じ, dùng trong một số từ thuần Nhật có biến âm hàng Ta.",
+            "mouthTip_en": "Pronounced identical to じ in modern Tokyo Japanese.",
+            "meaningVi": "Âm đục Dji",
+            "meaningEn": "Voiced Ji/Di",
+            "meaning_vi": "Âm đục Dji",
+            "meaning_en": "Voiced Ji/Di",
+            "speechText": "ぢ",
+            "examples": [
+              {
+                "word": "鼻血 (はなぢ)",
+                "reading": "hanaji",
+                "vi": "Chảy máu cam",
+                "en": "Nosebleed",
+                "meaning_vi": "Chảy máu cam",
+                "meaning_en": "Nosebleed"
+              }
+            ],
+            "example": {
+              "word": "鼻血 (はなぢ)",
+              "reading": "hanaji",
+              "vi": "Chảy máu cam",
+              "en": "Nosebleed",
+              "meaning_vi": "Chảy máu cam",
+              "meaning_en": "Nosebleed"
+            }
+          },
+          {
+            "char": "づ",
+            "romaji": "zu (du)",
+            "ipa": "dzɯ",
+            "groupVi": "Hàng D (Dakuten)",
+            "groupEn": "D-row (Dakuten)",
+            "group_vi": "Hàng D (Dakuten)",
+            "group_en": "D-row (Dakuten)",
+            "mouthTipVi": "Phát âm tương tự ず, dùng cho biến âm của つ.",
+            "mouthTipEn": "Pronounced identical to ず in modern standard Japanese.",
+            "mouthTip_vi": "Phát âm tương tự ず, dùng cho biến âm của つ.",
+            "mouthTip_en": "Pronounced identical to ず in modern standard Japanese.",
+            "meaningVi": "Âm đục Dzu",
+            "meaningEn": "Voiced Zu/Du",
+            "meaning_vi": "Âm đục Dzu",
+            "meaning_en": "Voiced Zu/Du",
+            "speechText": "づ",
+            "examples": [
+              {
+                "word": "続く (つづく)",
+                "reading": "tsuzuku",
+                "vi": "Tiếp tục",
+                "en": "To continue",
+                "meaning_vi": "Tiếp tục",
+                "meaning_en": "To continue"
+              }
+            ],
+            "example": {
+              "word": "続く (つづく)",
+              "reading": "tsuzuku",
+              "vi": "Tiếp tục",
+              "en": "To continue",
+              "meaning_vi": "Tiếp tục",
+              "meaning_en": "To continue"
+            }
+          },
+          {
+            "char": "で",
+            "romaji": "de",
+            "ipa": "de",
+            "groupVi": "Hàng D (Dakuten)",
+            "groupEn": "D-row (Dakuten)",
+            "group_vi": "Hàng D (Dakuten)",
+            "group_en": "D-row (Dakuten)",
+            "mouthTipVi": "Đầu lưỡi chạm ngạc răng trên, bật âm d hữu thanh vào e.",
+            "mouthTipEn": "Alveolar voiced stop into e.",
+            "mouthTip_vi": "Đầu lưỡi chạm ngạc răng trên, bật âm d hữu thanh vào e.",
+            "mouthTip_en": "Alveolar voiced stop into e.",
+            "meaningVi": "Âm đục De",
+            "meaningEn": "Voiced De",
+            "meaning_vi": "Âm đục De",
+            "meaning_en": "Voiced De",
+            "speechText": "で",
+            "examples": [
+              {
+                "word": "電話 (でんわ)",
+                "reading": "denwa",
+                "vi": "Điện thoại",
+                "en": "Telephone",
+                "meaning_vi": "Điện thoại",
+                "meaning_en": "Telephone"
+              }
+            ],
+            "example": {
+              "word": "電話 (でんわ)",
+              "reading": "denwa",
+              "vi": "Điện thoại",
+              "en": "Telephone",
+              "meaning_vi": "Điện thoại",
+              "meaning_en": "Telephone"
+            }
+          },
+          {
+            "char": "ど",
+            "romaji": "do",
+            "ipa": "do",
+            "groupVi": "Hàng D (Dakuten)",
+            "groupEn": "D-row (Dakuten)",
+            "group_vi": "Hàng D (Dakuten)",
+            "group_en": "D-row (Dakuten)",
+            "mouthTipVi": "Đầu lưỡi chặn lợi trên rồi bung ra âm do tròn và trầm.",
+            "mouthTipEn": "Alveolar voiced stop into o.",
+            "mouthTip_vi": "Đầu lưỡi chặn lợi trên rồi bung ra âm do tròn và trầm.",
+            "mouthTip_en": "Alveolar voiced stop into o.",
+            "meaningVi": "Âm đục Do",
+            "meaningEn": "Voiced Do",
+            "meaning_vi": "Âm đục Do",
+            "meaning_en": "Voiced Do",
+            "speechText": "ど",
+            "examples": [
+              {
+                "word": "友達 (ともだち)",
+                "reading": "tomodachi",
+                "vi": "Bạn bè",
+                "en": "Friend",
+                "meaning_vi": "Bạn bè",
+                "meaning_en": "Friend"
+              }
+            ],
+            "example": {
+              "word": "友達 (ともだち)",
+              "reading": "tomodachi",
+              "vi": "Bạn bè",
+              "en": "Friend",
+              "meaning_vi": "Bạn bè",
+              "meaning_en": "Friend"
+            }
+          },
+          {
+            "char": "ば",
+            "romaji": "ba",
+            "ipa": "ba",
+            "groupVi": "Hàng B (Dakuten)",
+            "groupEn": "B-row (Dakuten)",
+            "group_vi": "Hàng B (Dakuten)",
+            "group_en": "B-row (Dakuten)",
+            "mouthTipVi": "Hai môi mím chặt chặn khí, rung mạnh thanh quản rồi bật ra ba.",
+            "mouthTipEn": "Bilabial voiced stop released into a.",
+            "mouthTip_vi": "Hai môi mím chặt chặn khí, rung mạnh thanh quản rồi bật ra ba.",
+            "mouthTip_en": "Bilabial voiced stop released into a.",
+            "meaningVi": "Âm đục Ba",
+            "meaningEn": "Voiced Ba",
+            "meaning_vi": "Âm đục Ba",
+            "meaning_en": "Voiced Ba",
+            "speechText": "ば",
+            "examples": [
+              {
+                "word": "場所 (ばしょ)",
+                "reading": "basho",
+                "vi": "Địa điểm / Nơi chốn",
+                "en": "Place",
+                "meaning_vi": "Địa điểm / Nơi chốn",
+                "meaning_en": "Place"
+              }
+            ],
+            "example": {
+              "word": "場所 (ばしょ)",
+              "reading": "basho",
+              "vi": "Địa điểm / Nơi chốn",
+              "en": "Place",
+              "meaning_vi": "Địa điểm / Nơi chốn",
+              "meaning_en": "Place"
+            }
+          },
+          {
+            "char": "び",
+            "romaji": "bi",
+            "ipa": "bi",
+            "groupVi": "Hàng B (Dakuten)",
+            "groupEn": "B-row (Dakuten)",
+            "group_vi": "Hàng B (Dakuten)",
+            "group_en": "B-row (Dakuten)",
+            "mouthTipVi": "Hai môi mím lại, bật âm b hữu thanh kèm khóe môi kéo nhẹ sang i.",
+            "mouthTipEn": "Voiced bilabial stop into high vowel i.",
+            "mouthTip_vi": "Hai môi mím lại, bật âm b hữu thanh kèm khóe môi kéo nhẹ sang i.",
+            "mouthTip_en": "Voiced bilabial stop into high vowel i.",
+            "meaningVi": "Âm đục Bi",
+            "meaningEn": "Voiced Bi",
+            "meaning_vi": "Âm đục Bi",
+            "meaning_en": "Voiced Bi",
+            "speechText": "び",
+            "examples": [
+              {
+                "word": "病院 (びょういん)",
+                "reading": "byouin",
+                "vi": "Bệnh viện",
+                "en": "Hospital",
+                "meaning_vi": "Bệnh viện",
+                "meaning_en": "Hospital"
+              }
+            ],
+            "example": {
+              "word": "病院 (びょういん)",
+              "reading": "byouin",
+              "vi": "Bệnh viện",
+              "en": "Hospital",
+              "meaning_vi": "Bệnh viện",
+              "meaning_en": "Hospital"
+            }
+          },
+          {
+            "char": "ぶ",
+            "romaji": "bu",
+            "ipa": "bɯ",
+            "groupVi": "Hàng B (Dakuten)",
+            "groupEn": "B-row (Dakuten)",
+            "group_vi": "Hàng B (Dakuten)",
+            "group_en": "B-row (Dakuten)",
+            "mouthTipVi": "Hai môi mím nhẹ, bật âm b hữu thanh vào nguyên âm u tự nhiên.",
+            "mouthTipEn": "Bilabial voiced stop into compressed u.",
+            "mouthTip_vi": "Hai môi mím nhẹ, bật âm b hữu thanh vào nguyên âm u tự nhiên.",
+            "mouthTip_en": "Bilabial voiced stop into compressed u.",
+            "meaningVi": "Âm đục Bu",
+            "meaningEn": "Voiced Bu",
+            "meaning_vi": "Âm đục Bu",
+            "meaning_en": "Voiced Bu",
+            "speechText": "ぶ",
+            "examples": [
+              {
+                "word": "豚肉 (ぶたにく)",
+                "reading": "butaniku",
+                "vi": "Thịt heo",
+                "en": "Pork",
+                "meaning_vi": "Thịt heo",
+                "meaning_en": "Pork"
+              }
+            ],
+            "example": {
+              "word": "豚肉 (ぶたにく)",
+              "reading": "butaniku",
+              "vi": "Thịt heo",
+              "en": "Pork",
+              "meaning_vi": "Thịt heo",
+              "meaning_en": "Pork"
+            }
+          },
+          {
+            "char": "べ",
+            "romaji": "be",
+            "ipa": "be",
+            "groupVi": "Hàng B (Dakuten)",
+            "groupEn": "B-row (Dakuten)",
+            "group_vi": "Hàng B (Dakuten)",
+            "group_en": "B-row (Dakuten)",
+            "mouthTipVi": "Hai môi bật âm b hữu thanh rồi chuyển vào nguyên âm e dứt khoát.",
+            "mouthTipEn": "Bilabial voiced stop into e.",
+            "mouthTip_vi": "Hai môi bật âm b hữu thanh rồi chuyển vào nguyên âm e dứt khoát.",
+            "mouthTip_en": "Bilabial voiced stop into e.",
+            "meaningVi": "Âm đục Be",
+            "meaningEn": "Voiced Be",
+            "meaning_vi": "Âm đục Be",
+            "meaning_en": "Voiced Be",
+            "speechText": "べ",
+            "examples": [
+              {
+                "word": "勉強 (べんきょう)",
+                "reading": "benkyou",
+                "vi": "Học tập",
+                "en": "Study",
+                "meaning_vi": "Học tập",
+                "meaning_en": "Study"
+              }
+            ],
+            "example": {
+              "word": "勉強 (べんきょう)",
+              "reading": "benkyou",
+              "vi": "Học tập",
+              "en": "Study",
+              "meaning_vi": "Học tập",
+              "meaning_en": "Study"
+            }
+          },
+          {
+            "char": "ぼ",
+            "romaji": "bo",
+            "ipa": "bo",
+            "groupVi": "Hàng B (Dakuten)",
+            "groupEn": "B-row (Dakuten)",
+            "group_vi": "Hàng B (Dakuten)",
+            "group_en": "B-row (Dakuten)",
+            "mouthTipVi": "Hai môi mở tròn nhẹ sau khi mím bật âm b hữu thanh.",
+            "mouthTipEn": "Bilabial voiced stop into o.",
+            "mouthTip_vi": "Hai môi mở tròn nhẹ sau khi mím bật âm b hữu thanh.",
+            "mouthTip_en": "Bilabial voiced stop into o.",
+            "meaningVi": "Âm đục Bo",
+            "meaningEn": "Voiced Bo",
+            "meaning_vi": "Âm đục Bo",
+            "meaning_en": "Voiced Bo",
+            "speechText": "ぼ",
+            "examples": [
+              {
+                "word": "僕 (ぼく)",
+                "reading": "boku",
+                "vi": "Tôi (nam xưng thân mật)",
+                "en": "I / Me",
+                "meaning_vi": "Tôi (nam xưng thân mật)",
+                "meaning_en": "I / Me"
+              }
+            ],
+            "example": {
+              "word": "僕 (ぼく)",
+              "reading": "boku",
+              "vi": "Tôi (nam xưng thân mật)",
+              "en": "I / Me",
+              "meaning_vi": "Tôi (nam xưng thân mật)",
+              "meaning_en": "I / Me"
+            }
+          },
+          {
+            "char": "ぱ",
+            "romaji": "pa",
+            "ipa": "pa",
+            "groupVi": "Hàng P (Handakuten)",
+            "groupEn": "P-row (Handakuten)",
+            "group_vi": "Hàng P (Handakuten)",
+            "group_en": "P-row (Handakuten)",
+            "mouthTipVi": "Hai môi mím chặt nén luồng hơi rồi bật bung dứt khoát KHÔNG rung thanh quản.",
+            "mouthTipEn": "Bilabial voiceless plosive with crisp pop.",
+            "mouthTip_vi": "Hai môi mím chặt nén luồng hơi rồi bật bung dứt khoát KHÔNG rung thanh quản.",
+            "mouthTip_en": "Bilabial voiceless plosive with crisp pop.",
+            "meaningVi": "Âm bán đục Pa",
+            "meaningEn": "Semi-voiced Pa",
+            "meaning_vi": "Âm bán đục Pa",
+            "meaning_en": "Semi-voiced Pa",
+            "speechText": "ぱ",
+            "examples": [
+              {
+                "word": "パン (pan)",
+                "reading": "pan",
+                "vi": "Bánh mì",
+                "en": "Bread",
+                "meaning_vi": "Bánh mì",
+                "meaning_en": "Bread"
+              }
+            ],
+            "example": {
+              "word": "パン (pan)",
+              "reading": "pan",
+              "vi": "Bánh mì",
+              "en": "Bread",
+              "meaning_vi": "Bánh mì",
+              "meaning_en": "Bread"
+            }
+          },
+          {
+            "char": "ぴ",
+            "romaji": "pi",
+            "ipa": "pi",
+            "groupVi": "Hàng P (Handakuten)",
+            "groupEn": "P-row (Handakuten)",
+            "group_vi": "Hàng P (Handakuten)",
+            "group_en": "P-row (Handakuten)",
+            "mouthTipVi": "Mím môi bật hơi sắc sảo vào nguyên âm i.",
+            "mouthTipEn": "Voiceless bilabial plosive into i.",
+            "mouthTip_vi": "Mím môi bật hơi sắc sảo vào nguyên âm i.",
+            "mouthTip_en": "Voiceless bilabial plosive into i.",
+            "meaningVi": "Âm bán đục Pi",
+            "meaningEn": "Semi-voiced Pi",
+            "meaning_vi": "Âm bán đục Pi",
+            "meaning_en": "Semi-voiced Pi",
+            "speechText": "ぴ",
+            "examples": [
+              {
+                "word": "ピアノ (piano)",
+                "reading": "piano",
+                "vi": "Đàn dương cầm",
+                "en": "Piano",
+                "meaning_vi": "Đàn dương cầm",
+                "meaning_en": "Piano"
+              }
+            ],
+            "example": {
+              "word": "ピアノ (piano)",
+              "reading": "piano",
+              "vi": "Đàn dương cầm",
+              "en": "Piano",
+              "meaning_vi": "Đàn dương cầm",
+              "meaning_en": "Piano"
+            }
+          },
+          {
+            "char": "ぷ",
+            "romaji": "pu",
+            "ipa": "pɯ",
+            "groupVi": "Hàng P (Handakuten)",
+            "groupEn": "P-row (Handakuten)",
+            "group_vi": "Hàng P (Handakuten)",
+            "group_en": "P-row (Handakuten)",
+            "mouthTipVi": "Mím hai môi bật âm p dứt khoát vào nguyên âm u.",
+            "mouthTipEn": "Voiceless bilabial plosive into u.",
+            "mouthTip_vi": "Mím hai môi bật âm p dứt khoát vào nguyên âm u.",
+            "mouthTip_en": "Voiceless bilabial plosive into u.",
+            "meaningVi": "Âm bán đục Pu",
+            "meaningEn": "Semi-voiced Pu",
+            "meaning_vi": "Âm bán đục Pu",
+            "meaning_en": "Semi-voiced Pu",
+            "speechText": "ぷ",
+            "examples": [
+              {
+                "word": "プレゼント (purezento)",
+                "reading": "purezento",
+                "vi": "Món quà tặng",
+                "en": "Present / Gift",
+                "meaning_vi": "Món quà tặng",
+                "meaning_en": "Present / Gift"
+              }
+            ],
+            "example": {
+              "word": "プレゼント (purezento)",
+              "reading": "purezento",
+              "vi": "Món quà tặng",
+              "en": "Present / Gift",
+              "meaning_vi": "Món quà tặng",
+              "meaning_en": "Present / Gift"
+            }
+          },
+          {
+            "char": "ぺ",
+            "romaji": "pe",
+            "ipa": "pe",
+            "groupVi": "Hàng P (Handakuten)",
+            "groupEn": "P-row (Handakuten)",
+            "group_vi": "Hàng P (Handakuten)",
+            "group_en": "P-row (Handakuten)",
+            "mouthTipVi": "Mím môi bật nhẹ âm p rồi mở sang nguyên âm e.",
+            "mouthTipEn": "Voiceless bilabial plosive into e.",
+            "mouthTip_vi": "Mím môi bật nhẹ âm p rồi mở sang nguyên âm e.",
+            "mouthTip_en": "Voiceless bilabial plosive into e.",
+            "meaningVi": "Âm bán đục Pe",
+            "meaningEn": "Semi-voiced Pe",
+            "meaning_vi": "Âm bán đục Pe",
+            "meaning_en": "Semi-voiced Pe",
+            "speechText": "ぺ",
+            "examples": [
+              {
+                "word": "ペン (pen)",
+                "reading": "pen",
+                "vi": "Bút mực",
+                "en": "Pen",
+                "meaning_vi": "Bút mực",
+                "meaning_en": "Pen"
+              }
+            ],
+            "example": {
+              "word": "ペン (pen)",
+              "reading": "pen",
+              "vi": "Bút mực",
+              "en": "Pen",
+              "meaning_vi": "Bút mực",
+              "meaning_en": "Pen"
+            }
+          },
+          {
+            "char": "ぽ",
+            "romaji": "po",
+            "ipa": "po",
+            "groupVi": "Hàng P (Handakuten)",
+            "groupEn": "P-row (Handakuten)",
+            "group_vi": "Hàng P (Handakuten)",
+            "group_en": "P-row (Handakuten)",
+            "mouthTipVi": "Hai môi bật dứt khoát vào âm o tròn.",
+            "mouthTipEn": "Voiceless bilabial plosive into o.",
+            "mouthTip_vi": "Hai môi bật dứt khoát vào âm o tròn.",
+            "mouthTip_en": "Voiceless bilabial plosive into o.",
+            "meaningVi": "Âm bán đục Po",
+            "meaningEn": "Semi-voiced Po",
+            "meaning_vi": "Âm bán đục Po",
+            "meaning_en": "Semi-voiced Po",
+            "speechText": "ぽ",
+            "examples": [
+              {
+                "word": "ポスト (posuto)",
+                "reading": "posuto",
+                "vi": "Hòm thư bưu điện",
+                "en": "Mailbox",
+                "meaning_vi": "Hòm thư bưu điện",
+                "meaning_en": "Mailbox"
+              }
+            ],
+            "example": {
+              "word": "ポスト (posuto)",
+              "reading": "posuto",
+              "vi": "Hòm thư bưu điện",
+              "en": "Mailbox",
+              "meaning_vi": "Hòm thư bưu điện",
+              "meaning_en": "Mailbox"
+            }
+          },
+          {
+            "char": "きゃ",
+            "romaji": "kya",
+            "ipa": "kʲa",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "Kết hợp phụ âm k với âm lướt y thu nhỏ, bật gọn trong một phách duy nhất.",
+            "mouthTipEn": "Palatalized k gliding into a in a single beat.",
+            "mouthTip_vi": "Kết hợp phụ âm k với âm lướt y thu nhỏ, bật gọn trong một phách duy nhất.",
+            "mouthTip_en": "Palatalized k gliding into a in a single beat.",
+            "meaningVi": "Âm ghép Kya",
+            "meaningEn": "Yoon Kya",
+            "meaning_vi": "Âm ghép Kya",
+            "meaning_en": "Yoon Kya",
+            "speechText": "きゃ",
+            "examples": [
+              {
+                "word": "客 (きゃく)",
+                "reading": "kyaku",
+                "vi": "Khách hàng / Vị khách",
+                "en": "Customer / Guest",
+                "meaning_vi": "Khách hàng / Vị khách",
+                "meaning_en": "Customer / Guest"
+              }
+            ],
+            "example": {
+              "word": "客 (きゃく)",
+              "reading": "kyaku",
+              "vi": "Khách hàng / Vị khách",
+              "en": "Customer / Guest",
+              "meaning_vi": "Khách hàng / Vị khách",
+              "meaning_en": "Customer / Guest"
+            }
+          },
+          {
+            "char": "きゅ",
+            "romaji": "kyu",
+            "ipa": "kʲɯ",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "Phát âm k lướt nhanh qua yu trong 1 nhịp dứt khoát.",
+            "mouthTipEn": "Palatalized k gliding into u.",
+            "mouthTip_vi": "Phát âm k lướt nhanh qua yu trong 1 nhịp dứt khoát.",
+            "mouthTip_en": "Palatalized k gliding into u.",
+            "meaningVi": "Âm ghép Kyu",
+            "meaningEn": "Yoon Kyu",
+            "meaning_vi": "Âm ghép Kyu",
+            "meaning_en": "Yoon Kyu",
+            "speechText": "きゅ",
+            "examples": [
+              {
+                "word": "牛肉 (ぎゅうにく)",
+                "reading": "gyuuniku",
+                "vi": "Thịt bò",
+                "en": "Beef",
+                "meaning_vi": "Thịt bò",
+                "meaning_en": "Beef"
+              }
+            ],
+            "example": {
+              "word": "牛肉 (ぎゅうにく)",
+              "reading": "gyuuniku",
+              "vi": "Thịt bò",
+              "en": "Beef",
+              "meaning_vi": "Thịt bò",
+              "meaning_en": "Beef"
+            }
+          },
+          {
+            "char": "きょ",
+            "romaji": "kyo",
+            "ipa": "kʲo",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "k kết hợp yo ngắn gọn trong 1 phách.",
+            "mouthTipEn": "Palatalized k into o.",
+            "mouthTip_vi": "k kết hợp yo ngắn gọn trong 1 phách.",
+            "mouthTip_en": "Palatalized k into o.",
+            "meaningVi": "Âm ghép Kyo",
+            "meaningEn": "Yoon Kyo",
+            "meaning_vi": "Âm ghép Kyo",
+            "meaning_en": "Yoon Kyo",
+            "speechText": "きょ",
+            "examples": [
+              {
+                "word": "今日 (きょう)",
+                "reading": "kyou",
+                "vi": "Hôm nay",
+                "en": "Today",
+                "meaning_vi": "Hôm nay",
+                "meaning_en": "Today"
+              }
+            ],
+            "example": {
+              "word": "今日 (きょう)",
+              "reading": "kyou",
+              "vi": "Hôm nay",
+              "en": "Today",
+              "meaning_vi": "Hôm nay",
+              "meaning_en": "Today"
+            }
+          },
+          {
+            "char": "しゃ",
+            "romaji": "sha",
+            "ipa": "ɕa",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "Mặt lưỡi nâng cao xát vòm miệng phát âm sh rồi trượt sang a.",
+            "mouthTipEn": "Voiceless alveolo-palatal fricative into a.",
+            "mouthTip_vi": "Mặt lưỡi nâng cao xát vòm miệng phát âm sh rồi trượt sang a.",
+            "mouthTip_en": "Voiceless alveolo-palatal fricative into a.",
+            "meaningVi": "Âm ghép Sha",
+            "meaningEn": "Yoon Sha",
+            "meaning_vi": "Âm ghép Sha",
+            "meaning_en": "Yoon Sha",
+            "speechText": "しゃ",
+            "examples": [
+              {
+                "word": "写真 (しゃしん)",
+                "reading": "shashin",
+                "vi": "Bức ảnh chụp",
+                "en": "Photograph",
+                "meaning_vi": "Bức ảnh chụp",
+                "meaning_en": "Photograph"
+              }
+            ],
+            "example": {
+              "word": "写真 (しゃしん)",
+              "reading": "shashin",
+              "vi": "Bức ảnh chụp",
+              "en": "Photograph",
+              "meaning_vi": "Bức ảnh chụp",
+              "meaning_en": "Photograph"
+            }
+          },
+          {
+            "char": "しゅ",
+            "romaji": "shu",
+            "ipa": "ɕɯ",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "sh lướt sang u, khẩu hình gọn gàng.",
+            "mouthTipEn": "Voiceless alveolo-palatal fricative into u.",
+            "mouthTip_vi": "sh lướt sang u, khẩu hình gọn gàng.",
+            "mouthTip_en": "Voiceless alveolo-palatal fricative into u.",
+            "meaningVi": "Âm ghép Shu",
+            "meaningEn": "Yoon Shu",
+            "meaning_vi": "Âm ghép Shu",
+            "meaning_en": "Yoon Shu",
+            "speechText": "しゅ",
+            "examples": [
+              {
+                "word": "宿題 (しゅくだい)",
+                "reading": "shukudai",
+                "vi": "Bài tập về nhà",
+                "en": "Homework",
+                "meaning_vi": "Bài tập về nhà",
+                "meaning_en": "Homework"
+              }
+            ],
+            "example": {
+              "word": "宿題 (しゅくだい)",
+              "reading": "shukudai",
+              "vi": "Bài tập về nhà",
+              "en": "Homework",
+              "meaning_vi": "Bài tập về nhà",
+              "meaning_en": "Homework"
+            }
+          },
+          {
+            "char": "しょ",
+            "romaji": "sho",
+            "ipa": "ɕo",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "sh lướt sang o trong một phách duy nhất.",
+            "mouthTipEn": "Voiceless alveolo-palatal fricative into o.",
+            "mouthTip_vi": "sh lướt sang o trong một phách duy nhất.",
+            "mouthTip_en": "Voiceless alveolo-palatal fricative into o.",
+            "meaningVi": "Âm ghép Sho",
+            "meaningEn": "Yoon Sho",
+            "meaning_vi": "Âm ghép Sho",
+            "meaning_en": "Yoon Sho",
+            "speechText": "しょ",
+            "examples": [
+              {
+                "word": "食堂 (しょくどう)",
+                "reading": "shokudou",
+                "vi": "Nhà ăn / Nhà hàng",
+                "en": "Cafeteria",
+                "meaning_vi": "Nhà ăn / Nhà hàng",
+                "meaning_en": "Cafeteria"
+              }
+            ],
+            "example": {
+              "word": "食堂 (しょくどう)",
+              "reading": "shokudou",
+              "vi": "Nhà ăn / Nhà hàng",
+              "en": "Cafeteria",
+              "meaning_vi": "Nhà ăn / Nhà hàng",
+              "meaning_en": "Cafeteria"
+            }
+          },
+          {
+            "char": "ちゃ",
+            "romaji": "cha",
+            "ipa": "tɕa",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "Tắc xát mặt lưỡi ch rồi mở sang a.",
+            "mouthTipEn": "Voiceless alveolo-palatal affricate into a.",
+            "mouthTip_vi": "Tắc xát mặt lưỡi ch rồi mở sang a.",
+            "mouthTip_en": "Voiceless alveolo-palatal affricate into a.",
+            "meaningVi": "Âm ghép Cha",
+            "meaningEn": "Yoon Cha",
+            "meaning_vi": "Âm ghép Cha",
+            "meaning_en": "Yoon Cha",
+            "speechText": "ちゃ",
+            "examples": [
+              {
+                "word": "お茶 (おちゃ)",
+                "reading": "ocha",
+                "vi": "Trà xanh Nhật Bản",
+                "en": "Green tea",
+                "meaning_vi": "Trà xanh Nhật Bản",
+                "meaning_en": "Green tea"
+              }
+            ],
+            "example": {
+              "word": "お茶 (おちゃ)",
+              "reading": "ocha",
+              "vi": "Trà xanh Nhật Bản",
+              "en": "Green tea",
+              "meaning_vi": "Trà xanh Nhật Bản",
+              "meaning_en": "Green tea"
+            }
+          },
+          {
+            "char": "ちゅ",
+            "romaji": "chu",
+            "ipa": "tɕɯ",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "ch lướt sang u dứt khoát.",
+            "mouthTipEn": "Voiceless alveolo-palatal affricate into u.",
+            "mouthTip_vi": "ch lướt sang u dứt khoát.",
+            "mouthTip_en": "Voiceless alveolo-palatal affricate into u.",
+            "meaningVi": "Âm ghép Chu",
+            "meaningEn": "Yoon Chu",
+            "meaning_vi": "Âm ghép Chu",
+            "meaning_en": "Yoon Chu",
+            "speechText": "ちゅ",
+            "examples": [
+              {
+                "word": "注意 (ちゅうい)",
+                "reading": "chuui",
+                "vi": "Chú ý / Cẩn thận",
+                "en": "Attention / Warning",
+                "meaning_vi": "Chú ý / Cẩn thận",
+                "meaning_en": "Attention / Warning"
+              }
+            ],
+            "example": {
+              "word": "注意 (ちゅうい)",
+              "reading": "chuui",
+              "vi": "Chú ý / Cẩn thận",
+              "en": "Attention / Warning",
+              "meaning_vi": "Chú ý / Cẩn thận",
+              "meaning_en": "Attention / Warning"
+            }
+          },
+          {
+            "char": "ちょ",
+            "romaji": "cho",
+            "ipa": "tɕo",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "ch lướt sang o gọn trong 1 phách.",
+            "mouthTipEn": "Voiceless alveolo-palatal affricate into o.",
+            "mouthTip_vi": "ch lướt sang o gọn trong 1 phách.",
+            "mouthTip_en": "Voiceless alveolo-palatal affricate into o.",
+            "meaningVi": "Âm ghép Cho",
+            "meaningEn": "Yoon Cho",
+            "meaning_vi": "Âm ghép Cho",
+            "meaning_en": "Yoon Cho",
+            "speechText": "ちょ",
+            "examples": [
+              {
+                "word": "ちょっと",
+                "reading": "chotto",
+                "vi": "Một chút / Chờ tí",
+                "en": "A little",
+                "meaning_vi": "Một chút / Chờ tí",
+                "meaning_en": "A little"
+              }
+            ],
+            "example": {
+              "word": "ちょっと",
+              "reading": "chotto",
+              "vi": "Một chút / Chờ tí",
+              "en": "A little",
+              "meaning_vi": "Một chút / Chờ tí",
+              "meaning_en": "A little"
+            }
+          },
+          {
+            "char": "にゃ",
+            "romaji": "nya",
+            "ipa": "ɲa",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "Mặt lưỡi ép lên ngạc cứng tạo âm mũi ny lướt sang a.",
+            "mouthTipEn": "Palatal nasal into a.",
+            "mouthTip_vi": "Mặt lưỡi ép lên ngạc cứng tạo âm mũi ny lướt sang a.",
+            "mouthTip_en": "Palatal nasal into a.",
+            "meaningVi": "Âm ghép Nya",
+            "meaningEn": "Yoon Nya",
+            "meaning_vi": "Âm ghép Nya",
+            "meaning_en": "Yoon Nya",
+            "speechText": "にゃ",
+            "examples": [
+              {
+                "word": "ニャーニャー",
+                "reading": "nyaanyaa",
+                "vi": "Tiếng mèo kêu (meo meo)",
+                "en": "Meow",
+                "meaning_vi": "Tiếng mèo kêu (meo meo)",
+                "meaning_en": "Meow"
+              }
+            ],
+            "example": {
+              "word": "ニャーニャー",
+              "reading": "nyaanyaa",
+              "vi": "Tiếng mèo kêu (meo meo)",
+              "en": "Meow",
+              "meaning_vi": "Tiếng mèo kêu (meo meo)",
+              "meaning_en": "Meow"
+            }
+          },
+          {
+            "char": "ひゃ",
+            "romaji": "hya",
+            "ipa": "ça",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "Mặt lưỡi xát ngạc cứng hy lướt sang a.",
+            "mouthTipEn": "Voiceless palatal fricative into a.",
+            "mouthTip_vi": "Mặt lưỡi xát ngạc cứng hy lướt sang a.",
+            "mouthTip_en": "Voiceless palatal fricative into a.",
+            "meaningVi": "Âm ghép Hya",
+            "meaningEn": "Yoon Hya",
+            "meaning_vi": "Âm ghép Hya",
+            "meaning_en": "Yoon Hya",
+            "speechText": "ひゃ",
+            "examples": [
+              {
+                "word": "百 (ひゃく)",
+                "reading": "hyaku",
+                "vi": "Một trăm (100)",
+                "en": "One hundred",
+                "meaning_vi": "Một trăm (100)",
+                "meaning_en": "One hundred"
+              }
+            ],
+            "example": {
+              "word": "百 (ひゃく)",
+              "reading": "hyaku",
+              "vi": "Một trăm (100)",
+              "en": "One hundred",
+              "meaning_vi": "Một trăm (100)",
+              "meaning_en": "One hundred"
+            }
+          },
+          {
+            "char": "みゃ",
+            "romaji": "mya",
+            "ipa": "mʲa",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "Mím môi tạo âm mũi m lướt sang ya.",
+            "mouthTipEn": "Palatalized labial nasal into a.",
+            "mouthTip_vi": "Mím môi tạo âm mũi m lướt sang ya.",
+            "mouthTip_en": "Palatalized labial nasal into a.",
+            "meaningVi": "Âm ghép Mya",
+            "meaningEn": "Yoon Mya",
+            "meaning_vi": "Âm ghép Mya",
+            "meaning_en": "Yoon Mya",
+            "speechText": "みゃ",
+            "examples": [
+              {
+                "word": "脈 (みゃく)",
+                "reading": "myaku",
+                "vi": "Mạch máu / Mạch đập",
+                "en": "Pulse",
+                "meaning_vi": "Mạch máu / Mạch đập",
+                "meaning_en": "Pulse"
+              }
+            ],
+            "example": {
+              "word": "脈 (みゃく)",
+              "reading": "myaku",
+              "vi": "Mạch máu / Mạch đập",
+              "en": "Pulse",
+              "meaning_vi": "Mạch máu / Mạch đập",
+              "meaning_en": "Pulse"
+            }
+          },
+          {
+            "char": "りゃ",
+            "romaji": "rya",
+            "ipa": "ɾʲa",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "Đầu lưỡi vỗ nhẹ ngạc răng ry lướt sang a.",
+            "mouthTipEn": "Palatalized alveolar flap into a.",
+            "mouthTip_vi": "Đầu lưỡi vỗ nhẹ ngạc răng ry lướt sang a.",
+            "mouthTip_en": "Palatalized alveolar flap into a.",
+            "meaningVi": "Âm ghép Rya",
+            "meaningEn": "Yoon Rya",
+            "meaning_vi": "Âm ghép Rya",
+            "meaning_en": "Yoon Rya",
+            "speechText": "りゃ",
+            "examples": [
+              {
+                "word": "旅行 (りょこう)",
+                "reading": "ryokou",
+                "vi": "Du lịch",
+                "en": "Travel",
+                "meaning_vi": "Du lịch",
+                "meaning_en": "Travel"
+              }
+            ],
+            "example": {
+              "word": "旅行 (りょこう)",
+              "reading": "ryokou",
+              "vi": "Du lịch",
+              "en": "Travel",
+              "meaning_vi": "Du lịch",
+              "meaning_en": "Travel"
+            }
+          },
+          {
+            "char": "じゃ",
+            "romaji": "ja",
+            "ipa": "dʑa",
+            "groupVi": "Âm ghép (Yoon)",
+            "groupEn": "Contracted (Yoon)",
+            "group_vi": "Âm ghép (Yoon)",
+            "group_en": "Contracted (Yoon)",
+            "mouthTipVi": "Mặt lưỡi nâng rung âm j hữu thanh trượt sang a.",
+            "mouthTipEn": "Voiced alveolo-palatal affricate into a.",
+            "mouthTip_vi": "Mặt lưỡi nâng rung âm j hữu thanh trượt sang a.",
+            "mouthTip_en": "Voiced alveolo-palatal affricate into a.",
+            "meaningVi": "Âm ghép Ja",
+            "meaningEn": "Yoon Ja",
+            "meaning_vi": "Âm ghép Ja",
+            "meaning_en": "Yoon Ja",
+            "speechText": "じゃ",
+            "examples": [
+              {
+                "word": "邪魔 (じゃま)",
+                "reading": "jama",
+                "vi": "Phiền hà / Cản trở",
+                "en": "Hindrance",
+                "meaning_vi": "Phiền hà / Cản trở",
+                "meaning_en": "Hindrance"
+              }
+            ],
+            "example": {
+              "word": "邪魔 (じゃま)",
+              "reading": "jama",
+              "vi": "Phiền hà / Cản trở",
+              "en": "Hindrance",
+              "meaning_vi": "Phiền hà / Cản trở",
+              "meaning_en": "Hindrance"
+            }
+          }
+        ]
+      },
+      {
+        "id": "sokuon_choonpu",
+        "labelVi": "Âm ngắt & Trường âm (Sokuon & Chōonpu)",
+        "labelEn": "Double Consonants & Long Vowels",
+        "descriptionVi": "Âm ngắt (chữ っ/ッ ngắt phách gấp đôi phụ âm kk, ss, tt, pp) và Trường âm (kéo dài nguyên âm 2 phách).",
+        "descriptionEn": "Choked pauses (Sokuon っ/ッ double consonants) and sustained long vowels (Chōonpu ー).",
+        "items": [
+          {
+            "char": "っ [kk]",
+            "romaji": "Double kk (gakkou)",
+            "ipa": "kː",
+            "groupVi": "Âm ngắt k (Sokuon)",
+            "groupEn": "Geminate k (Sokuon)",
+            "group_vi": "Âm ngắt k (Sokuon)",
+            "group_en": "Geminate k (Sokuon)",
+            "mouthTipVi": "Chữ っ thu nhỏ biểu thị khoảng lặng 1 nhịp (mora) trước khi bật phụ âm k gấp đôi.",
+            "mouthTipEn": "Small tsu holds air for 1 mora before bursting into a doubled k consonant.",
+            "mouthTip_vi": "Chữ っ thu nhỏ biểu thị khoảng lặng 1 nhịp (mora) trước khi bật phụ âm k gấp đôi.",
+            "mouthTip_en": "Small tsu holds air for 1 mora before bursting into a doubled k consonant.",
+            "meaningVi": "Âm ngắt kk",
+            "meaningEn": "Double consonant kk",
+            "meaning_vi": "Âm ngắt kk",
+            "meaning_en": "Double consonant kk",
+            "speechText": "がっこう",
+            "examples": [
+              {
+                "word": "学校 (がっこう)",
+                "reading": "gakkou",
+                "vi": "Trường học (chặn hơi tạo âm k gấp đôi)",
+                "en": "School",
+                "meaning_vi": "Trường học (chặn hơi tạo âm k gấp đôi)",
+                "meaning_en": "School"
+              }
+            ],
+            "example": {
+              "word": "学校 (がっこう)",
+              "reading": "gakkou",
+              "vi": "Trường học (chặn hơi tạo âm k gấp đôi)",
+              "en": "School",
+              "meaning_vi": "Trường học (chặn hơi tạo âm k gấp đôi)",
+              "meaning_en": "School"
+            }
+          },
+          {
+            "char": "っ [ss]",
+            "romaji": "Double ss (zasshi)",
+            "ipa": "sː",
+            "groupVi": "Âm ngắt s (Sokuon)",
+            "groupEn": "Geminate s (Sokuon)",
+            "group_vi": "Âm ngắt s (Sokuon)",
+            "group_en": "Geminate s (Sokuon)",
+            "mouthTipVi": "Giữ luồng khí ma sát qua kẽ răng kéo dài trọn vẹn 1 phách trước khi chuyển sang shi.",
+            "mouthTipEn": "Sustains continuous friction at alveolar ridge for 1 extra beat before vowel.",
+            "mouthTip_vi": "Giữ luồng khí ma sát qua kẽ răng kéo dài trọn vẹn 1 phách trước khi chuyển sang shi.",
+            "mouthTip_en": "Sustains continuous friction at alveolar ridge for 1 extra beat before vowel.",
+            "meaningVi": "Âm ngắt ss",
+            "meaningEn": "Double consonant ss",
+            "meaning_vi": "Âm ngắt ss",
+            "meaning_en": "Double consonant ss",
+            "speechText": "ざっし",
+            "examples": [
+              {
+                "word": "雑誌 (ざっし)",
+                "reading": "zasshi",
+                "vi": "Tạp chí (ngắt hơi kéo dài âm s)",
+                "en": "Magazine",
+                "meaning_vi": "Tạp chí (ngắt hơi kéo dài âm s)",
+                "meaning_en": "Magazine"
+              }
+            ],
+            "example": {
+              "word": "雑誌 (ざっし)",
+              "reading": "zasshi",
+              "vi": "Tạp chí (ngắt hơi kéo dài âm s)",
+              "en": "Magazine",
+              "meaning_vi": "Tạp chí (ngắt hơi kéo dài âm s)",
+              "meaning_en": "Magazine"
+            }
+          },
+          {
+            "char": "っ [tt]",
+            "romaji": "Double tt (kitte)",
+            "ipa": "tː",
+            "groupVi": "Âm ngắt t (Sokuon)",
+            "groupEn": "Geminate t (Sokuon)",
+            "group_vi": "Âm ngắt t (Sokuon)",
+            "group_en": "Geminate t (Sokuon)",
+            "mouthTipVi": "Đầu lưỡi chặn chặt ở chân răng trên ngắt hơi 1 nhịp rồi mới bật t dứt khoát.",
+            "mouthTipEn": "Tongue tip seals upper gum ridge, pausing airflow 1 full mora before sharp release.",
+            "mouthTip_vi": "Đầu lưỡi chặn chặt ở chân răng trên ngắt hơi 1 nhịp rồi mới bật t dứt khoát.",
+            "mouthTip_en": "Tongue tip seals upper gum ridge, pausing airflow 1 full mora before sharp release.",
+            "meaningVi": "Âm ngắt tt",
+            "meaningEn": "Double consonant tt",
+            "meaning_vi": "Âm ngắt tt",
+            "meaning_en": "Double consonant tt",
+            "speechText": "きって",
+            "examples": [
+              {
+                "word": "切手 (きって)",
+                "reading": "kitte",
+                "vi": "Con tem (ngắt hơi chặn âm t)",
+                "en": "Postage stamp",
+                "meaning_vi": "Con tem (ngắt hơi chặn âm t)",
+                "meaning_en": "Postage stamp"
+              }
+            ],
+            "example": {
+              "word": "切手 (きって)",
+              "reading": "kitte",
+              "vi": "Con tem (ngắt hơi chặn âm t)",
+              "en": "Postage stamp",
+              "meaning_vi": "Con tem (ngắt hơi chặn âm t)",
+              "meaning_en": "Postage stamp"
+            }
+          },
+          {
+            "char": "っ [pp]",
+            "romaji": "Double pp (kappu)",
+            "ipa": "pː",
+            "groupVi": "Âm ngắt p (Sokuon)",
+            "groupEn": "Geminate p (Sokuon)",
+            "group_vi": "Âm ngắt p (Sokuon)",
+            "group_en": "Geminate p (Sokuon)",
+            "mouthTipVi": "Mím chặt hai môi giữ hơi 1 phách rồi mới bật bung âm p.",
+            "mouthTipEn": "Lips seal tightly holding pressure for 1 mora before bursting into p.",
+            "mouthTip_vi": "Mím chặt hai môi giữ hơi 1 phách rồi mới bật bung âm p.",
+            "mouthTip_en": "Lips seal tightly holding pressure for 1 mora before bursting into p.",
+            "meaningVi": "Âm ngắt pp",
+            "meaningEn": "Double consonant pp",
+            "meaning_vi": "Âm ngắt pp",
+            "meaning_en": "Double consonant pp",
+            "speechText": "カップ",
+            "examples": [
+              {
+                "word": "カップ (かっぷ)",
+                "reading": "kappu",
+                "vi": "Cái cốc / Cái ly (ngắt mím môi âm p)",
+                "en": "Cup",
+                "meaning_vi": "Cái cốc / Cái ly (ngắt mím môi âm p)",
+                "meaning_en": "Cup"
+              }
+            ],
+            "example": {
+              "word": "カップ (かっぷ)",
+              "reading": "kappu",
+              "vi": "Cái cốc / Cái ly (ngắt mím môi âm p)",
+              "en": "Cup",
+              "meaning_vi": "Cái cốc / Cái ly (ngắt mím môi âm p)",
+              "meaning_en": "Cup"
+            }
+          },
+          {
+            "char": "きって",
+            "romaji": "kitte",
+            "ipa": "kʲit̚te",
+            "groupVi": "Ví dụ Âm ngắt chuẩn",
+            "groupEn": "Geminate Example",
+            "group_vi": "Ví dụ Âm ngắt chuẩn",
+            "group_en": "Geminate Example",
+            "mouthTipVi": "Phát âm ki, dừng nén hơi ở đầu lưỡi 1 phách rồi bật te.",
+            "mouthTipEn": "Say ki, hold breath at alveolar ridge 1 beat, then release te.",
+            "mouthTip_vi": "Phát âm ki, dừng nén hơi ở đầu lưỡi 1 phách rồi bật te.",
+            "mouthTip_en": "Say ki, hold breath at alveolar ridge 1 beat, then release te.",
+            "meaningVi": "Từ mẫu: 切手 (Con tem)",
+            "meaningEn": "Example: Postage stamp",
+            "meaning_vi": "Từ mẫu: 切手 (Con tem)",
+            "meaning_en": "Example: Postage stamp",
+            "speechText": "きって",
+            "examples": [
+              {
+                "word": "切手 (きって)",
+                "reading": "kitte",
+                "vi": "Con tem gửi thư",
+                "en": "Postage stamp",
+                "meaning_vi": "Con tem gửi thư",
+                "meaning_en": "Postage stamp"
+              }
+            ],
+            "example": {
+              "word": "切手 (きって)",
+              "reading": "kitte",
+              "vi": "Con tem gửi thư",
+              "en": "Postage stamp",
+              "meaning_vi": "Con tem gửi thư",
+              "meaning_en": "Postage stamp"
+            }
+          },
+          {
+            "char": "ざっし",
+            "romaji": "zasshi",
+            "ipa": "zaɕːi",
+            "groupVi": "Ví dụ Âm ngắt chuẩn",
+            "groupEn": "Geminate Example",
+            "group_vi": "Ví dụ Âm ngắt chuẩn",
+            "group_en": "Geminate Example",
+            "mouthTipVi": "Phát âm za, giữ tiếng xát kéo dài 1 nhịp rồi kết thúc shi.",
+            "mouthTipEn": "Say za, sustain sibilance 1 beat, finish with shi.",
+            "mouthTip_vi": "Phát âm za, giữ tiếng xát kéo dài 1 nhịp rồi kết thúc shi.",
+            "mouthTip_en": "Say za, sustain sibilance 1 beat, finish with shi.",
+            "meaningVi": "Từ mẫu: 雑誌 (Tạp chí)",
+            "meaningEn": "Example: Magazine",
+            "meaning_vi": "Từ mẫu: 雑誌 (Tạp chí)",
+            "meaning_en": "Example: Magazine",
+            "speechText": "ざっし",
+            "examples": [
+              {
+                "word": "雑誌 (ざっし)",
+                "reading": "zasshi",
+                "vi": "Quyển tạp chí",
+                "en": "Magazine",
+                "meaning_vi": "Quyển tạp chí",
+                "meaning_en": "Magazine"
+              }
+            ],
+            "example": {
+              "word": "雑誌 (ざっし)",
+              "reading": "zasshi",
+              "vi": "Quyển tạp chí",
+              "en": "Magazine",
+              "meaning_vi": "Quyển tạp chí",
+              "meaning_en": "Magazine"
+            }
+          },
+          {
+            "char": "がっこう",
+            "romaji": "gakkou",
+            "ipa": "ɡak̚koː",
+            "groupVi": "Ví dụ Âm ngắt chuẩn",
+            "groupEn": "Geminate Example",
+            "group_vi": "Ví dụ Âm ngắt chuẩn",
+            "group_en": "Geminate Example",
+            "mouthTipVi": "Nén hơi ở cuống họng sau ga rồi bật kou kéo dài.",
+            "mouthTipEn": "Stop airflow in throat after ga, then release into sustained kou.",
+            "mouthTip_vi": "Nén hơi ở cuống họng sau ga rồi bật kou kéo dài.",
+            "mouthTip_en": "Stop airflow in throat after ga, then release into sustained kou.",
+            "meaningVi": "Từ mẫu: 学校 (Trường học)",
+            "meaningEn": "Example: School",
+            "meaning_vi": "Từ mẫu: 学校 (Trường học)",
+            "meaning_en": "Example: School",
+            "speechText": "がっこう",
+            "examples": [
+              {
+                "word": "学校 (がっこう)",
+                "reading": "gakkou",
+                "vi": "Trường học",
+                "en": "School",
+                "meaning_vi": "Trường học",
+                "meaning_en": "School"
+              }
+            ],
+            "example": {
+              "word": "学校 (がっこう)",
+              "reading": "gakkou",
+              "vi": "Trường học",
+              "en": "School",
+              "meaning_vi": "Trường học",
+              "meaning_en": "School"
+            }
+          },
+          {
+            "char": "カップ",
+            "romaji": "kappu",
+            "ipa": "kap̚pɯ",
+            "groupVi": "Ví dụ Âm ngắt Katakana",
+            "groupEn": "Katakana Geminate",
+            "group_vi": "Ví dụ Âm ngắt Katakana",
+            "group_en": "Katakana Geminate",
+            "mouthTipVi": "Nén chặt hai môi sau ka rồi bật pu dứt khoát.",
+            "mouthTipEn": "Press lips tight after ka, then pop into pu.",
+            "mouthTip_vi": "Nén chặt hai môi sau ka rồi bật pu dứt khoát.",
+            "mouthTip_en": "Press lips tight after ka, then pop into pu.",
+            "meaningVi": "Từ mẫu: カップ (Cái cốc)",
+            "meaningEn": "Example: Cup",
+            "meaning_vi": "Từ mẫu: カップ (Cái cốc)",
+            "meaning_en": "Example: Cup",
+            "speechText": "カップ",
+            "examples": [
+              {
+                "word": "カップ",
+                "reading": "kappu",
+                "vi": "Cái cốc / ly tách",
+                "en": "Cup",
+                "meaning_vi": "Cái cốc / ly tách",
+                "meaning_en": "Cup"
+              }
+            ],
+            "example": {
+              "word": "カップ",
+              "reading": "kappu",
+              "vi": "Cái cốc / ly tách",
+              "en": "Cup",
+              "meaning_vi": "Cái cốc / ly tách",
+              "meaning_en": "Cup"
+            }
+          },
+          {
+            "char": "おばあさん",
+            "romaji": "obaasan (aa -> ā)",
+            "ipa": "obaːsaɴ",
+            "groupVi": "Trường âm hàng A",
+            "groupEn": "A-row Long Vowel",
+            "group_vi": "Trường âm hàng A",
+            "group_en": "A-row Long Vowel",
+            "mouthTipVi": "Nguyên âm a kéo dài đúng 2 phách: o-ba-a-san. Nếu đọc ngắn sẽ thành obasan (cô/bác gái)!",
+            "mouthTipEn": "Sustain vowel a for exactly 2 beats. Short vowel means aunt (obasan)!",
+            "mouthTip_vi": "Nguyên âm a kéo dài đúng 2 phách: o-ba-a-san. Nếu đọc ngắn sẽ thành obasan (cô/bác gái)!",
+            "mouthTip_en": "Sustain vowel a for exactly 2 beats. Short vowel means aunt (obasan)!",
+            "meaningVi": "Trường âm Hiragana A",
+            "meaningEn": "Long Vowel A",
+            "meaning_vi": "Trường âm Hiragana A",
+            "meaning_en": "Long Vowel A",
+            "speechText": "おばあさん",
+            "examples": [
+              {
+                "word": "お祖母さん (おばあさん)",
+                "reading": "obaasan",
+                "vi": "Bà ngoại / Bà nội (kéo dài 2 phách)",
+                "en": "Grandmother",
+                "meaning_vi": "Bà ngoại / Bà nội (kéo dài 2 phách)",
+                "meaning_en": "Grandmother"
+              }
+            ],
+            "example": {
+              "word": "お祖母さん (おばあさん)",
+              "reading": "obaasan",
+              "vi": "Bà ngoại / Bà nội (kéo dài 2 phách)",
+              "en": "Grandmother",
+              "meaning_vi": "Bà ngoại / Bà nội (kéo dài 2 phách)",
+              "meaning_en": "Grandmother"
+            }
+          },
+          {
+            "char": "おじいさん",
+            "romaji": "ojiisan (ii -> ī)",
+            "ipa": "odʑiːsaɴ",
+            "groupVi": "Trường âm hàng I",
+            "groupEn": "I-row Long Vowel",
+            "group_vi": "Trường âm hàng I",
+            "group_en": "I-row Long Vowel",
+            "mouthTipVi": "Kéo dài âm i 2 phách: o-ji-i-san. Đọc ngắn thành ojisan (chú/bác)!",
+            "mouthTipEn": "Hold i for 2 mora beats: o-ji-i-san. Short vowel means uncle (ojisan)!",
+            "mouthTip_vi": "Kéo dài âm i 2 phách: o-ji-i-san. Đọc ngắn thành ojisan (chú/bác)!",
+            "mouthTip_en": "Hold i for 2 mora beats: o-ji-i-san. Short vowel means uncle (ojisan)!",
+            "meaningVi": "Trường âm Hiragana I",
+            "meaningEn": "Long Vowel I",
+            "meaning_vi": "Trường âm Hiragana I",
+            "meaning_en": "Long Vowel I",
+            "speechText": "おじいさん",
+            "examples": [
+              {
+                "word": "お祖父さん (おじいさん)",
+                "reading": "ojiisan",
+                "vi": "Ông nội / Ông ngoại (2 phách)",
+                "en": "Grandfather",
+                "meaning_vi": "Ông nội / Ông ngoại (2 phách)",
+                "meaning_en": "Grandfather"
+              }
+            ],
+            "example": {
+              "word": "お祖父さん (おじいさん)",
+              "reading": "ojiisan",
+              "vi": "Ông nội / Ông ngoại (2 phách)",
+              "en": "Grandfather",
+              "meaning_vi": "Ông nội / Ông ngoại (2 phách)",
+              "meaning_en": "Grandfather"
+            }
+          },
+          {
+            "char": "くうき",
+            "romaji": "kuuki (uu -> ū)",
+            "ipa": "kɯːki",
+            "groupVi": "Trường âm hàng U",
+            "groupEn": "U-row Long Vowel",
+            "group_vi": "Trường âm hàng U",
+            "group_en": "U-row Long Vowel",
+            "mouthTipVi": "Kéo dài nguyên âm u thêm 1 phách: ku-u-ki.",
+            "mouthTipEn": "Hold u for 2 mora beats.",
+            "mouthTip_vi": "Kéo dài nguyên âm u thêm 1 phách: ku-u-ki.",
+            "mouthTip_en": "Hold u for 2 mora beats.",
+            "meaningVi": "Trường âm Hiragana U",
+            "meaningEn": "Long Vowel U",
+            "meaning_vi": "Trường âm Hiragana U",
+            "meaning_en": "Long Vowel U",
+            "speechText": "くうき",
+            "examples": [
+              {
+                "word": "空気 (くうき)",
+                "reading": "kuuki",
+                "vi": "Không khí",
+                "en": "Air / Atmosphere",
+                "meaning_vi": "Không khí",
+                "meaning_en": "Air / Atmosphere"
+              }
+            ],
+            "example": {
+              "word": "空気 (くうき)",
+              "reading": "kuuki",
+              "vi": "Không khí",
+              "en": "Air / Atmosphere",
+              "meaning_vi": "Không khí",
+              "meaning_en": "Air / Atmosphere"
+            }
+          },
+          {
+            "char": "おねえさん",
+            "romaji": "oneesan (ee -> ē)",
+            "ipa": "oneːsaɴ",
+            "groupVi": "Trường âm hàng E",
+            "groupEn": "E-row Long Vowel",
+            "group_vi": "Trường âm hàng E",
+            "group_en": "E-row Long Vowel",
+            "mouthTipVi": "Kéo dài nguyên âm e 2 phách liền mạch: o-ne-e-san.",
+            "mouthTipEn": "Sustain vowel e for 2 full beats without pitch break.",
+            "mouthTip_vi": "Kéo dài nguyên âm e 2 phách liền mạch: o-ne-e-san.",
+            "mouthTip_en": "Sustain vowel e for 2 full beats without pitch break.",
+            "meaningVi": "Trường âm Hiragana E",
+            "meaningEn": "Long Vowel E",
+            "meaning_vi": "Trường âm Hiragana E",
+            "meaning_en": "Long Vowel E",
+            "speechText": "おねえさん",
+            "examples": [
+              {
+                "word": "お姉さん (おねえさん)",
+                "reading": "oneesan",
+                "vi": "Chị gái",
+                "en": "Older sister",
+                "meaning_vi": "Chị gái",
+                "meaning_en": "Older sister"
+              }
+            ],
+            "example": {
+              "word": "お姉さん (おねえさん)",
+              "reading": "oneesan",
+              "vi": "Chị gái",
+              "en": "Older sister",
+              "meaning_vi": "Chị gái",
+              "meaning_en": "Older sister"
+            }
+          },
+          {
+            "char": "とうきょう",
+            "romaji": "Toukyou (ou -> ō)",
+            "ipa": "toːkʲoː",
+            "groupVi": "Trường âm hàng O",
+            "groupEn": "O-row Long Vowel",
+            "group_vi": "Trường âm hàng O",
+            "group_en": "O-row Long Vowel",
+            "mouthTipVi": "Chữ う đứng sau hàng o tạo trường âm ō: đọc to-o-kyo-o.",
+            "mouthTipEn": "Kana u after o-row lengthens o into sustained ō (2 mora).",
+            "mouthTip_vi": "Chữ う đứng sau hàng o tạo trường âm ō: đọc to-o-kyo-o.",
+            "mouthTip_en": "Kana u after o-row lengthens o into sustained ō (2 mora).",
+            "meaningVi": "Trường âm Hiragana O",
+            "meaningEn": "Long Vowel O",
+            "meaning_vi": "Trường âm Hiragana O",
+            "meaning_en": "Long Vowel O",
+            "speechText": "とうきょう",
+            "examples": [
+              {
+                "word": "東京 (とうきょう)",
+                "reading": "toukyou",
+                "vi": "Thủ đô Tokyo",
+                "en": "Tokyo",
+                "meaning_vi": "Thủ đô Tokyo",
+                "meaning_en": "Tokyo"
+              }
+            ],
+            "example": {
+              "word": "東京 (とうきょう)",
+              "reading": "toukyou",
+              "vi": "Thủ đô Tokyo",
+              "en": "Tokyo",
+              "meaning_vi": "Thủ đô Tokyo",
+              "meaning_en": "Tokyo"
+            }
+          },
+          {
+            "char": "コーヒー",
+            "romaji": "koohii (Chōonpu ー)",
+            "ipa": "koːçiː",
+            "groupVi": "Trường âm Katakana ー",
+            "groupEn": "Katakana Chōonpu ー",
+            "group_vi": "Trường âm Katakana ー",
+            "group_en": "Katakana Chōonpu ー",
+            "mouthTipVi": "Dấu gạch ngang ー trong Katakana tăng trường độ âm tiết trước nó lên gấp đôi (2 phách).",
+            "mouthTipEn": "Horizontal dash ー in Katakana doubles the length of preceding vowel (2 mora).",
+            "mouthTip_vi": "Dấu gạch ngang ー trong Katakana tăng trường độ âm tiết trước nó lên gấp đôi (2 phách).",
+            "mouthTip_en": "Horizontal dash ー in Katakana doubles the length of preceding vowel (2 mora).",
+            "meaningVi": "Dấu trường âm Katakana ー",
+            "meaningEn": "Katakana Chōonpu dash",
+            "meaning_vi": "Dấu trường âm Katakana ー",
+            "meaning_en": "Katakana Chōonpu dash",
+            "speechText": "コーヒー",
+            "examples": [
+              {
+                "word": "コーヒー",
+                "reading": "koohii",
+                "vi": "Cà phê (kéo dài cả kō và hī)",
+                "en": "Coffee",
+                "meaning_vi": "Cà phê (kéo dài cả kō và hī)",
+                "meaning_en": "Coffee"
+              },
+              {
+                "word": "ケーキ",
+                "reading": "keeki",
+                "vi": "Bánh ngọt (cake)",
+                "en": "Cake",
+                "meaning_vi": "Bánh ngọt (cake)",
+                "meaning_en": "Cake"
+              }
+            ],
+            "example": {
+              "word": "コーヒー",
+              "reading": "koohii",
+              "vi": "Cà phê (kéo dài cả kō và hī)",
+              "en": "Coffee",
+              "meaning_vi": "Cà phê (kéo dài cả kō và hī)",
+              "meaning_en": "Coffee"
+            }
+          }
+        ]
+      }
+    ],
     "expressions": [
       {
         "id": "ja_greet_1",
@@ -2193,929 +5995,3608 @@ const LINGUA_DATA = {
     "scriptName": "IPA & Phonetics",
     "proTip_vi": "Tiếng Anh Mỹ là ngôn ngữ theo nhịp trọng âm (Stress-timed). Các từ chức năng (a, the, of, to) sẽ bị rút gọn về âm Schwa /ə/, trong khi từ mang nghĩa chính được phát âm ngân dài và rõ ràng!",
     "proTip_en": "American English is stress-timed! Function words reduce to Schwa /ə/, while content words take elongated vowel duration and clear pitch.",
-    "alphabet": {
-      "categories": [
-        {
-          "id": "alphabet_az",
-          "name_vi": "Bảng chữ cái A–Z (26 chữ)",
-          "name_en": "A–Z Alphabet (26 Letters)",
-          "description_vi": "Tên chữ cái, phiên âm tên chữ, hướng dẫn phát âm chuẩn và từ vựng ví dụ.",
-          "description_en": "Letter names, phonetic IPA, pronunciation mouth tips, and common example words."
-        },
-        {
-          "id": "vowels",
-          "name_vi": "Nguyên âm IPA (Đơn & Đôi)",
-          "name_en": "Vowel Phonemes (Monophthongs & Diphthongs)",
-          "description_vi": "Hệ thống nguyên âm chuẩn Anh-Mỹ quyết định trực tiếp việc hiểu nghĩa từ.",
-          "description_en": "Core American English vowels that distinguish word meanings."
-        },
-        {
-          "id": "consonants",
-          "name_vi": "Phụ âm IPA (Tắc, Xát, Mũi, Lỏng)",
-          "name_en": "Consonants (Stops, Fricatives, Liquids)",
-          "description_vi": "Các cặp phụ âm hữu thanh/vô thanh và khẩu hình răng-môi-lưỡi đặc trưng.",
-          "description_en": "Voiced and voiceless consonant pairs requiring precise placement."
-        }
-      ],
-      "items": [
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái A–E",
-          "group_en": "Letters A–E",
-          "char": "A a",
-          "romaji": "Letter A (/eɪ/)",
-          "ipa": "[eɪ]",
-          "mouthTip_vi": "Mở miệng vừa phải ở âm /e/ rồi lướt mượt mà khép nhẹ sang /ɪ/. Không phát âm giật cục.",
-          "mouthTip_en": "Start with mid-open /e/ and smoothly glide up into lax /ɪ/. A pure diphthong.",
-          "example": {
-            "word": "Apple",
-            "reading": "[ˈæp.əl]",
-            "meaning_vi": "Quả táo",
-            "meaning_en": "Fruit"
+    "alphabet": [
+      {
+        "id": "alphabet_az",
+        "labelVi": "Bảng chữ cái A–Z",
+        "labelEn": "A–Z Alphabet",
+        "descriptionVi": "Trọn bộ 26 chữ cái tiếng Anh từ A đến Z, phiên âm tên chữ cái và từ vựng mẫu.",
+        "descriptionEn": "The 26 standard English alphabet letters with phonetic names and examples.",
+        "items": [
+          {
+            "char": "A a",
+            "romaji": "Letter A (/eɪ/)",
+            "ipa": "eɪ",
+            "groupVi": "Chữ cái A–E",
+            "groupEn": "Letters A–E",
+            "group_vi": "Chữ cái A–E",
+            "group_en": "Letters A–E",
+            "mouthTipVi": "Mở miệng vừa phải ở âm /e/ rồi lướt mượt mà khép nhẹ sang /ɪ/. Không phát âm giật cục.",
+            "mouthTipEn": "Start with mid-open /e/ and smoothly glide up into lax /ɪ/. A pure diphthong.",
+            "mouthTip_vi": "Mở miệng vừa phải ở âm /e/ rồi lướt mượt mà khép nhẹ sang /ɪ/. Không phát âm giật cục.",
+            "mouthTip_en": "Start with mid-open /e/ and smoothly glide up into lax /ɪ/. A pure diphthong.",
+            "meaningVi": "Chữ cái tiếng Anh: A a",
+            "meaningEn": "English Letter: A a",
+            "meaning_vi": "Chữ cái tiếng Anh: A a",
+            "meaning_en": "English Letter: A a",
+            "speechText": "A",
+            "examples": [
+              {
+                "word": "Apple",
+                "reading": "[ˈæp.əl]",
+                "vi": "Quả táo",
+                "en": "Fruit",
+                "meaning_vi": "Quả táo",
+                "meaning_en": "Fruit"
+              }
+            ],
+            "example": {
+              "word": "Apple",
+              "reading": "[ˈæp.əl]",
+              "vi": "Quả táo",
+              "en": "Fruit",
+              "meaning_vi": "Quả táo",
+              "meaning_en": "Fruit"
+            }
+          },
+          {
+            "char": "B b",
+            "romaji": "Letter B (/biː/)",
+            "ipa": "biː",
+            "groupVi": "Chữ cái A–E",
+            "groupEn": "Letters A–E",
+            "group_vi": "Chữ cái A–E",
+            "group_en": "Letters A–E",
+            "mouthTipVi": "Mím chặt hai môi chặn hơi, rung thanh quản rồi bật bung ra cùng nguyên âm căng /iː/.",
+            "mouthTipEn": "Press lips firmly together, build vocal cord vibration, then release into tense /iː/.",
+            "mouthTip_vi": "Mím chặt hai môi chặn hơi, rung thanh quản rồi bật bung ra cùng nguyên âm căng /iː/.",
+            "mouthTip_en": "Press lips firmly together, build vocal cord vibration, then release into tense /iː/.",
+            "meaningVi": "Chữ cái tiếng Anh: B b",
+            "meaningEn": "English Letter: B b",
+            "meaning_vi": "Chữ cái tiếng Anh: B b",
+            "meaning_en": "English Letter: B b",
+            "speechText": "B",
+            "examples": [
+              {
+                "word": "Banana",
+                "reading": "[bəˈnæn.ə]",
+                "vi": "Quả chuối",
+                "en": "Yellow fruit",
+                "meaning_vi": "Quả chuối",
+                "meaning_en": "Yellow fruit"
+              }
+            ],
+            "example": {
+              "word": "Banana",
+              "reading": "[bəˈnæn.ə]",
+              "vi": "Quả chuối",
+              "en": "Yellow fruit",
+              "meaning_vi": "Quả chuối",
+              "meaning_en": "Yellow fruit"
+            }
+          },
+          {
+            "char": "C c",
+            "romaji": "Letter C (/siː/)",
+            "ipa": "siː",
+            "groupVi": "Chữ cái A–E",
+            "groupEn": "Letters A–E",
+            "group_vi": "Chữ cái A–E",
+            "group_en": "Letters A–E",
+            "mouthTipVi": "Đầu lưỡi áp sát chân răng trên, luồng hơi xát nhẹ qua kẽ răng thành âm /s/ rồi sang /iː/.",
+            "mouthTipEn": "Tongue tip near alveolar ridge, hiss clean /s/ into long tense /iː/.",
+            "mouthTip_vi": "Đầu lưỡi áp sát chân răng trên, luồng hơi xát nhẹ qua kẽ răng thành âm /s/ rồi sang /iː/.",
+            "mouthTip_en": "Tongue tip near alveolar ridge, hiss clean /s/ into long tense /iː/.",
+            "meaningVi": "Chữ cái tiếng Anh: C c",
+            "meaningEn": "English Letter: C c",
+            "meaning_vi": "Chữ cái tiếng Anh: C c",
+            "meaning_en": "English Letter: C c",
+            "speechText": "C",
+            "examples": [
+              {
+                "word": "Coffee",
+                "reading": "[ˈkɑː.fi]",
+                "vi": "Cà phê",
+                "en": "Morning brew",
+                "meaning_vi": "Cà phê",
+                "meaning_en": "Morning brew"
+              }
+            ],
+            "example": {
+              "word": "Coffee",
+              "reading": "[ˈkɑː.fi]",
+              "vi": "Cà phê",
+              "en": "Morning brew",
+              "meaning_vi": "Cà phê",
+              "meaning_en": "Morning brew"
+            }
+          },
+          {
+            "char": "D d",
+            "romaji": "Letter D (/diː/)",
+            "ipa": "diː",
+            "groupVi": "Chữ cái A–E",
+            "groupEn": "Letters A–E",
+            "group_vi": "Chữ cái A–E",
+            "group_en": "Letters A–E",
+            "mouthTipVi": "Đầu lưỡi gõ mạnh vào gờ chân răng trên, rung dây thanh quản rồi bật ra âm /iː/.",
+            "mouthTipEn": "Alveolar tap with vocal cord vibration, releasing into long /iː/.",
+            "mouthTip_vi": "Đầu lưỡi gõ mạnh vào gờ chân răng trên, rung dây thanh quản rồi bật ra âm /iː/.",
+            "mouthTip_en": "Alveolar tap with vocal cord vibration, releasing into long /iː/.",
+            "meaningVi": "Chữ cái tiếng Anh: D d",
+            "meaningEn": "English Letter: D d",
+            "meaning_vi": "Chữ cái tiếng Anh: D d",
+            "meaning_en": "English Letter: D d",
+            "speechText": "D",
+            "examples": [
+              {
+                "word": "Dream",
+                "reading": "[driːm]",
+                "vi": "Giấc mơ",
+                "en": "Vision during sleep",
+                "meaning_vi": "Giấc mơ",
+                "meaning_en": "Vision during sleep"
+              }
+            ],
+            "example": {
+              "word": "Dream",
+              "reading": "[driːm]",
+              "vi": "Giấc mơ",
+              "en": "Vision during sleep",
+              "meaning_vi": "Giấc mơ",
+              "meaning_en": "Vision during sleep"
+            }
+          },
+          {
+            "char": "E e",
+            "romaji": "Letter E (/iː/)",
+            "ipa": "iː",
+            "groupVi": "Chữ cái A–E",
+            "groupEn": "Letters A–E",
+            "group_vi": "Chữ cái A–E",
+            "group_en": "Letters A–E",
+            "mouthTipVi": "Khóe miệng kéo dẹt sang hai bên như đang cười tươi, lưng lưỡi nâng cao sát vòm ngạc.",
+            "mouthTipEn": "Spread lips wide into a bright smile; high front tense vowel.",
+            "mouthTip_vi": "Khóe miệng kéo dẹt sang hai bên như đang cười tươi, lưng lưỡi nâng cao sát vòm ngạc.",
+            "mouthTip_en": "Spread lips wide into a bright smile; high front tense vowel.",
+            "meaningVi": "Chữ cái tiếng Anh: E e",
+            "meaningEn": "English Letter: E e",
+            "meaning_vi": "Chữ cái tiếng Anh: E e",
+            "meaning_en": "English Letter: E e",
+            "speechText": "E",
+            "examples": [
+              {
+                "word": "Eagle",
+                "reading": "[ˈiː.ɡəl]",
+                "vi": "Chim đại bàng",
+                "en": "Mighty bird",
+                "meaning_vi": "Chim đại bàng",
+                "meaning_en": "Mighty bird"
+              }
+            ],
+            "example": {
+              "word": "Eagle",
+              "reading": "[ˈiː.ɡəl]",
+              "vi": "Chim đại bàng",
+              "en": "Mighty bird",
+              "meaning_vi": "Chim đại bàng",
+              "meaning_en": "Mighty bird"
+            }
+          },
+          {
+            "char": "F f",
+            "romaji": "Letter F (/ɛf/)",
+            "ipa": "ɛf",
+            "groupVi": "Chữ cái F–J",
+            "groupEn": "Letters F–J",
+            "group_vi": "Chữ cái F–J",
+            "group_en": "Letters F–J",
+            "mouthTipVi": "Phát âm /ɛ/ trước, sau đó đưa răng cửa trên chạm nhẹ môi dưới xát hơi ra âm /f/.",
+            "mouthTipEn": "Vocalize mid /ɛ/, then place upper incisors lightly on lower lip for fricative /f/.",
+            "mouthTip_vi": "Phát âm /ɛ/ trước, sau đó đưa răng cửa trên chạm nhẹ môi dưới xát hơi ra âm /f/.",
+            "mouthTip_en": "Vocalize mid /ɛ/, then place upper incisors lightly on lower lip for fricative /f/.",
+            "meaningVi": "Chữ cái tiếng Anh: F f",
+            "meaningEn": "English Letter: F f",
+            "meaning_vi": "Chữ cái tiếng Anh: F f",
+            "meaning_en": "English Letter: F f",
+            "speechText": "F",
+            "examples": [
+              {
+                "word": "Forest",
+                "reading": "[ˈfɔːr.ɪst]",
+                "vi": "Khu rừng",
+                "en": "Wooded area",
+                "meaning_vi": "Khu rừng",
+                "meaning_en": "Wooded area"
+              }
+            ],
+            "example": {
+              "word": "Forest",
+              "reading": "[ˈfɔːr.ɪst]",
+              "vi": "Khu rừng",
+              "en": "Wooded area",
+              "meaning_vi": "Khu rừng",
+              "meaning_en": "Wooded area"
+            }
+          },
+          {
+            "char": "G g",
+            "romaji": "Letter G (/dʒiː/)",
+            "ipa": "dʒiː",
+            "groupVi": "Chữ cái F–J",
+            "groupEn": "Letters F–J",
+            "group_vi": "Chữ cái F–J",
+            "group_en": "Letters F–J",
+            "mouthTipVi": "Đầu lưỡi chạm ngạc cứng chặn hơi, rung thanh đới rồi bật xát âm /dʒ/ sang /iː/.",
+            "mouthTipEn": "Voiced postalveolar affricate /dʒ/ popping clean into /iː/.",
+            "mouthTip_vi": "Đầu lưỡi chạm ngạc cứng chặn hơi, rung thanh đới rồi bật xát âm /dʒ/ sang /iː/.",
+            "mouthTip_en": "Voiced postalveolar affricate /dʒ/ popping clean into /iː/.",
+            "meaningVi": "Chữ cái tiếng Anh: G g",
+            "meaningEn": "English Letter: G g",
+            "meaning_vi": "Chữ cái tiếng Anh: G g",
+            "meaning_en": "English Letter: G g",
+            "speechText": "G",
+            "examples": [
+              {
+                "word": "Guitar",
+                "reading": "[ɡɪˈtɑːr]",
+                "vi": "Đàn ghi-ta",
+                "en": "String instrument",
+                "meaning_vi": "Đàn ghi-ta",
+                "meaning_en": "String instrument"
+              }
+            ],
+            "example": {
+              "word": "Guitar",
+              "reading": "[ɡɪˈtɑːr]",
+              "vi": "Đàn ghi-ta",
+              "en": "String instrument",
+              "meaning_vi": "Đàn ghi-ta",
+              "meaning_en": "String instrument"
+            }
+          },
+          {
+            "char": "H h",
+            "romaji": "Letter H (/eɪtʃ/)",
+            "ipa": "eɪtʃ",
+            "groupVi": "Chữ cái F–J",
+            "groupEn": "Letters F–J",
+            "group_vi": "Chữ cái F–J",
+            "group_en": "Letters F–J",
+            "mouthTipVi": "Bắt đầu với nguyên âm đôi /eɪ/, kết thúc dứt khoát bằng âm bật vô thanh /tʃ/ (ch).",
+            "mouthTipEn": "Start with diphthong /eɪ/ and crisp release with voiceless affricate /tʃ/.",
+            "mouthTip_vi": "Bắt đầu với nguyên âm đôi /eɪ/, kết thúc dứt khoát bằng âm bật vô thanh /tʃ/ (ch).",
+            "mouthTip_en": "Start with diphthong /eɪ/ and crisp release with voiceless affricate /tʃ/.",
+            "meaningVi": "Chữ cái tiếng Anh: H h",
+            "meaningEn": "English Letter: H h",
+            "meaning_vi": "Chữ cái tiếng Anh: H h",
+            "meaning_en": "English Letter: H h",
+            "speechText": "H",
+            "examples": [
+              {
+                "word": "House",
+                "reading": "[haʊs]",
+                "vi": "Ngôi nhà",
+                "en": "Dwelling",
+                "meaning_vi": "Ngôi nhà",
+                "meaning_en": "Dwelling"
+              }
+            ],
+            "example": {
+              "word": "House",
+              "reading": "[haʊs]",
+              "vi": "Ngôi nhà",
+              "en": "Dwelling",
+              "meaning_vi": "Ngôi nhà",
+              "meaning_en": "Dwelling"
+            }
+          },
+          {
+            "char": "I i",
+            "romaji": "Letter I (/aɪ/)",
+            "ipa": "aɪ",
+            "groupVi": "Chữ cái F–J",
+            "groupEn": "Letters F–J",
+            "group_vi": "Chữ cái F–J",
+            "group_en": "Letters F–J",
+            "mouthTipVi": "Hạ quai hàm mở rộng miệng ở âm /a/ rồi thu hẹp dần lướt lên âm /ɪ/.",
+            "mouthTipEn": "Open jaw wide for open /a/, gliding smoothly upward into /ɪ/.",
+            "mouthTip_vi": "Hạ quai hàm mở rộng miệng ở âm /a/ rồi thu hẹp dần lướt lên âm /ɪ/.",
+            "mouthTip_en": "Open jaw wide for open /a/, gliding smoothly upward into /ɪ/.",
+            "meaningVi": "Chữ cái tiếng Anh: I i",
+            "meaningEn": "English Letter: I i",
+            "meaning_vi": "Chữ cái tiếng Anh: I i",
+            "meaning_en": "English Letter: I i",
+            "speechText": "I",
+            "examples": [
+              {
+                "word": "Island",
+                "reading": "[ˈaɪ.lənd]",
+                "vi": "Hòn đảo",
+                "en": "Land surrounded by water",
+                "meaning_vi": "Hòn đảo",
+                "meaning_en": "Land surrounded by water"
+              }
+            ],
+            "example": {
+              "word": "Island",
+              "reading": "[ˈaɪ.lənd]",
+              "vi": "Hòn đảo",
+              "en": "Land surrounded by water",
+              "meaning_vi": "Hòn đảo",
+              "meaning_en": "Land surrounded by water"
+            }
+          },
+          {
+            "char": "J j",
+            "romaji": "Letter J (/dʒeɪ/)",
+            "ipa": "dʒeɪ",
+            "groupVi": "Chữ cái F–J",
+            "groupEn": "Letters F–J",
+            "group_vi": "Chữ cái F–J",
+            "group_en": "Letters F–J",
+            "mouthTipVi": "Bật âm hữu thanh /dʒ/ từ vòm miệng rồi lướt mượt mà sang nguyên âm đôi /eɪ/.",
+            "mouthTipEn": "Voiced affricate /dʒ/ followed by smooth diphthong /eɪ/.",
+            "mouthTip_vi": "Bật âm hữu thanh /dʒ/ từ vòm miệng rồi lướt mượt mà sang nguyên âm đôi /eɪ/.",
+            "mouthTip_en": "Voiced affricate /dʒ/ followed by smooth diphthong /eɪ/.",
+            "meaningVi": "Chữ cái tiếng Anh: J j",
+            "meaningEn": "English Letter: J j",
+            "meaning_vi": "Chữ cái tiếng Anh: J j",
+            "meaning_en": "English Letter: J j",
+            "speechText": "J",
+            "examples": [
+              {
+                "word": "Journey",
+                "reading": "[ˈdʒɝː.ni]",
+                "vi": "Chuyến hành trình",
+                "en": "Trip / Voyage",
+                "meaning_vi": "Chuyến hành trình",
+                "meaning_en": "Trip / Voyage"
+              }
+            ],
+            "example": {
+              "word": "Journey",
+              "reading": "[ˈdʒɝː.ni]",
+              "vi": "Chuyến hành trình",
+              "en": "Trip / Voyage",
+              "meaning_vi": "Chuyến hành trình",
+              "meaning_en": "Trip / Voyage"
+            }
+          },
+          {
+            "char": "K k",
+            "romaji": "Letter K (/keɪ/)",
+            "ipa": "keɪ",
+            "groupVi": "Chữ cái K–O",
+            "groupEn": "Letters K–O",
+            "group_vi": "Chữ cái K–O",
+            "group_en": "Letters K–O",
+            "mouthTipVi": "Gốc lưỡi chạm ngạc mềm bật hơi âm /k/ sắc dứt khoát rồi nối tiếp /eɪ/.",
+            "mouthTipEn": "Crisp aspirated velar stop /k/ releasing cleanly into /eɪ/.",
+            "mouthTip_vi": "Gốc lưỡi chạm ngạc mềm bật hơi âm /k/ sắc dứt khoát rồi nối tiếp /eɪ/.",
+            "mouthTip_en": "Crisp aspirated velar stop /k/ releasing cleanly into /eɪ/.",
+            "meaningVi": "Chữ cái tiếng Anh: K k",
+            "meaningEn": "English Letter: K k",
+            "meaning_vi": "Chữ cái tiếng Anh: K k",
+            "meaning_en": "English Letter: K k",
+            "speechText": "K",
+            "examples": [
+              {
+                "word": "Koala",
+                "reading": "[koʊˈɑː.lə]",
+                "vi": "Gấu túi Koala",
+                "en": "Marsupial",
+                "meaning_vi": "Gấu túi Koala",
+                "meaning_en": "Marsupial"
+              }
+            ],
+            "example": {
+              "word": "Koala",
+              "reading": "[koʊˈɑː.lə]",
+              "vi": "Gấu túi Koala",
+              "en": "Marsupial",
+              "meaning_vi": "Gấu túi Koala",
+              "meaning_en": "Marsupial"
+            }
+          },
+          {
+            "char": "L l",
+            "romaji": "Letter L (/ɛl/)",
+            "ipa": "ɛl",
+            "groupVi": "Chữ cái K–O",
+            "groupEn": "Letters K–O",
+            "group_vi": "Chữ cái K–O",
+            "group_en": "Letters K–O",
+            "mouthTipVi": "Phát âm /ɛ/, sau đó nâng đầu lưỡi chạm vào chân răng hàm trên để chặn hơi lại.",
+            "mouthTipEn": "Sound /ɛ/, then lift tongue tip firmly onto upper alveolar ridge.",
+            "mouthTip_vi": "Phát âm /ɛ/, sau đó nâng đầu lưỡi chạm vào chân răng hàm trên để chặn hơi lại.",
+            "mouthTip_en": "Sound /ɛ/, then lift tongue tip firmly onto upper alveolar ridge.",
+            "meaningVi": "Chữ cái tiếng Anh: L l",
+            "meaningEn": "English Letter: L l",
+            "meaning_vi": "Chữ cái tiếng Anh: L l",
+            "meaning_en": "English Letter: L l",
+            "speechText": "L",
+            "examples": [
+              {
+                "word": "Lemon",
+                "reading": "[ˈlɛm.ən]",
+                "vi": "Quả chanh vàng",
+                "en": "Sour citrus",
+                "meaning_vi": "Quả chanh vàng",
+                "meaning_en": "Sour citrus"
+              }
+            ],
+            "example": {
+              "word": "Lemon",
+              "reading": "[ˈlɛm.ən]",
+              "vi": "Quả chanh vàng",
+              "en": "Sour citrus",
+              "meaning_vi": "Quả chanh vàng",
+              "meaning_en": "Sour citrus"
+            }
+          },
+          {
+            "char": "M m",
+            "romaji": "Letter M (/ɛm/)",
+            "ipa": "ɛm",
+            "groupVi": "Chữ cái K–O",
+            "groupEn": "Letters K–O",
+            "group_vi": "Chữ cái K–O",
+            "group_en": "Letters K–O",
+            "mouthTipVi": "Phát âm /ɛ/, sau đó mím chặt hai môi lại cho âm rung thoát qua khoang mũi.",
+            "mouthTipEn": "Sound /ɛ/, then seal both lips allowing vocal resonance in nasal cavity.",
+            "mouthTip_vi": "Phát âm /ɛ/, sau đó mím chặt hai môi lại cho âm rung thoát qua khoang mũi.",
+            "mouthTip_en": "Sound /ɛ/, then seal both lips allowing vocal resonance in nasal cavity.",
+            "meaningVi": "Chữ cái tiếng Anh: M m",
+            "meaningEn": "English Letter: M m",
+            "meaning_vi": "Chữ cái tiếng Anh: M m",
+            "meaning_en": "English Letter: M m",
+            "speechText": "M",
+            "examples": [
+              {
+                "word": "Mountain",
+                "reading": "[ˈmaʊn.tən]",
+                "vi": "Ngọn núi",
+                "en": "High elevation",
+                "meaning_vi": "Ngọn núi",
+                "meaning_en": "High elevation"
+              }
+            ],
+            "example": {
+              "word": "Mountain",
+              "reading": "[ˈmaʊn.tən]",
+              "vi": "Ngọn núi",
+              "en": "High elevation",
+              "meaning_vi": "Ngọn núi",
+              "meaning_en": "High elevation"
+            }
+          },
+          {
+            "char": "N n",
+            "romaji": "Letter N (/ɛn/)",
+            "ipa": "ɛn",
+            "groupVi": "Chữ cái K–O",
+            "groupEn": "Letters K–O",
+            "group_vi": "Chữ cái K–O",
+            "group_en": "Letters K–O",
+            "mouthTipVi": "Phát âm /ɛ/, sau đó dán chặt đầu lưỡi vào lợi trên để luồng khí thoát qua mũi.",
+            "mouthTipEn": "Sound /ɛ/, then anchor tongue tip to upper gum ridge for nasal resonance.",
+            "mouthTip_vi": "Phát âm /ɛ/, sau đó dán chặt đầu lưỡi vào lợi trên để luồng khí thoát qua mũi.",
+            "mouthTip_en": "Sound /ɛ/, then anchor tongue tip to upper gum ridge for nasal resonance.",
+            "meaningVi": "Chữ cái tiếng Anh: N n",
+            "meaningEn": "English Letter: N n",
+            "meaning_vi": "Chữ cái tiếng Anh: N n",
+            "meaning_en": "English Letter: N n",
+            "speechText": "N",
+            "examples": [
+              {
+                "word": "Nature",
+                "reading": "[ˈneɪ.tʃɚ]",
+                "vi": "Thiên nhiên",
+                "en": "Natural world",
+                "meaning_vi": "Thiên nhiên",
+                "meaning_en": "Natural world"
+              }
+            ],
+            "example": {
+              "word": "Nature",
+              "reading": "[ˈneɪ.tʃɚ]",
+              "vi": "Thiên nhiên",
+              "en": "Natural world",
+              "meaning_vi": "Thiên nhiên",
+              "meaning_en": "Natural world"
+            }
+          },
+          {
+            "char": "O o",
+            "romaji": "Letter O (/oʊ/)",
+            "ipa": "oʊ",
+            "groupVi": "Chữ cái K–O",
+            "groupEn": "Letters K–O",
+            "group_vi": "Chữ cái K–O",
+            "group_en": "Letters K–O",
+            "mouthTipVi": "Mở miệng ở vị trí âm /o/ rồi thu tròn hai môi lại về phía trước thành /ʊ/.",
+            "mouthTipEn": "Start at mid-back /o/ and purse lips forward into tight /ʊ/.",
+            "mouthTip_vi": "Mở miệng ở vị trí âm /o/ rồi thu tròn hai môi lại về phía trước thành /ʊ/.",
+            "mouthTip_en": "Start at mid-back /o/ and purse lips forward into tight /ʊ/.",
+            "meaningVi": "Chữ cái tiếng Anh: O o",
+            "meaningEn": "English Letter: O o",
+            "meaning_vi": "Chữ cái tiếng Anh: O o",
+            "meaning_en": "English Letter: O o",
+            "speechText": "O",
+            "examples": [
+              {
+                "word": "Ocean",
+                "reading": "[ˈoʊ.ʃən]",
+                "vi": "Đại dương",
+                "en": "Vast sea",
+                "meaning_vi": "Đại dương",
+                "meaning_en": "Vast sea"
+              }
+            ],
+            "example": {
+              "word": "Ocean",
+              "reading": "[ˈoʊ.ʃən]",
+              "vi": "Đại dương",
+              "en": "Vast sea",
+              "meaning_vi": "Đại dương",
+              "meaning_en": "Vast sea"
+            }
+          },
+          {
+            "char": "P p",
+            "romaji": "Letter P (/piː/)",
+            "ipa": "piː",
+            "groupVi": "Chữ cái P–T",
+            "groupEn": "Letters P–T",
+            "group_vi": "Chữ cái P–T",
+            "group_en": "Letters P–T",
+            "mouthTipVi": "Mím chặt hai môi tạo áp suất rồi bật bung một luồng hơi cực mạnh ra cùng /iː/.",
+            "mouthTipEn": "Explosive voiceless bilabial burst /p/ followed by tense /iː/.",
+            "mouthTip_vi": "Mím chặt hai môi tạo áp suất rồi bật bung một luồng hơi cực mạnh ra cùng /iː/.",
+            "mouthTip_en": "Explosive voiceless bilabial burst /p/ followed by tense /iː/.",
+            "meaningVi": "Chữ cái tiếng Anh: P p",
+            "meaningEn": "English Letter: P p",
+            "meaning_vi": "Chữ cái tiếng Anh: P p",
+            "meaning_en": "English Letter: P p",
+            "speechText": "P",
+            "examples": [
+              {
+                "word": "Piano",
+                "reading": "[piˈæn.oʊ]",
+                "vi": "Đàn dương cầm",
+                "en": "Keyboard instrument",
+                "meaning_vi": "Đàn dương cầm",
+                "meaning_en": "Keyboard instrument"
+              }
+            ],
+            "example": {
+              "word": "Piano",
+              "reading": "[piˈæn.oʊ]",
+              "vi": "Đàn dương cầm",
+              "en": "Keyboard instrument",
+              "meaning_vi": "Đàn dương cầm",
+              "meaning_en": "Keyboard instrument"
+            }
+          },
+          {
+            "char": "Q q",
+            "romaji": "Letter Q (/kjuː/)",
+            "ipa": "kjuː",
+            "groupVi": "Chữ cái P–T",
+            "groupEn": "Letters P–T",
+            "group_vi": "Chữ cái P–T",
+            "group_en": "Letters P–T",
+            "mouthTipVi": "Bật âm /k/, lướt nhanh qua bán nguyên âm /j/ và kết thúc bằng âm chu môi /uː/.",
+            "mouthTipEn": "Velar stop /k/ gliding through palatal /j/ into long rounded /uː/.",
+            "mouthTip_vi": "Bật âm /k/, lướt nhanh qua bán nguyên âm /j/ và kết thúc bằng âm chu môi /uː/.",
+            "mouthTip_en": "Velar stop /k/ gliding through palatal /j/ into long rounded /uː/.",
+            "meaningVi": "Chữ cái tiếng Anh: Q q",
+            "meaningEn": "English Letter: Q q",
+            "meaning_vi": "Chữ cái tiếng Anh: Q q",
+            "meaning_en": "English Letter: Q q",
+            "speechText": "Q",
+            "examples": [
+              {
+                "word": "Quiet",
+                "reading": "[ˈkwaɪ.ət]",
+                "vi": "Yên lặng",
+                "en": "Silent",
+                "meaning_vi": "Yên lặng",
+                "meaning_en": "Silent"
+              }
+            ],
+            "example": {
+              "word": "Quiet",
+              "reading": "[ˈkwaɪ.ət]",
+              "vi": "Yên lặng",
+              "en": "Silent",
+              "meaning_vi": "Yên lặng",
+              "meaning_en": "Silent"
+            }
+          },
+          {
+            "char": "R r",
+            "romaji": "Letter R (/ɑːr/)",
+            "ipa": "ɑːr",
+            "groupVi": "Chữ cái P–T",
+            "groupEn": "Letters P–T",
+            "group_vi": "Chữ cái P–T",
+            "group_en": "Letters P–T",
+            "mouthTipVi": "Hạ quai hàm mở sâu /ɑː/, sau đó cong đầu lưỡi về phía vòm họng tạo âm R rền vang.",
+            "mouthTipEn": "Drop jaw for deep /ɑː/, then curl tongue back into retroflex American /r/.",
+            "mouthTip_vi": "Hạ quai hàm mở sâu /ɑː/, sau đó cong đầu lưỡi về phía vòm họng tạo âm R rền vang.",
+            "mouthTip_en": "Drop jaw for deep /ɑː/, then curl tongue back into retroflex American /r/.",
+            "meaningVi": "Chữ cái tiếng Anh: R r",
+            "meaningEn": "English Letter: R r",
+            "meaning_vi": "Chữ cái tiếng Anh: R r",
+            "meaning_en": "English Letter: R r",
+            "speechText": "R",
+            "examples": [
+              {
+                "word": "Rainbow",
+                "reading": "[ˈreɪn.boʊ]",
+                "vi": "Cầu vồng",
+                "en": "Color arc",
+                "meaning_vi": "Cầu vồng",
+                "meaning_en": "Color arc"
+              }
+            ],
+            "example": {
+              "word": "Rainbow",
+              "reading": "[ˈreɪn.boʊ]",
+              "vi": "Cầu vồng",
+              "en": "Color arc",
+              "meaning_vi": "Cầu vồng",
+              "meaning_en": "Color arc"
+            }
+          },
+          {
+            "char": "S s",
+            "romaji": "Letter S (/ɛs/)",
+            "ipa": "ɛs",
+            "groupVi": "Chữ cái P–T",
+            "groupEn": "Letters P–T",
+            "group_vi": "Chữ cái P–T",
+            "group_en": "Letters P–T",
+            "mouthTipVi": "Phát âm /ɛ/, sau đó khép răng xát một luồng hơi mảnh và sắc qua kẽ răng.",
+            "mouthTipEn": "Sound /ɛ/, then push sharp hissing stream of air through upper incisors.",
+            "mouthTip_vi": "Phát âm /ɛ/, sau đó khép răng xát một luồng hơi mảnh và sắc qua kẽ răng.",
+            "mouthTip_en": "Sound /ɛ/, then push sharp hissing stream of air through upper incisors.",
+            "meaningVi": "Chữ cái tiếng Anh: S s",
+            "meaningEn": "English Letter: S s",
+            "meaning_vi": "Chữ cái tiếng Anh: S s",
+            "meaning_en": "English Letter: S s",
+            "speechText": "S",
+            "examples": [
+              {
+                "word": "Sunshine",
+                "reading": "[ˈsʌn.ʃaɪn]",
+                "vi": "Ánh nắng mặt trời",
+                "en": "Sun rays",
+                "meaning_vi": "Ánh nắng mặt trời",
+                "meaning_en": "Sun rays"
+              }
+            ],
+            "example": {
+              "word": "Sunshine",
+              "reading": "[ˈsʌn.ʃaɪn]",
+              "vi": "Ánh nắng mặt trời",
+              "en": "Sun rays",
+              "meaning_vi": "Ánh nắng mặt trời",
+              "meaning_en": "Sun rays"
+            }
+          },
+          {
+            "char": "T t",
+            "romaji": "Letter T (/tiː/)",
+            "ipa": "tiː",
+            "groupVi": "Chữ cái P–T",
+            "groupEn": "Letters P–T",
+            "group_vi": "Chữ cái P–T",
+            "group_en": "Letters P–T",
+            "mouthTipVi": "Đầu lưỡi chạm ngạc răng trên chặn hơi rồi bật bung một luồng gió sắc gọn ra cùng /iː/.",
+            "mouthTipEn": "Crisp alveolar tap releasing an aspirated puff of air into /iː/.",
+            "mouthTip_vi": "Đầu lưỡi chạm ngạc răng trên chặn hơi rồi bật bung một luồng gió sắc gọn ra cùng /iː/.",
+            "mouthTip_en": "Crisp alveolar tap releasing an aspirated puff of air into /iː/.",
+            "meaningVi": "Chữ cái tiếng Anh: T t",
+            "meaningEn": "English Letter: T t",
+            "meaning_vi": "Chữ cái tiếng Anh: T t",
+            "meaning_en": "English Letter: T t",
+            "speechText": "T",
+            "examples": [
+              {
+                "word": "Tiger",
+                "reading": "[ˈtaɪ.ɡɚ]",
+                "vi": "Con hổ",
+                "en": "Striped predator",
+                "meaning_vi": "Con hổ",
+                "meaning_en": "Striped predator"
+              }
+            ],
+            "example": {
+              "word": "Tiger",
+              "reading": "[ˈtaɪ.ɡɚ]",
+              "vi": "Con hổ",
+              "en": "Striped predator",
+              "meaning_vi": "Con hổ",
+              "meaning_en": "Striped predator"
+            }
+          },
+          {
+            "char": "U u",
+            "romaji": "Letter U (/juː/)",
+            "ipa": "juː",
+            "groupVi": "Chữ cái U–Z",
+            "groupEn": "Letters U–Z",
+            "group_vi": "Chữ cái U–Z",
+            "group_en": "Letters U–Z",
+            "mouthTipVi": "Lướt từ âm vòm /j/ sang nguyên âm chu tròn môi căng /uː/.",
+            "mouthTipEn": "Palatal glide /j/ transitioning cleanly into rounded tense /uː/.",
+            "mouthTip_vi": "Lướt từ âm vòm /j/ sang nguyên âm chu tròn môi căng /uː/.",
+            "mouthTip_en": "Palatal glide /j/ transitioning cleanly into rounded tense /uː/.",
+            "meaningVi": "Chữ cái tiếng Anh: U u",
+            "meaningEn": "English Letter: U u",
+            "meaning_vi": "Chữ cái tiếng Anh: U u",
+            "meaning_en": "English Letter: U u",
+            "speechText": "U",
+            "examples": [
+              {
+                "word": "Umbrella",
+                "reading": "[ʌmˈbrɛl.ə]",
+                "vi": "Chiếc ô dù",
+                "en": "Rain protection",
+                "meaning_vi": "Chiếc ô dù",
+                "meaning_en": "Rain protection"
+              }
+            ],
+            "example": {
+              "word": "Umbrella",
+              "reading": "[ʌmˈbrɛl.ə]",
+              "vi": "Chiếc ô dù",
+              "en": "Rain protection",
+              "meaning_vi": "Chiếc ô dù",
+              "meaning_en": "Rain protection"
+            }
+          },
+          {
+            "char": "V v",
+            "romaji": "Letter V (/viː/)",
+            "ipa": "viː",
+            "groupVi": "Chữ cái U–Z",
+            "groupEn": "Letters U–Z",
+            "group_vi": "Chữ cái U–Z",
+            "group_en": "Letters U–Z",
+            "mouthTipVi": "Răng cửa trên chạm nhẹ vào môi dưới, rung mạnh dây thanh quản tạo âm rền /v/ sang /iː/.",
+            "mouthTipEn": "Upper teeth touch lower lip with strong vocal cord vibration into /iː/.",
+            "mouthTip_vi": "Răng cửa trên chạm nhẹ vào môi dưới, rung mạnh dây thanh quản tạo âm rền /v/ sang /iː/.",
+            "mouthTip_en": "Upper teeth touch lower lip with strong vocal cord vibration into /iː/.",
+            "meaningVi": "Chữ cái tiếng Anh: V v",
+            "meaningEn": "English Letter: V v",
+            "meaning_vi": "Chữ cái tiếng Anh: V v",
+            "meaning_en": "English Letter: V v",
+            "speechText": "V",
+            "examples": [
+              {
+                "word": "Victory",
+                "reading": "[ˈvɪk.tɚ.i]",
+                "vi": "Chiến thắng",
+                "en": "Triumph",
+                "meaning_vi": "Chiến thắng",
+                "meaning_en": "Triumph"
+              }
+            ],
+            "example": {
+              "word": "Victory",
+              "reading": "[ˈvɪk.tɚ.i]",
+              "vi": "Chiến thắng",
+              "en": "Triumph",
+              "meaning_vi": "Chiến thắng",
+              "meaning_en": "Triumph"
+            }
+          },
+          {
+            "char": "W w",
+            "romaji": "Letter W (/ˈdʌbəl.juː/)",
+            "ipa": "ˈdʌb.əl.juː",
+            "groupVi": "Chữ cái U–Z",
+            "groupEn": "Letters U–Z",
+            "group_vi": "Chữ cái U–Z",
+            "group_en": "Letters U–Z",
+            "mouthTipVi": "Gồm ba âm tiết: 'dʌb-əl-juː'. Nhấn trọng âm mạnh vào âm tiết đầu tiên.",
+            "mouthTipEn": "Three syllables: 'DUB-uhl-yoo'. Primary stress falls firmly on the first syllable.",
+            "mouthTip_vi": "Gồm ba âm tiết: 'dʌb-əl-juː'. Nhấn trọng âm mạnh vào âm tiết đầu tiên.",
+            "mouthTip_en": "Three syllables: 'DUB-uhl-yoo'. Primary stress falls firmly on the first syllable.",
+            "meaningVi": "Chữ cái tiếng Anh: W w",
+            "meaningEn": "English Letter: W w",
+            "meaning_vi": "Chữ cái tiếng Anh: W w",
+            "meaning_en": "English Letter: W w",
+            "speechText": "W",
+            "examples": [
+              {
+                "word": "Water",
+                "reading": "[ˈwɑː.t̬ɚ]",
+                "vi": "Nước uống",
+                "en": "Essential liquid",
+                "meaning_vi": "Nước uống",
+                "meaning_en": "Essential liquid"
+              }
+            ],
+            "example": {
+              "word": "Water",
+              "reading": "[ˈwɑː.t̬ɚ]",
+              "vi": "Nước uống",
+              "en": "Essential liquid",
+              "meaning_vi": "Nước uống",
+              "meaning_en": "Essential liquid"
+            }
+          },
+          {
+            "char": "X x",
+            "romaji": "Letter X (/ɛks/)",
+            "ipa": "ɛks",
+            "groupVi": "Chữ cái U–Z",
+            "groupEn": "Letters U–Z",
+            "group_vi": "Chữ cái U–Z",
+            "group_en": "Letters U–Z",
+            "mouthTipVi": "Bắt đầu với /ɛ/, chuyển sang chặn hơi ở /k/ rồi kết thúc xát hơi ở /s/.",
+            "mouthTipEn": "Start with /ɛ/, pop velar /k/ and immediately hiss through alveolar /s/.",
+            "mouthTip_vi": "Bắt đầu với /ɛ/, chuyển sang chặn hơi ở /k/ rồi kết thúc xát hơi ở /s/.",
+            "mouthTip_en": "Start with /ɛ/, pop velar /k/ and immediately hiss through alveolar /s/.",
+            "meaningVi": "Chữ cái tiếng Anh: X x",
+            "meaningEn": "English Letter: X x",
+            "meaning_vi": "Chữ cái tiếng Anh: X x",
+            "meaning_en": "English Letter: X x",
+            "speechText": "X",
+            "examples": [
+              {
+                "word": "Xylophone",
+                "reading": "[ˈzaɪ.lə.foʊn]",
+                "vi": "Đàn mộc cầm",
+                "en": "Percussion instrument",
+                "meaning_vi": "Đàn mộc cầm",
+                "meaning_en": "Percussion instrument"
+              }
+            ],
+            "example": {
+              "word": "Xylophone",
+              "reading": "[ˈzaɪ.lə.foʊn]",
+              "vi": "Đàn mộc cầm",
+              "en": "Percussion instrument",
+              "meaning_vi": "Đàn mộc cầm",
+              "meaning_en": "Percussion instrument"
+            }
+          },
+          {
+            "char": "Y y",
+            "romaji": "Letter Y (/waɪ/)",
+            "ipa": "waɪ",
+            "groupVi": "Chữ cái U–Z",
+            "groupEn": "Letters U–Z",
+            "group_vi": "Chữ cái U–Z",
+            "group_en": "Letters U–Z",
+            "mouthTipVi": "Chu môi ở âm /w/ rồi hạ quai hàm mở rộng lướt sang nguyên âm đôi /aɪ/.",
+            "mouthTipEn": "Bilabial glide /w/ opening widely into diphthong /aɪ/.",
+            "mouthTip_vi": "Chu môi ở âm /w/ rồi hạ quai hàm mở rộng lướt sang nguyên âm đôi /aɪ/.",
+            "mouthTip_en": "Bilabial glide /w/ opening widely into diphthong /aɪ/.",
+            "meaningVi": "Chữ cái tiếng Anh: Y y",
+            "meaningEn": "English Letter: Y y",
+            "meaning_vi": "Chữ cái tiếng Anh: Y y",
+            "meaning_en": "English Letter: Y y",
+            "speechText": "Y",
+            "examples": [
+              {
+                "word": "Yellow",
+                "reading": "[ˈjɛl.oʊ]",
+                "vi": "Màu vàng",
+                "en": "Color",
+                "meaning_vi": "Màu vàng",
+                "meaning_en": "Color"
+              }
+            ],
+            "example": {
+              "word": "Yellow",
+              "reading": "[ˈjɛl.oʊ]",
+              "vi": "Màu vàng",
+              "en": "Color",
+              "meaning_vi": "Màu vàng",
+              "meaning_en": "Color"
+            }
+          },
+          {
+            "char": "Z z",
+            "romaji": "Letter Z (/ziː/)",
+            "ipa": "ziː",
+            "groupVi": "Chữ cái U–Z",
+            "groupEn": "Letters U–Z",
+            "group_vi": "Chữ cái U–Z",
+            "group_en": "Letters U–Z",
+            "mouthTipVi": "Hai hàm răng khép nhẹ, rung mạnh thanh quản tạo âm rít /z/ như tiếng ong bay rồi sang /iː/.",
+            "mouthTipEn": "Teeth lightly together, vocal cords buzzing strongly like a bee into /iː/.",
+            "mouthTip_vi": "Hai hàm răng khép nhẹ, rung mạnh thanh quản tạo âm rít /z/ như tiếng ong bay rồi sang /iː/.",
+            "mouthTip_en": "Teeth lightly together, vocal cords buzzing strongly like a bee into /iː/.",
+            "meaningVi": "Chữ cái tiếng Anh: Z z",
+            "meaningEn": "English Letter: Z z",
+            "meaning_vi": "Chữ cái tiếng Anh: Z z",
+            "meaning_en": "English Letter: Z z",
+            "speechText": "Z",
+            "examples": [
+              {
+                "word": "Zebra",
+                "reading": "[ˈziː.brə]",
+                "vi": "Ngựa vằn",
+                "en": "Striped animal",
+                "meaning_vi": "Ngựa vằn",
+                "meaning_en": "Striped animal"
+              }
+            ],
+            "example": {
+              "word": "Zebra",
+              "reading": "[ˈziː.brə]",
+              "vi": "Ngựa vằn",
+              "en": "Striped animal",
+              "meaning_vi": "Ngựa vằn",
+              "meaning_en": "Striped animal"
+            }
           }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái A–E",
-          "group_en": "Letters A–E",
-          "char": "B b",
-          "romaji": "Letter B (/biː/)",
-          "ipa": "[biː]",
-          "mouthTip_vi": "Mím chặt hai môi chặn hơi, rung thanh quản rồi bật bung ra cùng nguyên âm căng /iː/.",
-          "mouthTip_en": "Press lips firmly together, build vocal cord vibration, then release into tense /iː/.",
-          "example": {
-            "word": "Banana",
-            "reading": "[bəˈnæn.ə]",
-            "meaning_vi": "Quả chuối",
-            "meaning_en": "Yellow fruit"
+        ]
+      },
+      {
+        "id": "vowels",
+        "labelVi": "Nguyên âm IPA",
+        "labelEn": "IPA Vowels",
+        "descriptionVi": "Hệ thống nguyên âm đơn và đôi chuẩn Anh-Mỹ quyết định khả năng nghe hiểu chuẩn.",
+        "descriptionEn": "American English monophthongs and diphthongs distinguishing word meanings.",
+        "items": [
+          {
+            "char": "/iː/",
+            "romaji": "ee sound",
+            "ipa": "iː",
+            "groupVi": "Nguyên âm trước căng",
+            "groupEn": "Front Tense Vowel",
+            "group_vi": "Nguyên âm trước căng",
+            "group_en": "Front Tense Vowel",
+            "mouthTipVi": "Nguyên âm căng: khóe miệng kéo rộng sang hai bên như cười tươi, lưng lưỡi nâng cao sát vòm ngạc cứng.",
+            "mouthTipEn": "Tense vowel! Corners of lips pulled wide, tongue blade high up against alveolar ridge.",
+            "mouthTip_vi": "Nguyên âm căng: khóe miệng kéo rộng sang hai bên như cười tươi, lưng lưỡi nâng cao sát vòm ngạc cứng.",
+            "mouthTip_en": "Tense vowel! Corners of lips pulled wide, tongue blade high up against alveolar ridge.",
+            "meaningVi": "Nguyên âm IPA: /iː/",
+            "meaningEn": "IPA Vowel: /iː/",
+            "meaning_vi": "Nguyên âm IPA: /iː/",
+            "meaning_en": "IPA Vowel: /iː/",
+            "speechText": "Sheep",
+            "examples": [
+              {
+                "word": "Sheep",
+                "reading": "[ʃiːp]",
+                "vi": "Con cừu (phân biệt với 'ship')",
+                "en": "Woolly animal (contrast with 'ship')",
+                "meaning_vi": "Con cừu (phân biệt với 'ship')",
+                "meaning_en": "Woolly animal (contrast with 'ship')"
+              }
+            ],
+            "example": {
+              "word": "Sheep",
+              "reading": "[ʃiːp]",
+              "vi": "Con cừu (phân biệt với 'ship')",
+              "en": "Woolly animal (contrast with 'ship')",
+              "meaning_vi": "Con cừu (phân biệt với 'ship')",
+              "meaning_en": "Woolly animal (contrast with 'ship')"
+            }
+          },
+          {
+            "char": "/ɪ/",
+            "romaji": "short i",
+            "ipa": "ɪ",
+            "groupVi": "Nguyên âm trước chùng",
+            "groupEn": "Front Lax Vowel",
+            "group_vi": "Nguyên âm trước chùng",
+            "group_en": "Front Lax Vowel",
+            "mouthTipVi": "Nguyên âm chùng: thả lỏng toàn bộ cơ miệng, hạ hàm và lưỡi thấp hơn một chút so với /iː/, phát âm ngắn.",
+            "mouthTipEn": "Lax vowel! Relax mouth completely, lower tongue slightly from /iː/.",
+            "mouthTip_vi": "Nguyên âm chùng: thả lỏng toàn bộ cơ miệng, hạ hàm và lưỡi thấp hơn một chút so với /iː/, phát âm ngắn.",
+            "mouthTip_en": "Lax vowel! Relax mouth completely, lower tongue slightly from /iː/.",
+            "meaningVi": "Nguyên âm IPA: /ɪ/",
+            "meaningEn": "IPA Vowel: /ɪ/",
+            "meaning_vi": "Nguyên âm IPA: /ɪ/",
+            "meaning_en": "IPA Vowel: /ɪ/",
+            "speechText": "Ship",
+            "examples": [
+              {
+                "word": "Ship",
+                "reading": "[ʃɪp]",
+                "vi": "Tàu thủy lớn",
+                "en": "Large maritime vessel",
+                "meaning_vi": "Tàu thủy lớn",
+                "meaning_en": "Large maritime vessel"
+              }
+            ],
+            "example": {
+              "word": "Ship",
+              "reading": "[ʃɪp]",
+              "vi": "Tàu thủy lớn",
+              "en": "Large maritime vessel",
+              "meaning_vi": "Tàu thủy lớn",
+              "meaning_en": "Large maritime vessel"
+            }
+          },
+          {
+            "char": "/e/",
+            "romaji": "short e",
+            "ipa": "eɛ",
+            "groupVi": "Nguyên âm giữa mở",
+            "groupEn": "Front Mid Vowel",
+            "group_vi": "Nguyên âm giữa mở",
+            "group_en": "Front Mid Vowel",
+            "mouthTipVi": "Miệng mở vừa phải, lưng lưỡi ở độ cao trung bình. Âm 'e' ngắn và dứt khoát.",
+            "mouthTipEn": "Mid-open mouth, tongue resting midway. Short and crisp.",
+            "mouthTip_vi": "Miệng mở vừa phải, lưng lưỡi ở độ cao trung bình. Âm 'e' ngắn và dứt khoát.",
+            "mouthTip_en": "Mid-open mouth, tongue resting midway. Short and crisp.",
+            "meaningVi": "Nguyên âm IPA: /e/",
+            "meaningEn": "IPA Vowel: /e/",
+            "meaning_vi": "Nguyên âm IPA: /e/",
+            "meaning_en": "IPA Vowel: /e/",
+            "speechText": "Bed",
+            "examples": [
+              {
+                "word": "Bed",
+                "reading": "[bɛd]",
+                "vi": "Chiếc giường",
+                "en": "Furniture for sleeping",
+                "meaning_vi": "Chiếc giường",
+                "meaning_en": "Furniture for sleeping"
+              }
+            ],
+            "example": {
+              "word": "Bed",
+              "reading": "[bɛd]",
+              "vi": "Chiếc giường",
+              "en": "Furniture for sleeping",
+              "meaning_vi": "Chiếc giường",
+              "meaning_en": "Furniture for sleeping"
+            }
+          },
+          {
+            "char": "/æ/",
+            "romaji": "flat a",
+            "ipa": "æ",
+            "groupVi": "Nguyên âm bẹt",
+            "groupEn": "Front Open Vowel",
+            "group_vi": "Nguyên âm bẹt",
+            "group_en": "Front Open Vowel",
+            "mouthTipVi": "Hạ quai hàm mở rộng miệng theo chiều dọc lẫn ngang, lưỡi ép phẳng xuống đáy miệng. Không phải 'a' cũng không phải 'e'.",
+            "mouthTipEn": "Open jaw wide, drop tongue low, pull corners back. Not 'ah' and not 'eh'.",
+            "mouthTip_vi": "Hạ quai hàm mở rộng miệng theo chiều dọc lẫn ngang, lưỡi ép phẳng xuống đáy miệng. Không phải 'a' cũng không phải 'e'.",
+            "mouthTip_en": "Open jaw wide, drop tongue low, pull corners back. Not 'ah' and not 'eh'.",
+            "meaningVi": "Nguyên âm IPA: /æ/",
+            "meaningEn": "IPA Vowel: /æ/",
+            "meaning_vi": "Nguyên âm IPA: /æ/",
+            "meaning_en": "IPA Vowel: /æ/",
+            "speechText": "Cat",
+            "examples": [
+              {
+                "word": "Cat",
+                "reading": "[kæt]",
+                "vi": "Con mèo",
+                "en": "Feline pet",
+                "meaning_vi": "Con mèo",
+                "meaning_en": "Feline pet"
+              }
+            ],
+            "example": {
+              "word": "Cat",
+              "reading": "[kæt]",
+              "vi": "Con mèo",
+              "en": "Feline pet",
+              "meaning_vi": "Con mèo",
+              "meaning_en": "Feline pet"
+            }
+          },
+          {
+            "char": "/ɑː/",
+            "romaji": "open ah",
+            "ipa": "ɑː",
+            "groupVi": "Nguyên âm mở sau",
+            "groupEn": "Back Open Vowel",
+            "group_vi": "Nguyên âm mở sau",
+            "group_en": "Back Open Vowel",
+            "mouthTipVi": "Hạ quai hàm tối đa như khi bác sĩ khám họng và bảo bạn nói 'Ahh', lưỡi hạ thấp hết cỡ về phía sau.",
+            "mouthTipEn": "Jaw drops completely, tongue retracted flat at the bottom of mouth.",
+            "mouthTip_vi": "Hạ quai hàm tối đa như khi bác sĩ khám họng và bảo bạn nói 'Ahh', lưỡi hạ thấp hết cỡ về phía sau.",
+            "mouthTip_en": "Jaw drops completely, tongue retracted flat at the bottom of mouth.",
+            "meaningVi": "Nguyên âm IPA: /ɑː/",
+            "meaningEn": "IPA Vowel: /ɑː/",
+            "meaning_vi": "Nguyên âm IPA: /ɑː/",
+            "meaning_en": "IPA Vowel: /ɑː/",
+            "speechText": "Father",
+            "examples": [
+              {
+                "word": "Father",
+                "reading": "[ˈfɑːðər]",
+                "vi": "Người cha",
+                "en": "Male parent",
+                "meaning_vi": "Người cha",
+                "meaning_en": "Male parent"
+              }
+            ],
+            "example": {
+              "word": "Father",
+              "reading": "[ˈfɑːðər]",
+              "vi": "Người cha",
+              "en": "Male parent",
+              "meaning_vi": "Người cha",
+              "meaning_en": "Male parent"
+            }
+          },
+          {
+            "char": "/ɔː/",
+            "romaji": "open aw",
+            "ipa": "ɔː",
+            "groupVi": "Nguyên âm sau tròn",
+            "groupEn": "Back Rounded Vowel",
+            "group_vi": "Nguyên âm sau tròn",
+            "group_en": "Back Rounded Vowel",
+            "mouthTipVi": "Môi hơi tròn hình bầu dục dục mở, gốc lưỡi nâng nhẹ ở phía sau vòm họng.",
+            "mouthTipEn": "Oval lip rounding, back of tongue slightly raised.",
+            "mouthTip_vi": "Môi hơi tròn hình bầu dục dục mở, gốc lưỡi nâng nhẹ ở phía sau vòm họng.",
+            "mouthTip_en": "Oval lip rounding, back of tongue slightly raised.",
+            "meaningVi": "Nguyên âm IPA: /ɔː/",
+            "meaningEn": "IPA Vowel: /ɔː/",
+            "meaning_vi": "Nguyên âm IPA: /ɔː/",
+            "meaning_en": "IPA Vowel: /ɔː/",
+            "speechText": "Thought",
+            "examples": [
+              {
+                "word": "Thought",
+                "reading": "[θɔːt]",
+                "vi": "Suy nghĩ",
+                "en": "Past of think / Idea",
+                "meaning_vi": "Suy nghĩ",
+                "meaning_en": "Past of think / Idea"
+              }
+            ],
+            "example": {
+              "word": "Thought",
+              "reading": "[θɔːt]",
+              "vi": "Suy nghĩ",
+              "en": "Past of think / Idea",
+              "meaning_vi": "Suy nghĩ",
+              "meaning_en": "Past of think / Idea"
+            }
+          },
+          {
+            "char": "/ʊ/",
+            "romaji": "foot vowel",
+            "ipa": "ʊ",
+            "groupVi": "Nguyên âm sau chùng",
+            "groupEn": "Back Lax Vowel",
+            "group_vi": "Nguyên âm sau chùng",
+            "group_en": "Back Lax Vowel",
+            "mouthTipVi": "Môi hơi khum nhẹ nhưng thả lỏng, không chu chặt. Phát âm ngắn và trầm.",
+            "mouthTipEn": "Slightly rounded but completely relaxed lips. Short and lax.",
+            "mouthTip_vi": "Môi hơi khum nhẹ nhưng thả lỏng, không chu chặt. Phát âm ngắn và trầm.",
+            "mouthTip_en": "Slightly rounded but completely relaxed lips. Short and lax.",
+            "meaningVi": "Nguyên âm IPA: /ʊ/",
+            "meaningEn": "IPA Vowel: /ʊ/",
+            "meaning_vi": "Nguyên âm IPA: /ʊ/",
+            "meaning_en": "IPA Vowel: /ʊ/",
+            "speechText": "Book",
+            "examples": [
+              {
+                "word": "Book",
+                "reading": "[bʊk]",
+                "vi": "Quyển sách",
+                "en": "Reading volume",
+                "meaning_vi": "Quyển sách",
+                "meaning_en": "Reading volume"
+              }
+            ],
+            "example": {
+              "word": "Book",
+              "reading": "[bʊk]",
+              "vi": "Quyển sách",
+              "en": "Reading volume",
+              "meaning_vi": "Quyển sách",
+              "meaning_en": "Reading volume"
+            }
+          },
+          {
+            "char": "/uː/",
+            "romaji": "goose vowel",
+            "ipa": "uː",
+            "groupVi": "Nguyên âm sau căng",
+            "groupEn": "Back Tense Vowel",
+            "group_vi": "Nguyên âm sau căng",
+            "group_en": "Back Tense Vowel",
+            "mouthTipVi": "Môi chu tròn chặt như huýt sáo hoặc chuẩn bị hôn, gốc lưỡi nâng cao về phía ngạc mềm.",
+            "mouthTipEn": "Tense rounded lips, pushed forward. Back of tongue raised high.",
+            "mouthTip_vi": "Môi chu tròn chặt như huýt sáo hoặc chuẩn bị hôn, gốc lưỡi nâng cao về phía ngạc mềm.",
+            "mouthTip_en": "Tense rounded lips, pushed forward. Back of tongue raised high.",
+            "meaningVi": "Nguyên âm IPA: /uː/",
+            "meaningEn": "IPA Vowel: /uː/",
+            "meaning_vi": "Nguyên âm IPA: /uː/",
+            "meaning_en": "IPA Vowel: /uː/",
+            "speechText": "Shoot",
+            "examples": [
+              {
+                "word": "Shoot",
+                "reading": "[ʃuːt]",
+                "vi": "Bắn súng / Quay phim",
+                "en": "To fire or film",
+                "meaning_vi": "Bắn súng / Quay phim",
+                "meaning_en": "To fire or film"
+              }
+            ],
+            "example": {
+              "word": "Shoot",
+              "reading": "[ʃuːt]",
+              "vi": "Bắn súng / Quay phim",
+              "en": "To fire or film",
+              "meaning_vi": "Bắn súng / Quay phim",
+              "meaning_en": "To fire or film"
+            }
+          },
+          {
+            "char": "/ʌ/",
+            "romaji": "strut vowel",
+            "ipa": "ʌ",
+            "groupVi": "Nguyên âm giữa nhấn",
+            "groupEn": "Central Stressed Vowel",
+            "group_vi": "Nguyên âm giữa nhấn",
+            "group_en": "Central Stressed Vowel",
+            "mouthTipVi": "Miệng mở tự nhiên, lưỡi ở vị trí trung tâm, phát âm dứt khoát như âm 'á' ngắn.",
+            "mouthTipEn": "Short, stressed central vowel. Jaw drops slightly more than schwa.",
+            "mouthTip_vi": "Miệng mở tự nhiên, lưỡi ở vị trí trung tâm, phát âm dứt khoát như âm 'á' ngắn.",
+            "mouthTip_en": "Short, stressed central vowel. Jaw drops slightly more than schwa.",
+            "meaningVi": "Nguyên âm IPA: /ʌ/",
+            "meaningEn": "IPA Vowel: /ʌ/",
+            "meaning_vi": "Nguyên âm IPA: /ʌ/",
+            "meaning_en": "IPA Vowel: /ʌ/",
+            "speechText": "Cup",
+            "examples": [
+              {
+                "word": "Cup",
+                "reading": "[kʌp]",
+                "vi": "Cái cốc / Tách cà phê",
+                "en": "Drinking vessel",
+                "meaning_vi": "Cái cốc / Tách cà phê",
+                "meaning_en": "Drinking vessel"
+              }
+            ],
+            "example": {
+              "word": "Cup",
+              "reading": "[kʌp]",
+              "vi": "Cái cốc / Tách cà phê",
+              "en": "Drinking vessel",
+              "meaning_vi": "Cái cốc / Tách cà phê",
+              "meaning_en": "Drinking vessel"
+            }
+          },
+          {
+            "char": "/ɜːr/",
+            "romaji": "nurse vowel",
+            "ipa": "ɝː",
+            "groupVi": "Nguyên âm r-hóa",
+            "groupEn": "R-colored Vowel",
+            "group_vi": "Nguyên âm r-hóa",
+            "group_en": "R-colored Vowel",
+            "mouthTipVi": "Đặc trưng tiếng Anh-Mỹ: cuốn đầu lưỡi lên hoặc kéo thân lưỡi co về sau khi phát âm để tạo âm 'r'.",
+            "mouthTipEn": "Curl tongue tip upward or bunch body back to create rhotic American coloring.",
+            "mouthTip_vi": "Đặc trưng tiếng Anh-Mỹ: cuốn đầu lưỡi lên hoặc kéo thân lưỡi co về sau khi phát âm để tạo âm 'r'.",
+            "mouthTip_en": "Curl tongue tip upward or bunch body back to create rhotic American coloring.",
+            "meaningVi": "Nguyên âm IPA: /ɜːr/",
+            "meaningEn": "IPA Vowel: /ɜːr/",
+            "meaning_vi": "Nguyên âm IPA: /ɜːr/",
+            "meaning_en": "IPA Vowel: /ɜːr/",
+            "speechText": "Bird",
+            "examples": [
+              {
+                "word": "Bird",
+                "reading": "[bɜːrd]",
+                "vi": "Con chim",
+                "en": "Feathered creature",
+                "meaning_vi": "Con chim",
+                "meaning_en": "Feathered creature"
+              }
+            ],
+            "example": {
+              "word": "Bird",
+              "reading": "[bɜːrd]",
+              "vi": "Con chim",
+              "en": "Feathered creature",
+              "meaning_vi": "Con chim",
+              "meaning_en": "Feathered creature"
+            }
+          },
+          {
+            "char": "/ə/",
+            "romaji": "schwa",
+            "ipa": "ə",
+            "groupVi": "Nguyên âm Schwa",
+            "groupEn": "Schwa (Unstressed)",
+            "group_vi": "Nguyên âm Schwa",
+            "group_en": "Schwa (Unstressed)",
+            "mouthTipVi": "Âm phổ biến nhất trong tiếng Anh! Miệng hoàn toàn thư giãn, không gồng bất kỳ cơ nào, âm cực ngắn và nhẹ.",
+            "mouthTipEn": "Most common sound in English! Zero tension. Neutral mouth, lazy jaw, dead center.",
+            "mouthTip_vi": "Âm phổ biến nhất trong tiếng Anh! Miệng hoàn toàn thư giãn, không gồng bất kỳ cơ nào, âm cực ngắn và nhẹ.",
+            "mouthTip_en": "Most common sound in English! Zero tension. Neutral mouth, lazy jaw, dead center.",
+            "meaningVi": "Nguyên âm IPA: /ə/",
+            "meaningEn": "IPA Vowel: /ə/",
+            "meaning_vi": "Nguyên âm IPA: /ə/",
+            "meaning_en": "IPA Vowel: /ə/",
+            "speechText": "About",
+            "examples": [
+              {
+                "word": "About",
+                "reading": "[əˈbaʊt]",
+                "vi": "Về / Khoảng chừng",
+                "en": "Regarding / Approx",
+                "meaning_vi": "Về / Khoảng chừng",
+                "meaning_en": "Regarding / Approx"
+              }
+            ],
+            "example": {
+              "word": "About",
+              "reading": "[əˈbaʊt]",
+              "vi": "Về / Khoảng chừng",
+              "en": "Regarding / Approx",
+              "meaning_vi": "Về / Khoảng chừng",
+              "meaning_en": "Regarding / Approx"
+            }
+          },
+          {
+            "char": "/eɪ/",
+            "romaji": "ay glide",
+            "ipa": "eɪ",
+            "groupVi": "Nguyên âm đôi",
+            "groupEn": "Diphthong",
+            "group_vi": "Nguyên âm đôi",
+            "group_en": "Diphthong",
+            "mouthTipVi": "Bắt đầu từ âm /e/ mở rồi lướt mượt mà khép dần miệng lên /ɪ/. Không đứng yên một chỗ.",
+            "mouthTipEn": "Starts mid-front and glides smoothly up toward /ɪ/.",
+            "mouthTip_vi": "Bắt đầu từ âm /e/ mở rồi lướt mượt mà khép dần miệng lên /ɪ/. Không đứng yên một chỗ.",
+            "mouthTip_en": "Starts mid-front and glides smoothly up toward /ɪ/.",
+            "meaningVi": "Nguyên âm IPA: /eɪ/",
+            "meaningEn": "IPA Vowel: /eɪ/",
+            "meaning_vi": "Nguyên âm IPA: /eɪ/",
+            "meaning_en": "IPA Vowel: /eɪ/",
+            "speechText": "Face",
+            "examples": [
+              {
+                "word": "Face",
+                "reading": "[feɪs]",
+                "vi": "Gương mặt",
+                "en": "Front of head",
+                "meaning_vi": "Gương mặt",
+                "meaning_en": "Front of head"
+              }
+            ],
+            "example": {
+              "word": "Face",
+              "reading": "[feɪs]",
+              "vi": "Gương mặt",
+              "en": "Front of head",
+              "meaning_vi": "Gương mặt",
+              "meaning_en": "Front of head"
+            }
+          },
+          {
+            "char": "/aɪ/",
+            "romaji": "eye glide",
+            "ipa": "aɪ",
+            "groupVi": "Nguyên âm đôi",
+            "groupEn": "Diphthong",
+            "group_vi": "Nguyên âm đôi",
+            "group_en": "Diphthong",
+            "mouthTipVi": "Mở miệng rộng ở /a/ rồi trượt nhanh khép hàm lên /ɪ/.",
+            "mouthTipEn": "Start with open jaw /a/ and glide smoothly into narrow /ɪ/.",
+            "mouthTip_vi": "Mở miệng rộng ở /a/ rồi trượt nhanh khép hàm lên /ɪ/.",
+            "mouthTip_en": "Start with open jaw /a/ and glide smoothly into narrow /ɪ/.",
+            "meaningVi": "Nguyên âm IPA: /aɪ/",
+            "meaningEn": "IPA Vowel: /aɪ/",
+            "meaning_vi": "Nguyên âm IPA: /aɪ/",
+            "meaning_en": "IPA Vowel: /aɪ/",
+            "speechText": "Time",
+            "examples": [
+              {
+                "word": "Time",
+                "reading": "[taɪm]",
+                "vi": "Thời gian",
+                "en": "Clock measurement",
+                "meaning_vi": "Thời gian",
+                "meaning_en": "Clock measurement"
+              }
+            ],
+            "example": {
+              "word": "Time",
+              "reading": "[taɪm]",
+              "vi": "Thời gian",
+              "en": "Clock measurement",
+              "meaning_vi": "Thời gian",
+              "meaning_en": "Clock measurement"
+            }
+          },
+          {
+            "char": "/ɔɪ/",
+            "romaji": "oy glide",
+            "ipa": "ɔɪ",
+            "groupVi": "Nguyên âm đôi",
+            "groupEn": "Diphthong",
+            "group_vi": "Nguyên âm đôi",
+            "group_en": "Diphthong",
+            "mouthTipVi": "Tròn môi ở /ɔː/ rồi mở lướt khóe miệng sang /ɪ/.",
+            "mouthTipEn": "Rounded back vowel gliding into relaxed front vowel.",
+            "mouthTip_vi": "Tròn môi ở /ɔː/ rồi mở lướt khóe miệng sang /ɪ/.",
+            "mouthTip_en": "Rounded back vowel gliding into relaxed front vowel.",
+            "meaningVi": "Nguyên âm IPA: /ɔɪ/",
+            "meaningEn": "IPA Vowel: /ɔɪ/",
+            "meaning_vi": "Nguyên âm IPA: /ɔɪ/",
+            "meaning_en": "IPA Vowel: /ɔɪ/",
+            "speechText": "Boy",
+            "examples": [
+              {
+                "word": "Boy",
+                "reading": "[bɔɪ]",
+                "vi": "Cậu bé / Chàng trai",
+                "en": "Male youth",
+                "meaning_vi": "Cậu bé / Chàng trai",
+                "meaning_en": "Male youth"
+              }
+            ],
+            "example": {
+              "word": "Boy",
+              "reading": "[bɔɪ]",
+              "vi": "Cậu bé / Chàng trai",
+              "en": "Male youth",
+              "meaning_vi": "Cậu bé / Chàng trai",
+              "meaning_en": "Male youth"
+            }
+          },
+          {
+            "char": "/oʊ/",
+            "romaji": "oh glide",
+            "ipa": "oʊ",
+            "groupVi": "Nguyên âm đôi",
+            "groupEn": "Diphthong",
+            "group_vi": "Nguyên âm đôi",
+            "group_en": "Diphthong",
+            "mouthTipVi": "Bắt đầu với môi thả lỏng rồi chu tròn dần lại ở /ʊ/.",
+            "mouthTipEn": "Starts relaxed and finishes with small rounded lips.",
+            "mouthTip_vi": "Bắt đầu với môi thả lỏng rồi chu tròn dần lại ở /ʊ/.",
+            "mouthTip_en": "Starts relaxed and finishes with small rounded lips.",
+            "meaningVi": "Nguyên âm IPA: /oʊ/",
+            "meaningEn": "IPA Vowel: /oʊ/",
+            "meaning_vi": "Nguyên âm IPA: /oʊ/",
+            "meaning_en": "IPA Vowel: /oʊ/",
+            "speechText": "Go",
+            "examples": [
+              {
+                "word": "Go",
+                "reading": "[ɡoʊ]",
+                "vi": "Đi / Di chuyển",
+                "en": "To depart",
+                "meaning_vi": "Đi / Di chuyển",
+                "meaning_en": "To depart"
+              }
+            ],
+            "example": {
+              "word": "Go",
+              "reading": "[ɡoʊ]",
+              "vi": "Đi / Di chuyển",
+              "en": "To depart",
+              "meaning_vi": "Đi / Di chuyển",
+              "meaning_en": "To depart"
+            }
+          },
+          {
+            "char": "/aʊ/",
+            "romaji": "ow glide",
+            "ipa": "aʊ",
+            "groupVi": "Nguyên âm đôi",
+            "groupEn": "Diphthong",
+            "group_vi": "Nguyên âm đôi",
+            "group_en": "Diphthong",
+            "mouthTipVi": "Mở miệng lớn ở /a/ rồi khép nhanh chu môi lại ở /ʊ/.",
+            "mouthTipEn": "Open jaw sliding quickly into rounded 'w'.",
+            "mouthTip_vi": "Mở miệng lớn ở /a/ rồi khép nhanh chu môi lại ở /ʊ/.",
+            "mouthTip_en": "Open jaw sliding quickly into rounded 'w'.",
+            "meaningVi": "Nguyên âm IPA: /aʊ/",
+            "meaningEn": "IPA Vowel: /aʊ/",
+            "meaning_vi": "Nguyên âm IPA: /aʊ/",
+            "meaning_en": "IPA Vowel: /aʊ/",
+            "speechText": "Now",
+            "examples": [
+              {
+                "word": "Now",
+                "reading": "[naʊ]",
+                "vi": "Bây giờ",
+                "en": "At present moment",
+                "meaning_vi": "Bây giờ",
+                "meaning_en": "At present moment"
+              }
+            ],
+            "example": {
+              "word": "Now",
+              "reading": "[naʊ]",
+              "vi": "Bây giờ",
+              "en": "At present moment",
+              "meaning_vi": "Bây giờ",
+              "meaning_en": "At present moment"
+            }
           }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái A–E",
-          "group_en": "Letters A–E",
-          "char": "C c",
-          "romaji": "Letter C (/siː/)",
-          "ipa": "[siː]",
-          "mouthTip_vi": "Đầu lưỡi áp sát chân răng trên, luồng hơi xát nhẹ qua kẽ răng thành âm /s/ rồi sang /iː/.",
-          "mouthTip_en": "Tongue tip near alveolar ridge, hiss clean /s/ into long tense /iː/.",
-          "example": {
-            "word": "Coffee",
-            "reading": "[ˈkɑː.fi]",
-            "meaning_vi": "Cà phê",
-            "meaning_en": "Morning brew"
+        ]
+      },
+      {
+        "id": "consonants",
+        "labelVi": "Phụ âm IPA",
+        "labelEn": "IPA Consonants",
+        "descriptionVi": "24 phụ âm chuẩn quốc tế IPA với các cặp hữu thanh / vô thanh đặc trưng.",
+        "descriptionEn": "The full 24 standard English IPA consonants and voicing pairs.",
+        "items": [
+          {
+            "char": "/p/",
+            "romaji": "Voiceless Bilabial Plosive",
+            "ipa": "p",
+            "groupVi": "Phụ âm tắc vô thanh",
+            "groupEn": "Voiceless Stop",
+            "group_vi": "Phụ âm tắc vô thanh",
+            "group_en": "Voiceless Stop",
+            "mouthTipVi": "Mím chặt hai môi nén áp suất khí rồi bật bung ra dứt khoát, thanh quản không rung.",
+            "mouthTipEn": "Press lips together firmly to build breath, then burst open without vocal vibration.",
+            "mouthTip_vi": "Mím chặt hai môi nén áp suất khí rồi bật bung ra dứt khoát, thanh quản không rung.",
+            "mouthTip_en": "Press lips together firmly to build breath, then burst open without vocal vibration.",
+            "meaningVi": "Âm p bật hơi",
+            "meaningEn": "Voiceless p",
+            "meaning_vi": "Âm p bật hơi",
+            "meaning_en": "Voiceless p",
+            "speechText": "pen",
+            "examples": [
+              {
+                "word": "Pen",
+                "reading": "[pen]",
+                "vi": "Cây bút viết",
+                "en": "Writing tool",
+                "meaning_vi": "Cây bút viết",
+                "meaning_en": "Writing tool"
+              }
+            ],
+            "example": {
+              "word": "Pen",
+              "reading": "[pen]",
+              "vi": "Cây bút viết",
+              "en": "Writing tool",
+              "meaning_vi": "Cây bút viết",
+              "meaning_en": "Writing tool"
+            }
+          },
+          {
+            "char": "/b/",
+            "romaji": "Voiced Bilabial Plosive",
+            "ipa": "b",
+            "groupVi": "Phụ âm tắc hữu thanh",
+            "groupEn": "Voiced Stop",
+            "group_vi": "Phụ âm tắc hữu thanh",
+            "group_en": "Voiced Stop",
+            "mouthTipVi": "Mím môi tạo áp lực tương tự /p/ nhưng rung mạnh dây thanh quản khi nhả hơi.",
+            "mouthTipEn": "Same bilabial seal as /p/ but with prominent vocal cord vibration on release.",
+            "mouthTip_vi": "Mím môi tạo áp lực tương tự /p/ nhưng rung mạnh dây thanh quản khi nhả hơi.",
+            "mouthTip_en": "Same bilabial seal as /p/ but with prominent vocal cord vibration on release.",
+            "meaningVi": "Âm b hữu thanh",
+            "meaningEn": "Voiced b",
+            "meaning_vi": "Âm b hữu thanh",
+            "meaning_en": "Voiced b",
+            "speechText": "bag",
+            "examples": [
+              {
+                "word": "Bag",
+                "reading": "[bæɡ]",
+                "vi": "Chiếc túi xách",
+                "en": "Bag",
+                "meaning_vi": "Chiếc túi xách",
+                "meaning_en": "Bag"
+              }
+            ],
+            "example": {
+              "word": "Bag",
+              "reading": "[bæɡ]",
+              "vi": "Chiếc túi xách",
+              "en": "Bag",
+              "meaning_vi": "Chiếc túi xách",
+              "meaning_en": "Bag"
+            }
+          },
+          {
+            "char": "/t/",
+            "romaji": "Voiceless Alveolar Plosive",
+            "ipa": "t",
+            "groupVi": "Phụ âm tắc vô thanh",
+            "groupEn": "Voiceless Stop",
+            "group_vi": "Phụ âm tắc vô thanh",
+            "group_en": "Voiceless Stop",
+            "mouthTipVi": "Đầu lưỡi chặn chặt vào chân răng trên (ngạc cứng), bật dứt khoát không rung cổ họng.",
+            "mouthTipEn": "Tongue tip presses upper alveolar ridge, sharp aspiration burst with no voice.",
+            "mouthTip_vi": "Đầu lưỡi chặn chặt vào chân răng trên (ngạc cứng), bật dứt khoát không rung cổ họng.",
+            "mouthTip_en": "Tongue tip presses upper alveolar ridge, sharp aspiration burst with no voice.",
+            "meaningVi": "Âm t vô thanh",
+            "meaningEn": "Voiceless t",
+            "meaning_vi": "Âm t vô thanh",
+            "meaning_en": "Voiceless t",
+            "speechText": "top",
+            "examples": [
+              {
+                "word": "Top",
+                "reading": "[tɑːp]",
+                "vi": "Đỉnh cao / Áo phía trên",
+                "en": "Summit",
+                "meaning_vi": "Đỉnh cao / Áo phía trên",
+                "meaning_en": "Summit"
+              }
+            ],
+            "example": {
+              "word": "Top",
+              "reading": "[tɑːp]",
+              "vi": "Đỉnh cao / Áo phía trên",
+              "en": "Summit",
+              "meaning_vi": "Đỉnh cao / Áo phía trên",
+              "meaning_en": "Summit"
+            }
+          },
+          {
+            "char": "/d/",
+            "romaji": "Voiced Alveolar Plosive",
+            "ipa": "d",
+            "groupVi": "Phụ âm tắc hữu thanh",
+            "groupEn": "Voiced Stop",
+            "group_vi": "Phụ âm tắc hữu thanh",
+            "group_en": "Voiced Stop",
+            "mouthTipVi": "Đầu lưỡi chạm chân răng trên giống /t/ nhưng rung thanh quản tạo âm /d/ trầm.",
+            "mouthTipEn": "Same tongue placement as /t/, voiced release.",
+            "mouthTip_vi": "Đầu lưỡi chạm chân răng trên giống /t/ nhưng rung thanh quản tạo âm /d/ trầm.",
+            "mouthTip_en": "Same tongue placement as /t/, voiced release.",
+            "meaningVi": "Âm d hữu thanh",
+            "meaningEn": "Voiced d",
+            "meaning_vi": "Âm d hữu thanh",
+            "meaning_en": "Voiced d",
+            "speechText": "dog",
+            "examples": [
+              {
+                "word": "Dog",
+                "reading": "[dɔːɡ]",
+                "vi": "Con chó",
+                "en": "Canine",
+                "meaning_vi": "Con chó",
+                "meaning_en": "Canine"
+              }
+            ],
+            "example": {
+              "word": "Dog",
+              "reading": "[dɔːɡ]",
+              "vi": "Con chó",
+              "en": "Canine",
+              "meaning_vi": "Con chó",
+              "meaning_en": "Canine"
+            }
+          },
+          {
+            "char": "/k/",
+            "romaji": "Voiceless Velar Plosive",
+            "ipa": "k",
+            "groupVi": "Phụ âm tắc vô thanh",
+            "groupEn": "Voiceless Stop",
+            "group_vi": "Phụ âm tắc vô thanh",
+            "group_en": "Voiceless Stop",
+            "mouthTipVi": "Gốc lưỡi nâng áp vào ngạc mềm (vòm họng mềm) rồi bật hơi ra mạnh mẽ.",
+            "mouthTipEn": "Back of tongue contacts soft palate, crisp voiceless release.",
+            "mouthTip_vi": "Gốc lưỡi nâng áp vào ngạc mềm (vòm họng mềm) rồi bật hơi ra mạnh mẽ.",
+            "mouthTip_en": "Back of tongue contacts soft palate, crisp voiceless release.",
+            "meaningVi": "Âm k vô thanh",
+            "meaningEn": "Voiceless k",
+            "meaning_vi": "Âm k vô thanh",
+            "meaning_en": "Voiceless k",
+            "speechText": "cat",
+            "examples": [
+              {
+                "word": "Cat",
+                "reading": "[kæt]",
+                "vi": "Con mèo",
+                "en": "Feline",
+                "meaning_vi": "Con mèo",
+                "meaning_en": "Feline"
+              }
+            ],
+            "example": {
+              "word": "Cat",
+              "reading": "[kæt]",
+              "vi": "Con mèo",
+              "en": "Feline",
+              "meaning_vi": "Con mèo",
+              "meaning_en": "Feline"
+            }
+          },
+          {
+            "char": "/ɡ/",
+            "romaji": "Voiced Velar Plosive",
+            "ipa": "ɡ",
+            "groupVi": "Phụ âm tắc hữu thanh",
+            "groupEn": "Voiced Stop",
+            "group_vi": "Phụ âm tắc hữu thanh",
+            "group_en": "Voiced Stop",
+            "mouthTipVi": "Gốc lưỡi nâng áp ngạc mềm giống /k/ kết hợp rung thanh quản.",
+            "mouthTipEn": "Voiced counterpart to /k/, back of tongue against velum with vocal vibration.",
+            "mouthTip_vi": "Gốc lưỡi nâng áp ngạc mềm giống /k/ kết hợp rung thanh quản.",
+            "mouthTip_en": "Voiced counterpart to /k/, back of tongue against velum with vocal vibration.",
+            "meaningVi": "Âm g hữu thanh",
+            "meaningEn": "Voiced g",
+            "meaning_vi": "Âm g hữu thanh",
+            "meaning_en": "Voiced g",
+            "speechText": "get",
+            "examples": [
+              {
+                "word": "Get",
+                "reading": "[ɡet]",
+                "vi": "Nhận được / Lấy",
+                "en": "To obtain",
+                "meaning_vi": "Nhận được / Lấy",
+                "meaning_en": "To obtain"
+              }
+            ],
+            "example": {
+              "word": "Get",
+              "reading": "[ɡet]",
+              "vi": "Nhận được / Lấy",
+              "en": "To obtain",
+              "meaning_vi": "Nhận được / Lấy",
+              "meaning_en": "To obtain"
+            }
+          },
+          {
+            "char": "/f/",
+            "romaji": "Voiceless Labiodental Fricative",
+            "ipa": "f",
+            "groupVi": "Phụ âm xát răng môi",
+            "groupEn": "Labiodental Fricative",
+            "group_vi": "Phụ âm xát răng môi",
+            "group_en": "Labiodental Fricative",
+            "mouthTipVi": "Răng cửa hàm trên chạm nhẹ vào lòng môi dưới, đẩy luồng khí xát qua kẽ răng.",
+            "mouthTipEn": "Upper incisors gently touch lower lip, voiceless air friction stream.",
+            "mouthTip_vi": "Răng cửa hàm trên chạm nhẹ vào lòng môi dưới, đẩy luồng khí xát qua kẽ răng.",
+            "mouthTip_en": "Upper incisors gently touch lower lip, voiceless air friction stream.",
+            "meaningVi": "Âm f vô thanh",
+            "meaningEn": "Voiceless f",
+            "meaning_vi": "Âm f vô thanh",
+            "meaning_en": "Voiceless f",
+            "speechText": "fish",
+            "examples": [
+              {
+                "word": "Fish",
+                "reading": "[fɪʃ]",
+                "vi": "Con cá",
+                "en": "Fish",
+                "meaning_vi": "Con cá",
+                "meaning_en": "Fish"
+              }
+            ],
+            "example": {
+              "word": "Fish",
+              "reading": "[fɪʃ]",
+              "vi": "Con cá",
+              "en": "Fish",
+              "meaning_vi": "Con cá",
+              "meaning_en": "Fish"
+            }
+          },
+          {
+            "char": "/v/",
+            "romaji": "Voiced Labiodental Fricative",
+            "ipa": "v",
+            "groupVi": "Phụ âm xát răng môi",
+            "groupEn": "Labiodental Fricative",
+            "group_vi": "Phụ âm xát răng môi",
+            "group_en": "Labiodental Fricative",
+            "mouthTipVi": "Vị trí răng và môi dưới y hệt /f/ nhưng rung mạnh dây thanh quản như tiếng động cơ.",
+            "mouthTipEn": "Same labiodental contact as /f/ with continuous vocal buzz.",
+            "mouthTip_vi": "Vị trí răng và môi dưới y hệt /f/ nhưng rung mạnh dây thanh quản như tiếng động cơ.",
+            "mouthTip_en": "Same labiodental contact as /f/ with continuous vocal buzz.",
+            "meaningVi": "Âm v hữu thanh",
+            "meaningEn": "Voiced v",
+            "meaning_vi": "Âm v hữu thanh",
+            "meaning_en": "Voiced v",
+            "speechText": "van",
+            "examples": [
+              {
+                "word": "Van",
+                "reading": "[væn]",
+                "vi": "Xe tải nhỏ / Xe van",
+                "en": "Vehicle",
+                "meaning_vi": "Xe tải nhỏ / Xe van",
+                "meaning_en": "Vehicle"
+              }
+            ],
+            "example": {
+              "word": "Van",
+              "reading": "[væn]",
+              "vi": "Xe tải nhỏ / Xe van",
+              "en": "Vehicle",
+              "meaning_vi": "Xe tải nhỏ / Xe van",
+              "meaning_en": "Vehicle"
+            }
+          },
+          {
+            "char": "/θ/",
+            "romaji": "Voiceless Dental Fricative (th)",
+            "ipa": "θ",
+            "groupVi": "Phụ âm răng vô thanh",
+            "groupEn": "Dental Fricative",
+            "group_vi": "Phụ âm răng vô thanh",
+            "group_en": "Dental Fricative",
+            "mouthTipVi": "Đầu lưỡi kẹp nhẹ giữa hai hàm răng, thổi luồng hơi ma sát ra ngoài, không rung cổ họng.",
+            "mouthTipEn": "Tongue tip between teeth, push steady friction air with no vocal cord buzz.",
+            "mouthTip_vi": "Đầu lưỡi kẹp nhẹ giữa hai hàm răng, thổi luồng hơi ma sát ra ngoài, không rung cổ họng.",
+            "mouthTip_en": "Tongue tip between teeth, push steady friction air with no vocal cord buzz.",
+            "meaningVi": "Âm th vô thanh (/θ/)",
+            "meaningEn": "Voiceless th",
+            "meaning_vi": "Âm th vô thanh (/θ/)",
+            "meaning_en": "Voiceless th",
+            "speechText": "think",
+            "examples": [
+              {
+                "word": "Think",
+                "reading": "[θɪŋk]",
+                "vi": "Suy nghĩ",
+                "en": "To ponder",
+                "meaning_vi": "Suy nghĩ",
+                "meaning_en": "To ponder"
+              }
+            ],
+            "example": {
+              "word": "Think",
+              "reading": "[θɪŋk]",
+              "vi": "Suy nghĩ",
+              "en": "To ponder",
+              "meaning_vi": "Suy nghĩ",
+              "meaning_en": "To ponder"
+            }
+          },
+          {
+            "char": "/ð/",
+            "romaji": "Voiced Dental Fricative (th)",
+            "ipa": "ð",
+            "groupVi": "Phụ âm răng hữu thanh",
+            "groupEn": "Dental Fricative",
+            "group_vi": "Phụ âm răng hữu thanh",
+            "group_en": "Dental Fricative",
+            "mouthTipVi": "Đầu lưỡi kẹp giữa hai hàm răng như /θ/ nhưng rung mạnh thanh quản.",
+            "mouthTipEn": "Tongue between teeth with strong vocal cord vibration.",
+            "mouthTip_vi": "Đầu lưỡi kẹp giữa hai hàm răng như /θ/ nhưng rung mạnh thanh quản.",
+            "mouthTip_en": "Tongue between teeth with strong vocal cord vibration.",
+            "meaningVi": "Âm th hữu thanh (/ð/)",
+            "meaningEn": "Voiced th",
+            "meaning_vi": "Âm th hữu thanh (/ð/)",
+            "meaning_en": "Voiced th",
+            "speechText": "this",
+            "examples": [
+              {
+                "word": "This",
+                "reading": "[ðɪs]",
+                "vi": "Cái này / Điều này",
+                "en": "This one",
+                "meaning_vi": "Cái này / Điều này",
+                "meaning_en": "This one"
+              }
+            ],
+            "example": {
+              "word": "This",
+              "reading": "[ðɪs]",
+              "vi": "Cái này / Điều này",
+              "en": "This one",
+              "meaning_vi": "Cái này / Điều này",
+              "meaning_en": "This one"
+            }
+          },
+          {
+            "char": "/s/",
+            "romaji": "Voiceless Alveolar Fricative",
+            "ipa": "s",
+            "groupVi": "Phụ âm xát vô thanh",
+            "groupEn": "Alveolar Fricative",
+            "group_vi": "Phụ âm xát vô thanh",
+            "group_en": "Alveolar Fricative",
+            "mouthTipVi": "Đầu lưỡi đưa gần ngạc răng trên, khép răng đẩy luồng khí xì sắc sảo ra ngoài.",
+            "mouthTipEn": "Tongue tip near upper gum ridge, teeth together, sharp hissing air.",
+            "mouthTip_vi": "Đầu lưỡi đưa gần ngạc răng trên, khép răng đẩy luồng khí xì sắc sảo ra ngoài.",
+            "mouthTip_en": "Tongue tip near upper gum ridge, teeth together, sharp hissing air.",
+            "meaningVi": "Âm s xát",
+            "meaningEn": "Voiceless s",
+            "meaning_vi": "Âm s xát",
+            "meaning_en": "Voiceless s",
+            "speechText": "see",
+            "examples": [
+              {
+                "word": "See",
+                "reading": "[siː]",
+                "vi": "Nhìn thấy",
+                "en": "To perceive",
+                "meaning_vi": "Nhìn thấy",
+                "meaning_en": "To perceive"
+              }
+            ],
+            "example": {
+              "word": "See",
+              "reading": "[siː]",
+              "vi": "Nhìn thấy",
+              "en": "To perceive",
+              "meaning_vi": "Nhìn thấy",
+              "meaning_en": "To perceive"
+            }
+          },
+          {
+            "char": "/z/",
+            "romaji": "Voiced Alveolar Fricative",
+            "ipa": "z",
+            "groupVi": "Phụ âm xát hữu thanh",
+            "groupEn": "Alveolar Fricative",
+            "group_vi": "Phụ âm xát hữu thanh",
+            "group_en": "Alveolar Fricative",
+            "mouthTipVi": "Vị trí răng và lưỡi giống /s/ nhưng rung mạnh thanh quản như tiếng ong vo ve.",
+            "mouthTipEn": "Same as /s/ with continuous vocal buzz like a buzzing bee.",
+            "mouthTip_vi": "Vị trí răng và lưỡi giống /s/ nhưng rung mạnh thanh quản như tiếng ong vo ve.",
+            "mouthTip_en": "Same as /s/ with continuous vocal buzz like a buzzing bee.",
+            "meaningVi": "Âm z hữu thanh",
+            "meaningEn": "Voiced z",
+            "meaning_vi": "Âm z hữu thanh",
+            "meaning_en": "Voiced z",
+            "speechText": "zoo",
+            "examples": [
+              {
+                "word": "Zoo",
+                "reading": "[zuː]",
+                "vi": "Sở thú",
+                "en": "Zoological park",
+                "meaning_vi": "Sở thú",
+                "meaning_en": "Zoological park"
+              }
+            ],
+            "example": {
+              "word": "Zoo",
+              "reading": "[zuː]",
+              "vi": "Sở thú",
+              "en": "Zoological park",
+              "meaning_vi": "Sở thú",
+              "meaning_en": "Zoological park"
+            }
+          },
+          {
+            "char": "/ʃ/",
+            "romaji": "Voiceless Postalveolar (sh)",
+            "ipa": "ʃ",
+            "groupVi": "Phụ âm vòm vô thanh",
+            "groupEn": "Postalveolar Fricative",
+            "group_vi": "Phụ âm vòm vô thanh",
+            "group_en": "Postalveolar Fricative",
+            "mouthTipVi": "Chu môi tròn nhẹ hướng ra trước, thân lưỡi nâng lên vòm cứng, đẩy luồng khí xát dày.",
+            "mouthTipEn": "Round lips forward, tongue blade near postalveolar ridge, heavy friction air.",
+            "mouthTip_vi": "Chu môi tròn nhẹ hướng ra trước, thân lưỡi nâng lên vòm cứng, đẩy luồng khí xát dày.",
+            "mouthTip_en": "Round lips forward, tongue blade near postalveolar ridge, heavy friction air.",
+            "meaningVi": "Âm sh (/ʃ/)",
+            "meaningEn": "Voiceless sh",
+            "meaning_vi": "Âm sh (/ʃ/)",
+            "meaning_en": "Voiceless sh",
+            "speechText": "she",
+            "examples": [
+              {
+                "word": "She",
+                "reading": "[ʃiː]",
+                "vi": "Cô ấy / Bà ấy",
+                "en": "Female pronoun",
+                "meaning_vi": "Cô ấy / Bà ấy",
+                "meaning_en": "Female pronoun"
+              }
+            ],
+            "example": {
+              "word": "She",
+              "reading": "[ʃiː]",
+              "vi": "Cô ấy / Bà ấy",
+              "en": "Female pronoun",
+              "meaning_vi": "Cô ấy / Bà ấy",
+              "meaning_en": "Female pronoun"
+            }
+          },
+          {
+            "char": "/ʒ/",
+            "romaji": "Voiced Postalveolar Fricative",
+            "ipa": "ʒ",
+            "groupVi": "Phụ âm vòm hữu thanh",
+            "groupEn": "Postalveolar Fricative",
+            "group_vi": "Phụ âm vòm hữu thanh",
+            "group_en": "Postalveolar Fricative",
+            "mouthTipVi": "Khẩu hình giống /ʃ/ nhưng rung mạnh dây thanh quản (ví dụ trong vision, measure).",
+            "mouthTipEn": "Voiced counterpart to /ʃ/ with vocal vibration as in \"measure\".",
+            "mouthTip_vi": "Khẩu hình giống /ʃ/ nhưng rung mạnh dây thanh quản (ví dụ trong vision, measure).",
+            "mouthTip_en": "Voiced counterpart to /ʃ/ with vocal vibration as in \"measure\".",
+            "meaningVi": "Âm zh (/ʒ/)",
+            "meaningEn": "Voiced postalveolar",
+            "meaning_vi": "Âm zh (/ʒ/)",
+            "meaning_en": "Voiced postalveolar",
+            "speechText": "vision",
+            "examples": [
+              {
+                "word": "Vision",
+                "reading": "[ˈvɪʒ.ən]",
+                "vi": "Tầm nhìn / Thị giác",
+                "en": "Vision",
+                "meaning_vi": "Tầm nhìn / Thị giác",
+                "meaning_en": "Vision"
+              }
+            ],
+            "example": {
+              "word": "Vision",
+              "reading": "[ˈvɪʒ.ən]",
+              "vi": "Tầm nhìn / Thị giác",
+              "en": "Vision",
+              "meaning_vi": "Tầm nhìn / Thị giác",
+              "meaning_en": "Vision"
+            }
+          },
+          {
+            "char": "/tʃ/",
+            "romaji": "Voiceless Postalveolar Affricate (ch)",
+            "ipa": "tʃ",
+            "groupVi": "Phụ âm tắc xát vô thanh",
+            "groupEn": "Voiceless Affricate",
+            "group_vi": "Phụ âm tắc xát vô thanh",
+            "group_en": "Voiceless Affricate",
+            "mouthTipVi": "Chặn đầu lưỡi như âm /t/ rồi bật xát bung ra thành /ʃ/, chu nhẹ môi.",
+            "mouthTipEn": "Stop airflow with tongue at alveolar ridge, then explode into a voiceless /ʃ/ friction.",
+            "mouthTip_vi": "Chặn đầu lưỡi như âm /t/ rồi bật xát bung ra thành /ʃ/, chu nhẹ môi.",
+            "mouthTip_en": "Stop airflow with tongue at alveolar ridge, then explode into a voiceless /ʃ/ friction.",
+            "meaningVi": "Âm ch (/tʃ/)",
+            "meaningEn": "Voiceless ch",
+            "meaning_vi": "Âm ch (/tʃ/)",
+            "meaning_en": "Voiceless ch",
+            "speechText": "chair",
+            "examples": [
+              {
+                "word": "Chair",
+                "reading": "[tʃer]",
+                "vi": "Chiếc ghế ngồi",
+                "en": "Chair",
+                "meaning_vi": "Chiếc ghế ngồi",
+                "meaning_en": "Chair"
+              }
+            ],
+            "example": {
+              "word": "Chair",
+              "reading": "[tʃer]",
+              "vi": "Chiếc ghế ngồi",
+              "en": "Chair",
+              "meaning_vi": "Chiếc ghế ngồi",
+              "meaning_en": "Chair"
+            }
+          },
+          {
+            "char": "/dʒ/",
+            "romaji": "Voiced Postalveolar Affricate (j)",
+            "ipa": "dʒ",
+            "groupVi": "Phụ âm tắc xát hữu thanh",
+            "groupEn": "Voiced Affricate",
+            "group_vi": "Phụ âm tắc xát hữu thanh",
+            "group_en": "Voiced Affricate",
+            "mouthTipVi": "Chặn đầu lưỡi như /d/ rồi bung xát ra thành /ʒ/ kèm rung mạnh thanh quản.",
+            "mouthTipEn": "Voiced affricate, starting with [d] occlusion and exploding into [ʒ].",
+            "mouthTip_vi": "Chặn đầu lưỡi như /d/ rồi bung xát ra thành /ʒ/ kèm rung mạnh thanh quản.",
+            "mouthTip_en": "Voiced affricate, starting with [d] occlusion and exploding into [ʒ].",
+            "meaningVi": "Âm j (/dʒ/)",
+            "meaningEn": "Voiced j",
+            "meaning_vi": "Âm j (/dʒ/)",
+            "meaning_en": "Voiced j",
+            "speechText": "just",
+            "examples": [
+              {
+                "word": "Just",
+                "reading": "[dʒʌst]",
+                "vi": "Chỉ vừa mới / Công bằng",
+                "en": "Fair / Merely",
+                "meaning_vi": "Chỉ vừa mới / Công bằng",
+                "meaning_en": "Fair / Merely"
+              }
+            ],
+            "example": {
+              "word": "Just",
+              "reading": "[dʒʌst]",
+              "vi": "Chỉ vừa mới / Công bằng",
+              "en": "Fair / Merely",
+              "meaning_vi": "Chỉ vừa mới / Công bằng",
+              "meaning_en": "Fair / Merely"
+            }
+          },
+          {
+            "char": "/m/",
+            "romaji": "Bilabial Nasal",
+            "ipa": "m",
+            "groupVi": "Phụ âm mũi",
+            "groupEn": "Nasal",
+            "group_vi": "Phụ âm mũi",
+            "group_en": "Nasal",
+            "mouthTipVi": "Mím chặt hai môi, hơi thoát qua khoang mũi, rung thanh quản ngân vang.",
+            "mouthTipEn": "Lips closed, vocal cords vibrate, air exits freely through nasal passage.",
+            "mouthTip_vi": "Mím chặt hai môi, hơi thoát qua khoang mũi, rung thanh quản ngân vang.",
+            "mouthTip_en": "Lips closed, vocal cords vibrate, air exits freely through nasal passage.",
+            "meaningVi": "Âm m mũi",
+            "meaningEn": "Nasal m",
+            "meaning_vi": "Âm m mũi",
+            "meaning_en": "Nasal m",
+            "speechText": "man",
+            "examples": [
+              {
+                "word": "Man",
+                "reading": "[mæn]",
+                "vi": "Người đàn ông",
+                "en": "Adult male",
+                "meaning_vi": "Người đàn ông",
+                "meaning_en": "Adult male"
+              }
+            ],
+            "example": {
+              "word": "Man",
+              "reading": "[mæn]",
+              "vi": "Người đàn ông",
+              "en": "Adult male",
+              "meaning_vi": "Người đàn ông",
+              "meaning_en": "Adult male"
+            }
+          },
+          {
+            "char": "/n/",
+            "romaji": "Alveolar Nasal",
+            "ipa": "n",
+            "groupVi": "Phụ âm mũi",
+            "groupEn": "Nasal",
+            "group_vi": "Phụ âm mũi",
+            "group_en": "Nasal",
+            "mouthTipVi": "Đầu lưỡi chạm áp chân răng trên, hơi thoát qua khoang mũi.",
+            "mouthTipEn": "Tongue tip seals alveolar ridge, air escapes through nose.",
+            "mouthTip_vi": "Đầu lưỡi chạm áp chân răng trên, hơi thoát qua khoang mũi.",
+            "mouthTip_en": "Tongue tip seals alveolar ridge, air escapes through nose.",
+            "meaningVi": "Âm n mũi",
+            "meaningEn": "Nasal n",
+            "meaning_vi": "Âm n mũi",
+            "meaning_en": "Nasal n",
+            "speechText": "now",
+            "examples": [
+              {
+                "word": "Now",
+                "reading": "[naʊ]",
+                "vi": "Bây giờ / Ngay lúc này",
+                "en": "At present",
+                "meaning_vi": "Bây giờ / Ngay lúc này",
+                "meaning_en": "At present"
+              }
+            ],
+            "example": {
+              "word": "Now",
+              "reading": "[naʊ]",
+              "vi": "Bây giờ / Ngay lúc này",
+              "en": "At present",
+              "meaning_vi": "Bây giờ / Ngay lúc này",
+              "meaning_en": "At present"
+            }
+          },
+          {
+            "char": "/ŋ/",
+            "romaji": "Velar Nasal (ng)",
+            "ipa": "ŋ",
+            "groupVi": "Phụ âm mũi ngạc mềm",
+            "groupEn": "Velar Nasal",
+            "group_vi": "Phụ âm mũi ngạc mềm",
+            "group_en": "Velar Nasal",
+            "mouthTipVi": "Gốc lưỡi nâng áp ngạc mềm chặn đường miệng, luồng khí ngân vang qua đường mũi.",
+            "mouthTipEn": "Back of tongue seals soft palate, resonant nasal air stream.",
+            "mouthTip_vi": "Gốc lưỡi nâng áp ngạc mềm chặn đường miệng, luồng khí ngân vang qua đường mũi.",
+            "mouthTip_en": "Back of tongue seals soft palate, resonant nasal air stream.",
+            "meaningVi": "Âm ng (/ŋ/)",
+            "meaningEn": "Velar nasal ng",
+            "meaning_vi": "Âm ng (/ŋ/)",
+            "meaning_en": "Velar nasal ng",
+            "speechText": "sing",
+            "examples": [
+              {
+                "word": "Sing",
+                "reading": "[sɪŋ]",
+                "vi": "Ca hát",
+                "en": "To sing",
+                "meaning_vi": "Ca hát",
+                "meaning_en": "To sing"
+              }
+            ],
+            "example": {
+              "word": "Sing",
+              "reading": "[sɪŋ]",
+              "vi": "Ca hát",
+              "en": "To sing",
+              "meaning_vi": "Ca hát",
+              "meaning_en": "To sing"
+            }
+          },
+          {
+            "char": "/h/",
+            "romaji": "Voiceless Glottal Fricative",
+            "ipa": "h",
+            "groupVi": "Phụ âm thanh hầu",
+            "groupEn": "Glottal Fricative",
+            "group_vi": "Phụ âm thanh hầu",
+            "group_en": "Glottal Fricative",
+            "mouthTipVi": "Mở rộng miệng tự nhiên, thở hơi nhẹ từ thanh hầu như tiếng thở phào.",
+            "mouthTipEn": "Gentle aspiration of air through open vocal cords.",
+            "mouthTip_vi": "Mở rộng miệng tự nhiên, thở hơi nhẹ từ thanh hầu như tiếng thở phào.",
+            "mouthTip_en": "Gentle aspiration of air through open vocal cords.",
+            "meaningVi": "Âm h hơi",
+            "meaningEn": "Glottal h",
+            "meaning_vi": "Âm h hơi",
+            "meaning_en": "Glottal h",
+            "speechText": "hat",
+            "examples": [
+              {
+                "word": "Hat",
+                "reading": "[hæt]",
+                "vi": "Chiếc mũ / nón",
+                "en": "Headwear",
+                "meaning_vi": "Chiếc mũ / nón",
+                "meaning_en": "Headwear"
+              }
+            ],
+            "example": {
+              "word": "Hat",
+              "reading": "[hæt]",
+              "vi": "Chiếc mũ / nón",
+              "en": "Headwear",
+              "meaning_vi": "Chiếc mũ / nón",
+              "meaning_en": "Headwear"
+            }
+          },
+          {
+            "char": "/l/",
+            "romaji": "Lateral Approximant",
+            "ipa": "l",
+            "groupVi": "Phụ âm bên",
+            "groupEn": "Lateral Liquid",
+            "group_vi": "Phụ âm bên",
+            "group_en": "Lateral Liquid",
+            "mouthTipVi": "Đầu lưỡi chạm chân răng trên, luồng khí thoát ra hai bên mép lưỡi (light l vs dark l).",
+            "mouthTipEn": "Tongue tip against alveolar ridge, air streams around lateral sides of tongue.",
+            "mouthTip_vi": "Đầu lưỡi chạm chân răng trên, luồng khí thoát ra hai bên mép lưỡi (light l vs dark l).",
+            "mouthTip_en": "Tongue tip against alveolar ridge, air streams around lateral sides of tongue.",
+            "meaningVi": "Âm l lỏng",
+            "meaningEn": "Liquid l",
+            "meaning_vi": "Âm l lỏng",
+            "meaning_en": "Liquid l",
+            "speechText": "light",
+            "examples": [
+              {
+                "word": "Light",
+                "reading": "[laɪt]",
+                "vi": "Ánh sáng / Đèn",
+                "en": "Illumination",
+                "meaning_vi": "Ánh sáng / Đèn",
+                "meaning_en": "Illumination"
+              }
+            ],
+            "example": {
+              "word": "Light",
+              "reading": "[laɪt]",
+              "vi": "Ánh sáng / Đèn",
+              "en": "Illumination",
+              "meaning_vi": "Ánh sáng / Đèn",
+              "meaning_en": "Illumination"
+            }
+          },
+          {
+            "char": "/r/",
+            "romaji": "Postalveolar Approximant",
+            "ipa": "r",
+            "groupVi": "Phụ âm uốn lưỡi",
+            "groupEn": "Postalveolar Approximant",
+            "group_vi": "Phụ âm uốn lưỡi",
+            "group_en": "Postalveolar Approximant",
+            "mouthTipVi": "Đầu lưỡi uốn cong về sau vòm họng mà KHÔNG chạm vào ngạc, khóe môi hơi chu nhẹ.",
+            "mouthTipEn": "Tongue tip curls back toward roof of mouth without touching, lips slightly rounded.",
+            "mouthTip_vi": "Đầu lưỡi uốn cong về sau vòm họng mà KHÔNG chạm vào ngạc, khóe môi hơi chu nhẹ.",
+            "mouthTip_en": "Tongue tip curls back toward roof of mouth without touching, lips slightly rounded.",
+            "meaningVi": "Âm r uốn lưỡi Mỹ",
+            "meaningEn": "American r",
+            "meaning_vi": "Âm r uốn lưỡi Mỹ",
+            "meaning_en": "American r",
+            "speechText": "red",
+            "examples": [
+              {
+                "word": "Red",
+                "reading": "[red]",
+                "vi": "Màu đỏ",
+                "en": "Crimson",
+                "meaning_vi": "Màu đỏ",
+                "meaning_en": "Crimson"
+              }
+            ],
+            "example": {
+              "word": "Red",
+              "reading": "[red]",
+              "vi": "Màu đỏ",
+              "en": "Crimson",
+              "meaning_vi": "Màu đỏ",
+              "meaning_en": "Crimson"
+            }
+          },
+          {
+            "char": "/w/",
+            "romaji": "Voiced Labio-velar Approximant",
+            "ipa": "w",
+            "groupVi": "Bán nguyên âm môi-ngạc",
+            "groupEn": "Labio-velar Glide",
+            "group_vi": "Bán nguyên âm môi-ngạc",
+            "group_en": "Labio-velar Glide",
+            "mouthTipVi": "Chu tròn môi như chuẩn bị huýt sáo rồi bung mượt mà sang nguyên âm tiếp theo.",
+            "mouthTipEn": "Lips rounded tightly, back of tongue raised, smooth glide into vowel.",
+            "mouthTip_vi": "Chu tròn môi như chuẩn bị huýt sáo rồi bung mượt mà sang nguyên âm tiếp theo.",
+            "mouthTip_en": "Lips rounded tightly, back of tongue raised, smooth glide into vowel.",
+            "meaningVi": "Bán nguyên âm w",
+            "meaningEn": "Glide w",
+            "meaning_vi": "Bán nguyên âm w",
+            "meaning_en": "Glide w",
+            "speechText": "water",
+            "examples": [
+              {
+                "word": "Water",
+                "reading": "[ˈwɔː.tər]",
+                "vi": "Nước uống",
+                "en": "H2O",
+                "meaning_vi": "Nước uống",
+                "meaning_en": "H2O"
+              }
+            ],
+            "example": {
+              "word": "Water",
+              "reading": "[ˈwɔː.tər]",
+              "vi": "Nước uống",
+              "en": "H2O",
+              "meaning_vi": "Nước uống",
+              "meaning_en": "H2O"
+            }
+          },
+          {
+            "char": "/j/",
+            "romaji": "Palatal Approximant",
+            "ipa": "j",
+            "groupVi": "Bán nguyên âm vòm",
+            "groupEn": "Palatal Glide",
+            "group_vi": "Bán nguyên âm vòm",
+            "group_en": "Palatal Glide",
+            "mouthTipVi": "Thân lưỡi nâng cao sát vòm cứng như âm /i/ rồi lướt mượt mà vào nguyên âm sau.",
+            "mouthTipEn": "Tongue blade rises toward hard palate like [i], gliding into next vowel.",
+            "mouthTip_vi": "Thân lưỡi nâng cao sát vòm cứng như âm /i/ rồi lướt mượt mà vào nguyên âm sau.",
+            "mouthTip_en": "Tongue blade rises toward hard palate like [i], gliding into next vowel.",
+            "meaningVi": "Bán nguyên âm y (/j/)",
+            "meaningEn": "Glide j (y sound)",
+            "meaning_vi": "Bán nguyên âm y (/j/)",
+            "meaning_en": "Glide j (y sound)",
+            "speechText": "yes",
+            "examples": [
+              {
+                "word": "Yes",
+                "reading": "[jes]",
+                "vi": "Đồng ý / Vâng",
+                "en": "Affirmative",
+                "meaning_vi": "Đồng ý / Vâng",
+                "meaning_en": "Affirmative"
+              }
+            ],
+            "example": {
+              "word": "Yes",
+              "reading": "[jes]",
+              "vi": "Đồng ý / Vâng",
+              "en": "Affirmative",
+              "meaning_vi": "Đồng ý / Vâng",
+              "meaning_en": "Affirmative"
+            }
           }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái A–E",
-          "group_en": "Letters A–E",
-          "char": "D d",
-          "romaji": "Letter D (/diː/)",
-          "ipa": "[diː]",
-          "mouthTip_vi": "Đầu lưỡi gõ mạnh vào gờ chân răng trên, rung dây thanh quản rồi bật ra âm /iː/.",
-          "mouthTip_en": "Alveolar tap with vocal cord vibration, releasing into long /iː/.",
-          "example": {
-            "word": "Dream",
-            "reading": "[driːm]",
-            "meaning_vi": "Giấc mơ",
-            "meaning_en": "Vision during sleep"
+        ]
+      },
+      {
+        "id": "consonant_clusters",
+        "labelVi": "Cụm phụ âm khó (Consonant Clusters)",
+        "labelEn": "Consonant Clusters & Blends",
+        "descriptionVi": "Các cụm phụ âm đôi, phụ âm ba dễ gây nuốt âm hoặc phát âm sai (th, sh, ch, str, tr, dr...).",
+        "descriptionEn": "High-frequency blends and consonant clusters (th, sh, ch, str, tr, dr, bl, etc.).",
+        "items": [
+          {
+            "char": "th (/θ/ voiceless)",
+            "romaji": "Voiceless Dental (θ)",
+            "ipa": "θ",
+            "groupVi": "Cặp phụ âm th",
+            "groupEn": "Dental Clusters",
+            "group_vi": "Cặp phụ âm th",
+            "group_en": "Dental Clusters",
+            "mouthTipVi": "Kẹp nhẹ đầu lưỡi giữa hai hàm răng, đẩy luồng khí xát qua mà không rung cổ họng.",
+            "mouthTipEn": "Gently place tongue tip between teeth, push unvoiced air stream.",
+            "mouthTip_vi": "Kẹp nhẹ đầu lưỡi giữa hai hàm răng, đẩy luồng khí xát qua mà không rung cổ họng.",
+            "mouthTip_en": "Gently place tongue tip between teeth, push unvoiced air stream.",
+            "meaningVi": "Cụm th vô thanh (/θ/)",
+            "meaningEn": "Voiceless th cluster",
+            "meaning_vi": "Cụm th vô thanh (/θ/)",
+            "meaning_en": "Voiceless th cluster",
+            "speechText": "think",
+            "examples": [
+              {
+                "word": "Think",
+                "reading": "[θɪŋk]",
+                "vi": "Suy nghĩ",
+                "en": "To think",
+                "meaning_vi": "Suy nghĩ",
+                "meaning_en": "To think"
+              },
+              {
+                "word": "Three",
+                "reading": "[θriː]",
+                "vi": "Số ba (3)",
+                "en": "Three",
+                "meaning_vi": "Số ba (3)",
+                "meaning_en": "Three"
+              }
+            ],
+            "example": {
+              "word": "Think",
+              "reading": "[θɪŋk]",
+              "vi": "Suy nghĩ",
+              "en": "To think",
+              "meaning_vi": "Suy nghĩ",
+              "meaning_en": "To think"
+            }
+          },
+          {
+            "char": "th (/ð/ voiced)",
+            "romaji": "Voiced Dental (ð)",
+            "ipa": "ð",
+            "groupVi": "Cặp phụ âm th",
+            "groupEn": "Dental Clusters",
+            "group_vi": "Cặp phụ âm th",
+            "group_en": "Dental Clusters",
+            "mouthTipVi": "Đầu lưỡi giữa hai răng tương tự /θ/ nhưng rung mạnh dây thanh quản.",
+            "mouthTipEn": "Tongue tip between teeth with vocal cord buzz.",
+            "mouthTip_vi": "Đầu lưỡi giữa hai răng tương tự /θ/ nhưng rung mạnh dây thanh quản.",
+            "mouthTip_en": "Tongue tip between teeth with vocal cord buzz.",
+            "meaningVi": "Cụm th hữu thanh (/ð/)",
+            "meaningEn": "Voiced th cluster",
+            "meaning_vi": "Cụm th hữu thanh (/ð/)",
+            "meaning_en": "Voiced th cluster",
+            "speechText": "this",
+            "examples": [
+              {
+                "word": "This",
+                "reading": "[ðɪs]",
+                "vi": "Cái này",
+                "en": "This",
+                "meaning_vi": "Cái này",
+                "meaning_en": "This"
+              },
+              {
+                "word": "Brother",
+                "reading": "[ˈbrʌð.ər]",
+                "vi": "Anh / Em trai",
+                "en": "Brother",
+                "meaning_vi": "Anh / Em trai",
+                "meaning_en": "Brother"
+              }
+            ],
+            "example": {
+              "word": "This",
+              "reading": "[ðɪs]",
+              "vi": "Cái này",
+              "en": "This",
+              "meaning_vi": "Cái này",
+              "meaning_en": "This"
+            }
+          },
+          {
+            "char": "sh (/ʃ/)",
+            "romaji": "Postalveolar (ʃ)",
+            "ipa": "ʃ",
+            "groupVi": "Cụm âm xát sh",
+            "groupEn": "Postalveolar Sibilants",
+            "group_vi": "Cụm âm xát sh",
+            "group_en": "Postalveolar Sibilants",
+            "mouthTipVi": "Chu tròn môi hướng ra trước, thân lưỡi nâng lên vòm cứng, đẩy khí xát.",
+            "mouthTipEn": "Round lips forward, tongue blade near postalveolar ridge, smooth airflow.",
+            "mouthTip_vi": "Chu tròn môi hướng ra trước, thân lưỡi nâng lên vòm cứng, đẩy khí xát.",
+            "mouthTip_en": "Round lips forward, tongue blade near postalveolar ridge, smooth airflow.",
+            "meaningVi": "Cụm sh (/ʃ/)",
+            "meaningEn": "sh sound",
+            "meaning_vi": "Cụm sh (/ʃ/)",
+            "meaning_en": "sh sound",
+            "speechText": "ship",
+            "examples": [
+              {
+                "word": "Ship",
+                "reading": "[ʃɪp]",
+                "vi": "Con tàu thủy",
+                "en": "Vessel",
+                "meaning_vi": "Con tàu thủy",
+                "meaning_en": "Vessel"
+              },
+              {
+                "word": "Fashion",
+                "reading": "[ˈfæʃ.ən]",
+                "vi": "Thời trang",
+                "en": "Fashion",
+                "meaning_vi": "Thời trang",
+                "meaning_en": "Fashion"
+              }
+            ],
+            "example": {
+              "word": "Ship",
+              "reading": "[ʃɪp]",
+              "vi": "Con tàu thủy",
+              "en": "Vessel",
+              "meaning_vi": "Con tàu thủy",
+              "meaning_en": "Vessel"
+            }
+          },
+          {
+            "char": "ch (/tʃ/)",
+            "romaji": "Affricate (tʃ)",
+            "ipa": "tʃ",
+            "groupVi": "Cụm âm tắc xát ch",
+            "groupEn": "Affricate Clusters",
+            "group_vi": "Cụm âm tắc xát ch",
+            "group_en": "Affricate Clusters",
+            "mouthTipVi": "Kết hợp chặn hơi của /t/ rồi bung xát /ʃ/, dứt khoát và sắc gọn.",
+            "mouthTipEn": "Occlude air with [t] then explode into [ʃ].",
+            "mouthTip_vi": "Kết hợp chặn hơi của /t/ rồi bung xát /ʃ/, dứt khoát và sắc gọn.",
+            "mouthTip_en": "Occlude air with [t] then explode into [ʃ].",
+            "meaningVi": "Cụm ch (/tʃ/)",
+            "meaningEn": "ch sound",
+            "meaning_vi": "Cụm ch (/tʃ/)",
+            "meaning_en": "ch sound",
+            "speechText": "chair",
+            "examples": [
+              {
+                "word": "Chair",
+                "reading": "[tʃer]",
+                "vi": "Chiếc ghế",
+                "en": "Seat",
+                "meaning_vi": "Chiếc ghế",
+                "meaning_en": "Seat"
+              },
+              {
+                "word": "Catch",
+                "reading": "[kætʃ]",
+                "vi": "Bắt lấy / Nắm bắt",
+                "en": "To catch",
+                "meaning_vi": "Bắt lấy / Nắm bắt",
+                "meaning_en": "To catch"
+              }
+            ],
+            "example": {
+              "word": "Chair",
+              "reading": "[tʃer]",
+              "vi": "Chiếc ghế",
+              "en": "Seat",
+              "meaning_vi": "Chiếc ghế",
+              "meaning_en": "Seat"
+            }
+          },
+          {
+            "char": "str-",
+            "romaji": "3-Consonant Cluster str",
+            "ipa": "str",
+            "groupVi": "Cụm 3 phụ âm khó",
+            "groupEn": "Triple Clusters",
+            "group_vi": "Cụm 3 phụ âm khó",
+            "group_en": "Triple Clusters",
+            "mouthTipVi": "Xát /s/ rồi chuyển ngay sang chặn /t/ và cuộn lưỡi ra sau cho /r/. Tuyệt đối KHÔNG chèn âm e/ơ ở giữa!",
+            "mouthTipEn": "Glide s -> t -> r without adding an intrusive schwa vowel.",
+            "mouthTip_vi": "Xát /s/ rồi chuyển ngay sang chặn /t/ và cuộn lưỡi ra sau cho /r/. Tuyệt đối KHÔNG chèn âm e/ơ ở giữa!",
+            "mouthTip_en": "Glide s -> t -> r without adding an intrusive schwa vowel.",
+            "meaningVi": "Cụm 3 phụ âm str-",
+            "meaningEn": "Triple cluster str-",
+            "meaning_vi": "Cụm 3 phụ âm str-",
+            "meaning_en": "Triple cluster str-",
+            "speechText": "street",
+            "examples": [
+              {
+                "word": "Street",
+                "reading": "[striːt]",
+                "vi": "Đường phố",
+                "en": "Road",
+                "meaning_vi": "Đường phố",
+                "meaning_en": "Road"
+              },
+              {
+                "word": "Strong",
+                "reading": "[strɔːŋ]",
+                "vi": "Mạnh mẽ / Khỏe khoắn",
+                "en": "Robust",
+                "meaning_vi": "Mạnh mẽ / Khỏe khoắn",
+                "meaning_en": "Robust"
+              }
+            ],
+            "example": {
+              "word": "Street",
+              "reading": "[striːt]",
+              "vi": "Đường phố",
+              "en": "Road",
+              "meaning_vi": "Đường phố",
+              "meaning_en": "Road"
+            }
+          },
+          {
+            "char": "tr-",
+            "romaji": "Stop + Liquid tr",
+            "ipa": "tr",
+            "groupVi": "Cụm phụ âm đầu tr",
+            "groupEn": "Stop-Liquid Clusters",
+            "group_vi": "Cụm phụ âm đầu tr",
+            "group_en": "Stop-Liquid Clusters",
+            "mouthTipVi": "Chặn đầu lưỡi ở chân răng rồi bật vào âm cuộn lưỡi /r/, tạo cảm giác âm hơi giống /tʃr/.",
+            "mouthTipEn": "Alveolar stop into retroflex r, creating a characteristic affricated burst.",
+            "mouthTip_vi": "Chặn đầu lưỡi ở chân răng rồi bật vào âm cuộn lưỡi /r/, tạo cảm giác âm hơi giống /tʃr/.",
+            "mouthTip_en": "Alveolar stop into retroflex r, creating a characteristic affricated burst.",
+            "meaningVi": "Cụm tr-",
+            "meaningEn": "tr- cluster",
+            "meaning_vi": "Cụm tr-",
+            "meaning_en": "tr- cluster",
+            "speechText": "tree",
+            "examples": [
+              {
+                "word": "Tree",
+                "reading": "[triː]",
+                "vi": "Cây cối",
+                "en": "Tree",
+                "meaning_vi": "Cây cối",
+                "meaning_en": "Tree"
+              },
+              {
+                "word": "Train",
+                "reading": "[treɪn]",
+                "vi": "Tàu hỏa",
+                "en": "Train",
+                "meaning_vi": "Tàu hỏa",
+                "meaning_en": "Train"
+              }
+            ],
+            "example": {
+              "word": "Tree",
+              "reading": "[triː]",
+              "vi": "Cây cối",
+              "en": "Tree",
+              "meaning_vi": "Cây cối",
+              "meaning_en": "Tree"
+            }
+          },
+          {
+            "char": "dr-",
+            "romaji": "Voiced Stop + Liquid dr",
+            "ipa": "dr",
+            "groupVi": "Cụm phụ âm đầu dr",
+            "groupEn": "Stop-Liquid Clusters",
+            "group_vi": "Cụm phụ âm đầu dr",
+            "group_en": "Stop-Liquid Clusters",
+            "mouthTipVi": "Hữu thanh, kết hợp vị trí chặn /d/ trượt liền mạch sang /r/ có rung thanh quản.",
+            "mouthTipEn": "Voiced alveolar stop exploding into retroflex r.",
+            "mouthTip_vi": "Hữu thanh, kết hợp vị trí chặn /d/ trượt liền mạch sang /r/ có rung thanh quản.",
+            "mouthTip_en": "Voiced alveolar stop exploding into retroflex r.",
+            "meaningVi": "Cụm dr-",
+            "meaningEn": "dr- cluster",
+            "meaning_vi": "Cụm dr-",
+            "meaning_en": "dr- cluster",
+            "speechText": "dream",
+            "examples": [
+              {
+                "word": "Dream",
+                "reading": "[driːm]",
+                "vi": "Giấc mơ / Ước mơ",
+                "en": "Dream",
+                "meaning_vi": "Giấc mơ / Ước mơ",
+                "meaning_en": "Dream"
+              },
+              {
+                "word": "Drive",
+                "reading": "[draɪv]",
+                "vi": "Lái xe",
+                "en": "To drive",
+                "meaning_vi": "Lái xe",
+                "meaning_en": "To drive"
+              }
+            ],
+            "example": {
+              "word": "Dream",
+              "reading": "[driːm]",
+              "vi": "Giấc mơ / Ước mơ",
+              "en": "Dream",
+              "meaning_vi": "Giấc mơ / Ước mơ",
+              "meaning_en": "Dream"
+            }
+          },
+          {
+            "char": "cl- / kl-",
+            "romaji": "Velar + Lateral cl",
+            "ipa": "kl",
+            "groupVi": "Cụm phụ âm với L",
+            "groupEn": "L-Blends",
+            "group_vi": "Cụm phụ âm với L",
+            "group_en": "L-Blends",
+            "mouthTipVi": "Bật âm /k/ từ cuống họng rồi đưa nhanh đầu lưỡi chạm ngạc răng trên cho /l/.",
+            "mouthTipEn": "Velar stop k followed immediately by lateral l.",
+            "mouthTip_vi": "Bật âm /k/ từ cuống họng rồi đưa nhanh đầu lưỡi chạm ngạc răng trên cho /l/.",
+            "mouthTip_en": "Velar stop k followed immediately by lateral l.",
+            "meaningVi": "Cụm cl-",
+            "meaningEn": "cl- cluster",
+            "meaning_vi": "Cụm cl-",
+            "meaning_en": "cl- cluster",
+            "speechText": "clean",
+            "examples": [
+              {
+                "word": "Clean",
+                "reading": "[kliːn]",
+                "vi": "Sạch sẽ / Dọn dẹp",
+                "en": "Clean",
+                "meaning_vi": "Sạch sẽ / Dọn dẹp",
+                "meaning_en": "Clean"
+              },
+              {
+                "word": "Class",
+                "reading": "[klæs]",
+                "vi": "Lớp học",
+                "en": "Class",
+                "meaning_vi": "Lớp học",
+                "meaning_en": "Class"
+              }
+            ],
+            "example": {
+              "word": "Clean",
+              "reading": "[kliːn]",
+              "vi": "Sạch sẽ / Dọn dẹp",
+              "en": "Clean",
+              "meaning_vi": "Sạch sẽ / Dọn dẹp",
+              "meaning_en": "Clean"
+            }
+          },
+          {
+            "char": "bl-",
+            "romaji": "Bilabial + Lateral bl",
+            "ipa": "bl",
+            "groupVi": "Cụm phụ âm với L",
+            "groupEn": "L-Blends",
+            "group_vi": "Cụm phụ âm với L",
+            "group_en": "L-Blends",
+            "mouthTipVi": "Mím môi bật /b/ đồng thời chuẩn bị đầu lưỡi áp sát chân răng trên cho /l/.",
+            "mouthTipEn": "Bilabial voiced stop bursting directly into lateral l.",
+            "mouthTip_vi": "Mím môi bật /b/ đồng thời chuẩn bị đầu lưỡi áp sát chân răng trên cho /l/.",
+            "mouthTip_en": "Bilabial voiced stop bursting directly into lateral l.",
+            "meaningVi": "Cụm bl-",
+            "meaningEn": "bl- cluster",
+            "meaning_vi": "Cụm bl-",
+            "meaning_en": "bl- cluster",
+            "speechText": "black",
+            "examples": [
+              {
+                "word": "Black",
+                "reading": "[blæk]",
+                "vi": "Màu đen",
+                "en": "Black",
+                "meaning_vi": "Màu đen",
+                "meaning_en": "Black"
+              },
+              {
+                "word": "Blue",
+                "reading": "[bluː]",
+                "vi": "Màu xanh dương",
+                "en": "Blue",
+                "meaning_vi": "Màu xanh dương",
+                "meaning_en": "Blue"
+              }
+            ],
+            "example": {
+              "word": "Black",
+              "reading": "[blæk]",
+              "vi": "Màu đen",
+              "en": "Black",
+              "meaning_vi": "Màu đen",
+              "meaning_en": "Black"
+            }
+          },
+          {
+            "char": "fl-",
+            "romaji": "Fricative + Lateral fl",
+            "ipa": "fl",
+            "groupVi": "Cụm phụ âm với L",
+            "groupEn": "L-Blends",
+            "group_vi": "Cụm phụ âm với L",
+            "group_en": "L-Blends",
+            "mouthTipVi": "Răng trên chạm môi dưới cho /f/ rồi trượt liền sang đầu lưỡi chạm ngạc cho /l/.",
+            "mouthTipEn": "Labiodental fricative f into lateral l.",
+            "mouthTip_vi": "Răng trên chạm môi dưới cho /f/ rồi trượt liền sang đầu lưỡi chạm ngạc cho /l/.",
+            "mouthTip_en": "Labiodental fricative f into lateral l.",
+            "meaningVi": "Cụm fl-",
+            "meaningEn": "fl- cluster",
+            "meaning_vi": "Cụm fl-",
+            "meaning_en": "fl- cluster",
+            "speechText": "fly",
+            "examples": [
+              {
+                "word": "Fly",
+                "reading": "[flaɪ]",
+                "vi": "Bay lượn",
+                "en": "To fly",
+                "meaning_vi": "Bay lượn",
+                "meaning_en": "To fly"
+              },
+              {
+                "word": "Floor",
+                "reading": "[flɔːr]",
+                "vi": "Sàn nhà / Tầng lầu",
+                "en": "Floor",
+                "meaning_vi": "Sàn nhà / Tầng lầu",
+                "meaning_en": "Floor"
+              }
+            ],
+            "example": {
+              "word": "Fly",
+              "reading": "[flaɪ]",
+              "vi": "Bay lượn",
+              "en": "To fly",
+              "meaning_vi": "Bay lượn",
+              "meaning_en": "To fly"
+            }
+          },
+          {
+            "char": "gl-",
+            "romaji": "Voiced Velar + Lateral gl",
+            "ipa": "ɡl",
+            "groupVi": "Cụm phụ âm với L",
+            "groupEn": "L-Blends",
+            "group_vi": "Cụm phụ âm với L",
+            "group_en": "L-Blends",
+            "mouthTipVi": "Bật âm /ɡ/ từ thanh quản rồi lập tức đưa đầu lưỡi lên ngạc cho /l/.",
+            "mouthTipEn": "Voiced velar g into lateral l.",
+            "mouthTip_vi": "Bật âm /ɡ/ từ thanh quản rồi lập tức đưa đầu lưỡi lên ngạc cho /l/.",
+            "mouthTip_en": "Voiced velar g into lateral l.",
+            "meaningVi": "Cụm gl-",
+            "meaningEn": "gl- cluster",
+            "meaning_vi": "Cụm gl-",
+            "meaning_en": "gl- cluster",
+            "speechText": "glass",
+            "examples": [
+              {
+                "word": "Glass",
+                "reading": "[ɡlæs]",
+                "vi": "Ly thủy tinh / Kính",
+                "en": "Glass",
+                "meaning_vi": "Ly thủy tinh / Kính",
+                "meaning_en": "Glass"
+              },
+              {
+                "word": "Globe",
+                "reading": "[ɡloʊb]",
+                "vi": "Quả địa cầu",
+                "en": "Globe",
+                "meaning_vi": "Quả địa cầu",
+                "meaning_en": "Globe"
+              }
+            ],
+            "example": {
+              "word": "Glass",
+              "reading": "[ɡlæs]",
+              "vi": "Ly thủy tinh / Kính",
+              "en": "Glass",
+              "meaning_vi": "Ly thủy tinh / Kính",
+              "meaning_en": "Glass"
+            }
+          },
+          {
+            "char": "pl-",
+            "romaji": "Voiceless Bilabial + Lateral pl",
+            "ipa": "pl",
+            "groupVi": "Cụm phụ âm với L",
+            "groupEn": "L-Blends",
+            "group_vi": "Cụm phụ âm với L",
+            "group_en": "L-Blends",
+            "mouthTipVi": "Bật nhẹ /p/ ở môi rồi lướt mượt mà sang /l/.",
+            "mouthTipEn": "Voiceless bilabial p transitioning smoothly into lateral l.",
+            "mouthTip_vi": "Bật nhẹ /p/ ở môi rồi lướt mượt mà sang /l/.",
+            "mouthTip_en": "Voiceless bilabial p transitioning smoothly into lateral l.",
+            "meaningVi": "Cụm pl-",
+            "meaningEn": "pl- cluster",
+            "meaning_vi": "Cụm pl-",
+            "meaning_en": "pl- cluster",
+            "speechText": "play",
+            "examples": [
+              {
+                "word": "Play",
+                "reading": "[pleɪ]",
+                "vi": "Chơi đùa / Vui chơi",
+                "en": "To play",
+                "meaning_vi": "Chơi đùa / Vui chơi",
+                "meaning_en": "To play"
+              },
+              {
+                "word": "Plan",
+                "reading": "[plæn]",
+                "vi": "Kế hoạch",
+                "en": "Plan",
+                "meaning_vi": "Kế hoạch",
+                "meaning_en": "Plan"
+              }
+            ],
+            "example": {
+              "word": "Play",
+              "reading": "[pleɪ]",
+              "vi": "Chơi đùa / Vui chơi",
+              "en": "To play",
+              "meaning_vi": "Chơi đùa / Vui chơi",
+              "meaning_en": "To play"
+            }
+          },
+          {
+            "char": "sl-",
+            "romaji": "Fricative + Lateral sl",
+            "ipa": "sl",
+            "groupVi": "Cụm phụ âm với L",
+            "groupEn": "L-Blends",
+            "group_vi": "Cụm phụ âm với L",
+            "group_en": "L-Blends",
+            "mouthTipVi": "Thổi hơi qua khe răng /s/ rồi chuyển đầu lưỡi lên ngạc cứng /l/.",
+            "mouthTipEn": "Sibilant s followed by lateral l.",
+            "mouthTip_vi": "Thổi hơi qua khe răng /s/ rồi chuyển đầu lưỡi lên ngạc cứng /l/.",
+            "mouthTip_en": "Sibilant s followed by lateral l.",
+            "meaningVi": "Cụm sl-",
+            "meaningEn": "sl- cluster",
+            "meaning_vi": "Cụm sl-",
+            "meaning_en": "sl- cluster",
+            "speechText": "slow",
+            "examples": [
+              {
+                "word": "Slow",
+                "reading": "[sloʊ]",
+                "vi": "Chậm rãi",
+                "en": "Slow",
+                "meaning_vi": "Chậm rãi",
+                "meaning_en": "Slow"
+              },
+              {
+                "word": "Sleep",
+                "reading": "[sliːp]",
+                "vi": "Ngủ",
+                "en": "To sleep",
+                "meaning_vi": "Ngủ",
+                "meaning_en": "To sleep"
+              }
+            ],
+            "example": {
+              "word": "Slow",
+              "reading": "[sloʊ]",
+              "vi": "Chậm rãi",
+              "en": "Slow",
+              "meaning_vi": "Chậm rãi",
+              "meaning_en": "Slow"
+            }
+          },
+          {
+            "char": "br-",
+            "romaji": "Bilabial + Rhotic br",
+            "ipa": "br",
+            "groupVi": "Cụm phụ âm với R",
+            "groupEn": "R-Blends",
+            "group_vi": "Cụm phụ âm với R",
+            "group_en": "R-Blends",
+            "mouthTipVi": "Bật môi /b/ đồng thời cuộn lưỡi sẵn ra sau cho /r/.",
+            "mouthTipEn": "Bilabial b bursting into retroflex r.",
+            "mouthTip_vi": "Bật môi /b/ đồng thời cuộn lưỡi sẵn ra sau cho /r/.",
+            "mouthTip_en": "Bilabial b bursting into retroflex r.",
+            "meaningVi": "Cụm br-",
+            "meaningEn": "br- cluster",
+            "meaning_vi": "Cụm br-",
+            "meaning_en": "br- cluster",
+            "speechText": "bread",
+            "examples": [
+              {
+                "word": "Bread",
+                "reading": "[bred]",
+                "vi": "Bánh mì",
+                "en": "Bread",
+                "meaning_vi": "Bánh mì",
+                "meaning_en": "Bread"
+              },
+              {
+                "word": "Bring",
+                "reading": "[brɪŋ]",
+                "vi": "Mang theo / Đem đến",
+                "en": "To bring",
+                "meaning_vi": "Mang theo / Đem đến",
+                "meaning_en": "To bring"
+              }
+            ],
+            "example": {
+              "word": "Bread",
+              "reading": "[bred]",
+              "vi": "Bánh mì",
+              "en": "Bread",
+              "meaning_vi": "Bánh mì",
+              "meaning_en": "Bread"
+            }
+          },
+          {
+            "char": "cr- / kr-",
+            "romaji": "Velar + Rhotic cr",
+            "ipa": "kr",
+            "groupVi": "Cụm phụ âm với R",
+            "groupEn": "R-Blends",
+            "group_vi": "Cụm phụ âm với R",
+            "group_en": "R-Blends",
+            "mouthTipVi": "Bật /k/ từ ngạc mềm và uốn cong lưỡi sâu vào trong họng cho /r/.",
+            "mouthTipEn": "Velar k releasing directly into curled r.",
+            "mouthTip_vi": "Bật /k/ từ ngạc mềm và uốn cong lưỡi sâu vào trong họng cho /r/.",
+            "mouthTip_en": "Velar k releasing directly into curled r.",
+            "meaningVi": "Cụm cr-",
+            "meaningEn": "cr- cluster",
+            "meaning_vi": "Cụm cr-",
+            "meaning_en": "cr- cluster",
+            "speechText": "crazy",
+            "examples": [
+              {
+                "word": "Crazy",
+                "reading": "[ˈkreɪ.zi]",
+                "vi": "Điên cuồng / Tuyệt vời",
+                "en": "Crazy",
+                "meaning_vi": "Điên cuồng / Tuyệt vời",
+                "meaning_en": "Crazy"
+              },
+              {
+                "word": "Cry",
+                "reading": "[kraɪ]",
+                "vi": "Khóc lóc",
+                "en": "To cry",
+                "meaning_vi": "Khóc lóc",
+                "meaning_en": "To cry"
+              }
+            ],
+            "example": {
+              "word": "Crazy",
+              "reading": "[ˈkreɪ.zi]",
+              "vi": "Điên cuồng / Tuyệt vời",
+              "en": "Crazy",
+              "meaning_vi": "Điên cuồng / Tuyệt vời",
+              "meaning_en": "Crazy"
+            }
+          },
+          {
+            "char": "fr-",
+            "romaji": "Labiodental + Rhotic fr",
+            "ipa": "fr",
+            "groupVi": "Cụm phụ âm với R",
+            "groupEn": "R-Blends",
+            "group_vi": "Cụm phụ âm với R",
+            "group_en": "R-Blends",
+            "mouthTipVi": "Xát răng-môi /f/ rồi cuộn đầu lưỡi về sau cho /r/.",
+            "mouthTipEn": "Labiodental f sliding into retroflex r.",
+            "mouthTip_vi": "Xát răng-môi /f/ rồi cuộn đầu lưỡi về sau cho /r/.",
+            "mouthTip_en": "Labiodental f sliding into retroflex r.",
+            "meaningVi": "Cụm fr-",
+            "meaningEn": "fr- cluster",
+            "meaning_vi": "Cụm fr-",
+            "meaning_en": "fr- cluster",
+            "speechText": "friend",
+            "examples": [
+              {
+                "word": "Friend",
+                "reading": "[frend]",
+                "vi": "Người bạn bè",
+                "en": "Friend",
+                "meaning_vi": "Người bạn bè",
+                "meaning_en": "Friend"
+              },
+              {
+                "word": "Free",
+                "reading": "[friː]",
+                "vi": "Tự do / Miễn phí",
+                "en": "Free",
+                "meaning_vi": "Tự do / Miễn phí",
+                "meaning_en": "Free"
+              }
+            ],
+            "example": {
+              "word": "Friend",
+              "reading": "[frend]",
+              "vi": "Người bạn bè",
+              "en": "Friend",
+              "meaning_vi": "Người bạn bè",
+              "meaning_en": "Friend"
+            }
+          },
+          {
+            "char": "gr-",
+            "romaji": "Voiced Velar + Rhotic gr",
+            "ipa": "ɡr",
+            "groupVi": "Cụm phụ âm với R",
+            "groupEn": "R-Blends",
+            "group_vi": "Cụm phụ âm với R",
+            "group_en": "R-Blends",
+            "mouthTipVi": "Rung thanh âm /ɡ/ rồi chuyển mượt mà sang âm uốn lưỡi /r/.",
+            "mouthTipEn": "Voiced velar g into retroflex r.",
+            "mouthTip_vi": "Rung thanh âm /ɡ/ rồi chuyển mượt mà sang âm uốn lưỡi /r/.",
+            "mouthTip_en": "Voiced velar g into retroflex r.",
+            "meaningVi": "Cụm gr-",
+            "meaningEn": "gr- cluster",
+            "meaning_vi": "Cụm gr-",
+            "meaning_en": "gr- cluster",
+            "speechText": "great",
+            "examples": [
+              {
+                "word": "Great",
+                "reading": "[ɡreɪt]",
+                "vi": "Tuyệt vời",
+                "en": "Great",
+                "meaning_vi": "Tuyệt vời",
+                "meaning_en": "Great"
+              },
+              {
+                "word": "Green",
+                "reading": "[ɡriːn]",
+                "vi": "Màu xanh lá",
+                "en": "Green",
+                "meaning_vi": "Màu xanh lá",
+                "meaning_en": "Green"
+              }
+            ],
+            "example": {
+              "word": "Great",
+              "reading": "[ɡreɪt]",
+              "vi": "Tuyệt vời",
+              "en": "Great",
+              "meaning_vi": "Tuyệt vời",
+              "meaning_en": "Great"
+            }
+          },
+          {
+            "char": "pr-",
+            "romaji": "Bilabial + Rhotic pr",
+            "ipa": "pr",
+            "groupVi": "Cụm phụ âm với R",
+            "groupEn": "R-Blends",
+            "group_vi": "Cụm phụ âm với R",
+            "group_en": "R-Blends",
+            "mouthTipVi": "Mím môi bật nhẹ /p/ rồi uốn thân lưỡi ra sau tạo âm /r/.",
+            "mouthTipEn": "Bilabial voiceless p into retroflex r.",
+            "mouthTip_vi": "Mím môi bật nhẹ /p/ rồi uốn thân lưỡi ra sau tạo âm /r/.",
+            "mouthTip_en": "Bilabial voiceless p into retroflex r.",
+            "meaningVi": "Cụm pr-",
+            "meaningEn": "pr- cluster",
+            "meaning_vi": "Cụm pr-",
+            "meaning_en": "pr- cluster",
+            "speechText": "practice",
+            "examples": [
+              {
+                "word": "Practice",
+                "reading": "[ˈpræk.tɪs]",
+                "vi": "Thực hành / Rèn luyện",
+                "en": "Practice",
+                "meaning_vi": "Thực hành / Rèn luyện",
+                "meaning_en": "Practice"
+              },
+              {
+                "word": "Price",
+                "reading": "[praɪs]",
+                "vi": "Giá cả",
+                "en": "Price",
+                "meaning_vi": "Giá cả",
+                "meaning_en": "Price"
+              }
+            ],
+            "example": {
+              "word": "Practice",
+              "reading": "[ˈpræk.tɪs]",
+              "vi": "Thực hành / Rèn luyện",
+              "en": "Practice",
+              "meaning_vi": "Thực hành / Rèn luyện",
+              "meaning_en": "Practice"
+            }
+          },
+          {
+            "char": "sk- / sc-",
+            "romaji": "S-Cluster sk",
+            "ipa": "sk",
+            "groupVi": "Cụm phụ âm với S",
+            "groupEn": "S-Blends",
+            "group_vi": "Cụm phụ âm với S",
+            "group_en": "S-Blends",
+            "mouthTipVi": "Xát âm /s/ rồi chặn bật /k/ (sau /s/, âm /k/ không bật hơi mạnh).",
+            "mouthTipEn": "Sibilant s followed by unaspirated velar stop k.",
+            "mouthTip_vi": "Xát âm /s/ rồi chặn bật /k/ (sau /s/, âm /k/ không bật hơi mạnh).",
+            "mouthTip_en": "Sibilant s followed by unaspirated velar stop k.",
+            "meaningVi": "Cụm sk-",
+            "meaningEn": "sk- cluster",
+            "meaning_vi": "Cụm sk-",
+            "meaning_en": "sk- cluster",
+            "speechText": "sky",
+            "examples": [
+              {
+                "word": "Sky",
+                "reading": "[skaɪ]",
+                "vi": "Bầu trời",
+                "en": "Sky",
+                "meaning_vi": "Bầu trời",
+                "meaning_en": "Sky"
+              },
+              {
+                "word": "Skill",
+                "reading": "[skɪl]",
+                "vi": "Kỹ năng",
+                "en": "Skill",
+                "meaning_vi": "Kỹ năng",
+                "meaning_en": "Skill"
+              }
+            ],
+            "example": {
+              "word": "Sky",
+              "reading": "[skaɪ]",
+              "vi": "Bầu trời",
+              "en": "Sky",
+              "meaning_vi": "Bầu trời",
+              "meaning_en": "Sky"
+            }
+          },
+          {
+            "char": "sm-",
+            "romaji": "S-Cluster sm",
+            "ipa": "sm",
+            "groupVi": "Cụm phụ âm với S",
+            "groupEn": "S-Blends",
+            "group_vi": "Cụm phụ âm với S",
+            "group_en": "S-Blends",
+            "mouthTipVi": "Luồng khí /s/ qua kẽ răng rồi khép môi ngay cho âm mũi /m/.",
+            "mouthTipEn": "Sibilant s flowing into nasal m.",
+            "mouthTip_vi": "Luồng khí /s/ qua kẽ răng rồi khép môi ngay cho âm mũi /m/.",
+            "mouthTip_en": "Sibilant s flowing into nasal m.",
+            "meaningVi": "Cụm sm-",
+            "meaningEn": "sm- cluster",
+            "meaning_vi": "Cụm sm-",
+            "meaning_en": "sm- cluster",
+            "speechText": "smile",
+            "examples": [
+              {
+                "word": "Smile",
+                "reading": "[smaɪl]",
+                "vi": "Nụ cười",
+                "en": "Smile",
+                "meaning_vi": "Nụ cười",
+                "meaning_en": "Smile"
+              },
+              {
+                "word": "Smart",
+                "reading": "[smɑːrt]",
+                "vi": "Thông minh",
+                "en": "Smart",
+                "meaning_vi": "Thông minh",
+                "meaning_en": "Smart"
+              }
+            ],
+            "example": {
+              "word": "Smile",
+              "reading": "[smaɪl]",
+              "vi": "Nụ cười",
+              "en": "Smile",
+              "meaning_vi": "Nụ cười",
+              "meaning_en": "Smile"
+            }
+          },
+          {
+            "char": "sn-",
+            "romaji": "S-Cluster sn",
+            "ipa": "sn",
+            "groupVi": "Cụm phụ âm với S",
+            "groupEn": "S-Blends",
+            "group_vi": "Cụm phụ âm với S",
+            "group_en": "S-Blends",
+            "mouthTipVi": "Xát âm /s/ rồi chuyển đầu lưỡi chạm chân răng phát âm mũi /n/.",
+            "mouthTipEn": "Sibilant s into alveolar nasal n.",
+            "mouthTip_vi": "Xát âm /s/ rồi chuyển đầu lưỡi chạm chân răng phát âm mũi /n/.",
+            "mouthTip_en": "Sibilant s into alveolar nasal n.",
+            "meaningVi": "Cụm sn-",
+            "meaningEn": "sn- cluster",
+            "meaning_vi": "Cụm sn-",
+            "meaning_en": "sn- cluster",
+            "speechText": "snake",
+            "examples": [
+              {
+                "word": "Snake",
+                "reading": "[sneɪk]",
+                "vi": "Con rắn",
+                "en": "Reptile",
+                "meaning_vi": "Con rắn",
+                "meaning_en": "Reptile"
+              },
+              {
+                "word": "Snow",
+                "reading": "[snoʊ]",
+                "vi": "Tuyết rơi",
+                "en": "Snow",
+                "meaning_vi": "Tuyết rơi",
+                "meaning_en": "Snow"
+              }
+            ],
+            "example": {
+              "word": "Snake",
+              "reading": "[sneɪk]",
+              "vi": "Con rắn",
+              "en": "Reptile",
+              "meaning_vi": "Con rắn",
+              "meaning_en": "Reptile"
+            }
+          },
+          {
+            "char": "sp-",
+            "romaji": "S-Cluster sp",
+            "ipa": "sp",
+            "groupVi": "Cụm phụ âm với S",
+            "groupEn": "S-Blends",
+            "group_vi": "Cụm phụ âm với S",
+            "group_en": "S-Blends",
+            "mouthTipVi": "Xát /s/ rồi mím môi bật /p/ (âm /p/ sau /s/ trở thành âm không bật hơi).",
+            "mouthTipEn": "Sibilant s into unaspirated bilabial p.",
+            "mouthTip_vi": "Xát /s/ rồi mím môi bật /p/ (âm /p/ sau /s/ trở thành âm không bật hơi).",
+            "mouthTip_en": "Sibilant s into unaspirated bilabial p.",
+            "meaningVi": "Cụm sp-",
+            "meaningEn": "sp- cluster",
+            "meaning_vi": "Cụm sp-",
+            "meaning_en": "sp- cluster",
+            "speechText": "speak",
+            "examples": [
+              {
+                "word": "Speak",
+                "reading": "[spiːk]",
+                "vi": "Nói chuyện",
+                "en": "To speak",
+                "meaning_vi": "Nói chuyện",
+                "meaning_en": "To speak"
+              },
+              {
+                "word": "Sport",
+                "reading": "[spɔːrt]",
+                "vi": "Thể thao",
+                "en": "Sport",
+                "meaning_vi": "Thể thao",
+                "meaning_en": "Sport"
+              }
+            ],
+            "example": {
+              "word": "Speak",
+              "reading": "[spiːk]",
+              "vi": "Nói chuyện",
+              "en": "To speak",
+              "meaning_vi": "Nói chuyện",
+              "meaning_en": "To speak"
+            }
+          },
+          {
+            "char": "st-",
+            "romaji": "S-Cluster st",
+            "ipa": "st",
+            "groupVi": "Cụm phụ âm với S",
+            "groupEn": "S-Blends",
+            "group_vi": "Cụm phụ âm với S",
+            "group_en": "S-Blends",
+            "mouthTipVi": "Xát /s/ rồi chạm đầu lưỡi chặn /t/ (âm /t/ sau /s/ không bật hơi mạnh).",
+            "mouthTipEn": "Sibilant s into unaspirated alveolar t.",
+            "mouthTip_vi": "Xát /s/ rồi chạm đầu lưỡi chặn /t/ (âm /t/ sau /s/ không bật hơi mạnh).",
+            "mouthTip_en": "Sibilant s into unaspirated alveolar t.",
+            "meaningVi": "Cụm st-",
+            "meaningEn": "st- cluster",
+            "meaning_vi": "Cụm st-",
+            "meaning_en": "st- cluster",
+            "speechText": "start",
+            "examples": [
+              {
+                "word": "Start",
+                "reading": "[stɑːrt]",
+                "vi": "Bắt đầu",
+                "en": "To begin",
+                "meaning_vi": "Bắt đầu",
+                "meaning_en": "To begin"
+              },
+              {
+                "word": "Star",
+                "reading": "[stɑːr]",
+                "vi": "Ngôi sao",
+                "en": "Star",
+                "meaning_vi": "Ngôi sao",
+                "meaning_en": "Star"
+              }
+            ],
+            "example": {
+              "word": "Start",
+              "reading": "[stɑːrt]",
+              "vi": "Bắt đầu",
+              "en": "To begin",
+              "meaning_vi": "Bắt đầu",
+              "meaning_en": "To begin"
+            }
+          },
+          {
+            "char": "sw-",
+            "romaji": "S-Cluster sw",
+            "ipa": "sw",
+            "groupVi": "Cụm phụ âm với S",
+            "groupEn": "S-Blends",
+            "group_vi": "Cụm phụ âm với S",
+            "group_en": "S-Blends",
+            "mouthTipVi": "Xát /s/ rồi lập tức chu tròn môi cho bán nguyên âm /w/.",
+            "mouthTipEn": "Sibilant s gliding into labiovelar w.",
+            "mouthTip_vi": "Xát /s/ rồi lập tức chu tròn môi cho bán nguyên âm /w/.",
+            "mouthTip_en": "Sibilant s gliding into labiovelar w.",
+            "meaningVi": "Cụm sw-",
+            "meaningEn": "sw- cluster",
+            "meaning_vi": "Cụm sw-",
+            "meaning_en": "sw- cluster",
+            "speechText": "sweet",
+            "examples": [
+              {
+                "word": "Sweet",
+                "reading": "[swiːt]",
+                "vi": "Ngọt ngào",
+                "en": "Sweet",
+                "meaning_vi": "Ngọt ngào",
+                "meaning_en": "Sweet"
+              },
+              {
+                "word": "Swim",
+                "reading": "[swɪm]",
+                "vi": "Bơi lội",
+                "en": "To swim",
+                "meaning_vi": "Bơi lội",
+                "meaning_en": "To swim"
+              }
+            ],
+            "example": {
+              "word": "Sweet",
+              "reading": "[swiːt]",
+              "vi": "Ngọt ngào",
+              "en": "Sweet",
+              "meaning_vi": "Ngọt ngào",
+              "meaning_en": "Sweet"
+            }
+          },
+          {
+            "char": "spl-",
+            "romaji": "3-Consonant Cluster spl",
+            "ipa": "spl",
+            "groupVi": "Cụm 3 phụ âm khó",
+            "groupEn": "Triple Clusters",
+            "group_vi": "Cụm 3 phụ âm khó",
+            "group_en": "Triple Clusters",
+            "mouthTipVi": "Cụm 3 phụ âm s-p-l nối liền nhau không chèn nguyên âm đệm.",
+            "mouthTipEn": "Seamless articulation of s, unaspirated p, and lateral l.",
+            "mouthTip_vi": "Cụm 3 phụ âm s-p-l nối liền nhau không chèn nguyên âm đệm.",
+            "mouthTip_en": "Seamless articulation of s, unaspirated p, and lateral l.",
+            "meaningVi": "Cụm 3 phụ âm spl-",
+            "meaningEn": "Triple cluster spl-",
+            "meaning_vi": "Cụm 3 phụ âm spl-",
+            "meaning_en": "Triple cluster spl-",
+            "speechText": "splash",
+            "examples": [
+              {
+                "word": "Splash",
+                "reading": "[splæʃ]",
+                "vi": "Bắn tung tóe",
+                "en": "Splash",
+                "meaning_vi": "Bắn tung tóe",
+                "meaning_en": "Splash"
+              },
+              {
+                "word": "Split",
+                "reading": "[splɪt]",
+                "vi": "Tách ra / Chia đôi",
+                "en": "To split",
+                "meaning_vi": "Tách ra / Chia đôi",
+                "meaning_en": "To split"
+              }
+            ],
+            "example": {
+              "word": "Splash",
+              "reading": "[splæʃ]",
+              "vi": "Bắn tung tóe",
+              "en": "Splash",
+              "meaning_vi": "Bắn tung tóe",
+              "meaning_en": "Splash"
+            }
+          },
+          {
+            "char": "spr-",
+            "romaji": "3-Consonant Cluster spr",
+            "ipa": "spr",
+            "groupVi": "Cụm 3 phụ âm khó",
+            "groupEn": "Triple Clusters",
+            "group_vi": "Cụm 3 phụ âm khó",
+            "group_en": "Triple Clusters",
+            "mouthTipVi": "Trượt mượt mà s -> p -> r trong một luồng hơi duy nhất.",
+            "mouthTipEn": "Continuous transition s -> unaspirated p -> curled r.",
+            "mouthTip_vi": "Trượt mượt mà s -> p -> r trong một luồng hơi duy nhất.",
+            "mouthTip_en": "Continuous transition s -> unaspirated p -> curled r.",
+            "meaningVi": "Cụm 3 phụ âm spr-",
+            "meaningEn": "Triple cluster spr-",
+            "meaning_vi": "Cụm 3 phụ âm spr-",
+            "meaning_en": "Triple cluster spr-",
+            "speechText": "spring",
+            "examples": [
+              {
+                "word": "Spring",
+                "reading": "[sprɪŋ]",
+                "vi": "Mùa xuân / Suối",
+                "en": "Spring",
+                "meaning_vi": "Mùa xuân / Suối",
+                "meaning_en": "Spring"
+              },
+              {
+                "word": "Spread",
+                "reading": "[spred]",
+                "vi": "Lan tỏa",
+                "en": "To spread",
+                "meaning_vi": "Lan tỏa",
+                "meaning_en": "To spread"
+              }
+            ],
+            "example": {
+              "word": "Spring",
+              "reading": "[sprɪŋ]",
+              "vi": "Mùa xuân / Suối",
+              "en": "Spring",
+              "meaning_vi": "Mùa xuân / Suối",
+              "meaning_en": "Spring"
+            }
+          },
+          {
+            "char": "squ- / skw-",
+            "romaji": "3-Consonant Cluster squ",
+            "ipa": "skw",
+            "groupVi": "Cụm 3 phụ âm khó",
+            "groupEn": "Triple Clusters",
+            "group_vi": "Cụm 3 phụ âm khó",
+            "group_en": "Triple Clusters",
+            "mouthTipVi": "/s/ + /k/ + chu môi /w/ nối liền mạch.",
+            "mouthTipEn": "Tri-consonantal blend of s + k + w.",
+            "mouthTip_vi": "/s/ + /k/ + chu môi /w/ nối liền mạch.",
+            "mouthTip_en": "Tri-consonantal blend of s + k + w.",
+            "meaningVi": "Cụm 3 phụ âm squ-",
+            "meaningEn": "Triple cluster squ-",
+            "meaning_vi": "Cụm 3 phụ âm squ-",
+            "meaning_en": "Triple cluster squ-",
+            "speechText": "square",
+            "examples": [
+              {
+                "word": "Square",
+                "reading": "[skwer]",
+                "vi": "Hình vuông / Quảng trường",
+                "en": "Square",
+                "meaning_vi": "Hình vuông / Quảng trường",
+                "meaning_en": "Square"
+              },
+              {
+                "word": "Question",
+                "reading": "[ˈkwes.tʃən]",
+                "vi": "Câu hỏi",
+                "en": "Question",
+                "meaning_vi": "Câu hỏi",
+                "meaning_en": "Question"
+              }
+            ],
+            "example": {
+              "word": "Square",
+              "reading": "[skwer]",
+              "vi": "Hình vuông / Quảng trường",
+              "en": "Square",
+              "meaning_vi": "Hình vuông / Quảng trường",
+              "meaning_en": "Square"
+            }
           }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái A–E",
-          "group_en": "Letters A–E",
-          "char": "E e",
-          "romaji": "Letter E (/iː/)",
-          "ipa": "[iː]",
-          "mouthTip_vi": "Khóe miệng kéo dẹt sang hai bên như đang cười tươi, lưng lưỡi nâng cao sát vòm ngạc.",
-          "mouthTip_en": "Spread lips wide into a bright smile; high front tense vowel.",
-          "example": {
-            "word": "Eagle",
-            "reading": "[ˈiː.ɡəl]",
-            "meaning_vi": "Chim đại bàng",
-            "meaning_en": "Mighty bird"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái F–J",
-          "group_en": "Letters F–J",
-          "char": "F f",
-          "romaji": "Letter F (/ɛf/)",
-          "ipa": "[ɛf]",
-          "mouthTip_vi": "Phát âm /ɛ/ trước, sau đó đưa răng cửa trên chạm nhẹ môi dưới xát hơi ra âm /f/.",
-          "mouthTip_en": "Vocalize mid /ɛ/, then place upper incisors lightly on lower lip for fricative /f/.",
-          "example": {
-            "word": "Forest",
-            "reading": "[ˈfɔːr.ɪst]",
-            "meaning_vi": "Khu rừng",
-            "meaning_en": "Wooded area"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái F–J",
-          "group_en": "Letters F–J",
-          "char": "G g",
-          "romaji": "Letter G (/dʒiː/)",
-          "ipa": "[dʒiː]",
-          "mouthTip_vi": "Đầu lưỡi chạm ngạc cứng chặn hơi, rung thanh đới rồi bật xát âm /dʒ/ sang /iː/.",
-          "mouthTip_en": "Voiced postalveolar affricate /dʒ/ popping clean into /iː/.",
-          "example": {
-            "word": "Guitar",
-            "reading": "[ɡɪˈtɑːr]",
-            "meaning_vi": "Đàn ghi-ta",
-            "meaning_en": "String instrument"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái F–J",
-          "group_en": "Letters F–J",
-          "char": "H h",
-          "romaji": "Letter H (/eɪtʃ/)",
-          "ipa": "[eɪtʃ]",
-          "mouthTip_vi": "Bắt đầu với nguyên âm đôi /eɪ/, kết thúc dứt khoát bằng âm bật vô thanh /tʃ/ (ch).",
-          "mouthTip_en": "Start with diphthong /eɪ/ and crisp release with voiceless affricate /tʃ/.",
-          "example": {
-            "word": "House",
-            "reading": "[haʊs]",
-            "meaning_vi": "Ngôi nhà",
-            "meaning_en": "Dwelling"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái F–J",
-          "group_en": "Letters F–J",
-          "char": "I i",
-          "romaji": "Letter I (/aɪ/)",
-          "ipa": "[aɪ]",
-          "mouthTip_vi": "Hạ quai hàm mở rộng miệng ở âm /a/ rồi thu hẹp dần lướt lên âm /ɪ/.",
-          "mouthTip_en": "Open jaw wide for open /a/, gliding smoothly upward into /ɪ/.",
-          "example": {
-            "word": "Island",
-            "reading": "[ˈaɪ.lənd]",
-            "meaning_vi": "Hòn đảo",
-            "meaning_en": "Land surrounded by water"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái F–J",
-          "group_en": "Letters F–J",
-          "char": "J j",
-          "romaji": "Letter J (/dʒeɪ/)",
-          "ipa": "[dʒeɪ]",
-          "mouthTip_vi": "Bật âm hữu thanh /dʒ/ từ vòm miệng rồi lướt mượt mà sang nguyên âm đôi /eɪ/.",
-          "mouthTip_en": "Voiced affricate /dʒ/ followed by smooth diphthong /eɪ/.",
-          "example": {
-            "word": "Journey",
-            "reading": "[ˈdʒɝː.ni]",
-            "meaning_vi": "Chuyến hành trình",
-            "meaning_en": "Trip / Voyage"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái K–O",
-          "group_en": "Letters K–O",
-          "char": "K k",
-          "romaji": "Letter K (/keɪ/)",
-          "ipa": "[keɪ]",
-          "mouthTip_vi": "Gốc lưỡi chạm ngạc mềm bật hơi âm /k/ sắc dứt khoát rồi nối tiếp /eɪ/.",
-          "mouthTip_en": "Crisp aspirated velar stop /k/ releasing cleanly into /eɪ/.",
-          "example": {
-            "word": "Koala",
-            "reading": "[koʊˈɑː.lə]",
-            "meaning_vi": "Gấu túi Koala",
-            "meaning_en": "Marsupial"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái K–O",
-          "group_en": "Letters K–O",
-          "char": "L l",
-          "romaji": "Letter L (/ɛl/)",
-          "ipa": "[ɛl]",
-          "mouthTip_vi": "Phát âm /ɛ/, sau đó nâng đầu lưỡi chạm vào chân răng hàm trên để chặn hơi lại.",
-          "mouthTip_en": "Sound /ɛ/, then lift tongue tip firmly onto upper alveolar ridge.",
-          "example": {
-            "word": "Lemon",
-            "reading": "[ˈlɛm.ən]",
-            "meaning_vi": "Quả chanh vàng",
-            "meaning_en": "Sour citrus"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái K–O",
-          "group_en": "Letters K–O",
-          "char": "M m",
-          "romaji": "Letter M (/ɛm/)",
-          "ipa": "[ɛm]",
-          "mouthTip_vi": "Phát âm /ɛ/, sau đó mím chặt hai môi lại cho âm rung thoát qua khoang mũi.",
-          "mouthTip_en": "Sound /ɛ/, then seal both lips allowing vocal resonance in nasal cavity.",
-          "example": {
-            "word": "Mountain",
-            "reading": "[ˈmaʊn.tən]",
-            "meaning_vi": "Ngọn núi",
-            "meaning_en": "High elevation"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái K–O",
-          "group_en": "Letters K–O",
-          "char": "N n",
-          "romaji": "Letter N (/ɛn/)",
-          "ipa": "[ɛn]",
-          "mouthTip_vi": "Phát âm /ɛ/, sau đó dán chặt đầu lưỡi vào lợi trên để luồng khí thoát qua mũi.",
-          "mouthTip_en": "Sound /ɛ/, then anchor tongue tip to upper gum ridge for nasal resonance.",
-          "example": {
-            "word": "Nature",
-            "reading": "[ˈneɪ.tʃɚ]",
-            "meaning_vi": "Thiên nhiên",
-            "meaning_en": "Natural world"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái K–O",
-          "group_en": "Letters K–O",
-          "char": "O o",
-          "romaji": "Letter O (/oʊ/)",
-          "ipa": "[oʊ]",
-          "mouthTip_vi": "Mở miệng ở vị trí âm /o/ rồi thu tròn hai môi lại về phía trước thành /ʊ/.",
-          "mouthTip_en": "Start at mid-back /o/ and purse lips forward into tight /ʊ/.",
-          "example": {
-            "word": "Ocean",
-            "reading": "[ˈoʊ.ʃən]",
-            "meaning_vi": "Đại dương",
-            "meaning_en": "Vast sea"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái P–T",
-          "group_en": "Letters P–T",
-          "char": "P p",
-          "romaji": "Letter P (/piː/)",
-          "ipa": "[piː]",
-          "mouthTip_vi": "Mím chặt hai môi tạo áp suất rồi bật bung một luồng hơi cực mạnh ra cùng /iː/.",
-          "mouthTip_en": "Explosive voiceless bilabial burst /p/ followed by tense /iː/.",
-          "example": {
-            "word": "Piano",
-            "reading": "[piˈæn.oʊ]",
-            "meaning_vi": "Đàn dương cầm",
-            "meaning_en": "Keyboard instrument"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái P–T",
-          "group_en": "Letters P–T",
-          "char": "Q q",
-          "romaji": "Letter Q (/kjuː/)",
-          "ipa": "[kjuː]",
-          "mouthTip_vi": "Bật âm /k/, lướt nhanh qua bán nguyên âm /j/ và kết thúc bằng âm chu môi /uː/.",
-          "mouthTip_en": "Velar stop /k/ gliding through palatal /j/ into long rounded /uː/.",
-          "example": {
-            "word": "Quiet",
-            "reading": "[ˈkwaɪ.ət]",
-            "meaning_vi": "Yên lặng",
-            "meaning_en": "Silent"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái P–T",
-          "group_en": "Letters P–T",
-          "char": "R r",
-          "romaji": "Letter R (/ɑːr/)",
-          "ipa": "[ɑːr]",
-          "mouthTip_vi": "Hạ quai hàm mở sâu /ɑː/, sau đó cong đầu lưỡi về phía vòm họng tạo âm R rền vang.",
-          "mouthTip_en": "Drop jaw for deep /ɑː/, then curl tongue back into retroflex American /r/.",
-          "example": {
-            "word": "Rainbow",
-            "reading": "[ˈreɪn.boʊ]",
-            "meaning_vi": "Cầu vồng",
-            "meaning_en": "Color arc"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái P–T",
-          "group_en": "Letters P–T",
-          "char": "S s",
-          "romaji": "Letter S (/ɛs/)",
-          "ipa": "[ɛs]",
-          "mouthTip_vi": "Phát âm /ɛ/, sau đó khép răng xát một luồng hơi mảnh và sắc qua kẽ răng.",
-          "mouthTip_en": "Sound /ɛ/, then push sharp hissing stream of air through upper incisors.",
-          "example": {
-            "word": "Sunshine",
-            "reading": "[ˈsʌn.ʃaɪn]",
-            "meaning_vi": "Ánh nắng mặt trời",
-            "meaning_en": "Sun rays"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái P–T",
-          "group_en": "Letters P–T",
-          "char": "T t",
-          "romaji": "Letter T (/tiː/)",
-          "ipa": "[tiː]",
-          "mouthTip_vi": "Đầu lưỡi chạm ngạc răng trên chặn hơi rồi bật bung một luồng gió sắc gọn ra cùng /iː/.",
-          "mouthTip_en": "Crisp alveolar tap releasing an aspirated puff of air into /iː/.",
-          "example": {
-            "word": "Tiger",
-            "reading": "[ˈtaɪ.ɡɚ]",
-            "meaning_vi": "Con hổ",
-            "meaning_en": "Striped predator"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái U–Z",
-          "group_en": "Letters U–Z",
-          "char": "U u",
-          "romaji": "Letter U (/juː/)",
-          "ipa": "[juː]",
-          "mouthTip_vi": "Lướt từ âm vòm /j/ sang nguyên âm chu tròn môi căng /uː/.",
-          "mouthTip_en": "Palatal glide /j/ transitioning cleanly into rounded tense /uː/.",
-          "example": {
-            "word": "Umbrella",
-            "reading": "[ʌmˈbrɛl.ə]",
-            "meaning_vi": "Chiếc ô dù",
-            "meaning_en": "Rain protection"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái U–Z",
-          "group_en": "Letters U–Z",
-          "char": "V v",
-          "romaji": "Letter V (/viː/)",
-          "ipa": "[viː]",
-          "mouthTip_vi": "Răng cửa trên chạm nhẹ vào môi dưới, rung mạnh dây thanh quản tạo âm rền /v/ sang /iː/.",
-          "mouthTip_en": "Upper teeth touch lower lip with strong vocal cord vibration into /iː/.",
-          "example": {
-            "word": "Victory",
-            "reading": "[ˈvɪk.tɚ.i]",
-            "meaning_vi": "Chiến thắng",
-            "meaning_en": "Triumph"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái U–Z",
-          "group_en": "Letters U–Z",
-          "char": "W w",
-          "romaji": "Letter W (/ˈdʌbəl.juː/)",
-          "ipa": "[ˈdʌb.əl.juː]",
-          "mouthTip_vi": "Gồm ba âm tiết: 'dʌb-əl-juː'. Nhấn trọng âm mạnh vào âm tiết đầu tiên.",
-          "mouthTip_en": "Three syllables: 'DUB-uhl-yoo'. Primary stress falls firmly on the first syllable.",
-          "example": {
-            "word": "Water",
-            "reading": "[ˈwɑː.t̬ɚ]",
-            "meaning_vi": "Nước uống",
-            "meaning_en": "Essential liquid"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái U–Z",
-          "group_en": "Letters U–Z",
-          "char": "X x",
-          "romaji": "Letter X (/ɛks/)",
-          "ipa": "[ɛks]",
-          "mouthTip_vi": "Bắt đầu với /ɛ/, chuyển sang chặn hơi ở /k/ rồi kết thúc xát hơi ở /s/.",
-          "mouthTip_en": "Start with /ɛ/, pop velar /k/ and immediately hiss through alveolar /s/.",
-          "example": {
-            "word": "Xylophone",
-            "reading": "[ˈzaɪ.lə.foʊn]",
-            "meaning_vi": "Đàn mộc cầm",
-            "meaning_en": "Percussion instrument"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái U–Z",
-          "group_en": "Letters U–Z",
-          "char": "Y y",
-          "romaji": "Letter Y (/waɪ/)",
-          "ipa": "[waɪ]",
-          "mouthTip_vi": "Chu môi ở âm /w/ rồi hạ quai hàm mở rộng lướt sang nguyên âm đôi /aɪ/.",
-          "mouthTip_en": "Bilabial glide /w/ opening widely into diphthong /aɪ/.",
-          "example": {
-            "word": "Yellow",
-            "reading": "[ˈjɛl.oʊ]",
-            "meaning_vi": "Màu vàng",
-            "meaning_en": "Color"
-          }
-        },
-        {
-          "category": "alphabet_az",
-          "group_vi": "Chữ cái U–Z",
-          "group_en": "Letters U–Z",
-          "char": "Z z",
-          "romaji": "Letter Z (/ziː/)",
-          "ipa": "[ziː]",
-          "mouthTip_vi": "Hai hàm răng khép nhẹ, rung mạnh thanh quản tạo âm rít /z/ như tiếng ong bay rồi sang /iː/.",
-          "mouthTip_en": "Teeth lightly together, vocal cords buzzing strongly like a bee into /iː/.",
-          "example": {
-            "word": "Zebra",
-            "reading": "[ˈziː.brə]",
-            "meaning_vi": "Ngựa vằn",
-            "meaning_en": "Striped animal"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm trước căng",
-          "group_en": "Front Tense Vowel",
-          "char": "/iː/",
-          "romaji": "ee sound",
-          "ipa": "[iː]",
-          "mouthTip_vi": "Nguyên âm căng: khóe miệng kéo rộng sang hai bên như cười tươi, lưng lưỡi nâng cao sát vòm ngạc cứng.",
-          "mouthTip_en": "Tense vowel! Corners of lips pulled wide, tongue blade high up against alveolar ridge.",
-          "example": {
-            "word": "Sheep",
-            "reading": "[ʃiːp]",
-            "meaning_vi": "Con cừu (phân biệt với 'ship')",
-            "meaning_en": "Woolly animal (contrast with 'ship')"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm trước chùng",
-          "group_en": "Front Lax Vowel",
-          "char": "/ɪ/",
-          "romaji": "short i",
-          "ipa": "[ɪ]",
-          "mouthTip_vi": "Nguyên âm chùng: thả lỏng toàn bộ cơ miệng, hạ hàm và lưỡi thấp hơn một chút so với /iː/, phát âm ngắn.",
-          "mouthTip_en": "Lax vowel! Relax mouth completely, lower tongue slightly from /iː/.",
-          "example": {
-            "word": "Ship",
-            "reading": "[ʃɪp]",
-            "meaning_vi": "Tàu thủy lớn",
-            "meaning_en": "Large maritime vessel"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm giữa mở",
-          "group_en": "Front Mid Vowel",
-          "char": "/e/",
-          "romaji": "short e",
-          "ipa": "[e/ɛ]",
-          "mouthTip_vi": "Miệng mở vừa phải, lưng lưỡi ở độ cao trung bình. Âm 'e' ngắn và dứt khoát.",
-          "mouthTip_en": "Mid-open mouth, tongue resting midway. Short and crisp.",
-          "example": {
-            "word": "Bed",
-            "reading": "[bɛd]",
-            "meaning_vi": "Chiếc giường",
-            "meaning_en": "Furniture for sleeping"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm bẹt",
-          "group_en": "Front Open Vowel",
-          "char": "/æ/",
-          "romaji": "flat a",
-          "ipa": "[æ]",
-          "mouthTip_vi": "Hạ quai hàm mở rộng miệng theo chiều dọc lẫn ngang, lưỡi ép phẳng xuống đáy miệng. Không phải 'a' cũng không phải 'e'.",
-          "mouthTip_en": "Open jaw wide, drop tongue low, pull corners back. Not 'ah' and not 'eh'.",
-          "example": {
-            "word": "Cat",
-            "reading": "[kæt]",
-            "meaning_vi": "Con mèo",
-            "meaning_en": "Feline pet"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm mở sau",
-          "group_en": "Back Open Vowel",
-          "char": "/ɑː/",
-          "romaji": "open ah",
-          "ipa": "[ɑː]",
-          "mouthTip_vi": "Hạ quai hàm tối đa như khi bác sĩ khám họng và bảo bạn nói 'Ahh', lưỡi hạ thấp hết cỡ về phía sau.",
-          "mouthTip_en": "Jaw drops completely, tongue retracted flat at the bottom of mouth.",
-          "example": {
-            "word": "Father",
-            "reading": "[ˈfɑːðər]",
-            "meaning_vi": "Người cha",
-            "meaning_en": "Male parent"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm sau tròn",
-          "group_en": "Back Rounded Vowel",
-          "char": "/ɔː/",
-          "romaji": "open aw",
-          "ipa": "[ɔː]",
-          "mouthTip_vi": "Môi hơi tròn hình bầu dục dục mở, gốc lưỡi nâng nhẹ ở phía sau vòm họng.",
-          "mouthTip_en": "Oval lip rounding, back of tongue slightly raised.",
-          "example": {
-            "word": "Thought",
-            "reading": "[θɔːt]",
-            "meaning_vi": "Suy nghĩ",
-            "meaning_en": "Past of think / Idea"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm sau chùng",
-          "group_en": "Back Lax Vowel",
-          "char": "/ʊ/",
-          "romaji": "foot vowel",
-          "ipa": "[ʊ]",
-          "mouthTip_vi": "Môi hơi khum nhẹ nhưng thả lỏng, không chu chặt. Phát âm ngắn và trầm.",
-          "mouthTip_en": "Slightly rounded but completely relaxed lips. Short and lax.",
-          "example": {
-            "word": "Book",
-            "reading": "[bʊk]",
-            "meaning_vi": "Quyển sách",
-            "meaning_en": "Reading volume"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm sau căng",
-          "group_en": "Back Tense Vowel",
-          "char": "/uː/",
-          "romaji": "goose vowel",
-          "ipa": "[uː]",
-          "mouthTip_vi": "Môi chu tròn chặt như huýt sáo hoặc chuẩn bị hôn, gốc lưỡi nâng cao về phía ngạc mềm.",
-          "mouthTip_en": "Tense rounded lips, pushed forward. Back of tongue raised high.",
-          "example": {
-            "word": "Shoot",
-            "reading": "[ʃuːt]",
-            "meaning_vi": "Bắn súng / Quay phim",
-            "meaning_en": "To fire or film"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm giữa nhấn",
-          "group_en": "Central Stressed Vowel",
-          "char": "/ʌ/",
-          "romaji": "strut vowel",
-          "ipa": "[ʌ]",
-          "mouthTip_vi": "Miệng mở tự nhiên, lưỡi ở vị trí trung tâm, phát âm dứt khoát như âm 'á' ngắn.",
-          "mouthTip_en": "Short, stressed central vowel. Jaw drops slightly more than schwa.",
-          "example": {
-            "word": "Cup",
-            "reading": "[kʌp]",
-            "meaning_vi": "Cái cốc / Tách cà phê",
-            "meaning_en": "Drinking vessel"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm r-hóa",
-          "group_en": "R-colored Vowel",
-          "char": "/ɜːr/",
-          "romaji": "nurse vowel",
-          "ipa": "[ɝː]",
-          "mouthTip_vi": "Đặc trưng tiếng Anh-Mỹ: cuốn đầu lưỡi lên hoặc kéo thân lưỡi co về sau khi phát âm để tạo âm 'r'.",
-          "mouthTip_en": "Curl tongue tip upward or bunch body back to create rhotic American coloring.",
-          "example": {
-            "word": "Bird",
-            "reading": "[bɜːrd]",
-            "meaning_vi": "Con chim",
-            "meaning_en": "Feathered creature"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm Schwa",
-          "group_en": "Schwa (Unstressed)",
-          "char": "/ə/",
-          "romaji": "schwa",
-          "ipa": "[ə]",
-          "mouthTip_vi": "Âm phổ biến nhất trong tiếng Anh! Miệng hoàn toàn thư giãn, không gồng bất kỳ cơ nào, âm cực ngắn và nhẹ.",
-          "mouthTip_en": "Most common sound in English! Zero tension. Neutral mouth, lazy jaw, dead center.",
-          "example": {
-            "word": "About",
-            "reading": "[əˈbaʊt]",
-            "meaning_vi": "Về / Khoảng chừng",
-            "meaning_en": "Regarding / Approx"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm đôi",
-          "group_en": "Diphthong",
-          "char": "/eɪ/",
-          "romaji": "ay glide",
-          "ipa": "[eɪ]",
-          "mouthTip_vi": "Bắt đầu từ âm /e/ mở rồi lướt mượt mà khép dần miệng lên /ɪ/. Không đứng yên một chỗ.",
-          "mouthTip_en": "Starts mid-front and glides smoothly up toward /ɪ/.",
-          "example": {
-            "word": "Face",
-            "reading": "[feɪs]",
-            "meaning_vi": "Gương mặt",
-            "meaning_en": "Front of head"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm đôi",
-          "group_en": "Diphthong",
-          "char": "/aɪ/",
-          "romaji": "eye glide",
-          "ipa": "[aɪ]",
-          "mouthTip_vi": "Mở miệng rộng ở /a/ rồi trượt nhanh khép hàm lên /ɪ/.",
-          "mouthTip_en": "Start with open jaw /a/ and glide smoothly into narrow /ɪ/.",
-          "example": {
-            "word": "Time",
-            "reading": "[taɪm]",
-            "meaning_vi": "Thời gian",
-            "meaning_en": "Clock measurement"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm đôi",
-          "group_en": "Diphthong",
-          "char": "/ɔɪ/",
-          "romaji": "oy glide",
-          "ipa": "[ɔɪ]",
-          "mouthTip_vi": "Tròn môi ở /ɔː/ rồi mở lướt khóe miệng sang /ɪ/.",
-          "mouthTip_en": "Rounded back vowel gliding into relaxed front vowel.",
-          "example": {
-            "word": "Boy",
-            "reading": "[bɔɪ]",
-            "meaning_vi": "Cậu bé / Chàng trai",
-            "meaning_en": "Male youth"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm đôi",
-          "group_en": "Diphthong",
-          "char": "/oʊ/",
-          "romaji": "oh glide",
-          "ipa": "[oʊ]",
-          "mouthTip_vi": "Bắt đầu với môi thả lỏng rồi chu tròn dần lại ở /ʊ/.",
-          "mouthTip_en": "Starts relaxed and finishes with small rounded lips.",
-          "example": {
-            "word": "Go",
-            "reading": "[ɡoʊ]",
-            "meaning_vi": "Đi / Di chuyển",
-            "meaning_en": "To depart"
-          }
-        },
-        {
-          "category": "vowels",
-          "group_vi": "Nguyên âm đôi",
-          "group_en": "Diphthong",
-          "char": "/aʊ/",
-          "romaji": "ow glide",
-          "ipa": "[aʊ]",
-          "mouthTip_vi": "Mở miệng lớn ở /a/ rồi khép nhanh chu môi lại ở /ʊ/.",
-          "mouthTip_en": "Open jaw sliding quickly into rounded 'w'.",
-          "example": {
-            "word": "Now",
-            "reading": "[naʊ]",
-            "meaning_vi": "Bây giờ",
-            "meaning_en": "At present moment"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm tắc vô thanh",
-          "group_en": "Voiceless Stop",
-          "char": "/p/",
-          "romaji": "p sound",
-          "ipa": "[p]",
-          "mouthTip_vi": "Mím chặt hai môi chặn luồng khí rồi bật mạnh ra không rung thanh đới.",
-          "mouthTip_en": "Bilabial stop. Lips seal completely then burst open without voice.",
-          "example": {
-            "word": "Pen",
-            "reading": "[pɛn]",
-            "meaning_vi": "Cây bút mực",
-            "meaning_en": "Writing tool"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm tắc hữu thanh",
-          "group_en": "Voiced Stop",
-          "char": "/b/",
-          "romaji": "b sound",
-          "ipa": "[b]",
-          "mouthTip_vi": "Hai môi mím lại bật ra, dây thanh quản rung mạnh.",
-          "mouthTip_en": "Voiced bilabial stop with vocal cord vibration.",
-          "example": {
-            "word": "Bad",
-            "reading": "[bæd]",
-            "meaning_vi": "Tồi tệ / Xấu",
-            "meaning_en": "Poor quality"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm tắc chân răng vô thanh",
-          "group_en": "Voiceless Alveolar Stop",
-          "char": "/t/",
-          "romaji": "t sound",
-          "ipa": "[t]",
-          "mouthTip_vi": "Đầu lưỡi chặn hơi sau lợi trên rồi bật mạnh luồng khí ra ngoài.",
-          "mouthTip_en": "Tongue tip seals alveolar ridge then releases air burst.",
-          "example": {
-            "word": "Tea",
-            "reading": "[tiː]",
-            "meaning_vi": "Trà",
-            "meaning_en": "Hot beverage"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm tắc chân răng hữu thanh",
-          "group_en": "Voiced Alveolar Stop",
-          "char": "/d/",
-          "romaji": "d sound",
-          "ipa": "[d]",
-          "mouthTip_vi": "Đầu lưỡi chặn lợi trên, bật ra kết hợp rung thanh quản.",
-          "mouthTip_en": "Voiced alveolar tap/stop with vocal vibration.",
-          "example": {
-            "word": "Day",
-            "reading": "[deɪ]",
-            "meaning_vi": "Ban ngày / Ngày",
-            "meaning_en": "24-hour period"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm tắc ngạc mềm vô thanh",
-          "group_en": "Voiceless Velar Stop",
-          "char": "/k/",
-          "romaji": "k sound",
-          "ipa": "[k]",
-          "mouthTip_vi": "Gốc lưỡi nâng áp vào ngạc mềm rồi bật mạnh hơi ra.",
-          "mouthTip_en": "Back of tongue seals soft palate then bursts.",
-          "example": {
-            "word": "Cat",
-            "reading": "[kæt]",
-            "meaning_vi": "Con mèo",
-            "meaning_en": "Feline animal"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm tắc ngạc mềm hữu thanh",
-          "group_en": "Voiced Velar Stop",
-          "char": "/ɡ/",
-          "romaji": "g sound",
-          "ipa": "[ɡ]",
-          "mouthTip_vi": "Gốc lưỡi chạm ngạc mềm bật ra, cổ họng rung rõ.",
-          "mouthTip_en": "Voiced velar stop with deep throat resonance.",
-          "example": {
-            "word": "Good",
-            "reading": "[ɡʊd]",
-            "meaning_vi": "Tốt lành",
-            "meaning_en": "Pleasing / Fine"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm xát răng vô thanh",
-          "group_en": "Dental Fricative",
-          "char": "/θ/",
-          "romaji": "unvoiced th",
-          "ipa": "[θ]",
-          "mouthTip_vi": "Đặt đầu lưỡi nhẹ giữa hai hàm răng trên và dưới, thổi hơi xát ra ngoài KHÔNG rung dây thanh.",
-          "mouthTip_en": "Tongue tip gently between teeth. Blow air without voice.",
-          "example": {
-            "word": "Think",
-            "reading": "[θɪŋk]",
-            "meaning_vi": "Suy nghĩ",
-            "meaning_en": "To ponder"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm xát răng hữu thanh",
-          "group_en": "Voiced Dental Fricative",
-          "char": "/ð/",
-          "romaji": "voiced th",
-          "ipa": "[ð]",
-          "mouthTip_vi": "Cùng vị trí kẹp lưỡi như /θ/ nhưng cổ họng rung mạnh, cảm giác tê đầu lưỡi.",
-          "mouthTip_en": "Same tongue placement as /θ/, but vocal cords vibrate.",
-          "example": {
-            "word": "This",
-            "reading": "[ðɪs]",
-            "meaning_vi": "Cái này",
-            "meaning_en": "Specific item"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm xát vòm vô thanh",
-          "group_en": "Postalveolar Fricative",
-          "char": "/ʃ/",
-          "romaji": "sh sound",
-          "ipa": "[ʃ]",
-          "mouthTip_vi": "Chu môi nhẹ, mặt lưỡi nâng sát vòm ngạc thổi luồng hơi xát như đang ra hiệu im lặng 'Suỵt!'.",
-          "mouthTip_en": "Round lips slightly, blow heavy friction over tongue blade.",
-          "example": {
-            "word": "She",
-            "reading": "[ʃiː]",
-            "meaning_vi": "Cô ấy",
-            "meaning_en": "Female pronoun"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm xát vòm hữu thanh",
-          "group_en": "Voiced Postalveolar Fricative",
-          "char": "/ʒ/",
-          "romaji": "zh sound",
-          "ipa": "[ʒ]",
-          "mouthTip_vi": "Cùng khẩu hình với /ʃ/ nhưng rung thanh quản, âm trầm ấm.",
-          "mouthTip_en": "Voiced counterpart of /ʃ/ with smooth vocal buzz.",
-          "example": {
-            "word": "Vision",
-            "reading": "[ˈvɪʒən]",
-            "meaning_vi": "Tầm nhìn / Thị giác",
-            "meaning_en": "Sight / Future plan"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm tắc xát vô thanh",
-          "group_en": "Voiceless Affricate",
-          "char": "/tʃ/",
-          "romaji": "ch sound",
-          "ipa": "[tʃ]",
-          "mouthTip_vi": "Chặn hơi bằng đầu lưỡi rồi bật xát nổ mạnh mẽ ra ngoài.",
-          "mouthTip_en": "Stop air with tongue tip, then release into explosive friction.",
-          "example": {
-            "word": "Chair",
-            "reading": "[tʃɛr]",
-            "meaning_vi": "Cái ghế tựa",
-            "meaning_en": "Seat with back"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm tắc xát hữu thanh",
-          "group_en": "Voiced Affricate",
-          "char": "/dʒ/",
-          "romaji": "j sound",
-          "ipa": "[dʒ]",
-          "mouthTip_vi": "Chặn hơi và bật nổ kết hợp rung thanh quản như trong từ 'job'.",
-          "mouthTip_en": "Voiced affricate with sharp palate burst.",
-          "example": {
-            "word": "Job",
-            "reading": "[dʒɑːb]",
-            "meaning_vi": "Công việc",
-            "meaning_en": "Employment"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm mũi ngạc mềm",
-          "group_en": "Velar Nasal",
-          "char": "/ŋ/",
-          "romaji": "ng sound",
-          "ipa": "[ŋ]",
-          "mouthTip_vi": "Gốc lưỡi áp chặt vào ngạc mềm, luồng khí thoát qua mũi. KHÔNG nhả âm 'g' ở đuôi!",
-          "mouthTip_en": "Back of tongue seals soft palate, air flows through nose. No final 'g' release!",
-          "example": {
-            "word": "Sing",
-            "reading": "[sɪŋ]",
-            "meaning_vi": "Ca hát",
-            "meaning_en": "To vocalize music"
-          }
-        },
-        {
-          "category": "consonants",
-          "group_vi": "Âm tiếp cận uốn lưỡi Mỹ",
-          "group_en": "American Rhotic R",
-          "char": "/ɹ/",
-          "romaji": "American R",
-          "ipa": "[ɹ]",
-          "mouthTip_vi": "Đầu lưỡi cong lên hoặc thân lưỡi co về sau, KHÔNG ĐƯỢC CHẠM vào vòm miệng hay răng!",
-          "mouthTip_en": "Bunch tongue body back or curl tip up without touching palate.",
-          "example": {
-            "word": "Right",
-            "reading": "[ɹaɪt]",
-            "meaning_vi": "Đúng đắn / Bên phải",
-            "meaning_en": "Correct or direction"
-          }
-        }
-      ]
-    },
+        ]
+      }
+    ],
     "expressions": [
       {
         "id": "en_greet_1",
@@ -3522,497 +10003,2060 @@ const LINGUA_DATA = {
     "scriptName": "Hangul (한글)",
     "proTip_vi": "Chú ý hiện tượng nối âm và biến âm (Patchim): Khi phụ âm cuối gặp nguyên âm tiếp theo, âm cuối sẽ trượt sang âm tiết sau. Âm bật hơi (ㅋ, ㅌ, ㅍ, ㅊ) cần luồng hơi thoát ra cực mạnh!",
     "proTip_en": "Watch for Batchim liaison and sound changes! Aspirated consonants (ㅋ, ㅌ, ㅍ, ㅊ) require a strong, noticeable puff of breath.",
-    "alphabet": {
-      "categories": [
-        {
-          "id": "basic_cons",
-          "name_vi": "14 Phụ âm cơ bản (기본 자음)",
-          "name_en": "14 Basic Consonants (기본 자음)",
-          "description_vi": "Được Vua Sejong sáng tạo mô phỏng theo khẩu hình miệng và vị trí của lưỡi.",
-          "description_en": "Scientific building blocks designed to mimic tongue and mouth shape."
-        },
-        {
-          "id": "double_cons",
-          "name_vi": "5 Phụ âm đôi / căng (쌍자음)",
-          "name_en": "5 Tense/Double Consonants (쌍자음)",
-          "description_vi": "Phát âm với thanh quản gồng căng và tuyệt đối KHÔNG bật hơi.",
-          "description_en": "Pronounced with glottal tension without exhaling breath."
-        },
-        {
-          "id": "basic_vowels",
-          "name_vi": "10 Nguyên âm cơ bản (기본 모음)",
-          "name_en": "10 Basic Vowels (기본 모음)",
-          "description_vi": "Được tạo dựng từ triết lý Trời (•), Đất (ㅡ), và Con người (ㅣ).",
-          "description_en": "Created with philosophy of Heaven (•), Earth (ㅡ), and Humanity (ㅣ)."
-        }
-      ],
-      "items": [
-        {
-          "category": "basic_cons",
-          "group_vi": "Gốc lưỡi ngạc mềm",
-          "group_en": "Velar",
-          "char": "ㄱ",
-          "romaji": "g / k",
-          "ipa": "[k/ɡ]",
-          "mouthTip_vi": "Gốc lưỡi nâng lên chặn họng. Đứng đầu từ đọc như 'k' nhẹ, đứng giữa hai nguyên âm đọc như 'g'.",
-          "mouthTip_en": "Back of tongue blocks throat. Sounds like soft 'k' initially, voiced 'g' between vowels.",
-          "example": {
-            "word": "가방 (gabang)",
-            "reading": "gabang",
-            "meaning_vi": "Chiếc cặp / Ba lô",
-            "meaning_en": "Bag / Backpack"
+    "alphabet": [
+      {
+        "id": "basic_cons",
+        "labelVi": "Phụ âm cơ bản (Basic Consonants)",
+        "labelEn": "Basic Consonants (기본 자음)",
+        "descriptionVi": "14 phụ âm Hangul cơ bản sáng tạo dựa trên hình dáng cấu âm của vòm miệng và lưỡi.",
+        "descriptionEn": "The 14 foundational Hangul consonants modeled after articulatory anatomy.",
+        "items": [
+          {
+            "char": "ㄱ",
+            "romaji": "g / k",
+            "ipa": "kɡ",
+            "groupVi": "Gốc lưỡi ngạc mềm",
+            "groupEn": "Velar",
+            "group_vi": "Gốc lưỡi ngạc mềm",
+            "group_en": "Velar",
+            "mouthTipVi": "Gốc lưỡi nâng lên chặn họng. Đứng đầu từ đọc như 'k' nhẹ, đứng giữa hai nguyên âm đọc như 'g'.",
+            "mouthTipEn": "Back of tongue blocks throat. Sounds like soft 'k' initially, voiced 'g' between vowels.",
+            "mouthTip_vi": "Gốc lưỡi nâng lên chặn họng. Đứng đầu từ đọc như 'k' nhẹ, đứng giữa hai nguyên âm đọc như 'g'.",
+            "mouthTip_en": "Back of tongue blocks throat. Sounds like soft 'k' initially, voiced 'g' between vowels.",
+            "meaningVi": "Phụ âm Hangul: ㄱ (g / k)",
+            "meaningEn": "Hangul Consonant: ㄱ (g / k)",
+            "meaning_vi": "Phụ âm Hangul: ㄱ (g / k)",
+            "meaning_en": "Hangul Consonant: ㄱ (g / k)",
+            "speechText": "가방 (gabang)",
+            "examples": [
+              {
+                "word": "가방 (gabang)",
+                "reading": "gabang",
+                "vi": "Chiếc cặp / Ba lô",
+                "en": "Bag / Backpack",
+                "meaning_vi": "Chiếc cặp / Ba lô",
+                "meaning_en": "Bag / Backpack"
+              }
+            ],
+            "example": {
+              "word": "가방 (gabang)",
+              "reading": "gabang",
+              "vi": "Chiếc cặp / Ba lô",
+              "en": "Bag / Backpack",
+              "meaning_vi": "Chiếc cặp / Ba lô",
+              "meaning_en": "Bag / Backpack"
+            }
+          },
+          {
+            "char": "ㄴ",
+            "romaji": "n",
+            "ipa": "n",
+            "groupVi": "Đầu lưỡi chân răng",
+            "groupEn": "Alveolar",
+            "group_vi": "Đầu lưỡi chân răng",
+            "group_en": "Alveolar",
+            "mouthTipVi": "Đầu lưỡi chạm chắc vào lợi trên, hơi thoát qua khoang mũi.",
+            "mouthTipEn": "Tongue tip touches upper gum ridge, air escapes gently through nose.",
+            "mouthTip_vi": "Đầu lưỡi chạm chắc vào lợi trên, hơi thoát qua khoang mũi.",
+            "mouthTip_en": "Tongue tip touches upper gum ridge, air escapes gently through nose.",
+            "meaningVi": "Phụ âm Hangul: ㄴ (n)",
+            "meaningEn": "Hangul Consonant: ㄴ (n)",
+            "meaning_vi": "Phụ âm Hangul: ㄴ (n)",
+            "meaning_en": "Hangul Consonant: ㄴ (n)",
+            "speechText": "나무 (namu)",
+            "examples": [
+              {
+                "word": "나무 (namu)",
+                "reading": "namu",
+                "vi": "Cây cối",
+                "en": "Tree",
+                "meaning_vi": "Cây cối",
+                "meaning_en": "Tree"
+              }
+            ],
+            "example": {
+              "word": "나무 (namu)",
+              "reading": "namu",
+              "vi": "Cây cối",
+              "en": "Tree",
+              "meaning_vi": "Cây cối",
+              "meaning_en": "Tree"
+            }
+          },
+          {
+            "char": "ㄷ",
+            "romaji": "d / t",
+            "ipa": "td",
+            "groupVi": "Tắc chân răng",
+            "groupEn": "Dental",
+            "group_vi": "Tắc chân răng",
+            "group_en": "Dental",
+            "mouthTipVi": "Đầu lưỡi chạm ngạc sau răng cửa. Đầu từ đọc 't' không bật hơi, giữa từ đọc 'd'.",
+            "mouthTipEn": "Tongue tip touches roof behind front teeth. Unaspirated 't' initially, 'd' between vowels.",
+            "mouthTip_vi": "Đầu lưỡi chạm ngạc sau răng cửa. Đầu từ đọc 't' không bật hơi, giữa từ đọc 'd'.",
+            "mouthTip_en": "Tongue tip touches roof behind front teeth. Unaspirated 't' initially, 'd' between vowels.",
+            "meaningVi": "Phụ âm Hangul: ㄷ (d / t)",
+            "meaningEn": "Hangul Consonant: ㄷ (d / t)",
+            "meaning_vi": "Phụ âm Hangul: ㄷ (d / t)",
+            "meaning_en": "Hangul Consonant: ㄷ (d / t)",
+            "speechText": "다리 (dari)",
+            "examples": [
+              {
+                "word": "다리 (dari)",
+                "reading": "dari",
+                "vi": "Cây cầu / Đôi chân",
+                "en": "Bridge or Leg",
+                "meaning_vi": "Cây cầu / Đôi chân",
+                "meaning_en": "Bridge or Leg"
+              }
+            ],
+            "example": {
+              "word": "다리 (dari)",
+              "reading": "dari",
+              "vi": "Cây cầu / Đôi chân",
+              "en": "Bridge or Leg",
+              "meaning_vi": "Cây cầu / Đôi chân",
+              "meaning_en": "Bridge or Leg"
+            }
+          },
+          {
+            "char": "ㄹ",
+            "romaji": "r / l",
+            "ipa": "ɾl",
+            "groupVi": "Âm vỗ / Lỏng",
+            "groupEn": "Liquid",
+            "group_vi": "Âm vỗ / Lỏng",
+            "group_en": "Liquid",
+            "mouthTipVi": "Giữa hai nguyên âm phát âm vỗ nhẹ [ɾ]; đứng cuối khối chữ (batchim) phát âm là [l].",
+            "mouthTipEn": "Light tongue flap [ɾ] between vowels; clear [l] at syllable end (batchim).",
+            "mouthTip_vi": "Giữa hai nguyên âm phát âm vỗ nhẹ [ɾ]; đứng cuối khối chữ (batchim) phát âm là [l].",
+            "mouthTip_en": "Light tongue flap [ɾ] between vowels; clear [l] at syllable end (batchim).",
+            "meaningVi": "Phụ âm Hangul: ㄹ (r / l)",
+            "meaningEn": "Hangul Consonant: ㄹ (r / l)",
+            "meaning_vi": "Phụ âm Hangul: ㄹ (r / l)",
+            "meaning_en": "Hangul Consonant: ㄹ (r / l)",
+            "speechText": "라면 (ramyeon)",
+            "examples": [
+              {
+                "word": "라면 (ramyeon)",
+                "reading": "ramyeon",
+                "vi": "Mì tôm Ramyeon",
+                "en": "Ramen noodles",
+                "meaning_vi": "Mì tôm Ramyeon",
+                "meaning_en": "Ramen noodles"
+              }
+            ],
+            "example": {
+              "word": "라면 (ramyeon)",
+              "reading": "ramyeon",
+              "vi": "Mì tôm Ramyeon",
+              "en": "Ramen noodles",
+              "meaning_vi": "Mì tôm Ramyeon",
+              "meaning_en": "Ramen noodles"
+            }
+          },
+          {
+            "char": "ㅁ",
+            "romaji": "m",
+            "ipa": "m",
+            "groupVi": "Hai môi khép",
+            "groupEn": "Bilabial",
+            "group_vi": "Hai môi khép",
+            "group_en": "Bilabial",
+            "mouthTipVi": "Khép chặt hai môi lại, rung dây thanh cho luồng hơi thoát qua mũi.",
+            "mouthTipEn": "Close both lips tightly, vocal cords vibrate through nasal cavity.",
+            "mouthTip_vi": "Khép chặt hai môi lại, rung dây thanh cho luồng hơi thoát qua mũi.",
+            "mouthTip_en": "Close both lips tightly, vocal cords vibrate through nasal cavity.",
+            "meaningVi": "Phụ âm Hangul: ㅁ (m)",
+            "meaningEn": "Hangul Consonant: ㅁ (m)",
+            "meaning_vi": "Phụ âm Hangul: ㅁ (m)",
+            "meaning_en": "Hangul Consonant: ㅁ (m)",
+            "speechText": "물 (mul)",
+            "examples": [
+              {
+                "word": "물 (mul)",
+                "reading": "mul",
+                "vi": "Nước uống",
+                "en": "Water",
+                "meaning_vi": "Nước uống",
+                "meaning_en": "Water"
+              }
+            ],
+            "example": {
+              "word": "물 (mul)",
+              "reading": "mul",
+              "vi": "Nước uống",
+              "en": "Water",
+              "meaning_vi": "Nước uống",
+              "meaning_en": "Water"
+            }
+          },
+          {
+            "char": "ㅂ",
+            "romaji": "b / p",
+            "ipa": "pb",
+            "groupVi": "Tắc hai môi",
+            "groupEn": "Bilabial",
+            "group_vi": "Tắc hai môi",
+            "group_en": "Bilabial",
+            "mouthTipVi": "Hai môi khép rồi mở không bật hơi. Giữa hai nguyên âm đọc như 'b'.",
+            "mouthTipEn": "Lips press and release without burst of air. Voiced 'b' between vowels.",
+            "mouthTip_vi": "Hai môi khép rồi mở không bật hơi. Giữa hai nguyên âm đọc như 'b'.",
+            "mouthTip_en": "Lips press and release without burst of air. Voiced 'b' between vowels.",
+            "meaningVi": "Phụ âm Hangul: ㅂ (b / p)",
+            "meaningEn": "Hangul Consonant: ㅂ (b / p)",
+            "meaning_vi": "Phụ âm Hangul: ㅂ (b / p)",
+            "meaning_en": "Hangul Consonant: ㅂ (b / p)",
+            "speechText": "밥 (bap)",
+            "examples": [
+              {
+                "word": "밥 (bap)",
+                "reading": "bap",
+                "vi": "Cơm / Bữa ăn",
+                "en": "Cooked rice / Meal",
+                "meaning_vi": "Cơm / Bữa ăn",
+                "meaning_en": "Cooked rice / Meal"
+              }
+            ],
+            "example": {
+              "word": "밥 (bap)",
+              "reading": "bap",
+              "vi": "Cơm / Bữa ăn",
+              "en": "Cooked rice / Meal",
+              "meaning_vi": "Cơm / Bữa ăn",
+              "meaning_en": "Cooked rice / Meal"
+            }
+          },
+          {
+            "char": "ㅅ",
+            "romaji": "s",
+            "ipa": "sɕ",
+            "groupVi": "Âm xát răng",
+            "groupEn": "Sibilant",
+            "group_vi": "Âm xát răng",
+            "group_en": "Sibilant",
+            "mouthTipVi": "Đầu lưỡi gần lợi trên. Chuyển thành âm 'sh' [ɕ] khi đi cùng nguyên âm 'ㅣ' (i) hoặc các nguyên âm chứa nét y.",
+            "mouthTipEn": "Tongue near teeth ridge. Becomes 'sh' [ɕ] before 'ㅣ' (i) or 'ㅑ/ㅕ/ㅛ/ㅠ'.",
+            "mouthTip_vi": "Đầu lưỡi gần lợi trên. Chuyển thành âm 'sh' [ɕ] khi đi cùng nguyên âm 'ㅣ' (i) hoặc các nguyên âm chứa nét y.",
+            "mouthTip_en": "Tongue near teeth ridge. Becomes 'sh' [ɕ] before 'ㅣ' (i) or 'ㅑ/ㅕ/ㅛ/ㅠ'.",
+            "meaningVi": "Phụ âm Hangul: ㅅ (s)",
+            "meaningEn": "Hangul Consonant: ㅅ (s)",
+            "meaning_vi": "Phụ âm Hangul: ㅅ (s)",
+            "meaning_en": "Hangul Consonant: ㅅ (s)",
+            "speechText": "사랑 (sarang)",
+            "examples": [
+              {
+                "word": "사랑 (sarang)",
+                "reading": "sarang",
+                "vi": "Tình yêu",
+                "en": "Love",
+                "meaning_vi": "Tình yêu",
+                "meaning_en": "Love"
+              }
+            ],
+            "example": {
+              "word": "사랑 (sarang)",
+              "reading": "sarang",
+              "vi": "Tình yêu",
+              "en": "Love",
+              "meaning_vi": "Tình yêu",
+              "meaning_en": "Love"
+            }
+          },
+          {
+            "char": "ㅇ",
+            "romaji": "silent / ng",
+            "ipa": "∅ŋ",
+            "groupVi": "Âm câm / Âm mũi",
+            "groupEn": "Null / Nasal",
+            "group_vi": "Âm câm / Âm mũi",
+            "group_en": "Null / Nasal",
+            "mouthTipVi": "Đứng đầu âm tiết là phụ âm câm (như trong 아); đứng ở vị trí patchim (cuối âm tiết) đọc là âm 'ng'.",
+            "mouthTipEn": "Silent placeholder when at top of block (e.g. 아); sounds like 'ng' as batchim.",
+            "mouthTip_vi": "Đứng đầu âm tiết là phụ âm câm (như trong 아); đứng ở vị trí patchim (cuối âm tiết) đọc là âm 'ng'.",
+            "mouthTip_en": "Silent placeholder when at top of block (e.g. 아); sounds like 'ng' as batchim.",
+            "meaningVi": "Phụ âm Hangul: ㅇ (silent / ng)",
+            "meaningEn": "Hangul Consonant: ㅇ (silent / ng)",
+            "meaning_vi": "Phụ âm Hangul: ㅇ (silent / ng)",
+            "meaning_en": "Hangul Consonant: ㅇ (silent / ng)",
+            "speechText": "강 (gang)",
+            "examples": [
+              {
+                "word": "강 (gang)",
+                "reading": "gang",
+                "vi": "Dòng sông",
+                "en": "River",
+                "meaning_vi": "Dòng sông",
+                "meaning_en": "River"
+              }
+            ],
+            "example": {
+              "word": "강 (gang)",
+              "reading": "gang",
+              "vi": "Dòng sông",
+              "en": "River",
+              "meaning_vi": "Dòng sông",
+              "meaning_en": "River"
+            }
+          },
+          {
+            "char": "ㅈ",
+            "romaji": "j / ch",
+            "ipa": "t͡ɕd͡ʑ",
+            "groupVi": "Âm tắc xát vòm",
+            "groupEn": "Affricate",
+            "group_vi": "Âm tắc xát vòm",
+            "group_en": "Affricate",
+            "mouthTipVi": "Mặt lưỡi chạm ngạc cứng rồi bật nhẹ. Đầu từ đọc 'ch' nhẹ, giữa từ đọc 'j'.",
+            "mouthTipEn": "Tongue blade touches palate then releases. Softer 'ch' initially, 'j' between vowels.",
+            "mouthTip_vi": "Mặt lưỡi chạm ngạc cứng rồi bật nhẹ. Đầu từ đọc 'ch' nhẹ, giữa từ đọc 'j'.",
+            "mouthTip_en": "Tongue blade touches palate then releases. Softer 'ch' initially, 'j' between vowels.",
+            "meaningVi": "Phụ âm Hangul: ㅈ (j / ch)",
+            "meaningEn": "Hangul Consonant: ㅈ (j / ch)",
+            "meaning_vi": "Phụ âm Hangul: ㅈ (j / ch)",
+            "meaning_en": "Hangul Consonant: ㅈ (j / ch)",
+            "speechText": "지도 (jido)",
+            "examples": [
+              {
+                "word": "지도 (jido)",
+                "reading": "jido",
+                "vi": "Bản đồ",
+                "en": "Map",
+                "meaning_vi": "Bản đồ",
+                "meaning_en": "Map"
+              }
+            ],
+            "example": {
+              "word": "지도 (jido)",
+              "reading": "jido",
+              "vi": "Bản đồ",
+              "en": "Map",
+              "meaning_vi": "Bản đồ",
+              "meaning_en": "Map"
+            }
+          },
+          {
+            "char": "ㅊ",
+            "romaji": "ch (aspirated)",
+            "ipa": "t͡ɕʰ",
+            "groupVi": "Bật hơi vòm",
+            "groupEn": "Aspirated Affricate",
+            "group_vi": "Bật hơi vòm",
+            "group_en": "Aspirated Affricate",
+            "mouthTipVi": "Giống âm ㅈ nhưng phải bật một luồng hơi cực mạnh ra phía trước miệng.",
+            "mouthTipEn": "Same position as ㅈ, but release with an explosive burst of breath.",
+            "mouthTip_vi": "Giống âm ㅈ nhưng phải bật một luồng hơi cực mạnh ra phía trước miệng.",
+            "mouthTip_en": "Same position as ㅈ, but release with an explosive burst of breath.",
+            "meaningVi": "Phụ âm Hangul: ㅊ (ch (aspirated))",
+            "meaningEn": "Hangul Consonant: ㅊ (ch (aspirated))",
+            "meaning_vi": "Phụ âm Hangul: ㅊ (ch (aspirated))",
+            "meaning_en": "Hangul Consonant: ㅊ (ch (aspirated))",
+            "speechText": "친구 (chingu)",
+            "examples": [
+              {
+                "word": "친구 (chingu)",
+                "reading": "chingu",
+                "vi": "Bạn bè",
+                "en": "Friend",
+                "meaning_vi": "Bạn bè",
+                "meaning_en": "Friend"
+              }
+            ],
+            "example": {
+              "word": "친구 (chingu)",
+              "reading": "chingu",
+              "vi": "Bạn bè",
+              "en": "Friend",
+              "meaning_vi": "Bạn bè",
+              "meaning_en": "Friend"
+            }
+          },
+          {
+            "char": "ㅋ",
+            "romaji": "k (aspirated)",
+            "ipa": "kʰ",
+            "groupVi": "Bật hơi ngạc mềm",
+            "groupEn": "Aspirated Velar",
+            "group_vi": "Bật hơi ngạc mềm",
+            "group_en": "Aspirated Velar",
+            "mouthTipVi": "Bật hơi cực mạnh từ cuống họng. Đặt mu bàn tay trước miệng bạn phải thấy rõ luồng gió nóng!",
+            "mouthTipEn": "Sharp burst of air! Put hand in front of mouth; you MUST feel a strong breath puff.",
+            "mouthTip_vi": "Bật hơi cực mạnh từ cuống họng. Đặt mu bàn tay trước miệng bạn phải thấy rõ luồng gió nóng!",
+            "mouthTip_en": "Sharp burst of air! Put hand in front of mouth; you MUST feel a strong breath puff.",
+            "meaningVi": "Phụ âm Hangul: ㅋ (k (aspirated))",
+            "meaningEn": "Hangul Consonant: ㅋ (k (aspirated))",
+            "meaning_vi": "Phụ âm Hangul: ㅋ (k (aspirated))",
+            "meaning_en": "Hangul Consonant: ㅋ (k (aspirated))",
+            "speechText": "커피 (keopi)",
+            "examples": [
+              {
+                "word": "커피 (keopi)",
+                "reading": "keopi",
+                "vi": "Cà phê",
+                "en": "Coffee",
+                "meaning_vi": "Cà phê",
+                "meaning_en": "Coffee"
+              }
+            ],
+            "example": {
+              "word": "커피 (keopi)",
+              "reading": "keopi",
+              "vi": "Cà phê",
+              "en": "Coffee",
+              "meaning_vi": "Cà phê",
+              "meaning_en": "Coffee"
+            }
+          },
+          {
+            "char": "ㅌ",
+            "romaji": "t (aspirated)",
+            "ipa": "tʰ",
+            "groupVi": "Bật hơi răng",
+            "groupEn": "Aspirated Dental",
+            "group_vi": "Bật hơi răng",
+            "group_en": "Aspirated Dental",
+            "mouthTipVi": "Đầu lưỡi chạm lợi trên rồi bật mạnh luồng khí ra ngoài.",
+            "mouthTipEn": "Explosive dental breath release.",
+            "mouthTip_vi": "Đầu lưỡi chạm lợi trên rồi bật mạnh luồng khí ra ngoài.",
+            "mouthTip_en": "Explosive dental breath release.",
+            "meaningVi": "Phụ âm Hangul: ㅌ (t (aspirated))",
+            "meaningEn": "Hangul Consonant: ㅌ (t (aspirated))",
+            "meaning_vi": "Phụ âm Hangul: ㅌ (t (aspirated))",
+            "meaning_en": "Hangul Consonant: ㅌ (t (aspirated))",
+            "speechText": "토끼 (tokki)",
+            "examples": [
+              {
+                "word": "토끼 (tokki)",
+                "reading": "tokki",
+                "vi": "Con thỏ",
+                "en": "Rabbit",
+                "meaning_vi": "Con thỏ",
+                "meaning_en": "Rabbit"
+              }
+            ],
+            "example": {
+              "word": "토끼 (tokki)",
+              "reading": "tokki",
+              "vi": "Con thỏ",
+              "en": "Rabbit",
+              "meaning_vi": "Con thỏ",
+              "meaning_en": "Rabbit"
+            }
+          },
+          {
+            "char": "ㅍ",
+            "romaji": "p (aspirated)",
+            "ipa": "pʰ",
+            "groupVi": "Bật hơi hai môi",
+            "groupEn": "Aspirated Bilabial",
+            "group_vi": "Bật hơi hai môi",
+            "group_en": "Aspirated Bilabial",
+            "mouthTipVi": "Hai môi mím chặt rồi bật bung một luồng hơi mạnh mẽ.",
+            "mouthTipEn": "Strong aspirated bilabial pop of air.",
+            "mouthTip_vi": "Hai môi mím chặt rồi bật bung một luồng hơi mạnh mẽ.",
+            "mouthTip_en": "Strong aspirated bilabial pop of air.",
+            "meaningVi": "Phụ âm Hangul: ㅍ (p (aspirated))",
+            "meaningEn": "Hangul Consonant: ㅍ (p (aspirated))",
+            "meaning_vi": "Phụ âm Hangul: ㅍ (p (aspirated))",
+            "meaning_en": "Hangul Consonant: ㅍ (p (aspirated))",
+            "speechText": "포도 (podo)",
+            "examples": [
+              {
+                "word": "포도 (podo)",
+                "reading": "podo",
+                "vi": "Quả nho",
+                "en": "Grape",
+                "meaning_vi": "Quả nho",
+                "meaning_en": "Grape"
+              }
+            ],
+            "example": {
+              "word": "포도 (podo)",
+              "reading": "podo",
+              "vi": "Quả nho",
+              "en": "Grape",
+              "meaning_vi": "Quả nho",
+              "meaning_en": "Grape"
+            }
+          },
+          {
+            "char": "ㅎ",
+            "romaji": "h",
+            "ipa": "h",
+            "groupVi": "Âm thanh hầu",
+            "groupEn": "Glottal",
+            "group_vi": "Âm thanh hầu",
+            "group_en": "Glottal",
+            "mouthTipVi": "Hơi thở nhẹ từ thanh môn. Trong giao tiếp nhanh giữa hai nguyên âm thường bị nuốt âm.",
+            "mouthTipEn": "Soft glottal sound. Frequently weakened or silent between vowels.",
+            "mouthTip_vi": "Hơi thở nhẹ từ thanh môn. Trong giao tiếp nhanh giữa hai nguyên âm thường bị nuốt âm.",
+            "mouthTip_en": "Soft glottal sound. Frequently weakened or silent between vowels.",
+            "meaningVi": "Phụ âm Hangul: ㅎ (h)",
+            "meaningEn": "Hangul Consonant: ㅎ (h)",
+            "meaning_vi": "Phụ âm Hangul: ㅎ (h)",
+            "meaning_en": "Hangul Consonant: ㅎ (h)",
+            "speechText": "하늘 (haneul)",
+            "examples": [
+              {
+                "word": "하늘 (haneul)",
+                "reading": "haneul",
+                "vi": "Bầu trời",
+                "en": "Sky",
+                "meaning_vi": "Bầu trời",
+                "meaning_en": "Sky"
+              }
+            ],
+            "example": {
+              "word": "하늘 (haneul)",
+              "reading": "haneul",
+              "vi": "Bầu trời",
+              "en": "Sky",
+              "meaning_vi": "Bầu trời",
+              "meaning_en": "Sky"
+            }
           }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Đầu lưỡi chân răng",
-          "group_en": "Alveolar",
-          "char": "ㄴ",
-          "romaji": "n",
-          "ipa": "[n]",
-          "mouthTip_vi": "Đầu lưỡi chạm chắc vào lợi trên, hơi thoát qua khoang mũi.",
-          "mouthTip_en": "Tongue tip touches upper gum ridge, air escapes gently through nose.",
-          "example": {
-            "word": "나무 (namu)",
-            "reading": "namu",
-            "meaning_vi": "Cây cối",
-            "meaning_en": "Tree"
+        ]
+      },
+      {
+        "id": "double_cons",
+        "labelVi": "Phụ âm căng/đôi (Double Consonants)",
+        "labelEn": "Double/Tense Consonants (쌍자음)",
+        "descriptionVi": "5 phụ âm đôi phát âm căng cứng thanh quản và hoàn toàn không đẩy bật hơi.",
+        "descriptionEn": "The 5 glottal tense consonants pronounced with vocal cord tension and zero aspiration.",
+        "items": [
+          {
+            "char": "ㄲ",
+            "romaji": "kk",
+            "ipa": "k͈",
+            "groupVi": "Âm căng ngạc mềm",
+            "groupEn": "Tense Stop",
+            "group_vi": "Âm căng ngạc mềm",
+            "group_en": "Tense Stop",
+            "mouthTipVi": "Thắt chặt thanh quản, phát âm 'c/k' đanh thép, tuyệt đối KHÔNG có hơi gió thoát ra.",
+            "mouthTipEn": "Tense the throat tight before releasing. Zero air escapes! High sharp pitch.",
+            "mouthTip_vi": "Thắt chặt thanh quản, phát âm 'c/k' đanh thép, tuyệt đối KHÔNG có hơi gió thoát ra.",
+            "mouthTip_en": "Tense the throat tight before releasing. Zero air escapes! High sharp pitch.",
+            "meaningVi": "Phụ âm căng: ㄲ (kk)",
+            "meaningEn": "Tense Consonant: ㄲ (kk)",
+            "meaning_vi": "Phụ âm căng: ㄲ (kk)",
+            "meaning_en": "Tense Consonant: ㄲ (kk)",
+            "speechText": "꿈 (kkum)",
+            "examples": [
+              {
+                "word": "꿈 (kkum)",
+                "reading": "kkum",
+                "vi": "Giấc mơ",
+                "en": "Dream",
+                "meaning_vi": "Giấc mơ",
+                "meaning_en": "Dream"
+              }
+            ],
+            "example": {
+              "word": "꿈 (kkum)",
+              "reading": "kkum",
+              "vi": "Giấc mơ",
+              "en": "Dream",
+              "meaning_vi": "Giấc mơ",
+              "meaning_en": "Dream"
+            }
+          },
+          {
+            "char": "ㄸ",
+            "romaji": "tt",
+            "ipa": "t͈",
+            "groupVi": "Âm căng chân răng",
+            "groupEn": "Tense Stop",
+            "group_vi": "Âm căng chân răng",
+            "group_en": "Tense Stop",
+            "mouthTipVi": "Gồng cứng đầu lưỡi ở chân răng rồi bật đanh dứt khoát không hơi.",
+            "mouthTipEn": "Tighten tongue at gum ridge, pop sound without breath.",
+            "mouthTip_vi": "Gồng cứng đầu lưỡi ở chân răng rồi bật đanh dứt khoát không hơi.",
+            "mouthTip_en": "Tighten tongue at gum ridge, pop sound without breath.",
+            "meaningVi": "Phụ âm căng: ㄸ (tt)",
+            "meaningEn": "Tense Consonant: ㄸ (tt)",
+            "meaning_vi": "Phụ âm căng: ㄸ (tt)",
+            "meaning_en": "Tense Consonant: ㄸ (tt)",
+            "speechText": "딸기 (ttalgi)",
+            "examples": [
+              {
+                "word": "딸기 (ttalgi)",
+                "reading": "ttalgi",
+                "vi": "Quả dâu tây",
+                "en": "Strawberry",
+                "meaning_vi": "Quả dâu tây",
+                "meaning_en": "Strawberry"
+              }
+            ],
+            "example": {
+              "word": "딸기 (ttalgi)",
+              "reading": "ttalgi",
+              "vi": "Quả dâu tây",
+              "en": "Strawberry",
+              "meaning_vi": "Quả dâu tây",
+              "meaning_en": "Strawberry"
+            }
+          },
+          {
+            "char": "ㅃ",
+            "romaji": "pp",
+            "ipa": "p͈",
+            "groupVi": "Âm căng hai môi",
+            "groupEn": "Tense Stop",
+            "group_vi": "Âm căng hai môi",
+            "group_en": "Tense Stop",
+            "mouthTipVi": "Mím chặt môi gồng căng rồi bật ra âm 'p' sắc gọn không gió.",
+            "mouthTipEn": "Tight pressed lips, pop tightly without air burst.",
+            "mouthTip_vi": "Mím chặt môi gồng căng rồi bật ra âm 'p' sắc gọn không gió.",
+            "mouthTip_en": "Tight pressed lips, pop tightly without air burst.",
+            "meaningVi": "Phụ âm căng: ㅃ (pp)",
+            "meaningEn": "Tense Consonant: ㅃ (pp)",
+            "meaning_vi": "Phụ âm căng: ㅃ (pp)",
+            "meaning_en": "Tense Consonant: ㅃ (pp)",
+            "speechText": "빵 (ppang)",
+            "examples": [
+              {
+                "word": "빵 (ppang)",
+                "reading": "ppang",
+                "vi": "Bánh mì",
+                "en": "Bread",
+                "meaning_vi": "Bánh mì",
+                "meaning_en": "Bread"
+              }
+            ],
+            "example": {
+              "word": "빵 (ppang)",
+              "reading": "ppang",
+              "vi": "Bánh mì",
+              "en": "Bread",
+              "meaning_vi": "Bánh mì",
+              "meaning_en": "Bread"
+            }
+          },
+          {
+            "char": "ㅆ",
+            "romaji": "ss",
+            "ipa": "s͈",
+            "groupVi": "Âm căng xát răng",
+            "groupEn": "Tense Sibilant",
+            "group_vi": "Âm căng xát răng",
+            "group_en": "Tense Sibilant",
+            "mouthTipVi": "Siết chặt cơ họng và kẽ răng, xát ra âm 's' sắc lạnh và đanh.",
+            "mouthTipEn": "Hissing tense 's', throat tightened.",
+            "mouthTip_vi": "Siết chặt cơ họng và kẽ răng, xát ra âm 's' sắc lạnh và đanh.",
+            "mouthTip_en": "Hissing tense 's', throat tightened.",
+            "meaningVi": "Phụ âm căng: ㅆ (ss)",
+            "meaningEn": "Tense Consonant: ㅆ (ss)",
+            "meaning_vi": "Phụ âm căng: ㅆ (ss)",
+            "meaning_en": "Tense Consonant: ㅆ (ss)",
+            "speechText": "쌀 (ssal)",
+            "examples": [
+              {
+                "word": "쌀 (ssal)",
+                "reading": "ssal",
+                "vi": "Gạo (chưa nấu)",
+                "en": "Raw rice",
+                "meaning_vi": "Gạo (chưa nấu)",
+                "meaning_en": "Raw rice"
+              }
+            ],
+            "example": {
+              "word": "쌀 (ssal)",
+              "reading": "ssal",
+              "vi": "Gạo (chưa nấu)",
+              "en": "Raw rice",
+              "meaning_vi": "Gạo (chưa nấu)",
+              "meaning_en": "Raw rice"
+            }
+          },
+          {
+            "char": "ㅉ",
+            "romaji": "jj",
+            "ipa": "t͡ɕ͈",
+            "groupVi": "Âm căng vòm",
+            "groupEn": "Tense Affricate",
+            "group_vi": "Âm căng vòm",
+            "group_en": "Tense Affricate",
+            "mouthTipVi": "Ép chặt mặt lưỡi vào vòm ngạc rồi bật nổ đanh gọn.",
+            "mouthTipEn": "Tense palate pop with no aspiration.",
+            "mouthTip_vi": "Ép chặt mặt lưỡi vào vòm ngạc rồi bật nổ đanh gọn.",
+            "mouthTip_en": "Tense palate pop with no aspiration.",
+            "meaningVi": "Phụ âm căng: ㅉ (jj)",
+            "meaningEn": "Tense Consonant: ㅉ (jj)",
+            "meaning_vi": "Phụ âm căng: ㅉ (jj)",
+            "meaning_en": "Tense Consonant: ㅉ (jj)",
+            "speechText": "진짜 (jinjja)",
+            "examples": [
+              {
+                "word": "진짜 (jinjja)",
+                "reading": "jinjja",
+                "vi": "Thật sự / Thật á?",
+                "en": "Really / Truly",
+                "meaning_vi": "Thật sự / Thật á?",
+                "meaning_en": "Really / Truly"
+              }
+            ],
+            "example": {
+              "word": "진짜 (jinjja)",
+              "reading": "jinjja",
+              "vi": "Thật sự / Thật á?",
+              "en": "Really / Truly",
+              "meaning_vi": "Thật sự / Thật á?",
+              "meaning_en": "Really / Truly"
+            }
           }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Tắc chân răng",
-          "group_en": "Dental",
-          "char": "ㄷ",
-          "romaji": "d / t",
-          "ipa": "[t/d]",
-          "mouthTip_vi": "Đầu lưỡi chạm ngạc sau răng cửa. Đầu từ đọc 't' không bật hơi, giữa từ đọc 'd'.",
-          "mouthTip_en": "Tongue tip touches roof behind front teeth. Unaspirated 't' initially, 'd' between vowels.",
-          "example": {
-            "word": "다리 (dari)",
-            "reading": "dari",
-            "meaning_vi": "Cây cầu / Đôi chân",
-            "meaning_en": "Bridge or Leg"
+        ]
+      },
+      {
+        "id": "vowels",
+        "labelVi": "Nguyên âm (Vowels)",
+        "labelEn": "Vowels (기본 & 복합 모음)",
+        "descriptionVi": "21 nguyên âm Hangul gồm 10 nguyên âm cơ bản và 11 nguyên âm ghép theo triết lý Trời - Đất - Người.",
+        "descriptionEn": "Full 21 Hangul vowels (10 basic and 11 compound diphthongs).",
+        "items": [
+          {
+            "char": "ㅏ",
+            "romaji": "a",
+            "ipa": "a",
+            "groupVi": "Nguyên âm đơn",
+            "groupEn": "Basic Vowel",
+            "group_vi": "Nguyên âm đơn",
+            "group_en": "Basic Vowel",
+            "mouthTipVi": "Hạ quai hàm mở rộng miệng theo chiều dọc, phát âm 'a' trong sáng.",
+            "mouthTipEn": "Open jaw vertically, relaxed tongue.",
+            "mouthTip_vi": "Hạ quai hàm mở rộng miệng theo chiều dọc, phát âm 'a' trong sáng.",
+            "mouthTip_en": "Open jaw vertically, relaxed tongue.",
+            "meaningVi": "Nguyên âm cơ bản: ㅏ (a)",
+            "meaningEn": "Basic Vowel: ㅏ (a)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅏ (a)",
+            "meaning_en": "Basic Vowel: ㅏ (a)",
+            "speechText": "아이 (ai)",
+            "examples": [
+              {
+                "word": "아이 (ai)",
+                "reading": "ai",
+                "vi": "Trẻ em",
+                "en": "Child",
+                "meaning_vi": "Trẻ em",
+                "meaning_en": "Child"
+              }
+            ],
+            "example": {
+              "word": "아이 (ai)",
+              "reading": "ai",
+              "vi": "Trẻ em",
+              "en": "Child",
+              "meaning_vi": "Trẻ em",
+              "meaning_en": "Child"
+            }
+          },
+          {
+            "char": "ㅑ",
+            "romaji": "ya",
+            "ipa": "ja",
+            "groupVi": "Nguyên âm y-hóa",
+            "groupEn": "Y-Vowel",
+            "group_vi": "Nguyên âm y-hóa",
+            "group_en": "Y-Vowel",
+            "mouthTipVi": "Lướt nhanh từ 'y' sang 'a'.",
+            "mouthTipEn": "Quick glide from 'y' into 'a'.",
+            "mouthTip_vi": "Lướt nhanh từ 'y' sang 'a'.",
+            "mouthTip_en": "Quick glide from 'y' into 'a'.",
+            "meaningVi": "Nguyên âm cơ bản: ㅑ (ya)",
+            "meaningEn": "Basic Vowel: ㅑ (ya)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅑ (ya)",
+            "meaning_en": "Basic Vowel: ㅑ (ya)",
+            "speechText": "야구 (yagu)",
+            "examples": [
+              {
+                "word": "야구 (yagu)",
+                "reading": "yagu",
+                "vi": "Bóng chày",
+                "en": "Baseball",
+                "meaning_vi": "Bóng chày",
+                "meaning_en": "Baseball"
+              }
+            ],
+            "example": {
+              "word": "야구 (yagu)",
+              "reading": "yagu",
+              "vi": "Bóng chày",
+              "en": "Baseball",
+              "meaning_vi": "Bóng chày",
+              "meaning_en": "Baseball"
+            }
+          },
+          {
+            "char": "ㅓ",
+            "romaji": "eo",
+            "ipa": "ʌ",
+            "groupVi": "Nguyên âm đơn",
+            "groupEn": "Basic Vowel",
+            "group_vi": "Nguyên âm đơn",
+            "group_en": "Basic Vowel",
+            "mouthTipVi": "Mở miệng vừa phải ở khoảng giữa 'a' và 'ơ'. Tuyệt đối không chu tròn môi!",
+            "mouthTipEn": "Open mouth halfway between 'ah' and 'uh'. Don't round lips!",
+            "mouthTip_vi": "Mở miệng vừa phải ở khoảng giữa 'a' và 'ơ'. Tuyệt đối không chu tròn môi!",
+            "mouthTip_en": "Open mouth halfway between 'ah' and 'uh'. Don't round lips!",
+            "meaningVi": "Nguyên âm cơ bản: ㅓ (eo)",
+            "meaningEn": "Basic Vowel: ㅓ (eo)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅓ (eo)",
+            "meaning_en": "Basic Vowel: ㅓ (eo)",
+            "speechText": "어머니 (eomeoni)",
+            "examples": [
+              {
+                "word": "어머니 (eomeoni)",
+                "reading": "eomeoni",
+                "vi": "Người mẹ",
+                "en": "Mother",
+                "meaning_vi": "Người mẹ",
+                "meaning_en": "Mother"
+              }
+            ],
+            "example": {
+              "word": "어머니 (eomeoni)",
+              "reading": "eomeoni",
+              "vi": "Người mẹ",
+              "en": "Mother",
+              "meaning_vi": "Người mẹ",
+              "meaning_en": "Mother"
+            }
+          },
+          {
+            "char": "ㅕ",
+            "romaji": "yeo",
+            "ipa": "jʌ",
+            "groupVi": "Nguyên âm y-hóa",
+            "groupEn": "Y-Vowel",
+            "group_vi": "Nguyên âm y-hóa",
+            "group_en": "Y-Vowel",
+            "mouthTipVi": "Lướt nhanh từ 'y' sang âm 'ơ' dẹt miệng.",
+            "mouthTipEn": "Y-glide into unrounded 'eo'.",
+            "mouthTip_vi": "Lướt nhanh từ 'y' sang âm 'ơ' dẹt miệng.",
+            "mouthTip_en": "Y-glide into unrounded 'eo'.",
+            "meaningVi": "Nguyên âm cơ bản: ㅕ (yeo)",
+            "meaningEn": "Basic Vowel: ㅕ (yeo)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅕ (yeo)",
+            "meaning_en": "Basic Vowel: ㅕ (yeo)",
+            "speechText": "여자 (yeoja)",
+            "examples": [
+              {
+                "word": "여자 (yeoja)",
+                "reading": "yeoja",
+                "vi": "Phụ nữ",
+                "en": "Woman",
+                "meaning_vi": "Phụ nữ",
+                "meaning_en": "Woman"
+              }
+            ],
+            "example": {
+              "word": "여자 (yeoja)",
+              "reading": "yeoja",
+              "vi": "Phụ nữ",
+              "en": "Woman",
+              "meaning_vi": "Phụ nữ",
+              "meaning_en": "Woman"
+            }
+          },
+          {
+            "char": "ㅗ",
+            "romaji": "o",
+            "ipa": "o",
+            "groupVi": "Nguyên âm đơn",
+            "groupEn": "Basic Vowel",
+            "group_vi": "Nguyên âm đơn",
+            "group_en": "Basic Vowel",
+            "mouthTipVi": "Chu tròn môi nhỏ lại như chuẩn bị huýt sáo, phát âm 'ô' tròn trịa.",
+            "mouthTipEn": "Round lips tightly like whistling. Rounder than English 'oh'.",
+            "mouthTip_vi": "Chu tròn môi nhỏ lại như chuẩn bị huýt sáo, phát âm 'ô' tròn trịa.",
+            "mouthTip_en": "Round lips tightly like whistling. Rounder than English 'oh'.",
+            "meaningVi": "Nguyên âm cơ bản: ㅗ (o)",
+            "meaningEn": "Basic Vowel: ㅗ (o)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅗ (o)",
+            "meaning_en": "Basic Vowel: ㅗ (o)",
+            "speechText": "오늘 (oneul)",
+            "examples": [
+              {
+                "word": "오늘 (oneul)",
+                "reading": "oneul",
+                "vi": "Hôm nay",
+                "en": "Today",
+                "meaning_vi": "Hôm nay",
+                "meaning_en": "Today"
+              }
+            ],
+            "example": {
+              "word": "오늘 (oneul)",
+              "reading": "oneul",
+              "vi": "Hôm nay",
+              "en": "Today",
+              "meaning_vi": "Hôm nay",
+              "meaning_en": "Today"
+            }
+          },
+          {
+            "char": "ㅛ",
+            "romaji": "yo",
+            "ipa": "jo",
+            "groupVi": "Nguyên âm y-hóa",
+            "groupEn": "Y-Vowel",
+            "group_vi": "Nguyên âm y-hóa",
+            "group_en": "Y-Vowel",
+            "mouthTipVi": "Lướt nhanh từ 'y' sang âm tròn môi 'ô'.",
+            "mouthTipEn": "Glide from 'y' into tight 'o'.",
+            "mouthTip_vi": "Lướt nhanh từ 'y' sang âm tròn môi 'ô'.",
+            "mouthTip_en": "Glide from 'y' into tight 'o'.",
+            "meaningVi": "Nguyên âm cơ bản: ㅛ (yo)",
+            "meaningEn": "Basic Vowel: ㅛ (yo)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅛ (yo)",
+            "meaning_en": "Basic Vowel: ㅛ (yo)",
+            "speechText": "요리 (yori)",
+            "examples": [
+              {
+                "word": "요리 (yori)",
+                "reading": "yori",
+                "vi": "Nấu ăn / Món ăn",
+                "en": "Cooking",
+                "meaning_vi": "Nấu ăn / Món ăn",
+                "meaning_en": "Cooking"
+              }
+            ],
+            "example": {
+              "word": "요리 (yori)",
+              "reading": "yori",
+              "vi": "Nấu ăn / Món ăn",
+              "en": "Cooking",
+              "meaning_vi": "Nấu ăn / Món ăn",
+              "meaning_en": "Cooking"
+            }
+          },
+          {
+            "char": "ㅜ",
+            "romaji": "u",
+            "ipa": "u",
+            "groupVi": "Nguyên âm đơn",
+            "groupEn": "Basic Vowel",
+            "group_vi": "Nguyên âm đơn",
+            "group_en": "Basic Vowel",
+            "mouthTipVi": "Chu môi hướng về phía trước, phát âm 'u' sâu trong vòm họng.",
+            "mouthTipEn": "Pucker lips forward into tight 'oo'.",
+            "mouthTip_vi": "Chu môi hướng về phía trước, phát âm 'u' sâu trong vòm họng.",
+            "mouthTip_en": "Pucker lips forward into tight 'oo'.",
+            "meaningVi": "Nguyên âm cơ bản: ㅜ (u)",
+            "meaningEn": "Basic Vowel: ㅜ (u)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅜ (u)",
+            "meaning_en": "Basic Vowel: ㅜ (u)",
+            "speechText": "우유 (uyu)",
+            "examples": [
+              {
+                "word": "우유 (uyu)",
+                "reading": "uyu",
+                "vi": "Sữa",
+                "en": "Milk",
+                "meaning_vi": "Sữa",
+                "meaning_en": "Milk"
+              }
+            ],
+            "example": {
+              "word": "우유 (uyu)",
+              "reading": "uyu",
+              "vi": "Sữa",
+              "en": "Milk",
+              "meaning_vi": "Sữa",
+              "meaning_en": "Milk"
+            }
+          },
+          {
+            "char": "ㅠ",
+            "romaji": "yu",
+            "ipa": "ju",
+            "groupVi": "Nguyên âm y-hóa",
+            "groupEn": "Y-Vowel",
+            "group_vi": "Nguyên âm y-hóa",
+            "group_en": "Y-Vowel",
+            "mouthTipVi": "Lướt nhanh từ 'y' sang âm chu môi 'u'.",
+            "mouthTipEn": "Glide from 'y' into tight 'u'.",
+            "mouthTip_vi": "Lướt nhanh từ 'y' sang âm chu môi 'u'.",
+            "mouthTip_en": "Glide from 'y' into tight 'u'.",
+            "meaningVi": "Nguyên âm cơ bản: ㅠ (yu)",
+            "meaningEn": "Basic Vowel: ㅠ (yu)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅠ (yu)",
+            "meaning_en": "Basic Vowel: ㅠ (yu)",
+            "speechText": "유리 (yuri)",
+            "examples": [
+              {
+                "word": "유리 (yuri)",
+                "reading": "yuri",
+                "vi": "Thủy tinh / Kính",
+                "en": "Glass",
+                "meaning_vi": "Thủy tinh / Kính",
+                "meaning_en": "Glass"
+              }
+            ],
+            "example": {
+              "word": "유리 (yuri)",
+              "reading": "yuri",
+              "vi": "Thủy tinh / Kính",
+              "en": "Glass",
+              "meaning_vi": "Thủy tinh / Kính",
+              "meaning_en": "Glass"
+            }
+          },
+          {
+            "char": "ㅡ",
+            "romaji": "eu",
+            "ipa": "ɯ",
+            "groupVi": "Nguyên âm đơn",
+            "groupEn": "Basic Vowel",
+            "group_vi": "Nguyên âm đơn",
+            "group_en": "Basic Vowel",
+            "mouthTipVi": "Cười kéo dẹt hai khóe miệng sang hai bên, lưỡi co về sau phát âm 'ư'. Tuyệt đối môi phẳng không chu!",
+            "mouthTipEn": "Smile widely and pull tongue back. Say 'oo' with completely flat lips!",
+            "mouthTip_vi": "Cười kéo dẹt hai khóe miệng sang hai bên, lưỡi co về sau phát âm 'ư'. Tuyệt đối môi phẳng không chu!",
+            "mouthTip_en": "Smile widely and pull tongue back. Say 'oo' with completely flat lips!",
+            "meaningVi": "Nguyên âm cơ bản: ㅡ (eu)",
+            "meaningEn": "Basic Vowel: ㅡ (eu)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅡ (eu)",
+            "meaning_en": "Basic Vowel: ㅡ (eu)",
+            "speechText": "음악 (eumak)",
+            "examples": [
+              {
+                "word": "음악 (eumak)",
+                "reading": "eumak",
+                "vi": "Âm nhạc",
+                "en": "Music",
+                "meaning_vi": "Âm nhạc",
+                "meaning_en": "Music"
+              }
+            ],
+            "example": {
+              "word": "음악 (eumak)",
+              "reading": "eumak",
+              "vi": "Âm nhạc",
+              "en": "Music",
+              "meaning_vi": "Âm nhạc",
+              "meaning_en": "Music"
+            }
+          },
+          {
+            "char": "ㅣ",
+            "romaji": "i",
+            "ipa": "i",
+            "groupVi": "Nguyên âm đơn",
+            "groupEn": "Basic Vowel",
+            "group_vi": "Nguyên âm đơn",
+            "group_en": "Basic Vowel",
+            "mouthTipVi": "Khóe miệng kéo dẹt sang hai bên, lưng lưỡi nâng cao phát âm 'i' trong trẻo.",
+            "mouthTipEn": "High tongue, smiling lips, crisp 'ee'.",
+            "mouthTip_vi": "Khóe miệng kéo dẹt sang hai bên, lưng lưỡi nâng cao phát âm 'i' trong trẻo.",
+            "mouthTip_en": "High tongue, smiling lips, crisp 'ee'.",
+            "meaningVi": "Nguyên âm cơ bản: ㅣ (i)",
+            "meaningEn": "Basic Vowel: ㅣ (i)",
+            "meaning_vi": "Nguyên âm cơ bản: ㅣ (i)",
+            "meaning_en": "Basic Vowel: ㅣ (i)",
+            "speechText": "이름 (ireum)",
+            "examples": [
+              {
+                "word": "이름 (ireum)",
+                "reading": "ireum",
+                "vi": "Tên gọi",
+                "en": "Name",
+                "meaning_vi": "Tên gọi",
+                "meaning_en": "Name"
+              }
+            ],
+            "example": {
+              "word": "이름 (ireum)",
+              "reading": "ireum",
+              "vi": "Tên gọi",
+              "en": "Name",
+              "meaning_vi": "Tên gọi",
+              "meaning_en": "Name"
+            }
+          },
+          {
+            "char": "ㅐ",
+            "romaji": "ae",
+            "ipa": "ɛ",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Mở rộng miệng vừa phải, lưỡi hạ thấp phát âm âm e/ae tương tự e bẹt.",
+            "mouthTipEn": "Open mouth moderately, lower tongue to produce open-mid front vowel [ɛ].",
+            "mouthTip_vi": "Mở rộng miệng vừa phải, lưỡi hạ thấp phát âm âm e/ae tương tự e bẹt.",
+            "mouthTip_en": "Open mouth moderately, lower tongue to produce open-mid front vowel [ɛ].",
+            "meaningVi": "Nguyên âm ghép Ae",
+            "meaningEn": "Compound Vowel Ae",
+            "meaning_vi": "Nguyên âm ghép Ae",
+            "meaning_en": "Compound Vowel Ae",
+            "speechText": "배",
+            "examples": [
+              {
+                "word": "배 (bae)",
+                "reading": "bae",
+                "vi": "Quả lê / Chiếc thuyền / Cái bụng",
+                "en": "Pear / Boat / Belly",
+                "meaning_vi": "Quả lê / Chiếc thuyền / Cái bụng",
+                "meaning_en": "Pear / Boat / Belly"
+              }
+            ],
+            "example": {
+              "word": "배 (bae)",
+              "reading": "bae",
+              "vi": "Quả lê / Chiếc thuyền / Cái bụng",
+              "en": "Pear / Boat / Belly",
+              "meaning_vi": "Quả lê / Chiếc thuyền / Cái bụng",
+              "meaning_en": "Pear / Boat / Belly"
+            }
+          },
+          {
+            "char": "ㅒ",
+            "romaji": "yae",
+            "ipa": "jɛ",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Lướt nhanh từ bán nguyên âm y sang âm ae trong một nhịp.",
+            "mouthTipEn": "Quick palatal glide [j] into open-mid [ɛ].",
+            "mouthTip_vi": "Lướt nhanh từ bán nguyên âm y sang âm ae trong một nhịp.",
+            "mouthTip_en": "Quick palatal glide [j] into open-mid [ɛ].",
+            "meaningVi": "Nguyên âm ghép Yae",
+            "meaningEn": "Compound Vowel Yae",
+            "meaning_vi": "Nguyên âm ghép Yae",
+            "meaning_en": "Compound Vowel Yae",
+            "speechText": "얘기",
+            "examples": [
+              {
+                "word": "얘기 (yaegi)",
+                "reading": "yaegi",
+                "vi": "Câu chuyện (nói tắt của 이야기)",
+                "en": "Story / Talk",
+                "meaning_vi": "Câu chuyện (nói tắt của 이야기)",
+                "meaning_en": "Story / Talk"
+              }
+            ],
+            "example": {
+              "word": "얘기 (yaegi)",
+              "reading": "yaegi",
+              "vi": "Câu chuyện (nói tắt của 이야기)",
+              "en": "Story / Talk",
+              "meaning_vi": "Câu chuyện (nói tắt của 이야기)",
+              "meaning_en": "Story / Talk"
+            }
+          },
+          {
+            "char": "ㅔ",
+            "romaji": "e",
+            "ipa": "e",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Khẩu hình miệng mở hẹp hơn ㅐ một chút, phát âm ê nhẹ nhàng.",
+            "mouthTipEn": "Close-mid front vowel [e], slightly narrower mouth opening than ㅐ.",
+            "mouthTip_vi": "Khẩu hình miệng mở hẹp hơn ㅐ một chút, phát âm ê nhẹ nhàng.",
+            "mouthTip_en": "Close-mid front vowel [e], slightly narrower mouth opening than ㅐ.",
+            "meaningVi": "Nguyên âm ghép E",
+            "meaningEn": "Compound Vowel E",
+            "meaning_vi": "Nguyên âm ghép E",
+            "meaning_en": "Compound Vowel E",
+            "speechText": "베개",
+            "examples": [
+              {
+                "word": "베개 (begae)",
+                "reading": "begae",
+                "vi": "Chiếc gối ngủ",
+                "en": "Pillow",
+                "meaning_vi": "Chiếc gối ngủ",
+                "meaning_en": "Pillow"
+              }
+            ],
+            "example": {
+              "word": "베개 (begae)",
+              "reading": "begae",
+              "vi": "Chiếc gối ngủ",
+              "en": "Pillow",
+              "meaning_vi": "Chiếc gối ngủ",
+              "meaning_en": "Pillow"
+            }
+          },
+          {
+            "char": "ㅖ",
+            "romaji": "ye",
+            "ipa": "je",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Bán nguyên âm y lướt nhẹ sang e.",
+            "mouthTipEn": "Palatal glide [j] into [e].",
+            "mouthTip_vi": "Bán nguyên âm y lướt nhẹ sang e.",
+            "mouthTip_en": "Palatal glide [j] into [e].",
+            "meaningVi": "Nguyên âm ghép Ye",
+            "meaningEn": "Compound Vowel Ye",
+            "meaning_vi": "Nguyên âm ghép Ye",
+            "meaning_en": "Compound Vowel Ye",
+            "speechText": "예절",
+            "examples": [
+              {
+                "word": "예절 (yejeol)",
+                "reading": "yejeol",
+                "vi": "Lễ nghi / Phép lịch sự",
+                "en": "Etiquette",
+                "meaning_vi": "Lễ nghi / Phép lịch sự",
+                "meaning_en": "Etiquette"
+              }
+            ],
+            "example": {
+              "word": "예절 (yejeol)",
+              "reading": "yejeol",
+              "vi": "Lễ nghi / Phép lịch sự",
+              "en": "Etiquette",
+              "meaning_vi": "Lễ nghi / Phép lịch sự",
+              "meaning_en": "Etiquette"
+            }
+          },
+          {
+            "char": "ㅘ",
+            "romaji": "wa",
+            "ipa": "wa",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Chu tròn môi âm w rồi mở to miệng sang nguyên âm a.",
+            "mouthTipEn": "Round lips tightly for [w] then quickly open wide into [a].",
+            "mouthTip_vi": "Chu tròn môi âm w rồi mở to miệng sang nguyên âm a.",
+            "mouthTip_en": "Round lips tightly for [w] then quickly open wide into [a].",
+            "meaningVi": "Nguyên âm ghép Wa",
+            "meaningEn": "Compound Vowel Wa",
+            "meaning_vi": "Nguyên âm ghép Wa",
+            "meaning_en": "Compound Vowel Wa",
+            "speechText": "사과",
+            "examples": [
+              {
+                "word": "사과 (sagwa)",
+                "reading": "sagwa",
+                "vi": "Quả táo / Lời xin lỗi",
+                "en": "Apple / Apology",
+                "meaning_vi": "Quả táo / Lời xin lỗi",
+                "meaning_en": "Apple / Apology"
+              }
+            ],
+            "example": {
+              "word": "사과 (sagwa)",
+              "reading": "sagwa",
+              "vi": "Quả táo / Lời xin lỗi",
+              "en": "Apple / Apology",
+              "meaning_vi": "Quả táo / Lời xin lỗi",
+              "meaning_en": "Apple / Apology"
+            }
+          },
+          {
+            "char": "ㅙ",
+            "romaji": "wae",
+            "ipa": "wɛ",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Chu tròn môi w rồi lướt mở sang âm ae.",
+            "mouthTipEn": "Rounded labial glide [w] sliding smoothly into [ɛ].",
+            "mouthTip_vi": "Chu tròn môi w rồi lướt mở sang âm ae.",
+            "mouthTip_en": "Rounded labial glide [w] sliding smoothly into [ɛ].",
+            "meaningVi": "Nguyên âm ghép Wae",
+            "meaningEn": "Compound Vowel Wae",
+            "meaning_vi": "Nguyên âm ghép Wae",
+            "meaning_en": "Compound Vowel Wae",
+            "speechText": "왜",
+            "examples": [
+              {
+                "word": "왜 (wae)",
+                "reading": "wae",
+                "vi": "Tại sao? / Vì sao?",
+                "en": "Why?",
+                "meaning_vi": "Tại sao? / Vì sao?",
+                "meaning_en": "Why?"
+              }
+            ],
+            "example": {
+              "word": "왜 (wae)",
+              "reading": "wae",
+              "vi": "Tại sao? / Vì sao?",
+              "en": "Why?",
+              "meaning_vi": "Tại sao? / Vì sao?",
+              "meaning_en": "Why?"
+            }
+          },
+          {
+            "char": "ㅚ",
+            "romaji": "oe",
+            "ipa": "we  ø",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Trong tiếng Hàn hiện đại phát âm giống âm [we] (uê nhẹ).",
+            "mouthTipEn": "Pronounced as [we] in contemporary modern Korean.",
+            "mouthTip_vi": "Trong tiếng Hàn hiện đại phát âm giống âm [we] (uê nhẹ).",
+            "mouthTip_en": "Pronounced as [we] in contemporary modern Korean.",
+            "meaningVi": "Nguyên âm ghép Oe",
+            "meaningEn": "Compound Vowel Oe",
+            "meaning_vi": "Nguyên âm ghép Oe",
+            "meaning_en": "Compound Vowel Oe",
+            "speechText": "외국",
+            "examples": [
+              {
+                "word": "외국 (oeguk)",
+                "reading": "oeguk",
+                "vi": "Nước ngoài / Ngoại quốc",
+                "en": "Foreign country",
+                "meaning_vi": "Nước ngoài / Ngoại quốc",
+                "meaning_en": "Foreign country"
+              }
+            ],
+            "example": {
+              "word": "외국 (oeguk)",
+              "reading": "oeguk",
+              "vi": "Nước ngoài / Ngoại quốc",
+              "en": "Foreign country",
+              "meaning_vi": "Nước ngoài / Ngoại quốc",
+              "meaning_en": "Foreign country"
+            }
+          },
+          {
+            "char": "ㅝ",
+            "romaji": "wo",
+            "ipa": "wʌ",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Chu môi w rồi mở rộng vòm miệng sang nguyên âm eo.",
+            "mouthTipEn": "Rounded glide [w] transitioning into open-mid back [ʌ].",
+            "mouthTip_vi": "Chu môi w rồi mở rộng vòm miệng sang nguyên âm eo.",
+            "mouthTip_en": "Rounded glide [w] transitioning into open-mid back [ʌ].",
+            "meaningVi": "Nguyên âm ghép Wo",
+            "meaningEn": "Compound Vowel Wo",
+            "meaning_vi": "Nguyên âm ghép Wo",
+            "meaning_en": "Compound Vowel Wo",
+            "speechText": "원",
+            "examples": [
+              {
+                "word": "원 (won)",
+                "reading": "won",
+                "vi": "Đồng Won Hàn Quốc / Hình tròn",
+                "en": "Korean Won / Circle",
+                "meaning_vi": "Đồng Won Hàn Quốc / Hình tròn",
+                "meaning_en": "Korean Won / Circle"
+              }
+            ],
+            "example": {
+              "word": "원 (won)",
+              "reading": "won",
+              "vi": "Đồng Won Hàn Quốc / Hình tròn",
+              "en": "Korean Won / Circle",
+              "meaning_vi": "Đồng Won Hàn Quốc / Hình tròn",
+              "meaning_en": "Korean Won / Circle"
+            }
+          },
+          {
+            "char": "ㅞ",
+            "romaji": "we",
+            "ipa": "we",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Chu môi w rồi trượt sang nguyên âm e.",
+            "mouthTipEn": "Rounded glide [w] transitioning into mid front [e].",
+            "mouthTip_vi": "Chu môi w rồi trượt sang nguyên âm e.",
+            "mouthTip_en": "Rounded glide [w] transitioning into mid front [e].",
+            "meaningVi": "Nguyên âm ghép We",
+            "meaningEn": "Compound Vowel We",
+            "meaning_vi": "Nguyên âm ghép We",
+            "meaning_en": "Compound Vowel We",
+            "speechText": "웨딩",
+            "examples": [
+              {
+                "word": "웨딩 (weding)",
+                "reading": "weding",
+                "vi": "Đám cưới (wedding)",
+                "en": "Wedding",
+                "meaning_vi": "Đám cưới (wedding)",
+                "meaning_en": "Wedding"
+              }
+            ],
+            "example": {
+              "word": "웨딩 (weding)",
+              "reading": "weding",
+              "vi": "Đám cưới (wedding)",
+              "en": "Wedding",
+              "meaning_vi": "Đám cưới (wedding)",
+              "meaning_en": "Wedding"
+            }
+          },
+          {
+            "char": "ㅟ",
+            "romaji": "wi",
+            "ipa": "wi  y",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Chu môi tròn rồi chuyển nhanh đầu lưỡi lên cao sang nguyên âm i.",
+            "mouthTipEn": "Lip rounding into high front vowel [i].",
+            "mouthTip_vi": "Chu môi tròn rồi chuyển nhanh đầu lưỡi lên cao sang nguyên âm i.",
+            "mouthTip_en": "Lip rounding into high front vowel [i].",
+            "meaningVi": "Nguyên âm ghép Wi",
+            "meaningEn": "Compound Vowel Wi",
+            "meaning_vi": "Nguyên âm ghép Wi",
+            "meaning_en": "Compound Vowel Wi",
+            "speechText": "위",
+            "examples": [
+              {
+                "word": "위 (wi)",
+                "reading": "wi",
+                "vi": "Phía trên / Dạ dày",
+                "en": "Above / Stomach",
+                "meaning_vi": "Phía trên / Dạ dày",
+                "meaning_en": "Above / Stomach"
+              }
+            ],
+            "example": {
+              "word": "위 (wi)",
+              "reading": "wi",
+              "vi": "Phía trên / Dạ dày",
+              "en": "Above / Stomach",
+              "meaning_vi": "Phía trên / Dạ dày",
+              "meaning_en": "Above / Stomach"
+            }
+          },
+          {
+            "char": "ㅢ",
+            "romaji": "ui",
+            "ipa": "ɯi",
+            "groupVi": "Nguyên âm ghép",
+            "groupEn": "Compound Vowel",
+            "group_vi": "Nguyên âm ghép",
+            "group_en": "Compound Vowel",
+            "mouthTipVi": "Kéo bẹt mép phát âm eu rồi trượt nhẹ sang i. Khi làm trợ từ sở hữu đọc là [e].",
+            "mouthTipEn": "Glide from unrounded [ɯ] to [i]. Pronounced [e] when functioning as possessive particle.",
+            "mouthTip_vi": "Kéo bẹt mép phát âm eu rồi trượt nhẹ sang i. Khi làm trợ từ sở hữu đọc là [e].",
+            "mouthTip_en": "Glide from unrounded [ɯ] to [i]. Pronounced [e] when functioning as possessive particle.",
+            "meaningVi": "Nguyên âm ghép Ui",
+            "meaningEn": "Compound Vowel Ui",
+            "meaning_vi": "Nguyên âm ghép Ui",
+            "meaning_en": "Compound Vowel Ui",
+            "speechText": "의사",
+            "examples": [
+              {
+                "word": "의사 (uisa)",
+                "reading": "uisa",
+                "vi": "Bác sĩ",
+                "en": "Doctor",
+                "meaning_vi": "Bác sĩ",
+                "meaning_en": "Doctor"
+              }
+            ],
+            "example": {
+              "word": "의사 (uisa)",
+              "reading": "uisa",
+              "vi": "Bác sĩ",
+              "en": "Doctor",
+              "meaning_vi": "Bác sĩ",
+              "meaning_en": "Doctor"
+            }
           }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Âm vỗ / Lỏng",
-          "group_en": "Liquid",
-          "char": "ㄹ",
-          "romaji": "r / l",
-          "ipa": "[ɾ/l]",
-          "mouthTip_vi": "Giữa hai nguyên âm phát âm vỗ nhẹ [ɾ]; đứng cuối khối chữ (batchim) phát âm là [l].",
-          "mouthTip_en": "Light tongue flap [ɾ] between vowels; clear [l] at syllable end (batchim).",
-          "example": {
-            "word": "라면 (ramyeon)",
-            "reading": "ramyeon",
-            "meaning_vi": "Mì tôm Ramyeon",
-            "meaning_en": "Ramen noodles"
+        ]
+      },
+      {
+        "id": "batchim",
+        "labelVi": "Phụ âm cuối (Batchim)",
+        "labelEn": "Final Consonants (받침)",
+        "descriptionVi": "7 âm đại diện chuẩn và hệ thống phụ âm cuối kép (Double Batchim) tạo nên ngữ điệu tiếng Hàn.",
+        "descriptionEn": "The 7 canonical phonetic sound classes and compound double batchim rules.",
+        "items": [
+          {
+            "char": "ㄱ / ㅋ / ㄲ [k]",
+            "romaji": "Batchim [k]",
+            "ipa": "k̚",
+            "groupVi": "Nhóm âm Tắc họng [k]",
+            "groupEn": "Velar Stop [k]",
+            "group_vi": "Nhóm âm Tắc họng [k]",
+            "group_en": "Velar Stop [k]",
+            "mouthTipVi": "Gốc lưỡi nâng áp vào ngạc mềm chặn ngắt luồng khí hoàn toàn, không bật hơi ra ngoài.",
+            "mouthTipEn": "Back of tongue seals soft palate completely. Unreleased stop [k̚] with no puff of air.",
+            "mouthTip_vi": "Gốc lưỡi nâng áp vào ngạc mềm chặn ngắt luồng khí hoàn toàn, không bật hơi ra ngoài.",
+            "mouthTip_en": "Back of tongue seals soft palate completely. Unreleased stop [k̚] with no puff of air.",
+            "meaningVi": "Batchim nhóm K (ㄱ, ㅋ, ㄲ)",
+            "meaningEn": "Batchim K class",
+            "meaning_vi": "Batchim nhóm K (ㄱ, ㅋ, ㄲ)",
+            "meaning_en": "Batchim K class",
+            "speechText": "책",
+            "examples": [
+              {
+                "word": "책 (chaek)",
+                "reading": "chaek",
+                "vi": "Quyển sách (chặn hơi k ở cuối)",
+                "en": "Book",
+                "meaning_vi": "Quyển sách (chặn hơi k ở cuối)",
+                "meaning_en": "Book"
+              },
+              {
+                "word": "밖 (bakk)",
+                "reading": "bak",
+                "vi": "Bên ngoài (phụ âm cuối ㄲ phát âm là k)",
+                "en": "Outside",
+                "meaning_vi": "Bên ngoài (phụ âm cuối ㄲ phát âm là k)",
+                "meaning_en": "Outside"
+              }
+            ],
+            "example": {
+              "word": "책 (chaek)",
+              "reading": "chaek",
+              "vi": "Quyển sách (chặn hơi k ở cuối)",
+              "en": "Book",
+              "meaning_vi": "Quyển sách (chặn hơi k ở cuối)",
+              "meaning_en": "Book"
+            }
+          },
+          {
+            "char": "ㄴ [n]",
+            "romaji": "Batchim [n]",
+            "ipa": "n",
+            "groupVi": "Nhóm âm Mũi [n]",
+            "groupEn": "Nasal [n]",
+            "group_vi": "Nhóm âm Mũi [n]",
+            "group_en": "Nasal [n]",
+            "mouthTipVi": "Đầu lưỡi chạm áp chặt vào chân răng trên, luồng khí ngân nhẹ thoát ra đường mũi.",
+            "mouthTipEn": "Tongue tip presses upper gum ridge, air escapes gently through nasal cavity.",
+            "mouthTip_vi": "Đầu lưỡi chạm áp chặt vào chân răng trên, luồng khí ngân nhẹ thoát ra đường mũi.",
+            "mouthTip_en": "Tongue tip presses upper gum ridge, air escapes gently through nasal cavity.",
+            "meaningVi": "Batchim nhóm N (ㄴ)",
+            "meaningEn": "Batchim N class",
+            "meaning_vi": "Batchim nhóm N (ㄴ)",
+            "meaning_en": "Batchim N class",
+            "speechText": "눈",
+            "examples": [
+              {
+                "word": "눈 (nun)",
+                "reading": "nun",
+                "vi": "Mắt / Tuyết",
+                "en": "Eye / Snow",
+                "meaning_vi": "Mắt / Tuyết",
+                "meaning_en": "Eye / Snow"
+              },
+              {
+                "word": "산 (san)",
+                "reading": "san",
+                "vi": "Ngọn núi",
+                "en": "Mountain",
+                "meaning_vi": "Ngọn núi",
+                "meaning_en": "Mountain"
+              }
+            ],
+            "example": {
+              "word": "눈 (nun)",
+              "reading": "nun",
+              "vi": "Mắt / Tuyết",
+              "en": "Eye / Snow",
+              "meaning_vi": "Mắt / Tuyết",
+              "meaning_en": "Eye / Snow"
+            }
+          },
+          {
+            "char": "ㄷ/ㅅ/ㅈ/ㅊ/ㅌ/ㅎ/ㅆ [t]",
+            "romaji": "Batchim [t]",
+            "ipa": "t̚",
+            "groupVi": "Nhóm âm Chặn răng [t]",
+            "groupEn": "Alveolar Stop [t]",
+            "group_vi": "Nhóm âm Chặn răng [t]",
+            "group_en": "Alveolar Stop [t]",
+            "mouthTipVi": "Tất cả 7 phụ âm này khi đứng ở vị trí cuối đều phát âm thành âm ngậm [t] không bật hơi.",
+            "mouthTipEn": "All 7 consonants collapse into an unreleased dental stop [t̚] in final position.",
+            "mouthTip_vi": "Tất cả 7 phụ âm này khi đứng ở vị trí cuối đều phát âm thành âm ngậm [t] không bật hơi.",
+            "mouthTip_en": "All 7 consonants collapse into an unreleased dental stop [t̚] in final position.",
+            "meaningVi": "Batchim nhóm T (ㄷ, ㅅ, ㅈ, ㅊ, ㅌ, ㅎ, ㅆ)",
+            "meaningEn": "Batchim T class",
+            "meaning_vi": "Batchim nhóm T (ㄷ, ㅅ, ㅈ, ㅊ, ㅌ, ㅎ, ㅆ)",
+            "meaning_en": "Batchim T class",
+            "speechText": "옷",
+            "examples": [
+              {
+                "word": "옷 (ot)",
+                "reading": "ot",
+                "vi": "Quần áo (phát âm ngậm [t])",
+                "en": "Clothes",
+                "meaning_vi": "Quần áo (phát âm ngậm [t])",
+                "meaning_en": "Clothes"
+              },
+              {
+                "word": "꽃 (kkot)",
+                "reading": "kkot",
+                "vi": "Bông hoa (ㅊ biến thành [t])",
+                "en": "Flower",
+                "meaning_vi": "Bông hoa (ㅊ biến thành [t])",
+                "meaning_en": "Flower"
+              },
+              {
+                "word": "끝 (kkeut)",
+                "reading": "kkeut",
+                "vi": "Kết thúc (ㅌ biến thành [t])",
+                "en": "End",
+                "meaning_vi": "Kết thúc (ㅌ biến thành [t])",
+                "meaning_en": "End"
+              },
+              {
+                "word": "있다 (itda)",
+                "reading": "itda",
+                "vi": "Có / Tồn tại (ㅆ biến thành [t])",
+                "en": "To have / exist",
+                "meaning_vi": "Có / Tồn tại (ㅆ biến thành [t])",
+                "meaning_en": "To have / exist"
+              }
+            ],
+            "example": {
+              "word": "옷 (ot)",
+              "reading": "ot",
+              "vi": "Quần áo (phát âm ngậm [t])",
+              "en": "Clothes",
+              "meaning_vi": "Quần áo (phát âm ngậm [t])",
+              "meaning_en": "Clothes"
+            }
+          },
+          {
+            "char": "ㄹ [l]",
+            "romaji": "Batchim [l]",
+            "ipa": "l",
+            "groupVi": "Nhóm âm Bên [l]",
+            "groupEn": "Lateral Liquid [l]",
+            "group_vi": "Nhóm âm Bên [l]",
+            "group_en": "Lateral Liquid [l]",
+            "mouthTipVi": "Đầu lưỡi uốn cong áp sát ngạc trên, không rung r mà tạo âm l mềm mại.",
+            "mouthTipEn": "Tongue tip curls to touch hard palate, lateral airflow [l].",
+            "mouthTip_vi": "Đầu lưỡi uốn cong áp sát ngạc trên, không rung r mà tạo âm l mềm mại.",
+            "mouthTip_en": "Tongue tip curls to touch hard palate, lateral airflow [l].",
+            "meaningVi": "Batchim nhóm L (ㄹ)",
+            "meaningEn": "Batchim L class",
+            "meaning_vi": "Batchim nhóm L (ㄹ)",
+            "meaning_en": "Batchim L class",
+            "speechText": "달",
+            "examples": [
+              {
+                "word": "달 (dal)",
+                "reading": "dal",
+                "vi": "Mặt trăng / Tháng",
+                "en": "Moon / Month",
+                "meaning_vi": "Mặt trăng / Tháng",
+                "meaning_en": "Moon / Month"
+              },
+              {
+                "word": "물 (mul)",
+                "reading": "mul",
+                "vi": "Nước uống",
+                "en": "Water",
+                "meaning_vi": "Nước uống",
+                "meaning_en": "Water"
+              }
+            ],
+            "example": {
+              "word": "달 (dal)",
+              "reading": "dal",
+              "vi": "Mặt trăng / Tháng",
+              "en": "Moon / Month",
+              "meaning_vi": "Mặt trăng / Tháng",
+              "meaning_en": "Moon / Month"
+            }
+          },
+          {
+            "char": "ㅁ [m]",
+            "romaji": "Batchim [m]",
+            "ipa": "m",
+            "groupVi": "Nhóm âm Môi mũi [m]",
+            "groupEn": "Bilabial Nasal [m]",
+            "group_vi": "Nhóm âm Môi mũi [m]",
+            "group_en": "Bilabial Nasal [m]",
+            "mouthTipVi": "Mím chặt hai môi, hơi thoát qua mũi tạo âm ngậm m chuẩn xác.",
+            "mouthTipEn": "Lips closed firmly, air resonates through nasal passage.",
+            "mouthTip_vi": "Mím chặt hai môi, hơi thoát qua mũi tạo âm ngậm m chuẩn xác.",
+            "mouthTip_en": "Lips closed firmly, air resonates through nasal passage.",
+            "meaningVi": "Batchim nhóm M (ㅁ)",
+            "meaningEn": "Batchim M class",
+            "meaning_vi": "Batchim nhóm M (ㅁ)",
+            "meaning_en": "Batchim M class",
+            "speechText": "엄마",
+            "examples": [
+              {
+                "word": "엄마 (eomma)",
+                "reading": "eomma",
+                "vi": "Mẹ (mẫu tự thân mật)",
+                "en": "Mom",
+                "meaning_vi": "Mẹ (mẫu tự thân mật)",
+                "meaning_en": "Mom"
+              },
+              {
+                "word": "봄 (bom)",
+                "reading": "bom",
+                "vi": "Mùa xuân",
+                "en": "Spring",
+                "meaning_vi": "Mùa xuân",
+                "meaning_en": "Spring"
+              }
+            ],
+            "example": {
+              "word": "엄마 (eomma)",
+              "reading": "eomma",
+              "vi": "Mẹ (mẫu tự thân mật)",
+              "en": "Mom",
+              "meaning_vi": "Mẹ (mẫu tự thân mật)",
+              "meaning_en": "Mom"
+            }
+          },
+          {
+            "char": "ㅂ / ㅍ [p]",
+            "romaji": "Batchim [p]",
+            "ipa": "p̚",
+            "groupVi": "Nhóm âm Mím môi [p]",
+            "groupEn": "Bilabial Stop [p]",
+            "group_vi": "Nhóm âm Mím môi [p]",
+            "group_en": "Bilabial Stop [p]",
+            "mouthTipVi": "Hai môi mím chặt chặn ngắt luồng khí hoàn toàn, tuyệt đối không bật ra tiếng.",
+            "mouthTipEn": "Bilabial unreleased stop [p̚]. Close lips tightly without audible release.",
+            "mouthTip_vi": "Hai môi mím chặt chặn ngắt luồng khí hoàn toàn, tuyệt đối không bật ra tiếng.",
+            "mouthTip_en": "Bilabial unreleased stop [p̚]. Close lips tightly without audible release.",
+            "meaningVi": "Batchim nhóm P (ㅂ, ㅍ)",
+            "meaningEn": "Batchim P class",
+            "meaning_vi": "Batchim nhóm P (ㅂ, ㅍ)",
+            "meaning_en": "Batchim P class",
+            "speechText": "밥",
+            "examples": [
+              {
+                "word": "밥 (bap)",
+                "reading": "bap",
+                "vi": "Cơm / Bữa ăn",
+                "en": "Rice / Meal",
+                "meaning_vi": "Cơm / Bữa ăn",
+                "meaning_en": "Rice / Meal"
+              },
+              {
+                "word": "잎 (ip)",
+                "reading": "ip",
+                "vi": "Chiếc lá cây",
+                "en": "Leaf",
+                "meaning_vi": "Chiếc lá cây",
+                "meaning_en": "Leaf"
+              }
+            ],
+            "example": {
+              "word": "밥 (bap)",
+              "reading": "bap",
+              "vi": "Cơm / Bữa ăn",
+              "en": "Rice / Meal",
+              "meaning_vi": "Cơm / Bữa ăn",
+              "meaning_en": "Rice / Meal"
+            }
+          },
+          {
+            "char": "ㅇ [ŋ]",
+            "romaji": "Batchim [ŋ (ng)]",
+            "ipa": "ŋ",
+            "groupVi": "Nhóm âm Họng mũi [ŋ]",
+            "groupEn": "Velar Nasal [ŋ]",
+            "group_vi": "Nhóm âm Họng mũi [ŋ]",
+            "group_en": "Velar Nasal [ŋ]",
+            "mouthTipVi": "Gốc lưỡi nâng áp ngạc mềm, ngân vang âm ng qua hốc mũi như âm ng tiếng Việt.",
+            "mouthTipEn": "Back of tongue seals velum, resonant velar nasal [ŋ] like English \"sing\".",
+            "mouthTip_vi": "Gốc lưỡi nâng áp ngạc mềm, ngân vang âm ng qua hốc mũi như âm ng tiếng Việt.",
+            "mouthTip_en": "Back of tongue seals velum, resonant velar nasal [ŋ] like English \"sing\".",
+            "meaningVi": "Batchim nhóm NG (ㅇ)",
+            "meaningEn": "Batchim NG class",
+            "meaning_vi": "Batchim nhóm NG (ㅇ)",
+            "meaning_en": "Batchim NG class",
+            "speechText": "사랑",
+            "examples": [
+              {
+                "word": "사랑 (sarang)",
+                "reading": "sarang",
+                "vi": "Tình yêu",
+                "en": "Love",
+                "meaning_vi": "Tình yêu",
+                "meaning_en": "Love"
+              },
+              {
+                "word": "강 (gang)",
+                "reading": "gang",
+                "vi": "Dòng sông",
+                "en": "River",
+                "meaning_vi": "Dòng sông",
+                "meaning_en": "River"
+              }
+            ],
+            "example": {
+              "word": "사랑 (sarang)",
+              "reading": "sarang",
+              "vi": "Tình yêu",
+              "en": "Love",
+              "meaning_vi": "Tình yêu",
+              "meaning_en": "Love"
+            }
+          },
+          {
+            "char": "ㄳ [k]",
+            "romaji": "Double ㄳ -> [k]",
+            "ipa": "k̚",
+            "groupVi": "Batchim kép (Đọc chữ đầu)",
+            "groupEn": "Double Batchim",
+            "group_vi": "Batchim kép (Đọc chữ đầu)",
+            "group_en": "Double Batchim",
+            "mouthTipVi": "Gồm ㄱ và ㅅ ghép lại, phát âm theo phụ âm đầu là [k].",
+            "mouthTipEn": "Compound of ㄱ and ㅅ; pronounced as the first consonant [k̚].",
+            "mouthTip_vi": "Gồm ㄱ và ㅅ ghép lại, phát âm theo phụ âm đầu là [k].",
+            "mouthTip_en": "Compound of ㄱ and ㅅ; pronounced as the first consonant [k̚].",
+            "meaningVi": "Batchim kép ㄳ",
+            "meaningEn": "Double Batchim ㄳ",
+            "meaning_vi": "Batchim kép ㄳ",
+            "meaning_en": "Double Batchim ㄳ",
+            "speechText": "몫",
+            "examples": [
+              {
+                "word": "몫 (mok)",
+                "reading": "mok",
+                "vi": "Phần chia / Cổ phần",
+                "en": "Share / Portion",
+                "meaning_vi": "Phần chia / Cổ phần",
+                "meaning_en": "Share / Portion"
+              }
+            ],
+            "example": {
+              "word": "몫 (mok)",
+              "reading": "mok",
+              "vi": "Phần chia / Cổ phần",
+              "en": "Share / Portion",
+              "meaning_vi": "Phần chia / Cổ phần",
+              "meaning_en": "Share / Portion"
+            }
+          },
+          {
+            "char": "ㄵ [n]",
+            "romaji": "Double ㄵ -> [n]",
+            "ipa": "n",
+            "groupVi": "Batchim kép (Đọc chữ đầu)",
+            "groupEn": "Double Batchim",
+            "group_vi": "Batchim kép (Đọc chữ đầu)",
+            "group_en": "Double Batchim",
+            "mouthTipVi": "Gồm ㄴ và ㅈ ghép lại, phát âm theo chữ đầu là [n].",
+            "mouthTipEn": "Compound of ㄴ and ㅈ; pronounced as [n].",
+            "mouthTip_vi": "Gồm ㄴ và ㅈ ghép lại, phát âm theo chữ đầu là [n].",
+            "mouthTip_en": "Compound of ㄴ and ㅈ; pronounced as [n].",
+            "meaningVi": "Batchim kép ㄵ",
+            "meaningEn": "Double Batchim ㄵ",
+            "meaning_vi": "Batchim kép ㄵ",
+            "meaning_en": "Double Batchim ㄵ",
+            "speechText": "앉다",
+            "examples": [
+              {
+                "word": "앉다 (anta)",
+                "reading": "anta",
+                "vi": "Ngồi xuống",
+                "en": "To sit",
+                "meaning_vi": "Ngồi xuống",
+                "meaning_en": "To sit"
+              }
+            ],
+            "example": {
+              "word": "앉다 (anta)",
+              "reading": "anta",
+              "vi": "Ngồi xuống",
+              "en": "To sit",
+              "meaning_vi": "Ngồi xuống",
+              "meaning_en": "To sit"
+            }
+          },
+          {
+            "char": "ㄶ [n]",
+            "romaji": "Double ㄶ -> [n]",
+            "ipa": "n",
+            "groupVi": "Batchim kép (Đọc chữ đầu)",
+            "groupEn": "Double Batchim",
+            "group_vi": "Batchim kép (Đọc chữ đầu)",
+            "group_en": "Double Batchim",
+            "mouthTipVi": "Gồm ㄴ và ㅎ, phát âm là [n]. Khi gặp nguyên âm sau ㅎ sẽ bị câm hoặc kết hợp bật hơi.",
+            "mouthTipEn": "Compound of ㄴ and ㅎ; pronounced as [n].",
+            "mouthTip_vi": "Gồm ㄴ và ㅎ, phát âm là [n]. Khi gặp nguyên âm sau ㅎ sẽ bị câm hoặc kết hợp bật hơi.",
+            "mouthTip_en": "Compound of ㄴ and ㅎ; pronounced as [n].",
+            "meaningVi": "Batchim kép ㄶ",
+            "meaningEn": "Double Batchim ㄶ",
+            "meaning_vi": "Batchim kép ㄶ",
+            "meaning_en": "Double Batchim ㄶ",
+            "speechText": "많다",
+            "examples": [
+              {
+                "word": "많다 (manta)",
+                "reading": "manta",
+                "vi": "Nhiều / Đa dạng",
+                "en": "Many / A lot",
+                "meaning_vi": "Nhiều / Đa dạng",
+                "meaning_en": "Many / A lot"
+              }
+            ],
+            "example": {
+              "word": "많다 (manta)",
+              "reading": "manta",
+              "vi": "Nhiều / Đa dạng",
+              "en": "Many / A lot",
+              "meaning_vi": "Nhiều / Đa dạng",
+              "meaning_en": "Many / A lot"
+            }
+          },
+          {
+            "char": "ㄺ [k]",
+            "romaji": "Double ㄺ -> [k]",
+            "ipa": "k̚",
+            "groupVi": "Batchim kép (Đọc chữ sau)",
+            "groupEn": "Double Batchim",
+            "group_vi": "Batchim kép (Đọc chữ sau)",
+            "group_en": "Double Batchim",
+            "mouthTipVi": "Gồm ㄹ và ㄱ ghép lại, thông thường phát âm theo chữ sau là [k].",
+            "mouthTipEn": "Compound of ㄹ and ㄱ; predominantly pronounced as the second consonant [k̚].",
+            "mouthTip_vi": "Gồm ㄹ và ㄱ ghép lại, thông thường phát âm theo chữ sau là [k].",
+            "mouthTip_en": "Compound of ㄹ and ㄱ; predominantly pronounced as the second consonant [k̚].",
+            "meaningVi": "Batchim kép ㄺ",
+            "meaningEn": "Double Batchim ㄺ",
+            "meaning_vi": "Batchim kép ㄺ",
+            "meaning_en": "Double Batchim ㄺ",
+            "speechText": "닭",
+            "examples": [
+              {
+                "word": "닭 (dak)",
+                "reading": "dak",
+                "vi": "Con gà",
+                "en": "Chicken",
+                "meaning_vi": "Con gà",
+                "meaning_en": "Chicken"
+              }
+            ],
+            "example": {
+              "word": "닭 (dak)",
+              "reading": "dak",
+              "vi": "Con gà",
+              "en": "Chicken",
+              "meaning_vi": "Con gà",
+              "meaning_en": "Chicken"
+            }
+          },
+          {
+            "char": "ㄻ [m]",
+            "romaji": "Double ㄻ -> [m]",
+            "ipa": "m",
+            "groupVi": "Batchim kép (Đọc chữ sau)",
+            "groupEn": "Double Batchim",
+            "group_vi": "Batchim kép (Đọc chữ sau)",
+            "group_en": "Double Batchim",
+            "mouthTipVi": "Gồm ㄹ và ㅁ, luôn phát âm theo phụ âm sau là [m].",
+            "mouthTipEn": "Compound of ㄹ and ㅁ; pronounced as the second consonant [m].",
+            "mouthTip_vi": "Gồm ㄹ và ㅁ, luôn phát âm theo phụ âm sau là [m].",
+            "mouthTip_en": "Compound of ㄹ and ㅁ; pronounced as the second consonant [m].",
+            "meaningVi": "Batchim kép ㄻ",
+            "meaningEn": "Double Batchim ㄻ",
+            "meaning_vi": "Batchim kép ㄻ",
+            "meaning_en": "Double Batchim ㄻ",
+            "speechText": "삶",
+            "examples": [
+              {
+                "word": "삶 (sam)",
+                "reading": "sam",
+                "vi": "Cuộc đời / Lối sống",
+                "en": "Life",
+                "meaning_vi": "Cuộc đời / Lối sống",
+                "meaning_en": "Life"
+              }
+            ],
+            "example": {
+              "word": "삶 (sam)",
+              "reading": "sam",
+              "vi": "Cuộc đời / Lối sống",
+              "en": "Life",
+              "meaning_vi": "Cuộc đời / Lối sống",
+              "meaning_en": "Life"
+            }
+          },
+          {
+            "char": "ㄼ [l/p]",
+            "romaji": "Double ㄼ -> [l]",
+            "ipa": "l",
+            "groupVi": "Batchim kép (Đọc chữ đầu)",
+            "groupEn": "Double Batchim",
+            "group_vi": "Batchim kép (Đọc chữ đầu)",
+            "group_en": "Double Batchim",
+            "mouthTipVi": "Hầu hết trường hợp phát âm là [l] (như 여덟 -> yeodeol), ngoại lệ 밟다 đọc là [p].",
+            "mouthTipEn": "Mostly pronounced as [l] (e.g. 여덟), with specific exceptions like 밟다 as [p].",
+            "mouthTip_vi": "Hầu hết trường hợp phát âm là [l] (như 여덟 -> yeodeol), ngoại lệ 밟다 đọc là [p].",
+            "mouthTip_en": "Mostly pronounced as [l] (e.g. 여덟), with specific exceptions like 밟다 as [p].",
+            "meaningVi": "Batchim kép ㄼ",
+            "meaningEn": "Double Batchim ㄼ",
+            "meaning_vi": "Batchim kép ㄼ",
+            "meaning_en": "Double Batchim ㄼ",
+            "speechText": "여덟",
+            "examples": [
+              {
+                "word": "여덟 (yeodeol)",
+                "reading": "yeodeol",
+                "vi": "Số tám (8)",
+                "en": "Eight",
+                "meaning_vi": "Số tám (8)",
+                "meaning_en": "Eight"
+              }
+            ],
+            "example": {
+              "word": "여덟 (yeodeol)",
+              "reading": "yeodeol",
+              "vi": "Số tám (8)",
+              "en": "Eight",
+              "meaning_vi": "Số tám (8)",
+              "meaning_en": "Eight"
+            }
+          },
+          {
+            "char": "ㅄ [p]",
+            "romaji": "Double ㅄ -> [p]",
+            "ipa": "p̚",
+            "groupVi": "Batchim kép (Đọc chữ đầu)",
+            "groupEn": "Double Batchim",
+            "group_vi": "Batchim kép (Đọc chữ đầu)",
+            "group_en": "Double Batchim",
+            "mouthTipVi": "Gồm ㅂ và ㅅ, phát âm theo chữ đầu là [p].",
+            "mouthTipEn": "Compound of ㅂ and ㅅ; pronounced as [p̚].",
+            "mouthTip_vi": "Gồm ㅂ và ㅅ, phát âm theo chữ đầu là [p].",
+            "mouthTip_en": "Compound of ㅂ and ㅅ; pronounced as [p̚].",
+            "meaningVi": "Batchim kép ㅄ",
+            "meaningEn": "Double Batchim ㅄ",
+            "meaning_vi": "Batchim kép ㅄ",
+            "meaning_en": "Double Batchim ㅄ",
+            "speechText": "값",
+            "examples": [
+              {
+                "word": "값 (gap)",
+                "reading": "gap",
+                "vi": "Giá cả / Trị giá",
+                "en": "Price / Value",
+                "meaning_vi": "Giá cả / Trị giá",
+                "meaning_en": "Price / Value"
+              }
+            ],
+            "example": {
+              "word": "값 (gap)",
+              "reading": "gap",
+              "vi": "Giá cả / Trị giá",
+              "en": "Price / Value",
+              "meaning_vi": "Giá cả / Trị giá",
+              "meaning_en": "Price / Value"
+            }
           }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Hai môi khép",
-          "group_en": "Bilabial",
-          "char": "ㅁ",
-          "romaji": "m",
-          "ipa": "[m]",
-          "mouthTip_vi": "Khép chặt hai môi lại, rung dây thanh cho luồng hơi thoát qua mũi.",
-          "mouthTip_en": "Close both lips tightly, vocal cords vibrate through nasal cavity.",
-          "example": {
-            "word": "물 (mul)",
-            "reading": "mul",
-            "meaning_vi": "Nước uống",
-            "meaning_en": "Water"
-          }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Tắc hai môi",
-          "group_en": "Bilabial",
-          "char": "ㅂ",
-          "romaji": "b / p",
-          "ipa": "[p/b]",
-          "mouthTip_vi": "Hai môi khép rồi mở không bật hơi. Giữa hai nguyên âm đọc như 'b'.",
-          "mouthTip_en": "Lips press and release without burst of air. Voiced 'b' between vowels.",
-          "example": {
-            "word": "밥 (bap)",
-            "reading": "bap",
-            "meaning_vi": "Cơm / Bữa ăn",
-            "meaning_en": "Cooked rice / Meal"
-          }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Âm xát răng",
-          "group_en": "Sibilant",
-          "char": "ㅅ",
-          "romaji": "s",
-          "ipa": "[s/ɕ]",
-          "mouthTip_vi": "Đầu lưỡi gần lợi trên. Chuyển thành âm 'sh' [ɕ] khi đi cùng nguyên âm 'ㅣ' (i) hoặc các nguyên âm chứa nét y.",
-          "mouthTip_en": "Tongue near teeth ridge. Becomes 'sh' [ɕ] before 'ㅣ' (i) or 'ㅑ/ㅕ/ㅛ/ㅠ'.",
-          "example": {
-            "word": "사랑 (sarang)",
-            "reading": "sarang",
-            "meaning_vi": "Tình yêu",
-            "meaning_en": "Love"
-          }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Âm câm / Âm mũi",
-          "group_en": "Null / Nasal",
-          "char": "ㅇ",
-          "romaji": "silent / ng",
-          "ipa": "[∅/ŋ]",
-          "mouthTip_vi": "Đứng đầu âm tiết là phụ âm câm (như trong 아); đứng ở vị trí patchim (cuối âm tiết) đọc là âm 'ng'.",
-          "mouthTip_en": "Silent placeholder when at top of block (e.g. 아); sounds like 'ng' as batchim.",
-          "example": {
-            "word": "강 (gang)",
-            "reading": "gang",
-            "meaning_vi": "Dòng sông",
-            "meaning_en": "River"
-          }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Âm tắc xát vòm",
-          "group_en": "Affricate",
-          "char": "ㅈ",
-          "romaji": "j / ch",
-          "ipa": "[t͡ɕ/d͡ʑ]",
-          "mouthTip_vi": "Mặt lưỡi chạm ngạc cứng rồi bật nhẹ. Đầu từ đọc 'ch' nhẹ, giữa từ đọc 'j'.",
-          "mouthTip_en": "Tongue blade touches palate then releases. Softer 'ch' initially, 'j' between vowels.",
-          "example": {
-            "word": "지도 (jido)",
-            "reading": "jido",
-            "meaning_vi": "Bản đồ",
-            "meaning_en": "Map"
-          }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Bật hơi vòm",
-          "group_en": "Aspirated Affricate",
-          "char": "ㅊ",
-          "romaji": "ch (aspirated)",
-          "ipa": "[t͡ɕʰ]",
-          "mouthTip_vi": "Giống âm ㅈ nhưng phải bật một luồng hơi cực mạnh ra phía trước miệng.",
-          "mouthTip_en": "Same position as ㅈ, but release with an explosive burst of breath.",
-          "example": {
-            "word": "친구 (chingu)",
-            "reading": "chingu",
-            "meaning_vi": "Bạn bè",
-            "meaning_en": "Friend"
-          }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Bật hơi ngạc mềm",
-          "group_en": "Aspirated Velar",
-          "char": "ㅋ",
-          "romaji": "k (aspirated)",
-          "ipa": "[kʰ]",
-          "mouthTip_vi": "Bật hơi cực mạnh từ cuống họng. Đặt mu bàn tay trước miệng bạn phải thấy rõ luồng gió nóng!",
-          "mouthTip_en": "Sharp burst of air! Put hand in front of mouth; you MUST feel a strong breath puff.",
-          "example": {
-            "word": "커피 (keopi)",
-            "reading": "keopi",
-            "meaning_vi": "Cà phê",
-            "meaning_en": "Coffee"
-          }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Bật hơi răng",
-          "group_en": "Aspirated Dental",
-          "char": "ㅌ",
-          "romaji": "t (aspirated)",
-          "ipa": "[tʰ]",
-          "mouthTip_vi": "Đầu lưỡi chạm lợi trên rồi bật mạnh luồng khí ra ngoài.",
-          "mouthTip_en": "Explosive dental breath release.",
-          "example": {
-            "word": "토끼 (tokki)",
-            "reading": "tokki",
-            "meaning_vi": "Con thỏ",
-            "meaning_en": "Rabbit"
-          }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Bật hơi hai môi",
-          "group_en": "Aspirated Bilabial",
-          "char": "ㅍ",
-          "romaji": "p (aspirated)",
-          "ipa": "[pʰ]",
-          "mouthTip_vi": "Hai môi mím chặt rồi bật bung một luồng hơi mạnh mẽ.",
-          "mouthTip_en": "Strong aspirated bilabial pop of air.",
-          "example": {
-            "word": "포도 (podo)",
-            "reading": "podo",
-            "meaning_vi": "Quả nho",
-            "meaning_en": "Grape"
-          }
-        },
-        {
-          "category": "basic_cons",
-          "group_vi": "Âm thanh hầu",
-          "group_en": "Glottal",
-          "char": "ㅎ",
-          "romaji": "h",
-          "ipa": "[h]",
-          "mouthTip_vi": "Hơi thở nhẹ từ thanh môn. Trong giao tiếp nhanh giữa hai nguyên âm thường bị nuốt âm.",
-          "mouthTip_en": "Soft glottal sound. Frequently weakened or silent between vowels.",
-          "example": {
-            "word": "하늘 (haneul)",
-            "reading": "haneul",
-            "meaning_vi": "Bầu trời",
-            "meaning_en": "Sky"
-          }
-        },
-        {
-          "category": "double_cons",
-          "group_vi": "Âm căng ngạc mềm",
-          "group_en": "Tense Stop",
-          "char": "ㄲ",
-          "romaji": "kk",
-          "ipa": "[k͈]",
-          "mouthTip_vi": "Thắt chặt thanh quản, phát âm 'c/k' đanh thép, tuyệt đối KHÔNG có hơi gió thoát ra.",
-          "mouthTip_en": "Tense the throat tight before releasing. Zero air escapes! High sharp pitch.",
-          "example": {
-            "word": "꿈 (kkum)",
-            "reading": "kkum",
-            "meaning_vi": "Giấc mơ",
-            "meaning_en": "Dream"
-          }
-        },
-        {
-          "category": "double_cons",
-          "group_vi": "Âm căng chân răng",
-          "group_en": "Tense Stop",
-          "char": "ㄸ",
-          "romaji": "tt",
-          "ipa": "[t͈]",
-          "mouthTip_vi": "Gồng cứng đầu lưỡi ở chân răng rồi bật đanh dứt khoát không hơi.",
-          "mouthTip_en": "Tighten tongue at gum ridge, pop sound without breath.",
-          "example": {
-            "word": "딸기 (ttalgi)",
-            "reading": "ttalgi",
-            "meaning_vi": "Quả dâu tây",
-            "meaning_en": "Strawberry"
-          }
-        },
-        {
-          "category": "double_cons",
-          "group_vi": "Âm căng hai môi",
-          "group_en": "Tense Stop",
-          "char": "ㅃ",
-          "romaji": "pp",
-          "ipa": "[p͈]",
-          "mouthTip_vi": "Mím chặt môi gồng căng rồi bật ra âm 'p' sắc gọn không gió.",
-          "mouthTip_en": "Tight pressed lips, pop tightly without air burst.",
-          "example": {
-            "word": "빵 (ppang)",
-            "reading": "ppang",
-            "meaning_vi": "Bánh mì",
-            "meaning_en": "Bread"
-          }
-        },
-        {
-          "category": "double_cons",
-          "group_vi": "Âm căng xát răng",
-          "group_en": "Tense Sibilant",
-          "char": "ㅆ",
-          "romaji": "ss",
-          "ipa": "[s͈]",
-          "mouthTip_vi": "Siết chặt cơ họng và kẽ răng, xát ra âm 's' sắc lạnh và đanh.",
-          "mouthTip_en": "Hissing tense 's', throat tightened.",
-          "example": {
-            "word": "쌀 (ssal)",
-            "reading": "ssal",
-            "meaning_vi": "Gạo (chưa nấu)",
-            "meaning_en": "Raw rice"
-          }
-        },
-        {
-          "category": "double_cons",
-          "group_vi": "Âm căng vòm",
-          "group_en": "Tense Affricate",
-          "char": "ㅉ",
-          "romaji": "jj",
-          "ipa": "[t͡ɕ͈]",
-          "mouthTip_vi": "Ép chặt mặt lưỡi vào vòm ngạc rồi bật nổ đanh gọn.",
-          "mouthTip_en": "Tense palate pop with no aspiration.",
-          "example": {
-            "word": "진짜 (jinjja)",
-            "reading": "jinjja",
-            "meaning_vi": "Thật sự / Thật á?",
-            "meaning_en": "Really / Truly"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm đơn",
-          "group_en": "Basic Vowel",
-          "char": "ㅏ",
-          "romaji": "a",
-          "ipa": "[a]",
-          "mouthTip_vi": "Hạ quai hàm mở rộng miệng theo chiều dọc, phát âm 'a' trong sáng.",
-          "mouthTip_en": "Open jaw vertically, relaxed tongue.",
-          "example": {
-            "word": "아이 (ai)",
-            "reading": "ai",
-            "meaning_vi": "Trẻ em",
-            "meaning_en": "Child"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm y-hóa",
-          "group_en": "Y-Vowel",
-          "char": "ㅑ",
-          "romaji": "ya",
-          "ipa": "[ja]",
-          "mouthTip_vi": "Lướt nhanh từ 'y' sang 'a'.",
-          "mouthTip_en": "Quick glide from 'y' into 'a'.",
-          "example": {
-            "word": "야구 (yagu)",
-            "reading": "yagu",
-            "meaning_vi": "Bóng chày",
-            "meaning_en": "Baseball"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm đơn",
-          "group_en": "Basic Vowel",
-          "char": "ㅓ",
-          "romaji": "eo",
-          "ipa": "[ʌ]",
-          "mouthTip_vi": "Mở miệng vừa phải ở khoảng giữa 'a' và 'ơ'. Tuyệt đối không chu tròn môi!",
-          "mouthTip_en": "Open mouth halfway between 'ah' and 'uh'. Don't round lips!",
-          "example": {
-            "word": "어머니 (eomeoni)",
-            "reading": "eomeoni",
-            "meaning_vi": "Người mẹ",
-            "meaning_en": "Mother"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm y-hóa",
-          "group_en": "Y-Vowel",
-          "char": "ㅕ",
-          "romaji": "yeo",
-          "ipa": "[jʌ]",
-          "mouthTip_vi": "Lướt nhanh từ 'y' sang âm 'ơ' dẹt miệng.",
-          "mouthTip_en": "Y-glide into unrounded 'eo'.",
-          "example": {
-            "word": "여자 (yeoja)",
-            "reading": "yeoja",
-            "meaning_vi": "Phụ nữ",
-            "meaning_en": "Woman"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm đơn",
-          "group_en": "Basic Vowel",
-          "char": "ㅗ",
-          "romaji": "o",
-          "ipa": "[o]",
-          "mouthTip_vi": "Chu tròn môi nhỏ lại như chuẩn bị huýt sáo, phát âm 'ô' tròn trịa.",
-          "mouthTip_en": "Round lips tightly like whistling. Rounder than English 'oh'.",
-          "example": {
-            "word": "오늘 (oneul)",
-            "reading": "oneul",
-            "meaning_vi": "Hôm nay",
-            "meaning_en": "Today"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm y-hóa",
-          "group_en": "Y-Vowel",
-          "char": "ㅛ",
-          "romaji": "yo",
-          "ipa": "[jo]",
-          "mouthTip_vi": "Lướt nhanh từ 'y' sang âm tròn môi 'ô'.",
-          "mouthTip_en": "Glide from 'y' into tight 'o'.",
-          "example": {
-            "word": "요리 (yori)",
-            "reading": "yori",
-            "meaning_vi": "Nấu ăn / Món ăn",
-            "meaning_en": "Cooking"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm đơn",
-          "group_en": "Basic Vowel",
-          "char": "ㅜ",
-          "romaji": "u",
-          "ipa": "[u]",
-          "mouthTip_vi": "Chu môi hướng về phía trước, phát âm 'u' sâu trong vòm họng.",
-          "mouthTip_en": "Pucker lips forward into tight 'oo'.",
-          "example": {
-            "word": "우유 (uyu)",
-            "reading": "uyu",
-            "meaning_vi": "Sữa",
-            "meaning_en": "Milk"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm y-hóa",
-          "group_en": "Y-Vowel",
-          "char": "ㅠ",
-          "romaji": "yu",
-          "ipa": "[ju]",
-          "mouthTip_vi": "Lướt nhanh từ 'y' sang âm chu môi 'u'.",
-          "mouthTip_en": "Glide from 'y' into tight 'u'.",
-          "example": {
-            "word": "유리 (yuri)",
-            "reading": "yuri",
-            "meaning_vi": "Thủy tinh / Kính",
-            "meaning_en": "Glass"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm đơn",
-          "group_en": "Basic Vowel",
-          "char": "ㅡ",
-          "romaji": "eu",
-          "ipa": "[ɯ]",
-          "mouthTip_vi": "Cười kéo dẹt hai khóe miệng sang hai bên, lưỡi co về sau phát âm 'ư'. Tuyệt đối môi phẳng không chu!",
-          "mouthTip_en": "Smile widely and pull tongue back. Say 'oo' with completely flat lips!",
-          "example": {
-            "word": "음악 (eumak)",
-            "reading": "eumak",
-            "meaning_vi": "Âm nhạc",
-            "meaning_en": "Music"
-          }
-        },
-        {
-          "category": "basic_vowels",
-          "group_vi": "Nguyên âm đơn",
-          "group_en": "Basic Vowel",
-          "char": "ㅣ",
-          "romaji": "i",
-          "ipa": "[i]",
-          "mouthTip_vi": "Khóe miệng kéo dẹt sang hai bên, lưng lưỡi nâng cao phát âm 'i' trong trẻo.",
-          "mouthTip_en": "High tongue, smiling lips, crisp 'ee'.",
-          "example": {
-            "word": "이름 (ireum)",
-            "reading": "ireum",
-            "meaning_vi": "Tên gọi",
-            "meaning_en": "Name"
-          }
-        }
-      ]
-    },
+        ]
+      }
+    ],
     "expressions": [
       {
         "id": "ko_greet_1",
@@ -4419,1221 +12463,2708 @@ const LINGUA_DATA = {
     "scriptName": "Pinyin & Hanzi (汉字)",
     "proTip_vi": "Nắm vững quy tắc biến điệu: Hai thanh 3 đi liền nhau thì thanh đầu tiên tự động chuyển thành thanh 2 (như 你好 nǐ hǎo đọc thành ní hǎo). Giữ cao độ ổn định ở Thanh 1 và dứt khoát hạ nhanh ở Thanh 4!",
     "proTip_en": "Master Tone Sandhi: When two 3rd tones appear consecutively, the first one shifts to a 2nd tone (e.g. nǐ hǎo -> ní hǎo). Keep Tone 1 high and level!",
-    "alphabet": {
-      "categories": [
-        {
-          "id": "tones",
-          "name_vi": "Thanh điệu (4 Thanh + Thanh nhẹ)",
-          "name_en": "The 5 Tones (四声与轻声)",
-          "description_vi": "Đường nét cao độ quyết định hoàn toàn ý nghĩa của từ trong tiếng Trung.",
-          "description_en": "Pitch contours that completely determine the word's meaning."
-        },
-        {
-          "id": "initials",
-          "name_vi": "Thanh mẫu - 23 Phụ âm đầu",
-          "name_en": "Initials (Thanh mẫu - 23 Consonants)",
-          "description_vi": "Bao gồm các âm uốn lưỡi (zh, ch, sh, r) và âm mặt lưỡi (j, q, x).",
-          "description_en": "Retroflex, palatal, and dental sibilant initials."
-        },
-        {
-          "id": "finals",
-          "name_vi": "Vận mẫu - 24 Nguyên âm & Vần",
-          "name_en": "Finals (Vận mẫu - 24 Finals)",
-          "description_vi": "Nguyên âm đơn, nguyên âm đôi, âm mũi và nguyên âm tròn môi 'ü'.",
-          "description_en": "Compound vowels, nasal finals, and umlaut 'ü'."
-        },
-        {
-          "id": "basic_radicals",
-          "name_vi": "Chữ Hán & Bộ thủ cơ bản (22 chữ cốt lõi)",
-          "name_en": "Basic Characters & Radicals (22 Essential)",
-          "description_vi": "Các chữ Hán và bộ thủ tượng hình cơ bản nhất, nền tảng cấu tạo nên hàng vạn chữ Hán.",
-          "description_en": "Foundational pictographic characters and radicals forming the core building blocks of Hanzi."
-        }
-      ],
-      "items": [
-        {
-          "category": "tones",
-          "group_vi": "Thanh 1 (Âm Bình)",
-          "group_en": "Tone 1 (55)",
-          "char": "Tone 1 ( ¯ )",
-          "romaji": "mā",
-          "ipa": "[˥˥]",
-          "mouthTip_vi": "Cao độ 5-5: Giữ giọng cao, phẳng và đều đặn như đang ngân nốt nhạc cao. Tuyệt đối không để giọng chùng xuống.",
-          "mouthTip_en": "High, flat, steady pitch (55). Imagine singing a sustained high note: 'mā'. Do not let it drop.",
-          "example": {
-            "word": "妈 (mā)",
-            "reading": "mā",
-            "meaning_vi": "Người mẹ",
-            "meaning_en": "Mother"
-          }
-        },
-        {
-          "category": "tones",
-          "group_vi": "Thanh 2 (Dương Bình)",
-          "group_en": "Tone 2 (35)",
-          "char": "Tone 2 ( ˊ )",
-          "romaji": "má",
-          "ipa": "[˧˥]",
-          "mouthTip_vi": "Cao độ 3-5: Đi lên từ trung bình lên cao, giống như khi ngạc nhiên thốt lên 'Hả?!' trong tiếng Việt.",
-          "mouthTip_en": "Rising pitch (35). Starts from mid pitch and slides upward like asking 'What?!' -> 'má'.",
-          "example": {
-            "word": "麻 (má)",
-            "reading": "má",
-            "meaning_vi": "Cây gai / Tê buốt",
-            "meaning_en": "Hemp / Numb"
-          }
-        },
-        {
-          "category": "tones",
-          "group_vi": "Thanh 3 (Thượng Thanh)",
-          "group_en": "Tone 3 (214)",
-          "char": "Tone 3 ( ˇ )",
-          "romaji": "mǎ",
-          "ipa": "[˨˩˦]",
-          "mouthTip_vi": "Cao độ 2-1-4: Hạ giọng xuống tận đáy cổ họng rồi mới vòng nhẹ lên. Trong câu nói nhanh thường chỉ cần hạ thấp (nửa thanh 3).",
-          "mouthTip_en": "Dipping pitch (214). Dips low into vocal fry, then rises. In fast speech stays low.",
-          "example": {
-            "word": "马 (mǎ)",
-            "reading": "mǎ",
-            "meaning_vi": "Con ngựa",
-            "meaning_en": "Horse"
-          }
-        },
-        {
-          "category": "tones",
-          "group_vi": "Thanh 4 (Khứ Thanh)",
-          "group_en": "Tone 4 (51)",
-          "char": "Tone 4 ( ˋ )",
-          "romaji": "mà",
-          "ipa": "[˥˩]",
-          "mouthTip_vi": "Cao độ 5-1: Rơi nhanh, dứt khoát từ đỉnh cao nhất xuống đáy như ra một mệnh lệnh dứt khoát!",
-          "mouthTip_en": "Sharp, decisive drop from top of vocal range to bottom! Like a stern command: 'Stop!' -> 'mà'.",
-          "example": {
-            "word": "骂 (mà)",
-            "reading": "mà",
-            "meaning_vi": "Mắng mỏ",
-            "meaning_en": "To scold"
-          }
-        },
-        {
-          "category": "tones",
-          "group_vi": "Thanh nhẹ (Khinh Thanh)",
-          "group_en": "Neutral Tone",
-          "char": "Neutral ( · )",
-          "romaji": "ma",
-          "ipa": "[·]",
-          "mouthTip_vi": "Phát âm cực ngắn, nhẹ và không nhấn, phụ thuộc vào cao độ của từ đứng liền trước.",
-          "mouthTip_en": "Short, soft, unstressed. Takes pitch from preceding tone.",
-          "example": {
-            "word": "吗 (ma)",
-            "reading": "ma",
-            "meaning_vi": "Trợ từ nghi vấn 'hả/sao/không?'",
-            "meaning_en": "Question particle"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm hai môi",
-          "group_en": "Labial",
-          "char": "b",
-          "romaji": "pinyin b",
-          "ipa": "[p]",
-          "mouthTip_vi": "Hai môi khép chặn hơi rồi mở ra, KHÔNG bật hơi (nghe như p nhẹ).",
-          "mouthTip_en": "Unaspirated voiceless bilabial stop.",
-          "example": {
-            "word": "爸 (bà)",
-            "reading": "bà",
-            "meaning_vi": "Bố / Cha",
-            "meaning_en": "Dad"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm hai môi bật hơi",
-          "group_en": "Aspirated Labial",
-          "char": "p",
-          "romaji": "pinyin p",
-          "ipa": "[pʰ]",
-          "mouthTip_vi": "Mím hai môi rồi bật một luồng hơi cực mạnh ra ngoài.",
-          "mouthTip_en": "Strong aspirated bilabial release.",
-          "example": {
-            "word": "朋友 (péngyou)",
-            "reading": "péngyou",
-            "meaning_vi": "Bạn bè",
-            "meaning_en": "Friend"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm mũi hai môi",
-          "group_en": "Nasal Labial",
-          "char": "m",
-          "romaji": "pinyin m",
-          "ipa": "[m]",
-          "mouthTip_vi": "Khép hai môi, hơi thoát qua mũi rung thanh đới.",
-          "mouthTip_en": "Bilabial nasal consonant.",
-          "example": {
-            "word": "门 (mén)",
-            "reading": "mén",
-            "meaning_vi": "Cánh cửa",
-            "meaning_en": "Door"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm răng môi",
-          "group_en": "Labiodental",
-          "char": "f",
-          "romaji": "pinyin f",
-          "ipa": "[f]",
-          "mouthTip_vi": "Răng cửa trên chạm nhẹ môi dưới, luồng hơi xát qua kẽ răng.",
-          "mouthTip_en": "Upper teeth touch lower lip with friction.",
-          "example": {
-            "word": "饭 (fàn)",
-            "reading": "fàn",
-            "meaning_vi": "Cơm / Bữa ăn",
-            "meaning_en": "Rice / Meal"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm đầu lưỡi giữa",
-          "group_en": "Alveolar",
-          "char": "d",
-          "romaji": "pinyin d",
-          "ipa": "[t]",
-          "mouthTip_vi": "Đầu lưỡi chạm lợi trên bật ra KHÔNG bật hơi (nghe như t).",
-          "mouthTip_en": "Unaspirated alveolar stop.",
-          "example": {
-            "word": "大 (dà)",
-            "reading": "dà",
-            "meaning_vi": "To lớn",
-            "meaning_en": "Big"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm đầu lưỡi bật hơi",
-          "group_en": "Aspirated Alveolar",
-          "char": "t",
-          "romaji": "pinyin t",
-          "ipa": "[tʰ]",
-          "mouthTip_vi": "Đầu lưỡi chạm lợi trên rồi bật mạnh luồng khí ra ngoài (nghe như th).",
-          "mouthTip_en": "Aspirated alveolar stop.",
-          "example": {
-            "word": "天 (tiān)",
-            "reading": "tiān",
-            "meaning_vi": "Bầu trời / Ngày",
-            "meaning_en": "Sky / Day"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm mũi chân răng",
-          "group_en": "Nasal Alveolar",
-          "char": "n",
-          "romaji": "pinyin n",
-          "ipa": "[n]",
-          "mouthTip_vi": "Đầu lưỡi chạm lợi trên, âm vang qua mũi.",
-          "mouthTip_en": "Alveolar nasal consonant.",
-          "example": {
-            "word": "你 (nǐ)",
-            "reading": "nǐ",
-            "meaning_vi": "Bạn / Anh / Chị",
-            "meaning_en": "You"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm bên cạnh lưỡi",
-          "group_en": "Lateral",
-          "char": "l",
-          "romaji": "pinyin l",
-          "ipa": "[l]",
-          "mouthTip_vi": "Đầu lưỡi chạm lợi trên, hơi thoát qua hai bên mép lưỡi.",
-          "mouthTip_en": "Alveolar lateral approximant.",
-          "example": {
-            "word": "来 (lái)",
-            "reading": "lái",
-            "meaning_vi": "Đến / Lại",
-            "meaning_en": "To come"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm cuống lưỡi",
-          "group_en": "Velar",
-          "char": "g",
-          "romaji": "pinyin g",
-          "ipa": "[k]",
-          "mouthTip_vi": "Gốc lưỡi chạm ngạc mềm bật ra KHÔNG bật hơi (nghe như c/k).",
-          "mouthTip_en": "Unaspirated velar stop.",
-          "example": {
-            "word": "高 (gāo)",
-            "reading": "gāo",
-            "meaning_vi": "Cao lớn",
-            "meaning_en": "Tall / High"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm cuống lưỡi bật hơi",
-          "group_en": "Aspirated Velar",
-          "char": "k",
-          "romaji": "pinyin k",
-          "ipa": "[kʰ]",
-          "mouthTip_vi": "Gốc lưỡi chạm ngạc mềm rồi bật mạnh luồng khí ra (nghe như kh/k bật).",
-          "mouthTip_en": "Aspirated velar stop with strong burst.",
-          "example": {
-            "word": "看 (kàn)",
-            "reading": "kàn",
-            "meaning_vi": "Xem / Nhìn",
-            "meaning_en": "To look / read"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm xát cuống lưỡi",
-          "group_en": "Velar Fricative",
-          "char": "h",
-          "romaji": "pinyin h",
-          "ipa": "[x]",
-          "mouthTip_vi": "Gốc lưỡi nâng gần ngạc mềm, xát luồng hơi qua khe hẹp (nghe giữa h và kh nhẹ).",
-          "mouthTip_en": "Velar fricative, rougher than English 'h'.",
-          "example": {
-            "word": "好 (hǎo)",
-            "reading": "hǎo",
-            "meaning_vi": "Tốt / Đẹp",
-            "meaning_en": "Good"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm mặt lưỡi",
-          "group_en": "Palatal",
-          "char": "j",
-          "romaji": "pinyin j",
-          "ipa": "[tɕ]",
-          "mouthTip_vi": "Mặt lưỡi áp sát ngạc cứng bật nhẹ không bật hơi.",
-          "mouthTip_en": "Unaspirated alveolo-palatal affricate.",
-          "example": {
-            "word": "家 (jiā)",
-            "reading": "jiā",
-            "meaning_vi": "Gia đình / Nhà",
-            "meaning_en": "Family / Home"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm mặt lưỡi bật hơi",
-          "group_en": "Aspirated Palatal",
-          "char": "q",
-          "romaji": "pinyin q",
-          "ipa": "[tɕʰ]",
-          "mouthTip_vi": "Cùng vị trí j nhưng phải bật luồng hơi xát cực mạnh ra phía trước kẽ răng.",
-          "mouthTip_en": "Sharp aspirated alveolo-palatal burst.",
-          "example": {
-            "word": "七 (qī)",
-            "reading": "qī",
-            "meaning_vi": "Số 7",
-            "meaning_en": "Seven"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm xát mặt lưỡi",
-          "group_en": "Palatal Fricative",
-          "char": "x",
-          "romaji": "pinyin x",
-          "ipa": "[ɕ]",
-          "mouthTip_vi": "Mặt lưỡi áp sát ngạc cứng, hơi xát thì thầm ra ngoài (nghe như x nhẹ).",
-          "mouthTip_en": "Whispered alveolo-palatal friction.",
-          "example": {
-            "word": "学 (xué)",
-            "reading": "xué",
-            "meaning_vi": "Học tập",
-            "meaning_en": "To study"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm uốn lưỡi",
-          "group_en": "Retroflex",
-          "char": "zh",
-          "romaji": "pinyin zh",
-          "ipa": "[ʈʂ]",
-          "mouthTip_vi": "Uốn đầu lưỡi chạm vào ngạc cứng phía sau chân răng trên, bật nhẹ không bật hơi.",
-          "mouthTip_en": "Tongue tip curled back against hard palate, unaspirated.",
-          "example": {
-            "word": "中国 (zhōngguó)",
-            "reading": "zhōngguó",
-            "meaning_vi": "Trung Quốc",
-            "meaning_en": "China"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm uốn lưỡi bật hơi",
-          "group_en": "Aspirated Retroflex",
-          "char": "ch",
-          "romaji": "pinyin ch",
-          "ipa": "[ʈʂʰ]",
-          "mouthTip_vi": "Cùng tư thế uốn lưỡi như zh nhưng bật luồng hơi cực mạnh ra ngoài.",
-          "mouthTip_en": "Curled retroflex position with explosive air burst.",
-          "example": {
-            "word": "吃 (chī)",
-            "reading": "chī",
-            "meaning_vi": "Ăn uống",
-            "meaning_en": "To eat"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm xát uốn lưỡi",
-          "group_en": "Retroflex Fricative",
-          "char": "sh",
-          "romaji": "pinyin sh",
-          "ipa": "[ʂ]",
-          "mouthTip_vi": "Uốn đầu lưỡi lên ngạc cứng tạo khe hẹp xát hơi (nghe như s nặng).",
-          "mouthTip_en": "Curled tongue with dry hissing friction.",
-          "example": {
-            "word": "书 (shū)",
-            "reading": "shū",
-            "meaning_vi": "Sách",
-            "meaning_en": "Book"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm tiếp cận uốn lưỡi",
-          "group_en": "Voiced Retroflex",
-          "char": "r",
-          "romaji": "pinyin r",
-          "ipa": "[ʐ/ɻ]",
-          "mouthTip_vi": "Uốn đầu lưỡi lên ngạc cứng kết hợp rung thanh đới (nghe giữa r và gi).",
-          "mouthTip_en": "Curled tongue with voiced vibration, tongue never touches roof.",
-          "example": {
-            "word": "热 (rè)",
-            "reading": "rè",
-            "meaning_vi": "Nóng bức",
-            "meaning_en": "Hot"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm đầu lưỡi trước",
-          "group_en": "Dental Sibilant",
-          "char": "z",
-          "romaji": "pinyin z",
-          "ipa": "[ts]",
-          "mouthTip_vi": "Đầu lưỡi chạm mặt sau răng cửa trên rồi nhả nhẹ, không bật hơi.",
-          "mouthTip_en": "Dental affricate, unaspirated.",
-          "example": {
-            "word": "在 (zài)",
-            "reading": "zài",
-            "meaning_vi": "Ở / Tại",
-            "meaning_en": "At / In"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm đầu lưỡi trước bật hơi",
-          "group_en": "Aspirated Dental Sibilant",
-          "char": "c",
-          "romaji": "pinyin c",
-          "ipa": "[tsʰ]",
-          "mouthTip_vi": "Đầu lưỡi chạm răng cửa trên rồi bật mạnh hơi xát ra ngoài (nghe như ts bật hơi).",
-          "mouthTip_en": "Strong aspirated dental affricate.",
-          "example": {
-            "word": "菜 (cài)",
-            "reading": "cài",
-            "meaning_vi": "Món ăn / Rau củ",
-            "meaning_en": "Dish / Vegetable"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Âm xát đầu lưỡi trước",
-          "group_en": "Dental Fricative",
-          "char": "s",
-          "romaji": "pinyin s",
-          "ipa": "[s]",
-          "mouthTip_vi": "Đầu lưỡi sát mặt sau răng dưới, hơi xát qua kẽ răng (nghe như x/s nhẹ).",
-          "mouthTip_en": "Dental sibilant friction.",
-          "example": {
-            "word": "三 (sān)",
-            "reading": "sān",
-            "meaning_vi": "Số 3",
-            "meaning_en": "Three"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Bán nguyên âm y",
-          "group_en": "Semi-vowel Y",
-          "char": "y",
-          "romaji": "pinyin y",
-          "ipa": "[j]",
-          "mouthTip_vi": "Được dùng làm phụ âm đầu khi vần bắt đầu bằng i.",
-          "mouthTip_en": "Initial form for 'i' glide.",
-          "example": {
-            "word": "月 (yuè)",
-            "reading": "yuè",
-            "meaning_vi": "Mặt trăng / Tháng",
-            "meaning_en": "Moon / Month"
-          }
-        },
-        {
-          "category": "initials",
-          "group_vi": "Bán nguyên âm w",
-          "group_en": "Semi-vowel W",
-          "char": "w",
-          "romaji": "pinyin w",
-          "ipa": "[w]",
-          "mouthTip_vi": "Được dùng làm phụ âm đầu khi vần bắt đầu bằng u.",
-          "mouthTip_en": "Initial form for 'u' glide.",
-          "example": {
-            "word": "我 (wǒ)",
-            "reading": "wǒ",
-            "meaning_vi": "Tôi / Bản thân",
-            "meaning_en": "I / Me"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu đơn",
-          "group_en": "Simple Final",
-          "char": "a",
-          "romaji": "pinyin a",
-          "ipa": "[a]",
-          "mouthTip_vi": "Mở rộng miệng phát âm 'a' tự nhiên.",
-          "mouthTip_en": "Open mouth widely for pure 'a'.",
-          "example": {
-            "word": "爸 (bà)",
-            "reading": "bà",
-            "meaning_vi": "Bố / Cha",
-            "meaning_en": "Dad"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu đơn",
-          "group_en": "Simple Final",
-          "char": "o",
-          "romaji": "pinyin o",
-          "ipa": "[o]",
-          "mouthTip_vi": "Tròn môi phát âm 'ô'.",
-          "mouthTip_en": "Rounded back vowel 'o'.",
-          "example": {
-            "word": "波 (bō)",
-            "reading": "bō",
-            "meaning_vi": "Làn sóng",
-            "meaning_en": "Wave"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu đơn",
-          "group_en": "Simple Final",
-          "char": "e",
-          "romaji": "pinyin e",
-          "ipa": "[ɤ]",
-          "mouthTip_vi": "Mở dẹt miệng phát âm giữa 'ơ' và 'ưa'. Không chu môi.",
-          "mouthTip_en": "Unrounded mid-back vowel, between 'uh' and 'er'.",
-          "example": {
-            "word": "喝 (hē)",
-            "reading": "hē",
-            "meaning_vi": "Uống",
-            "meaning_en": "To drink"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu đơn",
-          "group_en": "Simple Final",
-          "char": "i",
-          "romaji": "pinyin i",
-          "ipa": "[i]",
-          "mouthTip_vi": "Khóe miệng kéo dẹt sang hai bên phát âm 'i'.",
-          "mouthTip_en": "High front unrounded vowel 'i'.",
-          "example": {
-            "word": "米 (mǐ)",
-            "reading": "mǐ",
-            "meaning_vi": "Gạo",
-            "meaning_en": "Rice"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu đơn",
-          "group_en": "Simple Final",
-          "char": "u",
-          "romaji": "pinyin u",
-          "ipa": "[u]",
-          "mouthTip_vi": "Chu môi về phía trước phát âm 'u'.",
-          "mouthTip_en": "High rounded back vowel 'u'.",
-          "example": {
-            "word": "路 (lù)",
-            "reading": "lù",
-            "meaning_vi": "Con đường",
-            "meaning_en": "Road"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu đơn tròn môi",
-          "group_en": "Umlaut Final",
-          "char": "ü",
-          "romaji": "pinyin ü",
-          "ipa": "[y]",
-          "mouthTip_vi": "Cực kỳ quan trọng: Định hình lưỡi để nói âm 'i', nhưng CHU TRÒN MÔI như huýt sáo và KHÔNG ĐƯỢC DI CHUYỂN LƯỠI!",
-          "mouthTip_en": "Keep tongue set for 'ee' [i], but round lips tightly into 'oo' [u]! Do NOT move tongue.",
-          "example": {
-            "word": "绿 (lǜ)",
-            "reading": "lǜ",
-            "meaning_vi": "Màu xanh lá",
-            "meaning_en": "Green"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu kép",
-          "group_en": "Compound Final",
-          "char": "ai",
-          "romaji": "pinyin ai",
-          "ipa": "[aɪ]",
-          "mouthTip_vi": "Phát âm 'a' rồi lướt sang 'i'.",
-          "mouthTip_en": "Smooth glide from 'a' to 'i'.",
-          "example": {
-            "word": "爱 (ài)",
-            "reading": "ài",
-            "meaning_vi": "Yêu thương",
-            "meaning_en": "Love"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu kép",
-          "group_en": "Compound Final",
-          "char": "ei",
-          "romaji": "pinyin ei",
-          "ipa": "[eɪ]",
-          "mouthTip_vi": "Phát âm 'e' lướt sang 'i' (nghe như êi).",
-          "mouthTip_en": "Glide from 'e' to 'i'.",
-          "example": {
-            "word": "杯 (bēi)",
-            "reading": "bēi",
-            "meaning_vi": "Chiếc cốc",
-            "meaning_en": "Cup"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu kép",
-          "group_en": "Compound Final",
-          "char": "ui",
-          "romaji": "pinyin ui (uei)",
-          "mouthTip_vi": "Thực chất là 'uei': lướt từ u qua ê sang i.",
-          "mouthTip_en": "Contracted form of 'uei'.",
-          "example": {
-            "word": "水 (shuǐ)",
-            "reading": "shuǐ",
-            "meaning_vi": "Nước",
-            "meaning_en": "Water"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu kép",
-          "group_en": "Compound Final",
-          "char": "ao",
-          "romaji": "pinyin ao",
-          "ipa": "[aʊ]",
-          "mouthTip_vi": "Phát âm 'a' mở miệng rồi thu tròn môi sang 'o'.",
-          "mouthTip_en": "Open 'a' gliding to rounded 'o'.",
-          "example": {
-            "word": "包 (bāo)",
-            "reading": "bāo",
-            "meaning_vi": "Cái túi / Bánh bao",
-            "meaning_en": "Bag / Bun"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu kép",
-          "group_en": "Compound Final",
-          "char": "ou",
-          "romaji": "pinyin ou",
-          "ipa": "[oʊ]",
-          "mouthTip_vi": "Bắt đầu ở 'ô' rồi thu nhỏ môi lại sang 'u'.",
-          "mouthTip_en": "Mid vowel gliding to 'u'.",
-          "example": {
-            "word": "头 (tóu)",
-            "reading": "tóu",
-            "meaning_vi": "Cái đầu",
-            "meaning_en": "Head"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu kép",
-          "group_en": "Compound Final",
-          "char": "iu",
-          "romaji": "pinyin iu (iou)",
-          "mouthTip_vi": "Thực chất là 'iou': lướt từ i qua ô sang u.",
-          "mouthTip_en": "Contracted form of 'iou'.",
-          "example": {
-            "word": "九 (jiǔ)",
-            "reading": "jiǔ",
-            "meaning_vi": "Số 9",
-            "meaning_en": "Nine"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu kép",
-          "group_en": "Compound Final",
-          "char": "ie",
-          "romaji": "pinyin ie",
-          "ipa": "[jɛ]",
-          "mouthTip_vi": "Lướt từ 'i' sang 'e'.",
-          "mouthTip_en": "Glide from 'i' into 'e'.",
-          "example": {
-            "word": "谢 (xiè)",
-            "reading": "xiè",
-            "meaning_vi": "Cảm ơn",
-            "meaning_en": "Thanks"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu kép",
-          "group_en": "Compound Final",
-          "char": "üe",
-          "romaji": "pinyin üe",
-          "ipa": "[yɛ]",
-          "mouthTip_vi": "Tròn môi âm 'ü' rồi lướt sang 'e'.",
-          "mouthTip_en": "Rounded 'ü' gliding into 'e'.",
-          "example": {
-            "word": "月 (yuè)",
-            "reading": "yuè",
-            "meaning_vi": "Mặt trăng / Tháng",
-            "meaning_en": "Moon"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu uốn lưỡi",
-          "group_en": "Rhotic Final",
-          "char": "er",
-          "romaji": "pinyin er",
-          "ipa": "[ɑɻ]",
-          "mouthTip_vi": "Phát âm nguyên âm đồng thời cuốn đầu lưỡi lên ngạc cứng.",
-          "mouthTip_en": "Vowel with curled retroflex tongue.",
-          "example": {
-            "word": "二 (èr)",
-            "reading": "èr",
-            "meaning_vi": "Số 2",
-            "meaning_en": "Two"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu mũi trước",
-          "group_en": "Front Nasal",
-          "char": "an",
-          "romaji": "pinyin an",
-          "ipa": "[an]",
-          "mouthTip_vi": "Phát âm 'a' rồi đầu lưỡi chạm lợi trên kết thúc ở 'n'.",
-          "mouthTip_en": "Front vowel ending with alveolar nasal 'n'.",
-          "example": {
-            "word": "看 (kàn)",
-            "reading": "kàn",
-            "meaning_vi": "Xem / Nhìn",
-            "meaning_en": "To see"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu mũi trước",
-          "group_en": "Front Nasal",
-          "char": "en",
-          "romaji": "pinyin en",
-          "ipa": "[ən]",
-          "mouthTip_vi": "Phát âm giữa 'ơ' rồi kết thúc ở 'n'.",
-          "mouthTip_en": "Neutral vowel ending in 'n'.",
-          "example": {
-            "word": "门 (mén)",
-            "reading": "mén",
-            "meaning_vi": "Cánh cửa",
-            "meaning_en": "Door"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu mũi trước",
-          "group_en": "Front Nasal",
-          "char": "in",
-          "romaji": "pinyin in",
-          "ipa": "[in]",
-          "mouthTip_vi": "Phát âm 'i' rồi kết thúc ở 'n'.",
-          "mouthTip_en": "Close front vowel into 'n'.",
-          "example": {
-            "word": "金 (jīn)",
-            "reading": "jīn",
-            "meaning_vi": "Vàng / Kim loại",
-            "meaning_en": "Gold"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu mũi trước",
-          "group_en": "Front Nasal",
-          "char": "un",
-          "romaji": "pinyin un (uen)",
-          "mouthTip_vi": "Thực chất là 'uen': lướt từ u qua ơn sang n.",
-          "mouthTip_en": "Contracted form of 'uen'.",
-          "example": {
-            "word": "轮 (lún)",
-            "reading": "lún",
-            "meaning_vi": "Bánh xe / Luân chuyển",
-            "meaning_en": "Wheel"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu mũi trước",
-          "group_en": "Front Nasal",
-          "char": "ün",
-          "romaji": "pinyin ün",
-          "ipa": "[yn]",
-          "mouthTip_vi": "Tròn môi 'ü' kết thúc ở 'n'.",
-          "mouthTip_en": "Umlaut 'ü' into nasal 'n'.",
-          "example": {
-            "word": "云 (yún)",
-            "reading": "yún",
-            "meaning_vi": "Mây",
-            "meaning_en": "Cloud"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu mũi sau",
-          "group_en": "Back Nasal",
-          "char": "ang",
-          "romaji": "pinyin ang",
-          "ipa": "[ɑŋ]",
-          "mouthTip_vi": "Phát âm 'a' mở rộng rồi gốc lưỡi áp ngạc mềm kết thúc ở 'ng'.",
-          "mouthTip_en": "Open 'a' ending in deep velar 'ng'.",
-          "example": {
-            "word": "忙 (máng)",
-            "reading": "máng",
-            "meaning_vi": "Bận rộn",
-            "meaning_en": "Busy"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu mũi sau",
-          "group_en": "Back Nasal",
-          "char": "eng",
-          "romaji": "pinyin eng",
-          "ipa": "[əŋ]",
-          "mouthTip_vi": "Phát âm 'ơ' rồi gốc lưỡi nâng lên ngạc mềm ở 'ng'.",
-          "mouthTip_en": "Central vowel sliding into velar 'ng'.",
-          "example": {
-            "word": "风 (fēng)",
-            "reading": "fēng",
-            "meaning_vi": "Gió thổi",
-            "meaning_en": "Wind"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu mũi sau",
-          "group_en": "Back Nasal",
-          "char": "ing",
-          "romaji": "pinyin ing",
-          "ipa": "[iŋ]",
-          "mouthTip_vi": "Phát âm 'i' rồi vang sâu xuống vòm họng ở 'ng'.",
-          "mouthTip_en": "Front vowel into velar 'ng'.",
-          "example": {
-            "word": "星 (xīng)",
-            "reading": "xīng",
-            "meaning_vi": "Ngôi sao",
-            "meaning_en": "Star"
-          }
-        },
-        {
-          "category": "finals",
-          "group_vi": "Vận mẫu mũi sau",
-          "group_en": "Back Nasal",
-          "char": "ong",
-          "romaji": "pinyin ong",
-          "ipa": "[ʊŋ]",
-          "mouthTip_vi": "Tròn môi 'ô' rồi kết thúc ở âm mũi ngạc mềm 'ng'.",
-          "mouthTip_en": "Rounded back vowel into 'ng'.",
-          "example": {
-            "word": "红 (hóng)",
-            "reading": "hóng",
-            "meaning_vi": "Màu đỏ",
-            "meaning_en": "Red"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Con người & Cơ thể",
-          "group_en": "Human & Body",
-          "char": "人",
-          "romaji": "rén (Bộ Nhân)",
-          "ipa": "[ʐən˧˥]",
-          "mouthTip_vi": "Thanh 2 (vuốt từ thấp lên cao). Đầu lưỡi uốn nhẹ về ngạc cứng phát âm 'r', kết thúc ở âm mũi 'n'. Tượng hình người dang hai chân bước đi.",
-          "mouthTip_en": "Tone 2 rising. Retroflex 'r' gliding into alveolar nasal 'n'. Pictograph of a walking person.",
-          "example": {
-            "word": "人民 (rénmín)",
-            "reading": "rénmín",
-            "meaning_vi": "Nhân dân",
-            "meaning_en": "The people"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Con người & Cơ thể",
-          "group_en": "Human & Body",
-          "char": "口",
-          "romaji": "kǒu (Bộ Khẩu)",
-          "ipa": "[kʰoʊ˨˩˦]",
-          "mouthTip_vi": "Thanh 3 (uốn giọng xuống đáy cổ). Bật hơi mạnh ở âm 'k', miệng thu nhỏ sang 'ou'. Tượng hình chiếc miệng đang mở.",
-          "mouthTip_en": "Tone 3 dipping. Aspirated 'k' followed by rounded 'ou'. Pictograph of an open mouth.",
-          "example": {
-            "word": "口音 (kǒuyīn)",
-            "reading": "kǒuyīn",
-            "meaning_vi": "Khẩu âm / Giọng vùng miền",
-            "meaning_en": "Accent"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Con người & Cơ thể",
-          "group_en": "Human & Body",
-          "char": "心",
-          "romaji": "xīn (Bộ Tâm)",
-          "ipa": "[ɕin˥˥]",
-          "mouthTip_vi": "Thanh 1 (cao, phẳng đều 5-5). Mặt lưỡi áp sát ngạc cứng xát âm 'x', ngân vang âm mũi 'in'. Tượng hình trái tim.",
-          "mouthTip_en": "Tone 1 high flat (55). Palatal 'x' into nasal 'in'. Pictograph of the heart.",
-          "example": {
-            "word": "心情 (xīnqíng)",
-            "reading": "xīnqíng",
-            "meaning_vi": "Tâm trạng / Cảm xúc",
-            "meaning_en": "Mood / Frame of mind"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Con người & Cơ thể",
-          "group_en": "Human & Body",
-          "char": "手",
-          "romaji": "shǒu (Bộ Thủ)",
-          "ipa": "[ʂoʊ˨˩˦]",
-          "mouthTip_vi": "Thanh 3 (hạ thấp giọng). Uốn cong đầu lưỡi phát âm 'sh', thu tròn môi sang 'ou'. Tượng hình năm ngón tay xòe ra.",
-          "mouthTip_en": "Tone 3 dipping. Retroflex 'sh' into rounded 'ou'. Pictograph of five fingers of a hand.",
-          "example": {
-            "word": "手机 (shǒujī)",
-            "reading": "shǒujī",
-            "meaning_vi": "Điện thoại di động",
-            "meaning_en": "Mobile phone"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Con người & Cơ thể",
-          "group_en": "Human & Body",
-          "char": "目",
-          "romaji": "mù (Bộ Mục)",
-          "ipa": "[mu˥˩]",
-          "mouthTip_vi": "Thanh 4 (rơi mạnh, dứt khoát từ cao xuống thấp). Mím môi 'm' rồi dứt khoát hạ giọng 'ù'. Tượng hình con mắt nhìn ngang.",
-          "mouthTip_en": "Tone 4 sharp drop (51). Bilabial 'm' dropping sharply to 'ù'. Pictograph of an eyeball.",
-          "example": {
-            "word": "目光 (mùguāng)",
-            "reading": "mùguāng",
-            "meaning_vi": "Ánh mắt / Tầm nhìn",
-            "meaning_en": "Gaze / Sight"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Con người & Cơ thể",
-          "group_en": "Human & Body",
-          "char": "女",
-          "romaji": "nǚ (Bộ Nữ)",
-          "ipa": "[ny˨˩˦]",
-          "mouthTip_vi": "Thanh 3. Cực kỳ quan trọng: Định vị lưỡi nói 'i' nhưng CHU TRÒN MÔI 'ü', hạ giọng xuống đáy cổ. Tượng hình người phụ nữ quỳ duyên dáng.",
-          "mouthTip_en": "Tone 3 dipping. Nasal 'n' into tight rounded umlaut 'ü'. Pictograph of a kneeling woman.",
-          "example": {
-            "word": "女儿 (nǚ'ér)",
-            "reading": "nǚ'ér",
-            "meaning_vi": "Con gái",
-            "meaning_en": "Daughter"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Con người & Cơ thể",
-          "group_en": "Human & Body",
-          "char": "子",
-          "romaji": "zǐ (Bộ Tử)",
-          "ipa": "[t͡sɨ˨˩˦]",
-          "mouthTip_vi": "Thanh 3. Đầu lưỡi áp chân răng bật nhẹ 'z', giữ môi phẳng. Tượng hình đứa trẻ sơ sinh giơ tay.",
-          "mouthTip_en": "Tone 3 dipping. Dental affricate 'z' with buzzing vowel. Pictograph of a baby.",
-          "example": {
-            "word": "孩子 (háizi)",
-            "reading": "háizi",
-            "meaning_vi": "Đứa trẻ / Con cái",
-            "meaning_en": "Child"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "日",
-          "romaji": "rì (Bộ Nhật)",
-          "ipa": "[ʐʐ̩˥˩]",
-          "mouthTip_vi": "Thanh 4 (rơi mạnh dứt khoát). Uốn cong đầu lưỡi vào ngạc cứng, dây thanh rung rền. Tượng hình mặt trời tròn có tia sáng ở giữa.",
-          "mouthTip_en": "Tone 4 sharp drop. Retroflex friction with curled tongue. Pictograph of the sun.",
-          "example": {
-            "word": "日子 (rìzi)",
-            "reading": "rìzi",
-            "meaning_vi": "Ngày tháng / Cuộc sống",
-            "meaning_en": "Days / Life"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "月",
-          "romaji": "yuè (Bộ Nguyệt)",
-          "ipa": "[ɥɛ˥˩]",
-          "mouthTip_vi": "Thanh 4. Bán nguyên âm tròn môi lướt sang 'e' và rơi dứt khoát. Tượng hình mảnh trăng khuyết.",
-          "mouthTip_en": "Tone 4 decisive drop. Rounded glide into 'e'. Pictograph of a crescent moon.",
-          "example": {
-            "word": "月亮 (yuèliang)",
-            "reading": "yuèliang",
-            "meaning_vi": "Mặt trăng",
-            "meaning_en": "The moon"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "水",
-          "romaji": "shuǐ (Bộ Thủy)",
-          "ipa": "[ʂweɪ˨˩˦]",
-          "mouthTip_vi": "Thanh 3. Uốn lưỡi 'sh' lướt qua 'uei' hạ giọng sâu. Tượng hình dòng nước chảy xiết.",
-          "mouthTip_en": "Tone 3 dipping. Retroflex 'sh' into compound final 'ui'. Pictograph of flowing water.",
-          "example": {
-            "word": "水果 (shuǐguǒ)",
-            "reading": "shuǐguǒ",
-            "meaning_vi": "Trái cây / Hoa quả",
-            "meaning_en": "Fresh fruit"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "火",
-          "romaji": "huǒ (Bộ Hỏa)",
-          "ipa": "[xwo˨˩˦]",
-          "mouthTip_vi": "Thanh 3. Gốc lưỡi xát nhẹ ở 'h' rồi tròn môi sang 'uo' hạ thấp giọng. Tượng hình ngọn lửa bùng cháy.",
-          "mouthTip_en": "Tone 3 dipping. Velar fricative 'h' into rounded 'uo'. Pictograph of flickering flames.",
-          "example": {
-            "word": "火山 (huǒshān)",
-            "reading": "huǒshān",
-            "meaning_vi": "Núi lửa",
-            "meaning_en": "Volcano"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "木",
-          "romaji": "mù (Bộ Mộc)",
-          "ipa": "[mu˥˩]",
-          "mouthTip_vi": "Thanh 4. Khép môi 'm' rồi rơi giọng mạnh mẽ sang 'u'. Tượng hình thân cây có cành và rễ tỏa ra.",
-          "mouthTip_en": "Tone 4 sharp drop. Deep bilabial stop into closed 'u'. Pictograph of a tree with roots.",
-          "example": {
-            "word": "木头 (mùtou)",
-            "reading": "mùtou",
-            "meaning_vi": "Gỗ / Khúc gỗ",
-            "meaning_en": "Wood / Timber"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "山",
-          "romaji": "shān (Bộ Sơn)",
-          "ipa": "[ʂan˥˥]",
-          "mouthTip_vi": "Thanh 1 (ngân cao phẳng 5-5). Uốn lưỡi 'sh' phát âm 'an' mở rộng miệng. Tượng hình ba đỉnh núi nhấp nhô.",
-          "mouthTip_en": "Tone 1 high flat (55). Retroflex 'sh' into front nasal 'an'. Pictograph of three mountain peaks.",
-          "example": {
-            "word": "风景 (shānshuǐ)",
-            "reading": "shānshuǐ",
-            "meaning_vi": "Sơn thủy / Phong cảnh",
-            "meaning_en": "Landscape / Scenery"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "田",
-          "romaji": "tián (Bộ Điền)",
-          "ipa": "[tʰjɛn˧˥]",
-          "mouthTip_vi": "Thanh 2 (vút lên). Bật hơi 't' lướt qua 'ian' vút giọng lên như dấu sắc. Tượng hình thửa ruộng vuông vức chia bờ.",
-          "mouthTip_en": "Tone 2 rising (35). Aspirated 't' into nasal final 'ian'. Pictograph of partitioned rice fields.",
-          "example": {
-            "word": "田野 (tiányě)",
-            "reading": "tiányě",
-            "meaning_vi": "Đồng ruộng / Đồng quê",
-            "meaning_en": "Open field"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "天",
-          "romaji": "tiān (Bộ Thiên)",
-          "ipa": "[tʰjɛn˥˥]",
-          "mouthTip_vi": "Thanh 1 (cao đều 5-5). Bật hơi 't' ngân vang âm 'ian' ở nốt cao. Tượng hình vòm trời bao la trên đỉnh đầu con người.",
-          "mouthTip_en": "Tone 1 sustained high (55). Aspirated alveolar stop into 'ian'. Pictograph of sky above man.",
-          "example": {
-            "word": "天气 (tiānqì)",
-            "reading": "tiānqì",
-            "meaning_vi": "Thời tiết",
-            "meaning_en": "Weather"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "金",
-          "romaji": "jīn (Bộ Kim)",
-          "ipa": "[t͡ɕin˥˥]",
-          "mouthTip_vi": "Thanh 1 (cao phẳng). Mặt lưỡi chạm ngạc cứng 'j' ngân âm mũi 'in'. Tượng hình quặng vàng giấu trong lòng đất.",
-          "mouthTip_en": "Tone 1 high level. Palatal 'j' into high nasal 'in'. Pictograph of gold nuggets underground.",
-          "example": {
-            "word": "金子 (jīnzi)",
-            "reading": "jīnzi",
-            "meaning_vi": "Vàng bạc",
-            "meaning_en": "Gold"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Thiên nhiên & Vũ trụ",
-          "group_en": "Nature & Elements",
-          "char": "土",
-          "romaji": "tǔ (Bộ Thổ)",
-          "ipa": "[tʰu˨˩˦]",
-          "mouthTip_vi": "Thanh 3 (hạ sâu). Bật hơi mạnh 't' rồi hạ giọng ở 'u'. Tượng hình gò đất nhô lên từ mặt đất.",
-          "mouthTip_en": "Tone 3 dipping. Strongly aspirated 't' into deep 'u'. Pictograph of a mound of earth.",
-          "example": {
-            "word": "土地 (tǔdì)",
-            "reading": "tǔdì",
-            "meaning_vi": "Đất đai / Lãnh thổ",
-            "meaning_en": "Land / Soil"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Kích thước & Cấu trúc",
-          "group_en": "Size & Structure",
-          "char": "门",
-          "romaji": "mén (Bộ Môn)",
-          "ipa": "[mən˧˥]",
-          "mouthTip_vi": "Thanh 2 (hỏi lên cao). Khép môi 'm' rồi vuốt giọng lên ở 'en'. Tượng hình hai cánh cửa mở rộng.",
-          "mouthTip_en": "Tone 2 rising. Bilabial 'm' rising into 'en'. Pictograph of a two-panel door.",
-          "example": {
-            "word": "门口 (ménkǒu)",
-            "reading": "ménkǒu",
-            "meaning_vi": "Cổng vào / Cửa ra vào",
-            "meaning_en": "Doorway / Entrance"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Kích thước & Cấu trúc",
-          "group_en": "Size & Structure",
-          "char": "大",
-          "romaji": "dà (Bộ Đại)",
-          "ipa": "[ta˥˩]",
-          "mouthTip_vi": "Thanh 4 (rơi dứt khoát). Đầu lưỡi chạm ngạc 'd' không bật hơi, rơi mạnh xuống 'a'. Tượng hình người dang rộng tay chân.",
-          "mouthTip_en": "Tone 4 sharp drop. Unaspirated 'd' into open 'a'. Pictograph of an adult with outstretched arms.",
-          "example": {
-            "word": "大家 (dàjiā)",
-            "reading": "dàjiā",
-            "meaning_vi": "Mọi người / Tất cả chúng ta",
-            "meaning_en": "Everyone / All of us"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Kích thước & Cấu trúc",
-          "group_en": "Size & Structure",
-          "char": "小",
-          "romaji": "xiǎo (Bộ Tiểu)",
-          "ipa": "[ɕjaʊ˨˩˦]",
-          "mouthTip_vi": "Thanh 3 (uốn sâu). Mặt lưỡi nâng cao 'x' hạ giọng lướt sang 'iao'. Tượng hình phân chia vật thành các mảnh nhỏ.",
-          "mouthTip_en": "Tone 3 dipping. Palatal 'x' gliding into dipping 'iao'. Pictograph of split small parts.",
-          "example": {
-            "word": "小心 (xiǎoxīn)",
-            "reading": "xiǎoxīn",
-            "meaning_vi": "Cẩn thận / Chú ý",
-            "meaning_en": "Careful / Mindful"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Kích thước & Cấu trúc",
-          "group_en": "Size & Structure",
-          "char": "白",
-          "romaji": "bái (Bộ Bạch)",
-          "ipa": "[paɪ˧˥]",
-          "mouthTip_vi": "Thanh 2 (đi lên). Hai môi mở không bật hơi 'b' vuốt giọng lên ở 'ai'. Tượng hình ánh sáng mặt trời tinh khiết.",
-          "mouthTip_en": "Tone 2 rising. Unaspirated 'b' sliding up through 'ai'. Pictograph of pure bright white.",
-          "example": {
-            "word": "白天 (báitiān)",
-            "reading": "báitiān",
-            "meaning_vi": "Ban ngày",
-            "meaning_en": "Daytime"
-          }
-        },
-        {
-          "category": "basic_radicals",
-          "group_vi": "Kích thước & Cấu trúc",
-          "group_en": "Size & Structure",
-          "char": "中",
-          "romaji": "zhōng (Bộ Trung)",
-          "ipa": "[ʈ͡ʂʊŋ˥˥]",
-          "mouthTip_vi": "Thanh 1 (ngân cao 5-5). Uốn đầu lưỡi 'zh' không bật hơi, tròn môi âm mũi sau 'ong'. Tượng hình mũi tên bắn xuyên chính giữa mục tiêu.",
-          "mouthTip_en": "Tone 1 high flat (55). Retroflex 'zh' into back nasal 'ong'. Pictograph of an arrow piercing the bullseye center.",
-          "example": {
-            "word": "中文 (zhōngwén)",
-            "reading": "zhōngwén",
-            "meaning_vi": "Tiếng Trung / Trung văn",
-            "meaning_en": "Chinese language"
-          }
-        }
-      ]
-    },
+    "alphabet": [
+      {
+        "id": "initials",
+        "labelVi": "Thanh mẫu (Initials)",
+        "labelEn": "Initials (声母 - 23)",
+        "descriptionVi": "23 phụ âm đầu gồm âm hai môi, âm răng, âm mặt lưỡi (j, q, x) và âm uốn lưỡi (zh, ch, sh, r).",
+        "descriptionEn": "The 23 Chinese initial consonants including retroflex and palatal series.",
+        "items": [
+          {
+            "char": "b",
+            "romaji": "pinyin b",
+            "ipa": "p",
+            "groupVi": "Âm hai môi",
+            "groupEn": "Labial",
+            "group_vi": "Âm hai môi",
+            "group_en": "Labial",
+            "mouthTipVi": "Hai môi khép chặn hơi rồi mở ra, KHÔNG bật hơi (nghe như p nhẹ).",
+            "mouthTipEn": "Unaspirated voiceless bilabial stop.",
+            "mouthTip_vi": "Hai môi khép chặn hơi rồi mở ra, KHÔNG bật hơi (nghe như p nhẹ).",
+            "mouthTip_en": "Unaspirated voiceless bilabial stop.",
+            "meaningVi": "Thanh mẫu: b",
+            "meaningEn": "Initial: b",
+            "meaning_vi": "Thanh mẫu: b",
+            "meaning_en": "Initial: b",
+            "speechText": "爸 (bà)",
+            "examples": [
+              {
+                "word": "爸 (bà)",
+                "reading": "bà",
+                "vi": "Bố / Cha",
+                "en": "Dad",
+                "meaning_vi": "Bố / Cha",
+                "meaning_en": "Dad"
+              }
+            ],
+            "example": {
+              "word": "爸 (bà)",
+              "reading": "bà",
+              "vi": "Bố / Cha",
+              "en": "Dad",
+              "meaning_vi": "Bố / Cha",
+              "meaning_en": "Dad"
+            }
+          },
+          {
+            "char": "p",
+            "romaji": "pinyin p",
+            "ipa": "pʰ",
+            "groupVi": "Âm hai môi bật hơi",
+            "groupEn": "Aspirated Labial",
+            "group_vi": "Âm hai môi bật hơi",
+            "group_en": "Aspirated Labial",
+            "mouthTipVi": "Mím hai môi rồi bật một luồng hơi cực mạnh ra ngoài.",
+            "mouthTipEn": "Strong aspirated bilabial release.",
+            "mouthTip_vi": "Mím hai môi rồi bật một luồng hơi cực mạnh ra ngoài.",
+            "mouthTip_en": "Strong aspirated bilabial release.",
+            "meaningVi": "Thanh mẫu: p",
+            "meaningEn": "Initial: p",
+            "meaning_vi": "Thanh mẫu: p",
+            "meaning_en": "Initial: p",
+            "speechText": "朋友 (péngyou)",
+            "examples": [
+              {
+                "word": "朋友 (péngyou)",
+                "reading": "péngyou",
+                "vi": "Bạn bè",
+                "en": "Friend",
+                "meaning_vi": "Bạn bè",
+                "meaning_en": "Friend"
+              }
+            ],
+            "example": {
+              "word": "朋友 (péngyou)",
+              "reading": "péngyou",
+              "vi": "Bạn bè",
+              "en": "Friend",
+              "meaning_vi": "Bạn bè",
+              "meaning_en": "Friend"
+            }
+          },
+          {
+            "char": "m",
+            "romaji": "pinyin m",
+            "ipa": "m",
+            "groupVi": "Âm mũi hai môi",
+            "groupEn": "Nasal Labial",
+            "group_vi": "Âm mũi hai môi",
+            "group_en": "Nasal Labial",
+            "mouthTipVi": "Khép hai môi, hơi thoát qua mũi rung thanh đới.",
+            "mouthTipEn": "Bilabial nasal consonant.",
+            "mouthTip_vi": "Khép hai môi, hơi thoát qua mũi rung thanh đới.",
+            "mouthTip_en": "Bilabial nasal consonant.",
+            "meaningVi": "Thanh mẫu: m",
+            "meaningEn": "Initial: m",
+            "meaning_vi": "Thanh mẫu: m",
+            "meaning_en": "Initial: m",
+            "speechText": "门 (mén)",
+            "examples": [
+              {
+                "word": "门 (mén)",
+                "reading": "mén",
+                "vi": "Cánh cửa",
+                "en": "Door",
+                "meaning_vi": "Cánh cửa",
+                "meaning_en": "Door"
+              }
+            ],
+            "example": {
+              "word": "门 (mén)",
+              "reading": "mén",
+              "vi": "Cánh cửa",
+              "en": "Door",
+              "meaning_vi": "Cánh cửa",
+              "meaning_en": "Door"
+            }
+          },
+          {
+            "char": "f",
+            "romaji": "pinyin f",
+            "ipa": "f",
+            "groupVi": "Âm răng môi",
+            "groupEn": "Labiodental",
+            "group_vi": "Âm răng môi",
+            "group_en": "Labiodental",
+            "mouthTipVi": "Răng cửa trên chạm nhẹ môi dưới, luồng hơi xát qua kẽ răng.",
+            "mouthTipEn": "Upper teeth touch lower lip with friction.",
+            "mouthTip_vi": "Răng cửa trên chạm nhẹ môi dưới, luồng hơi xát qua kẽ răng.",
+            "mouthTip_en": "Upper teeth touch lower lip with friction.",
+            "meaningVi": "Thanh mẫu: f",
+            "meaningEn": "Initial: f",
+            "meaning_vi": "Thanh mẫu: f",
+            "meaning_en": "Initial: f",
+            "speechText": "饭 (fàn)",
+            "examples": [
+              {
+                "word": "饭 (fàn)",
+                "reading": "fàn",
+                "vi": "Cơm / Bữa ăn",
+                "en": "Rice / Meal",
+                "meaning_vi": "Cơm / Bữa ăn",
+                "meaning_en": "Rice / Meal"
+              }
+            ],
+            "example": {
+              "word": "饭 (fàn)",
+              "reading": "fàn",
+              "vi": "Cơm / Bữa ăn",
+              "en": "Rice / Meal",
+              "meaning_vi": "Cơm / Bữa ăn",
+              "meaning_en": "Rice / Meal"
+            }
+          },
+          {
+            "char": "d",
+            "romaji": "pinyin d",
+            "ipa": "t",
+            "groupVi": "Âm đầu lưỡi giữa",
+            "groupEn": "Alveolar",
+            "group_vi": "Âm đầu lưỡi giữa",
+            "group_en": "Alveolar",
+            "mouthTipVi": "Đầu lưỡi chạm lợi trên bật ra KHÔNG bật hơi (nghe như t).",
+            "mouthTipEn": "Unaspirated alveolar stop.",
+            "mouthTip_vi": "Đầu lưỡi chạm lợi trên bật ra KHÔNG bật hơi (nghe như t).",
+            "mouthTip_en": "Unaspirated alveolar stop.",
+            "meaningVi": "Thanh mẫu: d",
+            "meaningEn": "Initial: d",
+            "meaning_vi": "Thanh mẫu: d",
+            "meaning_en": "Initial: d",
+            "speechText": "大 (dà)",
+            "examples": [
+              {
+                "word": "大 (dà)",
+                "reading": "dà",
+                "vi": "To lớn",
+                "en": "Big",
+                "meaning_vi": "To lớn",
+                "meaning_en": "Big"
+              }
+            ],
+            "example": {
+              "word": "大 (dà)",
+              "reading": "dà",
+              "vi": "To lớn",
+              "en": "Big",
+              "meaning_vi": "To lớn",
+              "meaning_en": "Big"
+            }
+          },
+          {
+            "char": "t",
+            "romaji": "pinyin t",
+            "ipa": "tʰ",
+            "groupVi": "Âm đầu lưỡi bật hơi",
+            "groupEn": "Aspirated Alveolar",
+            "group_vi": "Âm đầu lưỡi bật hơi",
+            "group_en": "Aspirated Alveolar",
+            "mouthTipVi": "Đầu lưỡi chạm lợi trên rồi bật mạnh luồng khí ra ngoài (nghe như th).",
+            "mouthTipEn": "Aspirated alveolar stop.",
+            "mouthTip_vi": "Đầu lưỡi chạm lợi trên rồi bật mạnh luồng khí ra ngoài (nghe như th).",
+            "mouthTip_en": "Aspirated alveolar stop.",
+            "meaningVi": "Thanh mẫu: t",
+            "meaningEn": "Initial: t",
+            "meaning_vi": "Thanh mẫu: t",
+            "meaning_en": "Initial: t",
+            "speechText": "天 (tiān)",
+            "examples": [
+              {
+                "word": "天 (tiān)",
+                "reading": "tiān",
+                "vi": "Bầu trời / Ngày",
+                "en": "Sky / Day",
+                "meaning_vi": "Bầu trời / Ngày",
+                "meaning_en": "Sky / Day"
+              }
+            ],
+            "example": {
+              "word": "天 (tiān)",
+              "reading": "tiān",
+              "vi": "Bầu trời / Ngày",
+              "en": "Sky / Day",
+              "meaning_vi": "Bầu trời / Ngày",
+              "meaning_en": "Sky / Day"
+            }
+          },
+          {
+            "char": "n",
+            "romaji": "pinyin n",
+            "ipa": "n",
+            "groupVi": "Âm mũi chân răng",
+            "groupEn": "Nasal Alveolar",
+            "group_vi": "Âm mũi chân răng",
+            "group_en": "Nasal Alveolar",
+            "mouthTipVi": "Đầu lưỡi chạm lợi trên, âm vang qua mũi.",
+            "mouthTipEn": "Alveolar nasal consonant.",
+            "mouthTip_vi": "Đầu lưỡi chạm lợi trên, âm vang qua mũi.",
+            "mouthTip_en": "Alveolar nasal consonant.",
+            "meaningVi": "Thanh mẫu: n",
+            "meaningEn": "Initial: n",
+            "meaning_vi": "Thanh mẫu: n",
+            "meaning_en": "Initial: n",
+            "speechText": "你 (nǐ)",
+            "examples": [
+              {
+                "word": "你 (nǐ)",
+                "reading": "nǐ",
+                "vi": "Bạn / Anh / Chị",
+                "en": "You",
+                "meaning_vi": "Bạn / Anh / Chị",
+                "meaning_en": "You"
+              }
+            ],
+            "example": {
+              "word": "你 (nǐ)",
+              "reading": "nǐ",
+              "vi": "Bạn / Anh / Chị",
+              "en": "You",
+              "meaning_vi": "Bạn / Anh / Chị",
+              "meaning_en": "You"
+            }
+          },
+          {
+            "char": "l",
+            "romaji": "pinyin l",
+            "ipa": "l",
+            "groupVi": "Âm bên cạnh lưỡi",
+            "groupEn": "Lateral",
+            "group_vi": "Âm bên cạnh lưỡi",
+            "group_en": "Lateral",
+            "mouthTipVi": "Đầu lưỡi chạm lợi trên, hơi thoát qua hai bên mép lưỡi.",
+            "mouthTipEn": "Alveolar lateral approximant.",
+            "mouthTip_vi": "Đầu lưỡi chạm lợi trên, hơi thoát qua hai bên mép lưỡi.",
+            "mouthTip_en": "Alveolar lateral approximant.",
+            "meaningVi": "Thanh mẫu: l",
+            "meaningEn": "Initial: l",
+            "meaning_vi": "Thanh mẫu: l",
+            "meaning_en": "Initial: l",
+            "speechText": "来 (lái)",
+            "examples": [
+              {
+                "word": "来 (lái)",
+                "reading": "lái",
+                "vi": "Đến / Lại",
+                "en": "To come",
+                "meaning_vi": "Đến / Lại",
+                "meaning_en": "To come"
+              }
+            ],
+            "example": {
+              "word": "来 (lái)",
+              "reading": "lái",
+              "vi": "Đến / Lại",
+              "en": "To come",
+              "meaning_vi": "Đến / Lại",
+              "meaning_en": "To come"
+            }
+          },
+          {
+            "char": "g",
+            "romaji": "pinyin g",
+            "ipa": "k",
+            "groupVi": "Âm cuống lưỡi",
+            "groupEn": "Velar",
+            "group_vi": "Âm cuống lưỡi",
+            "group_en": "Velar",
+            "mouthTipVi": "Gốc lưỡi chạm ngạc mềm bật ra KHÔNG bật hơi (nghe như c/k).",
+            "mouthTipEn": "Unaspirated velar stop.",
+            "mouthTip_vi": "Gốc lưỡi chạm ngạc mềm bật ra KHÔNG bật hơi (nghe như c/k).",
+            "mouthTip_en": "Unaspirated velar stop.",
+            "meaningVi": "Thanh mẫu: g",
+            "meaningEn": "Initial: g",
+            "meaning_vi": "Thanh mẫu: g",
+            "meaning_en": "Initial: g",
+            "speechText": "高 (gāo)",
+            "examples": [
+              {
+                "word": "高 (gāo)",
+                "reading": "gāo",
+                "vi": "Cao lớn",
+                "en": "Tall / High",
+                "meaning_vi": "Cao lớn",
+                "meaning_en": "Tall / High"
+              }
+            ],
+            "example": {
+              "word": "高 (gāo)",
+              "reading": "gāo",
+              "vi": "Cao lớn",
+              "en": "Tall / High",
+              "meaning_vi": "Cao lớn",
+              "meaning_en": "Tall / High"
+            }
+          },
+          {
+            "char": "k",
+            "romaji": "pinyin k",
+            "ipa": "kʰ",
+            "groupVi": "Âm cuống lưỡi bật hơi",
+            "groupEn": "Aspirated Velar",
+            "group_vi": "Âm cuống lưỡi bật hơi",
+            "group_en": "Aspirated Velar",
+            "mouthTipVi": "Gốc lưỡi chạm ngạc mềm rồi bật mạnh luồng khí ra (nghe như kh/k bật).",
+            "mouthTipEn": "Aspirated velar stop with strong burst.",
+            "mouthTip_vi": "Gốc lưỡi chạm ngạc mềm rồi bật mạnh luồng khí ra (nghe như kh/k bật).",
+            "mouthTip_en": "Aspirated velar stop with strong burst.",
+            "meaningVi": "Thanh mẫu: k",
+            "meaningEn": "Initial: k",
+            "meaning_vi": "Thanh mẫu: k",
+            "meaning_en": "Initial: k",
+            "speechText": "看 (kàn)",
+            "examples": [
+              {
+                "word": "看 (kàn)",
+                "reading": "kàn",
+                "vi": "Xem / Nhìn",
+                "en": "To look / read",
+                "meaning_vi": "Xem / Nhìn",
+                "meaning_en": "To look / read"
+              }
+            ],
+            "example": {
+              "word": "看 (kàn)",
+              "reading": "kàn",
+              "vi": "Xem / Nhìn",
+              "en": "To look / read",
+              "meaning_vi": "Xem / Nhìn",
+              "meaning_en": "To look / read"
+            }
+          },
+          {
+            "char": "h",
+            "romaji": "pinyin h",
+            "ipa": "x",
+            "groupVi": "Âm xát cuống lưỡi",
+            "groupEn": "Velar Fricative",
+            "group_vi": "Âm xát cuống lưỡi",
+            "group_en": "Velar Fricative",
+            "mouthTipVi": "Gốc lưỡi nâng gần ngạc mềm, xát luồng hơi qua khe hẹp (nghe giữa h và kh nhẹ).",
+            "mouthTipEn": "Velar fricative, rougher than English 'h'.",
+            "mouthTip_vi": "Gốc lưỡi nâng gần ngạc mềm, xát luồng hơi qua khe hẹp (nghe giữa h và kh nhẹ).",
+            "mouthTip_en": "Velar fricative, rougher than English 'h'.",
+            "meaningVi": "Thanh mẫu: h",
+            "meaningEn": "Initial: h",
+            "meaning_vi": "Thanh mẫu: h",
+            "meaning_en": "Initial: h",
+            "speechText": "好 (hǎo)",
+            "examples": [
+              {
+                "word": "好 (hǎo)",
+                "reading": "hǎo",
+                "vi": "Tốt / Đẹp",
+                "en": "Good",
+                "meaning_vi": "Tốt / Đẹp",
+                "meaning_en": "Good"
+              }
+            ],
+            "example": {
+              "word": "好 (hǎo)",
+              "reading": "hǎo",
+              "vi": "Tốt / Đẹp",
+              "en": "Good",
+              "meaning_vi": "Tốt / Đẹp",
+              "meaning_en": "Good"
+            }
+          },
+          {
+            "char": "j",
+            "romaji": "pinyin j",
+            "ipa": "tɕ",
+            "groupVi": "Âm mặt lưỡi",
+            "groupEn": "Palatal",
+            "group_vi": "Âm mặt lưỡi",
+            "group_en": "Palatal",
+            "mouthTipVi": "Mặt lưỡi áp sát ngạc cứng bật nhẹ không bật hơi.",
+            "mouthTipEn": "Unaspirated alveolo-palatal affricate.",
+            "mouthTip_vi": "Mặt lưỡi áp sát ngạc cứng bật nhẹ không bật hơi.",
+            "mouthTip_en": "Unaspirated alveolo-palatal affricate.",
+            "meaningVi": "Thanh mẫu: j",
+            "meaningEn": "Initial: j",
+            "meaning_vi": "Thanh mẫu: j",
+            "meaning_en": "Initial: j",
+            "speechText": "家 (jiā)",
+            "examples": [
+              {
+                "word": "家 (jiā)",
+                "reading": "jiā",
+                "vi": "Gia đình / Nhà",
+                "en": "Family / Home",
+                "meaning_vi": "Gia đình / Nhà",
+                "meaning_en": "Family / Home"
+              }
+            ],
+            "example": {
+              "word": "家 (jiā)",
+              "reading": "jiā",
+              "vi": "Gia đình / Nhà",
+              "en": "Family / Home",
+              "meaning_vi": "Gia đình / Nhà",
+              "meaning_en": "Family / Home"
+            }
+          },
+          {
+            "char": "q",
+            "romaji": "pinyin q",
+            "ipa": "tɕʰ",
+            "groupVi": "Âm mặt lưỡi bật hơi",
+            "groupEn": "Aspirated Palatal",
+            "group_vi": "Âm mặt lưỡi bật hơi",
+            "group_en": "Aspirated Palatal",
+            "mouthTipVi": "Cùng vị trí j nhưng phải bật luồng hơi xát cực mạnh ra phía trước kẽ răng.",
+            "mouthTipEn": "Sharp aspirated alveolo-palatal burst.",
+            "mouthTip_vi": "Cùng vị trí j nhưng phải bật luồng hơi xát cực mạnh ra phía trước kẽ răng.",
+            "mouthTip_en": "Sharp aspirated alveolo-palatal burst.",
+            "meaningVi": "Thanh mẫu: q",
+            "meaningEn": "Initial: q",
+            "meaning_vi": "Thanh mẫu: q",
+            "meaning_en": "Initial: q",
+            "speechText": "七 (qī)",
+            "examples": [
+              {
+                "word": "七 (qī)",
+                "reading": "qī",
+                "vi": "Số 7",
+                "en": "Seven",
+                "meaning_vi": "Số 7",
+                "meaning_en": "Seven"
+              }
+            ],
+            "example": {
+              "word": "七 (qī)",
+              "reading": "qī",
+              "vi": "Số 7",
+              "en": "Seven",
+              "meaning_vi": "Số 7",
+              "meaning_en": "Seven"
+            }
+          },
+          {
+            "char": "x",
+            "romaji": "pinyin x",
+            "ipa": "ɕ",
+            "groupVi": "Âm xát mặt lưỡi",
+            "groupEn": "Palatal Fricative",
+            "group_vi": "Âm xát mặt lưỡi",
+            "group_en": "Palatal Fricative",
+            "mouthTipVi": "Mặt lưỡi áp sát ngạc cứng, hơi xát thì thầm ra ngoài (nghe như x nhẹ).",
+            "mouthTipEn": "Whispered alveolo-palatal friction.",
+            "mouthTip_vi": "Mặt lưỡi áp sát ngạc cứng, hơi xát thì thầm ra ngoài (nghe như x nhẹ).",
+            "mouthTip_en": "Whispered alveolo-palatal friction.",
+            "meaningVi": "Thanh mẫu: x",
+            "meaningEn": "Initial: x",
+            "meaning_vi": "Thanh mẫu: x",
+            "meaning_en": "Initial: x",
+            "speechText": "学 (xué)",
+            "examples": [
+              {
+                "word": "学 (xué)",
+                "reading": "xué",
+                "vi": "Học tập",
+                "en": "To study",
+                "meaning_vi": "Học tập",
+                "meaning_en": "To study"
+              }
+            ],
+            "example": {
+              "word": "学 (xué)",
+              "reading": "xué",
+              "vi": "Học tập",
+              "en": "To study",
+              "meaning_vi": "Học tập",
+              "meaning_en": "To study"
+            }
+          },
+          {
+            "char": "zh",
+            "romaji": "pinyin zh",
+            "ipa": "ʈʂ",
+            "groupVi": "Âm uốn lưỡi",
+            "groupEn": "Retroflex",
+            "group_vi": "Âm uốn lưỡi",
+            "group_en": "Retroflex",
+            "mouthTipVi": "Uốn đầu lưỡi chạm vào ngạc cứng phía sau chân răng trên, bật nhẹ không bật hơi.",
+            "mouthTipEn": "Tongue tip curled back against hard palate, unaspirated.",
+            "mouthTip_vi": "Uốn đầu lưỡi chạm vào ngạc cứng phía sau chân răng trên, bật nhẹ không bật hơi.",
+            "mouthTip_en": "Tongue tip curled back against hard palate, unaspirated.",
+            "meaningVi": "Thanh mẫu: zh",
+            "meaningEn": "Initial: zh",
+            "meaning_vi": "Thanh mẫu: zh",
+            "meaning_en": "Initial: zh",
+            "speechText": "中国 (zhōngguó)",
+            "examples": [
+              {
+                "word": "中国 (zhōngguó)",
+                "reading": "zhōngguó",
+                "vi": "Trung Quốc",
+                "en": "China",
+                "meaning_vi": "Trung Quốc",
+                "meaning_en": "China"
+              }
+            ],
+            "example": {
+              "word": "中国 (zhōngguó)",
+              "reading": "zhōngguó",
+              "vi": "Trung Quốc",
+              "en": "China",
+              "meaning_vi": "Trung Quốc",
+              "meaning_en": "China"
+            }
+          },
+          {
+            "char": "ch",
+            "romaji": "pinyin ch",
+            "ipa": "ʈʂʰ",
+            "groupVi": "Âm uốn lưỡi bật hơi",
+            "groupEn": "Aspirated Retroflex",
+            "group_vi": "Âm uốn lưỡi bật hơi",
+            "group_en": "Aspirated Retroflex",
+            "mouthTipVi": "Cùng tư thế uốn lưỡi như zh nhưng bật luồng hơi cực mạnh ra ngoài.",
+            "mouthTipEn": "Curled retroflex position with explosive air burst.",
+            "mouthTip_vi": "Cùng tư thế uốn lưỡi như zh nhưng bật luồng hơi cực mạnh ra ngoài.",
+            "mouthTip_en": "Curled retroflex position with explosive air burst.",
+            "meaningVi": "Thanh mẫu: ch",
+            "meaningEn": "Initial: ch",
+            "meaning_vi": "Thanh mẫu: ch",
+            "meaning_en": "Initial: ch",
+            "speechText": "吃 (chī)",
+            "examples": [
+              {
+                "word": "吃 (chī)",
+                "reading": "chī",
+                "vi": "Ăn uống",
+                "en": "To eat",
+                "meaning_vi": "Ăn uống",
+                "meaning_en": "To eat"
+              }
+            ],
+            "example": {
+              "word": "吃 (chī)",
+              "reading": "chī",
+              "vi": "Ăn uống",
+              "en": "To eat",
+              "meaning_vi": "Ăn uống",
+              "meaning_en": "To eat"
+            }
+          },
+          {
+            "char": "sh",
+            "romaji": "pinyin sh",
+            "ipa": "ʂ",
+            "groupVi": "Âm xát uốn lưỡi",
+            "groupEn": "Retroflex Fricative",
+            "group_vi": "Âm xát uốn lưỡi",
+            "group_en": "Retroflex Fricative",
+            "mouthTipVi": "Uốn đầu lưỡi lên ngạc cứng tạo khe hẹp xát hơi (nghe như s nặng).",
+            "mouthTipEn": "Curled tongue with dry hissing friction.",
+            "mouthTip_vi": "Uốn đầu lưỡi lên ngạc cứng tạo khe hẹp xát hơi (nghe như s nặng).",
+            "mouthTip_en": "Curled tongue with dry hissing friction.",
+            "meaningVi": "Thanh mẫu: sh",
+            "meaningEn": "Initial: sh",
+            "meaning_vi": "Thanh mẫu: sh",
+            "meaning_en": "Initial: sh",
+            "speechText": "书 (shū)",
+            "examples": [
+              {
+                "word": "书 (shū)",
+                "reading": "shū",
+                "vi": "Sách",
+                "en": "Book",
+                "meaning_vi": "Sách",
+                "meaning_en": "Book"
+              }
+            ],
+            "example": {
+              "word": "书 (shū)",
+              "reading": "shū",
+              "vi": "Sách",
+              "en": "Book",
+              "meaning_vi": "Sách",
+              "meaning_en": "Book"
+            }
+          },
+          {
+            "char": "r",
+            "romaji": "pinyin r",
+            "ipa": "ʐɻ",
+            "groupVi": "Âm tiếp cận uốn lưỡi",
+            "groupEn": "Voiced Retroflex",
+            "group_vi": "Âm tiếp cận uốn lưỡi",
+            "group_en": "Voiced Retroflex",
+            "mouthTipVi": "Uốn đầu lưỡi lên ngạc cứng kết hợp rung thanh đới (nghe giữa r và gi).",
+            "mouthTipEn": "Curled tongue with voiced vibration, tongue never touches roof.",
+            "mouthTip_vi": "Uốn đầu lưỡi lên ngạc cứng kết hợp rung thanh đới (nghe giữa r và gi).",
+            "mouthTip_en": "Curled tongue with voiced vibration, tongue never touches roof.",
+            "meaningVi": "Thanh mẫu: r",
+            "meaningEn": "Initial: r",
+            "meaning_vi": "Thanh mẫu: r",
+            "meaning_en": "Initial: r",
+            "speechText": "热 (rè)",
+            "examples": [
+              {
+                "word": "热 (rè)",
+                "reading": "rè",
+                "vi": "Nóng bức",
+                "en": "Hot",
+                "meaning_vi": "Nóng bức",
+                "meaning_en": "Hot"
+              }
+            ],
+            "example": {
+              "word": "热 (rè)",
+              "reading": "rè",
+              "vi": "Nóng bức",
+              "en": "Hot",
+              "meaning_vi": "Nóng bức",
+              "meaning_en": "Hot"
+            }
+          },
+          {
+            "char": "z",
+            "romaji": "pinyin z",
+            "ipa": "ts",
+            "groupVi": "Âm đầu lưỡi trước",
+            "groupEn": "Dental Sibilant",
+            "group_vi": "Âm đầu lưỡi trước",
+            "group_en": "Dental Sibilant",
+            "mouthTipVi": "Đầu lưỡi chạm mặt sau răng cửa trên rồi nhả nhẹ, không bật hơi.",
+            "mouthTipEn": "Dental affricate, unaspirated.",
+            "mouthTip_vi": "Đầu lưỡi chạm mặt sau răng cửa trên rồi nhả nhẹ, không bật hơi.",
+            "mouthTip_en": "Dental affricate, unaspirated.",
+            "meaningVi": "Thanh mẫu: z",
+            "meaningEn": "Initial: z",
+            "meaning_vi": "Thanh mẫu: z",
+            "meaning_en": "Initial: z",
+            "speechText": "在 (zài)",
+            "examples": [
+              {
+                "word": "在 (zài)",
+                "reading": "zài",
+                "vi": "Ở / Tại",
+                "en": "At / In",
+                "meaning_vi": "Ở / Tại",
+                "meaning_en": "At / In"
+              }
+            ],
+            "example": {
+              "word": "在 (zài)",
+              "reading": "zài",
+              "vi": "Ở / Tại",
+              "en": "At / In",
+              "meaning_vi": "Ở / Tại",
+              "meaning_en": "At / In"
+            }
+          },
+          {
+            "char": "c",
+            "romaji": "pinyin c",
+            "ipa": "tsʰ",
+            "groupVi": "Âm đầu lưỡi trước bật hơi",
+            "groupEn": "Aspirated Dental Sibilant",
+            "group_vi": "Âm đầu lưỡi trước bật hơi",
+            "group_en": "Aspirated Dental Sibilant",
+            "mouthTipVi": "Đầu lưỡi chạm răng cửa trên rồi bật mạnh hơi xát ra ngoài (nghe như ts bật hơi).",
+            "mouthTipEn": "Strong aspirated dental affricate.",
+            "mouthTip_vi": "Đầu lưỡi chạm răng cửa trên rồi bật mạnh hơi xát ra ngoài (nghe như ts bật hơi).",
+            "mouthTip_en": "Strong aspirated dental affricate.",
+            "meaningVi": "Thanh mẫu: c",
+            "meaningEn": "Initial: c",
+            "meaning_vi": "Thanh mẫu: c",
+            "meaning_en": "Initial: c",
+            "speechText": "菜 (cài)",
+            "examples": [
+              {
+                "word": "菜 (cài)",
+                "reading": "cài",
+                "vi": "Món ăn / Rau củ",
+                "en": "Dish / Vegetable",
+                "meaning_vi": "Món ăn / Rau củ",
+                "meaning_en": "Dish / Vegetable"
+              }
+            ],
+            "example": {
+              "word": "菜 (cài)",
+              "reading": "cài",
+              "vi": "Món ăn / Rau củ",
+              "en": "Dish / Vegetable",
+              "meaning_vi": "Món ăn / Rau củ",
+              "meaning_en": "Dish / Vegetable"
+            }
+          },
+          {
+            "char": "s",
+            "romaji": "pinyin s",
+            "ipa": "s",
+            "groupVi": "Âm xát đầu lưỡi trước",
+            "groupEn": "Dental Fricative",
+            "group_vi": "Âm xát đầu lưỡi trước",
+            "group_en": "Dental Fricative",
+            "mouthTipVi": "Đầu lưỡi sát mặt sau răng dưới, hơi xát qua kẽ răng (nghe như x/s nhẹ).",
+            "mouthTipEn": "Dental sibilant friction.",
+            "mouthTip_vi": "Đầu lưỡi sát mặt sau răng dưới, hơi xát qua kẽ răng (nghe như x/s nhẹ).",
+            "mouthTip_en": "Dental sibilant friction.",
+            "meaningVi": "Thanh mẫu: s",
+            "meaningEn": "Initial: s",
+            "meaning_vi": "Thanh mẫu: s",
+            "meaning_en": "Initial: s",
+            "speechText": "三 (sān)",
+            "examples": [
+              {
+                "word": "三 (sān)",
+                "reading": "sān",
+                "vi": "Số 3",
+                "en": "Three",
+                "meaning_vi": "Số 3",
+                "meaning_en": "Three"
+              }
+            ],
+            "example": {
+              "word": "三 (sān)",
+              "reading": "sān",
+              "vi": "Số 3",
+              "en": "Three",
+              "meaning_vi": "Số 3",
+              "meaning_en": "Three"
+            }
+          },
+          {
+            "char": "y",
+            "romaji": "pinyin y",
+            "ipa": "j",
+            "groupVi": "Bán nguyên âm y",
+            "groupEn": "Semi-vowel Y",
+            "group_vi": "Bán nguyên âm y",
+            "group_en": "Semi-vowel Y",
+            "mouthTipVi": "Được dùng làm phụ âm đầu khi vần bắt đầu bằng i.",
+            "mouthTipEn": "Initial form for 'i' glide.",
+            "mouthTip_vi": "Được dùng làm phụ âm đầu khi vần bắt đầu bằng i.",
+            "mouthTip_en": "Initial form for 'i' glide.",
+            "meaningVi": "Thanh mẫu: y",
+            "meaningEn": "Initial: y",
+            "meaning_vi": "Thanh mẫu: y",
+            "meaning_en": "Initial: y",
+            "speechText": "月 (yuè)",
+            "examples": [
+              {
+                "word": "月 (yuè)",
+                "reading": "yuè",
+                "vi": "Mặt trăng / Tháng",
+                "en": "Moon / Month",
+                "meaning_vi": "Mặt trăng / Tháng",
+                "meaning_en": "Moon / Month"
+              }
+            ],
+            "example": {
+              "word": "月 (yuè)",
+              "reading": "yuè",
+              "vi": "Mặt trăng / Tháng",
+              "en": "Moon / Month",
+              "meaning_vi": "Mặt trăng / Tháng",
+              "meaning_en": "Moon / Month"
+            }
+          },
+          {
+            "char": "w",
+            "romaji": "pinyin w",
+            "ipa": "w",
+            "groupVi": "Bán nguyên âm w",
+            "groupEn": "Semi-vowel W",
+            "group_vi": "Bán nguyên âm w",
+            "group_en": "Semi-vowel W",
+            "mouthTipVi": "Được dùng làm phụ âm đầu khi vần bắt đầu bằng u.",
+            "mouthTipEn": "Initial form for 'u' glide.",
+            "mouthTip_vi": "Được dùng làm phụ âm đầu khi vần bắt đầu bằng u.",
+            "mouthTip_en": "Initial form for 'u' glide.",
+            "meaningVi": "Thanh mẫu: w",
+            "meaningEn": "Initial: w",
+            "meaning_vi": "Thanh mẫu: w",
+            "meaning_en": "Initial: w",
+            "speechText": "我 (wǒ)",
+            "examples": [
+              {
+                "word": "我 (wǒ)",
+                "reading": "wǒ",
+                "vi": "Tôi / Bản thân",
+                "en": "I / Me",
+                "meaning_vi": "Tôi / Bản thân",
+                "meaning_en": "I / Me"
+              }
+            ],
+            "example": {
+              "word": "我 (wǒ)",
+              "reading": "wǒ",
+              "vi": "Tôi / Bản thân",
+              "en": "I / Me",
+              "meaning_vi": "Tôi / Bản thân",
+              "meaning_en": "I / Me"
+            }
+          }
+        ]
+      },
+      {
+        "id": "finals",
+        "labelVi": "Vận mẫu (Finals)",
+        "labelEn": "Finals (韵母 - 24)",
+        "descriptionVi": "24 nguyên âm và vần gồm nguyên âm đơn, nguyên âm kép, âm mũi và nguyên âm tròn môi ü.",
+        "descriptionEn": "The 24 standard finals comprising simple vowels, compounds, and nasal endings.",
+        "items": [
+          {
+            "char": "a",
+            "romaji": "pinyin a",
+            "ipa": "a",
+            "groupVi": "Vận mẫu đơn",
+            "groupEn": "Simple Final",
+            "group_vi": "Vận mẫu đơn",
+            "group_en": "Simple Final",
+            "mouthTipVi": "Mở rộng miệng phát âm 'a' tự nhiên.",
+            "mouthTipEn": "Open mouth widely for pure 'a'.",
+            "mouthTip_vi": "Mở rộng miệng phát âm 'a' tự nhiên.",
+            "mouthTip_en": "Open mouth widely for pure 'a'.",
+            "meaningVi": "Vận mẫu: a",
+            "meaningEn": "Final: a",
+            "meaning_vi": "Vận mẫu: a",
+            "meaning_en": "Final: a",
+            "speechText": "爸 (bà)",
+            "examples": [
+              {
+                "word": "爸 (bà)",
+                "reading": "bà",
+                "vi": "Bố / Cha",
+                "en": "Dad",
+                "meaning_vi": "Bố / Cha",
+                "meaning_en": "Dad"
+              }
+            ],
+            "example": {
+              "word": "爸 (bà)",
+              "reading": "bà",
+              "vi": "Bố / Cha",
+              "en": "Dad",
+              "meaning_vi": "Bố / Cha",
+              "meaning_en": "Dad"
+            }
+          },
+          {
+            "char": "o",
+            "romaji": "pinyin o",
+            "ipa": "o",
+            "groupVi": "Vận mẫu đơn",
+            "groupEn": "Simple Final",
+            "group_vi": "Vận mẫu đơn",
+            "group_en": "Simple Final",
+            "mouthTipVi": "Tròn môi phát âm 'ô'.",
+            "mouthTipEn": "Rounded back vowel 'o'.",
+            "mouthTip_vi": "Tròn môi phát âm 'ô'.",
+            "mouthTip_en": "Rounded back vowel 'o'.",
+            "meaningVi": "Vận mẫu: o",
+            "meaningEn": "Final: o",
+            "meaning_vi": "Vận mẫu: o",
+            "meaning_en": "Final: o",
+            "speechText": "波 (bō)",
+            "examples": [
+              {
+                "word": "波 (bō)",
+                "reading": "bō",
+                "vi": "Làn sóng",
+                "en": "Wave",
+                "meaning_vi": "Làn sóng",
+                "meaning_en": "Wave"
+              }
+            ],
+            "example": {
+              "word": "波 (bō)",
+              "reading": "bō",
+              "vi": "Làn sóng",
+              "en": "Wave",
+              "meaning_vi": "Làn sóng",
+              "meaning_en": "Wave"
+            }
+          },
+          {
+            "char": "e",
+            "romaji": "pinyin e",
+            "ipa": "ɤ",
+            "groupVi": "Vận mẫu đơn",
+            "groupEn": "Simple Final",
+            "group_vi": "Vận mẫu đơn",
+            "group_en": "Simple Final",
+            "mouthTipVi": "Mở dẹt miệng phát âm giữa 'ơ' và 'ưa'. Không chu môi.",
+            "mouthTipEn": "Unrounded mid-back vowel, between 'uh' and 'er'.",
+            "mouthTip_vi": "Mở dẹt miệng phát âm giữa 'ơ' và 'ưa'. Không chu môi.",
+            "mouthTip_en": "Unrounded mid-back vowel, between 'uh' and 'er'.",
+            "meaningVi": "Vận mẫu: e",
+            "meaningEn": "Final: e",
+            "meaning_vi": "Vận mẫu: e",
+            "meaning_en": "Final: e",
+            "speechText": "喝 (hē)",
+            "examples": [
+              {
+                "word": "喝 (hē)",
+                "reading": "hē",
+                "vi": "Uống",
+                "en": "To drink",
+                "meaning_vi": "Uống",
+                "meaning_en": "To drink"
+              }
+            ],
+            "example": {
+              "word": "喝 (hē)",
+              "reading": "hē",
+              "vi": "Uống",
+              "en": "To drink",
+              "meaning_vi": "Uống",
+              "meaning_en": "To drink"
+            }
+          },
+          {
+            "char": "i",
+            "romaji": "pinyin i",
+            "ipa": "i",
+            "groupVi": "Vận mẫu đơn",
+            "groupEn": "Simple Final",
+            "group_vi": "Vận mẫu đơn",
+            "group_en": "Simple Final",
+            "mouthTipVi": "Khóe miệng kéo dẹt sang hai bên phát âm 'i'.",
+            "mouthTipEn": "High front unrounded vowel 'i'.",
+            "mouthTip_vi": "Khóe miệng kéo dẹt sang hai bên phát âm 'i'.",
+            "mouthTip_en": "High front unrounded vowel 'i'.",
+            "meaningVi": "Vận mẫu: i",
+            "meaningEn": "Final: i",
+            "meaning_vi": "Vận mẫu: i",
+            "meaning_en": "Final: i",
+            "speechText": "米 (mǐ)",
+            "examples": [
+              {
+                "word": "米 (mǐ)",
+                "reading": "mǐ",
+                "vi": "Gạo",
+                "en": "Rice",
+                "meaning_vi": "Gạo",
+                "meaning_en": "Rice"
+              }
+            ],
+            "example": {
+              "word": "米 (mǐ)",
+              "reading": "mǐ",
+              "vi": "Gạo",
+              "en": "Rice",
+              "meaning_vi": "Gạo",
+              "meaning_en": "Rice"
+            }
+          },
+          {
+            "char": "u",
+            "romaji": "pinyin u",
+            "ipa": "u",
+            "groupVi": "Vận mẫu đơn",
+            "groupEn": "Simple Final",
+            "group_vi": "Vận mẫu đơn",
+            "group_en": "Simple Final",
+            "mouthTipVi": "Chu môi về phía trước phát âm 'u'.",
+            "mouthTipEn": "High rounded back vowel 'u'.",
+            "mouthTip_vi": "Chu môi về phía trước phát âm 'u'.",
+            "mouthTip_en": "High rounded back vowel 'u'.",
+            "meaningVi": "Vận mẫu: u",
+            "meaningEn": "Final: u",
+            "meaning_vi": "Vận mẫu: u",
+            "meaning_en": "Final: u",
+            "speechText": "路 (lù)",
+            "examples": [
+              {
+                "word": "路 (lù)",
+                "reading": "lù",
+                "vi": "Con đường",
+                "en": "Road",
+                "meaning_vi": "Con đường",
+                "meaning_en": "Road"
+              }
+            ],
+            "example": {
+              "word": "路 (lù)",
+              "reading": "lù",
+              "vi": "Con đường",
+              "en": "Road",
+              "meaning_vi": "Con đường",
+              "meaning_en": "Road"
+            }
+          },
+          {
+            "char": "ü",
+            "romaji": "pinyin ü",
+            "ipa": "y",
+            "groupVi": "Vận mẫu đơn tròn môi",
+            "groupEn": "Umlaut Final",
+            "group_vi": "Vận mẫu đơn tròn môi",
+            "group_en": "Umlaut Final",
+            "mouthTipVi": "Cực kỳ quan trọng: Định hình lưỡi để nói âm 'i', nhưng CHU TRÒN MÔI như huýt sáo và KHÔNG ĐƯỢC DI CHUYỂN LƯỠI!",
+            "mouthTipEn": "Keep tongue set for 'ee' [i], but round lips tightly into 'oo' [u]! Do NOT move tongue.",
+            "mouthTip_vi": "Cực kỳ quan trọng: Định hình lưỡi để nói âm 'i', nhưng CHU TRÒN MÔI như huýt sáo và KHÔNG ĐƯỢC DI CHUYỂN LƯỠI!",
+            "mouthTip_en": "Keep tongue set for 'ee' [i], but round lips tightly into 'oo' [u]! Do NOT move tongue.",
+            "meaningVi": "Vận mẫu: ü",
+            "meaningEn": "Final: ü",
+            "meaning_vi": "Vận mẫu: ü",
+            "meaning_en": "Final: ü",
+            "speechText": "绿 (lǜ)",
+            "examples": [
+              {
+                "word": "绿 (lǜ)",
+                "reading": "lǜ",
+                "vi": "Màu xanh lá",
+                "en": "Green",
+                "meaning_vi": "Màu xanh lá",
+                "meaning_en": "Green"
+              }
+            ],
+            "example": {
+              "word": "绿 (lǜ)",
+              "reading": "lǜ",
+              "vi": "Màu xanh lá",
+              "en": "Green",
+              "meaning_vi": "Màu xanh lá",
+              "meaning_en": "Green"
+            }
+          },
+          {
+            "char": "ai",
+            "romaji": "pinyin ai",
+            "ipa": "aɪ",
+            "groupVi": "Vận mẫu kép",
+            "groupEn": "Compound Final",
+            "group_vi": "Vận mẫu kép",
+            "group_en": "Compound Final",
+            "mouthTipVi": "Phát âm 'a' rồi lướt sang 'i'.",
+            "mouthTipEn": "Smooth glide from 'a' to 'i'.",
+            "mouthTip_vi": "Phát âm 'a' rồi lướt sang 'i'.",
+            "mouthTip_en": "Smooth glide from 'a' to 'i'.",
+            "meaningVi": "Vận mẫu: ai",
+            "meaningEn": "Final: ai",
+            "meaning_vi": "Vận mẫu: ai",
+            "meaning_en": "Final: ai",
+            "speechText": "爱 (ài)",
+            "examples": [
+              {
+                "word": "爱 (ài)",
+                "reading": "ài",
+                "vi": "Yêu thương",
+                "en": "Love",
+                "meaning_vi": "Yêu thương",
+                "meaning_en": "Love"
+              }
+            ],
+            "example": {
+              "word": "爱 (ài)",
+              "reading": "ài",
+              "vi": "Yêu thương",
+              "en": "Love",
+              "meaning_vi": "Yêu thương",
+              "meaning_en": "Love"
+            }
+          },
+          {
+            "char": "ei",
+            "romaji": "pinyin ei",
+            "ipa": "eɪ",
+            "groupVi": "Vận mẫu kép",
+            "groupEn": "Compound Final",
+            "group_vi": "Vận mẫu kép",
+            "group_en": "Compound Final",
+            "mouthTipVi": "Phát âm 'e' lướt sang 'i' (nghe như êi).",
+            "mouthTipEn": "Glide from 'e' to 'i'.",
+            "mouthTip_vi": "Phát âm 'e' lướt sang 'i' (nghe như êi).",
+            "mouthTip_en": "Glide from 'e' to 'i'.",
+            "meaningVi": "Vận mẫu: ei",
+            "meaningEn": "Final: ei",
+            "meaning_vi": "Vận mẫu: ei",
+            "meaning_en": "Final: ei",
+            "speechText": "杯 (bēi)",
+            "examples": [
+              {
+                "word": "杯 (bēi)",
+                "reading": "bēi",
+                "vi": "Chiếc cốc",
+                "en": "Cup",
+                "meaning_vi": "Chiếc cốc",
+                "meaning_en": "Cup"
+              }
+            ],
+            "example": {
+              "word": "杯 (bēi)",
+              "reading": "bēi",
+              "vi": "Chiếc cốc",
+              "en": "Cup",
+              "meaning_vi": "Chiếc cốc",
+              "meaning_en": "Cup"
+            }
+          },
+          {
+            "char": "ui",
+            "romaji": "pinyin ui (uei)",
+            "ipa": "",
+            "groupVi": "Vận mẫu kép",
+            "groupEn": "Compound Final",
+            "group_vi": "Vận mẫu kép",
+            "group_en": "Compound Final",
+            "mouthTipVi": "Thực chất là 'uei': lướt từ u qua ê sang i.",
+            "mouthTipEn": "Contracted form of 'uei'.",
+            "mouthTip_vi": "Thực chất là 'uei': lướt từ u qua ê sang i.",
+            "mouthTip_en": "Contracted form of 'uei'.",
+            "meaningVi": "Vận mẫu: ui",
+            "meaningEn": "Final: ui",
+            "meaning_vi": "Vận mẫu: ui",
+            "meaning_en": "Final: ui",
+            "speechText": "水 (shuǐ)",
+            "examples": [
+              {
+                "word": "水 (shuǐ)",
+                "reading": "shuǐ",
+                "vi": "Nước",
+                "en": "Water",
+                "meaning_vi": "Nước",
+                "meaning_en": "Water"
+              }
+            ],
+            "example": {
+              "word": "水 (shuǐ)",
+              "reading": "shuǐ",
+              "vi": "Nước",
+              "en": "Water",
+              "meaning_vi": "Nước",
+              "meaning_en": "Water"
+            }
+          },
+          {
+            "char": "ao",
+            "romaji": "pinyin ao",
+            "ipa": "aʊ",
+            "groupVi": "Vận mẫu kép",
+            "groupEn": "Compound Final",
+            "group_vi": "Vận mẫu kép",
+            "group_en": "Compound Final",
+            "mouthTipVi": "Phát âm 'a' mở miệng rồi thu tròn môi sang 'o'.",
+            "mouthTipEn": "Open 'a' gliding to rounded 'o'.",
+            "mouthTip_vi": "Phát âm 'a' mở miệng rồi thu tròn môi sang 'o'.",
+            "mouthTip_en": "Open 'a' gliding to rounded 'o'.",
+            "meaningVi": "Vận mẫu: ao",
+            "meaningEn": "Final: ao",
+            "meaning_vi": "Vận mẫu: ao",
+            "meaning_en": "Final: ao",
+            "speechText": "包 (bāo)",
+            "examples": [
+              {
+                "word": "包 (bāo)",
+                "reading": "bāo",
+                "vi": "Cái túi / Bánh bao",
+                "en": "Bag / Bun",
+                "meaning_vi": "Cái túi / Bánh bao",
+                "meaning_en": "Bag / Bun"
+              }
+            ],
+            "example": {
+              "word": "包 (bāo)",
+              "reading": "bāo",
+              "vi": "Cái túi / Bánh bao",
+              "en": "Bag / Bun",
+              "meaning_vi": "Cái túi / Bánh bao",
+              "meaning_en": "Bag / Bun"
+            }
+          },
+          {
+            "char": "ou",
+            "romaji": "pinyin ou",
+            "ipa": "oʊ",
+            "groupVi": "Vận mẫu kép",
+            "groupEn": "Compound Final",
+            "group_vi": "Vận mẫu kép",
+            "group_en": "Compound Final",
+            "mouthTipVi": "Bắt đầu ở 'ô' rồi thu nhỏ môi lại sang 'u'.",
+            "mouthTipEn": "Mid vowel gliding to 'u'.",
+            "mouthTip_vi": "Bắt đầu ở 'ô' rồi thu nhỏ môi lại sang 'u'.",
+            "mouthTip_en": "Mid vowel gliding to 'u'.",
+            "meaningVi": "Vận mẫu: ou",
+            "meaningEn": "Final: ou",
+            "meaning_vi": "Vận mẫu: ou",
+            "meaning_en": "Final: ou",
+            "speechText": "头 (tóu)",
+            "examples": [
+              {
+                "word": "头 (tóu)",
+                "reading": "tóu",
+                "vi": "Cái đầu",
+                "en": "Head",
+                "meaning_vi": "Cái đầu",
+                "meaning_en": "Head"
+              }
+            ],
+            "example": {
+              "word": "头 (tóu)",
+              "reading": "tóu",
+              "vi": "Cái đầu",
+              "en": "Head",
+              "meaning_vi": "Cái đầu",
+              "meaning_en": "Head"
+            }
+          },
+          {
+            "char": "iu",
+            "romaji": "pinyin iu (iou)",
+            "ipa": "",
+            "groupVi": "Vận mẫu kép",
+            "groupEn": "Compound Final",
+            "group_vi": "Vận mẫu kép",
+            "group_en": "Compound Final",
+            "mouthTipVi": "Thực chất là 'iou': lướt từ i qua ô sang u.",
+            "mouthTipEn": "Contracted form of 'iou'.",
+            "mouthTip_vi": "Thực chất là 'iou': lướt từ i qua ô sang u.",
+            "mouthTip_en": "Contracted form of 'iou'.",
+            "meaningVi": "Vận mẫu: iu",
+            "meaningEn": "Final: iu",
+            "meaning_vi": "Vận mẫu: iu",
+            "meaning_en": "Final: iu",
+            "speechText": "九 (jiǔ)",
+            "examples": [
+              {
+                "word": "九 (jiǔ)",
+                "reading": "jiǔ",
+                "vi": "Số 9",
+                "en": "Nine",
+                "meaning_vi": "Số 9",
+                "meaning_en": "Nine"
+              }
+            ],
+            "example": {
+              "word": "九 (jiǔ)",
+              "reading": "jiǔ",
+              "vi": "Số 9",
+              "en": "Nine",
+              "meaning_vi": "Số 9",
+              "meaning_en": "Nine"
+            }
+          },
+          {
+            "char": "ie",
+            "romaji": "pinyin ie",
+            "ipa": "jɛ",
+            "groupVi": "Vận mẫu kép",
+            "groupEn": "Compound Final",
+            "group_vi": "Vận mẫu kép",
+            "group_en": "Compound Final",
+            "mouthTipVi": "Lướt từ 'i' sang 'e'.",
+            "mouthTipEn": "Glide from 'i' into 'e'.",
+            "mouthTip_vi": "Lướt từ 'i' sang 'e'.",
+            "mouthTip_en": "Glide from 'i' into 'e'.",
+            "meaningVi": "Vận mẫu: ie",
+            "meaningEn": "Final: ie",
+            "meaning_vi": "Vận mẫu: ie",
+            "meaning_en": "Final: ie",
+            "speechText": "谢 (xiè)",
+            "examples": [
+              {
+                "word": "谢 (xiè)",
+                "reading": "xiè",
+                "vi": "Cảm ơn",
+                "en": "Thanks",
+                "meaning_vi": "Cảm ơn",
+                "meaning_en": "Thanks"
+              }
+            ],
+            "example": {
+              "word": "谢 (xiè)",
+              "reading": "xiè",
+              "vi": "Cảm ơn",
+              "en": "Thanks",
+              "meaning_vi": "Cảm ơn",
+              "meaning_en": "Thanks"
+            }
+          },
+          {
+            "char": "üe",
+            "romaji": "pinyin üe",
+            "ipa": "yɛ",
+            "groupVi": "Vận mẫu kép",
+            "groupEn": "Compound Final",
+            "group_vi": "Vận mẫu kép",
+            "group_en": "Compound Final",
+            "mouthTipVi": "Tròn môi âm 'ü' rồi lướt sang 'e'.",
+            "mouthTipEn": "Rounded 'ü' gliding into 'e'.",
+            "mouthTip_vi": "Tròn môi âm 'ü' rồi lướt sang 'e'.",
+            "mouthTip_en": "Rounded 'ü' gliding into 'e'.",
+            "meaningVi": "Vận mẫu: üe",
+            "meaningEn": "Final: üe",
+            "meaning_vi": "Vận mẫu: üe",
+            "meaning_en": "Final: üe",
+            "speechText": "月 (yuè)",
+            "examples": [
+              {
+                "word": "月 (yuè)",
+                "reading": "yuè",
+                "vi": "Mặt trăng / Tháng",
+                "en": "Moon",
+                "meaning_vi": "Mặt trăng / Tháng",
+                "meaning_en": "Moon"
+              }
+            ],
+            "example": {
+              "word": "月 (yuè)",
+              "reading": "yuè",
+              "vi": "Mặt trăng / Tháng",
+              "en": "Moon",
+              "meaning_vi": "Mặt trăng / Tháng",
+              "meaning_en": "Moon"
+            }
+          },
+          {
+            "char": "er",
+            "romaji": "pinyin er",
+            "ipa": "ɑɻ",
+            "groupVi": "Vận mẫu uốn lưỡi",
+            "groupEn": "Rhotic Final",
+            "group_vi": "Vận mẫu uốn lưỡi",
+            "group_en": "Rhotic Final",
+            "mouthTipVi": "Phát âm nguyên âm đồng thời cuốn đầu lưỡi lên ngạc cứng.",
+            "mouthTipEn": "Vowel with curled retroflex tongue.",
+            "mouthTip_vi": "Phát âm nguyên âm đồng thời cuốn đầu lưỡi lên ngạc cứng.",
+            "mouthTip_en": "Vowel with curled retroflex tongue.",
+            "meaningVi": "Vận mẫu: er",
+            "meaningEn": "Final: er",
+            "meaning_vi": "Vận mẫu: er",
+            "meaning_en": "Final: er",
+            "speechText": "二 (èr)",
+            "examples": [
+              {
+                "word": "二 (èr)",
+                "reading": "èr",
+                "vi": "Số 2",
+                "en": "Two",
+                "meaning_vi": "Số 2",
+                "meaning_en": "Two"
+              }
+            ],
+            "example": {
+              "word": "二 (èr)",
+              "reading": "èr",
+              "vi": "Số 2",
+              "en": "Two",
+              "meaning_vi": "Số 2",
+              "meaning_en": "Two"
+            }
+          },
+          {
+            "char": "an",
+            "romaji": "pinyin an",
+            "ipa": "an",
+            "groupVi": "Vận mẫu mũi trước",
+            "groupEn": "Front Nasal",
+            "group_vi": "Vận mẫu mũi trước",
+            "group_en": "Front Nasal",
+            "mouthTipVi": "Phát âm 'a' rồi đầu lưỡi chạm lợi trên kết thúc ở 'n'.",
+            "mouthTipEn": "Front vowel ending with alveolar nasal 'n'.",
+            "mouthTip_vi": "Phát âm 'a' rồi đầu lưỡi chạm lợi trên kết thúc ở 'n'.",
+            "mouthTip_en": "Front vowel ending with alveolar nasal 'n'.",
+            "meaningVi": "Vận mẫu: an",
+            "meaningEn": "Final: an",
+            "meaning_vi": "Vận mẫu: an",
+            "meaning_en": "Final: an",
+            "speechText": "看 (kàn)",
+            "examples": [
+              {
+                "word": "看 (kàn)",
+                "reading": "kàn",
+                "vi": "Xem / Nhìn",
+                "en": "To see",
+                "meaning_vi": "Xem / Nhìn",
+                "meaning_en": "To see"
+              }
+            ],
+            "example": {
+              "word": "看 (kàn)",
+              "reading": "kàn",
+              "vi": "Xem / Nhìn",
+              "en": "To see",
+              "meaning_vi": "Xem / Nhìn",
+              "meaning_en": "To see"
+            }
+          },
+          {
+            "char": "en",
+            "romaji": "pinyin en",
+            "ipa": "ən",
+            "groupVi": "Vận mẫu mũi trước",
+            "groupEn": "Front Nasal",
+            "group_vi": "Vận mẫu mũi trước",
+            "group_en": "Front Nasal",
+            "mouthTipVi": "Phát âm giữa 'ơ' rồi kết thúc ở 'n'.",
+            "mouthTipEn": "Neutral vowel ending in 'n'.",
+            "mouthTip_vi": "Phát âm giữa 'ơ' rồi kết thúc ở 'n'.",
+            "mouthTip_en": "Neutral vowel ending in 'n'.",
+            "meaningVi": "Vận mẫu: en",
+            "meaningEn": "Final: en",
+            "meaning_vi": "Vận mẫu: en",
+            "meaning_en": "Final: en",
+            "speechText": "门 (mén)",
+            "examples": [
+              {
+                "word": "门 (mén)",
+                "reading": "mén",
+                "vi": "Cánh cửa",
+                "en": "Door",
+                "meaning_vi": "Cánh cửa",
+                "meaning_en": "Door"
+              }
+            ],
+            "example": {
+              "word": "门 (mén)",
+              "reading": "mén",
+              "vi": "Cánh cửa",
+              "en": "Door",
+              "meaning_vi": "Cánh cửa",
+              "meaning_en": "Door"
+            }
+          },
+          {
+            "char": "in",
+            "romaji": "pinyin in",
+            "ipa": "in",
+            "groupVi": "Vận mẫu mũi trước",
+            "groupEn": "Front Nasal",
+            "group_vi": "Vận mẫu mũi trước",
+            "group_en": "Front Nasal",
+            "mouthTipVi": "Phát âm 'i' rồi kết thúc ở 'n'.",
+            "mouthTipEn": "Close front vowel into 'n'.",
+            "mouthTip_vi": "Phát âm 'i' rồi kết thúc ở 'n'.",
+            "mouthTip_en": "Close front vowel into 'n'.",
+            "meaningVi": "Vận mẫu: in",
+            "meaningEn": "Final: in",
+            "meaning_vi": "Vận mẫu: in",
+            "meaning_en": "Final: in",
+            "speechText": "金 (jīn)",
+            "examples": [
+              {
+                "word": "金 (jīn)",
+                "reading": "jīn",
+                "vi": "Vàng / Kim loại",
+                "en": "Gold",
+                "meaning_vi": "Vàng / Kim loại",
+                "meaning_en": "Gold"
+              }
+            ],
+            "example": {
+              "word": "金 (jīn)",
+              "reading": "jīn",
+              "vi": "Vàng / Kim loại",
+              "en": "Gold",
+              "meaning_vi": "Vàng / Kim loại",
+              "meaning_en": "Gold"
+            }
+          },
+          {
+            "char": "un",
+            "romaji": "pinyin un (uen)",
+            "ipa": "",
+            "groupVi": "Vận mẫu mũi trước",
+            "groupEn": "Front Nasal",
+            "group_vi": "Vận mẫu mũi trước",
+            "group_en": "Front Nasal",
+            "mouthTipVi": "Thực chất là 'uen': lướt từ u qua ơn sang n.",
+            "mouthTipEn": "Contracted form of 'uen'.",
+            "mouthTip_vi": "Thực chất là 'uen': lướt từ u qua ơn sang n.",
+            "mouthTip_en": "Contracted form of 'uen'.",
+            "meaningVi": "Vận mẫu: un",
+            "meaningEn": "Final: un",
+            "meaning_vi": "Vận mẫu: un",
+            "meaning_en": "Final: un",
+            "speechText": "轮 (lún)",
+            "examples": [
+              {
+                "word": "轮 (lún)",
+                "reading": "lún",
+                "vi": "Bánh xe / Luân chuyển",
+                "en": "Wheel",
+                "meaning_vi": "Bánh xe / Luân chuyển",
+                "meaning_en": "Wheel"
+              }
+            ],
+            "example": {
+              "word": "轮 (lún)",
+              "reading": "lún",
+              "vi": "Bánh xe / Luân chuyển",
+              "en": "Wheel",
+              "meaning_vi": "Bánh xe / Luân chuyển",
+              "meaning_en": "Wheel"
+            }
+          },
+          {
+            "char": "ün",
+            "romaji": "pinyin ün",
+            "ipa": "yn",
+            "groupVi": "Vận mẫu mũi trước",
+            "groupEn": "Front Nasal",
+            "group_vi": "Vận mẫu mũi trước",
+            "group_en": "Front Nasal",
+            "mouthTipVi": "Tròn môi 'ü' kết thúc ở 'n'.",
+            "mouthTipEn": "Umlaut 'ü' into nasal 'n'.",
+            "mouthTip_vi": "Tròn môi 'ü' kết thúc ở 'n'.",
+            "mouthTip_en": "Umlaut 'ü' into nasal 'n'.",
+            "meaningVi": "Vận mẫu: ün",
+            "meaningEn": "Final: ün",
+            "meaning_vi": "Vận mẫu: ün",
+            "meaning_en": "Final: ün",
+            "speechText": "云 (yún)",
+            "examples": [
+              {
+                "word": "云 (yún)",
+                "reading": "yún",
+                "vi": "Mây",
+                "en": "Cloud",
+                "meaning_vi": "Mây",
+                "meaning_en": "Cloud"
+              }
+            ],
+            "example": {
+              "word": "云 (yún)",
+              "reading": "yún",
+              "vi": "Mây",
+              "en": "Cloud",
+              "meaning_vi": "Mây",
+              "meaning_en": "Cloud"
+            }
+          },
+          {
+            "char": "ang",
+            "romaji": "pinyin ang",
+            "ipa": "ɑŋ",
+            "groupVi": "Vận mẫu mũi sau",
+            "groupEn": "Back Nasal",
+            "group_vi": "Vận mẫu mũi sau",
+            "group_en": "Back Nasal",
+            "mouthTipVi": "Phát âm 'a' mở rộng rồi gốc lưỡi áp ngạc mềm kết thúc ở 'ng'.",
+            "mouthTipEn": "Open 'a' ending in deep velar 'ng'.",
+            "mouthTip_vi": "Phát âm 'a' mở rộng rồi gốc lưỡi áp ngạc mềm kết thúc ở 'ng'.",
+            "mouthTip_en": "Open 'a' ending in deep velar 'ng'.",
+            "meaningVi": "Vận mẫu: ang",
+            "meaningEn": "Final: ang",
+            "meaning_vi": "Vận mẫu: ang",
+            "meaning_en": "Final: ang",
+            "speechText": "忙 (máng)",
+            "examples": [
+              {
+                "word": "忙 (máng)",
+                "reading": "máng",
+                "vi": "Bận rộn",
+                "en": "Busy",
+                "meaning_vi": "Bận rộn",
+                "meaning_en": "Busy"
+              }
+            ],
+            "example": {
+              "word": "忙 (máng)",
+              "reading": "máng",
+              "vi": "Bận rộn",
+              "en": "Busy",
+              "meaning_vi": "Bận rộn",
+              "meaning_en": "Busy"
+            }
+          },
+          {
+            "char": "eng",
+            "romaji": "pinyin eng",
+            "ipa": "əŋ",
+            "groupVi": "Vận mẫu mũi sau",
+            "groupEn": "Back Nasal",
+            "group_vi": "Vận mẫu mũi sau",
+            "group_en": "Back Nasal",
+            "mouthTipVi": "Phát âm 'ơ' rồi gốc lưỡi nâng lên ngạc mềm ở 'ng'.",
+            "mouthTipEn": "Central vowel sliding into velar 'ng'.",
+            "mouthTip_vi": "Phát âm 'ơ' rồi gốc lưỡi nâng lên ngạc mềm ở 'ng'.",
+            "mouthTip_en": "Central vowel sliding into velar 'ng'.",
+            "meaningVi": "Vận mẫu: eng",
+            "meaningEn": "Final: eng",
+            "meaning_vi": "Vận mẫu: eng",
+            "meaning_en": "Final: eng",
+            "speechText": "风 (fēng)",
+            "examples": [
+              {
+                "word": "风 (fēng)",
+                "reading": "fēng",
+                "vi": "Gió thổi",
+                "en": "Wind",
+                "meaning_vi": "Gió thổi",
+                "meaning_en": "Wind"
+              }
+            ],
+            "example": {
+              "word": "风 (fēng)",
+              "reading": "fēng",
+              "vi": "Gió thổi",
+              "en": "Wind",
+              "meaning_vi": "Gió thổi",
+              "meaning_en": "Wind"
+            }
+          },
+          {
+            "char": "ing",
+            "romaji": "pinyin ing",
+            "ipa": "iŋ",
+            "groupVi": "Vận mẫu mũi sau",
+            "groupEn": "Back Nasal",
+            "group_vi": "Vận mẫu mũi sau",
+            "group_en": "Back Nasal",
+            "mouthTipVi": "Phát âm 'i' rồi vang sâu xuống vòm họng ở 'ng'.",
+            "mouthTipEn": "Front vowel into velar 'ng'.",
+            "mouthTip_vi": "Phát âm 'i' rồi vang sâu xuống vòm họng ở 'ng'.",
+            "mouthTip_en": "Front vowel into velar 'ng'.",
+            "meaningVi": "Vận mẫu: ing",
+            "meaningEn": "Final: ing",
+            "meaning_vi": "Vận mẫu: ing",
+            "meaning_en": "Final: ing",
+            "speechText": "星 (xīng)",
+            "examples": [
+              {
+                "word": "星 (xīng)",
+                "reading": "xīng",
+                "vi": "Ngôi sao",
+                "en": "Star",
+                "meaning_vi": "Ngôi sao",
+                "meaning_en": "Star"
+              }
+            ],
+            "example": {
+              "word": "星 (xīng)",
+              "reading": "xīng",
+              "vi": "Ngôi sao",
+              "en": "Star",
+              "meaning_vi": "Ngôi sao",
+              "meaning_en": "Star"
+            }
+          },
+          {
+            "char": "ong",
+            "romaji": "pinyin ong",
+            "ipa": "ʊŋ",
+            "groupVi": "Vận mẫu mũi sau",
+            "groupEn": "Back Nasal",
+            "group_vi": "Vận mẫu mũi sau",
+            "group_en": "Back Nasal",
+            "mouthTipVi": "Tròn môi 'ô' rồi kết thúc ở âm mũi ngạc mềm 'ng'.",
+            "mouthTipEn": "Rounded back vowel into 'ng'.",
+            "mouthTip_vi": "Tròn môi 'ô' rồi kết thúc ở âm mũi ngạc mềm 'ng'.",
+            "mouthTip_en": "Rounded back vowel into 'ng'.",
+            "meaningVi": "Vận mẫu: ong",
+            "meaningEn": "Final: ong",
+            "meaning_vi": "Vận mẫu: ong",
+            "meaning_en": "Final: ong",
+            "speechText": "红 (hóng)",
+            "examples": [
+              {
+                "word": "红 (hóng)",
+                "reading": "hóng",
+                "vi": "Màu đỏ",
+                "en": "Red",
+                "meaning_vi": "Màu đỏ",
+                "meaning_en": "Red"
+              }
+            ],
+            "example": {
+              "word": "红 (hóng)",
+              "reading": "hóng",
+              "vi": "Màu đỏ",
+              "en": "Red",
+              "meaning_vi": "Màu đỏ",
+              "meaning_en": "Red"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tones",
+        "labelVi": "4 Thanh điệu (Tones)",
+        "labelEn": "The 4 Tones (声调)",
+        "descriptionVi": "4 thanh điệu chính (55, 35, 214, 51) và thanh nhẹ quyết định nghĩa hoàn toàn của từ.",
+        "descriptionEn": "Pitch contours of Tone 1, 2, 3, 4, and neutral tone.",
+        "items": [
+          {
+            "char": "Tone 1 ( ¯ )",
+            "romaji": "mā",
+            "ipa": "˥˥",
+            "groupVi": "Thanh 1 (Âm Bình)",
+            "groupEn": "Tone 1 (55)",
+            "group_vi": "Thanh 1 (Âm Bình)",
+            "group_en": "Tone 1 (55)",
+            "mouthTipVi": "Cao độ 5-5: Giữ giọng cao, phẳng và đều đặn như đang ngân nốt nhạc cao. Tuyệt đối không để giọng chùng xuống.",
+            "mouthTipEn": "High, flat, steady pitch (55). Imagine singing a sustained high note: 'mā'. Do not let it drop.",
+            "mouthTip_vi": "Cao độ 5-5: Giữ giọng cao, phẳng và đều đặn như đang ngân nốt nhạc cao. Tuyệt đối không để giọng chùng xuống.",
+            "mouthTip_en": "High, flat, steady pitch (55). Imagine singing a sustained high note: 'mā'. Do not let it drop.",
+            "meaningVi": "Thanh điệu: Tone 1 ( ¯ )",
+            "meaningEn": "Tone: Tone 1 ( ¯ )",
+            "meaning_vi": "Thanh điệu: Tone 1 ( ¯ )",
+            "meaning_en": "Tone: Tone 1 ( ¯ )",
+            "speechText": "mā",
+            "examples": [
+              {
+                "word": "妈 (mā)",
+                "reading": "mā",
+                "vi": "Người mẹ",
+                "en": "Mother",
+                "meaning_vi": "Người mẹ",
+                "meaning_en": "Mother"
+              }
+            ],
+            "example": {
+              "word": "妈 (mā)",
+              "reading": "mā",
+              "vi": "Người mẹ",
+              "en": "Mother",
+              "meaning_vi": "Người mẹ",
+              "meaning_en": "Mother"
+            }
+          },
+          {
+            "char": "Tone 2 ( ˊ )",
+            "romaji": "má",
+            "ipa": "˧˥",
+            "groupVi": "Thanh 2 (Dương Bình)",
+            "groupEn": "Tone 2 (35)",
+            "group_vi": "Thanh 2 (Dương Bình)",
+            "group_en": "Tone 2 (35)",
+            "mouthTipVi": "Cao độ 3-5: Đi lên từ trung bình lên cao, giống như khi ngạc nhiên thốt lên 'Hả?!' trong tiếng Việt.",
+            "mouthTipEn": "Rising pitch (35). Starts from mid pitch and slides upward like asking 'What?!' -> 'má'.",
+            "mouthTip_vi": "Cao độ 3-5: Đi lên từ trung bình lên cao, giống như khi ngạc nhiên thốt lên 'Hả?!' trong tiếng Việt.",
+            "mouthTip_en": "Rising pitch (35). Starts from mid pitch and slides upward like asking 'What?!' -> 'má'.",
+            "meaningVi": "Thanh điệu: Tone 2 ( ˊ )",
+            "meaningEn": "Tone: Tone 2 ( ˊ )",
+            "meaning_vi": "Thanh điệu: Tone 2 ( ˊ )",
+            "meaning_en": "Tone: Tone 2 ( ˊ )",
+            "speechText": "má",
+            "examples": [
+              {
+                "word": "麻 (má)",
+                "reading": "má",
+                "vi": "Cây gai / Tê buốt",
+                "en": "Hemp / Numb",
+                "meaning_vi": "Cây gai / Tê buốt",
+                "meaning_en": "Hemp / Numb"
+              }
+            ],
+            "example": {
+              "word": "麻 (má)",
+              "reading": "má",
+              "vi": "Cây gai / Tê buốt",
+              "en": "Hemp / Numb",
+              "meaning_vi": "Cây gai / Tê buốt",
+              "meaning_en": "Hemp / Numb"
+            }
+          },
+          {
+            "char": "Tone 3 ( ˇ )",
+            "romaji": "mǎ",
+            "ipa": "˨˩˦",
+            "groupVi": "Thanh 3 (Thượng Thanh)",
+            "groupEn": "Tone 3 (214)",
+            "group_vi": "Thanh 3 (Thượng Thanh)",
+            "group_en": "Tone 3 (214)",
+            "mouthTipVi": "Cao độ 2-1-4: Hạ giọng xuống tận đáy cổ họng rồi mới vòng nhẹ lên. Trong câu nói nhanh thường chỉ cần hạ thấp (nửa thanh 3).",
+            "mouthTipEn": "Dipping pitch (214). Dips low into vocal fry, then rises. In fast speech stays low.",
+            "mouthTip_vi": "Cao độ 2-1-4: Hạ giọng xuống tận đáy cổ họng rồi mới vòng nhẹ lên. Trong câu nói nhanh thường chỉ cần hạ thấp (nửa thanh 3).",
+            "mouthTip_en": "Dipping pitch (214). Dips low into vocal fry, then rises. In fast speech stays low.",
+            "meaningVi": "Thanh điệu: Tone 3 ( ˇ )",
+            "meaningEn": "Tone: Tone 3 ( ˇ )",
+            "meaning_vi": "Thanh điệu: Tone 3 ( ˇ )",
+            "meaning_en": "Tone: Tone 3 ( ˇ )",
+            "speechText": "mǎ",
+            "examples": [
+              {
+                "word": "马 (mǎ)",
+                "reading": "mǎ",
+                "vi": "Con ngựa",
+                "en": "Horse",
+                "meaning_vi": "Con ngựa",
+                "meaning_en": "Horse"
+              }
+            ],
+            "example": {
+              "word": "马 (mǎ)",
+              "reading": "mǎ",
+              "vi": "Con ngựa",
+              "en": "Horse",
+              "meaning_vi": "Con ngựa",
+              "meaning_en": "Horse"
+            }
+          },
+          {
+            "char": "Tone 4 ( ˋ )",
+            "romaji": "mà",
+            "ipa": "˥˩",
+            "groupVi": "Thanh 4 (Khứ Thanh)",
+            "groupEn": "Tone 4 (51)",
+            "group_vi": "Thanh 4 (Khứ Thanh)",
+            "group_en": "Tone 4 (51)",
+            "mouthTipVi": "Cao độ 5-1: Rơi nhanh, dứt khoát từ đỉnh cao nhất xuống đáy như ra một mệnh lệnh dứt khoát!",
+            "mouthTipEn": "Sharp, decisive drop from top of vocal range to bottom! Like a stern command: 'Stop!' -> 'mà'.",
+            "mouthTip_vi": "Cao độ 5-1: Rơi nhanh, dứt khoát từ đỉnh cao nhất xuống đáy như ra một mệnh lệnh dứt khoát!",
+            "mouthTip_en": "Sharp, decisive drop from top of vocal range to bottom! Like a stern command: 'Stop!' -> 'mà'.",
+            "meaningVi": "Thanh điệu: Tone 4 ( ˋ )",
+            "meaningEn": "Tone: Tone 4 ( ˋ )",
+            "meaning_vi": "Thanh điệu: Tone 4 ( ˋ )",
+            "meaning_en": "Tone: Tone 4 ( ˋ )",
+            "speechText": "mà",
+            "examples": [
+              {
+                "word": "骂 (mà)",
+                "reading": "mà",
+                "vi": "Mắng mỏ",
+                "en": "To scold",
+                "meaning_vi": "Mắng mỏ",
+                "meaning_en": "To scold"
+              }
+            ],
+            "example": {
+              "word": "骂 (mà)",
+              "reading": "mà",
+              "vi": "Mắng mỏ",
+              "en": "To scold",
+              "meaning_vi": "Mắng mỏ",
+              "meaning_en": "To scold"
+            }
+          },
+          {
+            "char": "Neutral ( · )",
+            "romaji": "ma",
+            "ipa": "·",
+            "groupVi": "Thanh nhẹ (Khinh Thanh)",
+            "groupEn": "Neutral Tone",
+            "group_vi": "Thanh nhẹ (Khinh Thanh)",
+            "group_en": "Neutral Tone",
+            "mouthTipVi": "Phát âm cực ngắn, nhẹ và không nhấn, phụ thuộc vào cao độ của từ đứng liền trước.",
+            "mouthTipEn": "Short, soft, unstressed. Takes pitch from preceding tone.",
+            "mouthTip_vi": "Phát âm cực ngắn, nhẹ và không nhấn, phụ thuộc vào cao độ của từ đứng liền trước.",
+            "mouthTip_en": "Short, soft, unstressed. Takes pitch from preceding tone.",
+            "meaningVi": "Thanh điệu: Neutral ( · )",
+            "meaningEn": "Tone: Neutral ( · )",
+            "meaning_vi": "Thanh điệu: Neutral ( · )",
+            "meaning_en": "Tone: Neutral ( · )",
+            "speechText": "ma",
+            "examples": [
+              {
+                "word": "吗 (ma)",
+                "reading": "ma",
+                "vi": "Trợ từ nghi vấn 'hả/sao/không?'",
+                "en": "Question particle",
+                "meaning_vi": "Trợ từ nghi vấn 'hả/sao/không?'",
+                "meaning_en": "Question particle"
+              }
+            ],
+            "example": {
+              "word": "吗 (ma)",
+              "reading": "ma",
+              "vi": "Trợ từ nghi vấn 'hả/sao/không?'",
+              "en": "Question particle",
+              "meaning_vi": "Trợ từ nghi vấn 'hả/sao/không?'",
+              "meaning_en": "Question particle"
+            }
+          }
+        ]
+      },
+      {
+        "id": "basic_radicals",
+        "labelVi": "Chữ Hán & Bộ thủ cơ bản",
+        "labelEn": "Basic Characters & Radicals (部首)",
+        "descriptionVi": "22 chữ Hán và bộ thủ tượng hình cơ bản nhất cấu thành nên hàng vạn chữ Hán phức tạp.",
+        "descriptionEn": "Essential pictographic radicals and foundational Hanzi building blocks.",
+        "items": [
+          {
+            "char": "人",
+            "romaji": "rén (Bộ Nhân)",
+            "ipa": "ʐən˧˥",
+            "groupVi": "Con người & Cơ thể",
+            "groupEn": "Human & Body",
+            "group_vi": "Con người & Cơ thể",
+            "group_en": "Human & Body",
+            "mouthTipVi": "Thanh 2 (vuốt từ thấp lên cao). Đầu lưỡi uốn nhẹ về ngạc cứng phát âm 'r', kết thúc ở âm mũi 'n'. Tượng hình người dang hai chân bước đi.",
+            "mouthTipEn": "Tone 2 rising. Retroflex 'r' gliding into alveolar nasal 'n'. Pictograph of a walking person.",
+            "mouthTip_vi": "Thanh 2 (vuốt từ thấp lên cao). Đầu lưỡi uốn nhẹ về ngạc cứng phát âm 'r', kết thúc ở âm mũi 'n'. Tượng hình người dang hai chân bước đi.",
+            "mouthTip_en": "Tone 2 rising. Retroflex 'r' gliding into alveolar nasal 'n'. Pictograph of a walking person.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 人",
+            "meaningEn": "Radical / Character: 人",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 人",
+            "meaning_en": "Radical / Character: 人",
+            "speechText": "人民 (rénmín)",
+            "examples": [
+              {
+                "word": "人民 (rénmín)",
+                "reading": "rénmín",
+                "vi": "Nhân dân",
+                "en": "The people",
+                "meaning_vi": "Nhân dân",
+                "meaning_en": "The people"
+              }
+            ],
+            "example": {
+              "word": "人民 (rénmín)",
+              "reading": "rénmín",
+              "vi": "Nhân dân",
+              "en": "The people",
+              "meaning_vi": "Nhân dân",
+              "meaning_en": "The people"
+            }
+          },
+          {
+            "char": "口",
+            "romaji": "kǒu (Bộ Khẩu)",
+            "ipa": "kʰoʊ˨˩˦",
+            "groupVi": "Con người & Cơ thể",
+            "groupEn": "Human & Body",
+            "group_vi": "Con người & Cơ thể",
+            "group_en": "Human & Body",
+            "mouthTipVi": "Thanh 3 (uốn giọng xuống đáy cổ). Bật hơi mạnh ở âm 'k', miệng thu nhỏ sang 'ou'. Tượng hình chiếc miệng đang mở.",
+            "mouthTipEn": "Tone 3 dipping. Aspirated 'k' followed by rounded 'ou'. Pictograph of an open mouth.",
+            "mouthTip_vi": "Thanh 3 (uốn giọng xuống đáy cổ). Bật hơi mạnh ở âm 'k', miệng thu nhỏ sang 'ou'. Tượng hình chiếc miệng đang mở.",
+            "mouthTip_en": "Tone 3 dipping. Aspirated 'k' followed by rounded 'ou'. Pictograph of an open mouth.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 口",
+            "meaningEn": "Radical / Character: 口",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 口",
+            "meaning_en": "Radical / Character: 口",
+            "speechText": "口音 (kǒuyīn)",
+            "examples": [
+              {
+                "word": "口音 (kǒuyīn)",
+                "reading": "kǒuyīn",
+                "vi": "Khẩu âm / Giọng vùng miền",
+                "en": "Accent",
+                "meaning_vi": "Khẩu âm / Giọng vùng miền",
+                "meaning_en": "Accent"
+              }
+            ],
+            "example": {
+              "word": "口音 (kǒuyīn)",
+              "reading": "kǒuyīn",
+              "vi": "Khẩu âm / Giọng vùng miền",
+              "en": "Accent",
+              "meaning_vi": "Khẩu âm / Giọng vùng miền",
+              "meaning_en": "Accent"
+            }
+          },
+          {
+            "char": "心",
+            "romaji": "xīn (Bộ Tâm)",
+            "ipa": "ɕin˥˥",
+            "groupVi": "Con người & Cơ thể",
+            "groupEn": "Human & Body",
+            "group_vi": "Con người & Cơ thể",
+            "group_en": "Human & Body",
+            "mouthTipVi": "Thanh 1 (cao, phẳng đều 5-5). Mặt lưỡi áp sát ngạc cứng xát âm 'x', ngân vang âm mũi 'in'. Tượng hình trái tim.",
+            "mouthTipEn": "Tone 1 high flat (55). Palatal 'x' into nasal 'in'. Pictograph of the heart.",
+            "mouthTip_vi": "Thanh 1 (cao, phẳng đều 5-5). Mặt lưỡi áp sát ngạc cứng xát âm 'x', ngân vang âm mũi 'in'. Tượng hình trái tim.",
+            "mouthTip_en": "Tone 1 high flat (55). Palatal 'x' into nasal 'in'. Pictograph of the heart.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 心",
+            "meaningEn": "Radical / Character: 心",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 心",
+            "meaning_en": "Radical / Character: 心",
+            "speechText": "心情 (xīnqíng)",
+            "examples": [
+              {
+                "word": "心情 (xīnqíng)",
+                "reading": "xīnqíng",
+                "vi": "Tâm trạng / Cảm xúc",
+                "en": "Mood / Frame of mind",
+                "meaning_vi": "Tâm trạng / Cảm xúc",
+                "meaning_en": "Mood / Frame of mind"
+              }
+            ],
+            "example": {
+              "word": "心情 (xīnqíng)",
+              "reading": "xīnqíng",
+              "vi": "Tâm trạng / Cảm xúc",
+              "en": "Mood / Frame of mind",
+              "meaning_vi": "Tâm trạng / Cảm xúc",
+              "meaning_en": "Mood / Frame of mind"
+            }
+          },
+          {
+            "char": "手",
+            "romaji": "shǒu (Bộ Thủ)",
+            "ipa": "ʂoʊ˨˩˦",
+            "groupVi": "Con người & Cơ thể",
+            "groupEn": "Human & Body",
+            "group_vi": "Con người & Cơ thể",
+            "group_en": "Human & Body",
+            "mouthTipVi": "Thanh 3 (hạ thấp giọng). Uốn cong đầu lưỡi phát âm 'sh', thu tròn môi sang 'ou'. Tượng hình năm ngón tay xòe ra.",
+            "mouthTipEn": "Tone 3 dipping. Retroflex 'sh' into rounded 'ou'. Pictograph of five fingers of a hand.",
+            "mouthTip_vi": "Thanh 3 (hạ thấp giọng). Uốn cong đầu lưỡi phát âm 'sh', thu tròn môi sang 'ou'. Tượng hình năm ngón tay xòe ra.",
+            "mouthTip_en": "Tone 3 dipping. Retroflex 'sh' into rounded 'ou'. Pictograph of five fingers of a hand.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 手",
+            "meaningEn": "Radical / Character: 手",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 手",
+            "meaning_en": "Radical / Character: 手",
+            "speechText": "手机 (shǒujī)",
+            "examples": [
+              {
+                "word": "手机 (shǒujī)",
+                "reading": "shǒujī",
+                "vi": "Điện thoại di động",
+                "en": "Mobile phone",
+                "meaning_vi": "Điện thoại di động",
+                "meaning_en": "Mobile phone"
+              }
+            ],
+            "example": {
+              "word": "手机 (shǒujī)",
+              "reading": "shǒujī",
+              "vi": "Điện thoại di động",
+              "en": "Mobile phone",
+              "meaning_vi": "Điện thoại di động",
+              "meaning_en": "Mobile phone"
+            }
+          },
+          {
+            "char": "目",
+            "romaji": "mù (Bộ Mục)",
+            "ipa": "mu˥˩",
+            "groupVi": "Con người & Cơ thể",
+            "groupEn": "Human & Body",
+            "group_vi": "Con người & Cơ thể",
+            "group_en": "Human & Body",
+            "mouthTipVi": "Thanh 4 (rơi mạnh, dứt khoát từ cao xuống thấp). Mím môi 'm' rồi dứt khoát hạ giọng 'ù'. Tượng hình con mắt nhìn ngang.",
+            "mouthTipEn": "Tone 4 sharp drop (51). Bilabial 'm' dropping sharply to 'ù'. Pictograph of an eyeball.",
+            "mouthTip_vi": "Thanh 4 (rơi mạnh, dứt khoát từ cao xuống thấp). Mím môi 'm' rồi dứt khoát hạ giọng 'ù'. Tượng hình con mắt nhìn ngang.",
+            "mouthTip_en": "Tone 4 sharp drop (51). Bilabial 'm' dropping sharply to 'ù'. Pictograph of an eyeball.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 目",
+            "meaningEn": "Radical / Character: 目",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 目",
+            "meaning_en": "Radical / Character: 目",
+            "speechText": "目光 (mùguāng)",
+            "examples": [
+              {
+                "word": "目光 (mùguāng)",
+                "reading": "mùguāng",
+                "vi": "Ánh mắt / Tầm nhìn",
+                "en": "Gaze / Sight",
+                "meaning_vi": "Ánh mắt / Tầm nhìn",
+                "meaning_en": "Gaze / Sight"
+              }
+            ],
+            "example": {
+              "word": "目光 (mùguāng)",
+              "reading": "mùguāng",
+              "vi": "Ánh mắt / Tầm nhìn",
+              "en": "Gaze / Sight",
+              "meaning_vi": "Ánh mắt / Tầm nhìn",
+              "meaning_en": "Gaze / Sight"
+            }
+          },
+          {
+            "char": "女",
+            "romaji": "nǚ (Bộ Nữ)",
+            "ipa": "ny˨˩˦",
+            "groupVi": "Con người & Cơ thể",
+            "groupEn": "Human & Body",
+            "group_vi": "Con người & Cơ thể",
+            "group_en": "Human & Body",
+            "mouthTipVi": "Thanh 3. Cực kỳ quan trọng: Định vị lưỡi nói 'i' nhưng CHU TRÒN MÔI 'ü', hạ giọng xuống đáy cổ. Tượng hình người phụ nữ quỳ duyên dáng.",
+            "mouthTipEn": "Tone 3 dipping. Nasal 'n' into tight rounded umlaut 'ü'. Pictograph of a kneeling woman.",
+            "mouthTip_vi": "Thanh 3. Cực kỳ quan trọng: Định vị lưỡi nói 'i' nhưng CHU TRÒN MÔI 'ü', hạ giọng xuống đáy cổ. Tượng hình người phụ nữ quỳ duyên dáng.",
+            "mouthTip_en": "Tone 3 dipping. Nasal 'n' into tight rounded umlaut 'ü'. Pictograph of a kneeling woman.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 女",
+            "meaningEn": "Radical / Character: 女",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 女",
+            "meaning_en": "Radical / Character: 女",
+            "speechText": "女儿 (nǚ'ér)",
+            "examples": [
+              {
+                "word": "女儿 (nǚ'ér)",
+                "reading": "nǚ'ér",
+                "vi": "Con gái",
+                "en": "Daughter",
+                "meaning_vi": "Con gái",
+                "meaning_en": "Daughter"
+              }
+            ],
+            "example": {
+              "word": "女儿 (nǚ'ér)",
+              "reading": "nǚ'ér",
+              "vi": "Con gái",
+              "en": "Daughter",
+              "meaning_vi": "Con gái",
+              "meaning_en": "Daughter"
+            }
+          },
+          {
+            "char": "子",
+            "romaji": "zǐ (Bộ Tử)",
+            "ipa": "t͡sɨ˨˩˦",
+            "groupVi": "Con người & Cơ thể",
+            "groupEn": "Human & Body",
+            "group_vi": "Con người & Cơ thể",
+            "group_en": "Human & Body",
+            "mouthTipVi": "Thanh 3. Đầu lưỡi áp chân răng bật nhẹ 'z', giữ môi phẳng. Tượng hình đứa trẻ sơ sinh giơ tay.",
+            "mouthTipEn": "Tone 3 dipping. Dental affricate 'z' with buzzing vowel. Pictograph of a baby.",
+            "mouthTip_vi": "Thanh 3. Đầu lưỡi áp chân răng bật nhẹ 'z', giữ môi phẳng. Tượng hình đứa trẻ sơ sinh giơ tay.",
+            "mouthTip_en": "Tone 3 dipping. Dental affricate 'z' with buzzing vowel. Pictograph of a baby.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 子",
+            "meaningEn": "Radical / Character: 子",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 子",
+            "meaning_en": "Radical / Character: 子",
+            "speechText": "孩子 (háizi)",
+            "examples": [
+              {
+                "word": "孩子 (háizi)",
+                "reading": "háizi",
+                "vi": "Đứa trẻ / Con cái",
+                "en": "Child",
+                "meaning_vi": "Đứa trẻ / Con cái",
+                "meaning_en": "Child"
+              }
+            ],
+            "example": {
+              "word": "孩子 (háizi)",
+              "reading": "háizi",
+              "vi": "Đứa trẻ / Con cái",
+              "en": "Child",
+              "meaning_vi": "Đứa trẻ / Con cái",
+              "meaning_en": "Child"
+            }
+          },
+          {
+            "char": "日",
+            "romaji": "rì (Bộ Nhật)",
+            "ipa": "ʐʐ̩˥˩",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 4 (rơi mạnh dứt khoát). Uốn cong đầu lưỡi vào ngạc cứng, dây thanh rung rền. Tượng hình mặt trời tròn có tia sáng ở giữa.",
+            "mouthTipEn": "Tone 4 sharp drop. Retroflex friction with curled tongue. Pictograph of the sun.",
+            "mouthTip_vi": "Thanh 4 (rơi mạnh dứt khoát). Uốn cong đầu lưỡi vào ngạc cứng, dây thanh rung rền. Tượng hình mặt trời tròn có tia sáng ở giữa.",
+            "mouthTip_en": "Tone 4 sharp drop. Retroflex friction with curled tongue. Pictograph of the sun.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 日",
+            "meaningEn": "Radical / Character: 日",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 日",
+            "meaning_en": "Radical / Character: 日",
+            "speechText": "日子 (rìzi)",
+            "examples": [
+              {
+                "word": "日子 (rìzi)",
+                "reading": "rìzi",
+                "vi": "Ngày tháng / Cuộc sống",
+                "en": "Days / Life",
+                "meaning_vi": "Ngày tháng / Cuộc sống",
+                "meaning_en": "Days / Life"
+              }
+            ],
+            "example": {
+              "word": "日子 (rìzi)",
+              "reading": "rìzi",
+              "vi": "Ngày tháng / Cuộc sống",
+              "en": "Days / Life",
+              "meaning_vi": "Ngày tháng / Cuộc sống",
+              "meaning_en": "Days / Life"
+            }
+          },
+          {
+            "char": "月",
+            "romaji": "yuè (Bộ Nguyệt)",
+            "ipa": "ɥɛ˥˩",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 4. Bán nguyên âm tròn môi lướt sang 'e' và rơi dứt khoát. Tượng hình mảnh trăng khuyết.",
+            "mouthTipEn": "Tone 4 decisive drop. Rounded glide into 'e'. Pictograph of a crescent moon.",
+            "mouthTip_vi": "Thanh 4. Bán nguyên âm tròn môi lướt sang 'e' và rơi dứt khoát. Tượng hình mảnh trăng khuyết.",
+            "mouthTip_en": "Tone 4 decisive drop. Rounded glide into 'e'. Pictograph of a crescent moon.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 月",
+            "meaningEn": "Radical / Character: 月",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 月",
+            "meaning_en": "Radical / Character: 月",
+            "speechText": "月亮 (yuèliang)",
+            "examples": [
+              {
+                "word": "月亮 (yuèliang)",
+                "reading": "yuèliang",
+                "vi": "Mặt trăng",
+                "en": "The moon",
+                "meaning_vi": "Mặt trăng",
+                "meaning_en": "The moon"
+              }
+            ],
+            "example": {
+              "word": "月亮 (yuèliang)",
+              "reading": "yuèliang",
+              "vi": "Mặt trăng",
+              "en": "The moon",
+              "meaning_vi": "Mặt trăng",
+              "meaning_en": "The moon"
+            }
+          },
+          {
+            "char": "水",
+            "romaji": "shuǐ (Bộ Thủy)",
+            "ipa": "ʂweɪ˨˩˦",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 3. Uốn lưỡi 'sh' lướt qua 'uei' hạ giọng sâu. Tượng hình dòng nước chảy xiết.",
+            "mouthTipEn": "Tone 3 dipping. Retroflex 'sh' into compound final 'ui'. Pictograph of flowing water.",
+            "mouthTip_vi": "Thanh 3. Uốn lưỡi 'sh' lướt qua 'uei' hạ giọng sâu. Tượng hình dòng nước chảy xiết.",
+            "mouthTip_en": "Tone 3 dipping. Retroflex 'sh' into compound final 'ui'. Pictograph of flowing water.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 水",
+            "meaningEn": "Radical / Character: 水",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 水",
+            "meaning_en": "Radical / Character: 水",
+            "speechText": "水果 (shuǐguǒ)",
+            "examples": [
+              {
+                "word": "水果 (shuǐguǒ)",
+                "reading": "shuǐguǒ",
+                "vi": "Trái cây / Hoa quả",
+                "en": "Fresh fruit",
+                "meaning_vi": "Trái cây / Hoa quả",
+                "meaning_en": "Fresh fruit"
+              }
+            ],
+            "example": {
+              "word": "水果 (shuǐguǒ)",
+              "reading": "shuǐguǒ",
+              "vi": "Trái cây / Hoa quả",
+              "en": "Fresh fruit",
+              "meaning_vi": "Trái cây / Hoa quả",
+              "meaning_en": "Fresh fruit"
+            }
+          },
+          {
+            "char": "火",
+            "romaji": "huǒ (Bộ Hỏa)",
+            "ipa": "xwo˨˩˦",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 3. Gốc lưỡi xát nhẹ ở 'h' rồi tròn môi sang 'uo' hạ thấp giọng. Tượng hình ngọn lửa bùng cháy.",
+            "mouthTipEn": "Tone 3 dipping. Velar fricative 'h' into rounded 'uo'. Pictograph of flickering flames.",
+            "mouthTip_vi": "Thanh 3. Gốc lưỡi xát nhẹ ở 'h' rồi tròn môi sang 'uo' hạ thấp giọng. Tượng hình ngọn lửa bùng cháy.",
+            "mouthTip_en": "Tone 3 dipping. Velar fricative 'h' into rounded 'uo'. Pictograph of flickering flames.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 火",
+            "meaningEn": "Radical / Character: 火",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 火",
+            "meaning_en": "Radical / Character: 火",
+            "speechText": "火山 (huǒshān)",
+            "examples": [
+              {
+                "word": "火山 (huǒshān)",
+                "reading": "huǒshān",
+                "vi": "Núi lửa",
+                "en": "Volcano",
+                "meaning_vi": "Núi lửa",
+                "meaning_en": "Volcano"
+              }
+            ],
+            "example": {
+              "word": "火山 (huǒshān)",
+              "reading": "huǒshān",
+              "vi": "Núi lửa",
+              "en": "Volcano",
+              "meaning_vi": "Núi lửa",
+              "meaning_en": "Volcano"
+            }
+          },
+          {
+            "char": "木",
+            "romaji": "mù (Bộ Mộc)",
+            "ipa": "mu˥˩",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 4. Khép môi 'm' rồi rơi giọng mạnh mẽ sang 'u'. Tượng hình thân cây có cành và rễ tỏa ra.",
+            "mouthTipEn": "Tone 4 sharp drop. Deep bilabial stop into closed 'u'. Pictograph of a tree with roots.",
+            "mouthTip_vi": "Thanh 4. Khép môi 'm' rồi rơi giọng mạnh mẽ sang 'u'. Tượng hình thân cây có cành và rễ tỏa ra.",
+            "mouthTip_en": "Tone 4 sharp drop. Deep bilabial stop into closed 'u'. Pictograph of a tree with roots.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 木",
+            "meaningEn": "Radical / Character: 木",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 木",
+            "meaning_en": "Radical / Character: 木",
+            "speechText": "木头 (mùtou)",
+            "examples": [
+              {
+                "word": "木头 (mùtou)",
+                "reading": "mùtou",
+                "vi": "Gỗ / Khúc gỗ",
+                "en": "Wood / Timber",
+                "meaning_vi": "Gỗ / Khúc gỗ",
+                "meaning_en": "Wood / Timber"
+              }
+            ],
+            "example": {
+              "word": "木头 (mùtou)",
+              "reading": "mùtou",
+              "vi": "Gỗ / Khúc gỗ",
+              "en": "Wood / Timber",
+              "meaning_vi": "Gỗ / Khúc gỗ",
+              "meaning_en": "Wood / Timber"
+            }
+          },
+          {
+            "char": "山",
+            "romaji": "shān (Bộ Sơn)",
+            "ipa": "ʂan˥˥",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 1 (ngân cao phẳng 5-5). Uốn lưỡi 'sh' phát âm 'an' mở rộng miệng. Tượng hình ba đỉnh núi nhấp nhô.",
+            "mouthTipEn": "Tone 1 high flat (55). Retroflex 'sh' into front nasal 'an'. Pictograph of three mountain peaks.",
+            "mouthTip_vi": "Thanh 1 (ngân cao phẳng 5-5). Uốn lưỡi 'sh' phát âm 'an' mở rộng miệng. Tượng hình ba đỉnh núi nhấp nhô.",
+            "mouthTip_en": "Tone 1 high flat (55). Retroflex 'sh' into front nasal 'an'. Pictograph of three mountain peaks.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 山",
+            "meaningEn": "Radical / Character: 山",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 山",
+            "meaning_en": "Radical / Character: 山",
+            "speechText": "风景 (shānshuǐ)",
+            "examples": [
+              {
+                "word": "风景 (shānshuǐ)",
+                "reading": "shānshuǐ",
+                "vi": "Sơn thủy / Phong cảnh",
+                "en": "Landscape / Scenery",
+                "meaning_vi": "Sơn thủy / Phong cảnh",
+                "meaning_en": "Landscape / Scenery"
+              }
+            ],
+            "example": {
+              "word": "风景 (shānshuǐ)",
+              "reading": "shānshuǐ",
+              "vi": "Sơn thủy / Phong cảnh",
+              "en": "Landscape / Scenery",
+              "meaning_vi": "Sơn thủy / Phong cảnh",
+              "meaning_en": "Landscape / Scenery"
+            }
+          },
+          {
+            "char": "田",
+            "romaji": "tián (Bộ Điền)",
+            "ipa": "tʰjɛn˧˥",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 2 (vút lên). Bật hơi 't' lướt qua 'ian' vút giọng lên như dấu sắc. Tượng hình thửa ruộng vuông vức chia bờ.",
+            "mouthTipEn": "Tone 2 rising (35). Aspirated 't' into nasal final 'ian'. Pictograph of partitioned rice fields.",
+            "mouthTip_vi": "Thanh 2 (vút lên). Bật hơi 't' lướt qua 'ian' vút giọng lên như dấu sắc. Tượng hình thửa ruộng vuông vức chia bờ.",
+            "mouthTip_en": "Tone 2 rising (35). Aspirated 't' into nasal final 'ian'. Pictograph of partitioned rice fields.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 田",
+            "meaningEn": "Radical / Character: 田",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 田",
+            "meaning_en": "Radical / Character: 田",
+            "speechText": "田野 (tiányě)",
+            "examples": [
+              {
+                "word": "田野 (tiányě)",
+                "reading": "tiányě",
+                "vi": "Đồng ruộng / Đồng quê",
+                "en": "Open field",
+                "meaning_vi": "Đồng ruộng / Đồng quê",
+                "meaning_en": "Open field"
+              }
+            ],
+            "example": {
+              "word": "田野 (tiányě)",
+              "reading": "tiányě",
+              "vi": "Đồng ruộng / Đồng quê",
+              "en": "Open field",
+              "meaning_vi": "Đồng ruộng / Đồng quê",
+              "meaning_en": "Open field"
+            }
+          },
+          {
+            "char": "天",
+            "romaji": "tiān (Bộ Thiên)",
+            "ipa": "tʰjɛn˥˥",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 1 (cao đều 5-5). Bật hơi 't' ngân vang âm 'ian' ở nốt cao. Tượng hình vòm trời bao la trên đỉnh đầu con người.",
+            "mouthTipEn": "Tone 1 sustained high (55). Aspirated alveolar stop into 'ian'. Pictograph of sky above man.",
+            "mouthTip_vi": "Thanh 1 (cao đều 5-5). Bật hơi 't' ngân vang âm 'ian' ở nốt cao. Tượng hình vòm trời bao la trên đỉnh đầu con người.",
+            "mouthTip_en": "Tone 1 sustained high (55). Aspirated alveolar stop into 'ian'. Pictograph of sky above man.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 天",
+            "meaningEn": "Radical / Character: 天",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 天",
+            "meaning_en": "Radical / Character: 天",
+            "speechText": "天气 (tiānqì)",
+            "examples": [
+              {
+                "word": "天气 (tiānqì)",
+                "reading": "tiānqì",
+                "vi": "Thời tiết",
+                "en": "Weather",
+                "meaning_vi": "Thời tiết",
+                "meaning_en": "Weather"
+              }
+            ],
+            "example": {
+              "word": "天气 (tiānqì)",
+              "reading": "tiānqì",
+              "vi": "Thời tiết",
+              "en": "Weather",
+              "meaning_vi": "Thời tiết",
+              "meaning_en": "Weather"
+            }
+          },
+          {
+            "char": "金",
+            "romaji": "jīn (Bộ Kim)",
+            "ipa": "t͡ɕin˥˥",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 1 (cao phẳng). Mặt lưỡi chạm ngạc cứng 'j' ngân âm mũi 'in'. Tượng hình quặng vàng giấu trong lòng đất.",
+            "mouthTipEn": "Tone 1 high level. Palatal 'j' into high nasal 'in'. Pictograph of gold nuggets underground.",
+            "mouthTip_vi": "Thanh 1 (cao phẳng). Mặt lưỡi chạm ngạc cứng 'j' ngân âm mũi 'in'. Tượng hình quặng vàng giấu trong lòng đất.",
+            "mouthTip_en": "Tone 1 high level. Palatal 'j' into high nasal 'in'. Pictograph of gold nuggets underground.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 金",
+            "meaningEn": "Radical / Character: 金",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 金",
+            "meaning_en": "Radical / Character: 金",
+            "speechText": "金子 (jīnzi)",
+            "examples": [
+              {
+                "word": "金子 (jīnzi)",
+                "reading": "jīnzi",
+                "vi": "Vàng bạc",
+                "en": "Gold",
+                "meaning_vi": "Vàng bạc",
+                "meaning_en": "Gold"
+              }
+            ],
+            "example": {
+              "word": "金子 (jīnzi)",
+              "reading": "jīnzi",
+              "vi": "Vàng bạc",
+              "en": "Gold",
+              "meaning_vi": "Vàng bạc",
+              "meaning_en": "Gold"
+            }
+          },
+          {
+            "char": "土",
+            "romaji": "tǔ (Bộ Thổ)",
+            "ipa": "tʰu˨˩˦",
+            "groupVi": "Thiên nhiên & Vũ trụ",
+            "groupEn": "Nature & Elements",
+            "group_vi": "Thiên nhiên & Vũ trụ",
+            "group_en": "Nature & Elements",
+            "mouthTipVi": "Thanh 3 (hạ sâu). Bật hơi mạnh 't' rồi hạ giọng ở 'u'. Tượng hình gò đất nhô lên từ mặt đất.",
+            "mouthTipEn": "Tone 3 dipping. Strongly aspirated 't' into deep 'u'. Pictograph of a mound of earth.",
+            "mouthTip_vi": "Thanh 3 (hạ sâu). Bật hơi mạnh 't' rồi hạ giọng ở 'u'. Tượng hình gò đất nhô lên từ mặt đất.",
+            "mouthTip_en": "Tone 3 dipping. Strongly aspirated 't' into deep 'u'. Pictograph of a mound of earth.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 土",
+            "meaningEn": "Radical / Character: 土",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 土",
+            "meaning_en": "Radical / Character: 土",
+            "speechText": "土地 (tǔdì)",
+            "examples": [
+              {
+                "word": "土地 (tǔdì)",
+                "reading": "tǔdì",
+                "vi": "Đất đai / Lãnh thổ",
+                "en": "Land / Soil",
+                "meaning_vi": "Đất đai / Lãnh thổ",
+                "meaning_en": "Land / Soil"
+              }
+            ],
+            "example": {
+              "word": "土地 (tǔdì)",
+              "reading": "tǔdì",
+              "vi": "Đất đai / Lãnh thổ",
+              "en": "Land / Soil",
+              "meaning_vi": "Đất đai / Lãnh thổ",
+              "meaning_en": "Land / Soil"
+            }
+          },
+          {
+            "char": "门",
+            "romaji": "mén (Bộ Môn)",
+            "ipa": "mən˧˥",
+            "groupVi": "Kích thước & Cấu trúc",
+            "groupEn": "Size & Structure",
+            "group_vi": "Kích thước & Cấu trúc",
+            "group_en": "Size & Structure",
+            "mouthTipVi": "Thanh 2 (hỏi lên cao). Khép môi 'm' rồi vuốt giọng lên ở 'en'. Tượng hình hai cánh cửa mở rộng.",
+            "mouthTipEn": "Tone 2 rising. Bilabial 'm' rising into 'en'. Pictograph of a two-panel door.",
+            "mouthTip_vi": "Thanh 2 (hỏi lên cao). Khép môi 'm' rồi vuốt giọng lên ở 'en'. Tượng hình hai cánh cửa mở rộng.",
+            "mouthTip_en": "Tone 2 rising. Bilabial 'm' rising into 'en'. Pictograph of a two-panel door.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 门",
+            "meaningEn": "Radical / Character: 门",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 门",
+            "meaning_en": "Radical / Character: 门",
+            "speechText": "门口 (ménkǒu)",
+            "examples": [
+              {
+                "word": "门口 (ménkǒu)",
+                "reading": "ménkǒu",
+                "vi": "Cổng vào / Cửa ra vào",
+                "en": "Doorway / Entrance",
+                "meaning_vi": "Cổng vào / Cửa ra vào",
+                "meaning_en": "Doorway / Entrance"
+              }
+            ],
+            "example": {
+              "word": "门口 (ménkǒu)",
+              "reading": "ménkǒu",
+              "vi": "Cổng vào / Cửa ra vào",
+              "en": "Doorway / Entrance",
+              "meaning_vi": "Cổng vào / Cửa ra vào",
+              "meaning_en": "Doorway / Entrance"
+            }
+          },
+          {
+            "char": "大",
+            "romaji": "dà (Bộ Đại)",
+            "ipa": "ta˥˩",
+            "groupVi": "Kích thước & Cấu trúc",
+            "groupEn": "Size & Structure",
+            "group_vi": "Kích thước & Cấu trúc",
+            "group_en": "Size & Structure",
+            "mouthTipVi": "Thanh 4 (rơi dứt khoát). Đầu lưỡi chạm ngạc 'd' không bật hơi, rơi mạnh xuống 'a'. Tượng hình người dang rộng tay chân.",
+            "mouthTipEn": "Tone 4 sharp drop. Unaspirated 'd' into open 'a'. Pictograph of an adult with outstretched arms.",
+            "mouthTip_vi": "Thanh 4 (rơi dứt khoát). Đầu lưỡi chạm ngạc 'd' không bật hơi, rơi mạnh xuống 'a'. Tượng hình người dang rộng tay chân.",
+            "mouthTip_en": "Tone 4 sharp drop. Unaspirated 'd' into open 'a'. Pictograph of an adult with outstretched arms.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 大",
+            "meaningEn": "Radical / Character: 大",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 大",
+            "meaning_en": "Radical / Character: 大",
+            "speechText": "大家 (dàjiā)",
+            "examples": [
+              {
+                "word": "大家 (dàjiā)",
+                "reading": "dàjiā",
+                "vi": "Mọi người / Tất cả chúng ta",
+                "en": "Everyone / All of us",
+                "meaning_vi": "Mọi người / Tất cả chúng ta",
+                "meaning_en": "Everyone / All of us"
+              }
+            ],
+            "example": {
+              "word": "大家 (dàjiā)",
+              "reading": "dàjiā",
+              "vi": "Mọi người / Tất cả chúng ta",
+              "en": "Everyone / All of us",
+              "meaning_vi": "Mọi người / Tất cả chúng ta",
+              "meaning_en": "Everyone / All of us"
+            }
+          },
+          {
+            "char": "小",
+            "romaji": "xiǎo (Bộ Tiểu)",
+            "ipa": "ɕjaʊ˨˩˦",
+            "groupVi": "Kích thước & Cấu trúc",
+            "groupEn": "Size & Structure",
+            "group_vi": "Kích thước & Cấu trúc",
+            "group_en": "Size & Structure",
+            "mouthTipVi": "Thanh 3 (uốn sâu). Mặt lưỡi nâng cao 'x' hạ giọng lướt sang 'iao'. Tượng hình phân chia vật thành các mảnh nhỏ.",
+            "mouthTipEn": "Tone 3 dipping. Palatal 'x' gliding into dipping 'iao'. Pictograph of split small parts.",
+            "mouthTip_vi": "Thanh 3 (uốn sâu). Mặt lưỡi nâng cao 'x' hạ giọng lướt sang 'iao'. Tượng hình phân chia vật thành các mảnh nhỏ.",
+            "mouthTip_en": "Tone 3 dipping. Palatal 'x' gliding into dipping 'iao'. Pictograph of split small parts.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 小",
+            "meaningEn": "Radical / Character: 小",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 小",
+            "meaning_en": "Radical / Character: 小",
+            "speechText": "小心 (xiǎoxīn)",
+            "examples": [
+              {
+                "word": "小心 (xiǎoxīn)",
+                "reading": "xiǎoxīn",
+                "vi": "Cẩn thận / Chú ý",
+                "en": "Careful / Mindful",
+                "meaning_vi": "Cẩn thận / Chú ý",
+                "meaning_en": "Careful / Mindful"
+              }
+            ],
+            "example": {
+              "word": "小心 (xiǎoxīn)",
+              "reading": "xiǎoxīn",
+              "vi": "Cẩn thận / Chú ý",
+              "en": "Careful / Mindful",
+              "meaning_vi": "Cẩn thận / Chú ý",
+              "meaning_en": "Careful / Mindful"
+            }
+          },
+          {
+            "char": "白",
+            "romaji": "bái (Bộ Bạch)",
+            "ipa": "paɪ˧˥",
+            "groupVi": "Kích thước & Cấu trúc",
+            "groupEn": "Size & Structure",
+            "group_vi": "Kích thước & Cấu trúc",
+            "group_en": "Size & Structure",
+            "mouthTipVi": "Thanh 2 (đi lên). Hai môi mở không bật hơi 'b' vuốt giọng lên ở 'ai'. Tượng hình ánh sáng mặt trời tinh khiết.",
+            "mouthTipEn": "Tone 2 rising. Unaspirated 'b' sliding up through 'ai'. Pictograph of pure bright white.",
+            "mouthTip_vi": "Thanh 2 (đi lên). Hai môi mở không bật hơi 'b' vuốt giọng lên ở 'ai'. Tượng hình ánh sáng mặt trời tinh khiết.",
+            "mouthTip_en": "Tone 2 rising. Unaspirated 'b' sliding up through 'ai'. Pictograph of pure bright white.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 白",
+            "meaningEn": "Radical / Character: 白",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 白",
+            "meaning_en": "Radical / Character: 白",
+            "speechText": "白天 (báitiān)",
+            "examples": [
+              {
+                "word": "白天 (báitiān)",
+                "reading": "báitiān",
+                "vi": "Ban ngày",
+                "en": "Daytime",
+                "meaning_vi": "Ban ngày",
+                "meaning_en": "Daytime"
+              }
+            ],
+            "example": {
+              "word": "白天 (báitiān)",
+              "reading": "báitiān",
+              "vi": "Ban ngày",
+              "en": "Daytime",
+              "meaning_vi": "Ban ngày",
+              "meaning_en": "Daytime"
+            }
+          },
+          {
+            "char": "中",
+            "romaji": "zhōng (Bộ Trung)",
+            "ipa": "ʈ͡ʂʊŋ˥˥",
+            "groupVi": "Kích thước & Cấu trúc",
+            "groupEn": "Size & Structure",
+            "group_vi": "Kích thước & Cấu trúc",
+            "group_en": "Size & Structure",
+            "mouthTipVi": "Thanh 1 (ngân cao 5-5). Uốn đầu lưỡi 'zh' không bật hơi, tròn môi âm mũi sau 'ong'. Tượng hình mũi tên bắn xuyên chính giữa mục tiêu.",
+            "mouthTipEn": "Tone 1 high flat (55). Retroflex 'zh' into back nasal 'ong'. Pictograph of an arrow piercing the bullseye center.",
+            "mouthTip_vi": "Thanh 1 (ngân cao 5-5). Uốn đầu lưỡi 'zh' không bật hơi, tròn môi âm mũi sau 'ong'. Tượng hình mũi tên bắn xuyên chính giữa mục tiêu.",
+            "mouthTip_en": "Tone 1 high flat (55). Retroflex 'zh' into back nasal 'ong'. Pictograph of an arrow piercing the bullseye center.",
+            "meaningVi": "Chữ Hán / Bộ thủ: 中",
+            "meaningEn": "Radical / Character: 中",
+            "meaning_vi": "Chữ Hán / Bộ thủ: 中",
+            "meaning_en": "Radical / Character: 中",
+            "speechText": "中文 (zhōngwén)",
+            "examples": [
+              {
+                "word": "中文 (zhōngwén)",
+                "reading": "zhōngwén",
+                "vi": "Tiếng Trung / Trung văn",
+                "en": "Chinese language",
+                "meaning_vi": "Tiếng Trung / Trung văn",
+                "meaning_en": "Chinese language"
+              }
+            ],
+            "example": {
+              "word": "中文 (zhōngwén)",
+              "reading": "zhōngwén",
+              "vi": "Tiếng Trung / Trung văn",
+              "en": "Chinese language",
+              "meaning_vi": "Tiếng Trung / Trung văn",
+              "meaning_en": "Chinese language"
+            }
+          }
+        ]
+      }
+    ],
     "expressions": [
       {
         "id": "zh_greet_1",
@@ -6035,11 +15566,41 @@ const LINGUA_DATA = {
 
 // Target Languages Configuration for Scalable Selector
 const LANGUAGES = [
-  { code: 'ja-JP', flag: '🇯🇵', nameVi: 'Tiếng Nhật', nameEn: 'Japanese', native: '日本語' },
-  { code: 'en-US', flag: '🇺🇸', nameVi: 'Tiếng Anh', nameEn: 'English', native: 'English' },
-  { code: 'ko-KR', flag: '🇰🇷', nameVi: 'Tiếng Hàn', nameEn: 'Korean', native: '한국어' },
-  { code: 'zh-CN', flag: '🇨🇳', nameVi: 'Tiếng Trung', nameEn: 'Chinese', native: '中文' }
+  {
+    "code": "ja-JP",
+    "flag": "🇯🇵",
+    "nameVi": "Tiếng Nhật",
+    "nameEn": "Japanese",
+    "native": "日本語"
+  },
+  {
+    "code": "en-US",
+    "flag": "🇺🇸",
+    "nameVi": "Tiếng Anh",
+    "nameEn": "English",
+    "native": "English"
+  },
+  {
+    "code": "ko-KR",
+    "flag": "🇰🇷",
+    "nameVi": "Tiếng Hàn",
+    "nameEn": "Korean",
+    "native": "한국어"
+  },
+  {
+    "code": "zh-CN",
+    "flag": "🇨🇳",
+    "nameVi": "Tiếng Trung",
+    "nameEn": "Chinese",
+    "native": "中文"
+  }
 ];
+
+// Map both short and long language codes for seamless interoperability
+if (LINGUA_DATA['ja-JP']) LINGUA_DATA['ja'] = LINGUA_DATA['ja-JP'];
+if (LINGUA_DATA['en-US']) LINGUA_DATA['en'] = LINGUA_DATA['en-US'];
+if (LINGUA_DATA['ko-KR']) LINGUA_DATA['ko'] = LINGUA_DATA['ko-KR'];
+if (LINGUA_DATA['zh-CN']) LINGUA_DATA['zh'] = LINGUA_DATA['zh-CN'];
 
 // Alias for backwards & forwards compatibility
 const LANG_DATA = LINGUA_DATA;
@@ -6052,3 +15613,4478 @@ if (typeof window !== 'undefined') {
   window.LANGUAGES = LANGUAGES;
 }
 
+// ==========================================================================
+// 5-STAGE QUEST CAMPAIGNS FOR LINGUASTUDIO PRO 2.0 (Duolingo/Renshuu Guided Path)
+// ==========================================================================
+const QUEST_CAMPAIGNS = {
+  "ja-JP": [
+    {
+      "id": "ja-stage-1",
+      "stageNum": 1,
+      "titleVi": "Ải 1: 5 Nguyên Âm Cội Nguồn",
+      "titleEn": "Stage 1: The 5 Core Vowels",
+      "descVi": "Chinh phục 5 nguyên âm nền tảng của tiếng Nhật: A, I, U, E, O.",
+      "descEn": "Master the 5 foundational Japanese vowels: A, I, U, E, O.",
+      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "あ",
+          "reading": "a",
+          "meaningVi": "Âm A (Mở miệng vừa phải, lưỡi thả lỏng)",
+          "meaningEn": "Vowel A (Natural open mouth, relaxed tongue)",
+          "hint": "Nét 1 ngang, nét 2 sổ cong, nét 3 vòng tròn"
+        },
+        {
+          "char": "い",
+          "reading": "i",
+          "meaningVi": "Âm I (Môi hơi dẹt sang hai bên)",
+          "meaningEn": "Vowel I (Slightly spread lips)",
+          "hint": "Nét trái móc nhẹ lên, nét phải ngắn hơn song song"
+        },
+        {
+          "char": "う",
+          "reading": "u",
+          "meaningVi": "Âm U (Môi không chúm tròn như tiếng Việt)",
+          "meaningEn": "Vowel U (Unrounded lips, relaxed)",
+          "hint": "Dấu phẩy nhỏ phía trên, nét móc cung lớn phía dưới"
+        },
+        {
+          "char": "え",
+          "reading": "e",
+          "meaningVi": "Âm E (Mở miệng vừa như 'e' tiếng Việt)",
+          "meaningEn": "Vowel E (Mid-open vowel)",
+          "hint": "Nét trên ngắn, nét dưới zíc zắc uốn lượn"
+        },
+        {
+          "char": "お",
+          "reading": "o",
+          "meaningVi": "Âm O (Môi tròn nhẹ, phát âm gọn)",
+          "meaningEn": "Vowel O (Slightly rounded, short)",
+          "hint": "Ngang, sổ thắt nút tròn, thêm dấu phẩy góc phải"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Ký tự あ có phiên âm Romaji là gì?",
+          "promptEn": "What is the Romaji for character あ?",
+          "cue": "あ",
+          "correct": "a",
+          "options": [
+            "a",
+            "o",
+            "u",
+            "e"
+          ],
+          "explanationVi": "あ phát âm là 'a' trong tiếng Nhật.",
+          "explanationEn": "あ is read as 'a'."
+        },
+        {
+          "promptVi": "Âm 'u' trong tiếng Nhật được viết bằng chữ Hiragana nào?",
+          "promptEn": "Which Hiragana character represents 'u'?",
+          "cue": "u",
+          "correct": "う",
+          "options": [
+            "う",
+            "い",
+            "え",
+            "あ"
+          ],
+          "explanationVi": "う là chữ Hiragana của âm 'u'.",
+          "explanationEn": "う represents vowel 'u'."
+        },
+        {
+          "promptVi": "Ký tự nào sau đây là chữ 'i' (い)?",
+          "promptEn": "Which character is 'i' (い)?",
+          "cue": "い",
+          "correct": "い",
+          "options": [
+            "い",
+            "り",
+            "こ",
+            "お"
+          ],
+          "explanationVi": "い gồm 2 nét song song dẹt.",
+          "explanationEn": "い is the vowel 'i'."
+        },
+        {
+          "promptVi": "Ký tự お đọc là gì?",
+          "promptEn": "How is character お pronounced?",
+          "cue": "お",
+          "correct": "o",
+          "options": [
+            "o",
+            "a",
+            "e",
+            "u"
+          ],
+          "explanationVi": "お phát âm là 'o'.",
+          "explanationEn": "お is pronounced 'o'."
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-2",
+      "stageNum": 2,
+      "titleVi": "Ải 2: Hàng Ka-Sa & Chào Hỏi",
+      "titleEn": "Stage 2: Ka-Sa Row & Greetings",
+      "descVi": "Mở rộng phụ âm Ka, Sa và câu chào huyền thoại こんにちは.",
+      "descEn": "Expand to Ka and Sa rows plus the iconic greeting Konnichiwa.",
+      "bossNameVi": "Yêu Hồ Kitsune (Mystic Kitsune)",
+      "bossNameEn": "Mystic Kitsune",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "か",
+          "reading": "ka",
+          "meaningVi": "Âm Ka (Phụ âm k bật nhẹ)",
+          "meaningEn": "Syllable Ka",
+          "hint": "Nét ngang móc, nét phẩy chéo và chấm bên phải"
+        },
+        {
+          "char": "き",
+          "reading": "ki",
+          "meaningVi": "Âm Ki (Cười mỉm khi phát âm)",
+          "meaningEn": "Syllable Ki",
+          "hint": "2 nét ngang song song, nét sổ chéo và cung đáy"
+        },
+        {
+          "char": "さ",
+          "reading": "sa",
+          "meaningVi": "Âm Sa (Gió lướt nhẹ kẽ răng)",
+          "meaningEn": "Syllable Sa",
+          "hint": "Nét ngang, nét sổ chéo móc và vòng cung"
+        },
+        {
+          "char": "し",
+          "reading": "shi",
+          "meaningVi": "Âm Shi (Âm gió nhẹ như 'she')",
+          "meaningEn": "Syllable Shi",
+          "hint": "1 nét duy nhất uốn như lưỡi câu"
+        },
+        {
+          "char": "こんにちは",
+          "reading": "Konnichiwa",
+          "meaningVi": "Xin chào (Ban ngày / Phổ biến nhất)",
+          "meaningEn": "Hello / Good afternoon",
+          "hint": "Chú ý chữ は cuối câu đọc là 'wa'"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Chữ は trong câu 'こんにちは' được phát âm là gì?",
+          "promptEn": "How is the last character は in 'こんにちは' pronounced?",
+          "cue": "こんにちは",
+          "correct": "wa",
+          "options": [
+            "wa",
+            "ha",
+            "ba",
+            "pa"
+          ],
+          "explanationVi": "Khi đóng vai trò trợ từ, は đọc là 'wa'.",
+          "explanationEn": "As a particle ending, は is pronounced 'wa'."
+        },
+        {
+          "promptVi": "Ký tự uốn cong như lưỡi câu này là chữ gì?",
+          "promptEn": "Which character is shaped like a fishhook?",
+          "cue": "し",
+          "correct": "shi",
+          "options": [
+            "shi",
+            "tsu",
+            "no",
+            "ku"
+          ],
+          "explanationVi": "し là chữ 'shi'.",
+          "explanationEn": "し is 'shi'."
+        },
+        {
+          "promptVi": "Ký tự か có phiên âm là gì?",
+          "promptEn": "What is the reading for か?",
+          "cue": "か",
+          "correct": "ka",
+          "options": [
+            "ka",
+            "ga",
+            "ki",
+            "sa"
+          ],
+          "explanationVi": "か là âm 'ka'.",
+          "explanationEn": "か is 'ka'."
+        },
+        {
+          "promptVi": "'Xin chào' tiếng Nhật phổ biến nhất là câu nào?",
+          "promptEn": "What is the standard Japanese 'Hello'?",
+          "cue": "Xin chào",
+          "correct": "こんにちは",
+          "options": [
+            "こんにちは",
+            "さようなら",
+            "ありがとう",
+            "おはよう"
+          ],
+          "explanationVi": "こんにちは là lời chào ban ngày thông dụng.",
+          "explanationEn": "こんにちは means Hello."
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-3",
+      "stageNum": 3,
+      "titleVi": "Ải 3: Bộ Cụm Từ Sinh Tồn Tokyo",
+      "titleEn": "Stage 3: Tokyo Survival Chunks",
+      "descVi": "Bộ từ vựng then chốt giúp bạn tự tin giao tiếp mọi tình huống tại Nhật.",
+      "descEn": "Essential phrases to confidently navigate daily life in Japan.",
+      "bossNameVi": "Golem Đá Cổ (Ancient Stone Golem)",
+      "bossNameEn": "Ancient Stone Golem",
+      "bossType": "golem",
+      "bossHp": 120,
+      "icon": "🗿",
+      "items": [
+        {
+          "char": "ありがとう",
+          "reading": "Arigatou",
+          "meaningVi": "Cảm ơn (Thân thiện, thường ngày)",
+          "meaningEn": "Thank you (Casual)",
+          "hint": "Âm 'to' kéo dài nhẹ với 'u'"
+        },
+        {
+          "char": "すみません",
+          "reading": "Sumimasen",
+          "meaningVi": "Xin lỗi / Xin làm phiền / Gọi phục vụ",
+          "meaningEn": "Excuse me / I'm sorry",
+          "hint": "Từ vạn năng nhất của người Nhật"
+        },
+        {
+          "char": "はい",
+          "reading": "Hai",
+          "meaningVi": "Vâng / Đúng vậy / Tôi nghe đây",
+          "meaningEn": "Yes / Understood",
+          "hint": "Dứt khoát, âm ngắn"
+        },
+        {
+          "char": "いいえ",
+          "reading": "Iie",
+          "meaningVi": "Không / Không có chi",
+          "meaningEn": "No / Not at all",
+          "hint": "Âm 'i' kép ngân dài nhẹ"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "'Sumimasen' dùng trong trường hợp nào?",
+          "promptEn": "When is 'Sumimasen' used?",
+          "cue": "すみません",
+          "correct": "Cả xin lỗi, cảm ơn và gọi nhân viên",
+          "options": [
+            "Cả xin lỗi, cảm ơn và gọi nhân viên",
+            "Chỉ dùng khi tức giận",
+            "Chỉ chào buổi sáng",
+            "Lời chúc ngủ ngon"
+          ],
+          "explanationVi": "Sumimasen là từ vạn năng dùng cả xin lỗi, cảm ơn và gọi phục vụ quán ăn.",
+          "explanationEn": "Sumimasen is a versatile phrase for apologizing, thanking, and getting attention."
+        },
+        {
+          "promptVi": "'Arigatou' (ありがとう) mang ý nghĩa gì?",
+          "promptEn": "What does 'Arigatou' mean?",
+          "cue": "ありがとう",
+          "correct": "Cảm ơn",
+          "options": [
+            "Cảm ơn",
+            "Tạm biệt",
+            "Xin lỗi",
+            "Chúc mừng"
+          ],
+          "explanationVi": "ありがとう có nghĩa là Cảm ơn.",
+          "explanationEn": "ありがとう means Thank you."
+        },
+        {
+          "promptVi": "Từ nào trong tiếng Nhật mang nghĩa 'Vâng / Đúng vậy'?",
+          "promptEn": "Which Japanese word means 'Yes'?",
+          "cue": "Yes",
+          "correct": "はい (Hai)",
+          "options": [
+            "はい (Hai)",
+            "いいえ (Iie)",
+            "だめ (Dame)",
+            "じゃあ (Jaa)"
+          ],
+          "explanationVi": "はい có nghĩa là Vâng, Đúng vậy.",
+          "explanationEn": "はい means Yes."
+        },
+        {
+          "promptVi": "Từ 'いいえ' phiên âm là gì?",
+          "promptEn": "What is the Romaji for いいえ?",
+          "cue": "いいえ",
+          "correct": "Iie",
+          "options": [
+            "Iie",
+            "Ie",
+            "Hai",
+            "Iya"
+          ],
+          "explanationVi": "いいえ đọc là Iie (Không).",
+          "explanationEn": "いいえ reads as Iie."
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-4",
+      "stageNum": 4,
+      "titleVi": "Ải 4: Biến Âm, Âm Đục & Âm Ngắt Sokuon",
+      "titleEn": "Stage 4: Dakuten & Sokuon Master",
+      "descVi": "Chinh phục âm đục (Tenten/Maru) và âm ngắt chữ nhỏ (っ).",
+      "descEn": "Tackle Dakuten voiced sounds and small Sokuon double consonants.",
+      "bossNameVi": "Hắc Dạ Quỷ Oni (Shadow Oni)",
+      "bossNameEn": "Shadow Oni",
+      "bossType": "oni",
+      "bossHp": 140,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "が",
+          "reading": "ga",
+          "meaningVi": "Âm Ga (Hàng Ka thêm dấu Tenten biến thành đục)",
+          "meaningEn": "Voiced Ga",
+          "hint": "か + hai dấu phẩy nhỏ góc phải trên"
+        },
+        {
+          "char": "ぱ",
+          "reading": "pa",
+          "meaningVi": "Âm Pa (Hàng Ha thêm dấu tròn Maru)",
+          "meaningEn": "Semi-voiced Pa",
+          "hint": "は + vòng tròn nhỏ góc phải trên"
+        },
+        {
+          "char": "きって",
+          "reading": "kitte",
+          "meaningVi": "Âm ngắt tt: Con tem (Ngừng hơi 1 nhịp ở chữ っ)",
+          "meaningEn": "Sokuon example: Postage stamp",
+          "hint": "Chữ っ nhỏ không đọc thành tiếng mà tạo khoảng lặng"
+        },
+        {
+          "char": "がっこう",
+          "reading": "gakkou",
+          "meaningVi": "Âm ngắt kk: Trường học",
+          "meaningEn": "Sokuon example: School",
+          "hint": "Khóa thanh quản ở 'kk' trước khi phát 'kou'"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Chữ っ nhỏ trong từ 'きって' (kitte) có tác dụng gì?",
+          "promptEn": "What role does the small っ play in 'kitte'?",
+          "cue": "きって",
+          "correct": "Tạo khoảng lặng ngắt hơi gấp đôi phụ âm sau",
+          "options": [
+            "Tạo khoảng lặng ngắt hơi gấp đôi phụ âm sau",
+            "Đọc là 'tsu' thật to",
+            "Kéo dài nguyên âm 'i'",
+            "Làm biến đổi thành dấu hỏi"
+          ],
+          "explanationVi": "っ (Sokuon) giữ hơi lại 1 nhịp, tạo thành phụ âm gấp đôi (kitte).",
+          "explanationEn": "Small っ causes a glottal stop / geminate consonant."
+        },
+        {
+          "promptVi": "Thêm hai dấu phẩy (Tenten ゛) vào chữ か sẽ tạo thành chữ gì?",
+          "promptEn": "Adding dakuten ゛ to か creates what character?",
+          "cue": "か + ゛",
+          "correct": "が (ga)",
+          "options": [
+            "が (ga)",
+            "ぱ (pa)",
+            "ざ (za)",
+            "だ (da)"
+          ],
+          "explanationVi": "か + ゛ = が (ga).",
+          "explanationEn": "か with dakuten becomes が (ga)."
+        },
+        {
+          "promptVi": "Từ 'がっこう' nghĩa là gì?",
+          "promptEn": "What does 'がっこう' (gakkou) mean?",
+          "cue": "がっこう",
+          "correct": "Trường học",
+          "options": [
+            "Trường học",
+            "Bệnh viện",
+            "Công viên",
+            "Nhà ga"
+          ],
+          "explanationVi": "Gakkou nghĩa là trường học.",
+          "explanationEn": "Gakkou means school."
+        },
+        {
+          "promptVi": "Dấu tròn nhỏ (゜) trên chữ ぱ được gọi là gì?",
+          "promptEn": "What is the small circle ゜ on ぱ called?",
+          "cue": "ぱ",
+          "correct": "Handakuten (Bán trọc âm)",
+          "options": [
+            "Handakuten (Bán trọc âm)",
+            "Dakuten",
+            "Choonpu",
+            "Furigana"
+          ],
+          "explanationVi": "Dấu tròn nhỏ gọi là Handakuten, tạo âm p.",
+          "explanationEn": "Handakuten creates the 'p' sound."
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-5",
+      "stageNum": 5,
+      "titleVi": "Ải 5: Đại Chiến Đàm Thoại Đời Thực",
+      "titleEn": "Stage 5: Tokyo Real Slang & Boss Battle",
+      "descVi": "Làm chủ những từ lóng và khẩu ngữ mà giới trẻ Tokyo sử dụng mỗi ngày!",
+      "descEn": "Master native Tokyo slang and casual expressions spoken on the street!",
+      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
+      "bossNameEn": "Crimson Dragon Emperor",
+      "bossType": "dragon",
+      "bossHp": 160,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "ヤバい",
+          "reading": "Yabai",
+          "meaningVi": "Đỉnh chóp / Điên rồ / Nguy rồi (Tùy ngữ cảnh)",
+          "meaningEn": "Crazy / Awesome / Dangerous (Context-dependent)",
+          "hint": "Từ cửa miệng phổ biến nhất Nhật Bản"
+        },
+        {
+          "char": "まじで",
+          "reading": "Maji de",
+          "meaningVi": "Thật á?! / Nghiêm túc đấy chứ?",
+          "meaningEn": "Seriously?! / For real?",
+          "hint": "Lên giọng cuối câu khi ngạc nhiên"
+        },
+        {
+          "char": "お疲れ様",
+          "reading": "Otsukaresama",
+          "meaningVi": "Bạn đã vất vả rồi! (Chào sau giờ làm việc)",
+          "meaningEn": "Good work today / Thank you for your hard work",
+          "hint": "Văn hóa ứng xử công sở và đời sống Nhật Bản"
+        },
+        {
+          "char": "よろしく",
+          "reading": "Yoroshiku",
+          "meaningVi": "Nhờ bạn nhé / Rất vui được hợp tác",
+          "meaningEn": "Nice to meet you / Count on you",
+          "hint": "Dạng thân mật của Yoroshiku onegaishimasu"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Từ 'ヤバい' (Yabai) trong tiếng Nhật đường phố có thể mang nghĩa nào?",
+          "promptEn": "In casual Japanese, what can 'Yabai' mean?",
+          "cue": "ヤバい",
+          "correct": "Cả khen ngon/đỉnh lẫn lo lắng khi gặp rắc rối",
+          "options": [
+            "Cả khen ngon/đỉnh lẫn lo lắng khi gặp rắc rối",
+            "Chỉ dùng để chê bai đồ ăn",
+            "Lời tạm biệt trang trọng",
+            "Tên một loại sushi"
+          ],
+          "explanationVi": "Yabai cực kỳ linh hoạt, có thể khen 'ngon đỉnh chóp' hoặc than 'chết dở rồi'.",
+          "explanationEn": "Yabai can mean amazingly good or dangerously bad."
+        },
+        {
+          "promptVi": "Khi đồng nghiệp hoàn thành một ca làm việc vất vả, bạn nói câu gì?",
+          "promptEn": "What do you say when colleagues finish their work?",
+          "cue": "Tan sở",
+          "correct": "お疲れ様 (Otsukaresama)",
+          "options": [
+            "お疲れ様 (Otsukaresama)",
+            "おはよう (Ohayou)",
+            "さようなら (Sayounara)",
+            "ごめんなさい (Gomennasai)"
+          ],
+          "explanationVi": "Otsukaresama là câu chào tan ca bất hủ.",
+          "explanationEn": "Otsukaresama expresses gratitude for hard work."
+        },
+        {
+          "promptVi": "'Maji de?' (まじで) tương đương với cụm từ tiếng Anh nào?",
+          "promptEn": "What does 'Maji de' correspond to in English?",
+          "cue": "まじで",
+          "correct": "Seriously?! / For real?!",
+          "options": [
+            "Seriously?! / For real?!",
+            "Goodbye",
+            "Excuse me",
+            "Good morning"
+          ],
+          "explanationVi": "Maji de có nghĩa là Thật á? / Nghiêm túc đấy chứ?",
+          "explanationEn": "Maji de means 'For real?!'."
+        },
+        {
+          "promptVi": "Câu nói 'Yoroshiku' (よろしく) thường được dùng khi nào?",
+          "promptEn": "When is 'Yoroshiku' typically used?",
+          "cue": "よろしく",
+          "correct": "Khi bắt đầu hợp tác hoặc nhờ vả ai việc gì",
+          "options": [
+            "Khi bắt đầu hợp tác hoặc nhờ vả ai việc gì",
+            "Khi chuẩn bị đi ngủ",
+            "Khi từ chối ai đó",
+            "Khi ăn xong"
+          ],
+          "explanationVi": "Yoroshiku dùng khi nhờ vả hoặc mong được giúp đỡ.",
+          "explanationEn": "Yoroshiku is used when requesting cooperation."
+        }
+      ]
+    }
+  ],
+  "en-US": [
+    {
+      "id": "en-stage-1",
+      "stageNum": 1,
+      "titleVi": "Ải 1: 5 Nguyên Âm Cốt Lõi (A-E-I-O-U)",
+      "titleEn": "Stage 1: Core Vowels & Acoustic Resonance",
+      "descVi": "Làm chủ 5 nguyên âm IPA căn bản và khẩu hình mở khoang miệng chuẩn Mỹ.",
+      "descEn": "Master the 5 core English vowels and American resonance mouth placement.",
+      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "A /æ/",
+          "reading": "Cat /kæt/",
+          "meaningVi": "Âm A bẹt (Hạ cằm sâu, kéo mép sang hai bên)",
+          "meaningEn": "Short A /æ/ as in Cat",
+          "hint": "Hạ quai hàm thoải mái, âm vang sâu trong họng"
+        },
+        {
+          "char": "E /e/",
+          "reading": "Bed /bed/",
+          "meaningVi": "Âm E ngắn (Mở miệng vừa phải)",
+          "meaningEn": "Short E /e/ as in Bed",
+          "hint": "Khẩu hình hẹp hơn /æ/"
+        },
+        {
+          "char": "I /ɪ/",
+          "reading": "Sit /sɪt/",
+          "meaningVi": "Âm I thả lỏng (Khác với /i:/ căng môi)",
+          "meaningEn": "Short I /ɪ/ as in Sit",
+          "hint": "Không cười kéo dài mép, phát âm ngắn gọn"
+        },
+        {
+          "char": "O /ɑː/",
+          "reading": "Hot /hɑːt/",
+          "meaningVi": "Âm O mở sâu (Anh-Mỹ hạ cằm tự nhiên)",
+          "meaningEn": "Open O /ɑː/ as in Hot",
+          "hint": "Khoang miệng mở tròn dọc"
+        },
+        {
+          "char": "U /ʌ/",
+          "reading": "Cup /kʌp/",
+          "meaningVi": "Âm Á ngắn (Bật từ đáy cổ họng)",
+          "meaningEn": "Short U /ʌ/ as in Cup",
+          "hint": "Thả lỏng toàn bộ khuôn mặt"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Từ 'Cat' trong tiếng Anh chứa âm nguyên âm IPA nào?",
+          "promptEn": "Which IPA vowel sound is in 'Cat'?",
+          "cue": "Cat",
+          "correct": "/æ/",
+          "options": [
+            "/æ/",
+            "/e/",
+            "/ʌ/",
+            "/i:/"
+          ],
+          "explanationVi": "Cat chứa âm A bẹt /æ/.",
+          "explanationEn": "Cat has the short /æ/ vowel."
+        },
+        {
+          "promptVi": "Khẩu hình chuẩn của âm /æ/ là gì?",
+          "promptEn": "What is the proper mouth position for /æ/?",
+          "cue": "/æ/",
+          "correct": "Hạ cằm sâu và mở rộng khóe miệng",
+          "options": [
+            "Hạ cằm sâu và mở rộng khóe miệng",
+            "Chu môi tròn như huýt sáo",
+            "Khép chặt hai hàm răng",
+            "Uốn cong đầu lưỡi chạm vòm họng"
+          ],
+          "explanationVi": "Âm /æ/ đòi hỏi hạ hàm sâu và khóe miệng mở tự nhiên.",
+          "explanationEn": "Drop your jaw and widen the corners of your mouth."
+        },
+        {
+          "promptVi": "Từ 'Sit' phát âm khác 'Seat' ở điểm mấu chốt nào?",
+          "promptEn": "How does 'Sit' differ from 'Seat'?",
+          "cue": "Sit vs Seat",
+          "correct": "'Sit' dùng âm /ɪ/ thả lỏng ngắn, 'Seat' dùng /i:/ căng dài",
+          "options": [
+            "'Sit' dùng âm /ɪ/ thả lỏng ngắn, 'Seat' dùng /i:/ căng dài",
+            "Hai từ phát âm y hệt nhau",
+            "'Sit' không phát âm chữ T",
+            "'Seat' bắt đầu bằng âm Z"
+          ],
+          "explanationVi": "/ɪ/ trong Sit ngắn và thư giãn, /i:/ trong Seat căng môi.",
+          "explanationEn": "/ɪ/ is relaxed and short, while /i:/ is tense and elongated."
+        },
+        {
+          "promptVi": "Âm nguyên âm trong từ 'Cup' /kʌp/ được phát âm ra sao?",
+          "promptEn": "How is the vowel in 'Cup' /kʌp/ produced?",
+          "cue": "Cup",
+          "correct": "Bật nhanh từ đáy họng, môi và hàm thư giãn",
+          "options": [
+            "Bật nhanh từ đáy họng, môi và hàm thư giãn",
+            "Chu tròn môi thật chặt",
+            "Rung lưỡi liên tục",
+            "Ngậm kín miệng phát âm qua mũi"
+          ],
+          "explanationVi": "/ʌ/ là âm ngắn bật dứt khoát từ họng.",
+          "explanationEn": "/ʌ/ is a short, relaxed central vowel."
+        }
+      ]
+    },
+    {
+      "id": "en-stage-2",
+      "stageNum": 2,
+      "titleVi": "Ải 2: Chào Hỏi & Lịch Sự Công Sở",
+      "titleEn": "Stage 2: Essential Greetings & Courtesy",
+      "descVi": "Các câu nói tự nhiên thay vì câu 'How are you? I'm fine thank you' cứng nhắc.",
+      "descEn": "Natural greetings instead of textbook stiffness.",
+      "bossNameVi": "Cáo Tinh Anh Ngữ (Mystic Fox)",
+      "bossNameEn": "Mystic Fox",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "Hey, how's it going?",
+          "reading": "/heɪ haʊz ɪt ˈɡoʊɪŋ/",
+          "meaningVi": "Dạo này thế nào rồi? (Chào phổ biến nhất)",
+          "meaningEn": "How are things with you?",
+          "hint": "Nối âm: how's-it going"
+        },
+        {
+          "char": "I appreciate it",
+          "reading": "/aɪ əˈpriːʃieɪt ɪt/",
+          "meaningVi": "Tôi rất trân trọng / Cảm ơn bạn rất nhiều",
+          "meaningEn": "Thank you genuinely",
+          "hint": "Nối âm: appreciate-it"
+        },
+        {
+          "char": "Have a good one!",
+          "reading": "/hæv ə ɡʊd wʌn/",
+          "meaningVi": "Chúc bạn một ngày tốt lành! (Chào tạm biệt tự nhiên)",
+          "meaningEn": "Have a nice day",
+          "hint": "Người Mỹ dùng câu này ở mọi quầy tính tiền"
+        },
+        {
+          "char": "No problem at all",
+          "reading": "/noʊ ˈprɑːbləm æt ɔːl/",
+          "meaningVi": "Không có vấn đề gì cả / Rất vui được giúp",
+          "meaningEn": "You're welcome / Not a trouble",
+          "hint": "Thân mật hơn 'You are welcome'"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Người bản xứ thường nói câu nào ở quầy tính tiền khi chào tạm biệt?",
+          "promptEn": "What casual phrase do Americans say when parting at checkout?",
+          "cue": "Have a good one!",
+          "correct": "Have a good one!",
+          "options": [
+            "Have a good one!",
+            "Goodbye forever",
+            "Where is the exit?",
+            "Stop talking"
+          ],
+          "explanationVi": "'Have a good one' là cách chào tạm biệt cực kỳ phổ biến và thân thiện.",
+          "explanationEn": "'Have a good one!' is the quintessential American casual farewell."
+        },
+        {
+          "promptVi": "'How's it going?' thường được nối âm như thế nào?",
+          "promptEn": "How is 'How's it going?' linked naturally in speech?",
+          "cue": "How's it going",
+          "correct": "How-zit going",
+          "options": [
+            "How-zit going",
+            "How is it go-ing",
+            "Hows-it-going-sir",
+            "How going is it"
+          ],
+          "explanationVi": "Âm /z/ ở How's nối liền sang /ɪt/ thành 'How-zit'.",
+          "explanationEn": "The /z/ links smoothly to /ɪt/ becoming 'how-zit'."
+        },
+        {
+          "promptVi": "Để nói lời cảm ơn chân thành và lịch sự, câu nào sau đây phù hợp nhất?",
+          "promptEn": "Which phrase conveys sincere, professional gratitude?",
+          "cue": "Thank you",
+          "correct": "I really appreciate it",
+          "options": [
+            "I really appreciate it",
+            "Give me that",
+            "It is what it is",
+            "See ya"
+          ],
+          "explanationVi": "'I really appreciate it' thể hiện lòng biết ơn sâu sắc.",
+          "explanationEn": "'I appreciate it' shows genuine gratitude."
+        },
+        {
+          "promptVi": "'No problem at all' thường dùng để đáp lại câu nào?",
+          "promptEn": "What is 'No problem at all' commonly used to respond to?",
+          "cue": "No problem at all",
+          "correct": "Lời cảm ơn (Thank you)",
+          "options": [
+            "Lời cảm ơn (Thank you)",
+            "Lời chúc mừng sinh nhật",
+            "Câu hỏi mấy giờ rồi",
+            "Lời đề nghị kết bạn"
+          ],
+          "explanationVi": "No problem at all tương đương 'Không có chi'.",
+          "explanationEn": "'No problem at all' is a warm alternative to 'You're welcome'."
+        }
+      ]
+    },
+    {
+      "id": "en-stage-3",
+      "stageNum": 3,
+      "titleVi": "Ải 3: Bộ Cụm Khối Giao Tiếp (Conversational Chunks)",
+      "titleEn": "Stage 3: Conversational Chunks & Connectors",
+      "descVi": "Nói tiếng Anh lưu loát không vấp nhờ các khối câu đệm tự nhiên.",
+      "descEn": "Speak fluidly without hesitations using natural speech chunks.",
+      "bossNameVi": "Golem Thạch Đấu (Stone Golem)",
+      "bossNameEn": "Stone Golem",
+      "bossType": "golem",
+      "bossHp": 120,
+      "icon": "🗿",
+      "items": [
+        {
+          "char": "To be honest",
+          "reading": "/tə bi ˈɑːnɪst/",
+          "meaningVi": "Thành thật mà nói (Mở đầu quan điểm)",
+          "meaningEn": "Frankly speaking",
+          "hint": "Chữ H trong honest là âm câm"
+        },
+        {
+          "char": "You know what I mean?",
+          "reading": "/ju noʊ wʌt aɪ miːn/",
+          "meaningVi": "Bạn hiểu ý tôi chứ? (Kiểm tra sự đồng thuận)",
+          "meaningEn": "Do you understand what I'm getting at?",
+          "hint": "Thường rút gọn thành 'Y'know what I mean?'"
+        },
+        {
+          "char": "As far as I know",
+          "reading": "/æz fɑːr æz aɪ noʊ/",
+          "meaningVi": "Theo như tôi được biết",
+          "meaningEn": "To the best of my knowledge",
+          "hint": "Nối âm: as-far-as-I know"
+        },
+        {
+          "char": "Never mind",
+          "reading": "/ˈnevər maɪnd/",
+          "meaningVi": "Thôi bỏ đi / Không sao đâu",
+          "meaningEn": "Don't worry about it / Forget it",
+          "hint": "Âm d cuối chặn hơi nhẹ"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Chữ cái nào bị câm trong từ 'honest'?",
+          "promptEn": "Which letter is silent in 'honest'?",
+          "cue": "honest",
+          "correct": "Chữ H",
+          "options": [
+            "Chữ H",
+            "Chữ O",
+            "Chữ N",
+            "Chữ T"
+          ],
+          "explanationVi": "Chữ H trong honest là âm câm, phát âm bắt đầu từ /ɑː/.",
+          "explanationEn": "The H in 'honest' is completely silent."
+        },
+        {
+          "promptVi": "'To be honest' được dùng nhằm mục đích gì trong hội thoại?",
+          "promptEn": "Why do speakers use 'To be honest'?",
+          "cue": "To be honest",
+          "correct": "Bày tỏ ý kiến cá nhân một cách chân thành, thẳng thắn",
+          "options": [
+            "Bày tỏ ý kiến cá nhân một cách chân thành, thẳng thắn",
+            "Nói dối người nghe",
+            "Kết thúc cuộc trò chuyện",
+            "Hỏi đường đi"
+          ],
+          "explanationVi": "Cụm từ này dùng để mở đầu quan điểm thẳng thắn.",
+          "explanationEn": "It introduces a candid, genuine perspective."
+        },
+        {
+          "promptVi": "Cụm 'As far as I know' có nghĩa là gì?",
+          "promptEn": "What does 'As far as I know' mean?",
+          "cue": "As far as I know",
+          "correct": "Theo như tôi được biết",
+          "options": [
+            "Theo như tôi được biết",
+            "Tôi không hề biết gì",
+            "Đi xa nhất có thể",
+            "Tôi chắc chắn 100%"
+          ],
+          "explanationVi": "Có nghĩa là theo những gì tôi nắm được đến nay.",
+          "explanationEn": "It means 'to the best of my knowledge'."
+        },
+        {
+          "promptVi": "Khi muốn bảo ai đó 'Thôi không sao, bỏ qua chuyện đó đi', bạn dùng:",
+          "promptEn": "To tell someone 'Forget about it / It's fine', you say:",
+          "cue": "Bỏ qua đi",
+          "correct": "Never mind",
+          "options": [
+            "Never mind",
+            "Always mind",
+            "Out of mind",
+            "Open your mind"
+          ],
+          "explanationVi": "Never mind mang nghĩa thôi bỏ qua, không sao đâu.",
+          "explanationEn": "'Never mind' means let it go / don't worry about it."
+        }
+      ]
+    },
+    {
+      "id": "en-stage-4",
+      "stageNum": 4,
+      "titleVi": "Ải 4: Cụm Phụ Âm Khó (TH, SH, CH, STR)",
+      "titleEn": "Stage 4: Tough Consonant Clusters",
+      "descVi": "Xóa bỏ thói quen phát âm sai âm TH và cụm 3 phụ âm STR chuẩn đét.",
+      "descEn": "Eliminate TH errors and master challenging 3-consonant clusters.",
+      "bossNameVi": "Bóng Ma Oni (Shadow Demon)",
+      "bossNameEn": "Shadow Oni",
+      "bossType": "oni",
+      "bossHp": 140,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "TH vô thanh /θ/",
+          "reading": "Think /θɪŋk/",
+          "meaningVi": "Âm TH thổi hơi (Đặt đầu lưỡi giữa 2 hàm răng và thổi)",
+          "meaningEn": "Voiceless TH /θ/ as in Think",
+          "hint": "Đầu lưỡi lộ nhẹ giữa răng, tuyệt đối không đọc thành S hay T"
+        },
+        {
+          "char": "TH hữu thanh /ð/",
+          "reading": "This /ðɪs/",
+          "meaningVi": "Âm TH rung cổ họng (Lưỡi kẹp nhẹ, rung dây thanh)",
+          "meaningEn": "Voiced TH /ð/ as in This",
+          "hint": "Đặt ngón tay lên cổ họng để cảm nhận độ rung"
+        },
+        {
+          "char": "SH /ʃ/ vs CH /tʃ/",
+          "reading": "Ship /ʃɪp/ vs Chip /tʃɪp/",
+          "meaningVi": "SH kéo dài êm dịu, CH bật hơi dứt khoát",
+          "meaningEn": "Continuant /ʃ/ vs Affricate /tʃ/",
+          "hint": "Chu môi về phía trước"
+        },
+        {
+          "char": "Cụm STR /str/",
+          "reading": "Street /striːt/",
+          "meaningVi": "Cụm 3 phụ âm liền mạch không chèn âm 'ờ'",
+          "meaningEn": "Triple cluster /str/ as in Street",
+          "hint": "Lướt từ S sang T rồi cuộn lưỡi R"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Vị trí đặt lưỡi chuẩn xác khi phát âm /θ/ trong 'Think' là ở đâu?",
+          "promptEn": "Where is tongue placement for /θ/ in 'Think'?",
+          "cue": "Think /θ/",
+          "correct": "Đầu lưỡi đặt giữa hai hàm răng và thổi luồng khí nhẹ",
+          "options": [
+            "Đầu lưỡi đặt giữa hai hàm răng và thổi luồng khí nhẹ",
+            "Đầu lưỡi thụt sâu vào trong họng",
+            "Lưỡi áp chặt lên vòm miệng trên",
+            "Hai môi mím chặt lại"
+          ],
+          "explanationVi": "Âm /θ/ là âm kẹp lưỡi giữa răng thổi hơi.",
+          "explanationEn": "Place tongue tip between teeth and release air."
+        },
+        {
+          "promptVi": "Điểm khác biệt cốt lõi giữa âm /θ/ (Think) và /ð/ (This) là gì?",
+          "promptEn": "What is the key difference between /θ/ (Think) and /ð/ (This)?",
+          "cue": "/θ/ vs /ð/",
+          "correct": "/θ/ không rung dây thanh (vô thanh), /ð/ có rung (hữu thanh)",
+          "options": [
+            "/θ/ không rung dây thanh (vô thanh), /ð/ có rung (hữu thanh)",
+            "/θ/ phát âm qua mũi",
+            "/ð/ không cần dùng lưỡi",
+            "Cả hai hoàn toàn giống nhau"
+          ],
+          "explanationVi": "/θ/ là voiceless (vô thanh), /ð/ là voiced (hữu thanh).",
+          "explanationEn": "/θ/ is voiceless, /ð/ vibrates the vocal cords."
+        },
+        {
+          "promptVi": "Lỗi phổ biến nhất của người Việt khi phát âm từ 'Street' /striːt/ là gì?",
+          "promptEn": "What is a common mispronunciation of 'Street'?",
+          "cue": "Street",
+          "correct": "Chèn thêm âm 'sờ-tơ-rít' thay vì trượt liền mạch /str/",
+          "options": [
+            "Chèn thêm âm 'sờ-tơ-rít' thay vì trượt liền mạch /str/",
+            "Đọc thành chữ Z",
+            "Quên phát âm nguyên âm",
+            "Nói quá nhanh"
+          ],
+          "explanationVi": "Cụm phụ âm cần lướt liền mạch không chèn nguyên âm đệm.",
+          "explanationEn": "Avoid inserting extra vowels between s-t-r."
+        },
+        {
+          "promptVi": "Cặp từ nào minh họa rõ nhất sự khác nhau giữa /ʃ/ và /tʃ/?",
+          "promptEn": "Which pair demonstrates /ʃ/ vs /tʃ/?",
+          "cue": "/ʃ/ vs /tʃ/",
+          "correct": "Ship vs Chip",
+          "options": [
+            "Ship vs Chip",
+            "Cat vs Bat",
+            "Run vs Sun",
+            "Pen vs Ten"
+          ],
+          "explanationVi": "Ship có âm /ʃ/ kéo dài, Chip có âm /tʃ/ bật tắc.",
+          "explanationEn": "Ship uses /ʃ/, Chip uses affricate /tʃ/."
+        }
+      ]
+    },
+    {
+      "id": "en-stage-5",
+      "stageNum": 5,
+      "titleVi": "Ải 5: Tiếng Lóng Mỹ Thực Chiến (American Street Slang)",
+      "titleEn": "Stage 5: Street Slang & Fluency Final Boss",
+      "descVi": "Chinh phục các câu lóng thực tế trong podcast, phim ảnh và đời sống New York/LA.",
+      "descEn": "Tackle real slang heard in American podcasts, cinema, and modern culture.",
+      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
+      "bossNameEn": "Crimson Dragon Emperor",
+      "bossType": "dragon",
+      "bossHp": 160,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "I'm down for that",
+          "reading": "/aɪm daʊn fər ðæt/",
+          "meaningVi": "Tôi sẵn sàng tham gia / Tôi ủng hộ kèo này!",
+          "meaningEn": "I'm ready / Count me in!",
+          "hint": "Đồng nghĩa với 'I'm in!'"
+        },
+        {
+          "char": "No worries at all",
+          "reading": "/noʊ ˈwɜːriz æt ɔːl/",
+          "meaningVi": "Đừng bận tâm / Chuyện nhỏ ấy mà!",
+          "meaningEn": "Don't sweat it / It's fine",
+          "hint": "Cách nói cực kỳ thân mật của người trẻ"
+        },
+        {
+          "char": "Hit me up later",
+          "reading": "/hɪt mi ʌp ˈleɪtər/",
+          "meaningVi": "Nhắn tin / Gọi cho tôi sau nhé (HMU)",
+          "meaningEn": "Text me or call me later",
+          "hint": "Nối âm: hit-me-up"
+        },
+        {
+          "char": "It is what it is",
+          "reading": "/ɪt ɪz wʌt ɪt ɪz/",
+          "meaningVi": "Chấp nhận sự thật thôi / Đành vậy chứ biết sao",
+          "meaningEn": "Accept the reality / Can't change it",
+          "hint": "Thành ngữ chấp nhận hoàn cảnh phổ biến nhất"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Khi một người bạn rủ đi ăn pizza và bạn nói 'I'm down!', câu đó nghĩa là gì?",
+          "promptEn": "If a friend invites you for pizza and you say 'I'm down!', what does it mean?",
+          "cue": "I'm down!",
+          "correct": "Tôi đồng ý, tôi tham gia kèo này!",
+          "options": [
+            "Tôi đồng ý, tôi tham gia kèo này!",
+            "Tôi đang buồn bã",
+            "Tôi không có tiền",
+            "Tôi vừa bị ngã xuống đất"
+          ],
+          "explanationVi": "'I'm down' là tiếng lóng thể hiện sự hào hứng tham gia.",
+          "explanationEn": "'I'm down' means 'count me in!'."
+        },
+        {
+          "promptVi": "Cụm 'Hit me up' viết tắt là HMU trong tin nhắn nghĩa là gì?",
+          "promptEn": "What does the text abbreviation 'HMU' (Hit me up) mean?",
+          "cue": "Hit me up (HMU)",
+          "correct": "Nhắn tin hoặc liên lạc với tôi nhé",
+          "options": [
+            "Nhắn tin hoặc liên lạc với tôi nhé",
+            "Đánh vào người tôi đi",
+            "Hãy chạy trốn",
+            "Xóa số điện thoại"
+          ],
+          "explanationVi": "Hit me up = Liên lạc với tôi nhé.",
+          "explanationEn": "Hit me up means contact me."
+        },
+        {
+          "promptVi": "Người Mỹ nói 'It is what it is' trong tâm trạng nào?",
+          "promptEn": "In what mindset do speakers say 'It is what it is'?",
+          "cue": "It is what it is",
+          "correct": "Chấp nhận thực tế dù không như ý muốn",
+          "options": [
+            "Chấp nhận thực tế dù không như ý muốn",
+            "Vô cùng phấn khích",
+            "Muốn tranh luận gay gắt",
+            "Báo tin mừng trúng số"
+          ],
+          "explanationVi": "Đây là câu thành ngữ thể hiện sự chấp nhận thực tế khách quan.",
+          "explanationEn": "It conveys stoic acceptance of an unchangeable situation."
+        },
+        {
+          "promptVi": "'No worries' tương đương với cách diễn đạt nào?",
+          "promptEn": "What is 'No worries' equivalent to?",
+          "cue": "No worries",
+          "correct": "Don't worry about it / You're welcome",
+          "options": [
+            "Don't worry about it / You're welcome",
+            "Be very worried",
+            "Leave immediately",
+            "I don't know you"
+          ],
+          "explanationVi": "No worries mang nghĩa đừng lo lắng, chuyện nhỏ.",
+          "explanationEn": "'No worries' means no problem at all."
+        }
+      ]
+    }
+  ],
+  "ko-KR": [
+    {
+      "id": "ko-stage-1",
+      "stageNum": 1,
+      "titleVi": "Ải 1: Nguyên Âm Hangul Cội Nguồn (ㅏ, ㅓ, ㅗ, ㅜ, ㅣ)",
+      "titleEn": "Stage 1: Core Hangul Vowels",
+      "descVi": "Khám phá nguyên lý triết học Thiên - Địa - Nhân tạo nên chữ viết Hàn Quốc.",
+      "descEn": "Discover the philosophical harmony of Heaven, Earth, and Humanity in Hangul.",
+      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "ㅏ",
+          "reading": "a",
+          "meaningVi": "Nguyên âm A (Nét sổ dọc với nét phẩy hướng sang phải)",
+          "meaningEn": "Vowel A",
+          "hint": "Nét phẩy sang phải tượng trưng cho mặt trời mọc"
+        },
+        {
+          "char": "ㅓ",
+          "reading": "eo",
+          "meaningVi": "Nguyên âm Ơ/O mở (Nét phẩy hướng vào trong)",
+          "meaningEn": "Vowel Eo (Open O)",
+          "hint": "Mở miệng như âm 'ơ' nhưng khẩu hình hơi sâu"
+        },
+        {
+          "char": "ㅗ",
+          "reading": "o",
+          "meaningVi": "Nguyên âm Ô (Nét phẩy hướng lên trên trời)",
+          "meaningEn": "Vowel O (Rounded)",
+          "hint": "Chu môi tròn như chữ 'ô' tiếng Việt"
+        },
+        {
+          "char": "ㅜ",
+          "reading": "u",
+          "meaningVi": "Nguyên âm U (Nét phẩy hướng xuống đất)",
+          "meaningEn": "Vowel U",
+          "hint": "Chu môi hướng thẳng ra trước"
+        },
+        {
+          "char": "ㅣ",
+          "reading": "i",
+          "meaningVi": "Nguyên âm I (Thanh dọc tượng trưng cho con người đứng thẳng)",
+          "meaningEn": "Vowel I",
+          "hint": "Môi dẹt kéo sang hai bên"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Nguyên âm Hangul nào có nét phẩy chỉ sang bên PHẢI?",
+          "promptEn": "Which Hangul vowel has a tick pointing to the RIGHT?",
+          "cue": "ㅏ",
+          "correct": "ㅏ (a)",
+          "options": [
+            "ㅏ (a)",
+            "ㅓ (eo)",
+            "ㅗ (o)",
+            "ㅜ (u)"
+          ],
+          "explanationVi": "ㅏ có nét phẩy hướng sang phải, đọc là 'a'.",
+          "explanationEn": "ㅏ points right and sounds like 'a'."
+        },
+        {
+          "promptVi": "Nguyên âm ㅓ trong tiếng Hàn phát âm gần giống âm nào?",
+          "promptEn": "How is the vowel ㅓ pronounced?",
+          "cue": "ㅓ",
+          "correct": "Âm 'ơ' hoặc 'o' mở",
+          "options": [
+            "Âm 'ơ' hoặc 'o' mở",
+            "Âm 'u' chu môi",
+            "Âm 'i' kéo dài",
+            "Âm 'e' bẹt"
+          ],
+          "explanationVi": "ㅓ phát âm giữa ơ và o.",
+          "explanationEn": "ㅓ is an open mid back vowel."
+        },
+        {
+          "promptVi": "Chữ ㅣ tượng trưng cho yếu tố nào trong triết lý sáng tạo Hangul?",
+          "promptEn": "What does ㅣ represent in King Sejong's Hangul philosophy?",
+          "cue": "ㅣ",
+          "correct": "Con người đứng thẳng giữa trời và đất",
+          "options": [
+            "Con người đứng thẳng giữa trời và đất",
+            "Dòng sông chảy xiết",
+            "Ngọn núi cao",
+            "Ánh trăng rằm"
+          ],
+          "explanationVi": "Vua Sejong dùng nét dọc ㅣ biểu thị Con người (Nhân).",
+          "explanationEn": "Vertical ㅣ represents humanity standing between heaven and earth."
+        },
+        {
+          "promptVi": "Nguyên âm nào có nét phẩy hướng XUỐNG DƯỚI?",
+          "promptEn": "Which vowel has a short stroke pointing DOWN?",
+          "cue": "ㅜ",
+          "correct": "ㅜ (u)",
+          "options": [
+            "ㅜ (u)",
+            "ㅗ (o)",
+            "ㅏ (a)",
+            "ㅣ (i)"
+          ],
+          "explanationVi": "ㅜ có nét phẩy xuống đất, đọc là 'u'.",
+          "explanationEn": "ㅜ points downward representing 'u'."
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-2",
+      "stageNum": 2,
+      "titleVi": "Ải 2: Phụ Âm Đầu & Lời Chào Seoul",
+      "titleEn": "Stage 2: Basic Consonants & Annyeonghaseyo",
+      "descVi": "Học các phụ âm cơ bản và câu chào quốc dân 안녕하세요.",
+      "descEn": "Learn fundamental consonants and master Annyeonghaseyo.",
+      "bossNameVi": "Cửu Vĩ Hồ Kitsune (Nine-Tailed Fox)",
+      "bossNameEn": "Nine-Tailed Fox Gumiho",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "ㄱ",
+          "reading": "g/k",
+          "meaningVi": "Phụ âm Giyeok (Mô phỏng cuống lưỡi chặn họng)",
+          "meaningEn": "Consonant Giyeok (G/K)",
+          "hint": "Viết ngang rồi sổ vuông góc"
+        },
+        {
+          "char": "ㄴ",
+          "reading": "n",
+          "meaningVi": "Phụ âm Nieun (Mô phỏng đầu lưỡi chạm nướu trên)",
+          "meaningEn": "Consonant Nieun (N)",
+          "hint": "Viết sổ rồi ngang vuông góc"
+        },
+        {
+          "char": "ㅁ",
+          "reading": "m",
+          "meaningVi": "Phụ âm Mieum (Mô phỏng đôi môi khép lại)",
+          "meaningEn": "Consonant Mieum (M)",
+          "hint": "Hình vuông khép kín"
+        },
+        {
+          "char": "ㅅ",
+          "reading": "s",
+          "meaningVi": "Phụ âm Siot (Mô phỏng hình chiếc răng)",
+          "meaningEn": "Consonant Siot (S)",
+          "hint": "Hai nét rẽ nhánh như mái nhà"
+        },
+        {
+          "char": "안녕하세요",
+          "reading": "Annyeonghaseyo",
+          "meaningVi": "Xin chào (Trang trọng, phổ biến nhất)",
+          "meaningEn": "Hello (Standard polite)",
+          "hint": "Cúi đầu nhẹ khi nói câu này"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Hình vuông 'ㅁ' trong Hangul mô phỏng bộ phận phát âm nào?",
+          "promptEn": "What vocal organ does the square consonant 'ㅁ' represent?",
+          "cue": "ㅁ",
+          "correct": "Hình dạng đôi môi khép lại",
+          "options": [
+            "Hình dạng đôi môi khép lại",
+            "Chiếc răng cửa",
+            "Cuống họng",
+            "Lỗ mũi"
+          ],
+          "explanationVi": "ㅁ mô phỏng đôi môi khi phát âm m.",
+          "explanationEn": "ㅁ represents closed lips."
+        },
+        {
+          "promptVi": "'Xin chào' tiếng Hàn lịch sự chuẩn mực là câu nào?",
+          "promptEn": "What is the standard polite Korean greeting for 'Hello'?",
+          "cue": "Xin chào",
+          "correct": "안녕하세요 (Annyeonghaseyo)",
+          "options": [
+            "안녕하세요 (Annyeonghaseyo)",
+            "감사합니다 (Gamsahamnida)",
+            "죄송합니다 (Joesonghamnida)",
+            "잘 가요 (Jal gayo)"
+          ],
+          "explanationVi": "안녕하세요 là lời chào chuẩn mực.",
+          "explanationEn": "안녕하세요 is standard polite Hello."
+        },
+        {
+          "promptVi": "Phụ âm ㄱ (Giyeok) mô phỏng khẩu hình gì?",
+          "promptEn": "What does consonant ㄱ (Giyeok) imitate?",
+          "cue": "ㄱ",
+          "correct": "Cuống lưỡi nâng lên chặn vòm họng mềm",
+          "options": [
+            "Cuống lưỡi nâng lên chặn vòm họng mềm",
+            "Hai hàm răng nghiến lại",
+            "Môi chúm tròn",
+            "Lưỡi thè ra ngoài"
+          ],
+          "explanationVi": "ㄱ mô phỏng cuống lưỡi uốn lên chạm ngạc gà.",
+          "explanationEn": "ㄱ illustrates the tongue blocking the throat."
+        },
+        {
+          "promptVi": "Ký tự có hình dáng như mái nhà hai nhánh 'ㅅ' phát âm là gì?",
+          "promptEn": "What sound does the tent-shaped consonant 'ㅅ' produce?",
+          "cue": "ㅅ",
+          "correct": "Âm s",
+          "options": [
+            "Âm s",
+            "Âm m",
+            "Âm n",
+            "Âm b"
+          ],
+          "explanationVi": "ㅅ đọc là s.",
+          "explanationEn": "ㅅ produces the 's' sound."
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-3",
+      "stageNum": 3,
+      "titleVi": "Ải 3: Bộ Cụm Từ Lịch Thiệp Hàng Ngày",
+      "titleEn": "Stage 3: Essential Polite Expressions",
+      "descVi": "Bộ câu từ chuẩn mực giúp bạn hòa nhập ngay tại Hàn Quốc.",
+      "descEn": "Standard polite phrases to navigate everyday life in Korea.",
+      "bossNameVi": "Golem Thạch Đấu (Stone Guardian)",
+      "bossNameEn": "Stone Guardian Golem",
+      "bossType": "golem",
+      "bossHp": 120,
+      "icon": "🗿",
+      "items": [
+        {
+          "char": "감사합니다",
+          "reading": "Gamsahamnida",
+          "meaningVi": "Cảm ơn rất nhiều (Lịch sự, trang trọng)",
+          "meaningEn": "Thank you (Formal)",
+          "hint": "Âm 합 đọc là 'ham' do biến âm Batchim"
+        },
+        {
+          "char": "죄송합니다",
+          "reading": "Joesonghamnida",
+          "meaningVi": "Xin lỗi (Chân thành, lịch sự cao)",
+          "meaningEn": "I am sorry (Formal)",
+          "hint": "Dùng khi va chạm hoặc gây phiền hà"
+        },
+        {
+          "char": "네",
+          "reading": "Ne",
+          "meaningVi": "Vâng / Đúng rồi / Tôi hiểu",
+          "meaningEn": "Yes / Understood",
+          "hint": "Thường phát âm hơi hướng 'đê' nhẹ trong đời sống"
+        },
+        {
+          "char": "아니요",
+          "reading": "Aniyo",
+          "meaningVi": "Không / Không phải đâu ạ",
+          "meaningEn": "No (Polite)",
+          "hint": "Âm ngắn gọn, lịch sự"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Tại sao chữ '합' trong '감사합니다' lại đọc là 'ham' thay vì 'hap'?",
+          "promptEn": "Why is '합' in 'Gamsahamnida' read as 'ham'?",
+          "cue": "감사합니다",
+          "correct": "Hiện tượng đồng hóa âm: patchim ㅂ gặp phụ âm ㄴ biến thành ㅁ",
+          "options": [
+            "Hiện tượng đồng hóa âm: patchim ㅂ gặp phụ âm ㄴ biến thành ㅁ",
+            "Do người nói phát âm nhầm",
+            "Chữ này là tiếng Hán cổ",
+            "Không có quy tắc nào cả"
+          ],
+          "explanationVi": "Patchim ㅂ gặp ㄴ sẽ biến âm thành âm mũi m (Gamsahamnida).",
+          "explanationEn": "Nasal assimilation turns patchim ㅂ into ㅁ before ㄴ."
+        },
+        {
+          "promptVi": "Từ '죄송합니다' mang ý nghĩa gì?",
+          "promptEn": "What does '죄송합니다' (Joesonghamnida) mean?",
+          "cue": "죄송합니다",
+          "correct": "Xin lỗi một cách chân thành",
+          "options": [
+            "Xin lỗi một cách chân thành",
+            "Chúc mừng sinh nhật",
+            "Cảm ơn bữa ăn",
+            "Tạm biệt"
+          ],
+          "explanationVi": "Joesonghamnida có nghĩa là Xin lỗi chân thành.",
+          "explanationEn": "Joesonghamnida is the formal apology."
+        },
+        {
+          "promptVi": "Từ nào trong tiếng Hàn có nghĩa là 'Vâng / Đúng vậy'?",
+          "promptEn": "Which word means 'Yes' in Korean?",
+          "cue": "Vâng",
+          "correct": "네 (Ne)",
+          "options": [
+            "네 (Ne)",
+            "아니요 (Aniyo)",
+            "글쎄요 (Geulsseyo)",
+            "안돼 (Andwae)"
+          ],
+          "explanationVi": "네 nghĩa là Vâng.",
+          "explanationEn": "네 means Yes."
+        },
+        {
+          "promptVi": "'아니요' (Aniyo) có nghĩa là gì?",
+          "promptEn": "What does '아니요' (Aniyo) mean?",
+          "cue": "아니요",
+          "correct": "Không ạ",
+          "options": [
+            "Không ạ",
+            "Vâng ạ",
+            "Xin chào",
+            "Đi thong thả"
+          ],
+          "explanationVi": "아니요 có nghĩa là Không.",
+          "explanationEn": "아니요 means No."
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-4",
+      "stageNum": 4,
+      "titleVi": "Ải 4: Phụ Âm Căng & Phụ Âm Cuối (Batchim)",
+      "titleEn": "Stage 4: Double Consonants & Batchim",
+      "descVi": "Làm chủ 5 phụ âm căng (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ) và âm cuối giữ hơi.",
+      "descEn": "Master tense double consonants and final consonant stop rules.",
+      "bossNameVi": "Yêu Tinh Dokkaebi (Shadow Dokkaebi)",
+      "bossNameEn": "Shadow Dokkaebi",
+      "bossType": "oni",
+      "bossHp": 140,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "ㄲ",
+          "reading": "kk",
+          "meaningVi": "Phụ âm căng Sang-giyeok (Gồng thanh quản, không bật hơi)",
+          "meaningEn": "Tense Kk",
+          "hint": "Nén hơi trong họng rồi phát ra dứt khoát"
+        },
+        {
+          "char": "ㅃ",
+          "reading": "pp",
+          "meaningVi": "Phụ âm căng Sang-bieup (Mím chặt môi, bật âm đanh)",
+          "meaningEn": "Tense Pp",
+          "hint": "Âm 'p' căng mạnh"
+        },
+        {
+          "char": "ㅆ",
+          "reading": "ss",
+          "meaningVi": "Phụ âm căng Sang-siot (Rít hơi mạnh kẽ răng)",
+          "meaningEn": "Tense Ss",
+          "hint": "Âm 'x' căng rít sắc nét"
+        },
+        {
+          "char": "밥",
+          "reading": "Bap",
+          "meaningVi": "Cơm (Batchim ㅂ khép môi giữ hơi không bật ra)",
+          "meaningEn": "Rice / Meal (Batchim ㅂ)",
+          "hint": "Âm cuối ngậm môi không nhả hơi"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Phụ âm căng 'ㄲ' khác phụ âm cơ bản 'ㄱ' ở đặc điểm nào?",
+          "promptEn": "How does tense 'ㄲ' differ from basic 'ㄱ'?",
+          "cue": "ㄲ vs ㄱ",
+          "correct": "Cơ thanh quản gồng siết mạnh hơn, phát âm đanh và dứt khoát",
+          "options": [
+            "Cơ thanh quản gồng siết mạnh hơn, phát âm đanh và dứt khoát",
+            "Bật hơi gió cực mạnh ra ngoài",
+            "Phát âm nhỏ như tiếng thì thầm",
+            "Hoàn toàn giống nhau"
+          ],
+          "explanationVi": "Phụ âm căng (doen sori) đòi hỏi căng cơ họng dứt khoát.",
+          "explanationEn": "Tense consonants require strong glottal tension."
+        },
+        {
+          "promptVi": "Khi từ '밥' (Cơm) đứng một mình, phụ âm cuối ㅂ được phát âm thế nào?",
+          "promptEn": "How is the final batchim ㅂ in '밥' pronounced?",
+          "cue": "밥",
+          "correct": "Mím chặt môi chặn luồng khí lại, không bật hơi 'pờ'",
+          "options": [
+            "Mím chặt môi chặn luồng khí lại, không bật hơi 'pờ'",
+            "Bật hơi 'pờ' thật to",
+            "Đọc thành âm 'm'",
+            "Bỏ qua không đọc"
+          ],
+          "explanationVi": "Batchim trong tiếng Hàn là âm tắc không nhả (unreleased stop).",
+          "explanationEn": "Korean final consonants are unreleased stops."
+        },
+        {
+          "promptVi": "Có bao nhiêu phụ âm đôi căng trong bảng chữ cái Hangul?",
+          "promptEn": "How many double tense consonants exist in Hangul?",
+          "cue": "Phụ âm căng",
+          "correct": "5 phụ âm (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ)",
+          "options": [
+            "5 phụ âm (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ)",
+            "3 phụ âm",
+            "7 phụ âm",
+            "10 phụ âm"
+          ],
+          "explanationVi": "Có đúng 5 phụ âm căng: kk, tt, pp, ss, jj.",
+          "explanationEn": "There are exactly 5 tense consonants."
+        },
+        {
+          "promptVi": "Từ '오빠' (Oppa) chứa phụ âm căng nào?",
+          "promptEn": "Which double consonant does '오빠' (Oppa) contain?",
+          "cue": "오빠",
+          "correct": "ㅃ (Sang-bieup)",
+          "options": [
+            "ㅃ (Sang-bieup)",
+            "ㄲ (Sang-giyeok)",
+            "ㄸ (Sang-digeut)",
+            "ㅆ (Sang-siot)"
+          ],
+          "explanationVi": "오빠 chứa phụ âm căng ㅃ.",
+          "explanationEn": "Oppa has the tense ㅃ."
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-5",
+      "stageNum": 5,
+      "titleVi": "Ải 5: Khẩu Ngữ Phim Hàn & Giới Trẻ K-Wave",
+      "titleEn": "Stage 5: K-Wave Slang & Seoul Street Boss",
+      "descVi": "Bộ từ cửa miệng cực hot trong phim K-Drama và giới trẻ Seoul.",
+      "descEn": "Trendy slang and reactive expressions straight out of K-Dramas.",
+      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
+      "bossNameEn": "Crimson Dragon Emperor",
+      "bossType": "dragon",
+      "bossHp": 160,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "대박",
+          "reading": "Daebak",
+          "meaningVi": "Đỉnh chóp / Cực đỉnh / Không thể tin được!",
+          "meaningEn": "Awesome / Jackpot / Unbelievable!",
+          "hint": "Từ cảm thán số 1 của giới trẻ Hàn"
+        },
+        {
+          "char": "진짜?",
+          "reading": "Jinjja?",
+          "meaningVi": "Thật á?! / Thật không đấy?!",
+          "meaningEn": "Really?! / For real?",
+          "hint": "Lên giọng cuối câu thể hiện ngạc nhiên"
+        },
+        {
+          "char": "헐",
+          "reading": "Heol",
+          "meaningVi": "Trời đất ơi! / Cạn lời / Shock!",
+          "meaningEn": "OMG / No way / Speechless",
+          "hint": "Bật âm ngắn thể hiện ngỡ ngàng"
+        },
+        {
+          "char": "화이팅",
+          "reading": "Hwaiting",
+          "meaningVi": "Cố lên! / Cố gắng lên nhé!",
+          "meaningEn": "Fighting! / Cheer up!",
+          "hint": "Nắm chặt tay khi hô khẩu hiệu này"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Khi chứng kiến một điều kỳ diệu hoặc quá đỗi ấn tượng, người Hàn hô:",
+          "promptEn": "When witnessing something amazing, Koreans exclaim:",
+          "cue": "Đỉnh chóp!",
+          "correct": "대박! (Daebak!)",
+          "options": [
+            "대박! (Daebak!)",
+            "안돼! (Andwae!)",
+            "바보! (Babo!)",
+            "몰라! (Molla!)"
+          ],
+          "explanationVi": "Daebak tương đương 'Đỉnh chóp / Tuyệt vời'.",
+          "explanationEn": "Daebak means awesome / jackpot."
+        },
+        {
+          "promptVi": "Từ '진짜?' (Jinjja?) thường dùng khi nào?",
+          "promptEn": "When is '진짜?' (Jinjja?) used?",
+          "cue": "진짜?",
+          "correct": "Khi muốn hỏi 'Thật á?! / Thật không đấy?!'",
+          "options": [
+            "Khi muốn hỏi 'Thật á?! / Thật không đấy?!'",
+            "Khi muốn nói tạm biệt",
+            "Khi gọi món ăn",
+            "Khi cảm ơn"
+          ],
+          "explanationVi": "Jinjja có nghĩa là thật sự, thật sao.",
+          "explanationEn": "Jinjja means really / genuinely."
+        },
+        {
+          "promptVi": "Từ cảm thán '헐' (Heol) trong phim Hàn diễn tả cảm xúc gì?",
+          "promptEn": "What emotion does the Korean exclamation '헐' (Heol) convey?",
+          "cue": "헐",
+          "correct": "Bất ngờ, sốc hoặc cạn lời",
+          "options": [
+            "Bất ngờ, sốc hoặc cạn lời",
+            "Vô cùng hạnh phúc",
+            "Buồn ngủ",
+            "Đói bụng"
+          ],
+          "explanationVi": "Heol diễn tả sự cạn lời hoặc bất ngờ.",
+          "explanationEn": "Heol expresses shock or being speechless."
+        },
+        {
+          "promptVi": "Để cổ vũ, động viên ai đó cố lên, người Hàn nói câu gì?",
+          "promptEn": "To cheer someone on with 'Fighting!', Koreans say:",
+          "cue": "Cố lên!",
+          "correct": "화이팅! (Hwaiting!)",
+          "options": [
+            "화이팅! (Hwaiting!)",
+            "잘 가! (Jal ga!)",
+            "미안해! (Mianhae!)",
+            "맛있어! (Masisseo!)"
+          ],
+          "explanationVi": "Hwaiting có nghĩa là Cố lên!",
+          "explanationEn": "Hwaiting means fighting / keep it up!"
+        }
+      ]
+    }
+  ],
+  "zh-CN": [
+    {
+      "id": "zh-stage-1",
+      "stageNum": 1,
+      "titleVi": "Ải 1: Vận Mẫu Đơn & 4 Thanh Điệu Huyền Ảo",
+      "titleEn": "Stage 1: Simple Finals & The 4 Tones",
+      "descVi": "Chinh phục 6 nguyên âm cơ bản và quy luật cao độ của 4 thanh điệu tiếng Trung.",
+      "descEn": "Master the 6 simple finals and pitch contour of the 4 tones.",
+      "bossNameVi": "Khí Linh Slime (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "a",
+          "reading": "ā á ǎ à",
+          "meaningVi": "Vận mẫu A (Khẩu hình mở to, lưỡi phẳng)",
+          "meaningEn": "Final A",
+          "hint": "Âm vang sáng nhất trong hệ thống Pinyin"
+        },
+        {
+          "char": "o",
+          "reading": "ō ó ǒ ò",
+          "meaningVi": "Vận mẫu O (Môi tròn, phát âm ô/ua)",
+          "meaningEn": "Final O",
+          "hint": "Môi hơi chúm tròn như quả trứng"
+        },
+        {
+          "char": "e",
+          "reading": "ē é ě è",
+          "meaningVi": "Vận mẫu E (Khẩu hình dẹt, phát âm như 'ưa')",
+          "meaningEn": "Final E (Pronounced 'e/ue')",
+          "hint": "Kéo nhẹ mép sang hai bên"
+        },
+        {
+          "char": "ü",
+          "reading": "yū yú yǔ yù",
+          "meaningVi": "Vận mẫu Ü (Âm uy tròn môi, đầu lưỡi chạm răng dưới)",
+          "meaningEn": "Final Ü (Rounded high front vowel)",
+          "hint": "Giữ chặt môi tròn suốt quá trình phát âm"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Thanh 1 (Thanh ngang - ví dụ: mā) có đường đi cao độ như thế nào?",
+          "promptEn": "What is the pitch contour of Tone 1 (e.g. mā)?",
+          "cue": "Thanh 1 (55)",
+          "correct": "Cao đều và ngân dài ổn định ở mức 5-5",
+          "options": [
+            "Cao đều và ngân dài ổn định ở mức 5-5",
+            "Đi từ thấp vọt lên cao",
+            "Hạ xuống đáy rồi vút lên",
+            "Rơi nhanh dứt khoát từ cao xuống thấp"
+          ],
+          "explanationVi": "Thanh 1 là thanh cao bằng phẳng (55).",
+          "explanationEn": "Tone 1 is high and flat (55)."
+        },
+        {
+          "promptVi": "Thanh 4 (Thanh rơi - ví dụ: mà) có đặc điểm gì?",
+          "promptEn": "What is the characteristic of Tone 4 (e.g. mà)?",
+          "cue": "Thanh 4 (51)",
+          "correct": "Rơi cực nhanh và dứt khoát từ cao độ 5 xuống 1",
+          "options": [
+            "Rơi cực nhanh và dứt khoát từ cao độ 5 xuống 1",
+            "Hát ngân nga mềm mại",
+            "Không có thanh điệu",
+            "Ngắt quãng ở giữa"
+          ],
+          "explanationVi": "Thanh 4 là thanh rơi dứt khoát từ cao nhất xuống thấp nhất.",
+          "explanationEn": "Tone 4 falls sharply from 5 to 1."
+        },
+        {
+          "promptVi": "Khi phát âm vận mẫu 'ü', quy tắc quan trọng nhất là gì?",
+          "promptEn": "What is crucial when pronouncing the final 'ü'?",
+          "cue": "ü",
+          "correct": "Giữ chặt môi tròn cố định, không được mở mép ra",
+          "options": [
+            "Giữ chặt môi tròn cố định, không được mở mép ra",
+            "Mở rộng to hết cỡ",
+            "Thè lưỡi ra ngoài",
+            "Khép chặt răng lại"
+          ],
+          "explanationVi": "Vận mẫu ü đòi hỏi môi chu tròn cố định suốt quá trình.",
+          "explanationEn": "Maintain rounded lips without moving them."
+        },
+        {
+          "promptVi": "Vận mẫu 'e' trong tiếng Trung chuẩn Bắc Kinh đọc tương tự âm nào trong tiếng Việt?",
+          "promptEn": "How is Chinese Pinyin 'e' commonly pronounced?",
+          "cue": "e",
+          "correct": "Âm 'ưa' hoặc 'ơ'",
+          "options": [
+            "Âm 'ưa' hoặc 'ơ'",
+            "Âm 'e' bẹt",
+            "Âm 'i' dài",
+            "Âm 'u' tròn"
+          ],
+          "explanationVi": "Pinyin 'e' đọc giống âm 'ưa' trong tiếng Việt.",
+          "explanationEn": "Pinyin 'e' sounds close to 'uh/er'."
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-2",
+      "stageNum": 2,
+      "titleVi": "Ải 2: Thanh Mẫu Cơ Bản & Lời Chào Nǐ Hǎo",
+      "titleEn": "Stage 2: Basic Initials & Nǐ Hǎo",
+      "descVi": "Phân biệt cặp âm bật hơi B-P, D-T và câu chào kinh điển 你好.",
+      "descEn": "Master aspirated vs unaspirated pairs B-P, D-T and iconic Nǐ Hǎo.",
+      "bossNameVi": "Linh Hồ Bách Biến (Mystic Fox)",
+      "bossNameEn": "Mystic Fox Spirit",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "b",
+          "reading": "bō",
+          "meaningVi": "Thanh mẫu B (Âm môi không bật hơi, tương tự p tiếng Việt)",
+          "meaningEn": "Initial B (Unaspirated)",
+          "hint": "Hai môi mím lại rồi mở ra, không có luồng khí phụt"
+        },
+        {
+          "char": "p",
+          "reading": "pō",
+          "meaningVi": "Thanh mẫu P (Âm môi bật hơi cực mạnh)",
+          "meaningEn": "Initial P (Aspirated)",
+          "hint": "Đặt tờ giấy trước miệng, giấy phải bay mạnh khi phát âm"
+        },
+        {
+          "char": "d / t",
+          "reading": "dē / tē",
+          "meaningVi": "Cặp D (không bật) vs T (bật hơi đầu lưỡi)",
+          "meaningEn": "Initials D vs T",
+          "hint": "Đầu lưỡi chạm nướu trên"
+        },
+        {
+          "char": "你好",
+          "reading": "Nǐ hǎo",
+          "meaningVi": "Xin chào (Biến điệu thanh 3: nǐ biến thành ní)",
+          "meaningEn": "Hello (3rd tone sandhi)",
+          "hint": "2 thanh 3 đi liền nhau, chữ đầu đọc thành thanh 2"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Khi hai thanh 3 đi liền nhau như trong '你好' (Nǐ hǎo), âm đầu tiên biến đổi ra sao?",
+          "promptEn": "In tone sandhi, when two 3rd tones meet (e.g. Nǐ hǎo), what happens to the first tone?",
+          "cue": "你好 (Nǐ hǎo)",
+          "correct": "Biến thành thanh 2 (đọc thành Ní hǎo)",
+          "options": [
+            "Biến thành thanh 2 (đọc thành Ní hǎo)",
+            "Biến thành thanh 4",
+            "Giữ nguyên không đổi",
+            "Biến thành thanh nhẹ"
+          ],
+          "explanationVi": "Quy tắc biến điệu: 3 + 3 -> 2 + 3 (Ní hǎo).",
+          "explanationEn": "Third tone sandhi: 3rd + 3rd tone becomes 2nd + 3rd tone."
+        },
+        {
+          "promptVi": "Điểm khác biệt quyết định giữa thanh mẫu 'b' và 'p' trong Pinyin là gì?",
+          "promptEn": "What is the key distinction between Pinyin 'b' and 'p'?",
+          "cue": "b vs p",
+          "correct": "'b' không bật hơi, 'p' bật hơi cực mạnh",
+          "options": [
+            "'b' không bật hơi, 'p' bật hơi cực mạnh",
+            "'b' dùng mũi, 'p' dùng tai",
+            "Cả hai đều bật hơi như nhau",
+            "'b' là nguyên âm"
+          ],
+          "explanationVi": "Trong Pinyin, p là âm bật hơi (aspirated), b không bật hơi.",
+          "explanationEn": "'p' is strongly aspirated, while 'b' is unaspirated."
+        },
+        {
+          "promptVi": "Từ '你好' mang ý nghĩa gì?",
+          "promptEn": "What does '你好' (Nǐ hǎo) mean?",
+          "cue": "你好",
+          "correct": "Xin chào",
+          "options": [
+            "Xin chào",
+            "Cảm ơn",
+            "Tạm biệt",
+            "Chúc ngủ ngon"
+          ],
+          "explanationVi": "你好 có nghĩa là Xin chào.",
+          "explanationEn": "你好 means Hello."
+        },
+        {
+          "promptVi": "Để kiểm tra xem mình phát âm âm bật hơi 'p' đúng chưa, mẹo hay nhất là gì?",
+          "promptEn": "What is the best trick to check if you aspirate 'p' correctly?",
+          "cue": "p bật hơi",
+          "correct": "Đặt tờ giấy ăn mỏng trước miệng xem giấy có bay mạnh không",
+          "options": [
+            "Đặt tờ giấy ăn mỏng trước miệng xem giấy có bay mạnh không",
+            "Ngậm nước trong miệng",
+            "Nhắm chặt hai mắt",
+            "Nói thật nhỏ"
+          ],
+          "explanationVi": "Luồng khí bật mạnh sẽ làm lay động tờ giấy.",
+          "explanationEn": "Hold a tissue in front of your mouth to feel the air burst."
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-3",
+      "stageNum": 3,
+      "titleVi": "Ải 3: Bộ Cụm Từ Vàng Giao Tiếp Xã Hội",
+      "titleEn": "Stage 3: Golden Politeness Chunks",
+      "descVi": "Cảm ơn, xin lỗi và ứng xử thanh lịch theo phong cách người bản xứ.",
+      "descEn": "Thank you, apologies, and graceful etiquette in Chinese society.",
+      "bossNameVi": "Bàn Thạch Kim Cang (Stone Golem)",
+      "bossNameEn": "Ancient Stone Golem",
+      "bossType": "golem",
+      "bossHp": 120,
+      "icon": "🗿",
+      "items": [
+        {
+          "char": "谢谢",
+          "reading": "Xièxie",
+          "meaningVi": "Cảm ơn (Từ thứ hai đọc thanh nhẹ)",
+          "meaningEn": "Thank you",
+          "hint": "Xiè (thanh 4 dứt khoát) + xie (thanh nhẹ ngắn)"
+        },
+        {
+          "char": "不客气",
+          "reading": "Bù kèqi",
+          "meaningVi": "Đừng khách sáo / Không có chi",
+          "meaningEn": "You're welcome",
+          "hint": "Đáp lại lời cảm ơn chuẩn mực nhất"
+        },
+        {
+          "char": "对不起",
+          "reading": "Duìbuqǐ",
+          "meaningVi": "Xin lỗi (Chân thành)",
+          "meaningEn": "I'm sorry",
+          "hint": "Chữ bu ở giữa đọc nhẹ"
+        },
+        {
+          "char": "没关系",
+          "reading": "Méi guānxi",
+          "meaningVi": "Không sao đâu / Chuyện nhỏ ấy mà",
+          "meaningEn": "It doesn't matter / No problem",
+          "hint": "Đáp lại lời xin lỗi"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Khi ai đó nói '谢谢' (Xièxie) với bạn, câu đáp lịch sự chuẩn xác nhất là gì?",
+          "promptEn": "When someone says 'Xièxie', how do you politely reply?",
+          "cue": "谢谢",
+          "correct": "不客气 (Bù kèqi)",
+          "options": [
+            "不客气 (Bù kèqi)",
+            "对不起 (Duìbuqǐ)",
+            "再见 (Zàijiàn)",
+            "救命 (Jiùmìng)"
+          ],
+          "explanationVi": "Bù kèqi có nghĩa là Đừng khách sáo / Không có chi.",
+          "explanationEn": "Bù kèqi means 'You're welcome'."
+        },
+        {
+          "promptVi": "Khi ai đó nói '对不起' (Xin lỗi), bạn nên đáp lại bằng câu nào?",
+          "promptEn": "When someone apologizes with 'Duìbuqǐ', what do you say?",
+          "cue": "对不起",
+          "correct": "没关系 (Méi guānxi)",
+          "options": [
+            "没关系 (Méi guānxi)",
+            "谢谢 (Xièxie)",
+            "你好 (Nǐ hǎo)",
+            "不行 (Bù xíng)"
+          ],
+          "explanationVi": "Méi guānxi có nghĩa là Không sao đâu.",
+          "explanationEn": "Méi guānxi means 'It's okay / No problem'."
+        },
+        {
+          "promptVi": "Chữ 谢谢 (Cảm ơn) có thanh điệu như thế nào?",
+          "promptEn": "What are the tones of 谢谢 (Xièxie)?",
+          "cue": "谢谢",
+          "correct": "Thanh 4 + Thanh nhẹ",
+          "options": [
+            "Thanh 4 + Thanh nhẹ",
+            "Thanh 1 + Thanh 1",
+            "Thanh 2 + Thanh 3",
+            "Hai thanh 4 bằng nhau"
+          ],
+          "explanationVi": "Chữ thứ hai trong 谢谢 chuyển sang thanh nhẹ.",
+          "explanationEn": "The second syllable is a neutral tone."
+        },
+        {
+          "promptVi": "'没关系' (Méi guānxi) có nghĩa là gì?",
+          "promptEn": "What does 'Méi guānxi' mean?",
+          "cue": "没关系",
+          "correct": "Không sao, không có vấn đề gì",
+          "options": [
+            "Không sao, không có vấn đề gì",
+            "Tạm biệt",
+            "Đắt quá",
+            "Tôi không hiểu"
+          ],
+          "explanationVi": "Méi guānxi nghĩa là Không có hề gì.",
+          "explanationEn": "Méi guānxi means it doesn't matter."
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-4",
+      "stageNum": 4,
+      "titleVi": "Ải 4: Thanh Mẫu Uốn Lưỡi (ZH, CH, SH, R)",
+      "titleEn": "Stage 4: Retroflex Consonants (ZH, CH, SH, R)",
+      "descVi": "Vượt qua thử thách khó khăn nhất của người học tiếng Trung: âm uốn lưỡi chuẩn Bắc Kinh.",
+      "descEn": "Conquer the famous Beijing retroflex sounds: tongue curled back.",
+      "bossNameVi": "La Sát Dạ Xoa (Shadow Rakshasa)",
+      "bossNameEn": "Shadow Rakshasa Oni",
+      "bossType": "oni",
+      "bossHp": 140,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "zh",
+          "reading": "zhī",
+          "meaningVi": "Thanh mẫu ZH (Uốn đầu lưỡi lên ngạc cứng, không bật hơi)",
+          "meaningEn": "Retroflex ZH (Unaspirated)",
+          "hint": "Đầu lưỡi cong lên vòm miệng trên"
+        },
+        {
+          "char": "ch",
+          "reading": "chī",
+          "meaningVi": "Thanh mẫu CH (Uốn đầu lưỡi và BẬT HƠI cực mạnh)",
+          "meaningEn": "Retroflex CH (Aspirated)",
+          "hint": "Như âm 'tr' nhưng bật luồng gió mạnh"
+        },
+        {
+          "char": "sh",
+          "reading": "shī",
+          "meaningVi": "Thanh mẫu SH (Uốn đầu lưỡi, tạo luồng gió xát)",
+          "meaningEn": "Retroflex SH (Fricative)",
+          "hint": "Luồng khí lướt qua khe giữa đầu lưỡi và ngạc"
+        },
+        {
+          "char": "r",
+          "reading": "rì",
+          "meaningVi": "Thanh mẫu R (Uốn đầu lưỡi và rung dây thanh nhẹ)",
+          "meaningEn": "Retroflex R (Voiced)",
+          "hint": "Khác âm r tiếng Việt, môi hơi mở tự nhiên"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Điểm khác biệt cốt lõi giữa 'zh' và 'ch' trong tiếng Trung là gì?",
+          "promptEn": "What is the key difference between 'zh' and 'ch'?",
+          "cue": "zh vs ch",
+          "correct": "'zh' không bật hơi, 'ch' bật hơi cực mạnh",
+          "options": [
+            "'zh' không bật hơi, 'ch' bật hơi cực mạnh",
+            "'zh' thè lưỡi, 'ch' cắn môi",
+            "'zh' là nguyên âm",
+            "Không có khác biệt nào"
+          ],
+          "explanationVi": "CH là âm uốn lưỡi có luồng khí bật mạnh.",
+          "explanationEn": "'ch' is strongly aspirated retroflex."
+        },
+        {
+          "promptVi": "Khi phát âm nhóm thanh mẫu ZH, CH, SH, R, đầu lưỡi phải ở vị trí nào?",
+          "promptEn": "Where should the tongue tip be for ZH, CH, SH, R?",
+          "cue": "Vị trí lưỡi",
+          "correct": "Uốn cong lên hướng về phía vòm họng cứng (ngạc cứng)",
+          "options": [
+            "Uốn cong lên hướng về phía vòm họng cứng (ngạc cứng)",
+            "Cắm thẳng xuống sàn miệng",
+            "Kẹp chặt giữa hai hàm răng",
+            "Thè hẳn ra ngoài môi"
+          ],
+          "explanationVi": "Đây là nhóm âm đầu lưỡi sau / uốn lưỡi (retroflex).",
+          "explanationEn": "Curled back toward the hard palate."
+        },
+        {
+          "promptVi": "Từ '吃饭' (Ăn cơm) bắt đầu bằng thanh mẫu nào?",
+          "promptEn": "Which initial does '吃饭' (Chī fàn - eat) begin with?",
+          "cue": "吃饭",
+          "correct": "ch (bật hơi)",
+          "options": [
+            "ch (bật hơi)",
+            "zh",
+            "sh",
+            "z"
+          ],
+          "explanationVi": "Chī fàn bắt đầu bằng âm bật hơi ch.",
+          "explanationEn": "Chī begins with aspirated retroflex ch."
+        },
+        {
+          "promptVi": "Từ '老师' (Lǎoshī - Giáo viên) chứa âm uốn lưỡi nào?",
+          "promptEn": "Which retroflex initial is in '老师' (Lǎoshī)?",
+          "cue": "老师",
+          "correct": "sh",
+          "options": [
+            "sh",
+            "zh",
+            "ch",
+            "r"
+          ],
+          "explanationVi": "Chữ shī bắt đầu bằng thanh mẫu sh.",
+          "explanationEn": "Shī begins with retroflex sh."
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-5",
+      "stageNum": 5,
+      "titleVi": "Ải 5: Khẩu Ngữ Phố Phường & Giới Trẻ Đương Đại",
+      "titleEn": "Stage 5: Street Slang & Beijing Flavor Final Boss",
+      "descVi": "Chinh phục những từ ngữ cực thịnh hành trên Douyin, Weibo và đời sống phố phường.",
+      "descEn": "Trendy slang and reactive expressions alive on modern Chinese social media.",
+      "bossNameVi": "Xích Diễm Thần Long (Crimson Dragon)",
+      "bossNameEn": "Crimson Dragon Emperor",
+      "bossType": "dragon",
+      "bossHp": 160,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "太棒了",
+          "reading": "Tài bàng le",
+          "meaningVi": "Tuyệt vời ông mặt trời! / Đỉnh quá!",
+          "meaningEn": "Awesome! / Fantastic!",
+          "hint": "Tài (thanh 4) + bàng (thanh 4) + le (thanh nhẹ)"
+        },
+        {
+          "char": "算了",
+          "reading": "Suàn le",
+          "meaningVi": "Thôi bỏ đi / Thôi dẹp đi / Thôi xong",
+          "meaningEn": "Forget it / Let it be",
+          "hint": "Câu cửa miệng khi không muốn bận tâm nữa"
+        },
+        {
+          "char": "加油",
+          "reading": "Jiāyóu",
+          "meaningVi": "Cố lên! / Thêm dầu nào! (Khẩu hiệu cổ vũ số 1)",
+          "meaningEn": "Add oil! / Keep it up!",
+          "hint": "Nghĩa đen là châm dầu/nạp nhiên liệu"
+        },
+        {
+          "char": "牛逼",
+          "reading": "Niúbī",
+          "meaningVi": "Quá trâu bò / Quá đỉnh cao (Tiếng lóng cực mạnh)",
+          "meaningEn": "Badass / Super awesome (Slang)",
+          "hint": "Thường viết tắt là NB"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Để cổ vũ bạn bè cố lên trong một kỳ thi hay trận đấu, người Trung Quốc hô:",
+          "promptEn": "To cheer someone on in China, what iconic phrase do they shout?",
+          "cue": "Cố lên!",
+          "correct": "加油! (Jiāyóu!)",
+          "options": [
+            "加油! (Jiāyóu!)",
+            "算了! (Suàn le!)",
+            "救命! (Jiùmìng!)",
+            "快走! (Kuài zǒu!)"
+          ],
+          "explanationVi": "Jiāyóu nghĩa đen là châm dầu, nghĩa bóng là Cố lên!",
+          "explanationEn": "Jiāyóu ('add oil') is the premier Chinese cheer."
+        },
+        {
+          "promptVi": "Khi muốn nói 'Thôi dẹp đi, đừng bận tâm nữa', người bản xứ dùng từ nào?",
+          "promptEn": "Which phrase means 'Forget it / Let it go'?",
+          "cue": "Thôi bỏ đi",
+          "correct": "算了 (Suàn le)",
+          "options": [
+            "算了 (Suàn le)",
+            "太棒了 (Tài bàng le)",
+            "很好 (Hěn hǎo)",
+            "谢谢 (Xièxie)"
+          ],
+          "explanationVi": "Suàn le mang nghĩa Thôi bỏ đi.",
+          "explanationEn": "Suàn le means 'Forget about it'."
+        },
+        {
+          "promptVi": "'太棒了' (Tài bàng le) thể hiện cảm xúc gì?",
+          "promptEn": "What emotion does '太棒了' (Tài bàng le) express?",
+          "cue": "太棒了",
+          "correct": "Khen ngợi điều gì đó vô cùng tuyệt vời, xuất sắc",
+          "options": [
+            "Khen ngợi điều gì đó vô cùng tuyệt vời, xuất sắc",
+            "Chê bai đồ ăn dở",
+            "Tức giận khi bị trễ tàu",
+            "Lời xin lỗi chân thành"
+          ],
+          "explanationVi": "Tài bàng le nghĩa là Tuyệt vời quá!",
+          "explanationEn": "Tài bàng le expresses delight / enthusiasm."
+        },
+        {
+          "promptVi": "Từ lóng '牛逼' (Niúbī, viết tắt NB) của giới trẻ Trung Quốc mang nghĩa gì?",
+          "promptEn": "What does the popular youth slang '牛逼' (Niúbī / NB) mean?",
+          "cue": "牛逼",
+          "correct": "Cực kỳ đỉnh cao, 'trâu bò', ấn tượng",
+          "options": [
+            "Cực kỳ đỉnh cao, 'trâu bò', ấn tượng",
+            "Con bò đang ăn cỏ",
+            "Rất buồn ngủ",
+            "Món thịt bò xào"
+          ],
+          "explanationVi": "Niúbī là tiếng lóng khen cái gì đó quá đỉnh.",
+          "explanationEn": "Niúbī is very popular slang for badass / awesome."
+        }
+      ]
+    }
+  ],
+  "ja": [
+    {
+      "id": "ja-stage-1",
+      "stageNum": 1,
+      "titleVi": "Ải 1: 5 Nguyên Âm Cội Nguồn",
+      "titleEn": "Stage 1: The 5 Core Vowels",
+      "descVi": "Chinh phục 5 nguyên âm nền tảng của tiếng Nhật: A, I, U, E, O.",
+      "descEn": "Master the 5 foundational Japanese vowels: A, I, U, E, O.",
+      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "あ",
+          "reading": "a",
+          "meaningVi": "Âm A (Mở miệng vừa phải, lưỡi thả lỏng)",
+          "meaningEn": "Vowel A (Natural open mouth, relaxed tongue)",
+          "hint": "Nét 1 ngang, nét 2 sổ cong, nét 3 vòng tròn"
+        },
+        {
+          "char": "い",
+          "reading": "i",
+          "meaningVi": "Âm I (Môi hơi dẹt sang hai bên)",
+          "meaningEn": "Vowel I (Slightly spread lips)",
+          "hint": "Nét trái móc nhẹ lên, nét phải ngắn hơn song song"
+        },
+        {
+          "char": "う",
+          "reading": "u",
+          "meaningVi": "Âm U (Môi không chúm tròn như tiếng Việt)",
+          "meaningEn": "Vowel U (Unrounded lips, relaxed)",
+          "hint": "Dấu phẩy nhỏ phía trên, nét móc cung lớn phía dưới"
+        },
+        {
+          "char": "え",
+          "reading": "e",
+          "meaningVi": "Âm E (Mở miệng vừa như 'e' tiếng Việt)",
+          "meaningEn": "Vowel E (Mid-open vowel)",
+          "hint": "Nét trên ngắn, nét dưới zíc zắc uốn lượn"
+        },
+        {
+          "char": "お",
+          "reading": "o",
+          "meaningVi": "Âm O (Môi tròn nhẹ, phát âm gọn)",
+          "meaningEn": "Vowel O (Slightly rounded, short)",
+          "hint": "Ngang, sổ thắt nút tròn, thêm dấu phẩy góc phải"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Ký tự あ có phiên âm Romaji là gì?",
+          "promptEn": "What is the Romaji for character あ?",
+          "cue": "あ",
+          "correct": "a",
+          "options": [
+            "a",
+            "o",
+            "u",
+            "e"
+          ],
+          "explanationVi": "あ phát âm là 'a' trong tiếng Nhật.",
+          "explanationEn": "あ is read as 'a'."
+        },
+        {
+          "promptVi": "Âm 'u' trong tiếng Nhật được viết bằng chữ Hiragana nào?",
+          "promptEn": "Which Hiragana character represents 'u'?",
+          "cue": "u",
+          "correct": "う",
+          "options": [
+            "う",
+            "い",
+            "え",
+            "あ"
+          ],
+          "explanationVi": "う là chữ Hiragana của âm 'u'.",
+          "explanationEn": "う represents vowel 'u'."
+        },
+        {
+          "promptVi": "Ký tự nào sau đây là chữ 'i' (い)?",
+          "promptEn": "Which character is 'i' (い)?",
+          "cue": "い",
+          "correct": "い",
+          "options": [
+            "い",
+            "り",
+            "こ",
+            "お"
+          ],
+          "explanationVi": "い gồm 2 nét song song dẹt.",
+          "explanationEn": "い is the vowel 'i'."
+        },
+        {
+          "promptVi": "Ký tự お đọc là gì?",
+          "promptEn": "How is character お pronounced?",
+          "cue": "お",
+          "correct": "o",
+          "options": [
+            "o",
+            "a",
+            "e",
+            "u"
+          ],
+          "explanationVi": "お phát âm là 'o'.",
+          "explanationEn": "お is pronounced 'o'."
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-2",
+      "stageNum": 2,
+      "titleVi": "Ải 2: Hàng Ka-Sa & Chào Hỏi",
+      "titleEn": "Stage 2: Ka-Sa Row & Greetings",
+      "descVi": "Mở rộng phụ âm Ka, Sa và câu chào huyền thoại こんにちは.",
+      "descEn": "Expand to Ka and Sa rows plus the iconic greeting Konnichiwa.",
+      "bossNameVi": "Yêu Hồ Kitsune (Mystic Kitsune)",
+      "bossNameEn": "Mystic Kitsune",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "か",
+          "reading": "ka",
+          "meaningVi": "Âm Ka (Phụ âm k bật nhẹ)",
+          "meaningEn": "Syllable Ka",
+          "hint": "Nét ngang móc, nét phẩy chéo và chấm bên phải"
+        },
+        {
+          "char": "き",
+          "reading": "ki",
+          "meaningVi": "Âm Ki (Cười mỉm khi phát âm)",
+          "meaningEn": "Syllable Ki",
+          "hint": "2 nét ngang song song, nét sổ chéo và cung đáy"
+        },
+        {
+          "char": "さ",
+          "reading": "sa",
+          "meaningVi": "Âm Sa (Gió lướt nhẹ kẽ răng)",
+          "meaningEn": "Syllable Sa",
+          "hint": "Nét ngang, nét sổ chéo móc và vòng cung"
+        },
+        {
+          "char": "し",
+          "reading": "shi",
+          "meaningVi": "Âm Shi (Âm gió nhẹ như 'she')",
+          "meaningEn": "Syllable Shi",
+          "hint": "1 nét duy nhất uốn như lưỡi câu"
+        },
+        {
+          "char": "こんにちは",
+          "reading": "Konnichiwa",
+          "meaningVi": "Xin chào (Ban ngày / Phổ biến nhất)",
+          "meaningEn": "Hello / Good afternoon",
+          "hint": "Chú ý chữ は cuối câu đọc là 'wa'"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Chữ は trong câu 'こんにちは' được phát âm là gì?",
+          "promptEn": "How is the last character は in 'こんにちは' pronounced?",
+          "cue": "こんにちは",
+          "correct": "wa",
+          "options": [
+            "wa",
+            "ha",
+            "ba",
+            "pa"
+          ],
+          "explanationVi": "Khi đóng vai trò trợ từ, は đọc là 'wa'.",
+          "explanationEn": "As a particle ending, は is pronounced 'wa'."
+        },
+        {
+          "promptVi": "Ký tự uốn cong như lưỡi câu này là chữ gì?",
+          "promptEn": "Which character is shaped like a fishhook?",
+          "cue": "し",
+          "correct": "shi",
+          "options": [
+            "shi",
+            "tsu",
+            "no",
+            "ku"
+          ],
+          "explanationVi": "し là chữ 'shi'.",
+          "explanationEn": "し is 'shi'."
+        },
+        {
+          "promptVi": "Ký tự か có phiên âm là gì?",
+          "promptEn": "What is the reading for か?",
+          "cue": "か",
+          "correct": "ka",
+          "options": [
+            "ka",
+            "ga",
+            "ki",
+            "sa"
+          ],
+          "explanationVi": "か là âm 'ka'.",
+          "explanationEn": "か is 'ka'."
+        },
+        {
+          "promptVi": "'Xin chào' tiếng Nhật phổ biến nhất là câu nào?",
+          "promptEn": "What is the standard Japanese 'Hello'?",
+          "cue": "Xin chào",
+          "correct": "こんにちは",
+          "options": [
+            "こんにちは",
+            "さようなら",
+            "ありがとう",
+            "おはよう"
+          ],
+          "explanationVi": "こんにちは là lời chào ban ngày thông dụng.",
+          "explanationEn": "こんにちは means Hello."
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-3",
+      "stageNum": 3,
+      "titleVi": "Ải 3: Bộ Cụm Từ Sinh Tồn Tokyo",
+      "titleEn": "Stage 3: Tokyo Survival Chunks",
+      "descVi": "Bộ từ vựng then chốt giúp bạn tự tin giao tiếp mọi tình huống tại Nhật.",
+      "descEn": "Essential phrases to confidently navigate daily life in Japan.",
+      "bossNameVi": "Golem Đá Cổ (Ancient Stone Golem)",
+      "bossNameEn": "Ancient Stone Golem",
+      "bossType": "golem",
+      "bossHp": 120,
+      "icon": "🗿",
+      "items": [
+        {
+          "char": "ありがとう",
+          "reading": "Arigatou",
+          "meaningVi": "Cảm ơn (Thân thiện, thường ngày)",
+          "meaningEn": "Thank you (Casual)",
+          "hint": "Âm 'to' kéo dài nhẹ với 'u'"
+        },
+        {
+          "char": "すみません",
+          "reading": "Sumimasen",
+          "meaningVi": "Xin lỗi / Xin làm phiền / Gọi phục vụ",
+          "meaningEn": "Excuse me / I'm sorry",
+          "hint": "Từ vạn năng nhất của người Nhật"
+        },
+        {
+          "char": "はい",
+          "reading": "Hai",
+          "meaningVi": "Vâng / Đúng vậy / Tôi nghe đây",
+          "meaningEn": "Yes / Understood",
+          "hint": "Dứt khoát, âm ngắn"
+        },
+        {
+          "char": "いいえ",
+          "reading": "Iie",
+          "meaningVi": "Không / Không có chi",
+          "meaningEn": "No / Not at all",
+          "hint": "Âm 'i' kép ngân dài nhẹ"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "'Sumimasen' dùng trong trường hợp nào?",
+          "promptEn": "When is 'Sumimasen' used?",
+          "cue": "すみません",
+          "correct": "Cả xin lỗi, cảm ơn và gọi nhân viên",
+          "options": [
+            "Cả xin lỗi, cảm ơn và gọi nhân viên",
+            "Chỉ dùng khi tức giận",
+            "Chỉ chào buổi sáng",
+            "Lời chúc ngủ ngon"
+          ],
+          "explanationVi": "Sumimasen là từ vạn năng dùng cả xin lỗi, cảm ơn và gọi phục vụ quán ăn.",
+          "explanationEn": "Sumimasen is a versatile phrase for apologizing, thanking, and getting attention."
+        },
+        {
+          "promptVi": "'Arigatou' (ありがとう) mang ý nghĩa gì?",
+          "promptEn": "What does 'Arigatou' mean?",
+          "cue": "ありがとう",
+          "correct": "Cảm ơn",
+          "options": [
+            "Cảm ơn",
+            "Tạm biệt",
+            "Xin lỗi",
+            "Chúc mừng"
+          ],
+          "explanationVi": "ありがとう có nghĩa là Cảm ơn.",
+          "explanationEn": "ありがとう means Thank you."
+        },
+        {
+          "promptVi": "Từ nào trong tiếng Nhật mang nghĩa 'Vâng / Đúng vậy'?",
+          "promptEn": "Which Japanese word means 'Yes'?",
+          "cue": "Yes",
+          "correct": "はい (Hai)",
+          "options": [
+            "はい (Hai)",
+            "いいえ (Iie)",
+            "だめ (Dame)",
+            "じゃあ (Jaa)"
+          ],
+          "explanationVi": "はい có nghĩa là Vâng, Đúng vậy.",
+          "explanationEn": "はい means Yes."
+        },
+        {
+          "promptVi": "Từ 'いいえ' phiên âm là gì?",
+          "promptEn": "What is the Romaji for いいえ?",
+          "cue": "いいえ",
+          "correct": "Iie",
+          "options": [
+            "Iie",
+            "Ie",
+            "Hai",
+            "Iya"
+          ],
+          "explanationVi": "いいえ đọc là Iie (Không).",
+          "explanationEn": "いいえ reads as Iie."
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-4",
+      "stageNum": 4,
+      "titleVi": "Ải 4: Biến Âm, Âm Đục & Âm Ngắt Sokuon",
+      "titleEn": "Stage 4: Dakuten & Sokuon Master",
+      "descVi": "Chinh phục âm đục (Tenten/Maru) và âm ngắt chữ nhỏ (っ).",
+      "descEn": "Tackle Dakuten voiced sounds and small Sokuon double consonants.",
+      "bossNameVi": "Hắc Dạ Quỷ Oni (Shadow Oni)",
+      "bossNameEn": "Shadow Oni",
+      "bossType": "oni",
+      "bossHp": 140,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "が",
+          "reading": "ga",
+          "meaningVi": "Âm Ga (Hàng Ka thêm dấu Tenten biến thành đục)",
+          "meaningEn": "Voiced Ga",
+          "hint": "か + hai dấu phẩy nhỏ góc phải trên"
+        },
+        {
+          "char": "ぱ",
+          "reading": "pa",
+          "meaningVi": "Âm Pa (Hàng Ha thêm dấu tròn Maru)",
+          "meaningEn": "Semi-voiced Pa",
+          "hint": "は + vòng tròn nhỏ góc phải trên"
+        },
+        {
+          "char": "きって",
+          "reading": "kitte",
+          "meaningVi": "Âm ngắt tt: Con tem (Ngừng hơi 1 nhịp ở chữ っ)",
+          "meaningEn": "Sokuon example: Postage stamp",
+          "hint": "Chữ っ nhỏ không đọc thành tiếng mà tạo khoảng lặng"
+        },
+        {
+          "char": "がっこう",
+          "reading": "gakkou",
+          "meaningVi": "Âm ngắt kk: Trường học",
+          "meaningEn": "Sokuon example: School",
+          "hint": "Khóa thanh quản ở 'kk' trước khi phát 'kou'"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Chữ っ nhỏ trong từ 'きって' (kitte) có tác dụng gì?",
+          "promptEn": "What role does the small っ play in 'kitte'?",
+          "cue": "きって",
+          "correct": "Tạo khoảng lặng ngắt hơi gấp đôi phụ âm sau",
+          "options": [
+            "Tạo khoảng lặng ngắt hơi gấp đôi phụ âm sau",
+            "Đọc là 'tsu' thật to",
+            "Kéo dài nguyên âm 'i'",
+            "Làm biến đổi thành dấu hỏi"
+          ],
+          "explanationVi": "っ (Sokuon) giữ hơi lại 1 nhịp, tạo thành phụ âm gấp đôi (kitte).",
+          "explanationEn": "Small っ causes a glottal stop / geminate consonant."
+        },
+        {
+          "promptVi": "Thêm hai dấu phẩy (Tenten ゛) vào chữ か sẽ tạo thành chữ gì?",
+          "promptEn": "Adding dakuten ゛ to か creates what character?",
+          "cue": "か + ゛",
+          "correct": "が (ga)",
+          "options": [
+            "が (ga)",
+            "ぱ (pa)",
+            "ざ (za)",
+            "だ (da)"
+          ],
+          "explanationVi": "か + ゛ = が (ga).",
+          "explanationEn": "か with dakuten becomes が (ga)."
+        },
+        {
+          "promptVi": "Từ 'がっこう' nghĩa là gì?",
+          "promptEn": "What does 'がっこう' (gakkou) mean?",
+          "cue": "がっこう",
+          "correct": "Trường học",
+          "options": [
+            "Trường học",
+            "Bệnh viện",
+            "Công viên",
+            "Nhà ga"
+          ],
+          "explanationVi": "Gakkou nghĩa là trường học.",
+          "explanationEn": "Gakkou means school."
+        },
+        {
+          "promptVi": "Dấu tròn nhỏ (゜) trên chữ ぱ được gọi là gì?",
+          "promptEn": "What is the small circle ゜ on ぱ called?",
+          "cue": "ぱ",
+          "correct": "Handakuten (Bán trọc âm)",
+          "options": [
+            "Handakuten (Bán trọc âm)",
+            "Dakuten",
+            "Choonpu",
+            "Furigana"
+          ],
+          "explanationVi": "Dấu tròn nhỏ gọi là Handakuten, tạo âm p.",
+          "explanationEn": "Handakuten creates the 'p' sound."
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-5",
+      "stageNum": 5,
+      "titleVi": "Ải 5: Đại Chiến Đàm Thoại Đời Thực",
+      "titleEn": "Stage 5: Tokyo Real Slang & Boss Battle",
+      "descVi": "Làm chủ những từ lóng và khẩu ngữ mà giới trẻ Tokyo sử dụng mỗi ngày!",
+      "descEn": "Master native Tokyo slang and casual expressions spoken on the street!",
+      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
+      "bossNameEn": "Crimson Dragon Emperor",
+      "bossType": "dragon",
+      "bossHp": 160,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "ヤバい",
+          "reading": "Yabai",
+          "meaningVi": "Đỉnh chóp / Điên rồ / Nguy rồi (Tùy ngữ cảnh)",
+          "meaningEn": "Crazy / Awesome / Dangerous (Context-dependent)",
+          "hint": "Từ cửa miệng phổ biến nhất Nhật Bản"
+        },
+        {
+          "char": "まじで",
+          "reading": "Maji de",
+          "meaningVi": "Thật á?! / Nghiêm túc đấy chứ?",
+          "meaningEn": "Seriously?! / For real?",
+          "hint": "Lên giọng cuối câu khi ngạc nhiên"
+        },
+        {
+          "char": "お疲れ様",
+          "reading": "Otsukaresama",
+          "meaningVi": "Bạn đã vất vả rồi! (Chào sau giờ làm việc)",
+          "meaningEn": "Good work today / Thank you for your hard work",
+          "hint": "Văn hóa ứng xử công sở và đời sống Nhật Bản"
+        },
+        {
+          "char": "よろしく",
+          "reading": "Yoroshiku",
+          "meaningVi": "Nhờ bạn nhé / Rất vui được hợp tác",
+          "meaningEn": "Nice to meet you / Count on you",
+          "hint": "Dạng thân mật của Yoroshiku onegaishimasu"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Từ 'ヤバい' (Yabai) trong tiếng Nhật đường phố có thể mang nghĩa nào?",
+          "promptEn": "In casual Japanese, what can 'Yabai' mean?",
+          "cue": "ヤバい",
+          "correct": "Cả khen ngon/đỉnh lẫn lo lắng khi gặp rắc rối",
+          "options": [
+            "Cả khen ngon/đỉnh lẫn lo lắng khi gặp rắc rối",
+            "Chỉ dùng để chê bai đồ ăn",
+            "Lời tạm biệt trang trọng",
+            "Tên một loại sushi"
+          ],
+          "explanationVi": "Yabai cực kỳ linh hoạt, có thể khen 'ngon đỉnh chóp' hoặc than 'chết dở rồi'.",
+          "explanationEn": "Yabai can mean amazingly good or dangerously bad."
+        },
+        {
+          "promptVi": "Khi đồng nghiệp hoàn thành một ca làm việc vất vả, bạn nói câu gì?",
+          "promptEn": "What do you say when colleagues finish their work?",
+          "cue": "Tan sở",
+          "correct": "お疲れ様 (Otsukaresama)",
+          "options": [
+            "お疲れ様 (Otsukaresama)",
+            "おはよう (Ohayou)",
+            "さようなら (Sayounara)",
+            "ごめんなさい (Gomennasai)"
+          ],
+          "explanationVi": "Otsukaresama là câu chào tan ca bất hủ.",
+          "explanationEn": "Otsukaresama expresses gratitude for hard work."
+        },
+        {
+          "promptVi": "'Maji de?' (まじで) tương đương với cụm từ tiếng Anh nào?",
+          "promptEn": "What does 'Maji de' correspond to in English?",
+          "cue": "まじで",
+          "correct": "Seriously?! / For real?!",
+          "options": [
+            "Seriously?! / For real?!",
+            "Goodbye",
+            "Excuse me",
+            "Good morning"
+          ],
+          "explanationVi": "Maji de có nghĩa là Thật á? / Nghiêm túc đấy chứ?",
+          "explanationEn": "Maji de means 'For real?!'."
+        },
+        {
+          "promptVi": "Câu nói 'Yoroshiku' (よろしく) thường được dùng khi nào?",
+          "promptEn": "When is 'Yoroshiku' typically used?",
+          "cue": "よろしく",
+          "correct": "Khi bắt đầu hợp tác hoặc nhờ vả ai việc gì",
+          "options": [
+            "Khi bắt đầu hợp tác hoặc nhờ vả ai việc gì",
+            "Khi chuẩn bị đi ngủ",
+            "Khi từ chối ai đó",
+            "Khi ăn xong"
+          ],
+          "explanationVi": "Yoroshiku dùng khi nhờ vả hoặc mong được giúp đỡ.",
+          "explanationEn": "Yoroshiku is used when requesting cooperation."
+        }
+      ]
+    }
+  ],
+  "en": [
+    {
+      "id": "en-stage-1",
+      "stageNum": 1,
+      "titleVi": "Ải 1: 5 Nguyên Âm Cốt Lõi (A-E-I-O-U)",
+      "titleEn": "Stage 1: Core Vowels & Acoustic Resonance",
+      "descVi": "Làm chủ 5 nguyên âm IPA căn bản và khẩu hình mở khoang miệng chuẩn Mỹ.",
+      "descEn": "Master the 5 core English vowels and American resonance mouth placement.",
+      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "A /æ/",
+          "reading": "Cat /kæt/",
+          "meaningVi": "Âm A bẹt (Hạ cằm sâu, kéo mép sang hai bên)",
+          "meaningEn": "Short A /æ/ as in Cat",
+          "hint": "Hạ quai hàm thoải mái, âm vang sâu trong họng"
+        },
+        {
+          "char": "E /e/",
+          "reading": "Bed /bed/",
+          "meaningVi": "Âm E ngắn (Mở miệng vừa phải)",
+          "meaningEn": "Short E /e/ as in Bed",
+          "hint": "Khẩu hình hẹp hơn /æ/"
+        },
+        {
+          "char": "I /ɪ/",
+          "reading": "Sit /sɪt/",
+          "meaningVi": "Âm I thả lỏng (Khác với /i:/ căng môi)",
+          "meaningEn": "Short I /ɪ/ as in Sit",
+          "hint": "Không cười kéo dài mép, phát âm ngắn gọn"
+        },
+        {
+          "char": "O /ɑː/",
+          "reading": "Hot /hɑːt/",
+          "meaningVi": "Âm O mở sâu (Anh-Mỹ hạ cằm tự nhiên)",
+          "meaningEn": "Open O /ɑː/ as in Hot",
+          "hint": "Khoang miệng mở tròn dọc"
+        },
+        {
+          "char": "U /ʌ/",
+          "reading": "Cup /kʌp/",
+          "meaningVi": "Âm Á ngắn (Bật từ đáy cổ họng)",
+          "meaningEn": "Short U /ʌ/ as in Cup",
+          "hint": "Thả lỏng toàn bộ khuôn mặt"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Từ 'Cat' trong tiếng Anh chứa âm nguyên âm IPA nào?",
+          "promptEn": "Which IPA vowel sound is in 'Cat'?",
+          "cue": "Cat",
+          "correct": "/æ/",
+          "options": [
+            "/æ/",
+            "/e/",
+            "/ʌ/",
+            "/i:/"
+          ],
+          "explanationVi": "Cat chứa âm A bẹt /æ/.",
+          "explanationEn": "Cat has the short /æ/ vowel."
+        },
+        {
+          "promptVi": "Khẩu hình chuẩn của âm /æ/ là gì?",
+          "promptEn": "What is the proper mouth position for /æ/?",
+          "cue": "/æ/",
+          "correct": "Hạ cằm sâu và mở rộng khóe miệng",
+          "options": [
+            "Hạ cằm sâu và mở rộng khóe miệng",
+            "Chu môi tròn như huýt sáo",
+            "Khép chặt hai hàm răng",
+            "Uốn cong đầu lưỡi chạm vòm họng"
+          ],
+          "explanationVi": "Âm /æ/ đòi hỏi hạ hàm sâu và khóe miệng mở tự nhiên.",
+          "explanationEn": "Drop your jaw and widen the corners of your mouth."
+        },
+        {
+          "promptVi": "Từ 'Sit' phát âm khác 'Seat' ở điểm mấu chốt nào?",
+          "promptEn": "How does 'Sit' differ from 'Seat'?",
+          "cue": "Sit vs Seat",
+          "correct": "'Sit' dùng âm /ɪ/ thả lỏng ngắn, 'Seat' dùng /i:/ căng dài",
+          "options": [
+            "'Sit' dùng âm /ɪ/ thả lỏng ngắn, 'Seat' dùng /i:/ căng dài",
+            "Hai từ phát âm y hệt nhau",
+            "'Sit' không phát âm chữ T",
+            "'Seat' bắt đầu bằng âm Z"
+          ],
+          "explanationVi": "/ɪ/ trong Sit ngắn và thư giãn, /i:/ trong Seat căng môi.",
+          "explanationEn": "/ɪ/ is relaxed and short, while /i:/ is tense and elongated."
+        },
+        {
+          "promptVi": "Âm nguyên âm trong từ 'Cup' /kʌp/ được phát âm ra sao?",
+          "promptEn": "How is the vowel in 'Cup' /kʌp/ produced?",
+          "cue": "Cup",
+          "correct": "Bật nhanh từ đáy họng, môi và hàm thư giãn",
+          "options": [
+            "Bật nhanh từ đáy họng, môi và hàm thư giãn",
+            "Chu tròn môi thật chặt",
+            "Rung lưỡi liên tục",
+            "Ngậm kín miệng phát âm qua mũi"
+          ],
+          "explanationVi": "/ʌ/ là âm ngắn bật dứt khoát từ họng.",
+          "explanationEn": "/ʌ/ is a short, relaxed central vowel."
+        }
+      ]
+    },
+    {
+      "id": "en-stage-2",
+      "stageNum": 2,
+      "titleVi": "Ải 2: Chào Hỏi & Lịch Sự Công Sở",
+      "titleEn": "Stage 2: Essential Greetings & Courtesy",
+      "descVi": "Các câu nói tự nhiên thay vì câu 'How are you? I'm fine thank you' cứng nhắc.",
+      "descEn": "Natural greetings instead of textbook stiffness.",
+      "bossNameVi": "Cáo Tinh Anh Ngữ (Mystic Fox)",
+      "bossNameEn": "Mystic Fox",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "Hey, how's it going?",
+          "reading": "/heɪ haʊz ɪt ˈɡoʊɪŋ/",
+          "meaningVi": "Dạo này thế nào rồi? (Chào phổ biến nhất)",
+          "meaningEn": "How are things with you?",
+          "hint": "Nối âm: how's-it going"
+        },
+        {
+          "char": "I appreciate it",
+          "reading": "/aɪ əˈpriːʃieɪt ɪt/",
+          "meaningVi": "Tôi rất trân trọng / Cảm ơn bạn rất nhiều",
+          "meaningEn": "Thank you genuinely",
+          "hint": "Nối âm: appreciate-it"
+        },
+        {
+          "char": "Have a good one!",
+          "reading": "/hæv ə ɡʊd wʌn/",
+          "meaningVi": "Chúc bạn một ngày tốt lành! (Chào tạm biệt tự nhiên)",
+          "meaningEn": "Have a nice day",
+          "hint": "Người Mỹ dùng câu này ở mọi quầy tính tiền"
+        },
+        {
+          "char": "No problem at all",
+          "reading": "/noʊ ˈprɑːbləm æt ɔːl/",
+          "meaningVi": "Không có vấn đề gì cả / Rất vui được giúp",
+          "meaningEn": "You're welcome / Not a trouble",
+          "hint": "Thân mật hơn 'You are welcome'"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Người bản xứ thường nói câu nào ở quầy tính tiền khi chào tạm biệt?",
+          "promptEn": "What casual phrase do Americans say when parting at checkout?",
+          "cue": "Have a good one!",
+          "correct": "Have a good one!",
+          "options": [
+            "Have a good one!",
+            "Goodbye forever",
+            "Where is the exit?",
+            "Stop talking"
+          ],
+          "explanationVi": "'Have a good one' là cách chào tạm biệt cực kỳ phổ biến và thân thiện.",
+          "explanationEn": "'Have a good one!' is the quintessential American casual farewell."
+        },
+        {
+          "promptVi": "'How's it going?' thường được nối âm như thế nào?",
+          "promptEn": "How is 'How's it going?' linked naturally in speech?",
+          "cue": "How's it going",
+          "correct": "How-zit going",
+          "options": [
+            "How-zit going",
+            "How is it go-ing",
+            "Hows-it-going-sir",
+            "How going is it"
+          ],
+          "explanationVi": "Âm /z/ ở How's nối liền sang /ɪt/ thành 'How-zit'.",
+          "explanationEn": "The /z/ links smoothly to /ɪt/ becoming 'how-zit'."
+        },
+        {
+          "promptVi": "Để nói lời cảm ơn chân thành và lịch sự, câu nào sau đây phù hợp nhất?",
+          "promptEn": "Which phrase conveys sincere, professional gratitude?",
+          "cue": "Thank you",
+          "correct": "I really appreciate it",
+          "options": [
+            "I really appreciate it",
+            "Give me that",
+            "It is what it is",
+            "See ya"
+          ],
+          "explanationVi": "'I really appreciate it' thể hiện lòng biết ơn sâu sắc.",
+          "explanationEn": "'I appreciate it' shows genuine gratitude."
+        },
+        {
+          "promptVi": "'No problem at all' thường dùng để đáp lại câu nào?",
+          "promptEn": "What is 'No problem at all' commonly used to respond to?",
+          "cue": "No problem at all",
+          "correct": "Lời cảm ơn (Thank you)",
+          "options": [
+            "Lời cảm ơn (Thank you)",
+            "Lời chúc mừng sinh nhật",
+            "Câu hỏi mấy giờ rồi",
+            "Lời đề nghị kết bạn"
+          ],
+          "explanationVi": "No problem at all tương đương 'Không có chi'.",
+          "explanationEn": "'No problem at all' is a warm alternative to 'You're welcome'."
+        }
+      ]
+    },
+    {
+      "id": "en-stage-3",
+      "stageNum": 3,
+      "titleVi": "Ải 3: Bộ Cụm Khối Giao Tiếp (Conversational Chunks)",
+      "titleEn": "Stage 3: Conversational Chunks & Connectors",
+      "descVi": "Nói tiếng Anh lưu loát không vấp nhờ các khối câu đệm tự nhiên.",
+      "descEn": "Speak fluidly without hesitations using natural speech chunks.",
+      "bossNameVi": "Golem Thạch Đấu (Stone Golem)",
+      "bossNameEn": "Stone Golem",
+      "bossType": "golem",
+      "bossHp": 120,
+      "icon": "🗿",
+      "items": [
+        {
+          "char": "To be honest",
+          "reading": "/tə bi ˈɑːnɪst/",
+          "meaningVi": "Thành thật mà nói (Mở đầu quan điểm)",
+          "meaningEn": "Frankly speaking",
+          "hint": "Chữ H trong honest là âm câm"
+        },
+        {
+          "char": "You know what I mean?",
+          "reading": "/ju noʊ wʌt aɪ miːn/",
+          "meaningVi": "Bạn hiểu ý tôi chứ? (Kiểm tra sự đồng thuận)",
+          "meaningEn": "Do you understand what I'm getting at?",
+          "hint": "Thường rút gọn thành 'Y'know what I mean?'"
+        },
+        {
+          "char": "As far as I know",
+          "reading": "/æz fɑːr æz aɪ noʊ/",
+          "meaningVi": "Theo như tôi được biết",
+          "meaningEn": "To the best of my knowledge",
+          "hint": "Nối âm: as-far-as-I know"
+        },
+        {
+          "char": "Never mind",
+          "reading": "/ˈnevər maɪnd/",
+          "meaningVi": "Thôi bỏ đi / Không sao đâu",
+          "meaningEn": "Don't worry about it / Forget it",
+          "hint": "Âm d cuối chặn hơi nhẹ"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Chữ cái nào bị câm trong từ 'honest'?",
+          "promptEn": "Which letter is silent in 'honest'?",
+          "cue": "honest",
+          "correct": "Chữ H",
+          "options": [
+            "Chữ H",
+            "Chữ O",
+            "Chữ N",
+            "Chữ T"
+          ],
+          "explanationVi": "Chữ H trong honest là âm câm, phát âm bắt đầu từ /ɑː/.",
+          "explanationEn": "The H in 'honest' is completely silent."
+        },
+        {
+          "promptVi": "'To be honest' được dùng nhằm mục đích gì trong hội thoại?",
+          "promptEn": "Why do speakers use 'To be honest'?",
+          "cue": "To be honest",
+          "correct": "Bày tỏ ý kiến cá nhân một cách chân thành, thẳng thắn",
+          "options": [
+            "Bày tỏ ý kiến cá nhân một cách chân thành, thẳng thắn",
+            "Nói dối người nghe",
+            "Kết thúc cuộc trò chuyện",
+            "Hỏi đường đi"
+          ],
+          "explanationVi": "Cụm từ này dùng để mở đầu quan điểm thẳng thắn.",
+          "explanationEn": "It introduces a candid, genuine perspective."
+        },
+        {
+          "promptVi": "Cụm 'As far as I know' có nghĩa là gì?",
+          "promptEn": "What does 'As far as I know' mean?",
+          "cue": "As far as I know",
+          "correct": "Theo như tôi được biết",
+          "options": [
+            "Theo như tôi được biết",
+            "Tôi không hề biết gì",
+            "Đi xa nhất có thể",
+            "Tôi chắc chắn 100%"
+          ],
+          "explanationVi": "Có nghĩa là theo những gì tôi nắm được đến nay.",
+          "explanationEn": "It means 'to the best of my knowledge'."
+        },
+        {
+          "promptVi": "Khi muốn bảo ai đó 'Thôi không sao, bỏ qua chuyện đó đi', bạn dùng:",
+          "promptEn": "To tell someone 'Forget about it / It's fine', you say:",
+          "cue": "Bỏ qua đi",
+          "correct": "Never mind",
+          "options": [
+            "Never mind",
+            "Always mind",
+            "Out of mind",
+            "Open your mind"
+          ],
+          "explanationVi": "Never mind mang nghĩa thôi bỏ qua, không sao đâu.",
+          "explanationEn": "'Never mind' means let it go / don't worry about it."
+        }
+      ]
+    },
+    {
+      "id": "en-stage-4",
+      "stageNum": 4,
+      "titleVi": "Ải 4: Cụm Phụ Âm Khó (TH, SH, CH, STR)",
+      "titleEn": "Stage 4: Tough Consonant Clusters",
+      "descVi": "Xóa bỏ thói quen phát âm sai âm TH và cụm 3 phụ âm STR chuẩn đét.",
+      "descEn": "Eliminate TH errors and master challenging 3-consonant clusters.",
+      "bossNameVi": "Bóng Ma Oni (Shadow Demon)",
+      "bossNameEn": "Shadow Oni",
+      "bossType": "oni",
+      "bossHp": 140,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "TH vô thanh /θ/",
+          "reading": "Think /θɪŋk/",
+          "meaningVi": "Âm TH thổi hơi (Đặt đầu lưỡi giữa 2 hàm răng và thổi)",
+          "meaningEn": "Voiceless TH /θ/ as in Think",
+          "hint": "Đầu lưỡi lộ nhẹ giữa răng, tuyệt đối không đọc thành S hay T"
+        },
+        {
+          "char": "TH hữu thanh /ð/",
+          "reading": "This /ðɪs/",
+          "meaningVi": "Âm TH rung cổ họng (Lưỡi kẹp nhẹ, rung dây thanh)",
+          "meaningEn": "Voiced TH /ð/ as in This",
+          "hint": "Đặt ngón tay lên cổ họng để cảm nhận độ rung"
+        },
+        {
+          "char": "SH /ʃ/ vs CH /tʃ/",
+          "reading": "Ship /ʃɪp/ vs Chip /tʃɪp/",
+          "meaningVi": "SH kéo dài êm dịu, CH bật hơi dứt khoát",
+          "meaningEn": "Continuant /ʃ/ vs Affricate /tʃ/",
+          "hint": "Chu môi về phía trước"
+        },
+        {
+          "char": "Cụm STR /str/",
+          "reading": "Street /striːt/",
+          "meaningVi": "Cụm 3 phụ âm liền mạch không chèn âm 'ờ'",
+          "meaningEn": "Triple cluster /str/ as in Street",
+          "hint": "Lướt từ S sang T rồi cuộn lưỡi R"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Vị trí đặt lưỡi chuẩn xác khi phát âm /θ/ trong 'Think' là ở đâu?",
+          "promptEn": "Where is tongue placement for /θ/ in 'Think'?",
+          "cue": "Think /θ/",
+          "correct": "Đầu lưỡi đặt giữa hai hàm răng và thổi luồng khí nhẹ",
+          "options": [
+            "Đầu lưỡi đặt giữa hai hàm răng và thổi luồng khí nhẹ",
+            "Đầu lưỡi thụt sâu vào trong họng",
+            "Lưỡi áp chặt lên vòm miệng trên",
+            "Hai môi mím chặt lại"
+          ],
+          "explanationVi": "Âm /θ/ là âm kẹp lưỡi giữa răng thổi hơi.",
+          "explanationEn": "Place tongue tip between teeth and release air."
+        },
+        {
+          "promptVi": "Điểm khác biệt cốt lõi giữa âm /θ/ (Think) và /ð/ (This) là gì?",
+          "promptEn": "What is the key difference between /θ/ (Think) and /ð/ (This)?",
+          "cue": "/θ/ vs /ð/",
+          "correct": "/θ/ không rung dây thanh (vô thanh), /ð/ có rung (hữu thanh)",
+          "options": [
+            "/θ/ không rung dây thanh (vô thanh), /ð/ có rung (hữu thanh)",
+            "/θ/ phát âm qua mũi",
+            "/ð/ không cần dùng lưỡi",
+            "Cả hai hoàn toàn giống nhau"
+          ],
+          "explanationVi": "/θ/ là voiceless (vô thanh), /ð/ là voiced (hữu thanh).",
+          "explanationEn": "/θ/ is voiceless, /ð/ vibrates the vocal cords."
+        },
+        {
+          "promptVi": "Lỗi phổ biến nhất của người Việt khi phát âm từ 'Street' /striːt/ là gì?",
+          "promptEn": "What is a common mispronunciation of 'Street'?",
+          "cue": "Street",
+          "correct": "Chèn thêm âm 'sờ-tơ-rít' thay vì trượt liền mạch /str/",
+          "options": [
+            "Chèn thêm âm 'sờ-tơ-rít' thay vì trượt liền mạch /str/",
+            "Đọc thành chữ Z",
+            "Quên phát âm nguyên âm",
+            "Nói quá nhanh"
+          ],
+          "explanationVi": "Cụm phụ âm cần lướt liền mạch không chèn nguyên âm đệm.",
+          "explanationEn": "Avoid inserting extra vowels between s-t-r."
+        },
+        {
+          "promptVi": "Cặp từ nào minh họa rõ nhất sự khác nhau giữa /ʃ/ và /tʃ/?",
+          "promptEn": "Which pair demonstrates /ʃ/ vs /tʃ/?",
+          "cue": "/ʃ/ vs /tʃ/",
+          "correct": "Ship vs Chip",
+          "options": [
+            "Ship vs Chip",
+            "Cat vs Bat",
+            "Run vs Sun",
+            "Pen vs Ten"
+          ],
+          "explanationVi": "Ship có âm /ʃ/ kéo dài, Chip có âm /tʃ/ bật tắc.",
+          "explanationEn": "Ship uses /ʃ/, Chip uses affricate /tʃ/."
+        }
+      ]
+    },
+    {
+      "id": "en-stage-5",
+      "stageNum": 5,
+      "titleVi": "Ải 5: Tiếng Lóng Mỹ Thực Chiến (American Street Slang)",
+      "titleEn": "Stage 5: Street Slang & Fluency Final Boss",
+      "descVi": "Chinh phục các câu lóng thực tế trong podcast, phim ảnh và đời sống New York/LA.",
+      "descEn": "Tackle real slang heard in American podcasts, cinema, and modern culture.",
+      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
+      "bossNameEn": "Crimson Dragon Emperor",
+      "bossType": "dragon",
+      "bossHp": 160,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "I'm down for that",
+          "reading": "/aɪm daʊn fər ðæt/",
+          "meaningVi": "Tôi sẵn sàng tham gia / Tôi ủng hộ kèo này!",
+          "meaningEn": "I'm ready / Count me in!",
+          "hint": "Đồng nghĩa với 'I'm in!'"
+        },
+        {
+          "char": "No worries at all",
+          "reading": "/noʊ ˈwɜːriz æt ɔːl/",
+          "meaningVi": "Đừng bận tâm / Chuyện nhỏ ấy mà!",
+          "meaningEn": "Don't sweat it / It's fine",
+          "hint": "Cách nói cực kỳ thân mật của người trẻ"
+        },
+        {
+          "char": "Hit me up later",
+          "reading": "/hɪt mi ʌp ˈleɪtər/",
+          "meaningVi": "Nhắn tin / Gọi cho tôi sau nhé (HMU)",
+          "meaningEn": "Text me or call me later",
+          "hint": "Nối âm: hit-me-up"
+        },
+        {
+          "char": "It is what it is",
+          "reading": "/ɪt ɪz wʌt ɪt ɪz/",
+          "meaningVi": "Chấp nhận sự thật thôi / Đành vậy chứ biết sao",
+          "meaningEn": "Accept the reality / Can't change it",
+          "hint": "Thành ngữ chấp nhận hoàn cảnh phổ biến nhất"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Khi một người bạn rủ đi ăn pizza và bạn nói 'I'm down!', câu đó nghĩa là gì?",
+          "promptEn": "If a friend invites you for pizza and you say 'I'm down!', what does it mean?",
+          "cue": "I'm down!",
+          "correct": "Tôi đồng ý, tôi tham gia kèo này!",
+          "options": [
+            "Tôi đồng ý, tôi tham gia kèo này!",
+            "Tôi đang buồn bã",
+            "Tôi không có tiền",
+            "Tôi vừa bị ngã xuống đất"
+          ],
+          "explanationVi": "'I'm down' là tiếng lóng thể hiện sự hào hứng tham gia.",
+          "explanationEn": "'I'm down' means 'count me in!'."
+        },
+        {
+          "promptVi": "Cụm 'Hit me up' viết tắt là HMU trong tin nhắn nghĩa là gì?",
+          "promptEn": "What does the text abbreviation 'HMU' (Hit me up) mean?",
+          "cue": "Hit me up (HMU)",
+          "correct": "Nhắn tin hoặc liên lạc với tôi nhé",
+          "options": [
+            "Nhắn tin hoặc liên lạc với tôi nhé",
+            "Đánh vào người tôi đi",
+            "Hãy chạy trốn",
+            "Xóa số điện thoại"
+          ],
+          "explanationVi": "Hit me up = Liên lạc với tôi nhé.",
+          "explanationEn": "Hit me up means contact me."
+        },
+        {
+          "promptVi": "Người Mỹ nói 'It is what it is' trong tâm trạng nào?",
+          "promptEn": "In what mindset do speakers say 'It is what it is'?",
+          "cue": "It is what it is",
+          "correct": "Chấp nhận thực tế dù không như ý muốn",
+          "options": [
+            "Chấp nhận thực tế dù không như ý muốn",
+            "Vô cùng phấn khích",
+            "Muốn tranh luận gay gắt",
+            "Báo tin mừng trúng số"
+          ],
+          "explanationVi": "Đây là câu thành ngữ thể hiện sự chấp nhận thực tế khách quan.",
+          "explanationEn": "It conveys stoic acceptance of an unchangeable situation."
+        },
+        {
+          "promptVi": "'No worries' tương đương với cách diễn đạt nào?",
+          "promptEn": "What is 'No worries' equivalent to?",
+          "cue": "No worries",
+          "correct": "Don't worry about it / You're welcome",
+          "options": [
+            "Don't worry about it / You're welcome",
+            "Be very worried",
+            "Leave immediately",
+            "I don't know you"
+          ],
+          "explanationVi": "No worries mang nghĩa đừng lo lắng, chuyện nhỏ.",
+          "explanationEn": "'No worries' means no problem at all."
+        }
+      ]
+    }
+  ],
+  "ko": [
+    {
+      "id": "ko-stage-1",
+      "stageNum": 1,
+      "titleVi": "Ải 1: Nguyên Âm Hangul Cội Nguồn (ㅏ, ㅓ, ㅗ, ㅜ, ㅣ)",
+      "titleEn": "Stage 1: Core Hangul Vowels",
+      "descVi": "Khám phá nguyên lý triết học Thiên - Địa - Nhân tạo nên chữ viết Hàn Quốc.",
+      "descEn": "Discover the philosophical harmony of Heaven, Earth, and Humanity in Hangul.",
+      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "ㅏ",
+          "reading": "a",
+          "meaningVi": "Nguyên âm A (Nét sổ dọc với nét phẩy hướng sang phải)",
+          "meaningEn": "Vowel A",
+          "hint": "Nét phẩy sang phải tượng trưng cho mặt trời mọc"
+        },
+        {
+          "char": "ㅓ",
+          "reading": "eo",
+          "meaningVi": "Nguyên âm Ơ/O mở (Nét phẩy hướng vào trong)",
+          "meaningEn": "Vowel Eo (Open O)",
+          "hint": "Mở miệng như âm 'ơ' nhưng khẩu hình hơi sâu"
+        },
+        {
+          "char": "ㅗ",
+          "reading": "o",
+          "meaningVi": "Nguyên âm Ô (Nét phẩy hướng lên trên trời)",
+          "meaningEn": "Vowel O (Rounded)",
+          "hint": "Chu môi tròn như chữ 'ô' tiếng Việt"
+        },
+        {
+          "char": "ㅜ",
+          "reading": "u",
+          "meaningVi": "Nguyên âm U (Nét phẩy hướng xuống đất)",
+          "meaningEn": "Vowel U",
+          "hint": "Chu môi hướng thẳng ra trước"
+        },
+        {
+          "char": "ㅣ",
+          "reading": "i",
+          "meaningVi": "Nguyên âm I (Thanh dọc tượng trưng cho con người đứng thẳng)",
+          "meaningEn": "Vowel I",
+          "hint": "Môi dẹt kéo sang hai bên"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Nguyên âm Hangul nào có nét phẩy chỉ sang bên PHẢI?",
+          "promptEn": "Which Hangul vowel has a tick pointing to the RIGHT?",
+          "cue": "ㅏ",
+          "correct": "ㅏ (a)",
+          "options": [
+            "ㅏ (a)",
+            "ㅓ (eo)",
+            "ㅗ (o)",
+            "ㅜ (u)"
+          ],
+          "explanationVi": "ㅏ có nét phẩy hướng sang phải, đọc là 'a'.",
+          "explanationEn": "ㅏ points right and sounds like 'a'."
+        },
+        {
+          "promptVi": "Nguyên âm ㅓ trong tiếng Hàn phát âm gần giống âm nào?",
+          "promptEn": "How is the vowel ㅓ pronounced?",
+          "cue": "ㅓ",
+          "correct": "Âm 'ơ' hoặc 'o' mở",
+          "options": [
+            "Âm 'ơ' hoặc 'o' mở",
+            "Âm 'u' chu môi",
+            "Âm 'i' kéo dài",
+            "Âm 'e' bẹt"
+          ],
+          "explanationVi": "ㅓ phát âm giữa ơ và o.",
+          "explanationEn": "ㅓ is an open mid back vowel."
+        },
+        {
+          "promptVi": "Chữ ㅣ tượng trưng cho yếu tố nào trong triết lý sáng tạo Hangul?",
+          "promptEn": "What does ㅣ represent in King Sejong's Hangul philosophy?",
+          "cue": "ㅣ",
+          "correct": "Con người đứng thẳng giữa trời và đất",
+          "options": [
+            "Con người đứng thẳng giữa trời và đất",
+            "Dòng sông chảy xiết",
+            "Ngọn núi cao",
+            "Ánh trăng rằm"
+          ],
+          "explanationVi": "Vua Sejong dùng nét dọc ㅣ biểu thị Con người (Nhân).",
+          "explanationEn": "Vertical ㅣ represents humanity standing between heaven and earth."
+        },
+        {
+          "promptVi": "Nguyên âm nào có nét phẩy hướng XUỐNG DƯỚI?",
+          "promptEn": "Which vowel has a short stroke pointing DOWN?",
+          "cue": "ㅜ",
+          "correct": "ㅜ (u)",
+          "options": [
+            "ㅜ (u)",
+            "ㅗ (o)",
+            "ㅏ (a)",
+            "ㅣ (i)"
+          ],
+          "explanationVi": "ㅜ có nét phẩy xuống đất, đọc là 'u'.",
+          "explanationEn": "ㅜ points downward representing 'u'."
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-2",
+      "stageNum": 2,
+      "titleVi": "Ải 2: Phụ Âm Đầu & Lời Chào Seoul",
+      "titleEn": "Stage 2: Basic Consonants & Annyeonghaseyo",
+      "descVi": "Học các phụ âm cơ bản và câu chào quốc dân 안녕하세요.",
+      "descEn": "Learn fundamental consonants and master Annyeonghaseyo.",
+      "bossNameVi": "Cửu Vĩ Hồ Kitsune (Nine-Tailed Fox)",
+      "bossNameEn": "Nine-Tailed Fox Gumiho",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "ㄱ",
+          "reading": "g/k",
+          "meaningVi": "Phụ âm Giyeok (Mô phỏng cuống lưỡi chặn họng)",
+          "meaningEn": "Consonant Giyeok (G/K)",
+          "hint": "Viết ngang rồi sổ vuông góc"
+        },
+        {
+          "char": "ㄴ",
+          "reading": "n",
+          "meaningVi": "Phụ âm Nieun (Mô phỏng đầu lưỡi chạm nướu trên)",
+          "meaningEn": "Consonant Nieun (N)",
+          "hint": "Viết sổ rồi ngang vuông góc"
+        },
+        {
+          "char": "ㅁ",
+          "reading": "m",
+          "meaningVi": "Phụ âm Mieum (Mô phỏng đôi môi khép lại)",
+          "meaningEn": "Consonant Mieum (M)",
+          "hint": "Hình vuông khép kín"
+        },
+        {
+          "char": "ㅅ",
+          "reading": "s",
+          "meaningVi": "Phụ âm Siot (Mô phỏng hình chiếc răng)",
+          "meaningEn": "Consonant Siot (S)",
+          "hint": "Hai nét rẽ nhánh như mái nhà"
+        },
+        {
+          "char": "안녕하세요",
+          "reading": "Annyeonghaseyo",
+          "meaningVi": "Xin chào (Trang trọng, phổ biến nhất)",
+          "meaningEn": "Hello (Standard polite)",
+          "hint": "Cúi đầu nhẹ khi nói câu này"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Hình vuông 'ㅁ' trong Hangul mô phỏng bộ phận phát âm nào?",
+          "promptEn": "What vocal organ does the square consonant 'ㅁ' represent?",
+          "cue": "ㅁ",
+          "correct": "Hình dạng đôi môi khép lại",
+          "options": [
+            "Hình dạng đôi môi khép lại",
+            "Chiếc răng cửa",
+            "Cuống họng",
+            "Lỗ mũi"
+          ],
+          "explanationVi": "ㅁ mô phỏng đôi môi khi phát âm m.",
+          "explanationEn": "ㅁ represents closed lips."
+        },
+        {
+          "promptVi": "'Xin chào' tiếng Hàn lịch sự chuẩn mực là câu nào?",
+          "promptEn": "What is the standard polite Korean greeting for 'Hello'?",
+          "cue": "Xin chào",
+          "correct": "안녕하세요 (Annyeonghaseyo)",
+          "options": [
+            "안녕하세요 (Annyeonghaseyo)",
+            "감사합니다 (Gamsahamnida)",
+            "죄송합니다 (Joesonghamnida)",
+            "잘 가요 (Jal gayo)"
+          ],
+          "explanationVi": "안녕하세요 là lời chào chuẩn mực.",
+          "explanationEn": "안녕하세요 is standard polite Hello."
+        },
+        {
+          "promptVi": "Phụ âm ㄱ (Giyeok) mô phỏng khẩu hình gì?",
+          "promptEn": "What does consonant ㄱ (Giyeok) imitate?",
+          "cue": "ㄱ",
+          "correct": "Cuống lưỡi nâng lên chặn vòm họng mềm",
+          "options": [
+            "Cuống lưỡi nâng lên chặn vòm họng mềm",
+            "Hai hàm răng nghiến lại",
+            "Môi chúm tròn",
+            "Lưỡi thè ra ngoài"
+          ],
+          "explanationVi": "ㄱ mô phỏng cuống lưỡi uốn lên chạm ngạc gà.",
+          "explanationEn": "ㄱ illustrates the tongue blocking the throat."
+        },
+        {
+          "promptVi": "Ký tự có hình dáng như mái nhà hai nhánh 'ㅅ' phát âm là gì?",
+          "promptEn": "What sound does the tent-shaped consonant 'ㅅ' produce?",
+          "cue": "ㅅ",
+          "correct": "Âm s",
+          "options": [
+            "Âm s",
+            "Âm m",
+            "Âm n",
+            "Âm b"
+          ],
+          "explanationVi": "ㅅ đọc là s.",
+          "explanationEn": "ㅅ produces the 's' sound."
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-3",
+      "stageNum": 3,
+      "titleVi": "Ải 3: Bộ Cụm Từ Lịch Thiệp Hàng Ngày",
+      "titleEn": "Stage 3: Essential Polite Expressions",
+      "descVi": "Bộ câu từ chuẩn mực giúp bạn hòa nhập ngay tại Hàn Quốc.",
+      "descEn": "Standard polite phrases to navigate everyday life in Korea.",
+      "bossNameVi": "Golem Thạch Đấu (Stone Guardian)",
+      "bossNameEn": "Stone Guardian Golem",
+      "bossType": "golem",
+      "bossHp": 120,
+      "icon": "🗿",
+      "items": [
+        {
+          "char": "감사합니다",
+          "reading": "Gamsahamnida",
+          "meaningVi": "Cảm ơn rất nhiều (Lịch sự, trang trọng)",
+          "meaningEn": "Thank you (Formal)",
+          "hint": "Âm 합 đọc là 'ham' do biến âm Batchim"
+        },
+        {
+          "char": "죄송합니다",
+          "reading": "Joesonghamnida",
+          "meaningVi": "Xin lỗi (Chân thành, lịch sự cao)",
+          "meaningEn": "I am sorry (Formal)",
+          "hint": "Dùng khi va chạm hoặc gây phiền hà"
+        },
+        {
+          "char": "네",
+          "reading": "Ne",
+          "meaningVi": "Vâng / Đúng rồi / Tôi hiểu",
+          "meaningEn": "Yes / Understood",
+          "hint": "Thường phát âm hơi hướng 'đê' nhẹ trong đời sống"
+        },
+        {
+          "char": "아니요",
+          "reading": "Aniyo",
+          "meaningVi": "Không / Không phải đâu ạ",
+          "meaningEn": "No (Polite)",
+          "hint": "Âm ngắn gọn, lịch sự"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Tại sao chữ '합' trong '감사합니다' lại đọc là 'ham' thay vì 'hap'?",
+          "promptEn": "Why is '합' in 'Gamsahamnida' read as 'ham'?",
+          "cue": "감사합니다",
+          "correct": "Hiện tượng đồng hóa âm: patchim ㅂ gặp phụ âm ㄴ biến thành ㅁ",
+          "options": [
+            "Hiện tượng đồng hóa âm: patchim ㅂ gặp phụ âm ㄴ biến thành ㅁ",
+            "Do người nói phát âm nhầm",
+            "Chữ này là tiếng Hán cổ",
+            "Không có quy tắc nào cả"
+          ],
+          "explanationVi": "Patchim ㅂ gặp ㄴ sẽ biến âm thành âm mũi m (Gamsahamnida).",
+          "explanationEn": "Nasal assimilation turns patchim ㅂ into ㅁ before ㄴ."
+        },
+        {
+          "promptVi": "Từ '죄송합니다' mang ý nghĩa gì?",
+          "promptEn": "What does '죄송합니다' (Joesonghamnida) mean?",
+          "cue": "죄송합니다",
+          "correct": "Xin lỗi một cách chân thành",
+          "options": [
+            "Xin lỗi một cách chân thành",
+            "Chúc mừng sinh nhật",
+            "Cảm ơn bữa ăn",
+            "Tạm biệt"
+          ],
+          "explanationVi": "Joesonghamnida có nghĩa là Xin lỗi chân thành.",
+          "explanationEn": "Joesonghamnida is the formal apology."
+        },
+        {
+          "promptVi": "Từ nào trong tiếng Hàn có nghĩa là 'Vâng / Đúng vậy'?",
+          "promptEn": "Which word means 'Yes' in Korean?",
+          "cue": "Vâng",
+          "correct": "네 (Ne)",
+          "options": [
+            "네 (Ne)",
+            "아니요 (Aniyo)",
+            "글쎄요 (Geulsseyo)",
+            "안돼 (Andwae)"
+          ],
+          "explanationVi": "네 nghĩa là Vâng.",
+          "explanationEn": "네 means Yes."
+        },
+        {
+          "promptVi": "'아니요' (Aniyo) có nghĩa là gì?",
+          "promptEn": "What does '아니요' (Aniyo) mean?",
+          "cue": "아니요",
+          "correct": "Không ạ",
+          "options": [
+            "Không ạ",
+            "Vâng ạ",
+            "Xin chào",
+            "Đi thong thả"
+          ],
+          "explanationVi": "아니요 có nghĩa là Không.",
+          "explanationEn": "아니요 means No."
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-4",
+      "stageNum": 4,
+      "titleVi": "Ải 4: Phụ Âm Căng & Phụ Âm Cuối (Batchim)",
+      "titleEn": "Stage 4: Double Consonants & Batchim",
+      "descVi": "Làm chủ 5 phụ âm căng (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ) và âm cuối giữ hơi.",
+      "descEn": "Master tense double consonants and final consonant stop rules.",
+      "bossNameVi": "Yêu Tinh Dokkaebi (Shadow Dokkaebi)",
+      "bossNameEn": "Shadow Dokkaebi",
+      "bossType": "oni",
+      "bossHp": 140,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "ㄲ",
+          "reading": "kk",
+          "meaningVi": "Phụ âm căng Sang-giyeok (Gồng thanh quản, không bật hơi)",
+          "meaningEn": "Tense Kk",
+          "hint": "Nén hơi trong họng rồi phát ra dứt khoát"
+        },
+        {
+          "char": "ㅃ",
+          "reading": "pp",
+          "meaningVi": "Phụ âm căng Sang-bieup (Mím chặt môi, bật âm đanh)",
+          "meaningEn": "Tense Pp",
+          "hint": "Âm 'p' căng mạnh"
+        },
+        {
+          "char": "ㅆ",
+          "reading": "ss",
+          "meaningVi": "Phụ âm căng Sang-siot (Rít hơi mạnh kẽ răng)",
+          "meaningEn": "Tense Ss",
+          "hint": "Âm 'x' căng rít sắc nét"
+        },
+        {
+          "char": "밥",
+          "reading": "Bap",
+          "meaningVi": "Cơm (Batchim ㅂ khép môi giữ hơi không bật ra)",
+          "meaningEn": "Rice / Meal (Batchim ㅂ)",
+          "hint": "Âm cuối ngậm môi không nhả hơi"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Phụ âm căng 'ㄲ' khác phụ âm cơ bản 'ㄱ' ở đặc điểm nào?",
+          "promptEn": "How does tense 'ㄲ' differ from basic 'ㄱ'?",
+          "cue": "ㄲ vs ㄱ",
+          "correct": "Cơ thanh quản gồng siết mạnh hơn, phát âm đanh và dứt khoát",
+          "options": [
+            "Cơ thanh quản gồng siết mạnh hơn, phát âm đanh và dứt khoát",
+            "Bật hơi gió cực mạnh ra ngoài",
+            "Phát âm nhỏ như tiếng thì thầm",
+            "Hoàn toàn giống nhau"
+          ],
+          "explanationVi": "Phụ âm căng (doen sori) đòi hỏi căng cơ họng dứt khoát.",
+          "explanationEn": "Tense consonants require strong glottal tension."
+        },
+        {
+          "promptVi": "Khi từ '밥' (Cơm) đứng một mình, phụ âm cuối ㅂ được phát âm thế nào?",
+          "promptEn": "How is the final batchim ㅂ in '밥' pronounced?",
+          "cue": "밥",
+          "correct": "Mím chặt môi chặn luồng khí lại, không bật hơi 'pờ'",
+          "options": [
+            "Mím chặt môi chặn luồng khí lại, không bật hơi 'pờ'",
+            "Bật hơi 'pờ' thật to",
+            "Đọc thành âm 'm'",
+            "Bỏ qua không đọc"
+          ],
+          "explanationVi": "Batchim trong tiếng Hàn là âm tắc không nhả (unreleased stop).",
+          "explanationEn": "Korean final consonants are unreleased stops."
+        },
+        {
+          "promptVi": "Có bao nhiêu phụ âm đôi căng trong bảng chữ cái Hangul?",
+          "promptEn": "How many double tense consonants exist in Hangul?",
+          "cue": "Phụ âm căng",
+          "correct": "5 phụ âm (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ)",
+          "options": [
+            "5 phụ âm (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ)",
+            "3 phụ âm",
+            "7 phụ âm",
+            "10 phụ âm"
+          ],
+          "explanationVi": "Có đúng 5 phụ âm căng: kk, tt, pp, ss, jj.",
+          "explanationEn": "There are exactly 5 tense consonants."
+        },
+        {
+          "promptVi": "Từ '오빠' (Oppa) chứa phụ âm căng nào?",
+          "promptEn": "Which double consonant does '오빠' (Oppa) contain?",
+          "cue": "오빠",
+          "correct": "ㅃ (Sang-bieup)",
+          "options": [
+            "ㅃ (Sang-bieup)",
+            "ㄲ (Sang-giyeok)",
+            "ㄸ (Sang-digeut)",
+            "ㅆ (Sang-siot)"
+          ],
+          "explanationVi": "오빠 chứa phụ âm căng ㅃ.",
+          "explanationEn": "Oppa has the tense ㅃ."
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-5",
+      "stageNum": 5,
+      "titleVi": "Ải 5: Khẩu Ngữ Phim Hàn & Giới Trẻ K-Wave",
+      "titleEn": "Stage 5: K-Wave Slang & Seoul Street Boss",
+      "descVi": "Bộ từ cửa miệng cực hot trong phim K-Drama và giới trẻ Seoul.",
+      "descEn": "Trendy slang and reactive expressions straight out of K-Dramas.",
+      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
+      "bossNameEn": "Crimson Dragon Emperor",
+      "bossType": "dragon",
+      "bossHp": 160,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "대박",
+          "reading": "Daebak",
+          "meaningVi": "Đỉnh chóp / Cực đỉnh / Không thể tin được!",
+          "meaningEn": "Awesome / Jackpot / Unbelievable!",
+          "hint": "Từ cảm thán số 1 của giới trẻ Hàn"
+        },
+        {
+          "char": "진짜?",
+          "reading": "Jinjja?",
+          "meaningVi": "Thật á?! / Thật không đấy?!",
+          "meaningEn": "Really?! / For real?",
+          "hint": "Lên giọng cuối câu thể hiện ngạc nhiên"
+        },
+        {
+          "char": "헐",
+          "reading": "Heol",
+          "meaningVi": "Trời đất ơi! / Cạn lời / Shock!",
+          "meaningEn": "OMG / No way / Speechless",
+          "hint": "Bật âm ngắn thể hiện ngỡ ngàng"
+        },
+        {
+          "char": "화이팅",
+          "reading": "Hwaiting",
+          "meaningVi": "Cố lên! / Cố gắng lên nhé!",
+          "meaningEn": "Fighting! / Cheer up!",
+          "hint": "Nắm chặt tay khi hô khẩu hiệu này"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Khi chứng kiến một điều kỳ diệu hoặc quá đỗi ấn tượng, người Hàn hô:",
+          "promptEn": "When witnessing something amazing, Koreans exclaim:",
+          "cue": "Đỉnh chóp!",
+          "correct": "대박! (Daebak!)",
+          "options": [
+            "대박! (Daebak!)",
+            "안돼! (Andwae!)",
+            "바보! (Babo!)",
+            "몰라! (Molla!)"
+          ],
+          "explanationVi": "Daebak tương đương 'Đỉnh chóp / Tuyệt vời'.",
+          "explanationEn": "Daebak means awesome / jackpot."
+        },
+        {
+          "promptVi": "Từ '진짜?' (Jinjja?) thường dùng khi nào?",
+          "promptEn": "When is '진짜?' (Jinjja?) used?",
+          "cue": "진짜?",
+          "correct": "Khi muốn hỏi 'Thật á?! / Thật không đấy?!'",
+          "options": [
+            "Khi muốn hỏi 'Thật á?! / Thật không đấy?!'",
+            "Khi muốn nói tạm biệt",
+            "Khi gọi món ăn",
+            "Khi cảm ơn"
+          ],
+          "explanationVi": "Jinjja có nghĩa là thật sự, thật sao.",
+          "explanationEn": "Jinjja means really / genuinely."
+        },
+        {
+          "promptVi": "Từ cảm thán '헐' (Heol) trong phim Hàn diễn tả cảm xúc gì?",
+          "promptEn": "What emotion does the Korean exclamation '헐' (Heol) convey?",
+          "cue": "헐",
+          "correct": "Bất ngờ, sốc hoặc cạn lời",
+          "options": [
+            "Bất ngờ, sốc hoặc cạn lời",
+            "Vô cùng hạnh phúc",
+            "Buồn ngủ",
+            "Đói bụng"
+          ],
+          "explanationVi": "Heol diễn tả sự cạn lời hoặc bất ngờ.",
+          "explanationEn": "Heol expresses shock or being speechless."
+        },
+        {
+          "promptVi": "Để cổ vũ, động viên ai đó cố lên, người Hàn nói câu gì?",
+          "promptEn": "To cheer someone on with 'Fighting!', Koreans say:",
+          "cue": "Cố lên!",
+          "correct": "화이팅! (Hwaiting!)",
+          "options": [
+            "화이팅! (Hwaiting!)",
+            "잘 가! (Jal ga!)",
+            "미안해! (Mianhae!)",
+            "맛있어! (Masisseo!)"
+          ],
+          "explanationVi": "Hwaiting có nghĩa là Cố lên!",
+          "explanationEn": "Hwaiting means fighting / keep it up!"
+        }
+      ]
+    }
+  ],
+  "zh": [
+    {
+      "id": "zh-stage-1",
+      "stageNum": 1,
+      "titleVi": "Ải 1: Vận Mẫu Đơn & 4 Thanh Điệu Huyền Ảo",
+      "titleEn": "Stage 1: Simple Finals & The 4 Tones",
+      "descVi": "Chinh phục 6 nguyên âm cơ bản và quy luật cao độ của 4 thanh điệu tiếng Trung.",
+      "descEn": "Master the 6 simple finals and pitch contour of the 4 tones.",
+      "bossNameVi": "Khí Linh Slime (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "a",
+          "reading": "ā á ǎ à",
+          "meaningVi": "Vận mẫu A (Khẩu hình mở to, lưỡi phẳng)",
+          "meaningEn": "Final A",
+          "hint": "Âm vang sáng nhất trong hệ thống Pinyin"
+        },
+        {
+          "char": "o",
+          "reading": "ō ó ǒ ò",
+          "meaningVi": "Vận mẫu O (Môi tròn, phát âm ô/ua)",
+          "meaningEn": "Final O",
+          "hint": "Môi hơi chúm tròn như quả trứng"
+        },
+        {
+          "char": "e",
+          "reading": "ē é ě è",
+          "meaningVi": "Vận mẫu E (Khẩu hình dẹt, phát âm như 'ưa')",
+          "meaningEn": "Final E (Pronounced 'e/ue')",
+          "hint": "Kéo nhẹ mép sang hai bên"
+        },
+        {
+          "char": "ü",
+          "reading": "yū yú yǔ yù",
+          "meaningVi": "Vận mẫu Ü (Âm uy tròn môi, đầu lưỡi chạm răng dưới)",
+          "meaningEn": "Final Ü (Rounded high front vowel)",
+          "hint": "Giữ chặt môi tròn suốt quá trình phát âm"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Thanh 1 (Thanh ngang - ví dụ: mā) có đường đi cao độ như thế nào?",
+          "promptEn": "What is the pitch contour of Tone 1 (e.g. mā)?",
+          "cue": "Thanh 1 (55)",
+          "correct": "Cao đều và ngân dài ổn định ở mức 5-5",
+          "options": [
+            "Cao đều và ngân dài ổn định ở mức 5-5",
+            "Đi từ thấp vọt lên cao",
+            "Hạ xuống đáy rồi vút lên",
+            "Rơi nhanh dứt khoát từ cao xuống thấp"
+          ],
+          "explanationVi": "Thanh 1 là thanh cao bằng phẳng (55).",
+          "explanationEn": "Tone 1 is high and flat (55)."
+        },
+        {
+          "promptVi": "Thanh 4 (Thanh rơi - ví dụ: mà) có đặc điểm gì?",
+          "promptEn": "What is the characteristic of Tone 4 (e.g. mà)?",
+          "cue": "Thanh 4 (51)",
+          "correct": "Rơi cực nhanh và dứt khoát từ cao độ 5 xuống 1",
+          "options": [
+            "Rơi cực nhanh và dứt khoát từ cao độ 5 xuống 1",
+            "Hát ngân nga mềm mại",
+            "Không có thanh điệu",
+            "Ngắt quãng ở giữa"
+          ],
+          "explanationVi": "Thanh 4 là thanh rơi dứt khoát từ cao nhất xuống thấp nhất.",
+          "explanationEn": "Tone 4 falls sharply from 5 to 1."
+        },
+        {
+          "promptVi": "Khi phát âm vận mẫu 'ü', quy tắc quan trọng nhất là gì?",
+          "promptEn": "What is crucial when pronouncing the final 'ü'?",
+          "cue": "ü",
+          "correct": "Giữ chặt môi tròn cố định, không được mở mép ra",
+          "options": [
+            "Giữ chặt môi tròn cố định, không được mở mép ra",
+            "Mở rộng to hết cỡ",
+            "Thè lưỡi ra ngoài",
+            "Khép chặt răng lại"
+          ],
+          "explanationVi": "Vận mẫu ü đòi hỏi môi chu tròn cố định suốt quá trình.",
+          "explanationEn": "Maintain rounded lips without moving them."
+        },
+        {
+          "promptVi": "Vận mẫu 'e' trong tiếng Trung chuẩn Bắc Kinh đọc tương tự âm nào trong tiếng Việt?",
+          "promptEn": "How is Chinese Pinyin 'e' commonly pronounced?",
+          "cue": "e",
+          "correct": "Âm 'ưa' hoặc 'ơ'",
+          "options": [
+            "Âm 'ưa' hoặc 'ơ'",
+            "Âm 'e' bẹt",
+            "Âm 'i' dài",
+            "Âm 'u' tròn"
+          ],
+          "explanationVi": "Pinyin 'e' đọc giống âm 'ưa' trong tiếng Việt.",
+          "explanationEn": "Pinyin 'e' sounds close to 'uh/er'."
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-2",
+      "stageNum": 2,
+      "titleVi": "Ải 2: Thanh Mẫu Cơ Bản & Lời Chào Nǐ Hǎo",
+      "titleEn": "Stage 2: Basic Initials & Nǐ Hǎo",
+      "descVi": "Phân biệt cặp âm bật hơi B-P, D-T và câu chào kinh điển 你好.",
+      "descEn": "Master aspirated vs unaspirated pairs B-P, D-T and iconic Nǐ Hǎo.",
+      "bossNameVi": "Linh Hồ Bách Biến (Mystic Fox)",
+      "bossNameEn": "Mystic Fox Spirit",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "b",
+          "reading": "bō",
+          "meaningVi": "Thanh mẫu B (Âm môi không bật hơi, tương tự p tiếng Việt)",
+          "meaningEn": "Initial B (Unaspirated)",
+          "hint": "Hai môi mím lại rồi mở ra, không có luồng khí phụt"
+        },
+        {
+          "char": "p",
+          "reading": "pō",
+          "meaningVi": "Thanh mẫu P (Âm môi bật hơi cực mạnh)",
+          "meaningEn": "Initial P (Aspirated)",
+          "hint": "Đặt tờ giấy trước miệng, giấy phải bay mạnh khi phát âm"
+        },
+        {
+          "char": "d / t",
+          "reading": "dē / tē",
+          "meaningVi": "Cặp D (không bật) vs T (bật hơi đầu lưỡi)",
+          "meaningEn": "Initials D vs T",
+          "hint": "Đầu lưỡi chạm nướu trên"
+        },
+        {
+          "char": "你好",
+          "reading": "Nǐ hǎo",
+          "meaningVi": "Xin chào (Biến điệu thanh 3: nǐ biến thành ní)",
+          "meaningEn": "Hello (3rd tone sandhi)",
+          "hint": "2 thanh 3 đi liền nhau, chữ đầu đọc thành thanh 2"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Khi hai thanh 3 đi liền nhau như trong '你好' (Nǐ hǎo), âm đầu tiên biến đổi ra sao?",
+          "promptEn": "In tone sandhi, when two 3rd tones meet (e.g. Nǐ hǎo), what happens to the first tone?",
+          "cue": "你好 (Nǐ hǎo)",
+          "correct": "Biến thành thanh 2 (đọc thành Ní hǎo)",
+          "options": [
+            "Biến thành thanh 2 (đọc thành Ní hǎo)",
+            "Biến thành thanh 4",
+            "Giữ nguyên không đổi",
+            "Biến thành thanh nhẹ"
+          ],
+          "explanationVi": "Quy tắc biến điệu: 3 + 3 -> 2 + 3 (Ní hǎo).",
+          "explanationEn": "Third tone sandhi: 3rd + 3rd tone becomes 2nd + 3rd tone."
+        },
+        {
+          "promptVi": "Điểm khác biệt quyết định giữa thanh mẫu 'b' và 'p' trong Pinyin là gì?",
+          "promptEn": "What is the key distinction between Pinyin 'b' and 'p'?",
+          "cue": "b vs p",
+          "correct": "'b' không bật hơi, 'p' bật hơi cực mạnh",
+          "options": [
+            "'b' không bật hơi, 'p' bật hơi cực mạnh",
+            "'b' dùng mũi, 'p' dùng tai",
+            "Cả hai đều bật hơi như nhau",
+            "'b' là nguyên âm"
+          ],
+          "explanationVi": "Trong Pinyin, p là âm bật hơi (aspirated), b không bật hơi.",
+          "explanationEn": "'p' is strongly aspirated, while 'b' is unaspirated."
+        },
+        {
+          "promptVi": "Từ '你好' mang ý nghĩa gì?",
+          "promptEn": "What does '你好' (Nǐ hǎo) mean?",
+          "cue": "你好",
+          "correct": "Xin chào",
+          "options": [
+            "Xin chào",
+            "Cảm ơn",
+            "Tạm biệt",
+            "Chúc ngủ ngon"
+          ],
+          "explanationVi": "你好 có nghĩa là Xin chào.",
+          "explanationEn": "你好 means Hello."
+        },
+        {
+          "promptVi": "Để kiểm tra xem mình phát âm âm bật hơi 'p' đúng chưa, mẹo hay nhất là gì?",
+          "promptEn": "What is the best trick to check if you aspirate 'p' correctly?",
+          "cue": "p bật hơi",
+          "correct": "Đặt tờ giấy ăn mỏng trước miệng xem giấy có bay mạnh không",
+          "options": [
+            "Đặt tờ giấy ăn mỏng trước miệng xem giấy có bay mạnh không",
+            "Ngậm nước trong miệng",
+            "Nhắm chặt hai mắt",
+            "Nói thật nhỏ"
+          ],
+          "explanationVi": "Luồng khí bật mạnh sẽ làm lay động tờ giấy.",
+          "explanationEn": "Hold a tissue in front of your mouth to feel the air burst."
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-3",
+      "stageNum": 3,
+      "titleVi": "Ải 3: Bộ Cụm Từ Vàng Giao Tiếp Xã Hội",
+      "titleEn": "Stage 3: Golden Politeness Chunks",
+      "descVi": "Cảm ơn, xin lỗi và ứng xử thanh lịch theo phong cách người bản xứ.",
+      "descEn": "Thank you, apologies, and graceful etiquette in Chinese society.",
+      "bossNameVi": "Bàn Thạch Kim Cang (Stone Golem)",
+      "bossNameEn": "Ancient Stone Golem",
+      "bossType": "golem",
+      "bossHp": 120,
+      "icon": "🗿",
+      "items": [
+        {
+          "char": "谢谢",
+          "reading": "Xièxie",
+          "meaningVi": "Cảm ơn (Từ thứ hai đọc thanh nhẹ)",
+          "meaningEn": "Thank you",
+          "hint": "Xiè (thanh 4 dứt khoát) + xie (thanh nhẹ ngắn)"
+        },
+        {
+          "char": "不客气",
+          "reading": "Bù kèqi",
+          "meaningVi": "Đừng khách sáo / Không có chi",
+          "meaningEn": "You're welcome",
+          "hint": "Đáp lại lời cảm ơn chuẩn mực nhất"
+        },
+        {
+          "char": "对不起",
+          "reading": "Duìbuqǐ",
+          "meaningVi": "Xin lỗi (Chân thành)",
+          "meaningEn": "I'm sorry",
+          "hint": "Chữ bu ở giữa đọc nhẹ"
+        },
+        {
+          "char": "没关系",
+          "reading": "Méi guānxi",
+          "meaningVi": "Không sao đâu / Chuyện nhỏ ấy mà",
+          "meaningEn": "It doesn't matter / No problem",
+          "hint": "Đáp lại lời xin lỗi"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Khi ai đó nói '谢谢' (Xièxie) với bạn, câu đáp lịch sự chuẩn xác nhất là gì?",
+          "promptEn": "When someone says 'Xièxie', how do you politely reply?",
+          "cue": "谢谢",
+          "correct": "不客气 (Bù kèqi)",
+          "options": [
+            "不客气 (Bù kèqi)",
+            "对不起 (Duìbuqǐ)",
+            "再见 (Zàijiàn)",
+            "救命 (Jiùmìng)"
+          ],
+          "explanationVi": "Bù kèqi có nghĩa là Đừng khách sáo / Không có chi.",
+          "explanationEn": "Bù kèqi means 'You're welcome'."
+        },
+        {
+          "promptVi": "Khi ai đó nói '对不起' (Xin lỗi), bạn nên đáp lại bằng câu nào?",
+          "promptEn": "When someone apologizes with 'Duìbuqǐ', what do you say?",
+          "cue": "对不起",
+          "correct": "没关系 (Méi guānxi)",
+          "options": [
+            "没关系 (Méi guānxi)",
+            "谢谢 (Xièxie)",
+            "你好 (Nǐ hǎo)",
+            "不行 (Bù xíng)"
+          ],
+          "explanationVi": "Méi guānxi có nghĩa là Không sao đâu.",
+          "explanationEn": "Méi guānxi means 'It's okay / No problem'."
+        },
+        {
+          "promptVi": "Chữ 谢谢 (Cảm ơn) có thanh điệu như thế nào?",
+          "promptEn": "What are the tones of 谢谢 (Xièxie)?",
+          "cue": "谢谢",
+          "correct": "Thanh 4 + Thanh nhẹ",
+          "options": [
+            "Thanh 4 + Thanh nhẹ",
+            "Thanh 1 + Thanh 1",
+            "Thanh 2 + Thanh 3",
+            "Hai thanh 4 bằng nhau"
+          ],
+          "explanationVi": "Chữ thứ hai trong 谢谢 chuyển sang thanh nhẹ.",
+          "explanationEn": "The second syllable is a neutral tone."
+        },
+        {
+          "promptVi": "'没关系' (Méi guānxi) có nghĩa là gì?",
+          "promptEn": "What does 'Méi guānxi' mean?",
+          "cue": "没关系",
+          "correct": "Không sao, không có vấn đề gì",
+          "options": [
+            "Không sao, không có vấn đề gì",
+            "Tạm biệt",
+            "Đắt quá",
+            "Tôi không hiểu"
+          ],
+          "explanationVi": "Méi guānxi nghĩa là Không có hề gì.",
+          "explanationEn": "Méi guānxi means it doesn't matter."
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-4",
+      "stageNum": 4,
+      "titleVi": "Ải 4: Thanh Mẫu Uốn Lưỡi (ZH, CH, SH, R)",
+      "titleEn": "Stage 4: Retroflex Consonants (ZH, CH, SH, R)",
+      "descVi": "Vượt qua thử thách khó khăn nhất của người học tiếng Trung: âm uốn lưỡi chuẩn Bắc Kinh.",
+      "descEn": "Conquer the famous Beijing retroflex sounds: tongue curled back.",
+      "bossNameVi": "La Sát Dạ Xoa (Shadow Rakshasa)",
+      "bossNameEn": "Shadow Rakshasa Oni",
+      "bossType": "oni",
+      "bossHp": 140,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "zh",
+          "reading": "zhī",
+          "meaningVi": "Thanh mẫu ZH (Uốn đầu lưỡi lên ngạc cứng, không bật hơi)",
+          "meaningEn": "Retroflex ZH (Unaspirated)",
+          "hint": "Đầu lưỡi cong lên vòm miệng trên"
+        },
+        {
+          "char": "ch",
+          "reading": "chī",
+          "meaningVi": "Thanh mẫu CH (Uốn đầu lưỡi và BẬT HƠI cực mạnh)",
+          "meaningEn": "Retroflex CH (Aspirated)",
+          "hint": "Như âm 'tr' nhưng bật luồng gió mạnh"
+        },
+        {
+          "char": "sh",
+          "reading": "shī",
+          "meaningVi": "Thanh mẫu SH (Uốn đầu lưỡi, tạo luồng gió xát)",
+          "meaningEn": "Retroflex SH (Fricative)",
+          "hint": "Luồng khí lướt qua khe giữa đầu lưỡi và ngạc"
+        },
+        {
+          "char": "r",
+          "reading": "rì",
+          "meaningVi": "Thanh mẫu R (Uốn đầu lưỡi và rung dây thanh nhẹ)",
+          "meaningEn": "Retroflex R (Voiced)",
+          "hint": "Khác âm r tiếng Việt, môi hơi mở tự nhiên"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Điểm khác biệt cốt lõi giữa 'zh' và 'ch' trong tiếng Trung là gì?",
+          "promptEn": "What is the key difference between 'zh' and 'ch'?",
+          "cue": "zh vs ch",
+          "correct": "'zh' không bật hơi, 'ch' bật hơi cực mạnh",
+          "options": [
+            "'zh' không bật hơi, 'ch' bật hơi cực mạnh",
+            "'zh' thè lưỡi, 'ch' cắn môi",
+            "'zh' là nguyên âm",
+            "Không có khác biệt nào"
+          ],
+          "explanationVi": "CH là âm uốn lưỡi có luồng khí bật mạnh.",
+          "explanationEn": "'ch' is strongly aspirated retroflex."
+        },
+        {
+          "promptVi": "Khi phát âm nhóm thanh mẫu ZH, CH, SH, R, đầu lưỡi phải ở vị trí nào?",
+          "promptEn": "Where should the tongue tip be for ZH, CH, SH, R?",
+          "cue": "Vị trí lưỡi",
+          "correct": "Uốn cong lên hướng về phía vòm họng cứng (ngạc cứng)",
+          "options": [
+            "Uốn cong lên hướng về phía vòm họng cứng (ngạc cứng)",
+            "Cắm thẳng xuống sàn miệng",
+            "Kẹp chặt giữa hai hàm răng",
+            "Thè hẳn ra ngoài môi"
+          ],
+          "explanationVi": "Đây là nhóm âm đầu lưỡi sau / uốn lưỡi (retroflex).",
+          "explanationEn": "Curled back toward the hard palate."
+        },
+        {
+          "promptVi": "Từ '吃饭' (Ăn cơm) bắt đầu bằng thanh mẫu nào?",
+          "promptEn": "Which initial does '吃饭' (Chī fàn - eat) begin with?",
+          "cue": "吃饭",
+          "correct": "ch (bật hơi)",
+          "options": [
+            "ch (bật hơi)",
+            "zh",
+            "sh",
+            "z"
+          ],
+          "explanationVi": "Chī fàn bắt đầu bằng âm bật hơi ch.",
+          "explanationEn": "Chī begins with aspirated retroflex ch."
+        },
+        {
+          "promptVi": "Từ '老师' (Lǎoshī - Giáo viên) chứa âm uốn lưỡi nào?",
+          "promptEn": "Which retroflex initial is in '老师' (Lǎoshī)?",
+          "cue": "老师",
+          "correct": "sh",
+          "options": [
+            "sh",
+            "zh",
+            "ch",
+            "r"
+          ],
+          "explanationVi": "Chữ shī bắt đầu bằng thanh mẫu sh.",
+          "explanationEn": "Shī begins with retroflex sh."
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-5",
+      "stageNum": 5,
+      "titleVi": "Ải 5: Khẩu Ngữ Phố Phường & Giới Trẻ Đương Đại",
+      "titleEn": "Stage 5: Street Slang & Beijing Flavor Final Boss",
+      "descVi": "Chinh phục những từ ngữ cực thịnh hành trên Douyin, Weibo và đời sống phố phường.",
+      "descEn": "Trendy slang and reactive expressions alive on modern Chinese social media.",
+      "bossNameVi": "Xích Diễm Thần Long (Crimson Dragon)",
+      "bossNameEn": "Crimson Dragon Emperor",
+      "bossType": "dragon",
+      "bossHp": 160,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "太棒了",
+          "reading": "Tài bàng le",
+          "meaningVi": "Tuyệt vời ông mặt trời! / Đỉnh quá!",
+          "meaningEn": "Awesome! / Fantastic!",
+          "hint": "Tài (thanh 4) + bàng (thanh 4) + le (thanh nhẹ)"
+        },
+        {
+          "char": "算了",
+          "reading": "Suàn le",
+          "meaningVi": "Thôi bỏ đi / Thôi dẹp đi / Thôi xong",
+          "meaningEn": "Forget it / Let it be",
+          "hint": "Câu cửa miệng khi không muốn bận tâm nữa"
+        },
+        {
+          "char": "加油",
+          "reading": "Jiāyóu",
+          "meaningVi": "Cố lên! / Thêm dầu nào! (Khẩu hiệu cổ vũ số 1)",
+          "meaningEn": "Add oil! / Keep it up!",
+          "hint": "Nghĩa đen là châm dầu/nạp nhiên liệu"
+        },
+        {
+          "char": "牛逼",
+          "reading": "Niúbī",
+          "meaningVi": "Quá trâu bò / Quá đỉnh cao (Tiếng lóng cực mạnh)",
+          "meaningEn": "Badass / Super awesome (Slang)",
+          "hint": "Thường viết tắt là NB"
+        }
+      ],
+      "bossQuestions": [
+        {
+          "promptVi": "Để cổ vũ bạn bè cố lên trong một kỳ thi hay trận đấu, người Trung Quốc hô:",
+          "promptEn": "To cheer someone on in China, what iconic phrase do they shout?",
+          "cue": "Cố lên!",
+          "correct": "加油! (Jiāyóu!)",
+          "options": [
+            "加油! (Jiāyóu!)",
+            "算了! (Suàn le!)",
+            "救命! (Jiùmìng!)",
+            "快走! (Kuài zǒu!)"
+          ],
+          "explanationVi": "Jiāyóu nghĩa đen là châm dầu, nghĩa bóng là Cố lên!",
+          "explanationEn": "Jiāyóu ('add oil') is the premier Chinese cheer."
+        },
+        {
+          "promptVi": "Khi muốn nói 'Thôi dẹp đi, đừng bận tâm nữa', người bản xứ dùng từ nào?",
+          "promptEn": "Which phrase means 'Forget it / Let it go'?",
+          "cue": "Thôi bỏ đi",
+          "correct": "算了 (Suàn le)",
+          "options": [
+            "算了 (Suàn le)",
+            "太棒了 (Tài bàng le)",
+            "很好 (Hěn hǎo)",
+            "谢谢 (Xièxie)"
+          ],
+          "explanationVi": "Suàn le mang nghĩa Thôi bỏ đi.",
+          "explanationEn": "Suàn le means 'Forget about it'."
+        },
+        {
+          "promptVi": "'太棒了' (Tài bàng le) thể hiện cảm xúc gì?",
+          "promptEn": "What emotion does '太棒了' (Tài bàng le) express?",
+          "cue": "太棒了",
+          "correct": "Khen ngợi điều gì đó vô cùng tuyệt vời, xuất sắc",
+          "options": [
+            "Khen ngợi điều gì đó vô cùng tuyệt vời, xuất sắc",
+            "Chê bai đồ ăn dở",
+            "Tức giận khi bị trễ tàu",
+            "Lời xin lỗi chân thành"
+          ],
+          "explanationVi": "Tài bàng le nghĩa là Tuyệt vời quá!",
+          "explanationEn": "Tài bàng le expresses delight / enthusiasm."
+        },
+        {
+          "promptVi": "Từ lóng '牛逼' (Niúbī, viết tắt NB) của giới trẻ Trung Quốc mang nghĩa gì?",
+          "promptEn": "What does the popular youth slang '牛逼' (Niúbī / NB) mean?",
+          "cue": "牛逼",
+          "correct": "Cực kỳ đỉnh cao, 'trâu bò', ấn tượng",
+          "options": [
+            "Cực kỳ đỉnh cao, 'trâu bò', ấn tượng",
+            "Con bò đang ăn cỏ",
+            "Rất buồn ngủ",
+            "Món thịt bò xào"
+          ],
+          "explanationVi": "Niúbī là tiếng lóng khen cái gì đó quá đỉnh.",
+          "explanationEn": "Niúbī is very popular slang for badass / awesome."
+        }
+      ]
+    }
+  ]
+};
+QUEST_CAMPAIGNS['ja'] = QUEST_CAMPAIGNS['ja-JP'];
+QUEST_CAMPAIGNS['en'] = QUEST_CAMPAIGNS['en-US'];
+QUEST_CAMPAIGNS['ko'] = QUEST_CAMPAIGNS['ko-KR'];
+QUEST_CAMPAIGNS['zh'] = QUEST_CAMPAIGNS['zh-CN'];
+
+if (typeof window !== 'undefined') {
+  window.QUEST_CAMPAIGNS = QUEST_CAMPAIGNS;
+}
+if (typeof global !== 'undefined') {
+  global.QUEST_CAMPAIGNS = QUEST_CAMPAIGNS;
+  global.LINGUA_DATA = LINGUA_DATA;
+  global.LANG_DATA = LINGUA_DATA;
+}
+
+// ============================================================================
+// STROKE ORDER DATABASE & SHOP CATALOG
+// ============================================================================
+const STROKE_DATABASE = {
+  // Hiragana Core
+  'あ': [
+    [[20, 32], [80, 32]],
+    [[50, 16], [48, 86]],
+    [[66, 42], [32, 74], [18, 54], [44, 38], [80, 52], [68, 82]]
+  ],
+  'い': [
+    [[30, 26], [26, 68], [34, 72]],
+    [[70, 36], [74, 62]]
+  ],
+  'う': [
+    [[44, 20], [56, 26]],
+    [[34, 40], [68, 42], [68, 66], [40, 84]]
+  ],
+  'え': [
+    [[46, 18], [54, 24]],
+    [[28, 42], [72, 42], [30, 74], [72, 74]]
+  ],
+  'お': [
+    [[20, 32], [65, 32]],
+    [[45, 18], [45, 74], [30, 74], [68, 54], [74, 74]],
+    [[72, 26], [78, 36]]
+  ],
+  'か': [
+    [[28, 28], [58, 28], [52, 74], [44, 70]],
+    [[40, 16], [32, 82]],
+    [[68, 28], [76, 40]]
+  ],
+  'き': [
+    [[32, 30], [68, 30]],
+    [[28, 44], [72, 44]],
+    [[54, 18], [44, 68], [52, 74]],
+    [[38, 74], [50, 84], [64, 76]]
+  ],
+  'く': [
+    [[65, 24], [32, 50], [68, 78]]
+  ],
+  'け': [
+    [[30, 20], [28, 76], [34, 80]],
+    [[45, 34], [75, 34]],
+    [[62, 18], [62, 82]]
+  ],
+  'こ': [
+    [[32, 34], [68, 34], [64, 40]],
+    [[32, 68], [68, 68]]
+  ],
+
+  // Katakana Core
+  'ア': [
+    [[30, 28], [70, 28], [65, 48]],
+    [[62, 48], [34, 82]]
+  ],
+  'イ': [
+    [[58, 22], [36, 52]],
+    [[46, 44], [46, 82]]
+  ],
+  'ウ': [
+    [[50, 16], [50, 26]],
+    [[34, 38], [32, 48]],
+    [[34, 44], [68, 44], [60, 80]]
+  ],
+  'エ': [
+    [[34, 26], [66, 26]],
+    [[50, 26], [50, 74]],
+    [[26, 74], [74, 74]]
+  ],
+  'オ': [
+    [[28, 34], [72, 34]],
+    [[50, 18], [50, 74], [42, 68]],
+    [[48, 42], [30, 74]]
+  ],
+  'カ': [
+    [[30, 30], [68, 30], [62, 78], [52, 72]],
+    [[48, 18], [32, 82]]
+  ],
+  'キ': [
+    [[32, 32], [68, 32]],
+    [[28, 48], [72, 48]],
+    [[52, 18], [38, 82]]
+  ],
+  'ク': [
+    [[52, 22], [34, 48]],
+    [[34, 48], [68, 48], [48, 82]]
+  ],
+  'ケ': [
+    [[52, 20], [32, 50]],
+    [[32, 50], [74, 50]],
+    [[56, 32], [54, 82]]
+  ],
+  'コ': [
+    [[30, 32], [70, 32], [70, 72]],
+    [[30, 72], [70, 72]]
+  ],
+
+  // Hangul Core
+  'ㄱ': [
+    [[28, 34], [72, 34], [72, 76]]
+  ],
+  'ㄴ': [
+    [[34, 26], [34, 74], [72, 74]]
+  ],
+  'ㄷ': [
+    [[34, 28], [70, 28]],
+    [[34, 28], [34, 74], [70, 74]]
+  ],
+  'ㄹ': [
+    [[30, 28], [68, 28], [68, 48]],
+    [[30, 48], [68, 48]],
+    [[30, 48], [30, 74], [70, 74]]
+  ],
+  'ㅁ': [
+    [[34, 28], [34, 74]],
+    [[34, 28], [68, 28], [68, 74]],
+    [[34, 74], [68, 74]]
+  ],
+  'ㅏ': [
+    [[42, 18], [42, 82]],
+    [[42, 50], [72, 50]]
+  ],
+  'ㅑ': [
+    [[40, 18], [40, 82]],
+    [[40, 42], [68, 42]],
+    [[40, 60], [68, 60]]
+  ],
+  'ㅓ': [
+    [[28, 50], [58, 50]],
+    [[58, 18], [58, 82]]
+  ],
+  'ㅕ': [
+    [[30, 42], [58, 42]],
+    [[30, 60], [58, 60]],
+    [[58, 18], [58, 82]]
+  ],
+  'ㅗ': [
+    [[50, 24], [50, 58]],
+    [[24, 58], [76, 58]]
+  ],
+
+  // Hanzi Core
+  '一': [
+    [[22, 50], [78, 50]]
+  ],
+  '二': [
+    [[32, 36], [68, 36]],
+    [[24, 68], [76, 68]]
+  ],
+  '三': [
+    [[32, 30], [68, 30]],
+    [[36, 50], [64, 50]],
+    [[22, 72], [78, 72]]
+  ],
+  '人': [
+    [[50, 22], [30, 78]],
+    [[44, 44], [72, 78]]
+  ],
+  '大': [
+    [[22, 44], [78, 44]],
+    [[50, 20], [30, 80]],
+    [[48, 44], [72, 80]]
+  ],
+  '天': [
+    [[30, 30], [70, 30]],
+    [[20, 50], [80, 50]],
+    [[50, 30], [30, 84]],
+    [[50, 50], [74, 84]]
+  ],
+  '口': [
+    [[32, 30], [32, 74]],
+    [[32, 30], [68, 30], [68, 74]],
+    [[32, 74], [68, 74]]
+  ],
+  '日': [
+    [[32, 26], [32, 76]],
+    [[32, 26], [68, 26], [68, 76]],
+    [[32, 50], [68, 50]],
+    [[32, 76], [68, 76]]
+  ],
+  '月': [
+    [[34, 26], [34, 82]],
+    [[34, 26], [68, 26], [68, 82]],
+    [[34, 45], [68, 45]],
+    [[34, 64], [68, 64]]
+  ],
+  '木': [
+    [[24, 46], [76, 46]],
+    [[50, 20], [50, 84]],
+    [[50, 46], [28, 78]],
+    [[50, 46], [72, 78]]
+  ],
+
+  // English Core
+  'A': [
+    [[50, 18], [28, 80]],
+    [[50, 18], [72, 80]],
+    [[36, 54], [64, 54]]
+  ],
+  'B': [
+    [[32, 20], [32, 80]],
+    [[32, 20], [60, 20], [60, 48], [32, 48]],
+    [[32, 48], [64, 48], [64, 80], [32, 80]]
+  ],
+  'C': [
+    [[68, 30], [36, 30], [30, 50], [36, 74], [68, 74]]
+  ],
+  'D': [
+    [[32, 20], [32, 80]],
+    [[32, 20], [68, 35], [68, 65], [32, 80]]
+  ],
+  'E': [
+    [[32, 20], [32, 80]],
+    [[32, 20], [68, 20]],
+    [[32, 50], [60, 50]],
+    [[32, 80], [68, 80]]
+  ]
+};
+
+function getStrokeData(char) {
+  if (!char) return null;
+  const c = char.trim();
+  if (STROKE_DATABASE[c]) return STROKE_DATABASE[c];
+  if (STROKE_DATABASE[c.toUpperCase()]) return STROKE_DATABASE[c.toUpperCase()];
+  
+  // Intelligent Fallback: 2-3 stroke standard directional guidance
+  return [
+    [[30, 28], [70, 28]],
+    [[50, 24], [50, 76]],
+    [[32, 76], [68, 76]]
+  ];
+}
+
+const SHOP_ITEMS = [
+  // Avatar Frames
+  {
+    id: 'frame-sakura',
+    nameVi: 'Viền Hoa Anh Đào',
+    nameEn: 'Sakura Petal Frame',
+    category: 'frames',
+    price: 100,
+    icon: '🌸',
+    descVi: 'Viền hồng ánh sáng hoa anh đào rơi lãng mạn',
+    descEn: 'Soft glowing pink cherry blossom frame'
+  },
+  {
+    id: 'frame-dragon',
+    nameVi: 'Hào Quang Lửa Rồng',
+    nameEn: 'Dragon Flame Frame',
+    category: 'frames',
+    price: 200,
+    icon: '🔥',
+    descVi: 'Viền lửa rồng phương Đông rực cháy dũng mãnh',
+    descEn: 'Blazing dragon flame animated border'
+  },
+  {
+    id: 'frame-cyber',
+    nameVi: 'Khung Neon Cyber',
+    nameEn: 'Cyber Neon Frame',
+    category: 'frames',
+    price: 300,
+    icon: '⚡',
+    descVi: 'Viền neon xanh cyan công nghệ tương lai',
+    descEn: 'Pulsing electric cyan neon border'
+  },
+  {
+    id: 'frame-royal',
+    nameVi: 'Vương Miện Hoàng Gia',
+    nameEn: 'Royal Crown Frame',
+    category: 'frames',
+    price: 500,
+    icon: '👑',
+    descVi: 'Khung vàng hoàng gia nạm ngọc lung linh',
+    descEn: 'Regal golden border with glistening rubies'
+  },
+
+  // Custom Titles
+  {
+    id: 'title-kyoto',
+    nameVi: 'Lãng Khách Kyoto',
+    nameEn: 'Kyoto Wanderer',
+    category: 'titles',
+    price: 120,
+    icon: '⛩️',
+    descVi: 'Danh hiệu lãng khách ngao du xứ sở Phù Tang',
+    descEn: 'Title of the poetic traveler in ancient Kyoto'
+  },
+  {
+    id: 'title-shadowing',
+    nameVi: 'Bậc Thầy Shadowing',
+    nameEn: 'Shadowing Master',
+    category: 'titles',
+    price: 250,
+    icon: '🎙️',
+    descVi: 'Kỹ năng nhại giọng đạt chuẩn ngữ điệu bản xứ',
+    descEn: 'Master of real-time native speech imitation'
+  },
+  {
+    id: 'title-polyglot',
+    nameVi: 'Chúa Tể Ngôn Ngữ',
+    nameEn: 'Polyglot Sovereign',
+    category: 'titles',
+    price: 400,
+    icon: '🌍',
+    descVi: 'Thống trị cả 4 ngôn ngữ Nhật, Anh, Hàn, Trung',
+    descEn: 'Master of Japanese, English, Korean, Chinese'
+  },
+  {
+    id: 'title-voyager',
+    nameVi: 'Nhà Du Hành Thời Gian',
+    nameEn: 'Cosmic Voyager',
+    category: 'titles',
+    price: 600,
+    icon: '🚀',
+    descVi: 'Vươn tầm vũ trụ tri thức và văn hoá nhân loại',
+    descEn: 'Exploring the infinite universe of languages'
+  }
+];
+
+if (typeof window !== 'undefined') {
+  window.STROKE_DATABASE = STROKE_DATABASE;
+  window.getStrokeData = getStrokeData;
+  window.SHOP_ITEMS = SHOP_ITEMS;
+}
+if (typeof global !== 'undefined') {
+  global.STROKE_DATABASE = STROKE_DATABASE;
+  global.getStrokeData = getStrokeData;
+  global.SHOP_ITEMS = SHOP_ITEMS;
+}

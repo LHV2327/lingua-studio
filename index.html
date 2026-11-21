@@ -19,13 +19,30 @@
   <!-- 60FPS Ambient Aurora & Particle Canvas -->
   <canvas id="ambientCanvas" class="ambient-canvas" style="position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none !important; z-index: -1;"></canvas>
 
-  <div class="app-container" style="position: relative; z-index: 1;">
+  <div class="app-container" style="position: relative; z-index: 10;">
     <!-- Top Header -->
     <header class="app-header glass-card">
       <div class="brand">
-        <div class="logo-orb">
-          <span class="orb-core"></span>
-          <span class="orb-ring"></span>
+        <div class="brand-logo" aria-label="LinguaStudio Logo" title="LinguaStudio">
+          <svg width="42" height="42" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4f46e5" />
+                <stop offset="100%" stop-color="#06b6d4" />
+              </linearGradient>
+              <linearGradient id="logoWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="100%" stop-color="#a5f3fc" />
+              </linearGradient>
+            </defs>
+            <rect width="44" height="44" rx="13" fill="url(#logoBgGrad)" />
+            <rect width="44" height="44" rx="13" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1.2" />
+            <path d="M12 12C9.8 12 8 13.8 8 16V23C8 25.2 9.8 27 12 27H15V31.5L20.5 27H32C34.2 27 36 25.2 36 23V16C36 13.8 34.2 12 32 12H12Z" fill="rgba(255, 255, 255, 0.12)" stroke="url(#logoWaveGrad)" stroke-width="1.6" stroke-linejoin="round"/>
+            <line x1="15" y1="18" x2="15" y2="22" stroke="#a5f3fc" stroke-width="2.2" stroke-linecap="round" />
+            <line x1="19.5" y1="15.5" x2="19.5" y2="24.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" />
+            <line x1="24" y1="13.5" x2="24" y2="26.5" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
+            <line x1="28.5" y1="17" x2="28.5" y2="23" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+          </svg>
         </div>
         <div class="brand-text">
           <div class="brand-row">
@@ -57,6 +74,38 @@
         </div>
       </div>
 
+      <!-- Gamification & Habit Loop (Streak, XP, Mastery) -->
+      <div class="gamification-bar" id="gamificationBar">
+        <!-- Daily Streak -->
+        <div class="game-stat-pill streak-pill" id="streakPill" title="Chuỗi ngày học liên tục (Daily Streak)">
+          <span class="stat-icon">🔥</span>
+          <span class="stat-val" id="streakCount">1</span>
+          <span class="stat-unit" data-i18n="streakUnit">ngày</span>
+        </div>
+
+        <!-- Total XP -->
+        <div class="game-stat-pill xp-pill" id="xpPill" title="Điểm kinh nghiệm (Total XP)">
+          <span class="stat-icon">⚡</span>
+          <span class="stat-val" id="xpCount">0</span>
+          <span class="stat-unit">XP</span>
+        </div>
+
+        <!-- Mastery Level Bar -->
+        <div class="game-stat-pill level-pill" id="levelPill" title="Cấp bậc thành thạo">
+          <span class="level-badge" id="levelBadge">Lv.1</span>
+          <div class="mastery-bar-wrap" title="Tiến trình lên cấp">
+            <div class="mastery-bar-fill" id="masteryBarFill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Lingua Coins Counter -->
+        <div class="game-stat-pill coins-pill" id="coinsPill" title="Tiền xu học tập (Lingua Coins)">
+          <span class="stat-icon">🪙</span>
+          <span class="stat-val" id="coinsCount">150</span>
+          <span class="stat-unit">Xu</span>
+        </div>
+      </div>
+
       <!-- Header Utilities -->
       <div class="header-actions">
         <!-- Friends / Study Buddies Button -->
@@ -80,6 +129,67 @@
           <span class="count-badge warning" id="weakSpotsCountBadge">0</span>
         </button>
 
+        <!-- Cosmetics Shop Button -->
+        <button class="icon-btn-text glass-pill shop-header-btn" id="btnOpenShop" title="Cửa hàng quà tặng & khung avatar">
+          <span class="btn-icon">🛍️</span>
+          <span class="btn-label" data-i18n="shopBtn">Cửa hàng</span>
+        </button>
+
+        <!-- User Profile / Login Button with Equipped Frame -->
+        <button class="profile-header-btn glass-pill" id="btnOpenUserProfile" title="Hồ sơ học viên & Đăng nhập">
+          <div class="user-avatar-framed" id="headerUserAvatarWrap">
+            <span class="avatar-emoji" id="headerUserAvatarEmoji">🦊</span>
+          </div>
+          <div class="header-profile-info">
+            <span class="header-username" id="headerUsername">Học viên</span>
+            <span class="header-user-title" id="headerUserTitle">Tân thủ</span>
+          </div>
+        </button>
+
+        <!-- Audio Controls Container with Volume Popover -->
+        <div class="audio-controls-group">
+          <!-- Procedural Web Audio SFX Toggle Button -->
+          <button class="icon-btn-text glass-pill" id="btnToggleSfx" title="Bật/Tắt âm thanh hiệu ứng (SFX)">
+            <span class="btn-icon" id="sfxIcon">🔊</span>
+            <span class="btn-label" data-i18n="sfxToggle">SFX</span>
+          </button>
+
+          <!-- Procedural Web Audio BGM Toggle Button -->
+          <button class="icon-btn-text glass-pill" id="btnToggleBgm" title="Bật/Tắt nhạc nền văn hóa (BGM)">
+            <span class="btn-icon" id="bgmIcon">🎵</span>
+            <span class="btn-label">BGM</span>
+          </button>
+
+          <!-- Audio Settings Slider Button -->
+          <button class="icon-btn-text glass-pill" id="btnAudioSettings" title="Cài đặt âm lượng BGM / SFX">
+            <span class="btn-icon">🎚️</span>
+          </button>
+
+          <!-- Audio Settings Popover -->
+          <div class="audio-settings-popover" id="audioSettingsPopover" hidden>
+            <div class="popover-header">
+              <span class="popover-title">🔊 Cài Đặt Âm Lượng</span>
+              <button class="popover-close-btn" id="btnCloseAudioSettings" type="button" aria-label="Đóng">&times;</button>
+            </div>
+            <div class="popover-body">
+              <div class="volume-slider-row">
+                <div class="volume-info">
+                  <span class="volume-name">🎵 Nhạc nền (BGM)</span>
+                  <span class="volume-pct" id="bgmVolumeLabel">70%</span>
+                </div>
+                <input type="range" class="tactile-range" id="bgmVolumeSlider" min="0" max="100" value="70">
+              </div>
+              <div class="volume-slider-row">
+                <div class="volume-info">
+                  <span class="volume-name">💥 Hiệu ứng (SFX)</span>
+                  <span class="volume-pct" id="sfxVolumeLabel">65%</span>
+                </div>
+                <input type="range" class="tactile-range" id="sfxVolumeSlider" min="0" max="100" value="65">
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- UI Language Switcher (VI / EN) -->
         <div class="ui-locale-toggle glass-pill">
           <button class="locale-btn active" data-locale="vi">VI</button>
@@ -92,7 +202,11 @@
     <!-- Navigation Tabs with Spring-Physics Sliding Indicator -->
     <nav class="main-nav glass-card" aria-label="Main Navigation">
       <div class="nav-indicator-pill" id="navIndicatorPill"></div>
-      <button class="nav-tab active" data-tab="tab-alphabet" id="tabBtnAlphabet">
+      <button class="nav-tab active" data-tab="tab-campaign" id="tabBtnCampaign">
+        <span class="tab-icon">🗺️</span>
+        <span class="tab-text" data-i18n="tabCampaign">Lộ trình Ải</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-alphabet" id="tabBtnAlphabet">
         <span class="tab-icon">🔤</span>
         <span class="tab-text" data-i18n="tabAlphabet">Bảng âm & Chữ cái</span>
       </button>
@@ -115,7 +229,50 @@
     <main class="main-content">
 
       <!-- ================= TAB 1: BẢNG ÂM & CHỮ CÁI ================= -->
-      <section class="tab-pane active" id="tab-alphabet">
+      <!-- ================= TAB 0: LỘ TRÌNH THÁM HIỂM (CAMPAIGN PATH) ================= -->
+      <section class="tab-pane active" id="tab-campaign">
+        <div class="campaign-layout">
+          <!-- Campaign Top Header Banner -->
+          <div class="campaign-hero glass-card tactile-card">
+            <div class="campaign-hero-content">
+              <div class="campaign-badge-row">
+                <span class="campaign-theme-badge" id="campaignThemeBadge">🇯🇵 Xứ Sở Hoa Anh Đào & Núi Phú Sĩ</span>
+                <span class="campaign-sub-badge" id="campaignCurrentLangLabel">Tiếng Nhật (Nihongo)</span>
+              </div>
+              <h2 class="campaign-title" data-i18n="campaignTitle">Lộ Trình Thám Hiểm Ngôn Ngữ</h2>
+              <p class="campaign-subtitle" data-i18n="campaignSubtitle">Vượt qua 5 ải thử thách, luyện viết chữ, đánh bại Boss để làm chủ tiếng bản xứ!</p>
+              
+              <div class="campaign-progress-bar-wrap">
+                <div class="campaign-progress-meta">
+                  <span id="campaignProgressText">Tiến độ: Ải 1 / 5 (Mở khóa 20%)</span>
+                  <span id="campaignXpBadge" class="campaign-xp-badge">⚡ +50 XP mỗi Ải Boss</span>
+                </div>
+                <div class="campaign-track-bg">
+                  <div class="campaign-track-fill" id="campaignTrackFill" style="width: 20%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Winding Duolingo/Renshuu Quest Path -->
+          <div class="quest-path-wrapper" id="questPathWrapper">
+            <div class="quest-path-container" id="questPathContainer">
+              <!-- SVG Winding Path Background Line -->
+              <svg class="quest-path-svg" id="questPathSvg" preserveAspectRatio="none" viewBox="0 0 400 900">
+                <path id="questSvgPathLine" class="quest-svg-line" d="M 200 60 Q 330 180 200 250 T 70 430 T 200 610 T 330 760" fill="none" />
+              </svg>
+
+              <!-- Quest Nodes dynamically rendered by app.js -->
+              <div class="quest-nodes-list" id="questNodesList">
+                <!-- 5 Stage Nodes rendered via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB 1: BẢNG ÂM & CHỮ CÁI ================= -->
+      <section class="tab-pane" id="tab-alphabet">
         <!-- Sub-tabs for Alphabet / Scripts -->
         <div class="subtabs-bar" id="alphabetSubTabs">
           <!-- Dynamically populated based on active language -->
@@ -130,10 +287,16 @@
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                <input type="text" id="soundSearchInput" placeholder="Tìm âm, từ mẫu, romaji..." data-i18n-placeholder="searchPlaceholder">
+                <input type="text" id="soundSearchInput" placeholder="Tìm chữ cái, romaji, phiên âm..." data-i18n-placeholder="soundSearchPlaceholder">
               </div>
-              <div class="sound-stats" id="soundStatsText">
-                Hiển thị 46 âm
+              <div class="stage-toolbar-actions">
+                <button type="button" class="btn-quick-drill glass-pill" id="btnStartSoundQuiz" title="Khởi động bài luyện phản xạ 5 câu">
+                  <span class="drill-icon">⚡</span>
+                  <span class="drill-label" data-i18n="quickDrillBtn">Luyện tập nhanh</span>
+                </button>
+                <div class="sound-stats" id="soundStatsText">
+                  Hiển thị 46 âm
+                </div>
               </div>
             </div>
 
@@ -154,9 +317,11 @@
               <div class="inspector-header">
                 <div class="char-giant-box">
                   <span class="char-giant" id="inspectChar">あ</span>
-                  <span class="romaji-badge" id="inspectRomaji">a</span>
                 </div>
                 <div class="inspector-meta">
+                  <div class="inspect-phonetic-badge-wrap">
+                    <span class="romaji-badge" id="inspectRomaji">a</span>
+                  </div>
                   <h3 class="inspect-title" id="inspectTitle">Hiragana</h3>
                   <p class="inspect-type" id="inspectType">Nguyên âm cơ bản</p>
                   <div class="action-row">
@@ -221,6 +386,32 @@
                 </div>
               </div>
 
+                            <!-- Writing Pad Practice in Tab 1 Detail Panel -->
+              <div class="inspect-writing-section" id="inspectWritingSection">
+                <div class="inspect-writing-header">
+                  <h4 class="section-subtitle" data-i18n="practiceWriting">Tập viết chữ này:</h4>
+                  <div class="writing-tools">
+                    <button type="button" class="btn-tool-sm glass-pill" id="btnAnimateStrokesTab1" title="Xem hoạt họa thứ tự nét (Animate Strokes)">
+                      <span class="btn-icon">▶</span>
+                      <span>Xem nét</span>
+                    </button>
+                    <button type="button" class="btn-tool-sm glass-pill" id="btnToggleGuideTab1" title="Bật/Tắt mẫu mờ">
+                      <span class="btn-icon">👁️</span>
+                      <span data-i18n="toggleGuide">Mẫu mờ</span>
+                    </button>
+                    <button type="button" class="btn-tool-sm glass-pill" id="btnClearCanvasTab1" title="Xóa bảng viết">
+                      <span class="btn-icon">🧹</span>
+                      <span data-i18n="clearCanvas">Xóa</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="writing-canvas-wrapper">
+                  <canvas id="tab1WritingCanvas" width="280" height="180" class="writing-canvas"></canvas>
+                  <div class="canvas-crosshair"></div>
+                  <div class="canvas-watermark" id="tab1CanvasWatermark"></div>
+                </div>
+              </div>
+
               <!-- Example Words Section -->
               <div class="example-words-section">
                 <h4 class="section-subtitle" data-i18n="exampleWordsTitle">Từ vựng minh họa:</h4>
@@ -243,15 +434,21 @@
 
       <!-- ================= TAB 2: GIAO TIẾP BẢN XỨ & CỤM TỪ ================= -->
       <section class="tab-pane" id="tab-expressions">
-        <!-- Sub-tab Switcher: Cụm từ thông dụng (Key Phrases) vs Câu giao tiếp thực tế (Full Sentences) -->
-        <div class="expressions-subtabs" id="expressionsSubTabs">
-          <button class="exp-subtab-btn active" data-exptab="phrases" id="expSubTabPhrases">
-            <span class="icon">🧩</span>
-            <span data-i18n="subtabPhrases">Cụm từ thông dụng (Key Phrases)</span>
-          </button>
-          <button class="exp-subtab-btn" data-exptab="sentences" id="expSubTabSentences">
-            <span class="icon">💬</span>
-            <span data-i18n="subtabSentences">Câu giao tiếp thực tế (Full Sentences)</span>
+        <!-- Sub-tab Switcher & Quick Drill Action Bar -->
+        <div class="expressions-toolbar">
+          <div class="expressions-subtabs" id="expressionsSubTabs">
+            <button class="exp-subtab-btn active" data-exptab="phrases" id="expSubTabPhrases">
+              <span class="icon">🧩</span>
+              <span data-i18n="subtabPhrases">Cụm từ thông dụng (Key Phrases)</span>
+            </button>
+            <button class="exp-subtab-btn" data-exptab="sentences" id="expSubTabSentences">
+              <span class="icon">💬</span>
+              <span data-i18n="subtabSentences">Câu giao tiếp thực tế (Full Sentences)</span>
+            </button>
+          </div>
+          <button type="button" class="btn-quick-drill glass-pill" id="btnStartExpQuiz" title="Khởi động bài luyện phản xạ giao tiếp 5 câu">
+            <span class="drill-icon">⚡</span>
+            <span class="drill-label" data-i18n="quickDrillBtn">Luyện tập nhanh</span>
           </button>
         </div>
 
@@ -289,12 +486,37 @@
           <!-- Left: Practice Prompt & Waveform -->
           <div class="lab-card glass-card">
             <div class="lab-header">
-              <span class="lab-badge" data-i18n="labBadge">Phòng Luyện Phát Âm AI</span>
-              <div class="sentence-selector-wrap">
-                <label for="labSentenceSelect" data-i18n="chooseSentence">Chọn mẫu câu:</label>
-                <select id="labSentenceSelect" class="glass-select">
-                  <!-- Populated via JS -->
-                </select>
+              <div class="lab-header-left">
+                <span class="lab-badge" data-i18n="labBadge">Phòng Luyện Phát Âm AI</span>
+                <div class="lab-mode-toggle glass-pill">
+                  <button type="button" class="mode-btn active" id="btnModeCurated">📚 Kho câu mẫu</button>
+                  <button type="button" class="mode-btn" id="btnModeCustom">✍️ Tự nhập câu</button>
+                </div>
+              </div>
+
+              <div class="sentence-selector-wrap" id="curatedSentenceWrap">
+                <div class="sentence-picker-header">
+                  <label class="sentence-select-label" data-i18n="chooseSentence">Chọn mẫu câu luyện:</label>
+                  <!-- Category Filter Pills -->
+                  <div class="lab-filter-pills" id="labFilterPills">
+                    <button type="button" class="lab-filter-pill active" data-filter="all">Tất cả</button>
+                    <button type="button" class="lab-filter-pill" data-filter="studio">🎙️ Cơ bản</button>
+                    <button type="button" class="lab-filter-pill" data-filter="phrases">🧩 Cụm từ</button>
+                    <button type="button" class="lab-filter-pill" data-filter="expressions">💬 Giao tiếp</button>
+                  </div>
+                </div>
+                <!-- Scrollable Clickable Tactile Cards -->
+                <div class="sentence-cards-scroller" id="sentenceCardsScroller">
+                  <!-- Rendered dynamically by app.js with zero undefined -->
+                </div>
+              </div>
+
+              <div class="custom-sentence-wrap" id="customSentenceWrap" style="display: none;">
+                <label for="customSentenceInput" class="sentence-select-label">Nhập câu muốn luyện nói:</label>
+                <div class="custom-sentence-input-row">
+                  <input type="text" id="customSentenceInput" class="glass-input custom-input" placeholder="Nhập câu tiếng Nhật/Anh/Hàn/Trung muốn luyện..." maxlength="120">
+                  <button type="button" class="btn-action-primary btn-apply-custom" id="btnApplyCustomSentence">Áp dụng</button>
+                </div>
               </div>
             </div>
 
@@ -623,31 +845,57 @@
     </div>
   </div>
 
-  <!-- Modal: User Profile Setup -->
+  <!-- User Profile & Account Setup Modal -->
   <div class="modal-overlay" id="profileModalOverlay">
-    <div class="modal-card glass-card">
-      <div class="modal-header">
-        <h3 data-i18n="profileModalTitle">Hồ Sơ Học Viên Của Bạn</h3>
+    <div class="profile-modal-card glass-card tactile-card">
+      <div class="profile-modal-header">
+        <div class="profile-header-title-row">
+          <span class="profile-icon-badge">👤</span>
+          <div>
+            <h3 class="profile-modal-title" data-i18n="profileModalTitle">Hồ Sơ Học Viên & Tài Khoản</h3>
+            <span class="profile-modal-subtitle">Đồng bộ dữ liệu học tập, bảo vệ tài khoản và huy hiệu cộng đồng</span>
+          </div>
+        </div>
         <button class="modal-close" id="btnCloseProfileModal">✕</button>
       </div>
-      <form class="modal-body" id="profileForm">
+
+      <form class="profile-form modal-body" id="profileForm">
+        <!-- Avatar Preview with Frame & Stats -->
+        <div class="profile-avatar-preview-box">
+          <div class="user-avatar-framed large-framed" id="profileModalAvatarWrap">
+            <span class="avatar-emoji" id="profileModalAvatarEmoji">🦊</span>
+          </div>
+          <div class="profile-summary-meta">
+            <span class="profile-meta-title" id="profileModalEquippedTitle">Tân thủ</span>
+            <span class="profile-meta-stats" id="profileModalStats">Cấp 1 • 0 XP • 150 🪙</span>
+          </div>
+        </div>
+
+        <!-- Avatar Emoji Selector (10 emojis) -->
         <div class="form-group">
-          <label for="profileNickname" data-i18n="profileNicknameLabel">Biệt danh / Tên hiển thị:</label>
-          <input type="text" id="profileNickname" class="glass-input" required maxlength="25" placeholder="Ví dụ: Minh_Tokyo">
+          <label class="form-label" data-i18n="profileAvatarLabel">Chọn Biểu Tượng Avatar (10 lựa chọn):</label>
+          <div class="avatar-selector avatar-emoji-picker" id="avatarSelector">
+            <button type="button" class="avatar-option active" data-avatar="🦊">🦊</button>
+            <button type="button" class="avatar-option" data-avatar="🐱">🐱</button>
+            <button type="button" class="avatar-option" data-avatar="🐼">🐼</button>
+            <button type="button" class="avatar-option" data-avatar="🦁">🦁</button>
+            <button type="button" class="avatar-option" data-avatar="🐯">🐯</button>
+            <button type="button" class="avatar-option" data-avatar="🐉">🐉</button>
+            <button type="button" class="avatar-option" data-avatar="🥷">🥷</button>
+            <button type="button" class="avatar-option" data-avatar="👑">👑</button>
+            <button type="button" class="avatar-option" data-avatar="🌸">🌸</button>
+            <button type="button" class="avatar-option" data-avatar="⚡">⚡</button>
+          </div>
         </div>
 
         <div class="form-group">
-          <label data-i18n="profileAvatarLabel">Chọn Biểu Tượng:</label>
-          <div class="avatar-selector" id="avatarSelector">
-            <button type="button" class="avatar-option active" data-avatar="🐱">🐱</button>
-            <button type="button" class="avatar-option" data-avatar="🦊">🦊</button>
-            <button type="button" class="avatar-option" data-avatar="🐼">🐼</button>
-            <button type="button" class="avatar-option" data-avatar="🦁">🦁</button>
-            <button type="button" class="avatar-option" data-avatar="🚀">🚀</button>
-            <button type="button" class="avatar-option" data-avatar="⭐">⭐</button>
-            <button type="button" class="avatar-option" data-avatar="🌸">🌸</button>
-            <button type="button" class="avatar-option" data-avatar="🎧">🎧</button>
-          </div>
+          <label for="profileNickname" class="form-label" data-i18n="profileNicknameLabel">Biệt danh / Username:</label>
+          <input type="text" id="profileNickname" class="tactile-input glass-input" required maxlength="25" placeholder="Ví dụ: HocVien_Pro">
+        </div>
+
+        <div class="form-group">
+          <label for="profilePin" class="form-label">Mã PIN bảo mật (4 chữ số):</label>
+          <input type="password" id="profilePin" class="tactile-input glass-input" placeholder="Ví dụ: 1234" pattern="[0-9]{4}" maxlength="4">
         </div>
 
         <div class="form-row">
@@ -683,6 +931,349 @@
 
   <!-- Toast Notification Container -->
   <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Modal: 5-Question Active Recall Drill (Quiz) -->
+  <div class="modal-overlay quiz-modal-overlay" id="quizModalOverlay" style="display: none;">
+    <div class="quiz-card glass-card">
+      <div class="quiz-header">
+        <div class="quiz-header-left">
+          <span class="quiz-type-badge" id="quizTypeBadge">⚡ Luyện tập phản xạ</span>
+          <span class="quiz-counter-badge" id="quizCounterBadge">Câu 1 / 5</span>
+        </div>
+        <button class="modal-close" id="btnCloseQuizModal">✕</button>
+      </div>
+
+      <!-- Linear Progress Bar -->
+      <div class="quiz-progress-track">
+        <div class="quiz-progress-fill" id="quizProgressFill" style="width: 20%;"></div>
+      </div>
+
+      <!-- Active Question Stage -->
+      <div class="quiz-stage" id="quizQuestionStage">
+        <div class="quiz-combo-row">
+          <div class="quiz-combo-pill" id="quizComboPill" style="display: none;">
+            🔥 Chuỗi đúng x<span id="quizComboCount">1</span>
+          </div>
+        </div>
+
+        <div class="quiz-prompt-card">
+          <button type="button" class="quiz-audio-btn" id="btnQuizPlayAudio" title="Nghe lại âm thanh">
+            <span class="audio-icon">🔊</span>
+            <span class="audio-label" id="quizAudioBtnLabel">Nghe phát âm</span>
+          </button>
+          <div class="quiz-prompt-text" id="quizPromptText">Nghe âm thanh và chọn chữ cái / phiên âm tương ứng:</div>
+        </div>
+
+        <!-- 4 Multiple Choice Buttons Grid -->
+        <div class="quiz-choices-grid" id="quizChoicesContainer">
+          <!-- Populated via JS -->
+        </div>
+
+        <!-- Answer feedback banner -->
+        <div class="quiz-feedback-banner" id="quizFeedbackBanner" style="display: none;">
+          <span class="feedback-icon" id="quizFeedbackIcon"></span>
+          <span class="feedback-msg" id="quizFeedbackMsg"></span>
+        </div>
+      </div>
+
+      <!-- Result Stage (Hidden by default) -->
+      <div class="quiz-stage quiz-result-stage" id="quizResultStage" style="display: none;">
+        <div class="result-hero-icon" id="quizResultHeroIcon">🎉</div>
+        <h3 class="result-title" id="quizResultTitle">Hoàn thành bài luyện!</h3>
+        <p class="result-subtitle" id="quizResultSubtitle">Bạn vừa rèn luyện phản xạ ngôn ngữ siêu tốc.</p>
+        
+        <div class="result-stats-grid">
+          <div class="result-stat-card">
+            <span class="stat-number" id="quizResultScore">5/5</span>
+            <span class="stat-label">Độ chính xác</span>
+          </div>
+          <div class="result-stat-card highlight">
+            <span class="stat-number" id="quizResultXp">+50 XP</span>
+            <span class="stat-label">Kinh nghiệm thưởng</span>
+          </div>
+          <div class="result-stat-card">
+            <span class="stat-number" id="quizResultStreak">5</span>
+            <span class="stat-label">Combo cao nhất</span>
+          </div>
+        </div>
+
+        <div class="result-missed-alert" id="quizMissedAlert" style="display: none;">
+          <span class="alert-icon">🎯</span>
+          <span id="quizMissedText">Các mục chưa đúng đã được tự động lưu vào <strong>Cần sửa</strong> để luyện thêm!</span>
+        </div>
+
+        <div class="quiz-result-actions">
+          <button type="button" class="btn-action-secondary" id="btnQuizRetry">Luyện lại bài khác</button>
+          <button type="button" class="btn-action-primary" id="btnQuizFinish">Tuyệt vời, xong!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal: 3-Step Playable Quest Lesson & 2D Canvas Battle Arena -->
+  <div class="modal-overlay quest-modal-overlay" id="questModalOverlay" style="display: none;">
+    <div class="quest-modal-card glass-card tactile-card">
+      <!-- Modal Header with 3-Step Progress Indicator -->
+      <div class="quest-modal-header">
+        <div class="quest-modal-info">
+          <span class="quest-stage-tag" id="questModalStageTag">ẢI 1</span>
+          <h3 class="quest-stage-title" id="questModalTitle">5 Nguyên Âm Cội Nguồn</h3>
+        </div>
+        <div class="quest-step-indicators">
+          <div class="step-dot active" id="questStepDot1" title="Bước 1: Học nhanh">1</div>
+          <div class="step-connector" id="questStepConn1"></div>
+          <div class="step-dot" id="questStepDot2" title="Bước 2: Tập viết nét">2</div>
+          <div class="step-connector" id="questStepConn2"></div>
+          <div class="step-dot" id="questStepDot3" title="Bước 3: Khởi động Quiz">3</div>
+          <div class="step-connector" id="questStepConn3"></div>
+          <div class="step-dot" id="questStepDot4" title="Bước 4: Đấu Boss Ải">⚔️</div>
+        </div>
+        <button class="modal-close" id="btnCloseQuestModal" title="Đóng">✕</button>
+      </div>
+
+      <!-- STEP 1: HỌC NHANH (PREVIEW & TTS) -->
+      <div class="quest-step-body" id="questStep1Body">
+        <div class="step-intro-banner">
+          <span class="step-intro-icon">📖</span>
+          <p id="questStep1Desc">Làm quen với các ký tự và từ vựng cốt lõi của ải này. Bấm vào từng thẻ để nghe phát âm chuẩn bản xứ!</p>
+        </div>
+        <div class="quest-preview-grid" id="questPreviewGrid">
+          <!-- Populated by JS -->
+        </div>
+        <div class="quest-modal-footer">
+          <button type="button" class="btn-action-primary btn-tactile" id="btnQuestGoStep2">
+            <span>Bắt đầu tập viết ✍️</span>
+            <span class="arrow-icon">➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: TẬP VIẾT CHỮ (TRACING PAD) -->
+      <div class="quest-step-body" id="questStep2Body" style="display: none;">
+        <div class="step-intro-banner">
+          <span class="step-intro-icon">✍️</span>
+          <p>Tập vẽ và ghi nhớ nét chữ trên bảng viết cảm ứng. Luyện tập trí nhớ cơ bắp trước khi đấu Boss!</p>
+        </div>
+        
+        <div class="writing-studio-stage">
+          <!-- Item Switcher Bar -->
+          <div class="writing-item-switcher" id="writingItemSwitcher">
+            <button type="button" class="icon-btn-round" id="btnPrevWritingChar" title="Ký tự trước">◀</button>
+            <div class="current-char-info">
+              <span class="writing-char-large" id="writingTargetChar">あ</span>
+              <div class="writing-char-meta">
+                <strong id="writingTargetReading">a</strong>
+                <span id="writingTargetMeaning">Âm A chuẩn bản xứ</span>
+              </div>
+            </div>
+            <button type="button" class="icon-btn-round" id="btnNextWritingChar" title="Ký tự tiếp">▶</button>
+          </div>
+
+          <!-- Tracing Pad Canvas Container -->
+          <div class="tracing-pad-wrap">
+            <div class="canvas-box">
+              <canvas id="questWritingCanvas" width="300" height="300" class="tracing-canvas"></canvas>
+              <div class="canvas-crosshair"></div>
+              <div class="canvas-watermark" id="canvasWatermarkGuide">あ</div>
+            </div>
+            
+            <div class="tracing-toolbar">
+              <button type="button" class="btn-tool-tactile" id="btnAnimateStrokesQuest" title="Xem hoạt họa thứ tự nét vẽ (Animate Strokes)">
+                <span>▶ Xem nét viết</span>
+              </button>
+              <button type="button" class="btn-tool-tactile" id="btnToggleGuideQuest" title="Bật/Tắt chữ mẫu mờ">
+                <span>👁️ Mẫu mờ</span>
+              </button>
+              <button type="button" class="btn-tool-tactile" id="btnClearCanvasQuest" title="Xóa toàn bộ nét vẽ">
+                <span>🧹 Xóa nét</span>
+              </button>
+              <button type="button" class="btn-tool-tactile" id="btnAudioWritingChar" title="Nghe phát âm">
+                <span>🔊 Nghe</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="quest-modal-footer dual-footer">
+          <button type="button" class="btn-action-secondary btn-tactile" id="btnQuestBackStep1">
+            <span>◀ Xem lại mẫu</span>
+          </button>
+          <button type="button" class="btn-action-primary btn-tactile pulse-action" id="btnQuestGoStep3">
+            <span>Sang bước Khởi động ⚡</span>
+            <span class="arrow-icon">➔</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: KHỞI ĐỘNG (WARM-UP QUIZ) -->
+      <div class="quest-step-body" id="questStep3Body" style="display: none;">
+        <div class="warmup-quiz-wrapper">
+          <div class="warmup-header-row">
+            <div class="warmup-badge-wrap">
+              <span class="warmup-badge">⚡ KHỞI ĐỘNG NHANH</span>
+              <span class="warmup-counter" id="warmupCounterText">Câu 1 / 3</span>
+            </div>
+            <div class="warmup-progress-track">
+              <div class="warmup-progress-fill" id="warmupProgressFill" style="width: 33%;"></div>
+            </div>
+          </div>
+
+          <div class="warmup-card tactile-card">
+            <div class="warmup-prompt-row">
+              <button type="button" class="battle-audio-btn btn-tactile" id="btnWarmupAudioPrompt" title="Nghe câu hỏi">
+                <span>🔊 Nghe câu hỏi</span>
+              </button>
+              <div class="warmup-prompt-text" id="warmupPromptText">Chọn phát âm đúng của ký tự:</div>
+              <div class="warmup-cue-badge" id="warmupCueBadge">あ</div>
+            </div>
+
+            <div class="warmup-answers-grid" id="warmupAnswersGrid">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+
+          <div class="warmup-success-banner" id="warmupSuccessBanner" style="display: none;">
+            <div class="warmup-banner-content">
+              <span class="banner-icon">🎉</span>
+              <div class="banner-text">
+                <strong>Khởi động thành công xuất sắc!</strong>
+                <span>Bạn nhận được <strong>+20 🪙 Xu</strong> và <strong>+20 ⚡ XP</strong>!</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quest-modal-footer dual-footer">
+            <button type="button" class="btn-action-secondary btn-tactile" id="btnQuestBackStep2">
+              <span>◀ Tập viết lại</span>
+            </button>
+            <button type="button" class="btn-action-primary btn-tactile pulse-action" id="btnQuestGoStep4" disabled>
+              <span>Tiến vào Đấu Boss ⚔️</span>
+              <span class="arrow-icon">➔</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: ĐẤU BOSS ẢI (REAL 60FPS 2D CANVAS BATTLE ARENA) -->
+      <div class="quest-step-body" id="questStep4Body" style="display: none;">
+        <div class="battle-arena-wrapper">
+          <!-- Arena Top HUD: Player Hearts & Boss HP Bar -->
+          <div class="battle-hud-bar">
+            <!-- Player Status -->
+            <div class="battle-player-status">
+              <div class="player-avatar-mini" id="battlePlayerAvatar">🐱</div>
+              <div class="player-hud-info">
+                <span class="player-hud-name">Học Viên</span>
+                <div class="player-hearts-row" id="battlePlayerHearts">
+                  <span class="heart active">❤️</span>
+                  <span class="heart active">❤️</span>
+                  <span class="heart active">❤️</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Boss Status -->
+            <div class="battle-boss-status">
+              <div class="boss-hud-info">
+                <div class="boss-name-row">
+                  <span class="boss-badge">BOSS</span>
+                  <strong id="battleBossName">Slime Ngữ Âm</strong>
+                </div>
+                <div class="boss-hp-bar-track">
+                  <div class="boss-hp-bar-fill" id="battleBossHpFill" style="width: 100%;"></div>
+                  <span class="boss-hp-text" id="battleBossHpText">80 / 80 HP</span>
+                </div>
+              </div>
+              <div class="boss-avatar-mini" id="battleBossAvatar">👾</div>
+            </div>
+          </div>
+
+          <!-- Real 60fps 2D Battle Arena Canvas -->
+          <div class="battle-canvas-container">
+            <canvas id="bossBattleCanvas" width="640" height="260" class="battle-canvas"></canvas>
+            <div class="battle-hit-flash" id="battleHitFlash"></div>
+          </div>
+
+          <!-- Battle Question & Answer Controls -->
+          <div class="battle-controls-card">
+            <div class="battle-prompt-row">
+              <button type="button" class="battle-audio-btn btn-tactile" id="btnBattleAudioPrompt" title="Nghe câu hỏi">
+                <span>🔊 Nghe câu hỏi</span>
+              </button>
+              <div class="battle-question-text" id="battleQuestionText">Ký tự sau đây đọc là gì?</div>
+              <div class="battle-cue-badge" id="battleCueBadge">あ</div>
+            </div>
+
+            <!-- 4 Tactile Attack Choice Buttons -->
+            <div class="battle-answers-grid" id="battleAnswersGrid">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Battle Overlay: VICTORY -->
+        <div class="battle-overlay-card victory-overlay" id="battleVictoryOverlay" style="display: none;">
+          <div class="victory-icon-trophy">🏆</div>
+          <h3 class="victory-title">CHIẾN THẮNG BOSS ẢI!</h3>
+          <p class="victory-desc" id="victoryDescText">Bạn đã thuần thục kiến thức và đánh bại Boss thành công rực rỡ!</p>
+          <div class="victory-rewards-row">
+            <div class="reward-pill xp-reward">⚡ +50 XP</div>
+            <div class="reward-pill coin-reward">🪙 +50 Xu</div>
+            <div class="reward-pill unlock-reward">🔓 Mở Khóa Ải Mới</div>
+          </div>
+          <button type="button" class="btn-action-primary btn-tactile btn-large-finish" id="btnFinishBattleVictory">
+            Tiếp tục thám hiểm ➔
+          </button>
+        </div>
+
+        <!-- Battle Overlay: DEFEAT / RETRY -->
+        <div class="battle-overlay-card defeat-overlay" id="battleDefeatOverlay" style="display: none;">
+          <div class="defeat-icon-skull">💔</div>
+          <h3 class="defeat-title">BẠN ĐÃ KIỆT SỨC!</h3>
+          <p class="defeat-desc">Đừng nản lòng! Hãy ôn lại các từ vựng và thử thách lại một lần nữa.</p>
+          <button type="button" class="btn-action-secondary btn-tactile" id="btnRetryBattle">
+            Thử thách lại ngay ⚔️
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cosmetics Shop Modal -->
+  <div class="modal-overlay" id="shopModalOverlay" style="display: none;">
+    <div class="shop-modal-card glass-card tactile-card">
+      <div class="shop-modal-header">
+        <div class="shop-title-row">
+          <span class="shop-icon-tag">🛍️</span>
+          <div>
+            <h3 class="shop-title">Cửa Hàng Quà Tặng & Danh Hiệu</h3>
+            <span class="shop-subtitle">Dùng Xu (🪙) để sở hữu Khung Avatar và Danh hiệu độc quyền</span>
+          </div>
+        </div>
+        <div class="shop-user-balance">
+          <span>Số dư:</span>
+          <strong class="balance-tag"><span id="shopCoinsBalance">150</span> 🪙</strong>
+        </div>
+        <button class="modal-close" id="btnCloseShopModal" title="Đóng">✕</button>
+      </div>
+
+      <div class="shop-tabs-row">
+        <button type="button" class="shop-tab-btn active" data-shoptab="frames" id="shopTabFrames">
+          <span>🖼️ Khung Avatar</span>
+        </button>
+        <button type="button" class="shop-tab-btn" data-shoptab="titles" id="shopTabTitles">
+          <span>🏷️ Danh Hiệu</span>
+        </button>
+      </div>
+
+      <div class="shop-items-grid" id="shopItemsGrid">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- XP & Coins Toast Notification Container -->
+  <div class="xp-toast-container" id="xpToastContainer"></div>
 
   <!-- Scripts -->
   <script src="data.js"></script>

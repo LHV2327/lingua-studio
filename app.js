@@ -5,6 +5,16 @@
 (function () {
   'use strict';
 
+  // Safe requestAnimationFrame / cancelAnimationFrame for all environments
+  const safeRAF = (typeof window !== 'undefined' && window.requestAnimationFrame)
+    ? window.requestAnimationFrame.bind(window)
+    : (typeof requestAnimationFrame !== 'undefined' ? requestAnimationFrame : (cb) => setTimeout(cb, 16));
+
+  const safeCAF = (typeof window !== 'undefined' && window.cancelAnimationFrame)
+    ? window.cancelAnimationFrame.bind(window)
+    : (typeof cancelAnimationFrame !== 'undefined' ? cancelAnimationFrame : (id) => clearTimeout(id));
+
+
   // Firebase Realtime Database Configuration
   const FIREBASE_CONFIG = {
     apiKey: "AIzaSyDummyKeyForCompatClientSetupOnly",
@@ -26,8 +36,7 @@
 
   // Resolve Dataset safely from window or globals
   const LANG_DATA = (typeof window !== 'undefined' && (window.LANG_DATA || window.LINGUA_DATA)) ||
-                    (typeof LINGUA_DATA !== 'undefined' ? LINGUA_DATA :
-                    (typeof LANG_DATA !== 'undefined' ? LANG_DATA : {}));
+                    (typeof LINGUA_DATA !== 'undefined' ? LINGUA_DATA : {});
 
   // Safe localStorage helper
   function getSafeStorage(key, defaultVal) {
@@ -43,7 +52,7 @@
   const STATE = {
     uiLang: getSafeStorage('lingua_ui_lang', 'vi'),
     currentLang: getSafeStorage('lingua_selected_lang', 'ja-JP'),
-    activeTab: getSafeStorage('lingua_active_tab', 'tab-alphabet'),
+    activeTab: getSafeStorage('lingua_active_tab', 'tab-campaign'),
     
     // Tab 1 Alphabet
     alphabetCategory: null,
@@ -78,22 +87,86 @@
     userProfile: (function () {
       try {
         const stored = localStorage.getItem('lingua_user_profile');
-        if (stored) return JSON.parse(stored);
+        if (stored) {
+          const p = JSON.parse(stored);
+          if (!p.pin) p.pin = '1234';
+          if (!p.username) p.username = p.nickname || 'HocVien';
+          if (!p.equippedFrame) p.equippedFrame = 'frame-default';
+          if (!p.equippedTitle) p.equippedTitle = 'title-novice';
+          return p;
+        }
       } catch (e) {}
       const randId = 'user_' + Math.random().toString(36).substring(2, 9);
       const defaultProf = {
         userId: randId,
+        username: 'HocVien',
         nickname: 'Học viên_' + Math.floor(100 + Math.random() * 900),
-        avatar: '🐱',
+        avatar: '🦊',
+        pin: '1234',
         nativeLang: 'vi',
-        targetLang: 'ja'
+        targetLang: 'ja',
+        equippedFrame: 'frame-default',
+        equippedTitle: 'title-novice'
       };
       localStorage.setItem('lingua_user_profile', JSON.stringify(defaultProf));
       return defaultProf;
     })(),
+    coins: (function () {
+      try {
+        const stored = localStorage.getItem('lingua_coins');
+        if (stored !== null) return parseInt(stored, 10);
+      } catch (e) {}
+      return 150;
+    })(),
+    inventory: (function () {
+      try {
+        const stored = localStorage.getItem('lingua_inventory');
+        if (stored) return JSON.parse(stored);
+      } catch (e) {}
+      return {
+        frames: ['frame-default'],
+        titles: ['title-novice'],
+        equippedFrame: 'frame-default',
+        equippedTitle: 'title-novice'
+      };
+    })(),
     friends: JSON.parse(localStorage.getItem('lingua_friends') || '[]'),
     weakSpots: JSON.parse(localStorage.getItem('lingua_weak_spots') || '[]'),
     bookmarks: JSON.parse(localStorage.getItem('lingua_bookmarks') || '[]'),
+
+    // Gamification (Duolingo & Renshuu inspired)
+    gamification: (function () {
+      try {
+        const stored = localStorage.getItem('lingua_gamification');
+        if (stored) return JSON.parse(stored);
+      } catch (e) {}
+      return {
+        streak: 1,
+        lastActiveDate: new Date().toISOString().slice(0, 10),
+        xp: 120,
+        level: 2,
+        practicedItems: []
+      };
+    })(),
+
+    // Quick Drill (Active Recall Quiz) State
+    quiz: {
+      active: false,
+      type: 'sound',
+      questions: [],
+      currentIndex: 0,
+      score: 0,
+      streak: 0,
+      maxStreak: 0,
+      xpEarned: 0,
+      missedItems: [],
+      answered: false
+    },
+
+    // Tab 3 Shadowing Studio State
+    labMode: 'curated', // 'curated' | 'custom'
+    currentLabCustomSentence: null,
+    flattenedLabSentences: [],
 
     // TTS voices
     voicesLoaded: false,
@@ -113,6 +186,16 @@
     DOM.triggerNative = document.getElementById('triggerNative');
     DOM.langDropdownMenu = document.getElementById('langDropdownMenu');
 
+    // Gamification & Habit Loop Elements
+    DOM.streakPill = document.getElementById('streakPill');
+    DOM.streakCount = document.getElementById('streakCount');
+    DOM.xpPill = document.getElementById('xpPill');
+    DOM.xpCount = document.getElementById('xpCount');
+    DOM.levelPill = document.getElementById('levelPill');
+    DOM.levelBadge = document.getElementById('levelBadge');
+    DOM.masteryBarFill = document.getElementById('masteryBarFill');
+    DOM.xpToastContainer = document.getElementById('xpToastContainer');
+
     DOM.btnOpenFriends = document.getElementById('btnOpenFriends');
     DOM.friendsCountBadge = document.getElementById('friendsCountBadge');
     DOM.btnOpenBookmarks = document.getElementById('btnOpenBookmarks');
@@ -131,6 +214,7 @@
     DOM.soundSearchInput = document.getElementById('soundSearchInput');
     DOM.soundStatsText = document.getElementById('soundStatsText');
     DOM.soundsGrid = document.getElementById('soundsGrid');
+    DOM.btnStartSoundQuiz = document.getElementById('btnStartSoundQuiz');
 
     DOM.inspectorCard = document.getElementById('inspectorCard');
     DOM.inspectorEmptyState = document.getElementById('inspectorEmptyState');
@@ -161,6 +245,7 @@
     // Tab 2: Expressions
     DOM.expSubTabPhrases = document.getElementById('expSubTabPhrases');
     DOM.expSubTabSentences = document.getElementById('expSubTabSentences');
+    DOM.btnStartExpQuiz = document.getElementById('btnStartExpQuiz');
     DOM.phrasesView = document.getElementById('phrasesView');
     DOM.sentencesView = document.getElementById('sentencesView');
     DOM.phrasesList = document.getElementById('phrasesList');
@@ -168,6 +253,12 @@
     DOM.expressionsList = document.getElementById('expressionsList');
 
     // Tab 3: Lab
+    DOM.btnModeCurated = document.getElementById('btnModeCurated');
+    DOM.btnModeCustom = document.getElementById('btnModeCustom');
+    DOM.curatedSentenceWrap = document.getElementById('curatedSentenceWrap');
+    DOM.customSentenceWrap = document.getElementById('customSentenceWrap');
+    DOM.customSentenceInput = document.getElementById('customSentenceInput');
+    DOM.btnApplyCustomSentence = document.getElementById('btnApplyCustomSentence');
     DOM.labSentenceSelect = document.getElementById('labSentenceSelect');
     DOM.labTargetText = document.getElementById('labTargetText');
     DOM.labTargetPhonetic = document.getElementById('labTargetPhonetic');
@@ -248,11 +339,2594 @@
     DOM.profileTargetLang = document.getElementById('profileTargetLang');
     DOM.btnCancelProfile = document.getElementById('btnCancelProfile');
 
+    // Modal: 5-Question Active Recall Drill (Quiz)
+    DOM.quizModalOverlay = document.getElementById('quizModalOverlay');
+    DOM.btnCloseQuizModal = document.getElementById('btnCloseQuizModal');
+    DOM.quizTypeBadge = document.getElementById('quizTypeBadge');
+    DOM.quizCounterBadge = document.getElementById('quizCounterBadge');
+    DOM.quizProgressFill = document.getElementById('quizProgressFill');
+    DOM.quizQuestionStage = document.getElementById('quizQuestionStage');
+    DOM.quizComboPill = document.getElementById('quizComboPill');
+    DOM.quizComboCount = document.getElementById('quizComboCount');
+    DOM.btnQuizPlayAudio = document.getElementById('btnQuizPlayAudio');
+    DOM.quizAudioBtnLabel = document.getElementById('quizAudioBtnLabel');
+    DOM.quizPromptText = document.getElementById('quizPromptText');
+    DOM.quizChoicesContainer = document.getElementById('quizChoicesContainer');
+    DOM.quizFeedbackBanner = document.getElementById('quizFeedbackBanner');
+    DOM.quizFeedbackIcon = document.getElementById('quizFeedbackIcon');
+    DOM.quizFeedbackMsg = document.getElementById('quizFeedbackMsg');
+    DOM.quizResultStage = document.getElementById('quizResultStage');
+    DOM.quizResultHeroIcon = document.getElementById('quizResultHeroIcon');
+    DOM.quizResultTitle = document.getElementById('quizResultTitle');
+    DOM.quizResultSubtitle = document.getElementById('quizResultSubtitle');
+    DOM.quizResultScore = document.getElementById('quizResultScore');
+    DOM.quizResultXp = document.getElementById('quizResultXp');
+    DOM.quizResultStreak = document.getElementById('quizResultStreak');
+    DOM.quizMissedAlert = document.getElementById('quizMissedAlert');
+    DOM.quizMissedText = document.getElementById('quizMissedText');
+    DOM.btnQuizRetry = document.getElementById('btnQuizRetry');
+    DOM.btnQuizFinish = document.getElementById('btnQuizFinish');
+
     DOM.toastContainer = document.getElementById('toastContainer');
     DOM.ambientCanvas = document.getElementById('ambientCanvas');
+
+    // Procedural Audio Controls (SFX & Cultural BGM)
+    DOM.btnToggleSfx = document.getElementById('btnToggleSfx');
+    DOM.sfxIcon = document.getElementById('sfxIcon');
+    DOM.btnToggleBgm = document.getElementById('btnToggleBgm');
+    DOM.bgmIcon = document.getElementById('bgmIcon');
+    DOM.btnAudioSettings = document.getElementById('btnAudioSettings');
+    DOM.audioSettingsPopover = document.getElementById('audioSettingsPopover');
+    DOM.btnCloseAudioSettings = document.getElementById('btnCloseAudioSettings');
+    DOM.bgmVolumeSlider = document.getElementById('bgmVolumeSlider');
+    DOM.bgmVolumeLabel = document.getElementById('bgmVolumeLabel');
+    DOM.sfxVolumeSlider = document.getElementById('sfxVolumeSlider');
+    DOM.sfxVolumeLabel = document.getElementById('sfxVolumeLabel');
+
+    // Tab Campaign & 5-Stage Guided Quest Path
+    DOM.tabBtnCampaign = document.getElementById('tabBtnCampaign');
+    DOM.tabCampaign = document.getElementById('tab-campaign');
+    DOM.campaignThemeBadge = document.getElementById('campaignThemeBadge');
+    DOM.campaignCurrentLangLabel = document.getElementById('campaignCurrentLangLabel');
+    DOM.campaignProgressText = document.getElementById('campaignProgressText');
+    DOM.campaignTrackFill = document.getElementById('campaignTrackFill');
+    DOM.questNodesList = document.getElementById('questNodesList');
+
+    // Tab 1 Writing Pad
+    DOM.tab1WritingCanvas = document.getElementById('tab1WritingCanvas');
+    DOM.tab1CanvasWatermark = document.getElementById('tab1CanvasWatermark');
+    DOM.btnToggleGuideTab1 = document.getElementById('btnToggleGuideTab1');
+    DOM.btnClearCanvasTab1 = document.getElementById('btnClearCanvasTab1');
+
+    // Tab 3 Sentence Picker
+    DOM.curatedSentenceWrap = document.getElementById('curatedSentenceWrap');
+    DOM.sentenceCardsScroller = document.getElementById('sentenceCardsScroller');
+    DOM.labFilterPills = document.getElementById('labFilterPills');
+
+    // Quest Lesson & 2D Battle Arena Modal
+    DOM.questModalOverlay = document.getElementById('questModalOverlay');
+    DOM.btnCloseQuestModal = document.getElementById('btnCloseQuestModal');
+    DOM.questModalStageTag = document.getElementById('questModalStageTag');
+    DOM.questModalTitle = document.getElementById('questModalTitle');
+    DOM.questStepDot1 = document.getElementById('questStepDot1');
+    DOM.questStepDot2 = document.getElementById('questStepDot2');
+    DOM.questStepDot3 = document.getElementById('questStepDot3');
+    DOM.questStep1Body = document.getElementById('questStep1Body');
+    DOM.questStep2Body = document.getElementById('questStep2Body');
+    DOM.questStep3Body = document.getElementById('questStep3Body');
+    DOM.questStep1Desc = document.getElementById('questStep1Desc');
+    DOM.questPreviewGrid = document.getElementById('questPreviewGrid');
+    DOM.btnQuestGoStep2 = document.getElementById('btnQuestGoStep2');
+    DOM.btnQuestBackStep1 = document.getElementById('btnQuestBackStep1');
+    DOM.btnQuestGoStep3 = document.getElementById('btnQuestGoStep3');
+    DOM.questWritingCanvas = document.getElementById('questWritingCanvas');
+    DOM.canvasWatermarkGuide = document.getElementById('canvasWatermarkGuide');
+    DOM.btnToggleGuideQuest = document.getElementById('btnToggleGuideQuest');
+    DOM.btnClearCanvasQuest = document.getElementById('btnClearCanvasQuest');
+    DOM.btnAudioWritingChar = document.getElementById('btnAudioWritingChar');
+    DOM.btnPrevWritingChar = document.getElementById('btnPrevWritingChar');
+    DOM.btnNextWritingChar = document.getElementById('btnNextWritingChar');
+    DOM.writingTargetChar = document.getElementById('writingTargetChar');
+    DOM.writingTargetReading = document.getElementById('writingTargetReading');
+    DOM.writingTargetMeaning = document.getElementById('writingTargetMeaning');
+
+    // Coins & Shop & Profile Elements
+    DOM.coinsPill = document.getElementById('coinsPill');
+    DOM.coinsCount = document.getElementById('coinsCount');
+    DOM.btnOpenShop = document.getElementById('btnOpenShop');
+    DOM.shopModalOverlay = document.getElementById('shopModalOverlay');
+    DOM.btnCloseShopModal = document.getElementById('btnCloseShopModal');
+    DOM.shopCoinsBalance = document.getElementById('shopCoinsBalance');
+    DOM.shopTabFrames = document.getElementById('shopTabFrames');
+    DOM.shopTabTitles = document.getElementById('shopTabTitles');
+    DOM.shopItemsGrid = document.getElementById('shopItemsGrid');
+    DOM.btnOpenUserProfile = document.getElementById('btnOpenUserProfile');
+    DOM.headerUserAvatarWrap = document.getElementById('headerUserAvatarWrap');
+    DOM.headerUserAvatarEmoji = document.getElementById('headerUserAvatarEmoji');
+    DOM.headerUsername = document.getElementById('headerUsername');
+    DOM.headerUserTitle = document.getElementById('headerUserTitle');
+    DOM.profileModalAvatarWrap = document.getElementById('profileModalAvatarWrap');
+    DOM.profileModalAvatarEmoji = document.getElementById('profileModalAvatarEmoji');
+    DOM.profileModalEquippedTitle = document.getElementById('profileModalEquippedTitle');
+    DOM.profileModalStats = document.getElementById('profileModalStats');
+    DOM.profilePin = document.getElementById('profilePin');
+    DOM.btnAnimateStrokesTab1 = document.getElementById('btnAnimateStrokesTab1');
+    DOM.btnAnimateStrokesQuest = document.getElementById('btnAnimateStrokesQuest');
+
+    // Quest 4-Step Elements
+    DOM.questStepDot4 = document.getElementById('questStepDot4');
+    DOM.questStep4Body = document.getElementById('questStep4Body');
+    DOM.btnQuestGoStep4 = document.getElementById('btnQuestGoStep4');
+    DOM.btnQuestBackStep2 = document.getElementById('btnQuestBackStep2');
+    DOM.warmupCounterText = document.getElementById('warmupCounterText');
+    DOM.warmupProgressFill = document.getElementById('warmupProgressFill');
+    DOM.btnWarmupAudioPrompt = document.getElementById('btnWarmupAudioPrompt');
+    DOM.warmupPromptText = document.getElementById('warmupPromptText');
+    DOM.warmupCueBadge = document.getElementById('warmupCueBadge');
+    DOM.warmupAnswersGrid = document.getElementById('warmupAnswersGrid');
+    DOM.warmupSuccessBanner = document.getElementById('warmupSuccessBanner');
+
+    // 2D Canvas Battle Arena
+    DOM.battlePlayerHearts = document.getElementById('battlePlayerHearts');
+    DOM.battleBossName = document.getElementById('battleBossName');
+    DOM.battleBossHpFill = document.getElementById('battleBossHpFill');
+    DOM.battleBossHpText = document.getElementById('battleBossHpText');
+    DOM.bossBattleCanvas = document.getElementById('bossBattleCanvas');
+    DOM.battleHitFlash = document.getElementById('battleHitFlash');
+    DOM.battleQuestionText = document.getElementById('battleQuestionText');
+    DOM.battleCueBadge = document.getElementById('battleCueBadge');
+    DOM.btnBattleAudioPrompt = document.getElementById('btnBattleAudioPrompt');
+    DOM.battleAnswersGrid = document.getElementById('battleAnswersGrid');
+    DOM.battleVictoryOverlay = document.getElementById('battleVictoryOverlay');
+    DOM.btnFinishBattleVictory = document.getElementById('btnFinishBattleVictory');
+    DOM.battleDefeatOverlay = document.getElementById('battleDefeatOverlay');
+    DOM.btnRetryBattle = document.getElementById('btnRetryBattle');
   }
 
   // ==========================================================================
+  
+  // ==========================================================================
+  // Dynamic Cultural Theme & Procedural Audio / Scenery Engines
+  // ==========================================================================
+
+  function getThemeKey(langCode) {
+    if (!langCode) return 'ja';
+    if (langCode.startsWith('ja')) return 'ja';
+    if (langCode.startsWith('en')) return 'en';
+    if (langCode.startsWith('ko')) return 'ko';
+    if (langCode.startsWith('zh')) return 'zh';
+    return 'ja';
+  }
+
+  function applyCulturalTheme(langCode) {
+    const themeKey = getThemeKey(langCode);
+    if (typeof document !== 'undefined' && document.body) {
+      document.body.dataset.theme = themeKey;
+    }
+    if (typeof CulturalScenery !== 'undefined' && typeof CulturalScenery.setTheme === 'function') {
+      CulturalScenery.setTheme(themeKey);
+    }
+    if (typeof BGMPlayer !== 'undefined' && typeof BGMPlayer.setTheme === 'function') {
+      BGMPlayer.setTheme(langCode);
+    }
+  }
+
+  // Procedural Web Audio API Sound Synthesizer (SFX)
+  const SoundFX = {
+    audioCtx: null,
+    muted: getSafeStorage('lingua_sfx_muted', 'false') === 'true',
+    volume: parseFloat(getSafeStorage('lingua_sfx_volume', '0.70')),
+
+    getAudioContext() {
+      if (!this.audioCtx && typeof window !== 'undefined') {
+        const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioCtxClass) {
+          this.audioCtx = new AudioCtxClass();
+        }
+      }
+      if (this.audioCtx && this.audioCtx.state === 'suspended') {
+        this.audioCtx.resume();
+      }
+      return this.audioCtx;
+    },
+
+    setVolume(val) {
+      this.volume = Math.max(0, Math.min(1, val));
+      try {
+        localStorage.setItem('lingua_sfx_volume', String(this.volume));
+      } catch (e) {}
+    },
+
+    toggleMute() {
+      this.muted = !this.muted;
+      try {
+        localStorage.setItem('lingua_sfx_muted', String(this.muted));
+      } catch (e) {}
+      if (DOM.sfxIcon) {
+        DOM.sfxIcon.textContent = this.muted ? '🔇' : '🔊';
+      }
+      showToast(this.muted ? (STATE.uiLang === 'vi' ? 'Đã tắt hiệu ứng âm thanh (SFX)' : 'SFX Muted') : (STATE.uiLang === 'vi' ? 'Đã bật hiệu ứng âm thanh (SFX)' : 'SFX Enabled'), 'info');
+      return !this.muted;
+    },
+
+    playClick() {
+      if (this.muted) return;
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.04);
+        const peak = 0.35 * this.volume;
+        gain.gain.setValueAtTime(peak, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.04);
+      } catch (e) {}
+    },
+
+    playLaser() {
+      if (this.muted) return;
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(880, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(110, ctx.currentTime + 0.22);
+        const peak = 0.45 * this.volume;
+        gain.gain.setValueAtTime(peak, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.22);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.22);
+      } catch (e) {}
+    },
+
+    playCoins() {
+      if (this.muted) return;
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      try {
+        const now = ctx.currentTime;
+        [987.77, 1318.51].forEach((freq, i) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + i * 0.08);
+          const peak = 0.38 * this.volume;
+          gain.gain.setValueAtTime(peak, now + i * 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.24);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + i * 0.08);
+          osc.stop(now + i * 0.08 + 0.24);
+        });
+      } catch (e) {}
+    },
+
+    playHit() {
+      if (this.muted) return;
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(150, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.18);
+        const peak = 0.55 * this.volume;
+        gain.gain.setValueAtTime(peak, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.18);
+      } catch (e) {}
+    },
+
+    playCrit() {
+      if (this.muted) return;
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      try {
+        [523.25, 659.25, 783.99, 1046.5].forEach((freq, i) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, ctx.currentTime + i * 0.05);
+          const peak = 0.40 * this.volume;
+          gain.gain.setValueAtTime(peak, ctx.currentTime + i * 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.05 + 0.15);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(ctx.currentTime + i * 0.05);
+          osc.stop(ctx.currentTime + i * 0.05 + 0.15);
+        });
+      } catch (e) {}
+    },
+
+    playHurt() {
+      if (this.muted) return;
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 0.25);
+        const peak = 0.50 * this.volume;
+        gain.gain.setValueAtTime(peak, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.25);
+      } catch (e) {}
+    },
+
+    playVictory() {
+      if (this.muted) return;
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      try {
+        const notes = [
+          { f: 523.25, t: 0.0 },
+          { f: 659.25, t: 0.12 },
+          { f: 783.99, t: 0.24 },
+          { f: 1046.5, t: 0.40 }
+        ];
+        notes.forEach(n => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(n.f, ctx.currentTime + n.t);
+          const peak = 0.48 * this.volume;
+          gain.gain.setValueAtTime(peak, ctx.currentTime + n.t);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + n.t + 0.35);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(ctx.currentTime + n.t);
+          osc.stop(ctx.currentTime + n.t + 0.35);
+        });
+      } catch (e) {}
+    }
+  };
+
+  // Pure Web Audio API Procedural Cultural Background Music Synthesizer (BGM)
+  const BGMPlayer = {
+    audioCtx: null,
+    isPlaying: false,
+    enabled: getSafeStorage('lingua_bgm_enabled', 'false') === 'true',
+    volume: parseFloat(getSafeStorage('lingua_bgm_volume', '0.70')),
+    currentTheme: 'ja',
+    loopTimer: null,
+    step: 0,
+    masterGain: null,
+
+    getAudioContext() {
+      if (!this.audioCtx && typeof window !== 'undefined') {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (AudioCtx) {
+          this.audioCtx = new AudioCtx();
+        }
+      }
+      if (this.audioCtx && this.audioCtx.state === 'suspended') {
+        this.audioCtx.resume();
+      }
+      return this.audioCtx;
+    },
+
+    setVolume(val) {
+      this.volume = Math.max(0, Math.min(1, val));
+      try {
+        localStorage.setItem('lingua_bgm_volume', String(this.volume));
+      } catch (e) {}
+      if (this.masterGain && this.audioCtx) {
+        this.masterGain.gain.setValueAtTime(0.22 * this.volume, this.audioCtx.currentTime);
+      }
+    },
+
+    init() {
+      this.currentTheme = getThemeKey(STATE.currentLang);
+      if (this.enabled) {
+        const startOnInteract = () => {
+          if (this.enabled && !this.isPlaying) {
+            this.start();
+          }
+          window.removeEventListener('click', startOnInteract);
+          window.removeEventListener('keydown', startOnInteract);
+        };
+        window.addEventListener('click', startOnInteract, { once: true });
+        window.addEventListener('keydown', startOnInteract, { once: true });
+      }
+      this.updateUI();
+    },
+
+    toggle() {
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      this.enabled = !this.enabled;
+      try {
+        localStorage.setItem('lingua_bgm_enabled', String(this.enabled));
+      } catch (e) {}
+
+      if (this.enabled) {
+        this.start();
+        showToast(STATE.uiLang === 'vi' ? 'Đã bật nhạc nền văn hóa 🎵' : 'Cultural BGM Enabled 🎵', 'info');
+      } else {
+        this.stop();
+        showToast(STATE.uiLang === 'vi' ? 'Đã tắt nhạc nền' : 'BGM Muted', 'info');
+      }
+      this.updateUI();
+    },
+
+    updateUI() {
+      if (DOM.bgmIcon) {
+        DOM.bgmIcon.textContent = this.enabled ? '🎵' : '🔇';
+      }
+      if (DOM.btnToggleBgm) {
+        DOM.btnToggleBgm.classList.toggle('active', this.enabled);
+      }
+    },
+
+    setTheme(langCode) {
+      this.currentTheme = getThemeKey(langCode);
+      this.step = 0;
+    },
+
+    start() {
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      if (this.isPlaying) return;
+      this.isPlaying = true;
+      this.step = 0;
+
+      if (!this.masterGain) {
+        this.masterGain = ctx.createGain();
+        this.masterGain.gain.setValueAtTime(0.22 * this.volume, ctx.currentTime);
+        this.masterGain.connect(ctx.destination);
+      }
+
+      this.scheduleNextNote();
+    },
+
+    stop() {
+      this.isPlaying = false;
+      if (this.loopTimer) {
+        clearTimeout(this.loopTimer);
+        this.loopTimer = null;
+      }
+    },
+
+    scheduleNextNote() {
+      if (!this.isPlaying) return;
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+
+      let interval = 450;
+
+      if (this.currentTheme === 'ja') {
+        // Japanese Hirajoshi Koto melody
+        const kotoScale = [220.0, 246.94, 261.63, 329.63, 349.23, 440.0, 493.88, 523.25];
+        const melody = [0, 2, 3, 5, 4, 3, 2, 0, 3, 5, 7, 5, 4, 3, 2, 0];
+        const noteIdx = melody[this.step % melody.length];
+        const freq = kotoScale[noteIdx];
+        this.playPluckNote(freq, 1.4, 'triangle');
+        interval = (this.step % 4 === 3) ? 650 : 380;
+
+      } else if (this.currentTheme === 'en') {
+        // Lo-Fi Electric Piano Chords & Bell
+        const chordProgressions = [
+          [174.61, 220.0, 261.63, 329.63],
+          [164.81, 196.0, 246.94, 293.66],
+          [146.83, 174.61, 220.0, 261.63],
+          [130.81, 164.81, 196.0, 246.94]
+        ];
+        const chordIdx = Math.floor(this.step / 4) % chordProgressions.length;
+        const noteIdx = this.step % 4;
+        const chord = chordProgressions[chordIdx];
+        this.playRhodesNote(chord[noteIdx], 1.2);
+        interval = 480;
+
+      } else if (this.currentTheme === 'ko') {
+        // Korean Gayageum Arpeggio
+        const gayageumScale = [293.66, 329.63, 392.00, 440.00, 493.88, 587.33];
+        const motif = [0, 1, 2, 4, 3, 2, 1, 0, 2, 3, 5, 4, 2, 1, 0, 2];
+        const freq = gayageumScale[motif[this.step % motif.length]];
+        this.playGayageumNote(freq, 1.5);
+        interval = (this.step % 2 === 0) ? 360 : 520;
+
+      } else if (this.currentTheme === 'zh') {
+        // Chinese Guzheng Pentatonic Cascades
+        const guzhengScale = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33];
+        const motif = [0, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4, 6, 5, 4, 3, 1];
+        const freq = guzhengScale[motif[this.step % motif.length]];
+        this.playGuzhengNote(freq, 1.3);
+        interval = (this.step % 4 === 0) ? 550 : 320;
+      }
+
+      this.step++;
+      this.loopTimer = setTimeout(() => this.scheduleNextNote(), interval);
+    },
+
+    playPluckNote(freq, duration, type = 'triangle') {
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+        gain.gain.setValueAtTime(0.001, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.18, ctx.currentTime + 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(this.masterGain);
+
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + duration);
+      } catch (e) {}
+    },
+
+    playRhodesNote(freq, duration) {
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+      try {
+        const osc1 = ctx.createOscillator();
+        const osc2 = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc1.type = 'sine';
+        osc2.type = 'triangle';
+        osc1.frequency.setValueAtTime(freq, ctx.currentTime);
+        osc2.frequency.setValueAtTime(freq * 2, ctx.currentTime);
+
+        gain.gain.setValueAtTime(0.001, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.12, ctx.currentTime + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+
+        osc1.connect(gain);
+        osc2.connect(gain);
+        gain.connect(this.masterGain);
+
+        osc1.start(ctx.currentTime);
+        osc2.start(ctx.currentTime);
+        osc1.stop(ctx.currentTime + duration);
+        osc2.stop(ctx.currentTime + duration);
+      } catch (e) {}
+    },
+
+    playGayageumNote(freq, duration) {
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq * 0.98, ctx.currentTime);
+        osc.frequency.linearRampToValueAtTime(freq, ctx.currentTime + 0.08);
+
+        gain.gain.setValueAtTime(0.001, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.16, ctx.currentTime + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(this.masterGain);
+
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + duration);
+      } catch (e) {}
+    },
+
+    playGuzhengNote(freq, duration) {
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth';
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(1400, ctx.currentTime);
+        filter.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + duration);
+
+        gain.gain.setValueAtTime(0.001, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.14, ctx.currentTime + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(this.masterGain);
+
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + duration);
+      } catch (e) {}
+    }
+  };
+
+  // Interactive HTML5 Canvas Writing Pad with Touch & Mouse support
+  class WritingPad {
+    constructor(canvas, watermarkEl) {
+      this.canvas = canvas;
+      this.watermarkEl = watermarkEl;
+      this.ctx = canvas && typeof canvas.getContext === 'function' ? canvas.getContext('2d') : null;
+      this.isDrawing = false;
+      this.hasDrawn = false;
+      this.currentChar = '';
+      this.isAnimating = false;
+      this.animId = null;
+      this.initEvents();
+    }
+
+    initEvents() {
+      if (!this.canvas || !this.ctx) return;
+      const getPos = (e) => {
+        const rect = this.canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const scaleX = this.canvas.width / rect.width;
+        const scaleY = this.canvas.height / rect.height;
+        return {
+          x: (clientX - rect.left) * scaleX,
+          y: (clientY - rect.top) * scaleY
+        };
+      };
+
+      const start = (e) => {
+        if (this.isAnimating) this.cancelAnimation();
+        if (e.cancelable && e.type === 'touchstart') e.preventDefault();
+        this.isDrawing = true;
+        this.hasDrawn = true;
+        const pos = getPos(e);
+        this.ctx.beginPath();
+        this.ctx.moveTo(pos.x, pos.y);
+        this.ctx.lineWidth = 6;
+        this.ctx.lineCap = 'round';
+        this.ctx.lineJoin = 'round';
+        this.ctx.strokeStyle = '#e11d48';
+        this.ctx.shadowColor = 'rgba(225, 29, 72, 0.4)';
+        this.ctx.shadowBlur = 4;
+      };
+
+      const move = (e) => {
+        if (!this.isDrawing) return;
+        if (e.cancelable && e.type === 'touchmove') e.preventDefault();
+        const pos = getPos(e);
+        this.ctx.lineTo(pos.x, pos.y);
+        this.ctx.stroke();
+      };
+
+      const stop = () => {
+        if (this.isDrawing) {
+          this.isDrawing = false;
+          this.ctx.closePath();
+        }
+      };
+
+      this.canvas.addEventListener('mousedown', start);
+      this.canvas.addEventListener('mousemove', move);
+      this.canvas.addEventListener('mouseup', stop);
+      this.canvas.addEventListener('mouseleave', stop);
+
+      this.canvas.addEventListener('touchstart', start, { passive: false });
+      this.canvas.addEventListener('touchmove', move, { passive: false });
+      this.canvas.addEventListener('touchend', stop);
+    }
+
+    clear() {
+      this.cancelAnimation();
+      if (!this.ctx || !this.canvas) return;
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.hasDrawn = false;
+      if (this.currentChar) {
+        this.drawStrokeGuides(this.currentChar);
+      }
+    }
+
+    setGuide(char) {
+      this.currentChar = char || '';
+      if (this.watermarkEl) {
+        this.watermarkEl.textContent = this.currentChar;
+      }
+      if (this.ctx && this.canvas) {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.drawStrokeGuides(this.currentChar);
+      }
+    }
+
+    toggleGuide() {
+      if (this.watermarkEl) {
+        this.watermarkEl.classList.toggle('hide');
+      }
+    }
+
+    cancelAnimation() {
+      if (this.animId) {
+        cancelAnimationFrame(this.animId);
+        this.animId = null;
+      }
+      this.isAnimating = false;
+    }
+
+    drawStrokeGuides(char) {
+      if (!this.ctx || !this.canvas || !char) return;
+      const strokeData = typeof getStrokeData === 'function' ? getStrokeData(char) : null;
+      if (!strokeData || !strokeData.length) return;
+
+      const W = this.canvas.width;
+      const H = this.canvas.height;
+
+      strokeData.forEach((stroke, idx) => {
+        if (!stroke || stroke.length < 2) return;
+
+        // 1. Draw dashed guide path
+        this.ctx.save();
+        this.ctx.setLineDash([5, 5]);
+        this.ctx.lineWidth = 3;
+        this.ctx.strokeStyle = 'rgba(225, 29, 72, 0.45)';
+        this.ctx.lineCap = 'round';
+        this.ctx.lineJoin = 'round';
+        this.ctx.beginPath();
+        const startX = (stroke[0][0] / 100) * W;
+        const startY = (stroke[0][1] / 100) * H;
+        this.ctx.moveTo(startX, startY);
+
+        for (let i = 1; i < stroke.length; i++) {
+          const px = (stroke[i][0] / 100) * W;
+          const py = (stroke[i][1] / 100) * H;
+          this.ctx.lineTo(px, py);
+        }
+        this.ctx.stroke();
+
+        // 2. Draw directional arrow near start/mid of stroke
+        const p1X = (stroke[1][0] / 100) * W;
+        const p1Y = (stroke[1][1] / 100) * H;
+        const angle = Math.atan2(p1Y - startY, p1X - startX);
+        const midX = (startX + p1X) / 2;
+        const midY = (startY + p1Y) / 2;
+        const arrowLen = 7;
+
+        this.ctx.setLineDash([]);
+        this.ctx.fillStyle = 'rgba(225, 29, 72, 0.7)';
+        this.ctx.beginPath();
+        this.ctx.moveTo(midX + Math.cos(angle) * arrowLen, midY + Math.sin(angle) * arrowLen);
+        this.ctx.lineTo(
+          midX + Math.cos(angle + 2.5) * arrowLen,
+          midY + Math.sin(angle + 2.5) * arrowLen
+        );
+        this.ctx.lineTo(
+          midX + Math.cos(angle - 2.5) * arrowLen,
+          midY + Math.sin(angle - 2.5) * arrowLen
+        );
+        this.ctx.closePath();
+        this.ctx.fill();
+
+        // 3. Draw numbered starting circle (①, ②, ③...)
+        this.ctx.beginPath();
+        this.ctx.arc(startX, startY, 11, 0, Math.PI * 2);
+        this.ctx.fillStyle = '#e11d48';
+        this.ctx.shadowColor = 'rgba(225, 29, 72, 0.6)';
+        this.ctx.shadowBlur = 4;
+        this.ctx.fill();
+        this.ctx.shadowBlur = 0;
+        this.ctx.strokeStyle = '#ffffff';
+        this.ctx.lineWidth = 1.5;
+        this.ctx.stroke();
+
+        this.ctx.fillStyle = '#ffffff';
+        this.ctx.font = 'bold 11px sans-serif';
+        this.ctx.textAlign = 'center';
+        this.ctx.textBaseline = 'middle';
+        this.ctx.fillText(String(idx + 1), startX, startY);
+
+        this.ctx.restore();
+      });
+    }
+
+    animateStrokes(onComplete) {
+      if (!this.ctx || !this.canvas || !this.currentChar) return;
+      const strokeData = typeof getStrokeData === 'function' ? getStrokeData(this.currentChar) : null;
+      if (!strokeData || !strokeData.length) return;
+
+      this.cancelAnimation();
+      this.isAnimating = true;
+
+      // Clear canvas to start fresh animation
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+      const W = this.canvas.width;
+      const H = this.canvas.height;
+      let strokeIndex = 0;
+      let segmentIndex = 0;
+      let progress = 0;
+      const speed = 0.045; // interpolation step per frame
+
+      // Keep previously completed strokes drawn
+      const completedStrokes = [];
+
+      const animateFrame = () => {
+        if (!this.isAnimating) return;
+
+        // Clear canvas for next frame
+        this.ctx.clearRect(0, 0, W, H);
+
+        // Re-draw all fully completed strokes
+        this.ctx.save();
+        this.ctx.lineWidth = 6;
+        this.ctx.lineCap = 'round';
+        this.ctx.lineJoin = 'round';
+        this.ctx.strokeStyle = '#e11d48';
+        this.ctx.shadowColor = 'rgba(225, 29, 72, 0.4)';
+        this.ctx.shadowBlur = 4;
+
+        completedStrokes.forEach(st => {
+          this.ctx.beginPath();
+          this.ctx.moveTo(st[0][0], st[0][1]);
+          for (let i = 1; i < st.length; i++) {
+            this.ctx.lineTo(st[i][0], st[i][1]);
+          }
+          this.ctx.stroke();
+        });
+
+        // Draw current animating stroke
+        const currentStroke = strokeData[strokeIndex];
+        if (currentStroke && currentStroke.length >= 2) {
+          this.ctx.beginPath();
+          const startPtX = (currentStroke[0][0] / 100) * W;
+          const startPtY = (currentStroke[0][1] / 100) * H;
+          this.ctx.moveTo(startPtX, startPtY);
+
+          // Draw full previous segments of this stroke
+          for (let i = 1; i <= segmentIndex; i++) {
+            const px = (currentStroke[i][0] / 100) * W;
+            const py = (currentStroke[i][1] / 100) * H;
+            this.ctx.lineTo(px, py);
+          }
+
+          // Interpolate current segment
+          const pA_X = (currentStroke[segmentIndex][0] / 100) * W;
+          const pA_Y = (currentStroke[segmentIndex][1] / 100) * H;
+          const pB_X = (currentStroke[segmentIndex + 1][0] / 100) * W;
+          const pB_Y = (currentStroke[segmentIndex + 1][1] / 100) * H;
+
+          const curX = pA_X + (pB_X - pA_X) * progress;
+          const curY = pA_Y + (pB_Y - pA_Y) * progress;
+          this.ctx.lineTo(curX, curY);
+          this.ctx.stroke();
+
+          // Draw animated brush tip glow
+          this.ctx.beginPath();
+          this.ctx.arc(curX, curY, 6, 0, Math.PI * 2);
+          this.ctx.fillStyle = '#f59e0b';
+          this.ctx.shadowColor = '#f59e0b';
+          this.ctx.shadowBlur = 8;
+          this.ctx.fill();
+        }
+
+        this.ctx.restore();
+
+        // Advance progress
+        progress += speed;
+        if (progress >= 1) {
+          progress = 0;
+          segmentIndex++;
+          if (segmentIndex >= strokeData[strokeIndex].length - 1) {
+            // Completed current stroke
+            const renderedStroke = strokeData[strokeIndex].map(pt => [(pt[0] / 100) * W, (pt[1] / 100) * H]);
+            completedStrokes.push(renderedStroke);
+
+            strokeIndex++;
+            segmentIndex = 0;
+
+            if (strokeIndex >= strokeData.length) {
+              // Finished all strokes!
+              this.isAnimating = false;
+              setTimeout(() => {
+                this.ctx.clearRect(0, 0, W, H);
+                this.drawStrokeGuides(this.currentChar);
+                if (typeof onComplete === 'function') onComplete();
+              }, 400);
+              return;
+            }
+          }
+        }
+
+        this.animId = requestAnimationFrame(animateFrame);
+      };
+
+      this.animId = requestAnimationFrame(animateFrame);
+    }
+  }
+
+  let questWritingPadInstance = null;
+  let tab1WritingPadInstance = null;
+
+  // 60fps Illustrated Dynamic Cultural Scenery Engine
+  const CulturalScenery = {
+    canvas: null,
+    ctx: null,
+    width: 0,
+    height: 0,
+    particles: [],
+    theme: 'ja',
+    animId: null,
+
+    init(canvas) {
+      if (!canvas || typeof canvas.getContext !== 'function') return;
+      this.canvas = canvas;
+      this.ctx = canvas.getContext('2d');
+      this.resize();
+      window.addEventListener('resize', () => this.resize());
+      this.setTheme(getThemeKey(STATE.currentLang));
+      this.loop();
+    },
+
+    resize() {
+      if (!this.canvas) return;
+      this.width = this.canvas.width = window.innerWidth;
+      this.height = this.canvas.height = window.innerHeight;
+      this.createParticles();
+    },
+
+    setTheme(theme) {
+      this.theme = theme || 'ja';
+      if (typeof document !== 'undefined' && document.body) {
+        document.body.dataset.theme = this.theme;
+      }
+      this.createParticles();
+    },
+
+    createParticles() {
+      this.particles = [];
+      const count = Math.min(36, Math.floor(this.width / 35));
+      for (let i = 0; i < count; i++) {
+        if (this.theme === 'ja') {
+          // Sakura petals
+          this.particles.push({
+            x: Math.random() * this.width,
+            y: Math.random() * this.height,
+            size: Math.random() * 8 + 6,
+            speedX: Math.random() * 1.5 + 0.5,
+            speedY: Math.random() * 1.2 + 0.8,
+            angle: Math.random() * Math.PI * 2,
+            rotSpeed: (Math.random() - 0.5) * 0.03,
+            color: 'rgba(244, 63, 94, 0.45)'
+          });
+        } else if (this.theme === 'en') {
+          // Soft clouds & light motes
+          this.particles.push({
+            x: Math.random() * this.width,
+            y: Math.random() * this.height,
+            radius: Math.random() * 3.5 + 1.5,
+            speedX: (Math.random() - 0.5) * 0.4,
+            speedY: -Math.random() * 0.5 - 0.2,
+            color: 'rgba(59, 130, 246, 0.35)'
+          });
+        } else if (this.theme === 'ko') {
+          // Pastel blossoms & sparkles
+          this.particles.push({
+            x: Math.random() * this.width,
+            y: Math.random() * this.height,
+            size: Math.random() * 6 + 4,
+            speedX: (Math.random() - 0.5) * 0.6,
+            speedY: -Math.random() * 0.6 - 0.3,
+            angle: Math.random() * Math.PI * 2,
+            rotSpeed: (Math.random() - 0.5) * 0.04,
+            color: Math.random() > 0.5 ? 'rgba(236, 72, 153, 0.45)' : 'rgba(16, 185, 129, 0.4)'
+          });
+        } else if (this.theme === 'zh') {
+          // Rising lanterns
+          this.particles.push({
+            x: Math.random() * this.width,
+            y: Math.random() * this.height,
+            width: Math.random() * 12 + 10,
+            height: Math.random() * 16 + 14,
+            speedY: -Math.random() * 0.7 - 0.4,
+            swaySpeed: Math.random() * 0.02 + 0.01,
+            swayAmp: Math.random() * 1.2 + 0.5,
+            phase: Math.random() * Math.PI * 2,
+            alpha: Math.random() * 0.5 + 0.35
+          });
+        }
+      }
+    },
+
+    loop() {
+      this.animId = safeRAF(() => this.loop());
+      if (!this.ctx) return;
+      this.ctx.clearRect(0, 0, this.width, this.height);
+
+      try {
+        this.renderScenerySilhouettes();
+        this.renderParticles();
+      } catch (e) {}
+    },
+
+    renderScenerySilhouettes() {
+      const ctx = this.ctx;
+      const w = this.width;
+      const h = this.height;
+
+      ctx.save();
+      if (this.theme === 'ja') {
+        // Mount Fuji Silhouette
+        const fujiW = Math.min(640, w * 0.65);
+        const fujiH = Math.min(230, h * 0.28);
+        const fujiX = w * 0.5 - fujiW / 2;
+        const fujiY = h;
+
+        ctx.fillStyle = 'rgba(244, 63, 94, 0.08)';
+        ctx.beginPath();
+        ctx.moveTo(fujiX, fujiY);
+        ctx.lineTo(fujiX + fujiW * 0.38, fujiY - fujiH);
+        ctx.lineTo(fujiX + fujiW * 0.62, fujiY - fujiH);
+        ctx.lineTo(fujiX + fujiW, fujiY);
+        ctx.closePath();
+        ctx.fill();
+
+        // Snow Cap
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.beginPath();
+        ctx.moveTo(fujiX + fujiW * 0.38, fujiY - fujiH);
+        ctx.lineTo(fujiX + fujiW * 0.62, fujiY - fujiH);
+        ctx.lineTo(fujiX + fujiW * 0.68, fujiY - fujiH * 0.7);
+        ctx.lineTo(fujiX + fujiW * 0.32, fujiY - fujiH * 0.7);
+        ctx.closePath();
+        ctx.fill();
+
+        // Torii Gate on Right
+        const toriiX = Math.min(w - 120, w * 0.85);
+        const toriiY = h - 100;
+        ctx.fillStyle = 'rgba(230, 57, 70, 0.25)';
+        ctx.fillRect(toriiX, toriiY, 80, 8);
+        ctx.fillRect(toriiX + 8, toriiY + 16, 64, 6);
+        ctx.fillRect(toriiX + 16, toriiY, 10, 100);
+        ctx.fillRect(toriiX + 54, toriiY, 10, 100);
+
+      } else if (this.theme === 'en') {
+        // Detailed Big Ben + London Eye + Brooklyn Bridge / skyscrapers silhouette
+        // 1. Skyscraper backdrop
+        ctx.fillStyle = 'rgba(37, 99, 235, 0.06)';
+        const bldCount = 18;
+        const bldW = w / bldCount;
+        for (let i = 0; i < bldCount; i++) {
+          const bldH = 45 + ((i * 47) % 110);
+          ctx.fillRect(i * bldW, h - bldH, bldW - 3, bldH);
+        }
+
+        // 2. Elizabeth Tower / Big Ben on the left
+        const benX = Math.max(20, w * 0.12);
+        const benW = 34;
+        const benH = Math.min(180, h * 0.26);
+        const benBaseY = h;
+        const benTopY = benBaseY - benH;
+
+        ctx.fillStyle = 'rgba(37, 99, 235, 0.16)';
+        ctx.fillRect(benX, benTopY + 45, benW, benH - 45);
+        ctx.fillRect(benX - 4, benTopY + 22, benW + 8, 26);
+        ctx.beginPath();
+        ctx.moveTo(benX - 2, benTopY + 22);
+        ctx.lineTo(benX + benW / 2, benTopY);
+        ctx.lineTo(benX + benW + 2, benTopY + 22);
+        ctx.closePath();
+        ctx.fill();
+        // Glowing clock face
+        ctx.fillStyle = 'rgba(245, 158, 11, 0.45)';
+        ctx.beginPath();
+        ctx.arc(benX + benW / 2, benTopY + 35, 8, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 3. London Eye observation wheel
+        const eyeX = benX + 90;
+        const eyeY = h - 75;
+        const eyeR = 48;
+        ctx.strokeStyle = 'rgba(37, 99, 235, 0.16)';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(eyeX, eyeY, eyeR, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.lineWidth = 1;
+        for (let a = 0; a < Math.PI * 2; a += Math.PI / 6) {
+          ctx.beginPath();
+          ctx.moveTo(eyeX, eyeY);
+          ctx.lineTo(eyeX + Math.cos(a) * eyeR, eyeY + Math.sin(a) * eyeR);
+          ctx.stroke();
+          ctx.fillStyle = 'rgba(245, 158, 11, 0.35)';
+          ctx.beginPath();
+          ctx.arc(eyeX + Math.cos(a) * eyeR, eyeY + Math.sin(a) * eyeR, 3, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(eyeX - 18, h);
+        ctx.lineTo(eyeX, eyeY);
+        ctx.lineTo(eyeX + 18, h);
+        ctx.stroke();
+
+        // 4. Brooklyn Bridge Gothic suspension arches on the right
+        const brX = Math.min(w - 220, w * 0.72);
+        const brY = h;
+        const towerH = 140;
+        ctx.fillStyle = 'rgba(30, 64, 175, 0.14)';
+        ctx.fillRect(brX, brY - towerH, 22, towerH);
+        ctx.fillRect(brX + 100, brY - towerH, 22, towerH);
+        ctx.strokeStyle = 'rgba(30, 64, 175, 0.18)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(brX + 11, brY - towerH);
+        ctx.quadraticCurveTo(brX + 61, brY - 45, brX + 111, brY - towerH);
+        ctx.stroke();
+        ctx.fillRect(brX - 30, brY - 40, 180, 6);
+
+      } else if (this.theme === 'ko') {
+        // Detailed Gyeongbokgung Palace (Hanok curved roofs) + Namsan Seoul Tower silhouette
+        // 1. Namsan Seoul Tower
+        const towerX = Math.min(w - 140, w * 0.82);
+        const towerBaseY = h;
+        ctx.fillStyle = 'rgba(236, 72, 153, 0.14)';
+        ctx.fillRect(towerX - 4, towerBaseY - 180, 8, 180);
+        ctx.fillRect(towerX - 14, towerBaseY - 145, 28, 16);
+        ctx.fillRect(towerX - 10, towerBaseY - 128, 20, 8);
+        ctx.fillRect(towerX - 1.5, towerBaseY - 215, 3, 35);
+        ctx.fillStyle = 'rgba(236, 72, 153, 0.65)';
+        ctx.beginPath();
+        ctx.arc(towerX, towerBaseY - 215, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 2. Gyeongbokgung Palace Pavilion (Gyeonghoeru Hanok roof)
+        const pX = Math.max(30, w * 0.1);
+        const pY = h;
+        ctx.fillStyle = 'rgba(236, 72, 153, 0.12)';
+        ctx.fillRect(pX, pY - 24, 220, 24);
+        for (let col = 0; col < 6; col++) {
+          ctx.fillRect(pX + 20 + col * 36, pY - 70, 7, 46);
+        }
+        ctx.beginPath();
+        ctx.moveTo(pX - 15, pY - 70);
+        ctx.quadraticCurveTo(pX + 110, pY - 88, pX + 235, pY - 70);
+        ctx.lineTo(pX + 215, pY - 92);
+        ctx.quadraticCurveTo(pX + 110, pY - 102, pX + 5, pY - 92);
+        ctx.closePath();
+        ctx.fill();
+
+        for (let col = 0; col < 4; col++) {
+          ctx.fillRect(pX + 50 + col * 36, pY - 118, 6, 26);
+        }
+        ctx.beginPath();
+        ctx.moveTo(pX + 10, pY - 118);
+        ctx.quadraticCurveTo(pX + 110, pY - 140, pX + 210, pY - 118);
+        ctx.lineTo(pX + 195, pY - 142);
+        ctx.quadraticCurveTo(pX + 110, pY - 158, pX + 25, pY - 142);
+        ctx.closePath();
+        ctx.fill();
+
+        // Fortress wall
+        ctx.fillStyle = 'rgba(236, 72, 153, 0.08)';
+        ctx.beginPath();
+        ctx.moveTo(0, h);
+        ctx.lineTo(0, h - 35);
+        ctx.quadraticCurveTo(w * 0.35, h - 55, w * 0.65, h - 30);
+        ctx.lineTo(w, h - 45);
+        ctx.lineTo(w, h);
+        ctx.closePath();
+        ctx.fill();
+
+      } else if (this.theme === 'zh') {
+        // Detailed Misty Ink-Wash Mountains + Multi-tier Pagoda silhouette + arched moon bridge
+        // 1. Layered Karst Mountains
+        ctx.fillStyle = 'rgba(220, 38, 38, 0.05)';
+        ctx.beginPath();
+        ctx.moveTo(0, h);
+        ctx.quadraticCurveTo(w * 0.2, h - 220, w * 0.45, h);
+        ctx.quadraticCurveTo(w * 0.7, h - 190, w, h);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(220, 38, 38, 0.08)';
+        ctx.beginPath();
+        ctx.moveTo(w * 0.05, h);
+        ctx.quadraticCurveTo(w * 0.28, h - 160, w * 0.52, h);
+        ctx.closePath();
+        ctx.fill();
+
+        // 2. 5-Tier Chinese Pagoda with upturned flying eaves & spire
+        const pagodaX = Math.min(w - 160, w * 0.82);
+        const pagodaBaseY = h - 25;
+        ctx.fillStyle = 'rgba(220, 38, 38, 0.16)';
+        for (let tier = 0; tier < 5; tier++) {
+          const tierY = pagodaBaseY - tier * 24;
+          const tierW = 56 - tier * 8;
+          ctx.fillRect(pagodaX - tierW / 2 + 6, tierY - 12, tierW - 12, 12);
+          ctx.beginPath();
+          ctx.moveTo(pagodaX - tierW / 2 - 12, tierY - 16);
+          ctx.quadraticCurveTo(pagodaX, tierY - 10, pagodaX + tierW / 2 + 12, tierY - 16);
+          ctx.lineTo(pagodaX + tierW / 2 + 4, tierY - 21);
+          ctx.quadraticCurveTo(pagodaX, tierY - 17, pagodaX - tierW / 2 - 4, tierY - 21);
+          ctx.closePath();
+          ctx.fill();
+        }
+        ctx.fillRect(pagodaX - 2, pagodaBaseY - 5 * 24 - 18, 4, 22);
+        ctx.beginPath();
+        ctx.arc(pagodaX, pagodaBaseY - 5 * 24 - 18, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 3. Moon Bridge arch
+        const brX = Math.max(50, w * 0.16);
+        const brY = h;
+        ctx.fillStyle = 'rgba(220, 38, 38, 0.13)';
+        ctx.beginPath();
+        ctx.arc(brX + 75, brY, 75, Math.PI, 0);
+        ctx.arc(brX + 75, brY, 52, 0, Math.PI, true);
+        ctx.closePath();
+        ctx.fill();
+      }
+      ctx.restore();
+    },
+
+    renderParticles() {
+      const ctx = this.ctx;
+      const w = this.width;
+      const h = this.height;
+
+      for (let p of this.particles) {
+        if (this.theme === 'ja') {
+          p.x += p.speedX + Math.sin(p.angle) * 0.5;
+          p.y += p.speedY;
+          p.angle += p.rotSpeed;
+          if (p.y > h + 20) { p.y = -20; p.x = Math.random() * w; }
+          if (p.x > w + 20) { p.x = -20; }
+
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.angle);
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.ellipse(0, 0, p.size * 0.5, p.size, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        } else if (this.theme === 'en') {
+          p.x += p.speedX;
+          p.y += p.speedY;
+          if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
+          ctx.save();
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        } else if (this.theme === 'ko') {
+          p.x += p.speedX;
+          p.y += p.speedY;
+          p.angle += p.rotSpeed;
+          if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.angle);
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size * 0.5, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        } else if (this.theme === 'zh') {
+          p.phase += p.swaySpeed;
+          p.x += Math.sin(p.phase) * p.swayAmp;
+          p.y += p.speedY;
+          if (p.y < -30) { p.y = h + 30; p.x = Math.random() * w; }
+
+          ctx.save();
+          ctx.fillStyle = `rgba(220, 38, 38, ${p.alpha})`;
+          ctx.beginPath();
+          ctx.roundRect(p.x - p.width / 2, p.y, p.width, p.height, 4);
+          ctx.fill();
+          ctx.fillStyle = `rgba(251, 191, 36, ${p.alpha * 0.9})`;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y + p.height * 0.65, p.width * 0.28, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+    }
+  };
+
+  // REAL 60fps 2D Canvas Battle Arena Engine
+  const BattleArena = {
+    canvas: null,
+    ctx: null,
+    stage: null,
+    questions: [],
+    qIndex: 0,
+    playerHearts: 3,
+    bossMaxHp: 80,
+    bossHp: 80,
+    combo: 0,
+    animId: null,
+    projectiles: [],
+    hitParticles: [],
+    floatingTexts: [],
+    screenShake: 0,
+    bossHitTimer: 0,
+    heroAttackTimer: 0,
+    heroBob: 0,
+    bossBob: 0,
+    isAnswering: false,
+
+    init(canvas) {
+      if (!canvas || typeof canvas.getContext !== 'function') return;
+      this.canvas = canvas;
+      this.ctx = canvas.getContext('2d');
+    },
+
+    startBattle(stage) {
+      this.stage = stage;
+      this.questions = [...(stage.bossQuestions || [])];
+      this.qIndex = 0;
+      this.playerHearts = 3;
+      this.bossMaxHp = stage.bossHp || 80;
+      this.bossHp = this.bossMaxHp;
+      this.combo = 0;
+      this.projectiles = [];
+      this.hitParticles = [];
+      this.floatingTexts = [];
+      this.screenShake = 0;
+      this.isAnswering = false;
+
+      if (DOM.battleBossName) {
+        DOM.battleBossName.textContent = STATE.uiLang === 'vi' ? stage.bossNameVi : stage.bossNameEn;
+      }
+      this.updateHud();
+
+      if (DOM.battleVictoryOverlay) DOM.battleVictoryOverlay.style.display = 'none';
+      if (DOM.battleDefeatOverlay) DOM.battleDefeatOverlay.style.display = 'none';
+
+      this.loadQuestion();
+      this.startLoop();
+    },
+
+    updateHud() {
+      if (DOM.battlePlayerHearts) {
+        const hearts = DOM.battlePlayerHearts.querySelectorAll('.heart');
+        hearts.forEach((h, i) => {
+          h.classList.toggle('lost', i >= this.playerHearts);
+        });
+      }
+
+      const pct = Math.max(0, Math.round((this.bossHp / this.bossMaxHp) * 100));
+      if (DOM.battleBossHpFill) DOM.battleBossHpFill.style.width = `${pct}%`;
+      if (DOM.battleBossHpText) DOM.battleBossHpText.textContent = `${Math.max(0, this.bossHp)} / ${this.bossMaxHp} HP`;
+    },
+
+    loadQuestion() {
+      if (this.qIndex >= this.questions.length) {
+        this.questions = [...(this.stage.bossQuestions || [])];
+        this.qIndex = 0;
+      }
+
+      const q = this.questions[this.qIndex];
+      if (!q) return;
+      this.isAnswering = false;
+
+      if (DOM.battleQuestionText) {
+        DOM.battleQuestionText.textContent = STATE.uiLang === 'vi' ? q.promptVi : q.promptEn;
+      }
+      if (DOM.battleCueBadge) {
+        DOM.battleCueBadge.textContent = q.cue || '';
+      }
+
+      if (DOM.battleAnswersGrid) {
+        DOM.battleAnswersGrid.innerHTML = '';
+        (q.options || []).forEach(opt => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'attack-choice-btn btn-tactile';
+          btn.textContent = opt;
+          btn.addEventListener('click', () => {
+            this.handleAnswer(btn, opt, q);
+          });
+          DOM.battleAnswersGrid.appendChild(btn);
+        });
+      }
+
+      if (DOM.btnBattleAudioPrompt) {
+        DOM.btnBattleAudioPrompt.onclick = () => {
+          playTargetLanguageAudio(q.cue || q.correct);
+        };
+      }
+    },
+
+    handleAnswer(btn, selected, q) {
+      if (this.isAnswering) return;
+      this.isAnswering = true;
+
+      const isCorrect = selected === q.correct;
+      const allBtns = DOM.battleAnswersGrid ? DOM.battleAnswersGrid.querySelectorAll('.attack-choice-btn') : [];
+
+      if (isCorrect) {
+        if (btn) {
+          btn.classList.add('correct');
+          btn.innerHTML = `✓ ${escapeHtml(selected)}`;
+        }
+        this.combo++;
+        const isCrit = this.combo >= 2;
+        const damage = isCrit ? 35 : 25;
+        this.bossHp -= damage;
+        this.heroAttackTimer = 16;
+
+        if (isCrit) SoundFX.playCrit();
+        else { SoundFX.playLaser(); setTimeout(() => SoundFX.playHit(), 180); }
+
+        this.projectiles.push({
+          x: 120,
+          y: 145,
+          targetX: 500,
+          targetY: 145,
+          speed: 24,
+          radius: isCrit ? 12 : 8,
+          damage: damage,
+          isCrit: isCrit,
+          color: isCrit ? '#f59e0b' : '#38bdf8'
+        });
+
+        this.updateHud();
+
+        if (this.bossHp <= 0) {
+          setTimeout(() => {
+            this.handleVictory();
+          }, 450);
+          return;
+        }
+
+        this.qIndex++;
+        setTimeout(() => this.loadQuestion(), 450);
+
+      } else {
+        if (btn) {
+          btn.classList.add('wrong');
+          btn.innerHTML = `✕ ${escapeHtml(selected)}`;
+        }
+        allBtns.forEach(b => {
+          if (b.textContent.trim() === q.correct) {
+            b.classList.add('correct');
+          }
+        });
+
+        this.combo = 0;
+        this.playerHearts--;
+        SoundFX.playHurt();
+        this.screenShake = 16;
+        if (DOM.battleHitFlash) {
+          DOM.battleHitFlash.classList.add('flash');
+          setTimeout(() => DOM.battleHitFlash.classList.remove('flash'), 180);
+        }
+
+        this.floatingTexts.push({
+          x: 110,
+          y: 110,
+          text: '-1 ❤️',
+          color: '#ef4444',
+          alpha: 1,
+          vy: -1.2
+        });
+
+        this.updateHud();
+
+        if (this.playerHearts <= 0) {
+          setTimeout(() => {
+            this.handleDefeat();
+          }, 450);
+          return;
+        }
+
+        this.qIndex++;
+        setTimeout(() => this.loadQuestion(), 550);
+      }
+    },
+
+    handleVictory() {
+      SoundFX.playVictory();
+      for (let i = 0; i < 40; i++) {
+        this.hitParticles.push({
+          x: 520,
+          y: 130,
+          vx: (Math.random() - 0.5) * 12,
+          vy: (Math.random() - 0.5) * 12,
+          radius: Math.random() * 6 + 3,
+          color: Math.random() > 0.5 ? '#f59e0b' : '#ef4444',
+          alpha: 1
+        });
+      }
+
+      awardXP(50, STATE.uiLang === 'vi' ? 'Chiến thắng Boss Ải!' : 'Stage Boss Victory!');
+      awardCoins(50, STATE.uiLang === 'vi' ? 'Chiến thắng Boss Ải!' : 'Stage Boss Victory!');
+      markStageCompleted(this.stage.stageNum);
+
+      if (DOM.battleVictoryOverlay) {
+        DOM.battleVictoryOverlay.style.display = 'flex';
+      }
+    },
+
+    handleDefeat() {
+      if (DOM.battleDefeatOverlay) {
+        DOM.battleDefeatOverlay.style.display = 'flex';
+      }
+    },
+
+    startLoop() {
+      if (this.animId) safeCAF(this.animId);
+      const loop = () => {
+        this.render();
+        this.animId = safeRAF(loop);
+      };
+      this.animId = safeRAF(loop);
+    },
+
+    stopLoop() {
+      if (this.animId) {
+        safeCAF(this.animId);
+        this.animId = null;
+      }
+    },
+
+    render() {
+      const ctx = this.ctx;
+      if (!ctx || !this.canvas) return;
+      const w = this.canvas.width;
+      const h = this.canvas.height;
+
+      ctx.save();
+      if (this.screenShake > 0) {
+        ctx.translate((Math.random() - 0.5) * this.screenShake, (Math.random() - 0.5) * this.screenShake);
+        this.screenShake *= 0.88;
+        if (this.screenShake < 0.5) this.screenShake = 0;
+      }
+
+      ctx.clearRect(0, 0, w, h);
+
+      // Atmospheric Night/Twilight Arena Sky tailored to Country
+      const theme = getThemeKey(STATE.currentLang);
+      const skyGrad = ctx.createLinearGradient(0, 0, 0, h * 0.65);
+
+      if (theme === 'ja') {
+        // Kyoto Moonlit Torii Twilight
+        skyGrad.addColorStop(0, '#0f172a');
+        skyGrad.addColorStop(0.6, '#2e1065');
+        skyGrad.addColorStop(1, '#4c0519');
+        ctx.fillStyle = skyGrad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Radiant Moon
+        ctx.fillStyle = 'rgba(254, 243, 199, 0.9)';
+        ctx.shadowColor = 'rgba(254, 240, 138, 0.5)';
+        ctx.shadowBlur = 24;
+        ctx.beginPath();
+        ctx.arc(w * 0.5, 45, 28, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Silhouette of Mount Fuji in background
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.5)';
+        ctx.beginPath();
+        ctx.moveTo(w * 0.25, h * 0.65);
+        ctx.lineTo(w * 0.5, 55);
+        ctx.lineTo(w * 0.75, h * 0.65);
+        ctx.closePath();
+        ctx.fill();
+
+      } else if (theme === 'en') {
+        // Moody Cobalt London Twilight with Big Ben glow
+        skyGrad.addColorStop(0, '#020617');
+        skyGrad.addColorStop(0.6, '#0f172a');
+        skyGrad.addColorStop(1, '#1e293b');
+        ctx.fillStyle = skyGrad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Big Ben Tower silhouette
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.7)';
+        ctx.fillRect(w * 0.48 - 12, 40, 24, h * 0.65 - 40);
+        ctx.beginPath();
+        ctx.moveTo(w * 0.48 - 14, 40);
+        ctx.lineTo(w * 0.48, 15);
+        ctx.lineTo(w * 0.48 + 14, 40);
+        ctx.closePath();
+        ctx.fill();
+        // Golden glowing clock
+        ctx.fillStyle = '#f59e0b';
+        ctx.shadowColor = '#f59e0b';
+        ctx.shadowBlur = 12;
+        ctx.beginPath();
+        ctx.arc(w * 0.48, 50, 6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+      } else if (theme === 'ko') {
+        // Seoul Hanok Twilight with Namsan Beacon
+        skyGrad.addColorStop(0, '#09090b');
+        skyGrad.addColorStop(0.6, '#1e1b4b');
+        skyGrad.addColorStop(1, '#3b0764');
+        ctx.fillStyle = skyGrad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Radiant Violet Moon
+        ctx.fillStyle = 'rgba(244, 232, 255, 0.85)';
+        ctx.shadowColor = 'rgba(192, 132, 252, 0.5)';
+        ctx.shadowBlur = 20;
+        ctx.beginPath();
+        ctx.arc(w * 0.5, 45, 24, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+      } else {
+        // Misty Karst Pagoda Chinese Twilight
+        skyGrad.addColorStop(0, '#06101e');
+        skyGrad.addColorStop(0.6, '#0f172a');
+        skyGrad.addColorStop(1, '#1c1917');
+        ctx.fillStyle = skyGrad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Floating Sky Lanterns in background
+        ctx.fillStyle = 'rgba(239, 68, 68, 0.7)';
+        ctx.shadowColor = 'rgba(245, 158, 11, 0.6)';
+        ctx.shadowBlur = 10;
+        [[w * 0.35, 40], [w * 0.5, 25], [w * 0.65, 50]].forEach(([lx, ly]) => {
+          ctx.fillRect(lx - 5, ly - 7, 10, 14);
+        });
+        ctx.shadowBlur = 0;
+      }
+
+      // Battle Floor Platform (Perspective Stone Pavers / Glowing Battle Grid)
+      const floorY = h * 0.62;
+      const floorGrad = ctx.createLinearGradient(0, floorY, 0, h);
+      floorGrad.addColorStop(0, '#1e293b');
+      floorGrad.addColorStop(0.4, '#0f172a');
+      floorGrad.addColorStop(1, '#020617');
+      ctx.fillStyle = floorGrad;
+      ctx.fillRect(0, floorY, w, h - floorY);
+
+      // Glowing Horizon Line
+      ctx.strokeStyle = theme === 'ja' ? 'rgba(244, 63, 94, 0.45)' :
+                        theme === 'en' ? 'rgba(56, 189, 248, 0.45)' :
+                        theme === 'ko' ? 'rgba(236, 72, 153, 0.45)' : 'rgba(239, 68, 68, 0.45)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(0, floorY);
+      ctx.lineTo(w, floorY);
+      ctx.stroke();
+
+      // Perspective Grid Lines
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      ctx.lineWidth = 1;
+      const vPointX = w * 0.5;
+      for (let gx = -100; gx <= w + 100; gx += 50) {
+        ctx.beginPath();
+        ctx.moveTo(gx, h);
+        ctx.lineTo(vPointX + (gx - vPointX) * 0.15, floorY);
+        ctx.stroke();
+      }
+      [0.72, 0.84, 0.94].forEach(pct => {
+        ctx.beginPath();
+        ctx.moveTo(0, h * pct);
+        ctx.lineTo(w, h * pct);
+        ctx.stroke();
+      });
+
+      // Render Player Hero Knight / Shiba-Cat Mage
+      this.heroBob = Math.sin(Date.now() * 0.005) * 4;
+      const heroX = 110;
+      const heroY = 155 + this.heroBob;
+      const isAttacking = (this.heroAttackTimer || 0) > 0;
+      if (this.heroAttackTimer > 0) this.heroAttackTimer--;
+
+      this.renderHeroKnight(heroX, heroY, isAttacking);
+
+      // Render Boss Sprite
+      this.bossBob = Math.cos(Date.now() * 0.004) * 5;
+      const bossX = 510;
+      const bossY = 145 + this.bossBob;
+      const isHit = this.bossHitTimer > 0;
+      if (this.bossHitTimer > 0) this.bossHitTimer--;
+
+      this.renderBossSprite(bossX, bossY, isHit);
+
+      // Projectiles
+      for (let i = this.projectiles.length - 1; i >= 0; i--) {
+        const p = this.projectiles[i];
+        p.x += p.speed;
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 12;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        if (p.x >= p.targetX) {
+          this.bossHitTimer = 8;
+          for (let j = 0; j < 14; j++) {
+            this.hitParticles.push({
+              x: p.targetX,
+              y: p.targetY,
+              vx: (Math.random() - 0.5) * 8,
+              vy: (Math.random() - 0.5) * 8,
+              radius: Math.random() * 4 + 2,
+              color: p.color,
+              alpha: 1
+            });
+          }
+          this.floatingTexts.push({
+            x: p.targetX + (Math.random() - 0.5) * 30,
+            y: p.targetY - 20,
+            text: `-${p.damage}${p.isCrit ? ' CRIT!' : ''}`,
+            color: p.isCrit ? '#d97706' : '#e11d48',
+            alpha: 1,
+            vy: -1.4
+          });
+          this.projectiles.splice(i, 1);
+        }
+      }
+
+      // Hit Particles
+      for (let i = this.hitParticles.length - 1; i >= 0; i--) {
+        const pt = this.hitParticles[i];
+        pt.x += pt.vx;
+        pt.y += pt.vy;
+        pt.alpha -= 0.04;
+        if (pt.alpha <= 0) {
+          this.hitParticles.splice(i, 1);
+          continue;
+        }
+        ctx.fillStyle = pt.color;
+        ctx.globalAlpha = pt.alpha;
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, pt.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+
+      // Floating Texts
+      for (let i = this.floatingTexts.length - 1; i >= 0; i--) {
+        const ft = this.floatingTexts[i];
+        ft.y += ft.vy;
+        ft.alpha -= 0.025;
+        if (ft.alpha <= 0) {
+          this.floatingTexts.splice(i, 1);
+          continue;
+        }
+        ctx.font = 'bold 18px "Plus Jakarta Sans", sans-serif';
+        ctx.fillStyle = ft.color;
+        ctx.globalAlpha = ft.alpha;
+        ctx.fillText(ft.text, ft.x, ft.y);
+        ctx.globalAlpha = 1;
+      }
+
+      ctx.restore();
+    },
+
+    renderHeroKnight(x, y, isAttacking) {
+      const ctx = this.ctx;
+      ctx.save();
+
+      // Floor Shadow
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.35)';
+      ctx.beginPath();
+      ctx.ellipse(x, 200, 26, 7, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Flowing Hero Cloak (fluttering in wind)
+      const cloakFlap = Math.sin(Date.now() * 0.008) * 6;
+      ctx.fillStyle = '#dc2626';
+      ctx.beginPath();
+      ctx.moveTo(x - 8, y - 6);
+      ctx.quadraticCurveTo(x - 30, y + 10 + cloakFlap, x - 34, y + 36 + cloakFlap);
+      ctx.lineTo(x - 8, y + 26);
+      ctx.closePath();
+      ctx.fill();
+
+      // Hero Body / Armor
+      ctx.fillStyle = '#38bdf8';
+      ctx.beginPath();
+      ctx.roundRect(x - 14, y - 4, 28, 30, 8);
+      ctx.fill();
+
+      // Golden Armor Insignia / Crest
+      ctx.fillStyle = '#f59e0b';
+      ctx.beginPath();
+      ctx.arc(x, y + 8, 5, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Cute Hero Boots
+      ctx.fillStyle = '#0f172a';
+      ctx.beginPath();
+      ctx.arc(x - 6, y + 30, 5, 0, Math.PI * 2);
+      ctx.arc(x + 6, y + 30, 5, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Cute Fluffy Shiba/Cat Head
+      ctx.fillStyle = '#fef08a';
+      ctx.beginPath();
+      ctx.arc(x, y - 14, 20, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Shiba Ears (pointing up with wiggle)
+      const earWiggle = Math.sin(Date.now() * 0.006) * 2;
+      ctx.fillStyle = '#eab308';
+      ctx.beginPath();
+      ctx.moveTo(x - 16, y - 24);
+      ctx.lineTo(x - 12 + earWiggle, y - 38);
+      ctx.lineTo(x - 4, y - 28);
+      ctx.closePath();
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(x + 4, y - 28);
+      ctx.lineTo(x + 12 - earWiggle, y - 38);
+      ctx.lineTo(x + 16, y - 24);
+      ctx.closePath();
+      ctx.fill();
+
+      // Pink Inner Ear
+      ctx.fillStyle = '#f43f5e';
+      ctx.beginPath();
+      ctx.moveTo(x - 14, y - 26);
+      ctx.lineTo(x - 12, y - 34);
+      ctx.lineTo(x - 6, y - 28);
+      ctx.closePath();
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(x + 6, y - 28);
+      ctx.lineTo(x + 12, y - 34);
+      ctx.lineTo(x + 14, y - 26);
+      ctx.closePath();
+      ctx.fill();
+
+      // Anime Eyes with Glistening Catchlights
+      ctx.fillStyle = '#0f172a';
+      ctx.beginPath();
+      ctx.arc(x - 6, y - 14, 4, 0, Math.PI * 2);
+      ctx.arc(x + 6, y - 14, 4, 0, Math.PI * 2);
+      ctx.fill();
+      // White Catchlights
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(x - 7, y - 16, 1.8, 0, Math.PI * 2);
+      ctx.arc(x + 5, y - 16, 1.8, 0, Math.PI * 2);
+      ctx.arc(x - 5, y - 13, 0.9, 0, Math.PI * 2);
+      ctx.arc(x + 7, y - 13, 0.9, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Blush Cheeks
+      ctx.fillStyle = 'rgba(244, 63, 94, 0.45)';
+      ctx.beginPath();
+      ctx.arc(x - 11, y - 9, 3.5, 0, Math.PI * 2);
+      ctx.arc(x + 11, y - 9, 3.5, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Cute Smile
+      ctx.strokeStyle = '#0f172a';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(x, y - 8, 3, 0.1, Math.PI - 0.1);
+      ctx.stroke();
+
+      // Held Glowing Magic Staff / Knight Sword
+      if (isAttacking) {
+        // Attack Swing Forward
+        ctx.strokeStyle = '#fbbf24';
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(x + 8, y + 4);
+        ctx.lineTo(x + 38, y - 8);
+        ctx.stroke();
+
+        // Energy Arc Slash
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 3;
+        ctx.shadowColor = '#38bdf8';
+        ctx.shadowBlur = 14;
+        ctx.beginPath();
+        ctx.arc(x + 28, y - 6, 26, -0.6, 1.2);
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+      } else {
+        // Idle Weapon Stance
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 3.5;
+        ctx.beginPath();
+        ctx.moveTo(x + 14, y + 16);
+        ctx.lineTo(x + 20, y - 18);
+        ctx.stroke();
+
+        // Glowing Crystal Tip
+        ctx.fillStyle = '#38bdf8';
+        ctx.shadowColor = '#38bdf8';
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.arc(x + 20, y - 20, 6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      ctx.restore();
+    },
+
+    renderBossSprite(x, y, isHit) {
+      const ctx = this.ctx;
+      const bType = (this.stage && this.stage.bossType) || 'slime';
+
+      ctx.save();
+
+      // Floor Shadow
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.35)';
+      ctx.beginPath();
+      ctx.ellipse(x, 202, 38, 9, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      if (isHit) {
+        ctx.fillStyle = '#ffffff';
+        ctx.shadowColor = '#ffffff';
+        ctx.shadowBlur = 20;
+      }
+
+      if (bType === 'slime') {
+        // Slime: Crowned Glossy Jelly with Squash-and-Stretch Wobble
+        const wobble = Math.sin(Date.now() * 0.006) * 3;
+        if (!isHit) {
+          const sGrad = ctx.createRadialGradient(x - 8, y + 2, 6, x, y + 8, 38);
+          sGrad.addColorStop(0, '#34d399');
+          sGrad.addColorStop(1, '#059669');
+          ctx.fillStyle = sGrad;
+        }
+        ctx.beginPath();
+        ctx.ellipse(x, y + 10, 40 + wobble, 32 - wobble, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Glossy bubble reflections
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+        ctx.beginPath();
+        ctx.ellipse(x - 14, y - 4, 12, 6, -0.3, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(x + 16, y - 2, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Angry Slanted Eyes
+        ctx.fillStyle = isHit ? '#ffffff' : '#064e3b';
+        ctx.beginPath();
+        ctx.arc(x - 14, y + 8, 5, 0, Math.PI * 2);
+        ctx.arc(x + 14, y + 8, 5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(x - 12, y + 6, 2, 0, Math.PI * 2);
+        ctx.arc(x + 16, y + 6, 2, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Royal Golden Crown with Rubies
+        ctx.fillStyle = '#f59e0b';
+        ctx.beginPath();
+        ctx.moveTo(x - 18, y - 20);
+        ctx.lineTo(x - 22, y - 36);
+        ctx.lineTo(x - 8, y - 28);
+        ctx.lineTo(x, y - 40);
+        ctx.lineTo(x + 8, y - 28);
+        ctx.lineTo(x + 22, y - 36);
+        ctx.lineTo(x + 18, y - 20);
+        ctx.closePath();
+        ctx.fill();
+        // Red Ruby Gems
+        ctx.fillStyle = '#ef4444';
+        ctx.beginPath();
+        ctx.arc(x, y - 26, 3, 0, Math.PI * 2);
+        ctx.arc(x - 14, y - 24, 2.5, 0, Math.PI * 2);
+        ctx.arc(x + 14, y - 24, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+
+      } else if (bType === 'kitsune') {
+        // Kitsune: 3-Tailed Mystic Fox with 3 Orbiting Fox-Fire Wisps
+        // 3 Animated Swaying Tails
+        const tTime = Date.now() * 0.005;
+        [-0.4, 0, 0.4].forEach((angleOffset, idx) => {
+          const tWiggle = Math.sin(tTime + idx * 1.2) * 8;
+          ctx.fillStyle = '#ea580c';
+          ctx.beginPath();
+          ctx.moveTo(x - 8, y + 16);
+          ctx.quadraticCurveTo(x + 35 + tWiggle, y + angleOffset * 60, x + 55 + tWiggle, y - 20 + angleOffset * 40);
+          ctx.quadraticCurveTo(x + 30, y + 30, x - 8, y + 24);
+          ctx.closePath();
+          ctx.fill();
+          // White tail tip
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.arc(x + 55 + tWiggle, y - 20 + angleOffset * 40, 8, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        // Mystic Fox Head
+        if (!isHit) ctx.fillStyle = '#f97316';
+        ctx.beginPath();
+        ctx.moveTo(x - 30, y - 10);
+        ctx.lineTo(x, y + 28);
+        ctx.lineTo(x + 30, y - 10);
+        ctx.closePath();
+        ctx.fill();
+
+        // Pointed Ears with Black Tips
+        ctx.fillStyle = '#c2410c';
+        ctx.beginPath();
+        ctx.moveTo(x - 28, y - 10);
+        ctx.lineTo(x - 20, y - 46);
+        ctx.lineTo(x - 4, y - 14);
+        ctx.closePath();
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(x + 28, y - 10);
+        ctx.lineTo(x + 20, y - 46);
+        ctx.lineTo(x + 4, y - 14);
+        ctx.closePath();
+        ctx.fill();
+
+        // Ceremonial Forehead Markings
+        ctx.fillStyle = '#dc2626';
+        ctx.beginPath();
+        ctx.arc(x, y - 4, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Sharp Mask Eyes
+        ctx.fillStyle = '#0f172a';
+        ctx.beginPath();
+        ctx.ellipse(x - 12, y + 6, 6, 2.5, 0.2, 0, Math.PI * 2);
+        ctx.ellipse(x + 12, y + 6, 6, 2.5, -0.2, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 3 Animated Orbiting Fox-Fire Spirit Wisps
+        for (let i = 0; i < 3; i++) {
+          const wAngle = tTime * 1.5 + (i * Math.PI * 2) / 3;
+          const wX = x + Math.cos(wAngle) * 48;
+          const wY = y + Math.sin(wAngle) * 26;
+          ctx.fillStyle = 'rgba(6, 182, 212, 0.85)';
+          ctx.shadowColor = '#06b6d4';
+          ctx.shadowBlur = 14;
+          ctx.beginPath();
+          ctx.arc(wX, wY, 7, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+
+      } else if (bType === 'golem') {
+        // Golem: Cracked Granite Titan with Glowing Neon Rune Fissures
+        if (!isHit) ctx.fillStyle = '#475569';
+        // Massive Torso
+        ctx.beginPath();
+        ctx.roundRect(x - 38, y - 20, 76, 56, 14);
+        ctx.fill();
+        // Head
+        ctx.fillStyle = '#334155';
+        ctx.beginPath();
+        ctx.roundRect(x - 22, y - 46, 44, 28, 8);
+        ctx.fill();
+
+        // Glowing Rune Energy Cracks
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 3;
+        ctx.shadowColor = '#38bdf8';
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.moveTo(x - 26, y - 6);
+        ctx.lineTo(x - 8, y + 12);
+        ctx.lineTo(x + 6, y - 2);
+        ctx.lineTo(x + 24, y + 16);
+        ctx.stroke();
+
+        // Glowing Core Eye in Chest
+        const pulse = Math.sin(Date.now() * 0.008) * 3;
+        ctx.fillStyle = '#0284c7';
+        ctx.beginPath();
+        ctx.arc(x, y + 10, 10 + pulse, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#e0f2fe';
+        ctx.beginPath();
+        ctx.arc(x, y + 10, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Hovering Stone Fists
+        ctx.fillStyle = '#475569';
+        ctx.beginPath();
+        ctx.roundRect(x - 56, y + 8, 16, 22, 6);
+        ctx.roundRect(x + 40, y + 8, 16, 22, 6);
+        ctx.fill();
+
+      } else if (bType === 'oni') {
+        // Oni: Fierce Red Demon with Spiked Kanabo Club & Fangs
+        if (!isHit) ctx.fillStyle = '#b91c1c';
+        // Muscular Body
+        ctx.beginPath();
+        ctx.roundRect(x - 34, y - 16, 68, 56, 16);
+        ctx.fill();
+
+        // Sharp Ivory Horns
+        ctx.fillStyle = '#f8fafc';
+        ctx.beginPath();
+        ctx.moveTo(x - 22, y - 16);
+        ctx.lineTo(x - 28, y - 48);
+        ctx.lineTo(x - 10, y - 20);
+        ctx.closePath();
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(x + 22, y - 16);
+        ctx.lineTo(x + 28, y - 48);
+        ctx.lineTo(x + 10, y - 20);
+        ctx.closePath();
+        ctx.fill();
+
+        // Glowing Yellow Eyes
+        ctx.fillStyle = '#facc15';
+        ctx.beginPath();
+        ctx.arc(x - 12, y + 2, 5, 0, Math.PI * 2);
+        ctx.arc(x + 12, y + 2, 5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Sharp Lower Fangs
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.moveTo(x - 8, y + 24);
+        ctx.lineTo(x - 5, y + 14);
+        ctx.lineTo(x - 2, y + 24);
+        ctx.closePath();
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(x + 2, y + 24);
+        ctx.lineTo(x + 5, y + 14);
+        ctx.lineTo(x + 8, y + 24);
+        ctx.closePath();
+        ctx.fill();
+
+        // Heavy Spiked Iron Kanabo Club resting on shoulder
+        ctx.fillStyle = '#1e293b';
+        ctx.beginPath();
+        ctx.moveTo(x + 24, y + 36);
+        ctx.lineTo(x + 44, y - 36);
+        ctx.lineTo(x + 52, y - 32);
+        ctx.lineTo(x + 30, y + 40);
+        ctx.closePath();
+        ctx.fill();
+        // Spikes on club
+        ctx.fillStyle = '#94a3b8';
+        [-20, -6, 8].forEach(sy => {
+          ctx.beginPath();
+          ctx.arc(x + 42, y + sy, 3, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+      } else if (bType === 'dragon') {
+        // Dragon: Winged Oriental Dragon with Antlers, Whiskers & Scales
+        if (!isHit) {
+          const dGrad = ctx.createLinearGradient(x - 30, y, x + 30, y);
+          dGrad.addColorStop(0, '#dc2626');
+          dGrad.addColorStop(1, '#991b1b');
+          ctx.fillStyle = dGrad;
+        }
+        // Coiling Body
+        ctx.beginPath();
+        ctx.arc(x, y + 6, 38, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Coiling Dragon Tail
+        ctx.strokeStyle = '#dc2626';
+        ctx.lineWidth = 14;
+        ctx.beginPath();
+        ctx.moveTo(x + 30, y + 14);
+        ctx.quadraticCurveTo(x + 56, y + 28, x + 62, y - 6);
+        ctx.stroke();
+
+        // Golden Antlers
+        ctx.fillStyle = '#f59e0b';
+        ctx.beginPath();
+        ctx.moveTo(x - 10, y - 28);
+        ctx.lineTo(x - 22, y - 56);
+        ctx.lineTo(x - 4, y - 34);
+        ctx.closePath();
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(x + 10, y - 28);
+        ctx.lineTo(x + 22, y - 56);
+        ctx.lineTo(x + 4, y - 34);
+        ctx.closePath();
+        ctx.fill();
+
+        // Piercing Emerald Eyes
+        ctx.fillStyle = '#10b981';
+        ctx.shadowColor = '#10b981';
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        ctx.arc(x - 14, y - 2, 5, 0, Math.PI * 2);
+        ctx.arc(x + 14, y - 2, 5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Long Imperial Whiskers
+        const wSway = Math.sin(Date.now() * 0.007) * 4;
+        ctx.strokeStyle = '#fef08a';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(x - 18, y + 14);
+        ctx.quadraticCurveTo(x - 40, y + 20 + wSway, x - 54, y + 6 + wSway);
+        ctx.moveTo(x + 18, y + 14);
+        ctx.quadraticCurveTo(x + 40, y + 20 - wSway, x + 54, y + 6 - wSway);
+        ctx.stroke();
+
+        // Small flame spark escaping snout
+        ctx.fillStyle = '#f97316';
+        ctx.beginPath();
+        ctx.arc(x + Math.sin(Date.now() * 0.01) * 6, y + 36, 4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      ctx.restore();
+    }
+  };
+
+  // Campaign & 5-Stage Guided Quest Path Controller
+  function getCampaignProgress() {
+    try {
+      const raw = localStorage.getItem('lingua_campaign_progress');
+      if (raw) return JSON.parse(raw);
+    } catch (e) {}
+    return {
+      'ja': { unlocked: 1, completed: [] },
+      'en': { unlocked: 1, completed: [] },
+      'ko': { unlocked: 1, completed: [] },
+      'zh': { unlocked: 1, completed: [] }
+    };
+  }
+
+  function saveCampaignProgress(prog) {
+    try {
+      localStorage.setItem('lingua_campaign_progress', JSON.stringify(prog));
+    } catch (e) {}
+  }
+
+  function markStageCompleted(stageNum) {
+    const themeKey = getThemeKey(STATE.currentLang);
+    const prog = getCampaignProgress();
+    if (!prog[themeKey]) prog[themeKey] = { unlocked: 1, completed: [] };
+
+    if (!prog[themeKey].completed.includes(stageNum)) {
+      prog[themeKey].completed.push(stageNum);
+    }
+    if (stageNum >= prog[themeKey].unlocked && stageNum < 5) {
+      prog[themeKey].unlocked = stageNum + 1;
+    }
+    saveCampaignProgress(prog);
+    renderCampaignPath();
+  }
+
+  function renderCampaignPath() {
+    const themeKey = getThemeKey(STATE.currentLang);
+    const campaigns = (typeof window !== 'undefined' && (window.QUEST_CAMPAIGNS || QUEST_CAMPAIGNS)) ||
+                      (typeof QUEST_CAMPAIGNS !== 'undefined' ? QUEST_CAMPAIGNS : {});
+    const stages = campaigns[STATE.currentLang] || campaigns[themeKey] || [];
+    const prog = getCampaignProgress();
+    const currentProg = prog[themeKey] || { unlocked: 1, completed: [] };
+
+    const themeTitles = {
+      'ja': { badge: '🇯🇵 Xứ Sở Hoa Anh Đào & Núi Phú Sĩ', name: 'Tiếng Nhật (Nihongo)' },
+      'en': { badge: '🇺🇸 Thành Phố Không Ngủ & Studio Hiện Đại', name: 'Tiếng Anh (English)' },
+      'ko': { badge: '🇰🇷 Seoul Dancheong & Tháp Namsan', name: 'Tiếng Hàn (Hangul)' },
+      'zh': { badge: '🇨🇳 Thủy Mặc Giang Nam & Lễ Hội Hoa Đăng', name: 'Tiếng Trung (Zhongwen)' }
+    };
+
+    if (DOM.campaignThemeBadge && themeTitles[themeKey]) {
+      DOM.campaignThemeBadge.textContent = themeTitles[themeKey].badge;
+    }
+    if (DOM.campaignCurrentLangLabel && themeTitles[themeKey]) {
+      DOM.campaignCurrentLangLabel.textContent = themeTitles[themeKey].name;
+    }
+
+    const completedCount = currentProg.completed ? currentProg.completed.length : 0;
+    const progressPercent = Math.min(100, Math.round((completedCount / 5) * 100));
+    if (DOM.campaignProgressText) {
+      DOM.campaignProgressText.textContent = STATE.uiLang === 'vi' 
+        ? `Tiến độ: ${completedCount} / 5 ải (Đạt ${progressPercent}%)` 
+        : `Progress: ${completedCount} / 5 stages (${progressPercent}%)`;
+    }
+    if (DOM.campaignTrackFill) {
+      DOM.campaignTrackFill.style.width = `${Math.max(12, progressPercent)}%`;
+    }
+
+    // Render Quest Nodes into #questNodesList
+    if (!DOM.questNodesList) return;
+    DOM.questNodesList.innerHTML = '';
+
+    stages.forEach((stage, idx) => {
+      const stageNum = stage.stageNum || idx + 1;
+      const isCompleted = currentProg.completed && currentProg.completed.includes(stageNum);
+      const isUnlocked = isCompleted || (stageNum <= currentProg.unlocked);
+
+      const nodeWrap = document.createElement('div');
+      nodeWrap.className = `quest-node-item node-${stageNum} ${isCompleted ? 'completed' : isUnlocked ? 'unlocked' : 'locked'}`;
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'quest-node-btn btn-tactile';
+      btn.innerHTML = isCompleted ? (stage.icon || '⭐') : isUnlocked ? (stage.icon || '⚔️') : '🔒';
+      btn.title = STATE.uiLang === 'vi' ? stage.titleVi : stage.titleEn;
+
+      if (isCompleted) {
+        const star = document.createElement('div');
+        star.className = 'node-star-badge';
+        star.textContent = '⭐';
+        btn.appendChild(star);
+      }
+
+      // Floating Info Card
+      const infoCard = document.createElement('div');
+      infoCard.className = 'quest-node-info-card';
+      const stageTitle = STATE.uiLang === 'vi' ? stage.titleVi : stage.titleEn;
+      const bossName = STATE.uiLang === 'vi' ? stage.bossNameVi : stage.bossNameEn;
+      const actionText = isCompleted ? (STATE.uiLang === 'vi' ? 'Xem lại ⭐' : 'Review ⭐') : (isUnlocked ? (STATE.uiLang === 'vi' ? 'Bắt đầu ⚔️' : 'Play ⚔️') : '🔒 Khóa');
+
+      infoCard.innerHTML = `
+        <div class="node-info-title">${escapeHtml(stageTitle)}</div>
+        <div class="node-info-boss">⚔️ ${escapeHtml(bossName)} • <span style="font-weight:800">${actionText}</span></div>
+      `;
+
+      const launchStage = () => {
+        if (!isUnlocked) {
+          showToast(STATE.uiLang === 'vi' ? 'Hãy hoàn thành ải trước đó để mở khóa ải này!' : 'Complete the previous stage to unlock this stage!', 'warning');
+          return;
+        }
+        openQuestLessonModal(stage);
+      };
+
+      btn.addEventListener('click', launchStage);
+      infoCard.addEventListener('click', launchStage);
+
+      nodeWrap.appendChild(btn);
+      nodeWrap.appendChild(infoCard);
+      DOM.questNodesList.appendChild(nodeWrap);
+    });
+  }
+
+  // 3-Step Playable Lesson Modal Controller
+  let CURRENT_QUEST_STAGE = null;
+  let CURRENT_QUEST_CHAR_INDEX = 0;
+
+  function openQuestLessonModal(stage) {
+    CURRENT_QUEST_STAGE = stage;
+    CURRENT_QUEST_CHAR_INDEX = 0;
+
+    if (DOM.questModalStageTag) DOM.questModalStageTag.textContent = `ẢI ${stage.stageNum}`;
+    if (DOM.questModalTitle) DOM.questModalTitle.textContent = STATE.uiLang === 'vi' ? stage.titleVi : stage.titleEn;
+    if (DOM.questStep1Desc) DOM.questStep1Desc.textContent = STATE.uiLang === 'vi' ? stage.descVi : stage.descEn;
+
+    if (DOM.questPreviewGrid) {
+      DOM.questPreviewGrid.innerHTML = '';
+      (stage.items || []).forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'quest-preview-card tactile-card';
+        card.innerHTML = `
+          <span class="preview-char">${escapeHtml(item.char)}</span>
+          <span class="preview-reading">${escapeHtml(item.reading || '')}</span>
+          <span class="preview-meaning">${escapeHtml(STATE.uiLang === 'vi' ? item.meaningVi : item.meaningEn)}</span>
+        `;
+        card.addEventListener('click', () => {
+          playTargetLanguageAudio(item.char);
+          SoundFX.playClick();
+        });
+        DOM.questPreviewGrid.appendChild(card);
+      });
+    }
+
+    switchQuestStep(1);
+    if (DOM.questModalOverlay) {
+      DOM.questModalOverlay.classList.add('open');
+      DOM.questModalOverlay.style.display = 'flex';
+    }
+  }
+
+  function switchQuestStep(stepNum) {
+    if (DOM.questStepDot1) {
+      DOM.questStepDot1.classList.toggle('active', stepNum === 1);
+      DOM.questStepDot1.classList.toggle('completed', stepNum > 1);
+    }
+    if (DOM.questStepDot2) {
+      DOM.questStepDot2.classList.toggle('active', stepNum === 2);
+      DOM.questStepDot2.classList.toggle('completed', stepNum > 2);
+    }
+    if (DOM.questStepDot3) {
+      DOM.questStepDot3.classList.toggle('active', stepNum === 3);
+      DOM.questStepDot3.classList.toggle('completed', stepNum > 3);
+    }
+    if (DOM.questStepDot4) {
+      DOM.questStepDot4.classList.toggle('active', stepNum === 4);
+    }
+
+    if (DOM.questStep1Body) DOM.questStep1Body.style.display = stepNum === 1 ? 'block' : 'none';
+    if (DOM.questStep2Body) DOM.questStep2Body.style.display = stepNum === 2 ? 'block' : 'none';
+    if (DOM.questStep3Body) DOM.questStep3Body.style.display = stepNum === 3 ? 'block' : 'none';
+    if (DOM.questStep4Body) DOM.questStep4Body.style.display = stepNum === 4 ? 'block' : 'none';
+
+    if (stepNum === 2) {
+      if (!questWritingPadInstance && DOM.questWritingCanvas) {
+        questWritingPadInstance = new WritingPad(DOM.questWritingCanvas, DOM.canvasWatermarkGuide);
+      }
+      loadWritingChar();
+    } else if (stepNum === 3) {
+      BattleArena.stopLoop();
+      WarmupQuiz.start(CURRENT_QUEST_STAGE);
+    } else if (stepNum === 4) {
+      if (DOM.bossBattleCanvas) {
+        BattleArena.init(DOM.bossBattleCanvas);
+        BattleArena.startBattle(CURRENT_QUEST_STAGE);
+      }
+    } else {
+      BattleArena.stopLoop();
+    }
+  }
+
+  // Warm-up Quiz (Step 3) Engine
+  const WarmupQuiz = {
+    questions: [],
+    currentIndex: 0,
+    score: 0,
+    stage: null,
+    answered: false,
+
+    start(stage) {
+      this.stage = stage;
+      this.currentIndex = 0;
+      this.score = 0;
+      this.answered = false;
+      this.questions = this.generateQuestions(stage);
+
+      if (DOM.warmupSuccessBanner) DOM.warmupSuccessBanner.style.display = 'none';
+      if (DOM.btnQuestGoStep4) DOM.btnQuestGoStep4.disabled = true;
+
+      this.renderQuestion();
+    },
+
+    generateQuestions(stage) {
+      const items = (stage && stage.items && stage.items.length) ? stage.items : [
+        { char: 'あ', reading: 'a', meaningVi: 'Âm a', meaningEn: 'Sound a' },
+        { char: 'い', reading: 'i', meaningVi: 'Âm i', meaningEn: 'Sound i' },
+        { char: 'う', reading: 'u', meaningVi: 'Âm u', meaningEn: 'Sound u' }
+      ];
+
+      return [0, 1, 2].map(idx => {
+        const item = items[idx % items.length];
+        const correct = item.reading || (STATE.uiLang === 'vi' ? item.meaningVi : item.meaningEn);
+
+        // Generate 3 distractors
+        const otherItems = items.filter(it => it.char !== item.char);
+        const distractors = ['ka', 'sa', 'ta', 'na', 'ha', 'ma', 'ya', 'ra']
+          .filter(d => d !== correct)
+          .slice(0, 3);
+
+        const answers = [correct, ...distractors].sort(() => Math.random() - 0.5);
+        return {
+          char: item.char,
+          speechText: item.char,
+          correct: correct,
+          answers: answers
+        };
+      });
+    },
+
+    renderQuestion() {
+      if (this.currentIndex >= this.questions.length) {
+        this.finishQuiz();
+        return;
+      }
+
+      this.answered = false;
+      const q = this.questions[this.currentIndex];
+
+      if (DOM.warmupCounterText) {
+        DOM.warmupCounterText.textContent = `Câu ${this.currentIndex + 1} / ${this.questions.length}`;
+      }
+      if (DOM.warmupProgressFill) {
+        const pct = Math.round(((this.currentIndex) / this.questions.length) * 100);
+        DOM.warmupProgressFill.style.width = `${Math.max(10, pct)}%`;
+      }
+      if (DOM.warmupCueBadge) {
+        DOM.warmupCueBadge.textContent = q.char;
+      }
+      if (DOM.btnWarmupAudioPrompt) {
+        DOM.btnWarmupAudioPrompt.onclick = () => {
+          speakText(q.speechText, STATE.currentLang, 1.0);
+        };
+      }
+
+      if (DOM.warmupAnswersGrid) {
+        DOM.warmupAnswersGrid.innerHTML = '';
+        q.answers.forEach(ans => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'warmup-answer-btn';
+          btn.textContent = ans;
+
+          btn.addEventListener('click', () => {
+            if (this.answered) return;
+            this.handleAnswer(btn, ans === q.correct, q.correct);
+          });
+
+          DOM.warmupAnswersGrid.appendChild(btn);
+        });
+      }
+    },
+
+    handleAnswer(btn, isCorrect, correctAns) {
+      this.answered = true;
+
+      if (isCorrect) {
+        btn.classList.add('correct');
+        SoundFX.playLaser();
+        this.score++;
+      } else {
+        btn.classList.add('wrong');
+        SoundFX.playHit();
+        // Highlight correct button
+        if (DOM.warmupAnswersGrid) {
+          DOM.warmupAnswersGrid.querySelectorAll('.warmup-answer-btn').forEach(b => {
+            if (b.textContent === correctAns) b.classList.add('correct');
+          });
+        }
+      }
+
+      setTimeout(() => {
+        this.currentIndex++;
+        this.renderQuestion();
+      }, 700);
+    },
+
+    finishQuiz() {
+      if (DOM.warmupProgressFill) DOM.warmupProgressFill.style.width = '100%';
+      if (DOM.warmupSuccessBanner) DOM.warmupSuccessBanner.style.display = 'block';
+      if (DOM.btnQuestGoStep4) DOM.btnQuestGoStep4.disabled = false;
+
+      awardXP(20, STATE.uiLang === 'vi' ? 'Hoàn thành Khởi động ải' : 'Warm-up Complete');
+      awardCoins(20, STATE.uiLang === 'vi' ? 'Hoàn thành Khởi động ải' : 'Warm-up Complete');
+      SoundFX.playVictory();
+    }
+  };
+
+  function loadWritingChar() {
+    if (!CURRENT_QUEST_STAGE || !CURRENT_QUEST_STAGE.items) return;
+    const items = CURRENT_QUEST_STAGE.items;
+    if (CURRENT_QUEST_CHAR_INDEX < 0) CURRENT_QUEST_CHAR_INDEX = 0;
+    if (CURRENT_QUEST_CHAR_INDEX >= items.length) CURRENT_QUEST_CHAR_INDEX = items.length - 1;
+
+    const item = items[CURRENT_QUEST_CHAR_INDEX];
+    if (!item) return;
+
+    if (DOM.writingTargetChar) DOM.writingTargetChar.textContent = item.char;
+    if (DOM.writingTargetReading) DOM.writingTargetReading.textContent = item.reading || '';
+    if (DOM.writingTargetMeaning) DOM.writingTargetMeaning.textContent = STATE.uiLang === 'vi' ? item.meaningVi : item.meaningEn;
+
+    if (questWritingPadInstance) {
+      questWritingPadInstance.clear();
+      questWritingPadInstance.setGuide(item.char);
+    }
+  }
+
+  function closeQuestModal() {
+    BattleArena.stopLoop();
+    if (DOM.questModalOverlay) {
+      DOM.questModalOverlay.classList.remove('open');
+      DOM.questModalOverlay.style.display = 'none';
+    }
+  }
+
+
   // Localization System (VI / EN)
   // ==========================================================================
 
@@ -369,18 +3043,599 @@
     STATE.alphabetCategory = null;
     STATE.selectedSoundItem = null;
     STATE.selectedLabIndex = 0;
+    STATE.currentSelectedLabSentenceId = null;
+    STATE.currentLabCustomSentence = null;
 
+    applyCulturalTheme(langCode);
     updateDropdownTriggerUI();
     renderLangDropdownMenu();
     toggleLanguageDropdown(false);
 
-    // Re-render Tab content
+    // Re-render Tab content AND update Tab 3 immediately!
     renderActiveTab();
+    renderTabLab();
+    renderCampaignPath();
 
     // Show toast confirmation
     const lang = getLanguageInfo(langCode);
     const name = STATE.uiLang === 'vi' ? lang.nameVi : lang.nameEn;
     showToast(`${lang.flag} ${STATE.uiLang === 'vi' ? 'Đã chuyển sang' : 'Switched to'} ${name}`);
+  }
+
+  // ==========================================================================
+  // Gamification & Habit Loop System (Duolingo & Renshuu inspired)
+  // ==========================================================================
+
+  function saveGamification() {
+    try {
+      localStorage.setItem('lingua_gamification', JSON.stringify(STATE.gamification));
+    } catch (e) {}
+  }
+
+  function checkAndUpdateDailyStreak() {
+    const today = new Date().toISOString().slice(0, 10);
+    const last = STATE.gamification.lastActiveDate;
+    if (!last) {
+      STATE.gamification.lastActiveDate = today;
+      STATE.gamification.streak = 1;
+    } else if (last !== today) {
+      const lastDate = new Date(last);
+      const currentDate = new Date(today);
+      const diffTime = Math.abs(currentDate - lastDate);
+      const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+      if (diffDays === 1) {
+        STATE.gamification.streak = (STATE.gamification.streak || 0) + 1;
+      } else if (diffDays > 1) {
+        STATE.gamification.streak = 1;
+      }
+      STATE.gamification.lastActiveDate = today;
+    }
+    saveGamification();
+    updateGamificationUI();
+  }
+
+  function awardXP(amount, reason = '') {
+    if (typeof STATE.gamification.xp !== 'number') STATE.gamification.xp = 0;
+    STATE.gamification.xp += amount;
+    STATE.gamification.level = Math.floor(STATE.gamification.xp / 100) + 1;
+    saveGamification();
+    updateGamificationUI();
+    showFloatingXPToast(amount, reason);
+    syncUserProfileToFirebase();
+  }
+
+  function awardCoins(amount, reason = '') {
+    if (typeof STATE.coins !== 'number') STATE.coins = 0;
+    STATE.coins += amount;
+    localStorage.setItem('lingua_coins', String(STATE.coins));
+    updateCoinsUI();
+    showFloatingCoinsToast(amount, reason);
+    SoundFX.playCoins();
+    syncUserProfileToFirebase();
+  }
+
+  function updateCoinsUI() {
+    if (DOM.coinsCount) DOM.coinsCount.textContent = STATE.coins || 0;
+    if (DOM.shopCoinsBalance) DOM.shopCoinsBalance.textContent = STATE.coins || 0;
+    if (DOM.profileModalStats) {
+      DOM.profileModalStats.textContent = `Cấp ${STATE.gamification.level || 1} • ${STATE.gamification.xp || 0} XP • ${STATE.coins || 0} 🪙`;
+    }
+  }
+
+  function showFloatingCoinsToast(amount, reason) {
+    if (!DOM.xpToastContainer) return;
+    const toast = document.createElement('div');
+    toast.className = 'xp-toast coin-toast';
+    const reasonText = reason ? ` • ${reason}` : '';
+    toast.textContent = `+${amount} 🪙${reasonText}`;
+    toast.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
+    toast.style.color = '#fff';
+    toast.style.borderColor = '#b45309';
+    DOM.xpToastContainer.appendChild(toast);
+    setTimeout(() => {
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
+    }, 1200);
+  }
+
+  // Cosmetics Shop System
+  let activeShopTab = 'frames';
+
+  function openShopModal() {
+    if (!DOM.shopModalOverlay) return;
+    updateCoinsUI();
+    renderShopItems();
+    DOM.shopModalOverlay.style.display = 'flex';
+  }
+
+  function closeShopModal() {
+    if (DOM.shopModalOverlay) DOM.shopModalOverlay.style.display = 'none';
+  }
+
+  function renderShopItems() {
+    if (!DOM.shopItemsGrid || typeof SHOP_ITEMS === 'undefined') return;
+
+    if (DOM.shopTabFrames) DOM.shopTabFrames.classList.toggle('active', activeShopTab === 'frames');
+    if (DOM.shopTabTitles) DOM.shopTabTitles.classList.toggle('active', activeShopTab === 'titles');
+
+    const items = SHOP_ITEMS.filter(it => it.category === activeShopTab);
+    DOM.shopItemsGrid.innerHTML = '';
+
+    items.forEach(item => {
+      const isOwned = (STATE.inventory[activeShopTab] || []).includes(item.id);
+      const isEquipped = activeShopTab === 'frames'
+        ? STATE.inventory.equippedFrame === item.id
+        : STATE.inventory.equippedTitle === item.id;
+
+      const card = document.createElement('div');
+      card.className = 'shop-item-card';
+
+      let previewHtml = '';
+      if (item.category === 'frames') {
+        previewHtml = `<div class="user-avatar-framed ${item.id}" style="width:48px; height:48px; font-size:1.6rem;"><span class="avatar-emoji">🦊</span></div>`;
+      } else {
+        previewHtml = `<div class="shop-item-preview"><span class="avatar-emoji">${item.icon}</span></div>`;
+      }
+
+      let actionBtnHtml = '';
+      if (isEquipped) {
+        actionBtnHtml = `<button type="button" class="btn-shop-action equipped" disabled>✓ Đang dùng</button>`;
+      } else if (isOwned) {
+        actionBtnHtml = `<button type="button" class="btn-shop-action equip" data-id="${item.id}" data-cat="${item.category}">Trang bị</button>`;
+      } else {
+        actionBtnHtml = `<button type="button" class="btn-shop-action buy" data-id="${item.id}" data-cat="${item.category}">Mua (${item.price} 🪙)</button>`;
+      }
+
+      const name = STATE.uiLang === 'vi' ? item.nameVi : item.nameEn;
+      const desc = STATE.uiLang === 'vi' ? item.descVi : item.descEn;
+
+      card.innerHTML = `
+        <div class="shop-item-top">
+          ${previewHtml}
+          <div class="shop-item-meta">
+            <h4 class="shop-item-name">${name}</h4>
+            <p class="shop-item-desc">${desc}</p>
+          </div>
+        </div>
+        <div class="shop-item-bottom">
+          <span class="shop-item-price">${item.price} 🪙</span>
+          ${actionBtnHtml}
+        </div>
+      `;
+
+      DOM.shopItemsGrid.appendChild(card);
+    });
+
+    // Wire action buttons
+    DOM.shopItemsGrid.querySelectorAll('.btn-shop-action.buy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const itemId = btn.dataset.id;
+        const itemCat = btn.dataset.cat;
+        buyShopItem(itemId, itemCat);
+      });
+    });
+
+    DOM.shopItemsGrid.querySelectorAll('.btn-shop-action.equip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const itemId = btn.dataset.id;
+        const itemCat = btn.dataset.cat;
+        equipShopItem(itemId, itemCat);
+      });
+    });
+  }
+
+  function buyShopItem(itemId, itemCat) {
+    const item = SHOP_ITEMS.find(it => it.id === itemId);
+    if (!item) return;
+
+    if ((STATE.coins || 0) < item.price) {
+      showToast(STATE.uiLang === 'vi' ? 'Bạn không đủ Lingua Coins! Hãy làm thêm bài tập để tích lũy.' : 'Not enough Lingua Coins!', 'error');
+      return;
+    }
+
+    STATE.coins -= item.price;
+    localStorage.setItem('lingua_coins', String(STATE.coins));
+
+    if (!STATE.inventory[itemCat]) STATE.inventory[itemCat] = [];
+    if (!STATE.inventory[itemCat].includes(itemId)) {
+      STATE.inventory[itemCat].push(itemId);
+    }
+    localStorage.setItem('lingua_inventory', JSON.stringify(STATE.inventory));
+
+    SoundFX.playCoins();
+    showToast(STATE.uiLang === 'vi' ? `Đã mua thành công ${item.nameVi}!` : `Purchased ${item.nameEn}!`);
+    updateCoinsUI();
+    renderShopItems();
+    syncUserProfileToFirebase();
+  }
+
+  function equipShopItem(itemId, itemCat) {
+    const item = SHOP_ITEMS.find(it => it.id === itemId);
+    if (!item) return;
+
+    if (itemCat === 'frames') {
+      STATE.inventory.equippedFrame = itemId;
+      STATE.userProfile.equippedFrame = itemId;
+    } else {
+      STATE.inventory.equippedTitle = itemId;
+      STATE.userProfile.equippedTitle = itemId;
+    }
+
+    localStorage.setItem('lingua_inventory', JSON.stringify(STATE.inventory));
+    localStorage.setItem('lingua_user_profile', JSON.stringify(STATE.userProfile));
+
+    SoundFX.playClick();
+    showToast(STATE.uiLang === 'vi' ? `Đã trang bị ${item.nameVi}!` : `Equipped ${item.nameEn}!`);
+    updateUserProfileBadge();
+    renderShopItems();
+    syncUserProfileToFirebase();
+  }
+
+  function getEquippedTitleName() {
+    if (typeof SHOP_ITEMS !== 'undefined') {
+      const found = SHOP_ITEMS.find(it => it.id === (STATE.inventory ? STATE.inventory.equippedTitle : ''));
+      if (found) return STATE.uiLang === 'vi' ? found.nameVi : found.nameEn;
+    }
+    return STATE.uiLang === 'vi' ? 'Tân thủ' : 'Novice';
+  }
+
+  function updateGamificationUI() {
+    if (DOM.streakCount) DOM.streakCount.textContent = STATE.gamification.streak || 1;
+    if (DOM.xpCount) DOM.xpCount.textContent = STATE.gamification.xp || 0;
+    if (DOM.levelBadge) DOM.levelBadge.textContent = `Lv.${STATE.gamification.level || 1}`;
+    if (DOM.masteryBarFill) {
+      const xpInLevel = (STATE.gamification.xp || 0) % 100;
+      DOM.masteryBarFill.style.width = `${xpInLevel}%`;
+    }
+  }
+
+  function showFloatingXPToast(amount, reason) {
+    if (!DOM.xpToastContainer) return;
+    const toast = document.createElement('div');
+    toast.className = 'xp-toast';
+    const reasonText = reason ? ` • ${reason}` : '';
+    toast.textContent = `+${amount} XP${reasonText}`;
+    DOM.xpToastContainer.appendChild(toast);
+    setTimeout(() => {
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
+    }, 1200);
+  }
+
+  function trackItemPractice(key, label) {
+    if (!key) return;
+    if (!STATE.gamification.practicedItems) STATE.gamification.practicedItems = [];
+    if (!STATE.gamification.practicedItems.includes(key)) {
+      STATE.gamification.practicedItems.push(key);
+      // Passive XP farming removed per strict XP rules
+    }
+  }
+
+  // ==========================================================================
+  // Active Recall Quiz Engine (Tab 1 & Tab 2 Quick Drills)
+  // ==========================================================================
+
+  function startSoundQuiz() {
+    const langData = LANG_DATA[STATE.currentLang];
+    if (!langData || !langData.alphabet) {
+      showToast(STATE.uiLang === 'vi' ? 'Chưa có dữ liệu bảng âm.' : 'No alphabet data available.');
+      return;
+    }
+
+    const alphabetTabs = normalizeAlphabetData(langData.alphabet);
+    const pool = [];
+    alphabetTabs.forEach(sub => {
+      (sub.items || []).forEach(it => {
+        if (it && it.char) pool.push(it);
+      });
+    });
+
+    if (pool.length < 4) {
+      showToast(STATE.uiLang === 'vi' ? 'Dữ liệu quá ít để tạo bài luyện.' : 'Not enough data for quiz.');
+      return;
+    }
+
+    // Pick 5 random questions
+    const shuffledPool = [...pool].sort(() => 0.5 - Math.random());
+    const questions = shuffledPool.slice(0, Math.min(5, shuffledPool.length)).map(target => {
+      const distractors = pool.filter(it => it.char !== target.char).sort(() => 0.5 - Math.random()).slice(0, 3);
+      const choices = [target, ...distractors].sort(() => 0.5 - Math.random());
+      return {
+        target,
+        speechText: target.speechText || target.char,
+        prompt: STATE.uiLang === 'vi' ? 'Nghe âm thanh và chọn chữ cái / ký tự đúng:' : 'Listen and choose the matching character:',
+        choices: choices.map(c => ({
+          display: c.char,
+          phonetic: c.phonetic || c.romaji || (c.ipa ? `/${c.ipa}/` : ''),
+          isCorrect: c.char === target.char,
+          raw: c
+        }))
+      };
+    });
+
+    STATE.quiz = {
+      active: true,
+      type: 'sound',
+      questions,
+      currentIndex: 0,
+      score: 0,
+      streak: 0,
+      maxStreak: 0,
+      xpEarned: 0,
+      missedItems: [],
+      answered: false
+    };
+
+    openQuizModal();
+  }
+
+  function startExpQuiz() {
+    const langData = LANG_DATA[STATE.currentLang];
+    if (!langData) {
+      showToast(STATE.uiLang === 'vi' ? 'Chưa có dữ liệu giao tiếp.' : 'No expression data available.');
+      return;
+    }
+
+    const pool = [];
+    (langData.phrases || []).forEach(p => {
+      if (p.target) {
+        pool.push({
+          text: p.target,
+          phonetic: p.phonetic || '',
+          vi: p.vi,
+          en: p.en,
+          speechText: p.speechText || p.target
+        });
+      }
+    });
+    (langData.expressions || []).forEach(e => {
+      if (e.casual && e.casual.text) {
+        pool.push({
+          text: e.casual.text,
+          phonetic: e.casual.phonetic || '',
+          vi: e.casual.vi,
+          en: e.casual.en,
+          speechText: e.casual.speechText || e.casual.text
+        });
+      }
+      if (e.formal && e.formal.text) {
+        pool.push({
+          text: e.formal.text,
+          phonetic: e.formal.phonetic || '',
+          vi: e.formal.vi,
+          en: e.formal.en,
+          speechText: e.formal.speechText || e.formal.text
+        });
+      }
+    });
+
+    if (pool.length < 4) {
+      showToast(STATE.uiLang === 'vi' ? 'Dữ liệu quá ít để tạo bài luyện.' : 'Not enough data for quiz.');
+      return;
+    }
+
+    const shuffled = [...pool].sort(() => 0.5 - Math.random());
+    const questions = shuffled.slice(0, Math.min(5, shuffled.length)).map(target => {
+      const distractors = pool.filter(p => p.text !== target.text).sort(() => 0.5 - Math.random()).slice(0, 3);
+      const choices = [target, ...distractors].sort(() => 0.5 - Math.random());
+      return {
+        target,
+        speechText: target.speechText || target.text,
+        prompt: STATE.uiLang === 'vi' ? 'Nghe phát âm và chọn ý nghĩa chính xác:' : 'Listen and choose the correct meaning:',
+        choices: choices.map(c => ({
+          display: STATE.uiLang === 'vi' ? c.vi : c.en,
+          phonetic: c.text,
+          isCorrect: c.text === target.text,
+          raw: c
+        }))
+      };
+    });
+
+    STATE.quiz = {
+      active: true,
+      type: 'expression',
+      questions,
+      currentIndex: 0,
+      score: 0,
+      streak: 0,
+      maxStreak: 0,
+      xpEarned: 0,
+      missedItems: [],
+      answered: false
+    };
+
+    openQuizModal();
+  }
+
+  function openQuizModal() {
+    if (!DOM.quizModalOverlay) return;
+    DOM.quizModalOverlay.style.display = 'flex';
+    if (DOM.quizQuestionStage) DOM.quizQuestionStage.style.display = 'block';
+    if (DOM.quizResultStage) DOM.quizResultStage.style.display = 'none';
+
+    if (DOM.quizTypeBadge) {
+      DOM.quizTypeBadge.textContent = STATE.quiz.type === 'sound'
+        ? (STATE.uiLang === 'vi' ? '⚡ Phản xạ Âm & Chữ' : '⚡ Sound & Script Drill')
+        : (STATE.uiLang === 'vi' ? '⚡ Phản xạ Giao tiếp' : '⚡ Expression Drill');
+    }
+
+    renderQuizQuestion();
+  }
+
+  function renderQuizQuestion() {
+    const q = STATE.quiz.questions[STATE.quiz.currentIndex];
+    if (!q) {
+      showQuizResults();
+      return;
+    }
+
+    STATE.quiz.answered = false;
+
+    // Progress fill & counter
+    if (DOM.quizProgressFill) {
+      const pct = ((STATE.quiz.currentIndex) / STATE.quiz.questions.length) * 100;
+      DOM.quizProgressFill.style.width = `${pct}%`;
+    }
+    if (DOM.quizCounterBadge) {
+      DOM.quizCounterBadge.textContent = `${STATE.uiLang === 'vi' ? 'Câu' : 'Question'} ${STATE.quiz.currentIndex + 1} / ${STATE.quiz.questions.length}`;
+    }
+
+    // Combo pill
+    if (DOM.quizComboPill && DOM.quizComboCount) {
+      if (STATE.quiz.streak >= 2) {
+        DOM.quizComboPill.style.display = 'inline-flex';
+        DOM.quizComboCount.textContent = STATE.quiz.streak;
+      } else {
+        DOM.quizComboPill.style.display = 'none';
+      }
+    }
+
+    if (DOM.quizPromptText) DOM.quizPromptText.textContent = q.prompt;
+
+    // Reset feedback banner
+    if (DOM.quizFeedbackBanner) {
+      DOM.quizFeedbackBanner.style.display = 'none';
+      DOM.quizFeedbackBanner.className = 'quiz-feedback-banner';
+    }
+
+    // Auto play audio
+    speakText(q.speechText, STATE.currentLang, 1.0);
+
+    // Render choice buttons
+    if (DOM.quizChoicesContainer) {
+      DOM.quizChoicesContainer.innerHTML = '';
+      q.choices.forEach(ch => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'quiz-choice-btn';
+        btn.innerHTML = `<span class="quiz-choice-text">${ch.display}</span>${ch.phonetic ? `<span class="quiz-choice-phonetic">${ch.phonetic}</span>` : ''}`;
+
+        btn.addEventListener('click', () => {
+          handleQuizChoiceSelected(btn, ch, q);
+        });
+
+        DOM.quizChoicesContainer.appendChild(btn);
+      });
+    }
+  }
+
+  function handleQuizChoiceSelected(btn, choice, question) {
+    if (STATE.quiz.answered) return;
+    STATE.quiz.answered = true;
+
+    // Disable all choice buttons
+    if (DOM.quizChoicesContainer) {
+      DOM.quizChoicesContainer.querySelectorAll('.quiz-choice-btn').forEach(b => b.disabled = true);
+    }
+
+    if (choice.isCorrect) {
+      btn.classList.add('correct');
+      STATE.quiz.score++;
+      STATE.quiz.streak++;
+      if (STATE.quiz.streak > STATE.quiz.maxStreak) {
+        STATE.quiz.maxStreak = STATE.quiz.streak;
+      }
+      awardXP(10, STATE.uiLang === 'vi' ? 'Đúng câu hỏi quiz' : 'Correct quiz answer');
+      STATE.quiz.xpEarned += 10;
+
+      if (DOM.quizFeedbackBanner && DOM.quizFeedbackIcon && DOM.quizFeedbackMsg) {
+        DOM.quizFeedbackBanner.className = 'quiz-feedback-banner correct';
+        DOM.quizFeedbackIcon.textContent = '🎉';
+        DOM.quizFeedbackMsg.textContent = STATE.uiLang === 'vi' ? 'Chính xác! (+10 XP)' : 'Correct! (+10 XP)';
+        DOM.quizFeedbackBanner.style.display = 'flex';
+      }
+
+      setTimeout(() => {
+        STATE.quiz.currentIndex++;
+        renderQuizQuestion();
+      }, 850);
+
+    } else {
+      btn.classList.add('incorrect');
+      // Highlight the correct one
+      if (DOM.quizChoicesContainer) {
+        const buttons = DOM.quizChoicesContainer.querySelectorAll('.quiz-choice-btn');
+        question.choices.forEach((c, idx) => {
+          if (c.isCorrect && buttons[idx]) {
+            buttons[idx].classList.add('correct');
+          }
+        });
+      }
+
+      STATE.quiz.streak = 0;
+      if (DOM.quizComboPill) DOM.quizComboPill.style.display = 'none';
+
+      // Auto-add to Weak Spots
+      const missed = question.target;
+      addToWeakSpotsAuto(missed);
+      STATE.quiz.missedItems.push(missed);
+
+      if (DOM.quizFeedbackBanner && DOM.quizFeedbackIcon && DOM.quizFeedbackMsg) {
+        DOM.quizFeedbackBanner.className = 'quiz-feedback-banner incorrect';
+        DOM.quizFeedbackIcon.textContent = '🎯';
+        DOM.quizFeedbackMsg.textContent = STATE.uiLang === 'vi'
+          ? 'Chưa chính xác! Đã thêm vào mục Cần sửa 🎯'
+          : 'Not quite! Automatically added to Weak Spots 🎯';
+        DOM.quizFeedbackBanner.style.display = 'flex';
+      }
+
+      setTimeout(() => {
+        STATE.quiz.currentIndex++;
+        renderQuizQuestion();
+      }, 1400);
+    }
+  }
+
+  function addToWeakSpotsAuto(item) {
+    if (!item) return;
+    const char = item.char || item.text;
+    const romaji = item.phonetic || item.romaji || (item.ipa ? `/${item.ipa}/` : '');
+    const vi = item.meaningVi || item.vi || (item.example ? (item.example.meaning_vi || item.example.vi) : '') || '';
+    const en = item.meaningEn || item.en || (item.example ? (item.example.meaning_en || item.example.en) : '') || '';
+
+    const exists = STATE.weakSpots.some(w => (w.char || w.text) === char);
+    if (!exists) {
+      STATE.weakSpots.push({
+        char,
+        romaji,
+        vi,
+        en,
+        lang: STATE.currentLang,
+        savedAt: Date.now()
+      });
+      localStorage.setItem('lingua_weak_spots', JSON.stringify(STATE.weakSpots));
+      updateBadges();
+    }
+  }
+
+  function showQuizResults() {
+    if (DOM.quizQuestionStage) DOM.quizQuestionStage.style.display = 'none';
+    if (DOM.quizResultStage) DOM.quizResultStage.style.display = 'flex';
+
+    if (DOM.quizProgressFill) DOM.quizProgressFill.style.width = '100%';
+
+    const total = STATE.quiz.questions.length;
+    const score = STATE.quiz.score;
+
+    if (DOM.quizResultScore) DOM.quizResultScore.textContent = `${score}/${total}`;
+    if (DOM.quizResultXp) DOM.quizResultXp.textContent = `+${STATE.quiz.xpEarned} XP`;
+    if (DOM.quizResultStreak) DOM.quizResultStreak.textContent = `${STATE.quiz.maxStreak}`;
+
+    if (DOM.quizMissedAlert) {
+      if (STATE.quiz.missedItems.length > 0) {
+        DOM.quizMissedAlert.style.display = 'flex';
+      } else {
+        DOM.quizMissedAlert.style.display = 'none';
+      }
+    }
+
+    if (score >= 4) {
+      triggerConfettiBurst();
+    }
+  }
+
+  function closeQuizModal() {
+    if (DOM.quizModalOverlay) DOM.quizModalOverlay.style.display = 'none';
+    if (DOM.quizFeedbackBanner) DOM.quizFeedbackBanner.style.display = 'none';
+    STATE.quiz.active = false;
   }
 
   // ==========================================================================
@@ -425,7 +3680,9 @@
     window.speechSynthesis.cancel();
     if (!text || !text.trim()) return;
 
-    const utterance = new SpeechSynthesisUtterance(text);
+    const UtteranceClass = (typeof window !== 'undefined' && window.SpeechSynthesisUtterance) || (typeof SpeechSynthesisUtterance !== 'undefined' ? SpeechSynthesisUtterance : null);
+    if (!UtteranceClass) return;
+    const utterance = new UtteranceClass(text);
     utterance.lang = langCode || STATE.currentLang;
     utterance.rate = Math.max(0.5, Math.min(2.0, speed));
     utterance.pitch = 1.0;
@@ -457,18 +3714,69 @@
   // Tab 1: Alphabet & Sound Chart + Animated Articulation Visualizer
   // ==========================================================================
 
+  function normalizeAlphabetData(alphabetRaw) {
+    if (!alphabetRaw) return [];
+
+    // Case 1: Standard Array of Sub-tabs [{ id, labelVi, labelEn, items: [...] }]
+    if (Array.isArray(alphabetRaw)) {
+      return alphabetRaw.map(tab => ({
+        id: tab.id,
+        labelVi: tab.labelVi || tab.name_vi || tab.id,
+        labelEn: tab.labelEn || tab.name_en || tab.id,
+        descriptionVi: tab.descriptionVi || tab.description_vi || '',
+        descriptionEn: tab.descriptionEn || tab.description_en || '',
+        items: Array.isArray(tab.items) ? tab.items : []
+      }));
+    }
+
+    // Case 2: Object with categories and items: { categories: [...], items: [...] }
+    if (alphabetRaw.categories && Array.isArray(alphabetRaw.categories) && Array.isArray(alphabetRaw.items)) {
+      return alphabetRaw.categories.map(cat => ({
+        id: cat.id,
+        labelVi: cat.name_vi || cat.labelVi || cat.id,
+        labelEn: cat.name_en || cat.labelEn || cat.id,
+        descriptionVi: cat.description_vi || cat.descriptionVi || '',
+        descriptionEn: cat.description_en || cat.descriptionEn || '',
+        items: alphabetRaw.items.filter(it => it.category === cat.id)
+      }));
+    }
+
+    // Case 3: Object with category keys { [key]: [...] }
+    if (typeof alphabetRaw === 'object') {
+      return Object.keys(alphabetRaw).map(catKey => {
+        const items = Array.isArray(alphabetRaw[catKey]) ? alphabetRaw[catKey] : [];
+        return {
+          id: catKey,
+          labelVi: catKey,
+          labelEn: catKey,
+          descriptionVi: '',
+          descriptionEn: '',
+          items: items
+        };
+      });
+    }
+
+    return [];
+  }
+
   function renderTabAlphabet() {
     const langData = LANG_DATA[STATE.currentLang];
     if (!langData || !langData.alphabet) return;
 
+    const subTabs = normalizeAlphabetData(langData.alphabet);
+    if (!subTabs.length) return;
+
     // Render Sub-tabs based on categories present
-    renderAlphabetSubTabs(langData.alphabet);
+    renderAlphabetSubTabs(subTabs);
 
     // Filter items by category & search query
-    const activeCategory = STATE.alphabetCategory || Object.keys(langData.alphabet)[0];
-    STATE.alphabetCategory = activeCategory;
+    let currentSubTab = subTabs.find(t => t.id === STATE.alphabetCategory);
+    if (!currentSubTab) {
+      currentSubTab = subTabs[0];
+      STATE.alphabetCategory = currentSubTab.id;
+    }
 
-    const allItems = langData.alphabet[activeCategory] || [];
+    const allItems = currentSubTab.items || [];
     const query = (DOM.soundSearchInput && typeof DOM.soundSearchInput.value === 'string' ? DOM.soundSearchInput.value : '').trim().toLowerCase();
 
     const filteredItems = allItems.filter(item => {
@@ -476,14 +3784,15 @@
       const charMatch = (item.char || '').toLowerCase().includes(query);
       const romajiMatch = (item.romaji || '').toLowerCase().includes(query);
       const ipaMatch = (item.ipa || '').toLowerCase().includes(query);
-      const meaningVi = (item.meaningVi || '').toLowerCase().includes(query);
-      const meaningEn = (item.meaningEn || '').toLowerCase().includes(query);
-      return charMatch || romajiMatch || ipaMatch || meaningVi || meaningEn;
+      const meaningVi = (item.meaningVi || item.meaning_vi || '').toLowerCase().includes(query);
+      const meaningEn = (item.meaningEn || item.meaning_en || '').toLowerCase().includes(query);
+      const groupVi = (item.groupVi || item.group_vi || '').toLowerCase().includes(query);
+      const groupEn = (item.groupEn || item.group_en || '').toLowerCase().includes(query);
+      return charMatch || romajiMatch || ipaMatch || meaningVi || meaningEn || groupVi || groupEn;
     });
 
     // Update stats text
     if (DOM.soundStatsText) {
-      const dict = UI_I18N[STATE.uiLang] || UI_I18N.vi;
       DOM.soundStatsText.textContent = `${STATE.uiLang === 'vi' ? 'Hiển thị' : 'Showing'} ${filteredItems.length} ${STATE.uiLang === 'vi' ? 'âm / chữ' : 'sounds'}`;
     }
 
@@ -494,64 +3803,55 @@
     filteredItems.forEach(item => {
       const isSelected = STATE.selectedSoundItem && STATE.selectedSoundItem.char === item.char;
       const card = document.createElement('div');
-      card.className = `sound-card ${isSelected ? 'active' : ''}`;
+      const charLen = item.char ? item.char.length : 0;
+      let sizeClass = '';
+      if (charLen > 5) sizeClass = 'char-extra-long';
+      else if (charLen > 2) sizeClass = 'char-long';
+
+      card.className = `sound-card ${sizeClass} ${isSelected ? 'active' : ''}`.trim();
+
+      const cleanIpa = item.ipa ? item.ipa.replace(/^\/|\[|\/|\]$/g, '') : '';
+      const ipaHtml = cleanIpa ? `<span class="card-ipa">/${cleanIpa}/</span>` : '';
+      const romajiHtml = item.romaji ? `<span class="card-romaji">${item.romaji}</span>` : '';
+
       card.innerHTML = `
-        <span class="card-char">${item.char}</span>
-        <span class="card-romaji">${item.romaji || ''}</span>
-        <span class="card-ipa">${item.ipa ? `/${item.ipa}/` : ''}</span>
+        <span class="card-char">${item.char || ''}</span>
+        ${romajiHtml}
+        ${ipaHtml}
       `;
 
       card.addEventListener('click', () => {
         selectSoundItem(item);
         // Play audio immediately on card click
-        speakText(item.char, STATE.currentLang, 1.0);
+        speakText(item.speechText || item.char, STATE.currentLang, 1.0);
+        trackItemPractice(item.char, STATE.uiLang === 'vi' ? 'Luyện âm mới' : 'Practiced sound');
       });
 
       DOM.soundsGrid.appendChild(card);
     });
 
-    // Auto-select first item if none selected
-    if (!STATE.selectedSoundItem && filteredItems.length > 0) {
+    // Auto-select first item if none selected or if previously selected item is not in current view
+    const currentSelectedInFiltered = STATE.selectedSoundItem && filteredItems.find(i => i.char === STATE.selectedSoundItem.char);
+    if (!currentSelectedInFiltered && filteredItems.length > 0) {
       selectSoundItem(filteredItems[0], false);
-    } else if (STATE.selectedSoundItem) {
-      updateInspectorCard(STATE.selectedSoundItem);
+    } else if (currentSelectedInFiltered) {
+      updateInspectorCard(currentSelectedInFiltered);
     }
   }
 
-  function renderAlphabetSubTabs(alphabetObj) {
+  function renderAlphabetSubTabs(subTabs) {
     if (!DOM.alphabetSubTabs) return;
     DOM.alphabetSubTabs.innerHTML = '';
 
-    const categories = Object.keys(alphabetObj);
-    if (!STATE.alphabetCategory || !categories.includes(STATE.alphabetCategory)) {
-      STATE.alphabetCategory = categories[0];
-    }
-
-    const dict = UI_I18N[STATE.uiLang] || UI_I18N.vi;
-
-    categories.forEach(catKey => {
-      const isActive = catKey === STATE.alphabetCategory;
+    subTabs.forEach(subTab => {
+      const isActive = subTab.id === STATE.alphabetCategory;
       const pill = document.createElement('button');
       pill.type = 'button';
       pill.className = `subtab-pill ${isActive ? 'active' : ''}`;
-      
-      // Determine label
-      let label = catKey;
-      if (catKey === 'a-z') label = dict.subtabAlphabetAZ || 'Bảng chữ cái A–Z';
-      else if (catKey === 'vowels') label = dict.vowels || 'Nguyên âm';
-      else if (catKey === 'consonants') label = dict.consonants || 'Phụ âm';
-      else if (catKey === 'double_consonants') label = dict.doubleConsonants || 'Phụ âm đôi';
-      else if (catKey === 'tones') label = dict.tones || 'Thanh điệu';
-      else if (catKey === 'initials') label = dict.initials || 'Thanh mẫu';
-      else if (catKey === 'finals') label = dict.finals || 'Vận mẫu';
-      else if (catKey === 'radicals') label = dict.radicalsAndBasicChars || 'Chữ Hán & Bộ thủ cơ bản';
-      else if (catKey === 'hiragana') label = 'Hiragana (ひらがな)';
-      else if (catKey === 'katakana') label = 'Katakana (カタカナ)';
-
-      pill.textContent = label;
+      pill.textContent = STATE.uiLang === 'vi' ? (subTab.labelVi || subTab.id) : (subTab.labelEn || subTab.id);
 
       pill.addEventListener('click', () => {
-        STATE.alphabetCategory = catKey;
+        STATE.alphabetCategory = subTab.id;
         STATE.selectedSoundItem = null;
         renderTabAlphabet();
       });
@@ -562,6 +3862,10 @@
 
   function selectSoundItem(item, shouldScroll = false) {
     STATE.selectedSoundItem = item;
+    if (tab1WritingPadInstance) {
+      tab1WritingPadInstance.clear();
+      tab1WritingPadInstance.setGuide(item ? item.char : '');
+    }
 
     // Highlight card
     document.querySelectorAll('.sound-card').forEach(card => {
@@ -578,25 +3882,49 @@
   }
 
   function updateInspectorCard(item) {
-    if (!DOM.inspectorDetail || !DOM.inspectorEmptyState) return;
+    if (!DOM.inspectorDetail || !DOM.inspectorEmptyState || !item) return;
 
     DOM.inspectorEmptyState.style.display = 'none';
     DOM.inspectorDetail.style.display = 'block';
 
     const dict = UI_I18N[STATE.uiLang] || UI_I18N.vi;
 
-    if (DOM.inspectChar) DOM.inspectChar.textContent = item.char;
-    if (DOM.inspectRomaji) DOM.inspectRomaji.textContent = item.romaji ? `${item.romaji} ${item.ipa ? `/${item.ipa}/` : ''}` : '';
-    if (DOM.inspectTitle) DOM.inspectTitle.textContent = item.char;
+    if (DOM.inspectChar) {
+      DOM.inspectChar.textContent = item.char || '';
+      const charLen = (item.char || '').length;
+      DOM.inspectChar.classList.toggle('char-long', charLen > 2 && charLen <= 5);
+      DOM.inspectChar.classList.toggle('char-extra-long', charLen > 5);
+    }
+
+    // IPA / Romaji badge
+    let readingStr = '';
+    const cleanIpa = item.ipa ? item.ipa.replace(/^\/|\[|\/|\]$/g, '') : '';
+    if (item.romaji && cleanIpa) {
+      readingStr = `${item.romaji} /${cleanIpa}/`;
+    } else if (item.romaji) {
+      readingStr = item.romaji;
+    } else if (cleanIpa) {
+      readingStr = `/${cleanIpa}/`;
+    }
+
+    if (DOM.inspectRomaji) {
+      DOM.inspectRomaji.textContent = readingStr;
+      DOM.inspectRomaji.style.display = readingStr ? 'inline-block' : 'none';
+    }
+
+    if (DOM.inspectTitle) {
+      const group = STATE.uiLang === 'vi' ? (item.groupVi || item.group_vi || '') : (item.groupEn || item.group_en || '');
+      DOM.inspectTitle.textContent = group ? `${item.char} • ${group}` : item.char;
+    }
     
     // Meaning or Type
-    const meaning = STATE.uiLang === 'vi' ? (item.meaningVi || '') : (item.meaningEn || '');
+    const meaning = STATE.uiLang === 'vi' ? (item.meaningVi || item.meaning_vi || '') : (item.meaningEn || item.meaning_en || '');
     if (DOM.inspectType) {
-      DOM.inspectType.textContent = meaning || (item.ipa ? `IPA: /${item.ipa}/` : (item.romaji || ''));
+      DOM.inspectType.textContent = meaning || (cleanIpa ? `IPA: /${cleanIpa}/` : (item.romaji || ''));
     }
 
     // Mouth tip
-    const tip = STATE.uiLang === 'vi' ? (item.mouthTipVi || '') : (item.mouthTipEn || '');
+    const tip = STATE.uiLang === 'vi' ? (item.mouthTipVi || item.mouthTip_vi || '') : (item.mouthTipEn || item.mouthTip_en || '');
     if (DOM.inspectMouthTip) {
       DOM.inspectMouthTip.textContent = tip || (STATE.uiLang === 'vi' ? 'Thả lỏng quai hàm, phát âm rõ ràng và dứt khoát.' : 'Relax your jaw and pronounce clearly.');
     }
@@ -604,15 +3932,22 @@
     // Example words
     if (DOM.exampleWordsList) {
       DOM.exampleWordsList.innerHTML = '';
-      if (item.examples && item.examples.length > 0) {
-        item.examples.forEach(ex => {
-          const meaningText = STATE.uiLang === 'vi' ? ex.vi : ex.en;
+      const examples = (item.examples && item.examples.length > 0) ? item.examples : (item.example ? [{
+        word: item.example.word,
+        reading: item.example.reading,
+        vi: item.example.meaning_vi || item.example.vi,
+        en: item.example.meaning_en || item.example.en
+      }] : []);
+
+      if (examples.length > 0) {
+        examples.forEach(ex => {
+          const meaningText = STATE.uiLang === 'vi' ? (ex.vi || ex.meaning_vi || '') : (ex.en || ex.meaning_en || '');
           const wordRow = document.createElement('div');
           wordRow.className = 'example-word-row';
           wordRow.style.cssText = 'display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background:rgba(255,255,255,0.03); border:1px solid var(--border-glass); border-radius:10px; margin-bottom:6px;';
           wordRow.innerHTML = `
             <div>
-              <strong style="color:#fff; font-size:1rem;">${ex.word}</strong>
+              <strong style="color:var(--text-highlight, #0f172a); font-size:1rem;">${ex.word || ''}</strong>
               <span style="color:var(--cyan-light); font-size:0.8rem; margin-left:6px; font-family:var(--font-mono);">${ex.reading || ''}</span>
               <p style="font-size:0.78rem; color:var(--text-muted); margin-top:2px;">${meaningText || ''}</p>
             </div>
@@ -622,10 +3957,12 @@
           `;
 
           const playBtn = wordRow.querySelector('button');
-          playBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            speakText(ex.word, STATE.currentLang, 1.0);
-          });
+          if (playBtn) {
+            playBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              speakText(ex.word, STATE.currentLang, 1.0);
+            });
+          }
 
           DOM.exampleWordsList.appendChild(wordRow);
         });
@@ -728,6 +4065,7 @@
         btn1.addEventListener('click', (e) => {
           e.stopPropagation();
           speakText(targetText, STATE.currentLang, 1.0);
+          trackItemPractice(targetText, STATE.uiLang === 'vi' ? 'Luyện cụm từ' : 'Practiced phrase');
         });
       }
 
@@ -737,6 +4075,7 @@
         btnSlow.addEventListener('click', (e) => {
           e.stopPropagation();
           speakText(targetText, STATE.currentLang, 0.7);
+          trackItemPractice(targetText, STATE.uiLang === 'vi' ? 'Luyện cụm từ' : 'Practiced phrase');
         });
       }
 
@@ -829,7 +4168,7 @@
             <div style="font-size:0.72rem; color:var(--primary-light); font-weight:700; text-transform:uppercase;">${casualTag}</div>
             ${casualMeaning ? `<span style="font-size:0.78rem; color:var(--text-muted);">${casualMeaning}</span>` : ''}
           </div>
-          <div style="font-size:1.25rem; font-weight:800; color:#fff; margin:4px 0;">${casualText}</div>
+          <div style="font-size:1.25rem; font-weight:800; color:var(--text-highlight, #0f172a); margin:4px 0;">${casualText}</div>
           <div style="font-size:0.84rem; color:var(--cyan-light); font-family:var(--font-mono);">${casualPhonetic}</div>
           <div style="display:flex; gap:8px; margin-top:8px;">
             <button type="button" class="btn-phrase-audio btn-casual-1" style="padding:4px 10px; font-size:0.75rem;">▶ 1.0x</button>
@@ -855,9 +4194,18 @@
       const btnSlow = card.querySelector('.btn-casual-slow');
       const btnFormal = card.querySelector('.btn-formal-1');
 
-      if (btn1) btn1.addEventListener('click', () => speakText(casualText, STATE.currentLang, 1.0));
-      if (btnSlow) btnSlow.addEventListener('click', () => speakText(casualText, STATE.currentLang, 0.7));
-      if (btnFormal) btnFormal.addEventListener('click', () => speakText(formalText, STATE.currentLang, 1.0));
+      if (btn1) btn1.addEventListener('click', () => {
+        speakText(casualText, STATE.currentLang, 1.0);
+        trackItemPractice(casualText, STATE.uiLang === 'vi' ? 'Luyện câu giao tiếp' : 'Practiced expression');
+      });
+      if (btnSlow) btnSlow.addEventListener('click', () => {
+        speakText(casualText, STATE.currentLang, 0.7);
+        trackItemPractice(casualText, STATE.uiLang === 'vi' ? 'Luyện câu giao tiếp' : 'Practiced expression');
+      });
+      if (btnFormal) btnFormal.addEventListener('click', () => {
+        speakText(formalText, STATE.currentLang, 1.0);
+        trackItemPractice(formalText, STATE.uiLang === 'vi' ? 'Luyện câu trang trọng' : 'Practiced formal expression');
+      });
 
       initCard3DTilt(card);
       DOM.expressionsList.appendChild(card);
@@ -877,30 +4225,201 @@
   }
 
   // ==========================================================================
-  // Tab 3: Phòng thu phát âm AI & Live Waveform Canvas
+  // Tab 3: Phòng thu phát âm AI & Shadowing Studio
   // ==========================================================================
 
+  function getAllLabSentencesForCurrentLang() {
+    const langData = LANG_DATA[STATE.currentLang] || {};
+    const groups = [
+      {
+        id: 'studio',
+        name: STATE.uiLang === 'vi' ? '🎙️ Mẫu câu luyện âm cơ bản' : '🎙️ Studio Sentences',
+        items: (langData.labSentences || []).map((s, idx) => ({
+          id: `lab_${idx}`,
+          category: 'studio',
+          text: s.text || '',
+          phonetic: s.phonetic || s.romaji || s.pinyin || '',
+          vi: s.vi || s.translation_vi || s.meaning_vi || '',
+          en: s.en || s.translation_en || s.meaning_en || '',
+          speechText: s.speechText || s.text || ''
+        }))
+      },
+      {
+        id: 'phrases',
+        name: STATE.uiLang === 'vi' ? '🧩 Cụm từ then chốt (Key Phrases)' : '🧩 Key Phrases & Chunks',
+        items: (langData.phrases || []).map((p, idx) => ({
+          id: `phrase_${p.id || idx}`,
+          category: 'phrases',
+          text: p.text || p.target || '',
+          phonetic: p.phonetic || p.romaji || p.pinyin || '',
+          vi: p.translation_vi || p.vi || p.meaning_vi || '',
+          en: p.translation_en || p.en || p.meaning_en || '',
+          speechText: p.speechText || p.text || p.target || ''
+        }))
+      },
+      {
+        id: 'expressions',
+        name: STATE.uiLang === 'vi' ? '💬 Câu giao tiếp thực tế' : '💬 Native Expressions',
+        items: (langData.expressions || []).flatMap((e, idx) => {
+          const list = [];
+          if (e.casual && e.casual.text) {
+            list.push({
+              id: `exp_${e.id || idx}_c`,
+              category: 'expressions',
+              text: e.casual.text || '',
+              phonetic: e.casual.phonetic || e.casual.romaji || e.casual.pinyin || '',
+              vi: `${e.casual.translation_vi || e.casual.vi || e.casual.meaning_vi || ''} [Thân mật]`,
+              en: `${e.casual.translation_en || e.casual.en || e.casual.meaning_en || ''} [Casual]`,
+              speechText: e.casual.speechText || e.casual.text || ''
+            });
+          }
+          if (e.formal && e.formal.text) {
+            list.push({
+              id: `exp_${e.id || idx}_f`,
+              category: 'expressions',
+              text: e.formal.text || '',
+              phonetic: e.formal.phonetic || e.formal.romaji || e.formal.pinyin || '',
+              vi: `${e.formal.translation_vi || e.formal.vi || e.formal.meaning_vi || ''} [Lịch sự]`,
+              en: `${e.formal.translation_en || e.formal.en || e.formal.meaning_en || ''} [Formal]`,
+              speechText: e.formal.speechText || e.formal.text || ''
+            });
+          }
+          return list;
+        })
+      }
+    ];
+    return groups;
+  }
+
+  STATE.labFilterCategory = STATE.labFilterCategory || 'all';
+
   function renderTabLab() {
-    const langData = LANG_DATA[STATE.currentLang];
-    if (!langData || !langData.labSentences) return;
+    const groups = getAllLabSentencesForCurrentLang();
+    STATE.flattenedLabSentences = [];
 
-    const sentences = langData.labSentences;
-    if (!DOM.labSentenceSelect) return;
-    DOM.labSentenceSelect.innerHTML = '';
-
-    sentences.forEach((s, idx) => {
-      const opt = document.createElement('option');
-      opt.value = idx;
-      opt.textContent = `${s.text} (${s.phonetic || ''})`;
-      DOM.labSentenceSelect.appendChild(opt);
+    let allItems = [];
+    groups.forEach(g => {
+      if (STATE.labFilterCategory === 'all' || STATE.labFilterCategory === g.id) {
+        allItems = allItems.concat(g.items);
+      }
+      STATE.flattenedLabSentences = STATE.flattenedLabSentences.concat(g.items);
     });
 
-    if (STATE.selectedLabIndex >= sentences.length) {
-      STATE.selectedLabIndex = 0;
-    }
-    DOM.labSentenceSelect.value = STATE.selectedLabIndex;
+    if (DOM.sentenceCardsScroller) {
+      DOM.sentenceCardsScroller.innerHTML = '';
+      allItems.forEach((item, displayIdx) => {
+        const card = document.createElement('div');
+        card.className = `sentence-picker-card tactile-card ${item.id === (STATE.currentSelectedLabSentenceId || '') ? 'active' : ''}`;
+        if (!STATE.currentSelectedLabSentenceId && displayIdx === 0) {
+          card.classList.add('active');
+          STATE.currentSelectedLabSentenceId = item.id;
+          updateLabTargetSentence(item);
+        }
 
-    updateLabTargetSentence(sentences[STATE.selectedLabIndex]);
+        const meaning = STATE.uiLang === 'vi' ? (item.vi || item.en) : (item.en || item.vi);
+        const phoneticHtml = item.phonetic ? `<span class="picker-card-phonetic">${escapeHtml(item.phonetic)}</span>` : '';
+
+        card.innerHTML = `
+          <div class="picker-card-main">
+            <span class="picker-card-text">${escapeHtml(item.text)}</span>
+            ${phoneticHtml}
+            <span class="picker-card-meaning">${escapeHtml(meaning)}</span>
+          </div>
+          <span class="picker-card-check">✓</span>
+        `;
+
+        card.addEventListener('click', () => {
+          DOM.sentenceCardsScroller.querySelectorAll('.sentence-picker-card').forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+          STATE.currentSelectedLabSentenceId = item.id;
+          updateLabTargetSentence(item);
+          SoundFX.playClick();
+        });
+
+        DOM.sentenceCardsScroller.appendChild(card);
+      });
+    }
+
+    if (STATE.labMode === 'custom' && STATE.currentLabCustomSentence) {
+      updateLabTargetSentence(STATE.currentLabCustomSentence);
+      if (DOM.curatedSentenceWrap) DOM.curatedSentenceWrap.style.display = 'none';
+      if (DOM.customSentenceWrap) DOM.customSentenceWrap.style.display = 'flex';
+      if (DOM.btnModeCustom) DOM.btnModeCustom.classList.add('active');
+      if (DOM.btnModeCurated) DOM.btnModeCurated.classList.remove('active');
+    } else {
+      if (DOM.curatedSentenceWrap) DOM.curatedSentenceWrap.style.display = 'flex';
+      if (DOM.customSentenceWrap) DOM.customSentenceWrap.style.display = 'none';
+      if (DOM.btnModeCurated) DOM.btnModeCurated.classList.add('active');
+      if (DOM.btnModeCustom) DOM.btnModeCustom.classList.remove('active');
+    }
+  }
+
+  async function applyCustomSentence() {
+    if (!DOM.customSentenceInput) return;
+    const text = DOM.customSentenceInput.value.trim();
+    if (!text) {
+      showToast(STATE.uiLang === 'vi' ? 'Vui lòng nhập câu bạn muốn luyện phát âm.' : 'Please enter a sentence to practice.');
+      return;
+    }
+
+    // Determine target language code for MyMemory
+    const langMap = { 'ja-JP': 'ja', 'en-US': 'en', 'ko-KR': 'ko', 'zh-CN': 'zh' };
+    const targetCode = langMap[STATE.currentLang] || 'ja';
+
+    // Check if input is Vietnamese
+    const isVietnamese = /[àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ]/i.test(text);
+
+    if (isVietnamese && targetCode !== 'vi') {
+      const origBtnText = DOM.btnApplyCustomSentence ? DOM.btnApplyCustomSentence.innerHTML : '';
+      if (DOM.btnApplyCustomSentence) {
+        DOM.btnApplyCustomSentence.innerHTML = '<span>⏳ Đang dịch...</span>';
+        DOM.btnApplyCustomSentence.disabled = true;
+      }
+
+      showToast(STATE.uiLang === 'vi' ? `Đang tự động dịch sang ${targetCode.toUpperCase()}...` : `Translating to ${targetCode.toUpperCase()}...`, 'info');
+
+      try {
+        const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=vi|${targetCode}`);
+        const data = await res.json();
+        const translated = (data && data.responseData && data.responseData.translatedText) ? data.responseData.translatedText : null;
+
+        if (translated) {
+          const customItem = {
+            id: 'custom_' + Date.now(),
+            text: translated,
+            phonetic: STATE.uiLang === 'vi' ? `Bản gốc: "${text}"` : `Original: "${text}"`,
+            vi: text,
+            en: text,
+            speechText: translated
+          };
+          STATE.currentLabCustomSentence = customItem;
+          updateLabTargetSentence(customItem);
+          showToast(STATE.uiLang === 'vi' ? 'Đã dịch & áp dụng câu vào Phòng thu!' : 'Translated & loaded into Studio!');
+          return;
+        }
+      } catch (err) {
+        console.warn('Auto-translate error:', err);
+      } finally {
+        if (DOM.btnApplyCustomSentence) {
+          DOM.btnApplyCustomSentence.innerHTML = origBtnText;
+          DOM.btnApplyCustomSentence.disabled = false;
+        }
+      }
+    }
+
+    // Direct fallback if not Vietnamese or translation failed
+    const customItem = {
+      id: 'custom_' + Date.now(),
+      text: text,
+      phonetic: STATE.uiLang === 'vi' ? 'Câu tự nhập' : 'Custom Sentence',
+      vi: text,
+      en: text,
+      speechText: text
+    };
+
+    STATE.currentLabCustomSentence = customItem;
+    updateLabTargetSentence(customItem);
+    showToast(STATE.uiLang === 'vi' ? 'Đã áp dụng câu luyện tập!' : 'Applied custom practice sentence!');
   }
 
   function updateLabTargetSentence(sentence) {
@@ -908,7 +4427,7 @@
     if (DOM.labTargetText) DOM.labTargetText.textContent = sentence.text;
     if (DOM.labTargetPhonetic) DOM.labTargetPhonetic.textContent = sentence.phonetic || '';
     if (DOM.labTargetMeaning) {
-      DOM.labTargetMeaning.textContent = STATE.uiLang === 'vi' ? sentence.vi : sentence.en;
+      DOM.labTargetMeaning.textContent = (STATE.uiLang === 'vi' ? sentence.vi : sentence.en) || sentence.text;
     }
 
     // Reset feedback placeholder
@@ -1028,7 +4547,7 @@
 
     function render() {
       if (!STATE.isRecording) return;
-      STATE.waveformAnimId = requestAnimationFrame(render);
+      STATE.waveformAnimId = safeRAF(render);
       if (STATE.analyser) {
         STATE.analyser.getByteTimeDomainData(dataArray);
       }
@@ -1077,7 +4596,7 @@
 
     function renderSim() {
       if (!STATE.isRecording) return;
-      STATE.waveformAnimId = requestAnimationFrame(renderSim);
+      STATE.waveformAnimId = safeRAF(renderSim);
       phase += 0.12;
 
       const width = canvas.width;
@@ -1103,7 +4622,7 @@
 
   function stopWaveformVisualizer() {
     if (STATE.waveformAnimId) {
-      cancelAnimationFrame(STATE.waveformAnimId);
+      safeCAF(STATE.waveformAnimId);
       STATE.waveformAnimId = null;
     }
     if (STATE.mediaStream) {
@@ -1129,34 +4648,75 @@
     }
   }
 
+  function tokenizeText(text, lang) {
+    if (!text) return [];
+    const cleanText = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'。、！？「」『』…]/g, '').trim();
+    if (!cleanText) return [];
+
+    // Use Intl.Segmenter if available for Japanese or Chinese
+    if (typeof Intl !== 'undefined' && Intl.Segmenter && (lang === 'ja' || lang === 'zh')) {
+      try {
+        const segmenter = new Intl.Segmenter(lang, { granularity: 'word' });
+        const segments = Array.from(segmenter.segment(cleanText))
+          .map(s => s.segment.trim())
+          .filter(Boolean);
+        if (segments.length > 0) return segments;
+      } catch (e) {}
+    }
+
+    // Whitespace splitting for languages with spaces
+    const spaceTokens = cleanText.split(/\s+/).filter(Boolean);
+    if (spaceTokens.length > 1 || lang === 'en' || lang === 'ko') {
+      return spaceTokens;
+    }
+
+    // Fallback: character tokens if single word in Asian language
+    return Array.from(cleanText);
+  }
+
   function processLabSpokenResult(spokenTranscript) {
-    const targetText = (DOM.labTargetText ? DOM.labTargetText.textContent : '').trim();
-    if (!targetText) return;
+    const activeSentence = (STATE.labMode === 'custom' && STATE.currentLabCustomSentence)
+      ? STATE.currentLabCustomSentence
+      : (STATE.flattenedLabSentences ? STATE.flattenedLabSentences[STATE.selectedLabIndex] : null);
+
+    const originalText = activeSentence ? activeSentence.text : (DOM.labTargetText ? DOM.labTargetText.textContent : '');
+    if (!originalText) return;
 
     if (DOM.feedbackPlaceholder) DOM.feedbackPlaceholder.style.display = 'none';
     if (DOM.feedbackResults) DOM.feedbackResults.style.display = 'block';
 
     if (DOM.recognizedText) DOM.recognizedText.textContent = spokenTranscript;
 
-    // Simple Token Matching Score
-    const targetNorm = targetText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'。、！？]/g, '');
+    const lang = STATE.currentLang;
+    const targetTokens = tokenizeText(originalText, lang);
+    const spokenTokens = tokenizeText(spokenTranscript, lang);
     const spokenNorm = spokenTranscript.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'。、！？]/g, '');
-
-    const targetTokens = targetNorm.split(/\s+/).filter(Boolean);
-    const spokenTokens = spokenNorm.split(/\s+/).filter(Boolean);
 
     let matchCount = 0;
     if (DOM.tokenChipsContainer) DOM.tokenChipsContainer.innerHTML = '';
 
+    // Word-by-Word Diff Highlighting
+    let diffHtml = '';
     targetTokens.forEach(token => {
-      const isMatched = spokenTokens.some(s => s.includes(token) || token.includes(s));
+      const tokenLower = token.toLowerCase();
+      const isMatched = spokenTokens.some(s => s.toLowerCase().includes(tokenLower) || tokenLower.includes(s.toLowerCase()))
+        || spokenNorm.includes(tokenLower);
+
       if (isMatched) matchCount++;
 
+      // Diff span on target text
+      diffHtml += `<span class="target-diff-word ${isMatched ? 'match' : 'miss'}">${token}</span> `;
+
+      // Token chip
       const chip = document.createElement('span');
       chip.className = `token-chip ${isMatched ? 'correct' : 'imperfect'}`;
       chip.textContent = `${token} ${isMatched ? '✓' : '✗'}`;
       if (DOM.tokenChipsContainer) DOM.tokenChipsContainer.appendChild(chip);
     });
+
+    if (DOM.labTargetText) {
+      DOM.labTargetText.innerHTML = diffHtml || originalText;
+    }
 
     const score = targetTokens.length > 0 
       ? Math.min(100, Math.round((matchCount / targetTokens.length) * 100))
@@ -1192,8 +4752,10 @@
     if (DOM.scoreFeedbackSummary) DOM.scoreFeedbackSummary.textContent = summary;
     if (DOM.coachingAdviceText) DOM.coachingAdviceText.textContent = advice;
 
-    // Trigger Confetti Burst if score >= 80%
+    // Award +20 XP for scoring >= 80% and Trigger Confetti Burst
     if (score >= 80) {
+      awardXP(20, STATE.uiLang === 'vi' ? 'Phát âm chuẩn xác ≥80%' : 'Pronunciation score ≥80%');
+      awardCoins(25, STATE.uiLang === 'vi' ? 'Phát âm chuẩn xác ≥80%' : 'Pronunciation score ≥80%');
       triggerConfettiBurst();
     }
   }
@@ -1373,9 +4935,16 @@
 
     const timeStr = msg.timestamp ? new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
 
+    const frameClass = msg.equippedFrame ? `user-avatar-framed ${msg.equippedFrame}` : '';
+    const titleTag = msg.equippedTitle ? `<span style="font-size:0.7rem; background:rgba(230,57,70,0.1); border:1px solid rgba(230,57,70,0.3); border-radius:4px; padding:1px 6px; margin-left:4px; font-weight:700; color:var(--primary-color,#e63946);">${escapeHtml(msg.equippedTitle)}</span>` : '';
+
     bubble.innerHTML = `
       <div class="bubble-sender-row">
-        <span>${msg.avatar || '👤'} ${msg.nickname || 'Learner'}</span>
+        <span style="display:inline-flex; align-items:center; gap:6px;">
+          <span class="${frameClass}" style="width:24px; height:24px; font-size:0.95rem; display:inline-flex; align-items:center; justify-content:center;">${msg.avatar || '🦊'}</span>
+          <strong>${msg.nickname || 'Learner'}</strong>
+          ${titleTag}
+        </span>
         <span>•</span>
         <span>${timeStr}</span>
       </div>
@@ -1502,12 +5071,19 @@
 
   function updateUserProfileBadge() {
     const prof = STATE.userProfile;
-    if (!prof) return;
+    const titleName = getEquippedTitleName();
 
-    if (DOM.currentUserAvatar) DOM.currentUserAvatar.textContent = prof.avatar || '🐱';
-    if (DOM.currentUserNickname) DOM.currentUserNickname.textContent = prof.nickname;
+    if (DOM.headerUserAvatarEmoji) DOM.headerUserAvatarEmoji.textContent = prof.avatar || '🦊';
+    if (DOM.headerUserAvatarWrap) {
+      DOM.headerUserAvatarWrap.className = 'user-avatar-framed ' + (STATE.inventory ? STATE.inventory.equippedFrame : 'frame-default');
+    }
+    if (DOM.headerUsername) DOM.headerUsername.textContent = prof.nickname || prof.username || 'Học viên';
+    if (DOM.headerUserTitle) DOM.headerUserTitle.textContent = titleName;
+
+    if (DOM.currentUserAvatar) DOM.currentUserAvatar.textContent = prof.avatar || '🦊';
+    if (DOM.currentUserNickname) DOM.currentUserNickname.textContent = prof.nickname || 'Learner';
     if (DOM.currentUserMeta) {
-      DOM.currentUserMeta.textContent = `${STATE.uiLang === 'vi' ? 'Bản xứ' : 'Native'}: ${prof.nativeLang.toUpperCase()} • ${STATE.uiLang === 'vi' ? 'Học' : 'Learn'}: ${prof.targetLang.toUpperCase()}`;
+      DOM.currentUserMeta.textContent = `${STATE.uiLang === 'vi' ? 'Bản xứ' : 'Native'}: ${(prof.nativeLang || 'vi').toUpperCase()} • ${STATE.uiLang === 'vi' ? 'Học' : 'Learn'}: ${(prof.targetLang || 'ja').toUpperCase()}`;
     }
   }
 
@@ -1515,9 +5091,21 @@
     if (!DOM.profileModalOverlay) return;
     const prof = STATE.userProfile;
 
-    if (DOM.profileNickname) DOM.profileNickname.value = prof.nickname;
-    if (DOM.profileNativeLang) DOM.profileNativeLang.value = prof.nativeLang;
-    if (DOM.profileTargetLang) DOM.profileTargetLang.value = prof.targetLang;
+    if (DOM.profileNickname) DOM.profileNickname.value = prof.nickname || prof.username || '';
+    if (DOM.profilePin) DOM.profilePin.value = prof.pin || '1234';
+    if (DOM.profileNativeLang) DOM.profileNativeLang.value = prof.nativeLang || 'vi';
+    if (DOM.profileTargetLang) DOM.profileTargetLang.value = prof.targetLang || 'ja';
+
+    if (DOM.profileModalAvatarEmoji) DOM.profileModalAvatarEmoji.textContent = prof.avatar || '🦊';
+    if (DOM.profileModalAvatarWrap) {
+      DOM.profileModalAvatarWrap.className = 'user-avatar-framed large-framed ' + (STATE.inventory ? STATE.inventory.equippedFrame : 'frame-default');
+    }
+    if (DOM.profileModalEquippedTitle) {
+      DOM.profileModalEquippedTitle.textContent = getEquippedTitleName();
+    }
+    if (DOM.profileModalStats) {
+      DOM.profileModalStats.textContent = `Cấp ${STATE.gamification.level || 1} • ${STATE.gamification.xp || 0} XP • ${STATE.coins || 0} 🪙`;
+    }
 
     // Highlight avatar
     document.querySelectorAll('.avatar-option').forEach(opt => {
@@ -1525,23 +5113,38 @@
     });
 
     DOM.profileModalOverlay.classList.add('open');
+    DOM.profileModalOverlay.style.display = 'flex';
   }
 
   function closeProfileModal() {
-    if (DOM.profileModalOverlay) DOM.profileModalOverlay.classList.remove('open');
+    if (DOM.profileModalOverlay) {
+      DOM.profileModalOverlay.classList.remove('open');
+      DOM.profileModalOverlay.style.display = 'none';
+    }
   }
 
   function saveProfileModal(e) {
     if (e) e.preventDefault();
     const nickname = (DOM.profileNickname ? DOM.profileNickname.value : '').trim();
-    if (!nickname) return;
+    if (!nickname) {
+      showToast(STATE.uiLang === 'vi' ? 'Vui lòng nhập tên hiển thị!' : 'Please enter nickname!', 'error');
+      return;
+    }
+
+    const pin = (DOM.profilePin ? DOM.profilePin.value : '').trim();
+    if (pin && !/^[0-9]{4}$/.test(pin)) {
+      showToast(STATE.uiLang === 'vi' ? 'Mã PIN bảo mật phải gồm đúng 4 chữ số!' : 'PIN must be exactly 4 digits!', 'error');
+      return;
+    }
 
     const activeAvatarEl = document.querySelector('.avatar-option.active');
-    const avatar = activeAvatarEl ? activeAvatarEl.dataset.avatar : '🐱';
+    const avatar = activeAvatarEl ? activeAvatarEl.dataset.avatar : '🦊';
     const nativeLang = DOM.profileNativeLang ? DOM.profileNativeLang.value : 'vi';
     const targetLang = DOM.profileTargetLang ? DOM.profileTargetLang.value : 'ja';
 
+    STATE.userProfile.username = nickname;
     STATE.userProfile.nickname = nickname;
+    STATE.userProfile.pin = pin || '1234';
     STATE.userProfile.avatar = avatar;
     STATE.userProfile.nativeLang = nativeLang;
     STATE.userProfile.targetLang = targetLang;
@@ -1550,9 +5153,31 @@
     updateUserProfileBadge();
     closeProfileModal();
 
+    syncUserProfileToFirebase();
     // Re-announce presence with updated profile
     setupPresence(STATE.currentCommunityRoom);
-    showToast(STATE.uiLang === 'vi' ? 'Đã lưu hồ sơ thành công!' : 'Profile saved successfully!');
+    showToast(STATE.uiLang === 'vi' ? 'Đã lưu hồ sơ học viên thành công!' : 'Profile saved successfully!');
+  }
+
+  function syncUserProfileToFirebase() {
+    if (STATE.rtdb && window.firebase && STATE.userProfile) {
+      try {
+        const username = STATE.userProfile.username || 'user';
+        const cleanKey = username.replace(/[^a-zA-Z0-9_-]/g, '_');
+        STATE.rtdb.ref('users/' + cleanKey).set({
+          userId: STATE.userProfile.userId,
+          username: STATE.userProfile.username,
+          nickname: STATE.userProfile.nickname,
+          avatar: STATE.userProfile.avatar,
+          equippedFrame: STATE.inventory ? STATE.inventory.equippedFrame : 'frame-default',
+          equippedTitle: getEquippedTitleName(),
+          level: STATE.gamification.level || 1,
+          xp: STATE.gamification.xp || 0,
+          coins: STATE.coins || 0,
+          lastSeen: Date.now()
+        });
+      } catch (e) {}
+    }
   }
 
   function addFriend(user) {
@@ -1590,7 +5215,7 @@
         <div style="display:flex; align-items:center; gap:10px;">
           <span style="font-size:1.5rem;">${f.avatar || '👤'}</span>
           <div>
-            <strong style="color:#fff; font-size:0.9rem;">${f.nickname}</strong>
+            <strong style="color:var(--text-highlight, #0f172a); font-size:0.9rem;">${f.nickname}</strong>
             <p style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">Bản xứ: ${(f.nativeLang||'vi').toUpperCase()} • Học: ${(f.targetLang||'ja').toUpperCase()}</p>
           </div>
         </div>
@@ -1661,9 +5286,20 @@
   }
 
   function updateBadges() {
-    if (DOM.friendsCountBadge) DOM.friendsCountBadge.textContent = STATE.friends.length;
-    if (DOM.bookmarkCountBadge) DOM.bookmarkCountBadge.textContent = STATE.bookmarks.length;
-    if (DOM.weakSpotsCountBadge) DOM.weakSpotsCountBadge.textContent = STATE.weakSpots.length;
+    const updateEl = (el, val) => {
+      if (!el) return;
+      const oldVal = el.textContent;
+      el.textContent = val;
+      if (oldVal !== String(val)) {
+        el.classList.remove('pop');
+        void el.offsetWidth;
+        el.classList.add('pop');
+      }
+    };
+
+    updateEl(DOM.friendsCountBadge, STATE.friends.length);
+    updateEl(DOM.bookmarkCountBadge, STATE.bookmarks.length);
+    updateEl(DOM.weakSpotsCountBadge, STATE.weakSpots.length);
   }
 
   function renderBookmarksDrawer() {
@@ -1681,7 +5317,7 @@
       item.style.cssText = 'display:flex; justify-content:space-between; align-items:center; padding:12px; background:rgba(255,255,255,0.03); border:1px solid var(--border-glass); border-radius:12px; margin-bottom:8px;';
       item.innerHTML = `
         <div style="display:flex; align-items:center; gap:12px;">
-          <span style="font-size:1.8rem; font-weight:800; color:#fff;">${b.char}</span>
+          <span style="font-size:1.8rem; font-weight:800; color:var(--text-highlight, #0f172a);">${b.char}</span>
           <div>
             <strong style="color:var(--primary-light); font-family:var(--font-mono);">${b.romaji || ''} ${b.ipa ? `/${b.ipa}/` : ''}</strong>
             <p style="font-size:0.72rem; color:var(--text-dim); margin-top:2px;">${b.lang}</p>
@@ -1782,7 +5418,9 @@
   }
 
   function renderActiveTab() {
-    if (STATE.activeTab === 'tab-alphabet') {
+    if (STATE.activeTab === 'tab-campaign') {
+      renderCampaignPath();
+    } else if (STATE.activeTab === 'tab-alphabet') {
       renderTabAlphabet();
     } else if (STATE.activeTab === 'tab-expressions') {
       renderTabExpressions();
@@ -1799,78 +5437,13 @@
   // ==========================================================================
 
   function initAmbientCanvas() {
-    const canvas = DOM.ambientCanvas;
-    if (!canvas || typeof canvas.getContext !== 'function') return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-
-    window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    });
-
-    const particles = [];
-    const count = Math.min(32, Math.floor(width / 40));
-
-    for (let i = 0; i < count; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 2 + 1,
-        alpha: Math.random() * 0.4 + 0.1
-      });
-    }
-
-    function renderAmbient() {
-      // Respect prefers-reduced-motion
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
+    try {
+      if (DOM.ambientCanvas && typeof CulturalScenery !== 'undefined') {
+        CulturalScenery.init(DOM.ambientCanvas);
       }
-
-      requestAnimationFrame(renderAmbient);
-      ctx.clearRect(0, 0, width, height);
-
-      // Draw subtle particles
-      particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
-
-        ctx.fillStyle = `rgba(99, 102, 241, ${p.alpha})`;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      // Subtle connection lines between close particles
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 110) {
-            ctx.strokeStyle = `rgba(99, 102, 241, ${0.08 * (1 - dist / 110)})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-      }
+    } catch (e) {
+      console.warn('CulturalScenery init caught:', e);
     }
-
-    renderAmbient();
   }
 
   function initCard3DTilt(card) {
@@ -1943,7 +5516,7 @@
       });
 
       if (frames < 70) {
-        requestAnimationFrame(renderConfetti);
+        safeRAF(renderConfetti);
       } else {
         canvas.remove();
       }
@@ -2002,9 +5575,222 @@
       if (e.key === 'Escape') {
         toggleLanguageDropdown(false);
         closeProfileModal();
+        closeQuizModal();
         closeAllDrawers();
+        closeQuestModal();
+        closeQuestModal();
       }
     });
+
+    // Procedural Web Audio SFX Toggle
+    if (DOM.btnToggleSfx) {
+      DOM.btnToggleSfx.addEventListener('click', () => {
+        SoundFX.toggleMute();
+      });
+    }
+
+    // Procedural Web Audio BGM Toggle
+    if (DOM.btnToggleBgm) {
+      DOM.btnToggleBgm.addEventListener('click', () => {
+        BGMPlayer.toggle();
+      });
+    }
+
+    // Audio Settings Slider Button & Popover
+    if (DOM.btnAudioSettings && DOM.audioSettingsPopover) {
+      DOM.btnAudioSettings.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = DOM.audioSettingsPopover.hasAttribute('hidden');
+        if (isHidden) {
+          DOM.audioSettingsPopover.removeAttribute('hidden');
+        } else {
+          DOM.audioSettingsPopover.setAttribute('hidden', '');
+        }
+      });
+
+      if (DOM.btnCloseAudioSettings) {
+        DOM.btnCloseAudioSettings.addEventListener('click', (e) => {
+          e.stopPropagation();
+          DOM.audioSettingsPopover.setAttribute('hidden', '');
+        });
+      }
+
+      document.addEventListener('click', (e) => {
+        if (DOM.audioSettingsPopover && !DOM.audioSettingsPopover.contains(e.target) && e.target !== DOM.btnAudioSettings) {
+          DOM.audioSettingsPopover.setAttribute('hidden', '');
+        }
+      });
+    }
+
+    if (DOM.bgmVolumeSlider) {
+      DOM.bgmVolumeSlider.value = Math.round(BGMPlayer.volume * 100);
+      if (DOM.bgmVolumeLabel) DOM.bgmVolumeLabel.textContent = `${DOM.bgmVolumeSlider.value}%`;
+      DOM.bgmVolumeSlider.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10) || 0;
+        if (DOM.bgmVolumeLabel) DOM.bgmVolumeLabel.textContent = `${val}%`;
+        BGMPlayer.setVolume(val / 100);
+      });
+    }
+
+    if (DOM.sfxVolumeSlider) {
+      DOM.sfxVolumeSlider.value = Math.round(SoundFX.volume * 100);
+      if (DOM.sfxVolumeLabel) DOM.sfxVolumeLabel.textContent = `${DOM.sfxVolumeSlider.value}%`;
+      DOM.sfxVolumeSlider.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10) || 0;
+        if (DOM.sfxVolumeLabel) DOM.sfxVolumeLabel.textContent = `${val}%`;
+        SoundFX.setVolume(val / 100);
+      });
+      DOM.sfxVolumeSlider.addEventListener('change', () => {
+        SoundFX.playClick();
+      });
+    }
+
+    // Tab 1 Writing Pad Tools
+    if (DOM.btnClearCanvasTab1) {
+      DOM.btnClearCanvasTab1.addEventListener('click', () => {
+        if (tab1WritingPadInstance) tab1WritingPadInstance.clear();
+      });
+    }
+    if (DOM.btnToggleGuideTab1) {
+      DOM.btnToggleGuideTab1.addEventListener('click', () => {
+        if (tab1WritingPadInstance) tab1WritingPadInstance.toggleGuide();
+      });
+    }
+
+    // Tab 3 Sentence Filter Pills
+    if (DOM.labFilterPills) {
+      DOM.labFilterPills.querySelectorAll('.lab-filter-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          DOM.labFilterPills.querySelectorAll('.lab-filter-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          STATE.labFilterCategory = pill.dataset.filter || 'all';
+          renderTabLab();
+          SoundFX.playClick();
+        });
+      });
+    }
+
+    // Shop & Profile Header Buttons
+    if (DOM.btnOpenShop) {
+      DOM.btnOpenShop.addEventListener('click', () => {
+        openShopModal();
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnCloseShopModal) {
+      DOM.btnCloseShopModal.addEventListener('click', closeShopModal);
+    }
+    if (DOM.shopTabFrames) {
+      DOM.shopTabFrames.addEventListener('click', () => {
+        activeShopTab = 'frames';
+        renderShopItems();
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.shopTabTitles) {
+      DOM.shopTabTitles.addEventListener('click', () => {
+        activeShopTab = 'titles';
+        renderShopItems();
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnOpenUserProfile) {
+      DOM.btnOpenUserProfile.addEventListener('click', () => {
+        openProfileModal();
+        SoundFX.playClick();
+      });
+    }
+
+    // Stroke-Order Animation Buttons
+    if (DOM.btnAnimateStrokesTab1) {
+      DOM.btnAnimateStrokesTab1.addEventListener('click', () => {
+        if (tab1WritingPadInstance) tab1WritingPadInstance.animateStrokes();
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnAnimateStrokesQuest) {
+      DOM.btnAnimateStrokesQuest.addEventListener('click', () => {
+        if (questWritingPadInstance) questWritingPadInstance.animateStrokes();
+        SoundFX.playClick();
+      });
+    }
+
+    // Quest Lesson & 2D Battle Arena Modal Controls
+    if (DOM.btnCloseQuestModal) {
+      DOM.btnCloseQuestModal.addEventListener('click', closeQuestModal);
+    }
+    if (DOM.btnQuestGoStep2) {
+      DOM.btnQuestGoStep2.addEventListener('click', () => {
+        switchQuestStep(2);
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnQuestBackStep1) {
+      DOM.btnQuestBackStep1.addEventListener('click', () => {
+        switchQuestStep(1);
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnQuestGoStep3) {
+      DOM.btnQuestGoStep3.addEventListener('click', () => {
+        switchQuestStep(3);
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnQuestBackStep2) {
+      DOM.btnQuestBackStep2.addEventListener('click', () => {
+        switchQuestStep(2);
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnQuestGoStep4) {
+      DOM.btnQuestGoStep4.addEventListener('click', () => {
+        switchQuestStep(4);
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnToggleGuideQuest) {
+      DOM.btnToggleGuideQuest.addEventListener('click', () => {
+        if (questWritingPadInstance) questWritingPadInstance.toggleGuide();
+      });
+    }
+    if (DOM.btnClearCanvasQuest) {
+      DOM.btnClearCanvasQuest.addEventListener('click', () => {
+        if (questWritingPadInstance) questWritingPadInstance.clear();
+      });
+    }
+    if (DOM.btnAudioWritingChar) {
+      DOM.btnAudioWritingChar.addEventListener('click', () => {
+        if (CURRENT_QUEST_STAGE && CURRENT_QUEST_STAGE.items && CURRENT_QUEST_STAGE.items[CURRENT_QUEST_CHAR_INDEX]) {
+          playTargetLanguageAudio(CURRENT_QUEST_STAGE.items[CURRENT_QUEST_CHAR_INDEX].char);
+        }
+      });
+    }
+    if (DOM.btnPrevWritingChar) {
+      DOM.btnPrevWritingChar.addEventListener('click', () => {
+        CURRENT_QUEST_CHAR_INDEX--;
+        loadWritingChar();
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnNextWritingChar) {
+      DOM.btnNextWritingChar.addEventListener('click', () => {
+        CURRENT_QUEST_CHAR_INDEX++;
+        loadWritingChar();
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnFinishBattleVictory) {
+      DOM.btnFinishBattleVictory.addEventListener('click', () => {
+        closeQuestModal();
+        renderCampaignPath();
+      });
+    }
+    if (DOM.btnRetryBattle) {
+      DOM.btnRetryBattle.addEventListener('click', () => {
+        switchQuestStep(3);
+      });
+    }
 
     // UI Locale Switcher (VI / EN)
     if (DOM.localeBtns) {
@@ -2026,22 +5812,28 @@
 
     window.addEventListener('resize', updateNavIndicator);
 
-    // Tab 1: Alphabet Search & Audio
+    // Tab 1: Alphabet Search & Audio & Quick Drill
     if (DOM.soundSearchInput) {
       DOM.soundSearchInput.addEventListener('input', () => {
         renderTabAlphabet();
       });
     }
 
+    if (DOM.btnStartSoundQuiz) {
+      DOM.btnStartSoundQuiz.addEventListener('click', () => {
+        startSoundQuiz();
+      });
+    }
+
     if (DOM.btnPlayNormal) {
       DOM.btnPlayNormal.addEventListener('click', () => {
-        if (STATE.selectedSoundItem) speakText(STATE.selectedSoundItem.char, STATE.currentLang, 1.0);
+        if (STATE.selectedSoundItem) speakText(STATE.selectedSoundItem.speechText || STATE.selectedSoundItem.char, STATE.currentLang, 1.0);
       });
     }
 
     if (DOM.btnPlaySlow) {
       DOM.btnPlaySlow.addEventListener('click', () => {
-        if (STATE.selectedSoundItem) speakText(STATE.selectedSoundItem.char, STATE.currentLang, 0.7);
+        if (STATE.selectedSoundItem) speakText(STATE.selectedSoundItem.speechText || STATE.selectedSoundItem.char, STATE.currentLang, 0.7);
       });
     }
 
@@ -2057,14 +5849,14 @@
       DOM.btnPracticeThisInLab.addEventListener('click', () => {
         if (STATE.selectedSoundItem) {
           switchTab('tab-lab');
-          if (DOM.labTargetText) DOM.labTargetText.textContent = STATE.selectedSoundItem.char;
-          if (DOM.labTargetPhonetic) DOM.labTargetPhonetic.textContent = STATE.selectedSoundItem.romaji || '';
-          if (DOM.labTargetMeaning) DOM.labTargetMeaning.textContent = STATE.selectedSoundItem.char;
+          if (DOM.labTargetText) DOM.labTargetText.textContent = STATE.selectedSoundItem.speechText || STATE.selectedSoundItem.char;
+          if (DOM.labTargetPhonetic) DOM.labTargetPhonetic.textContent = STATE.selectedSoundItem.romaji || (STATE.selectedSoundItem.ipa ? `/${STATE.selectedSoundItem.ipa}/` : '');
+          if (DOM.labTargetMeaning) DOM.labTargetMeaning.textContent = (STATE.uiLang === 'vi' ? STATE.selectedSoundItem.meaningVi : STATE.selectedSoundItem.meaningEn) || STATE.selectedSoundItem.char;
         }
       });
     }
 
-    // Tab 2: Expressions Subtabs Switcher
+    // Tab 2: Expressions Subtabs Switcher & Quick Drill
     if (DOM.expSubTabPhrases) {
       DOM.expSubTabPhrases.addEventListener('click', () => {
         STATE.activeExpSubTab = 'phrases';
@@ -2079,13 +5871,81 @@
       });
     }
 
-    // Tab 3: Lab Controls
+    if (DOM.btnStartExpQuiz) {
+      DOM.btnStartExpQuiz.addEventListener('click', () => {
+        startExpQuiz();
+      });
+    }
+
+    // Active Recall Quiz Modal Controls
+    if (DOM.btnCloseQuizModal) {
+      DOM.btnCloseQuizModal.addEventListener('click', closeQuizModal);
+    }
+
+    if (DOM.btnQuizPlayAudio) {
+      DOM.btnQuizPlayAudio.addEventListener('click', () => {
+        const q = STATE.quiz.questions[STATE.quiz.currentIndex];
+        if (q && q.speechText) speakText(q.speechText, STATE.currentLang, 1.0);
+      });
+    }
+
+    if (DOM.btnQuizRetry) {
+      DOM.btnQuizRetry.addEventListener('click', () => {
+        if (STATE.quiz.type === 'sound') startSoundQuiz();
+        else startExpQuiz();
+      });
+    }
+
+    if (DOM.btnQuizFinish) {
+      DOM.btnQuizFinish.addEventListener('click', closeQuizModal);
+    }
+
+    // Tab 3: Lab Controls & Custom Sentence Shadowing
+    if (DOM.btnModeCurated) {
+      DOM.btnModeCurated.addEventListener('click', () => {
+        STATE.labMode = 'curated';
+        DOM.btnModeCurated.classList.add('active');
+        if (DOM.btnModeCustom) DOM.btnModeCustom.classList.remove('active');
+        if (DOM.curatedSentenceWrap) DOM.curatedSentenceWrap.style.display = 'flex';
+        if (DOM.customSentenceWrap) DOM.customSentenceWrap.style.display = 'none';
+        if (STATE.flattenedLabSentences && STATE.flattenedLabSentences[STATE.selectedLabIndex]) {
+          updateLabTargetSentence(STATE.flattenedLabSentences[STATE.selectedLabIndex]);
+        }
+      });
+    }
+
+    if (DOM.btnModeCustom) {
+      DOM.btnModeCustom.addEventListener('click', () => {
+        STATE.labMode = 'custom';
+        DOM.btnModeCustom.classList.add('active');
+        if (DOM.btnModeCurated) DOM.btnModeCurated.classList.remove('active');
+        if (DOM.curatedSentenceWrap) DOM.curatedSentenceWrap.style.display = 'none';
+        if (DOM.customSentenceWrap) DOM.customSentenceWrap.style.display = 'flex';
+        if (DOM.customSentenceInput) DOM.customSentenceInput.focus();
+        if (STATE.currentLabCustomSentence) {
+          updateLabTargetSentence(STATE.currentLabCustomSentence);
+        }
+      });
+    }
+
+    if (DOM.btnApplyCustomSentence) {
+      DOM.btnApplyCustomSentence.addEventListener('click', applyCustomSentence);
+    }
+
+    if (DOM.customSentenceInput) {
+      DOM.customSentenceInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          applyCustomSentence();
+        }
+      });
+    }
+
     if (DOM.labSentenceSelect) {
       DOM.labSentenceSelect.addEventListener('change', (e) => {
         STATE.selectedLabIndex = parseInt(e.target.value, 10) || 0;
-        const langData = LANG_DATA[STATE.currentLang];
-        if (langData && langData.labSentences) {
-          updateLabTargetSentence(langData.labSentences[STATE.selectedLabIndex]);
+        if (STATE.flattenedLabSentences && STATE.flattenedLabSentences[STATE.selectedLabIndex]) {
+          updateLabTargetSentence(STATE.flattenedLabSentences[STATE.selectedLabIndex]);
         }
       });
     }
@@ -2094,6 +5954,7 @@
       DOM.btnLabListenNormal.addEventListener('click', () => {
         const text = DOM.labTargetText ? DOM.labTargetText.textContent : '';
         speakText(text, STATE.currentLang, 1.0);
+        trackItemPractice(text, STATE.uiLang === 'vi' ? 'Luyện nghe câu' : 'Practiced sentence');
       });
     }
 
@@ -2101,6 +5962,7 @@
       DOM.btnLabListenSlow.addEventListener('click', () => {
         const text = DOM.labTargetText ? DOM.labTargetText.textContent : '';
         speakText(text, STATE.currentLang, 0.7);
+        trackItemPractice(text, STATE.uiLang === 'vi' ? 'Luyện nghe chậm' : 'Practiced slow sentence');
       });
     }
 
@@ -2110,11 +5972,16 @@
 
     if (DOM.btnSaveLabWeakSpot) {
       DOM.btnSaveLabWeakSpot.addEventListener('click', () => {
-        const text = DOM.labTargetText ? DOM.labTargetText.textContent : '';
-        if (text) {
-          STATE.weakSpots.push({ char: text, romaji: '', ipa: '', lang: STATE.currentLang, savedAt: Date.now() });
-          localStorage.setItem('lingua_weak_spots', JSON.stringify(STATE.weakSpots));
-          updateBadges();
+        const activeSentence = (STATE.labMode === 'custom' && STATE.currentLabCustomSentence)
+          ? STATE.currentLabCustomSentence
+          : (STATE.flattenedLabSentences ? STATE.flattenedLabSentences[STATE.selectedLabIndex] : null);
+        if (activeSentence) {
+          addToWeakSpotsAuto({
+            char: activeSentence.text,
+            phonetic: activeSentence.phonetic || '',
+            vi: activeSentence.vi || '',
+            en: activeSentence.en || ''
+          });
           showToast(STATE.uiLang === 'vi' ? 'Đã lưu câu vào mục Cần sửa! 🎯' : 'Saved to weak points! 🎯');
         }
       });
@@ -2122,11 +5989,10 @@
 
     if (DOM.btnNextLabSentence) {
       DOM.btnNextLabSentence.addEventListener('click', () => {
-        const langData = LANG_DATA[STATE.currentLang];
-        if (langData && langData.labSentences) {
-          STATE.selectedLabIndex = (STATE.selectedLabIndex + 1) % langData.labSentences.length;
+        if (STATE.flattenedLabSentences && STATE.flattenedLabSentences.length > 0) {
+          STATE.selectedLabIndex = (STATE.selectedLabIndex + 1) % STATE.flattenedLabSentences.length;
           if (DOM.labSentenceSelect) DOM.labSentenceSelect.value = STATE.selectedLabIndex;
-          updateLabTargetSentence(langData.labSentences[STATE.selectedLabIndex]);
+          updateLabTargetSentence(STATE.flattenedLabSentences[STATE.selectedLabIndex]);
         }
       });
     }
@@ -2227,6 +6093,18 @@
         renderWeakSpotsDrawer();
       });
     }
+
+    // Dismiss drawer when clicking on dark backdrop
+    [DOM.weakSpotsOverlay, DOM.bookmarksOverlay, DOM.friendsOverlay, DOM.quizModalOverlay].forEach(overlay => {
+      if (overlay) {
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) {
+            if (overlay === DOM.quizModalOverlay) closeQuizModal();
+            else overlay.classList.remove('open');
+          }
+        });
+      }
+    });
   }
 
   function closeAllDrawers() {
@@ -2240,21 +6118,41 @@
   // ==========================================================================
 
   function initApp() {
-    cacheDOMElements();
-    initTts();
-    initSpeechRecognition();
-    initChatVoiceDictation();
-    initAmbientCanvas();
+    try { cacheDOMElements(); } catch (e) { console.warn('cacheDOMElements error:', e); }
+    try { checkAndUpdateDailyStreak(); } catch (e) {}
+    try { applyCulturalTheme(STATE.currentLang); } catch (e) {}
+    try { initTts(); } catch (e) {}
+    try { initSpeechRecognition(); } catch (e) {}
+    try { initChatVoiceDictation(); } catch (e) {}
+    try { initAmbientCanvas(); } catch (e) {}
 
-    bindEventListeners();
-    setUILanguage(STATE.uiLang);
-    switchTab(STATE.activeTab);
+    try {
+      if (DOM.tab1WritingCanvas) {
+        tab1WritingPadInstance = new WritingPad(DOM.tab1WritingCanvas, DOM.tab1CanvasWatermark);
+      }
+    } catch (e) {}
 
-    // Ensure indicator pill aligns after layout reflow
-    requestAnimationFrame(() => {
-      updateNavIndicator();
+    try { bindEventListeners(); } catch (e) { console.error('bindEventListeners error:', e); }
+    try { setUILanguage(STATE.uiLang); } catch (e) {}
+    try { renderTabLab(); } catch (e) { console.error('renderTabLab error:', e); }
+    try { renderCampaignPath(); } catch (e) { console.error('renderCampaignPath error:', e); }
+    try { switchTab(STATE.activeTab); } catch (e) { console.error('switchTab error:', e); }
+
+    try {
+      if (DOM.sfxIcon && typeof SoundFX !== 'undefined') {
+        DOM.sfxIcon.textContent = SoundFX.muted ? '🔇' : '🔊';
+      }
+      if (typeof BGMPlayer !== 'undefined') {
+        BGMPlayer.init();
+      }
+    } catch (e) {}
+
+    safeRAF(() => {
+      try { updateNavIndicator(); } catch (e) {}
     });
-    setTimeout(updateNavIndicator, 100);
+    setTimeout(() => {
+      try { updateNavIndicator(); } catch (e) {}
+    }, 100);
 
     try {
       initCommunityFirebase();
