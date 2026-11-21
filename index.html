@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinguaStudio — Phòng luyện phát âm & Giao tiếp bản xứ đa ngôn ngữ</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <span class="logo-symbol">✦</span>
+        </div>
+        <div class="logo-text">
+          <h1>Lingua<span class="gradient-text">Studio</span></h1>
+          <p class="tagline" data-i18n="tagline">Ngữ âm • Giao tiếp đường phố • Phòng luyện Shadowing</p>
+        </div>
+      </div>
+
+      <!-- Language Switcher Bar -->
+      <div class="language-bar" role="tablist" aria-label="Select Target Language">
+        <button class="lang-pill active" data-lang="ja-JP" aria-selected="true" title="Japanese">
+          <span class="flag">🇯🇵</span>
+          <span class="lang-label">Japanese</span>
+          <span class="script-badge">日本語</span>
+        </button>
+        <button class="lang-pill" data-lang="en-US" aria-selected="false" title="American English">
+          <span class="flag">🇺🇸</span>
+          <span class="lang-label">English</span>
+          <span class="script-badge">US-IPA</span>
+        </button>
+        <button class="lang-pill" data-lang="ko-KR" aria-selected="false" title="Korean">
+          <span class="flag">🇰🇷</span>
+          <span class="lang-label">Korean</span>
+          <span class="script-badge">한국어</span>
+        </button>
+        <button class="lang-pill" data-lang="zh-CN" aria-selected="false" title="Chinese Mandarin">
+          <span class="flag">🇨🇳</span>
+          <span class="lang-label">Chinese</span>
+          <span class="script-badge">普通话</span>
+        </button>
+      </div>
+
+      <!-- Header Utilities -->
+      <div class="header-utils">
+        <div class="ui-lang-switch" role="group" aria-label="Giao diện / UI Language">
+          <button class="ui-lang-btn active" data-ui-lang="vi" title="Tiếng Việt">VI</button>
+          <button class="ui-lang-btn" data-ui-lang="en" title="English">EN</button>
+        </div>
+        <button id="btnOpenBookmarks" class="icon-btn" title="Saved Expressions" aria-label="Saved Expressions">
+          <span class="btn-icon">★</span>
+          <span class="btn-text" data-i18n="savedBtn">Đã lưu</span>
+          <span class="badge" id="bookmarkCount">0</span>
+        </button>
+        <button id="btnOpenWeakSpots" class="icon-btn accent" title="Weak Spots Review" aria-label="Weak Spots Review">
+          <span class="btn-icon">🎯</span>
+          <span class="btn-text" data-i18n="weakSpotsBtn">Điểm yếu</span>
+          <span class="badge" id="weakSpotCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Navigation Tabs -->
+  <nav class="main-nav" aria-label="Main Navigation">
+    <div class="nav-container">
+      <button class="nav-tab active" data-tab="tab-alphabet" id="tabBtnAlphabet">
+        <span class="tab-icon">🔤</span>
+        <span class="tab-title" data-i18n="tabAlphabetTitle">Bảng chữ cái & Âm thanh</span>
+        <span class="tab-desc" data-i18n="tabAlphabetDesc">Bảng ngữ âm & khẩu hình miệng</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-expressions" id="tabBtnExpressions">
+        <span class="tab-icon">⚡</span>
+        <span class="tab-title" data-i18n="tabExpressionsTitle">Giao tiếp bản xứ</span>
+        <span class="tab-desc" data-i18n="tabExpressionsDesc">Sách giáo khoa vs. Tiếng lóng thực tế</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-lab" id="tabBtnLab">
+        <span class="tab-icon">🎙️</span>
+        <span class="tab-title" data-i18n="tabLabTitle">Phòng luyện phát âm</span>
+        <span class="tab-desc" data-i18n="tabLabDesc">Nhận diện giọng nói & So sánh cao độ</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Notification / Voice Engine Status Banner -->
+  <div class="status-banner" id="statusBanner" style="display: none;">
+    <div class="status-content">
+      <span class="status-icon" id="statusIcon">ℹ️</span>
+      <span class="status-text" id="statusText">Hệ thống phát âm đã sẵn sàng.</span>
+      <button class="status-dismiss" id="statusDismiss" aria-label="Dismiss">✕</button>
+    </div>
+  </div>
+
+  <!-- App Main Content Views -->
+  <main class="app-main">
+    
+    <!-- ============================================== -->
+    <!-- TAB 1: ALPHABET & SOUNDS (Interactive Chart)   -->
+    <!-- ============================================== -->
+    <section class="tab-pane active" id="tab-alphabet" role="tabpanel" aria-labelledby="tabBtnAlphabet">
+      <div class="pane-header">
+        <div class="pane-title-group">
+          <h2 data-i18n="alphabetHeaderTitle">Bảng ngữ âm & Chữ cái tương tác</h2>
+          <p class="pane-subtitle" id="alphabetSubtitle" data-i18n="alphabetHeaderSubtitle">Khám phá bảng ký tự, ký hiệu phiên âm quốc tế IPA và hướng dẫn chi tiết vị trí môi, răng, lưỡi.</p>
+        </div>
+        <div class="sub-filter-group" id="alphabetSubFilters">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <div class="alphabet-workspace">
+        <!-- Sound Tiles Grid -->
+        <div class="chart-container">
+          <div class="chart-grid-header">
+            <span class="grid-counter" id="gridCounter">Hiển thị âm</span>
+            <span class="grid-hint" data-i18n="gridHint">💡 Nhấp vào bất kỳ ô nào để nghe phát âm và xem hướng dẫn khẩu hình</span>
+          </div>
+          <div class="sound-grid" id="soundGrid">
+            <!-- Tiles rendered via app.js -->
+          </div>
+        </div>
+
+        <!-- Detail Inspector Card -->
+        <aside class="sound-inspector" id="soundInspector">
+          <div class="inspector-card glass-panel" id="inspectorCard">
+            <div class="inspector-hero">
+              <div class="char-display-box">
+                <span class="hero-char" id="inspectChar">あ</span>
+                <button class="audio-circle-btn" id="inspectAudioBtn" title="Phát âm (1.0x)">
+                  <span class="audio-icon">🔊</span>
+                </button>
+              </div>
+              <div class="hero-phonetics">
+                <div class="phonetic-badge-row">
+                  <span class="badge-romaji" id="inspectRomaji">a</span>
+                  <span class="badge-ipa" id="inspectIpa">[a]</span>
+                  <span class="badge-group" id="inspectGroup">Vowels</span>
+                </div>
+                <h3 id="inspectTitle" data-i18n="phoneticProfile">Hồ sơ ngữ âm</h3>
+              </div>
+            </div>
+
+            <div class="inspector-section">
+              <h4>
+                <span class="sec-icon">👄</span> <span data-i18n="mouthTonguePlacement">Khẩu hình môi & Vị trí đặt lưỡi</span>
+              </h4>
+              <p class="mechanics-text" id="inspectMouthTip">
+                Mở miệng tự nhiên, thả lỏng lưỡi nằm phẳng. Phát âm nguyên âm ngắn, dứt khoát, không tròn môi.
+              </p>
+            </div>
+
+            <div class="inspector-section">
+              <h4>
+                <span class="sec-icon">📖</span> <span data-i18n="exampleVocabulary">Từ vựng ví dụ</span>
+              </h4>
+              <div class="example-word-card">
+                <div class="word-info">
+                  <span class="word-native" id="inspectWordNative">雨 (あめ)</span>
+                  <span class="word-reading" id="inspectWordReading">ame</span>
+                  <span class="word-meaning" id="inspectWordMeaning">Mưa</span>
+                </div>
+                <button class="btn-mini-play" id="inspectWordPlayBtn" title="Nghe từ ví dụ">
+                  <span>🔊</span> <span data-i18n="listenBtn">Nghe</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="inspector-section tip-box">
+              <span class="tip-icon">✨</span>
+              <div class="tip-content">
+                <strong data-i18n="nativeProTip">Mẹo từ người bản xứ:</strong>
+                <p id="inspectProTip">Chú ý độ dài nguyên âm. Trong tiếng Nhật, kéo dài nguyên âm làm tăng gấp đôi trường độ (mora) và thay đổi nghĩa hoàn toàn!</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 2: NATIVE SPEAKING STYLES (Textbook vs Real)-->
+    <!-- ============================================== -->
+    <section class="tab-pane" id="tab-expressions" role="tabpanel" aria-labelledby="tabBtnExpressions">
+      <div class="pane-header">
+        <div class="pane-title-group">
+          <h2 data-i18n="expressionsHeaderTitle">Sách giáo khoa vs. Giao tiếp đường phố thực tế</h2>
+          <p class="pane-subtitle" data-i18n="expressionsHeaderSubtitle">Hiểu rõ sự khác biệt giữa câu từ trong sách ngữ pháp và cách người bản xứ trò chuyện ngoài đời thực.</p>
+        </div>
+
+        <div class="expression-controls">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="expressionSearch" placeholder="Tìm kiếm tình huống, từ khóa, bản dịch..." aria-label="Search expressions">
+          </div>
+        </div>
+      </div>
+
+      <!-- Situation Filter Pills -->
+      <div class="situation-pills" id="situationPills">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Expression Cards List -->
+      <div class="expressions-list" id="expressionsList">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 3: PRONUNCIATION & SHADOWING LAB           -->
+    <!-- ============================================== -->
+    <section class="tab-pane" id="tab-lab" role="tabpanel" aria-labelledby="tabBtnLab">
+      <div class="lab-workspace">
+        
+        <!-- Lab Control Column: Sentence Selection & Inputs -->
+        <div class="lab-column lab-input-panel glass-panel">
+          <div class="lab-panel-header">
+            <h3><span>🎯</span> <span data-i18n="labMaterial">Nội dung luyện tập</span></h3>
+            <div class="mode-switch">
+              <button class="mode-btn active" id="btnModeCurated" data-i18n="curated">Mẫu có sẵn</button>
+              <button class="mode-btn" id="btnModeCustom" data-i18n="customText">Tự nhập câu</button>
+            </div>
+          </div>
+
+          <!-- Curated Selector View -->
+          <div class="curated-view" id="curatedView">
+            <label for="sentenceSelect" class="input-label" data-i18n="selectSentenceLabel">Chọn câu bản xứ mẫu:</label>
+            <div class="custom-select-wrapper">
+              <select id="sentenceSelect" class="form-select">
+                <!-- Populated via app.js -->
+              </select>
+            </div>
+
+            <div class="sentence-quick-tags" id="sentenceTags">
+              <!-- Render level / tags -->
+            </div>
+          </div>
+
+          <!-- Custom Text View -->
+          <div class="custom-view" id="customView" style="display: none;">
+            <label for="customTextInput" class="input-label" data-i18n="typeSentenceLabel">Nhập hoặc dán câu bạn muốn luyện:</label>
+            <textarea id="customTextInput" class="form-textarea" rows="3" placeholder="Nhập văn bản bằng ngôn ngữ đang chọn..."></textarea>
+            <button class="btn-secondary" id="btnApplyCustomText" data-i18n="setAsTarget">Đặt làm câu mẫu</button>
+          </div>
+
+          <!-- Target Card Display -->
+          <div class="target-sentence-card" id="targetSentenceCard">
+            <div class="target-header">
+              <span class="target-badge" data-i18n="targetSentence">CÂU MẪU CẦN LUYỆN</span>
+              <span class="target-level-pill" id="targetLevelBadge">Cơ bản</span>
+            </div>
+            
+            <div class="target-text-wrapper">
+              <p class="target-text-native" id="labTargetText">これ、いくらですか？</p>
+              <p class="target-text-phonetic" id="labTargetPhonetic">Kore, ikura desu ka?</p>
+              <p class="target-text-trans" id="labTargetTrans">Cái này giá bao nhiêu?</p>
+            </div>
+
+            <!-- Pitch & Stress Visualizer -->
+            <div class="pitch-stress-box" id="pitchStressBox">
+              <div class="pitch-header">
+                <span class="pitch-icon">📈</span>
+                <span class="pitch-label" id="labAccentType" data-i18n="pitchContourTitle">Ngữ điệu & Cao độ (Pitch Accent / Rhythm):</span>
+              </div>
+              <div class="pitch-track" id="labPitchTrack">
+                <!-- Visual pitch blocks rendered dynamically -->
+              </div>
+              <p class="pitch-text-hint" id="labPitchHintText">Atamadaka: Cao độ hạ nhanh sau nốt cao ban đầu.</p>
+            </div>
+
+            <!-- Phonetic Tips Box -->
+            <div class="lab-tips-box" id="labTipsBox">
+              <span class="tips-icon">💡</span>
+              <p id="labTipsContent">Âm 'u' trong 'desu' hầu như bị nuốt âm, phát âm tựa như 'dess ka'.</p>
+            </div>
+          </div>
+
+          <!-- Native Audio Deck -->
+          <div class="audio-deck glass-panel">
+            <div class="deck-top">
+              <span class="deck-label" data-i18n="nativeSpeakerTts">Giọng đọc bản xứ (TTS):</span>
+              <div class="speed-slider-group">
+                <label for="ttsSpeedSlider"><span data-i18n="speed">Tốc độ:</span> <span id="speedValueDisplay" class="speed-display">1.0x</span></label>
+                <input type="range" id="ttsSpeedSlider" min="0.5" max="1.2" step="0.1" value="1.0" class="range-slider">
+              </div>
+            </div>
+
+            <div class="deck-controls">
+              <button class="btn-play-native" id="btnPlayNativeTts">
+                <span class="play-icon">▶</span>
+                <span class="play-label" data-i18n="listenNative">Nghe mẫu</span>
+              </button>
+              <button class="btn-play-slow" id="btnPlayNativeSlow">
+                <span>🐢</span> <span data-i18n="slowSpeed">0.7x Chậm</span>
+              </button>
+              <button class="btn-toggle-loop" id="btnToggleLoop" title="Lặp lại">
+                <span id="loopStatusIcon">🔁</span> <span data-i18n="loop">Lặp lại:</span> Tắt
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lab Speech Recognition & Evaluation Column -->
+        <div class="lab-column lab-eval-panel glass-panel">
+          <div class="lab-panel-header">
+            <h3><span>🎙️</span> <span data-i18n="shadowingDiffTitle">Luyện Shadowing & So khớp phát âm</span></h3>
+            <span class="lab-status-tag" id="recognitionStatusTag" data-i18n="micReady">Micro sẵn sàng</span>
+          </div>
+
+          <!-- Recording Control Deck -->
+          <div class="recording-stage">
+            <button class="btn-record-large" id="btnRecordMic" aria-label="Bắt đầu ghi âm">
+              <div class="mic-halo" id="micHalo"></div>
+              <div class="mic-inner">
+                <span class="mic-icon" id="micMainIcon">🎤</span>
+              </div>
+            </button>
+            <p class="recording-prompt" id="recordingPrompt" data-i18n="clickToRecord">Nhấp để ghi âm & Kiểm tra phát âm</p>
+            <p class="recording-subhint" id="recordingSubhint" data-i18n="speakClearly">Nói rõ ràng vào tai nghe hoặc micro của bạn</p>
+
+            <div class="sim-mic-wrapper" id="simMicWrapper" style="display: none;">
+              <span class="sim-hint" data-i18n="simHint">Trình duyệt không hỗ trợ Web Speech? Nhập văn bản để thử nghiệm bộ so khớp:</span>
+              <div class="sim-input-row">
+                <input type="text" id="simSpeechInput" placeholder="Nhập câu bạn vừa nói để kiểm tra độ khớp..." class="form-input">
+                <button class="btn-primary" id="btnSimDiff" data-i18n="testDiff">So khớp</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evaluation Results Stage -->
+          <div class="eval-results-stage" id="evalResultsStage" style="display: none;">
+            <div class="score-card">
+              <div class="score-circle-wrapper">
+                <svg class="score-ring" viewBox="0 0 100 100">
+                  <circle class="score-ring-bg" cx="50" cy="50" r="42"></circle>
+                  <circle class="score-ring-progress" id="scoreRingProgress" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"></circle>
+                </svg>
+                <div class="score-circle-text">
+                  <span class="score-num" id="evalScoreNum">0%</span>
+                  <span class="score-label" data-i18n="match">CHÍNH XÁC</span>
+                </div>
+              </div>
+
+              <div class="score-summary">
+                <h4 id="evalGradeTitle">Đang chấm điểm...</h4>
+                <p id="evalGradeFeedback">So sánh câu nói của bạn bên dưới với câu mẫu.</p>
+                <div class="score-metrics-row">
+                  <span class="metric-badge match"><strong id="metricMatchCount">0</strong> <span data-i18n="matchedCount">Đúng</span></span>
+                  <span class="metric-badge missed"><strong id="metricMissCount">0</strong> <span data-i18n="missedCount">Chưa chuẩn</span></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speech Diff Visualizer -->
+            <div class="diff-viewer-section">
+              <div class="diff-label-row">
+                <span class="diff-section-title" data-i18n="visualDiffTitle">So sánh ngữ âm & Từ trực quan:</span>
+                <span class="diff-legend">
+                  <span class="legend-item match" data-i18n="legendMatch">● Phát âm chuẩn</span>
+                  <span class="legend-item miss" data-i18n="legendMiss">● Cần điều chỉnh</span>
+                </span>
+              </div>
+
+              <div class="diff-chip-grid" id="diffChipGrid">
+                <!-- Color-coded diff tokens rendered dynamically -->
+              </div>
+            </div>
+
+            <!-- Raw Speech Recognition Transcript -->
+            <div class="transcript-box">
+              <div class="transcript-header">
+                <span class="tx-icon">🔊</span>
+                <span data-i18n="whatMicHeard">Micro đã ghi nhận:</span>
+              </div>
+              <p class="transcript-text" id="evalTranscriptText">"..."</p>
+            </div>
+
+            <!-- Action Buttons for Weak Spots -->
+            <div class="eval-actions-bar">
+              <button class="btn-action-weakspot" id="btnSaveToWeakSpots">
+                <span>🎯</span> <span data-i18n="saveToWeakSpots">Lưu vào Điểm yếu</span>
+              </button>
+              <button class="btn-action-retry" id="btnRetrySentence">
+                <span>🔄</span> <span data-i18n="tryAgain">Thử lại</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Empty placeholder when no test has run yet -->
+          <div class="eval-placeholder" id="evalPlaceholder">
+            <div class="placeholder-art">🗣️</div>
+            <h4 data-i18n="readyForVoiceCheck">Sẵn sàng kiểm tra giọng nói</h4>
+            <p data-i18n="readyVoiceCheckDesc">Lắng nghe mẫu bản xứ ở bên trái, sau đó nhấp vào biểu tượng micro để đọc theo (Shadowing). Công nghệ so khớp thời gian thực sẽ chấm điểm và chỉ rõ từng từ bạn cần cải thiện.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================== -->
+  <!-- MODAL / DRAWER: WEAK SPOTS REVIEW              -->
+  <!-- ============================================== -->
+  <div class="drawer-overlay" id="weakSpotsOverlay">
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="weakSpotsTitle">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <span class="drawer-icon">🎯</span>
+          <h3 id="weakSpotsTitle" data-i18n="weakSpotsTitle">Ôn tập điểm yếu</h3>
+        </div>
+        <button class="drawer-close" id="btnCloseWeakSpots" aria-label="Close Weak Spots">✕</button>
+      </div>
+
+      <div class="drawer-body">
+        <p class="drawer-subhead" data-i18n="weakSpotsSubhead">Các câu phát âm chưa chuẩn (dưới 80%) hoặc được bạn đánh dấu để luyện tập thêm.</p>
+        <div class="weak-spots-list" id="weakSpotsList">
+          <!-- Populated from localStorage -->
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <button class="btn-ghost text-danger" id="btnClearWeakSpots" data-i18n="clearAll">Xóa tất cả</button>
+        <button class="btn-primary" id="btnCloseWeakSpotsBottom" data-i18n="done">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL / DRAWER: BOOKMARKED NATIVE EXPRESSIONS  -->
+  <!-- ============================================== -->
+  <div class="drawer-overlay" id="bookmarksOverlay">
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="bookmarksTitle">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <span class="drawer-icon">★</span>
+          <h3 id="bookmarksTitle" data-i18n="bookmarksTitle">Mẫu câu giao tiếp đã lưu</h3>
+        </div>
+        <button class="drawer-close" id="btnCloseBookmarks" aria-label="Close Saved Expressions">✕</button>
+      </div>
+
+      <div class="drawer-body">
+        <p class="drawer-subhead" data-i18n="bookmarksSubhead">Bộ sưu tập các cặp câu giao tiếp đường phố và sách giáo khoa yêu thích của bạn.</p>
+        <div class="bookmarks-list" id="bookmarksList">
+          <!-- Populated from localStorage -->
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <button class="btn-ghost text-danger" id="btnClearBookmarks" data-i18n="clearAll">Xóa tất cả</button>
+        <button class="btn-primary" id="btnCloseBookmarksBottom" data-i18n="done">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
