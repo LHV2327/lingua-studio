@@ -240,7 +240,19 @@
                 <span class="campaign-sub-badge" id="campaignCurrentLangLabel">Tiếng Nhật (Nihongo)</span>
               </div>
               <h2 class="campaign-title" data-i18n="campaignTitle">Lộ Trình Thám Hiểm Ngôn Ngữ</h2>
-              <p class="campaign-subtitle" data-i18n="campaignSubtitle">Vượt qua 5 ải thử thách, luyện viết chữ, đánh bại Boss để làm chủ tiếng bản xứ!</p>
+              <p class="campaign-subtitle" data-i18n="campaignSubtitle">Chinh phục 3 chương học toàn diện (12 Ải), luyện viết nét chữ, hạ gục Boss để làm chủ tiếng bản xứ!</p>
+              
+              <!-- Daily Endless Drill Quick Action Banner -->
+              <div class="daily-drill-banner">
+                <button type="button" class="btn-daily-drill btn-tactile" id="btnStartDailyDrill" title="Luyện tập ngẫu nhiên không giới hạn từ tất cả các ải đã học">
+                  <span class="daily-drill-icon">🔄</span>
+                  <div class="daily-drill-info">
+                    <span class="daily-drill-title">Ôn Tập Hàng Ngày (Daily Endless Drill)</span>
+                    <span class="daily-drill-sub">Trộn ngẫu nhiên câu hỏi & âm vị • Thưởng +30 ⚡ XP & +25 🪙 Xu</span>
+                  </div>
+                  <span class="daily-drill-badge">Luyện ngay ➔</span>
+                </button>
+              </div>
               
               <div class="campaign-progress-bar-wrap">
                 <div class="campaign-progress-meta">
@@ -258,8 +270,8 @@
           <div class="quest-path-wrapper" id="questPathWrapper">
             <div class="quest-path-container" id="questPathContainer">
               <!-- SVG Winding Path Background Line -->
-              <svg class="quest-path-svg" id="questPathSvg" preserveAspectRatio="none" viewBox="0 0 400 900">
-                <path id="questSvgPathLine" class="quest-svg-line" d="M 200 60 Q 330 180 200 250 T 70 430 T 200 610 T 330 760" fill="none" />
+              <svg class="quest-path-svg" id="questPathSvg" preserveAspectRatio="none" viewBox="0 0 400 2400">
+                <path id="questSvgPathLine" class="quest-svg-line" d="M 200 50 Q 340 140 200 230 T 60 410 T 200 590 T 340 770 T 200 950 T 60 1130 T 200 1310 T 340 1490 T 200 1670 T 60 1850 T 200 2030 T 340 2210" fill="none" />
               </svg>
 
               <!-- Quest Nodes dynamically rendered by app.js -->
@@ -341,30 +353,65 @@
                   <span class="v-label" data-i18n="articulatoryGuide">Mô phỏng khẩu hình & sóng âm</span>
                   <span class="v-status" id="vAcousticStatus">Sẵn sàng</span>
                 </div>
-                <div class="svg-stage">
-                  <svg id="articulationSvg" viewBox="0 0 320 160" width="100%" height="160">
+                <div class="svg-stage anatomical-stage">
+                  <svg id="articulationSvg" viewBox="0 0 340 180" width="100%" height="180">
                     <defs>
-                      <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.8" />
-                        <stop offset="50%" stop-color="#06b6d4" stop-opacity="1" />
-                        <stop offset="100%" stop-color="#10b981" stop-opacity="0.8" />
+                      <linearGradient id="vocalTractGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15" />
+                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0.05" />
                       </linearGradient>
-                      <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="3" result="blur" />
+                      <filter id="focusGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="4" result="blur" />
                         <feComposite in="SourceGraphic" in2="blur" operator="over" />
                       </filter>
                     </defs>
-                    <!-- Background Grid -->
-                    <line x1="20" y1="80" x2="300" y2="80" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4" />
-                    <!-- Head & Mouth Silhouette Graphic -->
-                    <path class="mouth-profile" d="M 40 30 Q 80 30 100 50 Q 110 65 115 75 Q 125 78 140 75 Q 150 82 135 88 Q 115 88 105 105 Q 85 130 40 135" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2.5" stroke-linecap="round"/>
-                    <!-- Tongue Shape (Dynamic) -->
-                    <path id="tongueShape" d="M 75 110 Q 95 100 115 85 Q 120 95 100 115 Z" fill="rgba(236,72,153,0.3)" stroke="#ec4899" stroke-width="2"/>
-                    <!-- Resonance Air Cavity Indicator -->
-                    <circle id="resonanceAir" cx="130" cy="80" r="14" fill="rgba(6,182,212,0.2)" stroke="#06b6d4" stroke-width="2" class="air-ring"/>
-                    <!-- Dynamic Soundwave Paths -->
-                    <path id="acousticWave1" class="wave-path" d="M 145 80 Q 170 50 200 80 T 255 80 T 300 80" fill="none" stroke="url(#waveGrad)" stroke-width="3" filter="url(#glowFilter)"/>
-                    <path id="acousticWave2" class="wave-path" d="M 145 80 Q 170 110 200 80 T 255 80 T 300 80" fill="none" stroke="rgba(6,182,212,0.4)" stroke-width="1.8"/>
+
+                    <!-- Vocal Tract Cavity Silhouette Fill -->
+                    <path d="M 40 40 Q 90 40 110 60 Q 120 72 135 80 L 145 80 Q 170 60 215 68 Q 240 76 250 95 L 250 160 L 225 160 Q 215 130 195 110 Q 165 95 142 98 L 132 98 Q 115 105 105 125 Q 90 155 40 160 Z" fill="url(#vocalTractGrad)"/>
+
+                    <!-- Upper Anatomy Outline: Nose -> Upper Lip -> Upper Teeth -> Hard Palate -> Soft Palate (Velum) -> Pharynx -->
+                    <path class="tract-upper" d="M 40 40 Q 90 40 110 60 Q 120 72 135 80 L 145 80 Q 170 60 215 68 Q 240 76 250 95 L 250 160" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
+                    
+                    <!-- Upper Incisor Tooth -->
+                    <rect x="142" y="78" width="5" height="7" rx="1.5" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+
+                    <!-- Lower Anatomy Outline: Chin -> Lower Lip -> Lower Teeth -> Lower Jaw -->
+                    <path class="tract-lower" d="M 40 160 Q 90 155 105 125 Q 115 105 132 98 L 140 98" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
+                    
+                    <!-- Lower Incisor Tooth -->
+                    <rect x="139" y="93" width="5" height="7" rx="1.5" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+
+                    <!-- Anatomical Tongue Body & Blade (Dynamic Shape) -->
+                    <path id="tongueShape" class="tract-tongue" d="M 225 160 Q 215 130 195 110 Q 165 95 142 94 Q 135 102 145 112 Q 170 120 195 135 L 225 160 Z" fill="rgba(244, 63, 94, 0.28)" stroke="#f43f5e" stroke-width="2.2" stroke-linejoin="round"/>
+
+                    <!-- Air Stream Flow Indicator (Dashed Guide) -->
+                    <path id="airStreamLine" d="M 235 155 Q 225 110 185 85 Q 155 80 130 88 L 80 88" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-width="2" stroke-dasharray="4 4"/>
+
+                    <!-- Anatomical Guide Labels (Crisp & Legible) -->
+                    <g class="tract-labels" font-size="10" font-weight="700" fill="#94a3b8">
+                      <text x="80" y="75" text-anchor="middle">Môi (Lips)</text>
+                      <line x1="102" y1="75" x2="128" y2="82" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
+
+                      <text x="145" y="55" text-anchor="middle">Răng (Teeth)</text>
+                      <line x1="145" y1="58" x2="145" y2="76" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
+
+                      <text x="210" y="50" text-anchor="middle">Vòm họng (Palate)</text>
+                      <line x1="210" y1="54" x2="210" y2="68" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
+
+                      <text x="138" y="130" text-anchor="middle">Đầu lưỡi</text>
+                      <line x1="138" y1="120" x2="142" y2="98" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
+
+                      <text x="200" y="145" text-anchor="middle">Cuống lưỡi</text>
+                      <line x1="195" y1="135" x2="190" y2="115" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
+                    </g>
+
+                    <!-- Interactive Glowing Articulation Focus Point -->
+                    <g id="articulatoryFocusGroup" transform="translate(142, 85)" style="transition: transform 0.3s ease;">
+                      <circle r="14" fill="none" stroke="#e63946" stroke-width="2.5" class="focus-glow-ring" filter="url(#focusGlow)"/>
+                      <circle r="5" fill="#e63946" stroke="#ffffff" stroke-width="1.5"/>
+                      <rect x="-35" y="-24" width="70" height="17" rx="8.5" fill="#e63946" />
+                      <text id="articulatoryFocusTag" x="0" y="-12" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">Đầu Lưỡi</text>
+                    </g>
                   </svg>
                 </div>
                 <div class="mouth-tips" id="inspectMouthTip">
@@ -391,6 +438,10 @@
                 <div class="inspect-writing-header">
                   <h4 class="section-subtitle" data-i18n="practiceWriting">Tập viết chữ này:</h4>
                   <div class="writing-tools">
+                    <button type="button" class="btn-tool-sm glass-pill btn-check-writing" id="btnCheckWritingTab1" title="Kiểm tra độ chính xác của nét chữ bạn vừa viết">
+                      <span class="btn-icon">✅</span>
+                      <span>Kiểm tra</span>
+                    </button>
                     <button type="button" class="btn-tool-sm glass-pill" id="btnAnimateStrokesTab1" title="Xem hoạt họa thứ tự nét (Animate Strokes)">
                       <span class="btn-icon">▶</span>
                       <span>Xem nét</span>
@@ -639,7 +690,7 @@
             <div class="community-status-group">
               <div class="connection-status-pill" id="rtdbConnectionPill">
                 <span class="status-dot online"></span>
-                <span class="status-label" id="rtdbStatusText">Đang kết nối Firebase RTDB...</span>
+                <span class="status-label" id="rtdbStatusText">🟢 Phòng học trực tuyến</span>
               </div>
               <div class="total-online-badge">
                 <span class="badge-icon">👥</span>
@@ -743,18 +794,22 @@
 
               <!-- Messages Stream Container -->
               <div class="chat-stream" id="chatStream">
-                <!-- Rendered dynamically from Firebase RTDB -->
+                <!-- Rendered dynamically -->
               </div>
 
               <!-- Message Input Bar with Voice-to-Text Support -->
               <form class="chat-input-bar" id="chatMessageForm">
                 <div class="input-actions-left">
-                  <!-- Speech Recognition Dictation Button -->
-                  <button type="button" class="btn-voice-input" id="btnVoiceDictate" title="Nói để nhập văn bản (Voice-to-Text)">
-                    <span class="voice-icon">🎤</span>
+                  <!-- Real Voice Audio Recording Button -->
+                  <button type="button" class="btn-voice-input btn-real-voice" id="btnVoiceRecord" title="Ghi âm giọng nói thực tế gửi phòng học (tối đa 10s)">
+                    <span class="voice-icon">🎙️</span>
                   </button>
+                  <div class="voice-recording-timer" id="voiceRecordingTimer" style="display: none;">
+                    <span class="rec-dot"></span>
+                    <span id="voiceTimerSec">0:00</span>
+                  </div>
                 </div>
-                <input type="text" class="chat-text-input" id="chatTextInput" placeholder="Nhập tin nhắn hoặc bấm mic để nói..." data-i18n-placeholder="chatInputPlaceholder" autocomplete="off" maxlength="300">
+                <input type="text" class="chat-text-input" id="chatTextInput" placeholder="Nhập tin nhắn thảo luận hoặc bấm mic gửi tin nhắn thoại..." data-i18n-placeholder="chatInputPlaceholder" autocomplete="off" maxlength="300">
                 <button type="submit" class="btn-send-message" id="btnSendMessage" title="Gửi tin nhắn">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -1078,6 +1133,9 @@
             </div>
             
             <div class="tracing-toolbar">
+              <button type="button" class="btn-tool-tactile btn-verify-writing" id="btnCheckWritingQuest" title="Kiểm tra độ chuẩn xác nét vẽ của bạn">
+                <span>✅ Kiểm tra nét viết</span>
+              </button>
               <button type="button" class="btn-tool-tactile" id="btnAnimateStrokesQuest" title="Xem hoạt họa thứ tự nét vẽ (Animate Strokes)">
                 <span>▶ Xem nét viết</span>
               </button>
@@ -1094,11 +1152,17 @@
           </div>
         </div>
 
+        <!-- Accuracy Score Feedback Pill -->
+        <div class="writing-score-feedback" id="questWritingScoreWrap">
+          <span class="writing-score-pill" id="questWritingScorePill">✍️ Hãy viết chữ và bấm "Kiểm tra nét viết" (Cần ≥ 55% để tiếp tục)</span>
+          <button type="button" class="btn-link-skip" id="btnSkipWritingQuest" title="Bỏ qua nếu bạn không thể vẽ bằng chuột/bút">Bỏ qua bước này ↷</button>
+        </div>
+
         <div class="quest-modal-footer dual-footer">
           <button type="button" class="btn-action-secondary btn-tactile" id="btnQuestBackStep1">
             <span>◀ Xem lại mẫu</span>
           </button>
-          <button type="button" class="btn-action-primary btn-tactile pulse-action" id="btnQuestGoStep3">
+          <button type="button" class="btn-action-primary btn-tactile pulse-action" id="btnQuestGoStep3" disabled>
             <span>Sang bước Khởi động ⚡</span>
             <span class="arrow-icon">➔</span>
           </button>
@@ -1274,6 +1338,53 @@
 
   <!-- XP & Coins Toast Notification Container -->
   <div class="xp-toast-container" id="xpToastContainer"></div>
+
+  <!-- Daily Endless Drill Modal -->
+  <div class="modal-overlay" id="dailyDrillModalOverlay" style="display: none;">
+    <div class="modal-card glass-card tactile-card daily-drill-modal-card">
+      <div class="modal-header">
+        <div class="drill-modal-title-row">
+          <span class="drill-icon-large">🔄</span>
+          <div>
+            <h3 class="drill-modal-title">Ôn Tập Hàng Ngày (Endless Mixed Drill)</h3>
+            <span class="drill-modal-sub" id="dailyDrillCounter">Câu 1 / 10 • Chuỗi đúng: 🔥 0</span>
+          </div>
+        </div>
+        <button class="modal-close" id="btnCloseDailyDrillModal" title="Đóng">✕</button>
+      </div>
+
+      <div class="drill-progress-track">
+        <div class="drill-progress-fill" id="dailyDrillProgressFill" style="width: 10%;"></div>
+      </div>
+
+      <div class="daily-drill-body">
+        <div class="drill-prompt-box">
+          <button type="button" class="battle-audio-btn btn-tactile" id="btnDailyDrillAudio" title="Nghe phát âm">
+            <span>🔊 Nghe câu hỏi</span>
+          </button>
+          <div class="drill-prompt-text" id="dailyDrillPromptText">Chọn phát âm / nghĩa đúng của:</div>
+          <div class="drill-target-cue" id="dailyDrillCueBadge">あ</div>
+        </div>
+
+        <div class="drill-answers-grid" id="dailyDrillAnswersGrid">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <div class="drill-victory-banner" id="dailyDrillVictoryBanner" style="display: none;">
+          <div class="victory-icon-trophy">🎉</div>
+          <h4 class="victory-title">HOÀN THÀNH ÔN TẬP HÀNG NGÀY!</h4>
+          <p class="victory-desc">Bạn đã hoàn thành xuất sắc bài ôn luyện hôm nay và duy trì thói quen học tập!</p>
+          <div class="victory-rewards-row">
+            <div class="reward-pill xp-reward">⚡ +30 XP</div>
+            <div class="reward-pill coin-reward">🪙 +25 Xu</div>
+          </div>
+          <button type="button" class="btn-action-primary btn-tactile" id="btnFinishDailyDrill">
+            Hoàn tất & Tiếp tục thám hiểm ➔
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="data.js"></script>

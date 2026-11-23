@@ -11072,7 +11072,16 @@ const LINGUA_DATA = {
               "meaning_vi": "Tên gọi",
               "meaning_en": "Name"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "compound_vowels",
+        "labelVi": "Nguyên âm ghép (Compound Vowels)",
+        "labelEn": "Compound Vowels (이중 모음 - 11)",
+        "descriptionVi": "11 nguyên âm ghép kết hợp từ các nét nguyên âm cơ bản.",
+        "descriptionEn": "11 compound and diphthong vowels.",
+        "items": [
           {
             "char": "ㅐ",
             "romaji": "ae",
@@ -15161,6 +15170,140 @@ const LINGUA_DATA = {
               "meaning_vi": "Tiếng Trung / Trung văn",
               "meaning_en": "Chinese language"
             }
+          },
+          {
+            "char": "草 (艹)",
+            "romaji": "cǎo (Bộ Thảo)",
+            "ipa": "tsʰaʊ",
+            "groupVi": "Bộ thủ thiên nhiên",
+            "groupEn": "Nature Radicals",
+            "group_vi": "Bộ thủ thiên nhiên",
+            "group_en": "Nature Radicals",
+            "meaningVi": "Bộ Thảo: cây cỏ, thảo mộc, hoa lá (Ví dụ: 茶 trà, 花 hoa)",
+            "meaningEn": "Grass / Plant radical (e.g. cha - tea, hua - flower)",
+            "meaning_vi": "Bộ Thảo: cây cỏ, thảo mộc, hoa lá",
+            "meaning_en": "Grass / Plant radical",
+            "mouthTipVi": "Âm đầu lưỡi trước c bật hơi kết hợp vận mẫu ao",
+            "mouthTipEn": "Dental sibilant c with aspirated flow",
+            "mouthTip_vi": "Âm đầu lưỡi trước c bật hơi kết hợp vận mẫu ao",
+            "mouthTip_en": "Dental sibilant c with aspirated flow",
+            "speechText": "茶 (chá)",
+            "examples": [
+              { "word": "茶 (chá)", "reading": "chá", "vi": "Trà / chè", "en": "Tea" },
+              { "word": "花 (huā)", "reading": "huā", "vi": "Bông hoa", "en": "Flower" }
+            ],
+            "example": { "word": "茶 (chá)", "reading": "chá", "vi": "Trà / chè", "en": "Tea" }
+          },
+          {
+            "char": "言 (讠)",
+            "romaji": "yán (Bộ Ngôn)",
+            "ipa": "jɛn",
+            "groupVi": "Bộ thủ giao tiếp",
+            "groupEn": "Communication",
+            "group_vi": "Bộ thủ giao tiếp",
+            "group_en": "Communication",
+            "meaningVi": "Bộ Ngôn: lời nói, ngôn ngữ, phát ngôn",
+            "meaningEn": "Speech / Language radical",
+            "meaning_vi": "Bộ Ngôn: lời nói, ngôn ngữ, phát ngôn",
+            "meaning_en": "Speech / Language radical",
+            "mouthTipVi": "Thanh 2 đi lên từ trầm sang cao",
+            "mouthTipEn": "Rising tone 2",
+            "mouthTip_vi": "Thanh 2 đi lên từ trầm sang cao",
+            "mouthTip_en": "Rising tone 2",
+            "speechText": "语 (yǔ)",
+            "examples": [
+              { "word": "话 (huà)", "reading": "huà", "vi": "Lời nói", "en": "Speech" },
+              { "word": "语言 (yǔyán)", "reading": "yǔyán", "vi": "Ngôn ngữ", "en": "Language" }
+            ],
+            "example": { "word": "话 (huà)", "reading": "huà", "vi": "Lời nói", "en": "Speech" }
+          },
+          {
+            "char": "食 (饣)",
+            "romaji": "shí (Bộ Thực)",
+            "ipa": "ʂʐ̩",
+            "groupVi": "Bộ thủ đời sống",
+            "groupEn": "Living Radicals",
+            "group_vi": "Bộ thủ đời sống",
+            "group_en": "Living Radicals",
+            "meaningVi": "Bộ Thực: thức ăn, ẩm thực, ăn uống",
+            "meaningEn": "Food / Eating radical",
+            "meaning_vi": "Bộ Thực: thức ăn, ẩm thực, ăn uống",
+            "meaning_en": "Food / Eating radical",
+            "mouthTipVi": "Âm uốn lưỡi sh kết hợp thanh 2 đi lên",
+            "mouthTipEn": "Retroflex sh with tone 2",
+            "mouthTip_vi": "Âm uốn lưỡi sh kết hợp thanh 2 đi lên",
+            "mouthTip_en": "Retroflex sh with tone 2",
+            "speechText": "饭 (fàn)",
+            "examples": [
+              { "word": "米饭 (mǐfàn)", "reading": "mǐfàn", "vi": "Cơm trắng", "en": "Cooked rice" }
+            ],
+            "example": { "word": "米饭 (mǐfàn)", "reading": "mǐfàn", "vi": "Cơm trắng", "en": "Cooked rice" }
+          },
+          {
+            "char": "车 (車)",
+            "romaji": "chē (Bộ Xa)",
+            "ipa": "ʈʂʰɤ",
+            "groupVi": "Bộ thủ giao thông",
+            "groupEn": "Transport Radicals",
+            "group_vi": "Bộ thủ giao thông",
+            "group_en": "Transport Radicals",
+            "meaningVi": "Bộ Xa: xe cộ, phương tiện di chuyển",
+            "meaningEn": "Vehicle / Cart radical",
+            "meaning_vi": "Bộ Xa: xe cộ, phương tiện di chuyển",
+            "meaning_en": "Vehicle / Cart radical",
+            "mouthTipVi": "Âm uốn lưỡi bật hơi ch kết hợp nguyên âm e thanh 1",
+            "mouthTipEn": "Aspirated retroflex ch with tone 1",
+            "mouthTip_vi": "Âm uốn lưỡi bật hơi ch kết hợp nguyên âm e thanh 1",
+            "mouthTip_en": "Aspirated retroflex ch with tone 1",
+            "speechText": "车站 (chēzhàn)",
+            "examples": [
+              { "word": "车站 (chēzhàn)", "reading": "chēzhàn", "vi": "Bến xe / nhà ga", "en": "Station" }
+            ],
+            "example": { "word": "车站 (chēzhàn)", "reading": "chēzhàn", "vi": "Bến xe / nhà ga", "en": "Station" }
+          },
+          {
+            "char": "走 (辶)",
+            "romaji": "zǒu (Bộ Tẩu)",
+            "ipa": "tsoʊ",
+            "groupVi": "Bộ thủ hành động",
+            "groupEn": "Action Radicals",
+            "group_vi": "Bộ thủ hành động",
+            "group_en": "Action Radicals",
+            "meaningVi": "Bộ Tẩu / Quai xước: đi lại, di chuyển, bước chân",
+            "meaningEn": "Walk / Movement radical",
+            "meaning_vi": "Bộ Tẩu / Quai xước: đi lại, di chuyển, bước chân",
+            "meaning_en": "Walk / Movement radical",
+            "mouthTipVi": "Âm đầu lưỡi z kết hợp vận mẫu ou thanh 3",
+            "mouthTipEn": "Dental sibilant z with dipping tone 3",
+            "mouthTip_vi": "Âm đầu lưỡi z kết hợp vận mẫu ou thanh 3",
+            "mouthTip_en": "Dental sibilant z with dipping tone 3",
+            "speechText": "走 (zǒu)",
+            "examples": [
+              { "word": "走 (zǒu)", "reading": "zǒu", "vi": "Đi bộ / rời đi", "en": "Walk / leave" }
+            ],
+            "example": { "word": "走 (zǒu)", "reading": "zǒu", "vi": "Đi bộ / rời đi", "en": "Walk / leave" }
+          },
+          {
+            "char": "雨 (⻗)",
+            "romaji": "yǔ (Bộ Vũ)",
+            "ipa": "y",
+            "groupVi": "Bộ thủ thiên nhiên",
+            "groupEn": "Nature Radicals",
+            "group_vi": "Bộ thủ thiên nhiên",
+            "group_en": "Nature Radicals",
+            "meaningVi": "Bộ Vũ: mưa, thời tiết, khí tượng",
+            "meaningEn": "Rain / Weather radical",
+            "meaning_vi": "Bộ Vũ: mưa, thời tiết, khí tượng",
+            "meaning_en": "Rain / Weather radical",
+            "mouthTipVi": "Tròn môi phát âm ü kết hợp thanh 3",
+            "mouthTipEn": "Rounded ü with dipping tone 3",
+            "mouthTip_vi": "Tròn môi phát âm ü kết hợp thanh 3",
+            "mouthTip_en": "Rounded ü with dipping tone 3",
+            "speechText": "下雨 (xiàyǔ)",
+            "examples": [
+              { "word": "下雨 (xiàyǔ)", "reading": "xiàyǔ", "vi": "Trời mưa", "en": "Rain" }
+            ],
+            "example": { "word": "下雨 (xiàyǔ)", "reading": "xiàyǔ", "vi": "Trời mưa", "en": "Rain" }
           }
         ]
       }
@@ -15621,6 +15764,9 @@ const QUEST_CAMPAIGNS = {
     {
       "id": "ja-stage-1",
       "stageNum": 1,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 1: 5 Nguyên Âm Cội Nguồn",
       "titleEn": "Stage 1: The 5 Core Vowels",
       "descVi": "Chinh phục 5 nguyên âm nền tảng của tiếng Nhật: A, I, U, E, O.",
@@ -15643,96 +15789,41 @@ const QUEST_CAMPAIGNS = {
           "reading": "i",
           "meaningVi": "Âm I (Môi hơi dẹt sang hai bên)",
           "meaningEn": "Vowel I (Slightly spread lips)",
-          "hint": "Nét trái móc nhẹ lên, nét phải ngắn hơn song song"
+          "hint": "Nét trái móc nhẹ, nét phải ngắn hơn"
         },
         {
           "char": "う",
           "reading": "u",
           "meaningVi": "Âm U (Môi không chúm tròn như tiếng Việt)",
-          "meaningEn": "Vowel U (Unrounded lips, relaxed)",
-          "hint": "Dấu phẩy nhỏ phía trên, nét móc cung lớn phía dưới"
+          "meaningEn": "Vowel U (Unrounded lips)",
+          "hint": "Nét phẩy trên, nét cong uốn lượn dưới"
         },
         {
           "char": "え",
           "reading": "e",
-          "meaningVi": "Âm E (Mở miệng vừa như 'e' tiếng Việt)",
-          "meaningEn": "Vowel E (Mid-open vowel)",
-          "hint": "Nét trên ngắn, nét dưới zíc zắc uốn lượn"
+          "meaningVi": "Âm E (Khẩu hình giữa A và I)",
+          "meaningEn": "Vowel E (Between A and I)",
+          "hint": "Nét phẩy trên, nét zic-zac kéo ngang"
         },
         {
           "char": "お",
           "reading": "o",
-          "meaningVi": "Âm O (Môi tròn nhẹ, phát âm gọn)",
-          "meaningEn": "Vowel O (Slightly rounded, short)",
-          "hint": "Ngang, sổ thắt nút tròn, thêm dấu phẩy góc phải"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Ký tự あ có phiên âm Romaji là gì?",
-          "promptEn": "What is the Romaji for character あ?",
-          "cue": "あ",
-          "correct": "a",
-          "options": [
-            "a",
-            "o",
-            "u",
-            "e"
-          ],
-          "explanationVi": "あ phát âm là 'a' trong tiếng Nhật.",
-          "explanationEn": "あ is read as 'a'."
-        },
-        {
-          "promptVi": "Âm 'u' trong tiếng Nhật được viết bằng chữ Hiragana nào?",
-          "promptEn": "Which Hiragana character represents 'u'?",
-          "cue": "u",
-          "correct": "う",
-          "options": [
-            "う",
-            "い",
-            "え",
-            "あ"
-          ],
-          "explanationVi": "う là chữ Hiragana của âm 'u'.",
-          "explanationEn": "う represents vowel 'u'."
-        },
-        {
-          "promptVi": "Ký tự nào sau đây là chữ 'i' (い)?",
-          "promptEn": "Which character is 'i' (い)?",
-          "cue": "い",
-          "correct": "い",
-          "options": [
-            "い",
-            "り",
-            "こ",
-            "お"
-          ],
-          "explanationVi": "い gồm 2 nét song song dẹt.",
-          "explanationEn": "い is the vowel 'i'."
-        },
-        {
-          "promptVi": "Ký tự お đọc là gì?",
-          "promptEn": "How is character お pronounced?",
-          "cue": "お",
-          "correct": "o",
-          "options": [
-            "o",
-            "a",
-            "e",
-            "u"
-          ],
-          "explanationVi": "お phát âm là 'o'.",
-          "explanationEn": "お is pronounced 'o'."
+          "meaningVi": "Âm O (Môi hơi tròn tự nhiên)",
+          "meaningEn": "Vowel O (Natural rounded lips)",
+          "hint": "Nét ngang, nét sổ uốn vòng tròn và dấu phẩy"
         }
       ]
     },
     {
       "id": "ja-stage-2",
       "stageNum": 2,
-      "titleVi": "Ải 2: Hàng Ka-Sa & Chào Hỏi",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 2: Hàng Ka-Sa & Lời Chào Mở Đầu",
       "titleEn": "Stage 2: Ka-Sa Row & Greetings",
-      "descVi": "Mở rộng phụ âm Ka, Sa và câu chào huyền thoại こんにちは.",
-      "descEn": "Expand to Ka and Sa rows plus the iconic greeting Konnichiwa.",
+      "descVi": "Ghi nhớ các phụ âm hàng Ka, Sa cùng câu chào hỏi kinh điển Konnichiwa.",
+      "descEn": "Learn Ka, Sa rows and the classic greeting Konnichiwa.",
       "bossNameVi": "Yêu Hồ Kitsune (Mystic Kitsune)",
       "bossNameEn": "Mystic Kitsune",
       "bossType": "kitsune",
@@ -15742,1940 +15833,504 @@ const QUEST_CAMPAIGNS = {
         {
           "char": "か",
           "reading": "ka",
-          "meaningVi": "Âm Ka (Phụ âm k bật nhẹ)",
-          "meaningEn": "Syllable Ka",
-          "hint": "Nét ngang móc, nét phẩy chéo và chấm bên phải"
+          "meaningVi": "Âm Ka (Phụ âm k tắc vô thanh)",
+          "meaningEn": "Sound Ka",
+          "hint": "Nét sổ cong có móc, nét phẩy chéo và dấu chấm"
         },
         {
           "char": "き",
           "reading": "ki",
           "meaningVi": "Âm Ki (Cười mỉm khi phát âm)",
-          "meaningEn": "Syllable Ki",
-          "hint": "2 nét ngang song song, nét sổ chéo và cung đáy"
+          "meaningEn": "Sound Ki",
+          "hint": "2 nét ngang song song, nét sổ chéo và nét cong dưới"
         },
         {
           "char": "さ",
           "reading": "sa",
-          "meaningVi": "Âm Sa (Gió lướt nhẹ kẽ răng)",
-          "meaningEn": "Syllable Sa",
-          "hint": "Nét ngang, nét sổ chéo móc và vòng cung"
+          "meaningVi": "Âm Sa (Lưỡi sát chân răng trên)",
+          "meaningEn": "Sound Sa",
+          "hint": "Nét ngang, nét sổ chéo móc và nét cong dưới"
         },
         {
           "char": "し",
           "reading": "shi",
-          "meaningVi": "Âm Shi (Âm gió nhẹ như 'she')",
-          "meaningEn": "Syllable Shi",
-          "hint": "1 nét duy nhất uốn như lưỡi câu"
+          "meaningVi": "Âm Shi (Âm hơi gió nhẹ, không chu môi)",
+          "meaningEn": "Sound Shi",
+          "hint": "Hình lưỡi câu câu cá vút lên"
         },
         {
           "char": "こんにちは",
-          "reading": "Konnichiwa",
-          "meaningVi": "Xin chào (Ban ngày / Phổ biến nhất)",
+          "reading": "konnichiwa",
+          "meaningVi": "Xin chào (Chào buổi chiều/ban ngày phổ biến nhất)",
           "meaningEn": "Hello / Good afternoon",
-          "hint": "Chú ý chữ は cuối câu đọc là 'wa'"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Chữ は trong câu 'こんにちは' được phát âm là gì?",
-          "promptEn": "How is the last character は in 'こんにちは' pronounced?",
-          "cue": "こんにちは",
-          "correct": "wa",
-          "options": [
-            "wa",
-            "ha",
-            "ba",
-            "pa"
-          ],
-          "explanationVi": "Khi đóng vai trò trợ từ, は đọc là 'wa'.",
-          "explanationEn": "As a particle ending, は is pronounced 'wa'."
-        },
-        {
-          "promptVi": "Ký tự uốn cong như lưỡi câu này là chữ gì?",
-          "promptEn": "Which character is shaped like a fishhook?",
-          "cue": "し",
-          "correct": "shi",
-          "options": [
-            "shi",
-            "tsu",
-            "no",
-            "ku"
-          ],
-          "explanationVi": "し là chữ 'shi'.",
-          "explanationEn": "し is 'shi'."
-        },
-        {
-          "promptVi": "Ký tự か có phiên âm là gì?",
-          "promptEn": "What is the reading for か?",
-          "cue": "か",
-          "correct": "ka",
-          "options": [
-            "ka",
-            "ga",
-            "ki",
-            "sa"
-          ],
-          "explanationVi": "か là âm 'ka'.",
-          "explanationEn": "か is 'ka'."
-        },
-        {
-          "promptVi": "'Xin chào' tiếng Nhật phổ biến nhất là câu nào?",
-          "promptEn": "What is the standard Japanese 'Hello'?",
-          "cue": "Xin chào",
-          "correct": "こんにちは",
-          "options": [
-            "こんにちは",
-            "さようなら",
-            "ありがとう",
-            "おはよう"
-          ],
-          "explanationVi": "こんにちは là lời chào ban ngày thông dụng.",
-          "explanationEn": "こんにちは means Hello."
+          "hint": "Chú ý chữ は đọc là 'wa'"
         }
       ]
     },
     {
       "id": "ja-stage-3",
       "stageNum": 3,
-      "titleVi": "Ải 3: Bộ Cụm Từ Sinh Tồn Tokyo",
-      "titleEn": "Stage 3: Tokyo Survival Chunks",
-      "descVi": "Bộ từ vựng then chốt giúp bạn tự tin giao tiếp mọi tình huống tại Nhật.",
-      "descEn": "Essential phrases to confidently navigate daily life in Japan.",
-      "bossNameVi": "Golem Đá Cổ (Ancient Stone Golem)",
-      "bossNameEn": "Ancient Stone Golem",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 3: Hàng Ta-Na-Ha & Lời Cảm Ơn",
+      "titleEn": "Stage 3: Ta-Na-Ha Row & Gratitude",
+      "descVi": "Thuần thục hàng Ta, Na, Ha cùng câu cảm ơn Arigatou gozaimasu.",
+      "descEn": "Master Ta, Na, Ha rows and polite gratitude.",
+      "bossNameVi": "Cóc Yêu Tinh Tsuchigumo",
+      "bossNameEn": "Cave Spider Spirit",
       "bossType": "golem",
-      "bossHp": 120,
+      "bossHp": 110,
       "icon": "🗿",
       "items": [
         {
+          "char": "た",
+          "reading": "ta",
+          "meaningVi": "Âm Ta (Đầu lưỡi chạm ngạc cứng)",
+          "meaningEn": "Sound Ta",
+          "hint": "Nét ngang, nét sổ chéo và hai nét nhỏ như chữ こ"
+        },
+        {
+          "char": "ち",
+          "reading": "chi",
+          "meaningVi": "Âm Chi (Giống chữ số 5)",
+          "meaningEn": "Sound Chi",
+          "hint": "Nét ngang ngắn, nét sổ cong bụng to"
+        },
+        {
+          "char": "な",
+          "reading": "na",
+          "meaningVi": "Âm Na (Đầu lưỡi chạm ngạc cứng)",
+          "meaningEn": "Sound Na",
+          "hint": "Ngang, sổ chéo, phẩy và vòng thòng lọng"
+        },
+        {
+          "char": "は",
+          "reading": "ha",
+          "meaningVi": "Âm Ha (Âm hơi từ họng)",
+          "meaningEn": "Sound Ha",
+          "hint": "Nét sổ dọc thẳng đứng, nét ngang và vòng thòng lọng"
+        },
+        {
           "char": "ありがとう",
-          "reading": "Arigatou",
-          "meaningVi": "Cảm ơn (Thân thiện, thường ngày)",
-          "meaningEn": "Thank you (Casual)",
-          "hint": "Âm 'to' kéo dài nhẹ với 'u'"
-        },
-        {
-          "char": "すみません",
-          "reading": "Sumimasen",
-          "meaningVi": "Xin lỗi / Xin làm phiền / Gọi phục vụ",
-          "meaningEn": "Excuse me / I'm sorry",
-          "hint": "Từ vạn năng nhất của người Nhật"
-        },
-        {
-          "char": "はい",
-          "reading": "Hai",
-          "meaningVi": "Vâng / Đúng vậy / Tôi nghe đây",
-          "meaningEn": "Yes / Understood",
-          "hint": "Dứt khoát, âm ngắn"
-        },
-        {
-          "char": "いいえ",
-          "reading": "Iie",
-          "meaningVi": "Không / Không có chi",
-          "meaningEn": "No / Not at all",
-          "hint": "Âm 'i' kép ngân dài nhẹ"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "'Sumimasen' dùng trong trường hợp nào?",
-          "promptEn": "When is 'Sumimasen' used?",
-          "cue": "すみません",
-          "correct": "Cả xin lỗi, cảm ơn và gọi nhân viên",
-          "options": [
-            "Cả xin lỗi, cảm ơn và gọi nhân viên",
-            "Chỉ dùng khi tức giận",
-            "Chỉ chào buổi sáng",
-            "Lời chúc ngủ ngon"
-          ],
-          "explanationVi": "Sumimasen là từ vạn năng dùng cả xin lỗi, cảm ơn và gọi phục vụ quán ăn.",
-          "explanationEn": "Sumimasen is a versatile phrase for apologizing, thanking, and getting attention."
-        },
-        {
-          "promptVi": "'Arigatou' (ありがとう) mang ý nghĩa gì?",
-          "promptEn": "What does 'Arigatou' mean?",
-          "cue": "ありがとう",
-          "correct": "Cảm ơn",
-          "options": [
-            "Cảm ơn",
-            "Tạm biệt",
-            "Xin lỗi",
-            "Chúc mừng"
-          ],
-          "explanationVi": "ありがとう có nghĩa là Cảm ơn.",
-          "explanationEn": "ありがとう means Thank you."
-        },
-        {
-          "promptVi": "Từ nào trong tiếng Nhật mang nghĩa 'Vâng / Đúng vậy'?",
-          "promptEn": "Which Japanese word means 'Yes'?",
-          "cue": "Yes",
-          "correct": "はい (Hai)",
-          "options": [
-            "はい (Hai)",
-            "いいえ (Iie)",
-            "だめ (Dame)",
-            "じゃあ (Jaa)"
-          ],
-          "explanationVi": "はい có nghĩa là Vâng, Đúng vậy.",
-          "explanationEn": "はい means Yes."
-        },
-        {
-          "promptVi": "Từ 'いいえ' phiên âm là gì?",
-          "promptEn": "What is the Romaji for いいえ?",
-          "cue": "いいえ",
-          "correct": "Iie",
-          "options": [
-            "Iie",
-            "Ie",
-            "Hai",
-            "Iya"
-          ],
-          "explanationVi": "いいえ đọc là Iie (Không).",
-          "explanationEn": "いいえ reads as Iie."
+          "reading": "arigatou",
+          "meaningVi": "Cảm ơn (Lời cảm ơn chân thành, ấm áp)",
+          "meaningEn": "Thank you",
+          "hint": "Âm 'gou' kéo dài nhẹ trường âm ou"
         }
       ]
     },
     {
       "id": "ja-stage-4",
+      "chapter": 1,
       "stageNum": 4,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 4: Biến Âm, Âm Đục & Âm Ngắt Sokuon",
-      "titleEn": "Stage 4: Dakuten & Sokuon Master",
-      "descVi": "Chinh phục âm đục (Tenten/Maru) và âm ngắt chữ nhỏ (っ).",
-      "descEn": "Tackle Dakuten voiced sounds and small Sokuon double consonants.",
+      "titleEn": "Stage 4: Dakuten & Sokuon Double Consonants",
+      "descVi": "Chinh phục dấu Dakuten (g, z, d, b, p) và âm ngắt đôi phụ âm っ (kk, ss, tt, pp).",
+      "descEn": "Conquer voiced Dakuten sounds and double consonant stop (っ).",
       "bossNameVi": "Hắc Dạ Quỷ Oni (Shadow Oni)",
       "bossNameEn": "Shadow Oni",
       "bossType": "oni",
-      "bossHp": 140,
+      "bossHp": 125,
       "icon": "👹",
       "items": [
         {
           "char": "が",
           "reading": "ga",
-          "meaningVi": "Âm Ga (Hàng Ka thêm dấu Tenten biến thành đục)",
-          "meaningEn": "Voiced Ga",
-          "hint": "か + hai dấu phẩy nhỏ góc phải trên"
+          "meaningVi": "Âm Ga (Biến âm đục của か, rung thanh quản)",
+          "meaningEn": "Voiced Ga sound",
+          "hint": "Chữ か thêm 2 dấu phẩy tenten phía trên bên phải"
         },
         {
-          "char": "ぱ",
-          "reading": "pa",
-          "meaningVi": "Âm Pa (Hàng Ha thêm dấu tròn Maru)",
-          "meaningEn": "Semi-voiced Pa",
-          "hint": "は + vòng tròn nhỏ góc phải trên"
+          "char": "ざ",
+          "reading": "za",
+          "meaningVi": "Âm Za (Biến âm đục của さ)",
+          "meaningEn": "Voiced Za sound",
+          "hint": "Chữ さ thêm 2 dấu phẩy tenten"
         },
         {
           "char": "きって",
           "reading": "kitte",
-          "meaningVi": "Âm ngắt tt: Con tem (Ngừng hơi 1 nhịp ở chữ っ)",
-          "meaningEn": "Sokuon example: Postage stamp",
-          "hint": "Chữ っ nhỏ không đọc thành tiếng mà tạo khoảng lặng"
+          "meaningVi": "Con tem (Ví dụ âm ngắt っ tạo phụ âm kép -tt-)",
+          "meaningEn": "Stamp (Sokuon double tt)",
+          "hint": "Khựng lại 1 nhịp ở chữ っ nhỏ trước khi bật te"
         },
         {
           "char": "がっこう",
           "reading": "gakkou",
-          "meaningVi": "Âm ngắt kk: Trường học",
-          "meaningEn": "Sokuon example: School",
-          "hint": "Khóa thanh quản ở 'kk' trước khi phát 'kou'"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Chữ っ nhỏ trong từ 'きって' (kitte) có tác dụng gì?",
-          "promptEn": "What role does the small っ play in 'kitte'?",
-          "cue": "きって",
-          "correct": "Tạo khoảng lặng ngắt hơi gấp đôi phụ âm sau",
-          "options": [
-            "Tạo khoảng lặng ngắt hơi gấp đôi phụ âm sau",
-            "Đọc là 'tsu' thật to",
-            "Kéo dài nguyên âm 'i'",
-            "Làm biến đổi thành dấu hỏi"
-          ],
-          "explanationVi": "っ (Sokuon) giữ hơi lại 1 nhịp, tạo thành phụ âm gấp đôi (kitte).",
-          "explanationEn": "Small っ causes a glottal stop / geminate consonant."
-        },
-        {
-          "promptVi": "Thêm hai dấu phẩy (Tenten ゛) vào chữ か sẽ tạo thành chữ gì?",
-          "promptEn": "Adding dakuten ゛ to か creates what character?",
-          "cue": "か + ゛",
-          "correct": "が (ga)",
-          "options": [
-            "が (ga)",
-            "ぱ (pa)",
-            "ざ (za)",
-            "だ (da)"
-          ],
-          "explanationVi": "か + ゛ = が (ga).",
-          "explanationEn": "か with dakuten becomes が (ga)."
-        },
-        {
-          "promptVi": "Từ 'がっこう' nghĩa là gì?",
-          "promptEn": "What does 'がっこう' (gakkou) mean?",
-          "cue": "がっこう",
-          "correct": "Trường học",
-          "options": [
-            "Trường học",
-            "Bệnh viện",
-            "Công viên",
-            "Nhà ga"
-          ],
-          "explanationVi": "Gakkou nghĩa là trường học.",
-          "explanationEn": "Gakkou means school."
-        },
-        {
-          "promptVi": "Dấu tròn nhỏ (゜) trên chữ ぱ được gọi là gì?",
-          "promptEn": "What is the small circle ゜ on ぱ called?",
-          "cue": "ぱ",
-          "correct": "Handakuten (Bán trọc âm)",
-          "options": [
-            "Handakuten (Bán trọc âm)",
-            "Dakuten",
-            "Choonpu",
-            "Furigana"
-          ],
-          "explanationVi": "Dấu tròn nhỏ gọi là Handakuten, tạo âm p.",
-          "explanationEn": "Handakuten creates the 'p' sound."
+          "meaningVi": "Trường học (Âm ngắt -kk- và trường âm -ou)",
+          "meaningEn": "School (Sokuon double kk)",
+          "hint": "Gak-kou: dừng 1 phách tại っ rồi bật kou"
         }
       ]
     },
     {
       "id": "ja-stage-5",
       "stageNum": 5,
-      "titleVi": "Ải 5: Đại Chiến Đàm Thoại Đời Thực",
-      "titleEn": "Stage 5: Tokyo Real Slang & Boss Battle",
-      "descVi": "Làm chủ những từ lóng và khẩu ngữ mà giới trẻ Tokyo sử dụng mỗi ngày!",
-      "descEn": "Master native Tokyo slang and casual expressions spoken on the street!",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 5: Âm Ghép Yoon & Trường Âm Chōonpu",
+      "titleEn": "Stage 5: Yoon Compound Sounds & Long Vowels",
+      "descVi": "Luyện âm ghép Ky, Sh, Ch và kéo dài trường âm chuẩn nhịp mora.",
+      "descEn": "Practice compound sounds (Kya, Shu, Cho) and long vowels.",
       "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
-      "bossNameEn": "Crimson Dragon Emperor",
+      "bossNameEn": "Crimson Dragon",
       "bossType": "dragon",
-      "bossHp": 160,
+      "bossHp": 140,
       "icon": "🐉",
       "items": [
         {
-          "char": "ヤバい",
-          "reading": "Yabai",
-          "meaningVi": "Đỉnh chóp / Điên rồ / Nguy rồi (Tùy ngữ cảnh)",
-          "meaningEn": "Crazy / Awesome / Dangerous (Context-dependent)",
-          "hint": "Từ cửa miệng phổ biến nhất Nhật Bản"
+          "char": "きゃ",
+          "reading": "kya",
+          "meaningVi": "Âm Kya (Ghép ki + ya nhỏ, phát âm 1 phách)",
+          "meaningEn": "Compound sound Kya",
+          "hint": "Chữ ya viết nhỏ bằng 1/2 chữ ki"
         },
+        {
+          "char": "しゃ",
+          "reading": "sha",
+          "meaningVi": "Âm Sha (Ghép shi + ya nhỏ)",
+          "meaningEn": "Compound sound Sha",
+          "hint": "Đọc liền mạch thành sha"
+        },
+        {
+          "char": "とうきょう",
+          "reading": "toukyou",
+          "meaningVi": "Tokyo (Thủ đô Nhật Bản - gồm 2 trường âm Tō-kyō)",
+          "meaningEn": "Tokyo (Capital of Japan)",
+          "hint": "Mỗi âm giữ đúng 2 nhịp mora: To-u-kyo-u"
+        },
+        {
+          "char": "コーヒー",
+          "reading": "koohii",
+          "meaningVi": "Cà phê (Từ Katakana có dấu gạch ngang trường âm ー)",
+          "meaningEn": "Coffee (Long vowel bar ー)",
+          "hint": "Kéo dài âm kō và âm hī"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-6",
+      "stageNum": 6,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 6: Số Đếm, Mua Sắm & Hỏi Giá Tiền",
+      "titleEn": "Stage 6: Numbers, Shopping & Asking Prices",
+      "descVi": "Nắm vững số đếm, đơn vị Yên và mẫu câu hỏi giá 'Ikura desu ka?'.",
+      "descEn": "Master Japanese numbers, Yen currency, and asking prices.",
+      "bossNameVi": "Golem Kim Tiền (Gold Golem)",
+      "bossNameEn": "Gold Golem",
+      "bossType": "golem",
+      "bossHp": 155,
+      "icon": "💰",
+      "items": [
+        {
+          "char": "いくらですか",
+          "reading": "ikura desu ka",
+          "meaningVi": "Bao nhiêu tiền vậy? (Câu hỏi giá kinh điển)",
+          "meaningEn": "How much is this?",
+          "hint": "Nhấn nhẹ ở 'i-ku-ra' và lên giọng ở 'ka'"
+        },
+        {
+          "char": "これ",
+          "reading": "kore",
+          "meaningVi": "Cái này (Vật ở gần người nói)",
+          "meaningEn": "This (near speaker)",
+          "hint": "Dùng khi chỉ vào món đồ ngay trước mặt"
+        },
+        {
+          "char": "それ",
+          "reading": "sore",
+          "meaningVi": "Cái đó (Vật ở gần người nghe)",
+          "meaningEn": "That (near listener)",
+          "hint": "Dùng khi chỉ món đồ bên phía đối phương"
+        },
+        {
+          "char": "せんえん",
+          "reading": "sen-en",
+          "meaningVi": "1,000 Yên (~170.000 VNĐ)",
+          "meaningEn": "1,000 Yen",
+          "hint": "sen (nghìn) + en (yên)"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-7",
+      "stageNum": 7,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 7: Gọi Món, Quán Ăn & Nhà Hàng Nhật",
+      "titleEn": "Stage 7: Ordering Food & Restaurant Etiquette",
+      "descVi": "Tự tin gọi phục vụ 'Sumimasen', chọn món 'kore onegaishimasu' và khen 'Oishii!'.",
+      "descEn": "Order food confidently with polite Japanese restaurant phrases.",
+      "bossNameVi": "Bếp Trưởng Tengu (Master Chef Tengu)",
+      "bossNameEn": "Master Chef Tengu",
+      "bossType": "oni",
+      "bossHp": 165,
+      "icon": "🍜",
+      "items": [
+        {
+          "char": "すみません",
+          "reading": "sumimasen",
+          "meaningVi": "Xin lỗi / Làm phiền một chút (Dùng gọi nhân viên quán)",
+          "meaningEn": "Excuse me / Pardon me",
+          "hint": "Nói rõ ràng, dứt khoát khi giơ tay gọi phục vụ"
+        },
+        {
+          "char": "これをおねがいします",
+          "reading": "kore o onegaishimasu",
+          "meaningVi": "Cho tôi món này nhé (Chỉ tay vào menu và gọi)",
+          "meaningEn": "This one please",
+          "hint": "Onegaishimasu: cụm từ lịch sự vạn năng"
+        },
+        {
+          "char": "おいしい",
+          "reading": "oishii",
+          "meaningVi": "Ngon quá! (Khen món ăn chuẩn bản xứ)",
+          "meaningEn": "Delicious!",
+          "hint": "Trường âm ii kéo dài thể hiện sự thích thú"
+        },
+        {
+          "char": "おかいけい",
+          "reading": "okaikei",
+          "meaningVi": "Tính tiền / Thanh toán hóa đơn",
+          "meaningEn": "The bill / check please",
+          "hint": "Có thể bắt chéo hai ngón trỏ hình chữ X khi nói"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-8",
+      "stageNum": 8,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 8: Đi Tàu Điện & Hỏi Đường Phố Tokyo",
+      "titleEn": "Stage 8: Tokyo Subway & Direction Finding",
+      "descVi": "Không bao giờ lạc đường với cấu trúc hỏi vị trí '... wa doko desu ka?'.",
+      "descEn": "Navigate train stations and ask for directions smoothly.",
+      "bossNameVi": "Linh Mã Thần Tốc (Kirin Rail Spirit)",
+      "bossNameEn": "Kirin Rail Spirit",
+      "bossType": "kitsune",
+      "bossHp": 175,
+      "icon": "🚅",
+      "items": [
+        {
+          "char": "えきはどこですか",
+          "reading": "eki wa doko desu ka",
+          "meaningVi": "Ga tàu ở đâu vậy ạ?",
+          "meaningEn": "Where is the train station?",
+          "hint": "eki = nhà ga; doko = ở đâu"
+        },
+        {
+          "char": "トイレはどこですか",
+          "reading": "toire wa doko desu ka",
+          "meaningVi": "Nhà vệ sinh ở đâu vậy?",
+          "meaningEn": "Where is the restroom?",
+          "hint": "toire là từ mượn Katakana của toilet"
+        },
+        {
+          "char": "みぎ",
+          "reading": "migi",
+          "meaningVi": "Bên phải",
+          "meaningEn": "Right (direction)",
+          "hint": "migi = phải; hidari = trái"
+        },
+        {
+          "char": "まっすぐ",
+          "reading": "massugu",
+          "meaningVi": "Đi thẳng (Có âm ngắt -ss-)",
+          "meaningEn": "Straight ahead",
+          "hint": "Nói rõ âm ngắt: mas-sugu"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-9",
+      "stageNum": 9,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 9: Cảm Thán, Đồng Ý & Từ Chối Khéo Léo",
+      "titleEn": "Stage 9: Reactions, Agreements & Polite Refusals",
+      "descVi": "Học văn hóa giao tiếp tinh tế: 'Daijoubu', 'Chotto...' và 'Naruhodo'.",
+      "descEn": "Master subtle Japanese conversational reactions and soft refusals.",
+      "bossNameVi": "Samurai Trúc Lâm (Bamboo Samurai)",
+      "bossNameEn": "Bamboo Samurai",
+      "bossType": "golem",
+      "bossHp": 185,
+      "icon": "🎋",
+      "items": [
+        {
+          "char": "だいじょうぶ",
+          "reading": "daijoubu",
+          "meaningVi": "Tôi ổn / Không sao đâu / Được rồi",
+          "meaningEn": "I'm okay / No problem",
+          "hint": "Có thể dùng cả khi hỏi 'Bạn ổn chứ?'"
+        },
+        {
+          "char": "ちょっと",
+          "reading": "chotto",
+          "meaningVi": "Hơi... / Một chút (Dùng từ chối khéo léo tránh mất lòng)",
+          "meaningEn": "A bit... (Polite soft decline)",
+          "hint": "Nói 'chotto...' và ngập ngừng là người Nhật hiểu bạn từ chối"
+        },
+        {
+          "char": "なるほど",
+          "reading": "naruhodo",
+          "meaningVi": "Hóa ra là vậy! / Ra là thế (Gật đầu đồng tình)",
+          "meaningEn": "I see! / That makes sense!",
+          "hint": "Thể hiện bạn đang chăm chú lắng nghe"
+        },
+        {
+          "char": "いいですね",
+          "reading": "ii desu ne",
+          "meaningVi": "Hay quá nhỉ! / Ý kiến tuyệt vời!",
+          "meaningEn": "Sounds good! / Nice idea!",
+          "hint": "Trợ từ ne thể hiện sự đồng điệu cảm xúc"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-10",
+      "stageNum": 10,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 10: Làm Quen, Kết Bạn & Giới Thiệu Bản Thân",
+      "titleEn": "Stage 10: Making Friends & Self Introduction",
+      "descVi": "Tự tin giới thiệu bản thân 'Hajimemashite' và 'Yoroshiku onegaishimasu'.",
+      "descEn": "Introduce yourself smoothly and make native friends.",
+      "bossNameVi": "Thủy Thần Kappa (River Guardian Kappa)",
+      "bossNameEn": "River Guardian Kappa",
+      "bossType": "slime",
+      "bossHp": 200,
+      "icon": "🥒",
+      "items": [
+        {
+          "char": "はじめまして",
+          "reading": "hajimemashite",
+          "meaningVi": "Rất vui được gặp bạn lần đầu tiên",
+          "meaningEn": "Nice to meet you (first time)",
+          "hint": "Cúi đầu nhẹ chào khi nói câu này"
+        },
+        {
+          "char": "よろしくおねがいします",
+          "reading": "yoroshiku onegaishimasu",
+          "meaningVi": "Mong nhận được sự giúp đỡ của bạn (Câu chốt kết bạn)",
+          "meaningEn": "Pleasure to meet you / Please treat me well",
+          "hint": "Trọng tâm của văn hóa gắn kết Nhật Bản"
+        },
+        {
+          "char": "ベトナムじんです",
+          "reading": "betonamu-jin desu",
+          "meaningVi": "Tôi là người Việt Nam",
+          "meaningEn": "I am Vietnamese",
+          "hint": "jin = người (quốc tịch)"
+        },
+        {
+          "char": "またね",
+          "reading": "mata ne",
+          "meaningVi": "Hẹn gặp lại nhé (Nói với bạn bè thân mật)",
+          "meaningEn": "See you again! (casual)",
+          "hint": "Cách chào tạm biệt tự nhiên nhất giữa bạn trẻ"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-11",
+      "stageNum": 11,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 11: Tiếng Lóng Giới Trẻ & Khẩu Ngữ Đời Thường",
+      "titleEn": "Stage 11: Japanese Youth Slang & Street Buzzwords",
+      "descVi": "Phản xạ thần tốc với các từ lóng: 'Maji de?', 'Yabai!', 'Metcha'.",
+      "descEn": "Sound like a Tokyo local with top native buzzwords.",
+      "bossNameVi": "Ảo Ảnh Cửu Vĩ (Nine-Tailed Illusionist)",
+      "bossNameEn": "Nine-Tailed Illusionist",
+      "bossType": "kitsune",
+      "bossHp": 220,
+      "icon": "🔥",
+      "items": [
         {
           "char": "まじで",
-          "reading": "Maji de",
-          "meaningVi": "Thật á?! / Nghiêm túc đấy chứ?",
-          "meaningEn": "Seriously?! / For real?",
-          "hint": "Lên giọng cuối câu khi ngạc nhiên"
+          "reading": "maji de",
+          "meaningVi": "Thật á?! / Nghiêm túc đấy à?! (Cực kỳ phổ biến)",
+          "meaningEn": "Seriously?! / For real?!",
+          "hint": "Lên giọng cuối câu khi ngạc nhiên: 'Maji de?!'"
         },
         {
-          "char": "お疲れ様",
-          "reading": "Otsukaresama",
-          "meaningVi": "Bạn đã vất vả rồi! (Chào sau giờ làm việc)",
-          "meaningEn": "Good work today / Thank you for your hard work",
-          "hint": "Văn hóa ứng xử công sở và đời sống Nhật Bản"
+          "char": "やばい",
+          "reading": "yabai",
+          "meaningVi": "Đỉnh chóp! / Đỉnh dã man! / Tiêu rồi! (Đa nghĩa theo ngữ cảnh)",
+          "meaningEn": "Crazy! / Amazing! / Oh shoot!",
+          "hint": "Khen ngon/đẹp cũng dùng 'yabai!'"
         },
         {
-          "char": "よろしく",
-          "reading": "Yoroshiku",
-          "meaningVi": "Nhờ bạn nhé / Rất vui được hợp tác",
-          "meaningEn": "Nice to meet you / Count on you",
-          "hint": "Dạng thân mật của Yoroshiku onegaishimasu"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Từ 'ヤバい' (Yabai) trong tiếng Nhật đường phố có thể mang nghĩa nào?",
-          "promptEn": "In casual Japanese, what can 'Yabai' mean?",
-          "cue": "ヤバい",
-          "correct": "Cả khen ngon/đỉnh lẫn lo lắng khi gặp rắc rối",
-          "options": [
-            "Cả khen ngon/đỉnh lẫn lo lắng khi gặp rắc rối",
-            "Chỉ dùng để chê bai đồ ăn",
-            "Lời tạm biệt trang trọng",
-            "Tên một loại sushi"
-          ],
-          "explanationVi": "Yabai cực kỳ linh hoạt, có thể khen 'ngon đỉnh chóp' hoặc than 'chết dở rồi'.",
-          "explanationEn": "Yabai can mean amazingly good or dangerously bad."
+          "char": "めっちゃ",
+          "reading": "metcha",
+          "meaningVi": "Cực kỳ / Siêu cấp (Âm ngắt nhấn mạnh)",
+          "meaningEn": "Super / Extremely",
+          "hint": "metcha oishii = siêu ngon"
         },
         {
-          "promptVi": "Khi đồng nghiệp hoàn thành một ca làm việc vất vả, bạn nói câu gì?",
-          "promptEn": "What do you say when colleagues finish their work?",
-          "cue": "Tan sở",
-          "correct": "お疲れ様 (Otsukaresama)",
-          "options": [
-            "お疲れ様 (Otsukaresama)",
-            "おはよう (Ohayou)",
-            "さようなら (Sayounara)",
-            "ごめんなさい (Gomennasai)"
-          ],
-          "explanationVi": "Otsukaresama là câu chào tan ca bất hủ.",
-          "explanationEn": "Otsukaresama expresses gratitude for hard work."
-        },
-        {
-          "promptVi": "'Maji de?' (まじで) tương đương với cụm từ tiếng Anh nào?",
-          "promptEn": "What does 'Maji de' correspond to in English?",
-          "cue": "まじで",
-          "correct": "Seriously?! / For real?!",
-          "options": [
-            "Seriously?! / For real?!",
-            "Goodbye",
-            "Excuse me",
-            "Good morning"
-          ],
-          "explanationVi": "Maji de có nghĩa là Thật á? / Nghiêm túc đấy chứ?",
-          "explanationEn": "Maji de means 'For real?!'."
-        },
-        {
-          "promptVi": "Câu nói 'Yoroshiku' (よろしく) thường được dùng khi nào?",
-          "promptEn": "When is 'Yoroshiku' typically used?",
-          "cue": "よろしく",
-          "correct": "Khi bắt đầu hợp tác hoặc nhờ vả ai việc gì",
-          "options": [
-            "Khi bắt đầu hợp tác hoặc nhờ vả ai việc gì",
-            "Khi chuẩn bị đi ngủ",
-            "Khi từ chối ai đó",
-            "Khi ăn xong"
-          ],
-          "explanationVi": "Yoroshiku dùng khi nhờ vả hoặc mong được giúp đỡ.",
-          "explanationEn": "Yoroshiku is used when requesting cooperation."
-        }
-      ]
-    }
-  ],
-  "en-US": [
-    {
-      "id": "en-stage-1",
-      "stageNum": 1,
-      "titleVi": "Ải 1: 5 Nguyên Âm Cốt Lõi (A-E-I-O-U)",
-      "titleEn": "Stage 1: Core Vowels & Acoustic Resonance",
-      "descVi": "Làm chủ 5 nguyên âm IPA căn bản và khẩu hình mở khoang miệng chuẩn Mỹ.",
-      "descEn": "Master the 5 core English vowels and American resonance mouth placement.",
-      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
-      "bossNameEn": "Phonetic Slime",
-      "bossType": "slime",
-      "bossHp": 80,
-      "icon": "🟢",
-      "items": [
-        {
-          "char": "A /æ/",
-          "reading": "Cat /kæt/",
-          "meaningVi": "Âm A bẹt (Hạ cằm sâu, kéo mép sang hai bên)",
-          "meaningEn": "Short A /æ/ as in Cat",
-          "hint": "Hạ quai hàm thoải mái, âm vang sâu trong họng"
-        },
-        {
-          "char": "E /e/",
-          "reading": "Bed /bed/",
-          "meaningVi": "Âm E ngắn (Mở miệng vừa phải)",
-          "meaningEn": "Short E /e/ as in Bed",
-          "hint": "Khẩu hình hẹp hơn /æ/"
-        },
-        {
-          "char": "I /ɪ/",
-          "reading": "Sit /sɪt/",
-          "meaningVi": "Âm I thả lỏng (Khác với /i:/ căng môi)",
-          "meaningEn": "Short I /ɪ/ as in Sit",
-          "hint": "Không cười kéo dài mép, phát âm ngắn gọn"
-        },
-        {
-          "char": "O /ɑː/",
-          "reading": "Hot /hɑːt/",
-          "meaningVi": "Âm O mở sâu (Anh-Mỹ hạ cằm tự nhiên)",
-          "meaningEn": "Open O /ɑː/ as in Hot",
-          "hint": "Khoang miệng mở tròn dọc"
-        },
-        {
-          "char": "U /ʌ/",
-          "reading": "Cup /kʌp/",
-          "meaningVi": "Âm Á ngắn (Bật từ đáy cổ họng)",
-          "meaningEn": "Short U /ʌ/ as in Cup",
-          "hint": "Thả lỏng toàn bộ khuôn mặt"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Từ 'Cat' trong tiếng Anh chứa âm nguyên âm IPA nào?",
-          "promptEn": "Which IPA vowel sound is in 'Cat'?",
-          "cue": "Cat",
-          "correct": "/æ/",
-          "options": [
-            "/æ/",
-            "/e/",
-            "/ʌ/",
-            "/i:/"
-          ],
-          "explanationVi": "Cat chứa âm A bẹt /æ/.",
-          "explanationEn": "Cat has the short /æ/ vowel."
-        },
-        {
-          "promptVi": "Khẩu hình chuẩn của âm /æ/ là gì?",
-          "promptEn": "What is the proper mouth position for /æ/?",
-          "cue": "/æ/",
-          "correct": "Hạ cằm sâu và mở rộng khóe miệng",
-          "options": [
-            "Hạ cằm sâu và mở rộng khóe miệng",
-            "Chu môi tròn như huýt sáo",
-            "Khép chặt hai hàm răng",
-            "Uốn cong đầu lưỡi chạm vòm họng"
-          ],
-          "explanationVi": "Âm /æ/ đòi hỏi hạ hàm sâu và khóe miệng mở tự nhiên.",
-          "explanationEn": "Drop your jaw and widen the corners of your mouth."
-        },
-        {
-          "promptVi": "Từ 'Sit' phát âm khác 'Seat' ở điểm mấu chốt nào?",
-          "promptEn": "How does 'Sit' differ from 'Seat'?",
-          "cue": "Sit vs Seat",
-          "correct": "'Sit' dùng âm /ɪ/ thả lỏng ngắn, 'Seat' dùng /i:/ căng dài",
-          "options": [
-            "'Sit' dùng âm /ɪ/ thả lỏng ngắn, 'Seat' dùng /i:/ căng dài",
-            "Hai từ phát âm y hệt nhau",
-            "'Sit' không phát âm chữ T",
-            "'Seat' bắt đầu bằng âm Z"
-          ],
-          "explanationVi": "/ɪ/ trong Sit ngắn và thư giãn, /i:/ trong Seat căng môi.",
-          "explanationEn": "/ɪ/ is relaxed and short, while /i:/ is tense and elongated."
-        },
-        {
-          "promptVi": "Âm nguyên âm trong từ 'Cup' /kʌp/ được phát âm ra sao?",
-          "promptEn": "How is the vowel in 'Cup' /kʌp/ produced?",
-          "cue": "Cup",
-          "correct": "Bật nhanh từ đáy họng, môi và hàm thư giãn",
-          "options": [
-            "Bật nhanh từ đáy họng, môi và hàm thư giãn",
-            "Chu tròn môi thật chặt",
-            "Rung lưỡi liên tục",
-            "Ngậm kín miệng phát âm qua mũi"
-          ],
-          "explanationVi": "/ʌ/ là âm ngắn bật dứt khoát từ họng.",
-          "explanationEn": "/ʌ/ is a short, relaxed central vowel."
+          "char": "うそ",
+          "reading": "uso",
+          "meaningVi": "Điêu! / Thật không tin nổi!",
+          "meaningEn": "No way! / You're lying!",
+          "hint": "Kêu lên với bạn bè khi nghe tin sốc"
         }
       ]
     },
     {
-      "id": "en-stage-2",
-      "stageNum": 2,
-      "titleVi": "Ải 2: Chào Hỏi & Lịch Sự Công Sở",
-      "titleEn": "Stage 2: Essential Greetings & Courtesy",
-      "descVi": "Các câu nói tự nhiên thay vì câu 'How are you? I'm fine thank you' cứng nhắc.",
-      "descEn": "Natural greetings instead of textbook stiffness.",
-      "bossNameVi": "Cáo Tinh Anh Ngữ (Mystic Fox)",
-      "bossNameEn": "Mystic Fox",
-      "bossType": "kitsune",
-      "bossHp": 100,
-      "icon": "🦊",
-      "items": [
-        {
-          "char": "Hey, how's it going?",
-          "reading": "/heɪ haʊz ɪt ˈɡoʊɪŋ/",
-          "meaningVi": "Dạo này thế nào rồi? (Chào phổ biến nhất)",
-          "meaningEn": "How are things with you?",
-          "hint": "Nối âm: how's-it going"
-        },
-        {
-          "char": "I appreciate it",
-          "reading": "/aɪ əˈpriːʃieɪt ɪt/",
-          "meaningVi": "Tôi rất trân trọng / Cảm ơn bạn rất nhiều",
-          "meaningEn": "Thank you genuinely",
-          "hint": "Nối âm: appreciate-it"
-        },
-        {
-          "char": "Have a good one!",
-          "reading": "/hæv ə ɡʊd wʌn/",
-          "meaningVi": "Chúc bạn một ngày tốt lành! (Chào tạm biệt tự nhiên)",
-          "meaningEn": "Have a nice day",
-          "hint": "Người Mỹ dùng câu này ở mọi quầy tính tiền"
-        },
-        {
-          "char": "No problem at all",
-          "reading": "/noʊ ˈprɑːbləm æt ɔːl/",
-          "meaningVi": "Không có vấn đề gì cả / Rất vui được giúp",
-          "meaningEn": "You're welcome / Not a trouble",
-          "hint": "Thân mật hơn 'You are welcome'"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Người bản xứ thường nói câu nào ở quầy tính tiền khi chào tạm biệt?",
-          "promptEn": "What casual phrase do Americans say when parting at checkout?",
-          "cue": "Have a good one!",
-          "correct": "Have a good one!",
-          "options": [
-            "Have a good one!",
-            "Goodbye forever",
-            "Where is the exit?",
-            "Stop talking"
-          ],
-          "explanationVi": "'Have a good one' là cách chào tạm biệt cực kỳ phổ biến và thân thiện.",
-          "explanationEn": "'Have a good one!' is the quintessential American casual farewell."
-        },
-        {
-          "promptVi": "'How's it going?' thường được nối âm như thế nào?",
-          "promptEn": "How is 'How's it going?' linked naturally in speech?",
-          "cue": "How's it going",
-          "correct": "How-zit going",
-          "options": [
-            "How-zit going",
-            "How is it go-ing",
-            "Hows-it-going-sir",
-            "How going is it"
-          ],
-          "explanationVi": "Âm /z/ ở How's nối liền sang /ɪt/ thành 'How-zit'.",
-          "explanationEn": "The /z/ links smoothly to /ɪt/ becoming 'how-zit'."
-        },
-        {
-          "promptVi": "Để nói lời cảm ơn chân thành và lịch sự, câu nào sau đây phù hợp nhất?",
-          "promptEn": "Which phrase conveys sincere, professional gratitude?",
-          "cue": "Thank you",
-          "correct": "I really appreciate it",
-          "options": [
-            "I really appreciate it",
-            "Give me that",
-            "It is what it is",
-            "See ya"
-          ],
-          "explanationVi": "'I really appreciate it' thể hiện lòng biết ơn sâu sắc.",
-          "explanationEn": "'I appreciate it' shows genuine gratitude."
-        },
-        {
-          "promptVi": "'No problem at all' thường dùng để đáp lại câu nào?",
-          "promptEn": "What is 'No problem at all' commonly used to respond to?",
-          "cue": "No problem at all",
-          "correct": "Lời cảm ơn (Thank you)",
-          "options": [
-            "Lời cảm ơn (Thank you)",
-            "Lời chúc mừng sinh nhật",
-            "Câu hỏi mấy giờ rồi",
-            "Lời đề nghị kết bạn"
-          ],
-          "explanationVi": "No problem at all tương đương 'Không có chi'.",
-          "explanationEn": "'No problem at all' is a warm alternative to 'You're welcome'."
-        }
-      ]
-    },
-    {
-      "id": "en-stage-3",
-      "stageNum": 3,
-      "titleVi": "Ải 3: Bộ Cụm Khối Giao Tiếp (Conversational Chunks)",
-      "titleEn": "Stage 3: Conversational Chunks & Connectors",
-      "descVi": "Nói tiếng Anh lưu loát không vấp nhờ các khối câu đệm tự nhiên.",
-      "descEn": "Speak fluidly without hesitations using natural speech chunks.",
-      "bossNameVi": "Golem Thạch Đấu (Stone Golem)",
-      "bossNameEn": "Stone Golem",
-      "bossType": "golem",
-      "bossHp": 120,
-      "icon": "🗿",
-      "items": [
-        {
-          "char": "To be honest",
-          "reading": "/tə bi ˈɑːnɪst/",
-          "meaningVi": "Thành thật mà nói (Mở đầu quan điểm)",
-          "meaningEn": "Frankly speaking",
-          "hint": "Chữ H trong honest là âm câm"
-        },
-        {
-          "char": "You know what I mean?",
-          "reading": "/ju noʊ wʌt aɪ miːn/",
-          "meaningVi": "Bạn hiểu ý tôi chứ? (Kiểm tra sự đồng thuận)",
-          "meaningEn": "Do you understand what I'm getting at?",
-          "hint": "Thường rút gọn thành 'Y'know what I mean?'"
-        },
-        {
-          "char": "As far as I know",
-          "reading": "/æz fɑːr æz aɪ noʊ/",
-          "meaningVi": "Theo như tôi được biết",
-          "meaningEn": "To the best of my knowledge",
-          "hint": "Nối âm: as-far-as-I know"
-        },
-        {
-          "char": "Never mind",
-          "reading": "/ˈnevər maɪnd/",
-          "meaningVi": "Thôi bỏ đi / Không sao đâu",
-          "meaningEn": "Don't worry about it / Forget it",
-          "hint": "Âm d cuối chặn hơi nhẹ"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Chữ cái nào bị câm trong từ 'honest'?",
-          "promptEn": "Which letter is silent in 'honest'?",
-          "cue": "honest",
-          "correct": "Chữ H",
-          "options": [
-            "Chữ H",
-            "Chữ O",
-            "Chữ N",
-            "Chữ T"
-          ],
-          "explanationVi": "Chữ H trong honest là âm câm, phát âm bắt đầu từ /ɑː/.",
-          "explanationEn": "The H in 'honest' is completely silent."
-        },
-        {
-          "promptVi": "'To be honest' được dùng nhằm mục đích gì trong hội thoại?",
-          "promptEn": "Why do speakers use 'To be honest'?",
-          "cue": "To be honest",
-          "correct": "Bày tỏ ý kiến cá nhân một cách chân thành, thẳng thắn",
-          "options": [
-            "Bày tỏ ý kiến cá nhân một cách chân thành, thẳng thắn",
-            "Nói dối người nghe",
-            "Kết thúc cuộc trò chuyện",
-            "Hỏi đường đi"
-          ],
-          "explanationVi": "Cụm từ này dùng để mở đầu quan điểm thẳng thắn.",
-          "explanationEn": "It introduces a candid, genuine perspective."
-        },
-        {
-          "promptVi": "Cụm 'As far as I know' có nghĩa là gì?",
-          "promptEn": "What does 'As far as I know' mean?",
-          "cue": "As far as I know",
-          "correct": "Theo như tôi được biết",
-          "options": [
-            "Theo như tôi được biết",
-            "Tôi không hề biết gì",
-            "Đi xa nhất có thể",
-            "Tôi chắc chắn 100%"
-          ],
-          "explanationVi": "Có nghĩa là theo những gì tôi nắm được đến nay.",
-          "explanationEn": "It means 'to the best of my knowledge'."
-        },
-        {
-          "promptVi": "Khi muốn bảo ai đó 'Thôi không sao, bỏ qua chuyện đó đi', bạn dùng:",
-          "promptEn": "To tell someone 'Forget about it / It's fine', you say:",
-          "cue": "Bỏ qua đi",
-          "correct": "Never mind",
-          "options": [
-            "Never mind",
-            "Always mind",
-            "Out of mind",
-            "Open your mind"
-          ],
-          "explanationVi": "Never mind mang nghĩa thôi bỏ qua, không sao đâu.",
-          "explanationEn": "'Never mind' means let it go / don't worry about it."
-        }
-      ]
-    },
-    {
-      "id": "en-stage-4",
-      "stageNum": 4,
-      "titleVi": "Ải 4: Cụm Phụ Âm Khó (TH, SH, CH, STR)",
-      "titleEn": "Stage 4: Tough Consonant Clusters",
-      "descVi": "Xóa bỏ thói quen phát âm sai âm TH và cụm 3 phụ âm STR chuẩn đét.",
-      "descEn": "Eliminate TH errors and master challenging 3-consonant clusters.",
-      "bossNameVi": "Bóng Ma Oni (Shadow Demon)",
-      "bossNameEn": "Shadow Oni",
-      "bossType": "oni",
-      "bossHp": 140,
-      "icon": "👹",
-      "items": [
-        {
-          "char": "TH vô thanh /θ/",
-          "reading": "Think /θɪŋk/",
-          "meaningVi": "Âm TH thổi hơi (Đặt đầu lưỡi giữa 2 hàm răng và thổi)",
-          "meaningEn": "Voiceless TH /θ/ as in Think",
-          "hint": "Đầu lưỡi lộ nhẹ giữa răng, tuyệt đối không đọc thành S hay T"
-        },
-        {
-          "char": "TH hữu thanh /ð/",
-          "reading": "This /ðɪs/",
-          "meaningVi": "Âm TH rung cổ họng (Lưỡi kẹp nhẹ, rung dây thanh)",
-          "meaningEn": "Voiced TH /ð/ as in This",
-          "hint": "Đặt ngón tay lên cổ họng để cảm nhận độ rung"
-        },
-        {
-          "char": "SH /ʃ/ vs CH /tʃ/",
-          "reading": "Ship /ʃɪp/ vs Chip /tʃɪp/",
-          "meaningVi": "SH kéo dài êm dịu, CH bật hơi dứt khoát",
-          "meaningEn": "Continuant /ʃ/ vs Affricate /tʃ/",
-          "hint": "Chu môi về phía trước"
-        },
-        {
-          "char": "Cụm STR /str/",
-          "reading": "Street /striːt/",
-          "meaningVi": "Cụm 3 phụ âm liền mạch không chèn âm 'ờ'",
-          "meaningEn": "Triple cluster /str/ as in Street",
-          "hint": "Lướt từ S sang T rồi cuộn lưỡi R"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Vị trí đặt lưỡi chuẩn xác khi phát âm /θ/ trong 'Think' là ở đâu?",
-          "promptEn": "Where is tongue placement for /θ/ in 'Think'?",
-          "cue": "Think /θ/",
-          "correct": "Đầu lưỡi đặt giữa hai hàm răng và thổi luồng khí nhẹ",
-          "options": [
-            "Đầu lưỡi đặt giữa hai hàm răng và thổi luồng khí nhẹ",
-            "Đầu lưỡi thụt sâu vào trong họng",
-            "Lưỡi áp chặt lên vòm miệng trên",
-            "Hai môi mím chặt lại"
-          ],
-          "explanationVi": "Âm /θ/ là âm kẹp lưỡi giữa răng thổi hơi.",
-          "explanationEn": "Place tongue tip between teeth and release air."
-        },
-        {
-          "promptVi": "Điểm khác biệt cốt lõi giữa âm /θ/ (Think) và /ð/ (This) là gì?",
-          "promptEn": "What is the key difference between /θ/ (Think) and /ð/ (This)?",
-          "cue": "/θ/ vs /ð/",
-          "correct": "/θ/ không rung dây thanh (vô thanh), /ð/ có rung (hữu thanh)",
-          "options": [
-            "/θ/ không rung dây thanh (vô thanh), /ð/ có rung (hữu thanh)",
-            "/θ/ phát âm qua mũi",
-            "/ð/ không cần dùng lưỡi",
-            "Cả hai hoàn toàn giống nhau"
-          ],
-          "explanationVi": "/θ/ là voiceless (vô thanh), /ð/ là voiced (hữu thanh).",
-          "explanationEn": "/θ/ is voiceless, /ð/ vibrates the vocal cords."
-        },
-        {
-          "promptVi": "Lỗi phổ biến nhất của người Việt khi phát âm từ 'Street' /striːt/ là gì?",
-          "promptEn": "What is a common mispronunciation of 'Street'?",
-          "cue": "Street",
-          "correct": "Chèn thêm âm 'sờ-tơ-rít' thay vì trượt liền mạch /str/",
-          "options": [
-            "Chèn thêm âm 'sờ-tơ-rít' thay vì trượt liền mạch /str/",
-            "Đọc thành chữ Z",
-            "Quên phát âm nguyên âm",
-            "Nói quá nhanh"
-          ],
-          "explanationVi": "Cụm phụ âm cần lướt liền mạch không chèn nguyên âm đệm.",
-          "explanationEn": "Avoid inserting extra vowels between s-t-r."
-        },
-        {
-          "promptVi": "Cặp từ nào minh họa rõ nhất sự khác nhau giữa /ʃ/ và /tʃ/?",
-          "promptEn": "Which pair demonstrates /ʃ/ vs /tʃ/?",
-          "cue": "/ʃ/ vs /tʃ/",
-          "correct": "Ship vs Chip",
-          "options": [
-            "Ship vs Chip",
-            "Cat vs Bat",
-            "Run vs Sun",
-            "Pen vs Ten"
-          ],
-          "explanationVi": "Ship có âm /ʃ/ kéo dài, Chip có âm /tʃ/ bật tắc.",
-          "explanationEn": "Ship uses /ʃ/, Chip uses affricate /tʃ/."
-        }
-      ]
-    },
-    {
-      "id": "en-stage-5",
-      "stageNum": 5,
-      "titleVi": "Ải 5: Tiếng Lóng Mỹ Thực Chiến (American Street Slang)",
-      "titleEn": "Stage 5: Street Slang & Fluency Final Boss",
-      "descVi": "Chinh phục các câu lóng thực tế trong podcast, phim ảnh và đời sống New York/LA.",
-      "descEn": "Tackle real slang heard in American podcasts, cinema, and modern culture.",
-      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
-      "bossNameEn": "Crimson Dragon Emperor",
+      "id": "ja-stage-12",
+      "stageNum": 12,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 12: Đại Chiến Đàm Thoại Đỉnh Cao (Final Boss)",
+      "titleEn": "Stage 12: Master Japanese Fluency Battle",
+      "descVi": "Trận chiến tổng kết toàn bộ kiến thức 3 chương với Hắc Long Hoàng Gia!",
+      "descEn": "The ultimate comprehensive battle uniting all 3 chapters of Japanese mastery!",
+      "bossNameVi": "Hắc Long Hoàng Gia (Imperial Void Dragon)",
+      "bossNameEn": "Imperial Void Dragon",
       "bossType": "dragon",
-      "bossHp": 160,
-      "icon": "🐉",
+      "bossHp": 250,
+      "icon": "👑",
       "items": [
         {
-          "char": "I'm down for that",
-          "reading": "/aɪm daʊn fər ðæt/",
-          "meaningVi": "Tôi sẵn sàng tham gia / Tôi ủng hộ kèo này!",
-          "meaningEn": "I'm ready / Count me in!",
-          "hint": "Đồng nghĩa với 'I'm in!'"
-        },
-        {
-          "char": "No worries at all",
-          "reading": "/noʊ ˈwɜːriz æt ɔːl/",
-          "meaningVi": "Đừng bận tâm / Chuyện nhỏ ấy mà!",
-          "meaningEn": "Don't sweat it / It's fine",
-          "hint": "Cách nói cực kỳ thân mật của người trẻ"
-        },
-        {
-          "char": "Hit me up later",
-          "reading": "/hɪt mi ʌp ˈleɪtər/",
-          "meaningVi": "Nhắn tin / Gọi cho tôi sau nhé (HMU)",
-          "meaningEn": "Text me or call me later",
-          "hint": "Nối âm: hit-me-up"
-        },
-        {
-          "char": "It is what it is",
-          "reading": "/ɪt ɪz wʌt ɪt ɪz/",
-          "meaningVi": "Chấp nhận sự thật thôi / Đành vậy chứ biết sao",
-          "meaningEn": "Accept the reality / Can't change it",
-          "hint": "Thành ngữ chấp nhận hoàn cảnh phổ biến nhất"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Khi một người bạn rủ đi ăn pizza và bạn nói 'I'm down!', câu đó nghĩa là gì?",
-          "promptEn": "If a friend invites you for pizza and you say 'I'm down!', what does it mean?",
-          "cue": "I'm down!",
-          "correct": "Tôi đồng ý, tôi tham gia kèo này!",
-          "options": [
-            "Tôi đồng ý, tôi tham gia kèo này!",
-            "Tôi đang buồn bã",
-            "Tôi không có tiền",
-            "Tôi vừa bị ngã xuống đất"
-          ],
-          "explanationVi": "'I'm down' là tiếng lóng thể hiện sự hào hứng tham gia.",
-          "explanationEn": "'I'm down' means 'count me in!'."
-        },
-        {
-          "promptVi": "Cụm 'Hit me up' viết tắt là HMU trong tin nhắn nghĩa là gì?",
-          "promptEn": "What does the text abbreviation 'HMU' (Hit me up) mean?",
-          "cue": "Hit me up (HMU)",
-          "correct": "Nhắn tin hoặc liên lạc với tôi nhé",
-          "options": [
-            "Nhắn tin hoặc liên lạc với tôi nhé",
-            "Đánh vào người tôi đi",
-            "Hãy chạy trốn",
-            "Xóa số điện thoại"
-          ],
-          "explanationVi": "Hit me up = Liên lạc với tôi nhé.",
-          "explanationEn": "Hit me up means contact me."
-        },
-        {
-          "promptVi": "Người Mỹ nói 'It is what it is' trong tâm trạng nào?",
-          "promptEn": "In what mindset do speakers say 'It is what it is'?",
-          "cue": "It is what it is",
-          "correct": "Chấp nhận thực tế dù không như ý muốn",
-          "options": [
-            "Chấp nhận thực tế dù không như ý muốn",
-            "Vô cùng phấn khích",
-            "Muốn tranh luận gay gắt",
-            "Báo tin mừng trúng số"
-          ],
-          "explanationVi": "Đây là câu thành ngữ thể hiện sự chấp nhận thực tế khách quan.",
-          "explanationEn": "It conveys stoic acceptance of an unchangeable situation."
-        },
-        {
-          "promptVi": "'No worries' tương đương với cách diễn đạt nào?",
-          "promptEn": "What is 'No worries' equivalent to?",
-          "cue": "No worries",
-          "correct": "Don't worry about it / You're welcome",
-          "options": [
-            "Don't worry about it / You're welcome",
-            "Be very worried",
-            "Leave immediately",
-            "I don't know you"
-          ],
-          "explanationVi": "No worries mang nghĩa đừng lo lắng, chuyện nhỏ.",
-          "explanationEn": "'No worries' means no problem at all."
-        }
-      ]
-    }
-  ],
-  "ko-KR": [
-    {
-      "id": "ko-stage-1",
-      "stageNum": 1,
-      "titleVi": "Ải 1: Nguyên Âm Hangul Cội Nguồn (ㅏ, ㅓ, ㅗ, ㅜ, ㅣ)",
-      "titleEn": "Stage 1: Core Hangul Vowels",
-      "descVi": "Khám phá nguyên lý triết học Thiên - Địa - Nhân tạo nên chữ viết Hàn Quốc.",
-      "descEn": "Discover the philosophical harmony of Heaven, Earth, and Humanity in Hangul.",
-      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
-      "bossNameEn": "Phonetic Slime",
-      "bossType": "slime",
-      "bossHp": 80,
-      "icon": "🟢",
-      "items": [
-        {
-          "char": "ㅏ",
-          "reading": "a",
-          "meaningVi": "Nguyên âm A (Nét sổ dọc với nét phẩy hướng sang phải)",
-          "meaningEn": "Vowel A",
-          "hint": "Nét phẩy sang phải tượng trưng cho mặt trời mọc"
-        },
-        {
-          "char": "ㅓ",
-          "reading": "eo",
-          "meaningVi": "Nguyên âm Ơ/O mở (Nét phẩy hướng vào trong)",
-          "meaningEn": "Vowel Eo (Open O)",
-          "hint": "Mở miệng như âm 'ơ' nhưng khẩu hình hơi sâu"
-        },
-        {
-          "char": "ㅗ",
-          "reading": "o",
-          "meaningVi": "Nguyên âm Ô (Nét phẩy hướng lên trên trời)",
-          "meaningEn": "Vowel O (Rounded)",
-          "hint": "Chu môi tròn như chữ 'ô' tiếng Việt"
-        },
-        {
-          "char": "ㅜ",
-          "reading": "u",
-          "meaningVi": "Nguyên âm U (Nét phẩy hướng xuống đất)",
-          "meaningEn": "Vowel U",
-          "hint": "Chu môi hướng thẳng ra trước"
-        },
-        {
-          "char": "ㅣ",
-          "reading": "i",
-          "meaningVi": "Nguyên âm I (Thanh dọc tượng trưng cho con người đứng thẳng)",
-          "meaningEn": "Vowel I",
-          "hint": "Môi dẹt kéo sang hai bên"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Nguyên âm Hangul nào có nét phẩy chỉ sang bên PHẢI?",
-          "promptEn": "Which Hangul vowel has a tick pointing to the RIGHT?",
-          "cue": "ㅏ",
-          "correct": "ㅏ (a)",
-          "options": [
-            "ㅏ (a)",
-            "ㅓ (eo)",
-            "ㅗ (o)",
-            "ㅜ (u)"
-          ],
-          "explanationVi": "ㅏ có nét phẩy hướng sang phải, đọc là 'a'.",
-          "explanationEn": "ㅏ points right and sounds like 'a'."
-        },
-        {
-          "promptVi": "Nguyên âm ㅓ trong tiếng Hàn phát âm gần giống âm nào?",
-          "promptEn": "How is the vowel ㅓ pronounced?",
-          "cue": "ㅓ",
-          "correct": "Âm 'ơ' hoặc 'o' mở",
-          "options": [
-            "Âm 'ơ' hoặc 'o' mở",
-            "Âm 'u' chu môi",
-            "Âm 'i' kéo dài",
-            "Âm 'e' bẹt"
-          ],
-          "explanationVi": "ㅓ phát âm giữa ơ và o.",
-          "explanationEn": "ㅓ is an open mid back vowel."
-        },
-        {
-          "promptVi": "Chữ ㅣ tượng trưng cho yếu tố nào trong triết lý sáng tạo Hangul?",
-          "promptEn": "What does ㅣ represent in King Sejong's Hangul philosophy?",
-          "cue": "ㅣ",
-          "correct": "Con người đứng thẳng giữa trời và đất",
-          "options": [
-            "Con người đứng thẳng giữa trời và đất",
-            "Dòng sông chảy xiết",
-            "Ngọn núi cao",
-            "Ánh trăng rằm"
-          ],
-          "explanationVi": "Vua Sejong dùng nét dọc ㅣ biểu thị Con người (Nhân).",
-          "explanationEn": "Vertical ㅣ represents humanity standing between heaven and earth."
-        },
-        {
-          "promptVi": "Nguyên âm nào có nét phẩy hướng XUỐNG DƯỚI?",
-          "promptEn": "Which vowel has a short stroke pointing DOWN?",
-          "cue": "ㅜ",
-          "correct": "ㅜ (u)",
-          "options": [
-            "ㅜ (u)",
-            "ㅗ (o)",
-            "ㅏ (a)",
-            "ㅣ (i)"
-          ],
-          "explanationVi": "ㅜ có nét phẩy xuống đất, đọc là 'u'.",
-          "explanationEn": "ㅜ points downward representing 'u'."
-        }
-      ]
-    },
-    {
-      "id": "ko-stage-2",
-      "stageNum": 2,
-      "titleVi": "Ải 2: Phụ Âm Đầu & Lời Chào Seoul",
-      "titleEn": "Stage 2: Basic Consonants & Annyeonghaseyo",
-      "descVi": "Học các phụ âm cơ bản và câu chào quốc dân 안녕하세요.",
-      "descEn": "Learn fundamental consonants and master Annyeonghaseyo.",
-      "bossNameVi": "Cửu Vĩ Hồ Kitsune (Nine-Tailed Fox)",
-      "bossNameEn": "Nine-Tailed Fox Gumiho",
-      "bossType": "kitsune",
-      "bossHp": 100,
-      "icon": "🦊",
-      "items": [
-        {
-          "char": "ㄱ",
-          "reading": "g/k",
-          "meaningVi": "Phụ âm Giyeok (Mô phỏng cuống lưỡi chặn họng)",
-          "meaningEn": "Consonant Giyeok (G/K)",
-          "hint": "Viết ngang rồi sổ vuông góc"
-        },
-        {
-          "char": "ㄴ",
-          "reading": "n",
-          "meaningVi": "Phụ âm Nieun (Mô phỏng đầu lưỡi chạm nướu trên)",
-          "meaningEn": "Consonant Nieun (N)",
-          "hint": "Viết sổ rồi ngang vuông góc"
-        },
-        {
-          "char": "ㅁ",
-          "reading": "m",
-          "meaningVi": "Phụ âm Mieum (Mô phỏng đôi môi khép lại)",
-          "meaningEn": "Consonant Mieum (M)",
-          "hint": "Hình vuông khép kín"
-        },
-        {
-          "char": "ㅅ",
-          "reading": "s",
-          "meaningVi": "Phụ âm Siot (Mô phỏng hình chiếc răng)",
-          "meaningEn": "Consonant Siot (S)",
-          "hint": "Hai nét rẽ nhánh như mái nhà"
-        },
-        {
-          "char": "안녕하세요",
-          "reading": "Annyeonghaseyo",
-          "meaningVi": "Xin chào (Trang trọng, phổ biến nhất)",
-          "meaningEn": "Hello (Standard polite)",
-          "hint": "Cúi đầu nhẹ khi nói câu này"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Hình vuông 'ㅁ' trong Hangul mô phỏng bộ phận phát âm nào?",
-          "promptEn": "What vocal organ does the square consonant 'ㅁ' represent?",
-          "cue": "ㅁ",
-          "correct": "Hình dạng đôi môi khép lại",
-          "options": [
-            "Hình dạng đôi môi khép lại",
-            "Chiếc răng cửa",
-            "Cuống họng",
-            "Lỗ mũi"
-          ],
-          "explanationVi": "ㅁ mô phỏng đôi môi khi phát âm m.",
-          "explanationEn": "ㅁ represents closed lips."
-        },
-        {
-          "promptVi": "'Xin chào' tiếng Hàn lịch sự chuẩn mực là câu nào?",
-          "promptEn": "What is the standard polite Korean greeting for 'Hello'?",
-          "cue": "Xin chào",
-          "correct": "안녕하세요 (Annyeonghaseyo)",
-          "options": [
-            "안녕하세요 (Annyeonghaseyo)",
-            "감사합니다 (Gamsahamnida)",
-            "죄송합니다 (Joesonghamnida)",
-            "잘 가요 (Jal gayo)"
-          ],
-          "explanationVi": "안녕하세요 là lời chào chuẩn mực.",
-          "explanationEn": "안녕하세요 is standard polite Hello."
-        },
-        {
-          "promptVi": "Phụ âm ㄱ (Giyeok) mô phỏng khẩu hình gì?",
-          "promptEn": "What does consonant ㄱ (Giyeok) imitate?",
-          "cue": "ㄱ",
-          "correct": "Cuống lưỡi nâng lên chặn vòm họng mềm",
-          "options": [
-            "Cuống lưỡi nâng lên chặn vòm họng mềm",
-            "Hai hàm răng nghiến lại",
-            "Môi chúm tròn",
-            "Lưỡi thè ra ngoài"
-          ],
-          "explanationVi": "ㄱ mô phỏng cuống lưỡi uốn lên chạm ngạc gà.",
-          "explanationEn": "ㄱ illustrates the tongue blocking the throat."
-        },
-        {
-          "promptVi": "Ký tự có hình dáng như mái nhà hai nhánh 'ㅅ' phát âm là gì?",
-          "promptEn": "What sound does the tent-shaped consonant 'ㅅ' produce?",
-          "cue": "ㅅ",
-          "correct": "Âm s",
-          "options": [
-            "Âm s",
-            "Âm m",
-            "Âm n",
-            "Âm b"
-          ],
-          "explanationVi": "ㅅ đọc là s.",
-          "explanationEn": "ㅅ produces the 's' sound."
-        }
-      ]
-    },
-    {
-      "id": "ko-stage-3",
-      "stageNum": 3,
-      "titleVi": "Ải 3: Bộ Cụm Từ Lịch Thiệp Hàng Ngày",
-      "titleEn": "Stage 3: Essential Polite Expressions",
-      "descVi": "Bộ câu từ chuẩn mực giúp bạn hòa nhập ngay tại Hàn Quốc.",
-      "descEn": "Standard polite phrases to navigate everyday life in Korea.",
-      "bossNameVi": "Golem Thạch Đấu (Stone Guardian)",
-      "bossNameEn": "Stone Guardian Golem",
-      "bossType": "golem",
-      "bossHp": 120,
-      "icon": "🗿",
-      "items": [
-        {
-          "char": "감사합니다",
-          "reading": "Gamsahamnida",
-          "meaningVi": "Cảm ơn rất nhiều (Lịch sự, trang trọng)",
-          "meaningEn": "Thank you (Formal)",
-          "hint": "Âm 합 đọc là 'ham' do biến âm Batchim"
-        },
-        {
-          "char": "죄송합니다",
-          "reading": "Joesonghamnida",
-          "meaningVi": "Xin lỗi (Chân thành, lịch sự cao)",
-          "meaningEn": "I am sorry (Formal)",
-          "hint": "Dùng khi va chạm hoặc gây phiền hà"
-        },
-        {
-          "char": "네",
-          "reading": "Ne",
-          "meaningVi": "Vâng / Đúng rồi / Tôi hiểu",
-          "meaningEn": "Yes / Understood",
-          "hint": "Thường phát âm hơi hướng 'đê' nhẹ trong đời sống"
-        },
-        {
-          "char": "아니요",
-          "reading": "Aniyo",
-          "meaningVi": "Không / Không phải đâu ạ",
-          "meaningEn": "No (Polite)",
-          "hint": "Âm ngắn gọn, lịch sự"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Tại sao chữ '합' trong '감사합니다' lại đọc là 'ham' thay vì 'hap'?",
-          "promptEn": "Why is '합' in 'Gamsahamnida' read as 'ham'?",
-          "cue": "감사합니다",
-          "correct": "Hiện tượng đồng hóa âm: patchim ㅂ gặp phụ âm ㄴ biến thành ㅁ",
-          "options": [
-            "Hiện tượng đồng hóa âm: patchim ㅂ gặp phụ âm ㄴ biến thành ㅁ",
-            "Do người nói phát âm nhầm",
-            "Chữ này là tiếng Hán cổ",
-            "Không có quy tắc nào cả"
-          ],
-          "explanationVi": "Patchim ㅂ gặp ㄴ sẽ biến âm thành âm mũi m (Gamsahamnida).",
-          "explanationEn": "Nasal assimilation turns patchim ㅂ into ㅁ before ㄴ."
-        },
-        {
-          "promptVi": "Từ '죄송합니다' mang ý nghĩa gì?",
-          "promptEn": "What does '죄송합니다' (Joesonghamnida) mean?",
-          "cue": "죄송합니다",
-          "correct": "Xin lỗi một cách chân thành",
-          "options": [
-            "Xin lỗi một cách chân thành",
-            "Chúc mừng sinh nhật",
-            "Cảm ơn bữa ăn",
-            "Tạm biệt"
-          ],
-          "explanationVi": "Joesonghamnida có nghĩa là Xin lỗi chân thành.",
-          "explanationEn": "Joesonghamnida is the formal apology."
-        },
-        {
-          "promptVi": "Từ nào trong tiếng Hàn có nghĩa là 'Vâng / Đúng vậy'?",
-          "promptEn": "Which word means 'Yes' in Korean?",
-          "cue": "Vâng",
-          "correct": "네 (Ne)",
-          "options": [
-            "네 (Ne)",
-            "아니요 (Aniyo)",
-            "글쎄요 (Geulsseyo)",
-            "안돼 (Andwae)"
-          ],
-          "explanationVi": "네 nghĩa là Vâng.",
-          "explanationEn": "네 means Yes."
-        },
-        {
-          "promptVi": "'아니요' (Aniyo) có nghĩa là gì?",
-          "promptEn": "What does '아니요' (Aniyo) mean?",
-          "cue": "아니요",
-          "correct": "Không ạ",
-          "options": [
-            "Không ạ",
-            "Vâng ạ",
-            "Xin chào",
-            "Đi thong thả"
-          ],
-          "explanationVi": "아니요 có nghĩa là Không.",
-          "explanationEn": "아니요 means No."
-        }
-      ]
-    },
-    {
-      "id": "ko-stage-4",
-      "stageNum": 4,
-      "titleVi": "Ải 4: Phụ Âm Căng & Phụ Âm Cuối (Batchim)",
-      "titleEn": "Stage 4: Double Consonants & Batchim",
-      "descVi": "Làm chủ 5 phụ âm căng (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ) và âm cuối giữ hơi.",
-      "descEn": "Master tense double consonants and final consonant stop rules.",
-      "bossNameVi": "Yêu Tinh Dokkaebi (Shadow Dokkaebi)",
-      "bossNameEn": "Shadow Dokkaebi",
-      "bossType": "oni",
-      "bossHp": 140,
-      "icon": "👹",
-      "items": [
-        {
-          "char": "ㄲ",
-          "reading": "kk",
-          "meaningVi": "Phụ âm căng Sang-giyeok (Gồng thanh quản, không bật hơi)",
-          "meaningEn": "Tense Kk",
-          "hint": "Nén hơi trong họng rồi phát ra dứt khoát"
-        },
-        {
-          "char": "ㅃ",
-          "reading": "pp",
-          "meaningVi": "Phụ âm căng Sang-bieup (Mím chặt môi, bật âm đanh)",
-          "meaningEn": "Tense Pp",
-          "hint": "Âm 'p' căng mạnh"
-        },
-        {
-          "char": "ㅆ",
-          "reading": "ss",
-          "meaningVi": "Phụ âm căng Sang-siot (Rít hơi mạnh kẽ răng)",
-          "meaningEn": "Tense Ss",
-          "hint": "Âm 'x' căng rít sắc nét"
-        },
-        {
-          "char": "밥",
-          "reading": "Bap",
-          "meaningVi": "Cơm (Batchim ㅂ khép môi giữ hơi không bật ra)",
-          "meaningEn": "Rice / Meal (Batchim ㅂ)",
-          "hint": "Âm cuối ngậm môi không nhả hơi"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Phụ âm căng 'ㄲ' khác phụ âm cơ bản 'ㄱ' ở đặc điểm nào?",
-          "promptEn": "How does tense 'ㄲ' differ from basic 'ㄱ'?",
-          "cue": "ㄲ vs ㄱ",
-          "correct": "Cơ thanh quản gồng siết mạnh hơn, phát âm đanh và dứt khoát",
-          "options": [
-            "Cơ thanh quản gồng siết mạnh hơn, phát âm đanh và dứt khoát",
-            "Bật hơi gió cực mạnh ra ngoài",
-            "Phát âm nhỏ như tiếng thì thầm",
-            "Hoàn toàn giống nhau"
-          ],
-          "explanationVi": "Phụ âm căng (doen sori) đòi hỏi căng cơ họng dứt khoát.",
-          "explanationEn": "Tense consonants require strong glottal tension."
-        },
-        {
-          "promptVi": "Khi từ '밥' (Cơm) đứng một mình, phụ âm cuối ㅂ được phát âm thế nào?",
-          "promptEn": "How is the final batchim ㅂ in '밥' pronounced?",
-          "cue": "밥",
-          "correct": "Mím chặt môi chặn luồng khí lại, không bật hơi 'pờ'",
-          "options": [
-            "Mím chặt môi chặn luồng khí lại, không bật hơi 'pờ'",
-            "Bật hơi 'pờ' thật to",
-            "Đọc thành âm 'm'",
-            "Bỏ qua không đọc"
-          ],
-          "explanationVi": "Batchim trong tiếng Hàn là âm tắc không nhả (unreleased stop).",
-          "explanationEn": "Korean final consonants are unreleased stops."
-        },
-        {
-          "promptVi": "Có bao nhiêu phụ âm đôi căng trong bảng chữ cái Hangul?",
-          "promptEn": "How many double tense consonants exist in Hangul?",
-          "cue": "Phụ âm căng",
-          "correct": "5 phụ âm (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ)",
-          "options": [
-            "5 phụ âm (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ)",
-            "3 phụ âm",
-            "7 phụ âm",
-            "10 phụ âm"
-          ],
-          "explanationVi": "Có đúng 5 phụ âm căng: kk, tt, pp, ss, jj.",
-          "explanationEn": "There are exactly 5 tense consonants."
-        },
-        {
-          "promptVi": "Từ '오빠' (Oppa) chứa phụ âm căng nào?",
-          "promptEn": "Which double consonant does '오빠' (Oppa) contain?",
-          "cue": "오빠",
-          "correct": "ㅃ (Sang-bieup)",
-          "options": [
-            "ㅃ (Sang-bieup)",
-            "ㄲ (Sang-giyeok)",
-            "ㄸ (Sang-digeut)",
-            "ㅆ (Sang-siot)"
-          ],
-          "explanationVi": "오빠 chứa phụ âm căng ㅃ.",
-          "explanationEn": "Oppa has the tense ㅃ."
-        }
-      ]
-    },
-    {
-      "id": "ko-stage-5",
-      "stageNum": 5,
-      "titleVi": "Ải 5: Khẩu Ngữ Phim Hàn & Giới Trẻ K-Wave",
-      "titleEn": "Stage 5: K-Wave Slang & Seoul Street Boss",
-      "descVi": "Bộ từ cửa miệng cực hot trong phim K-Drama và giới trẻ Seoul.",
-      "descEn": "Trendy slang and reactive expressions straight out of K-Dramas.",
-      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
-      "bossNameEn": "Crimson Dragon Emperor",
-      "bossType": "dragon",
-      "bossHp": 160,
-      "icon": "🐉",
-      "items": [
-        {
-          "char": "대박",
-          "reading": "Daebak",
-          "meaningVi": "Đỉnh chóp / Cực đỉnh / Không thể tin được!",
-          "meaningEn": "Awesome / Jackpot / Unbelievable!",
-          "hint": "Từ cảm thán số 1 của giới trẻ Hàn"
-        },
-        {
-          "char": "진짜?",
-          "reading": "Jinjja?",
-          "meaningVi": "Thật á?! / Thật không đấy?!",
-          "meaningEn": "Really?! / For real?",
-          "hint": "Lên giọng cuối câu thể hiện ngạc nhiên"
-        },
-        {
-          "char": "헐",
-          "reading": "Heol",
-          "meaningVi": "Trời đất ơi! / Cạn lời / Shock!",
-          "meaningEn": "OMG / No way / Speechless",
-          "hint": "Bật âm ngắn thể hiện ngỡ ngàng"
-        },
-        {
-          "char": "화이팅",
-          "reading": "Hwaiting",
-          "meaningVi": "Cố lên! / Cố gắng lên nhé!",
-          "meaningEn": "Fighting! / Cheer up!",
-          "hint": "Nắm chặt tay khi hô khẩu hiệu này"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Khi chứng kiến một điều kỳ diệu hoặc quá đỗi ấn tượng, người Hàn hô:",
-          "promptEn": "When witnessing something amazing, Koreans exclaim:",
-          "cue": "Đỉnh chóp!",
-          "correct": "대박! (Daebak!)",
-          "options": [
-            "대박! (Daebak!)",
-            "안돼! (Andwae!)",
-            "바보! (Babo!)",
-            "몰라! (Molla!)"
-          ],
-          "explanationVi": "Daebak tương đương 'Đỉnh chóp / Tuyệt vời'.",
-          "explanationEn": "Daebak means awesome / jackpot."
-        },
-        {
-          "promptVi": "Từ '진짜?' (Jinjja?) thường dùng khi nào?",
-          "promptEn": "When is '진짜?' (Jinjja?) used?",
-          "cue": "진짜?",
-          "correct": "Khi muốn hỏi 'Thật á?! / Thật không đấy?!'",
-          "options": [
-            "Khi muốn hỏi 'Thật á?! / Thật không đấy?!'",
-            "Khi muốn nói tạm biệt",
-            "Khi gọi món ăn",
-            "Khi cảm ơn"
-          ],
-          "explanationVi": "Jinjja có nghĩa là thật sự, thật sao.",
-          "explanationEn": "Jinjja means really / genuinely."
-        },
-        {
-          "promptVi": "Từ cảm thán '헐' (Heol) trong phim Hàn diễn tả cảm xúc gì?",
-          "promptEn": "What emotion does the Korean exclamation '헐' (Heol) convey?",
-          "cue": "헐",
-          "correct": "Bất ngờ, sốc hoặc cạn lời",
-          "options": [
-            "Bất ngờ, sốc hoặc cạn lời",
-            "Vô cùng hạnh phúc",
-            "Buồn ngủ",
-            "Đói bụng"
-          ],
-          "explanationVi": "Heol diễn tả sự cạn lời hoặc bất ngờ.",
-          "explanationEn": "Heol expresses shock or being speechless."
-        },
-        {
-          "promptVi": "Để cổ vũ, động viên ai đó cố lên, người Hàn nói câu gì?",
-          "promptEn": "To cheer someone on with 'Fighting!', Koreans say:",
-          "cue": "Cố lên!",
-          "correct": "화이팅! (Hwaiting!)",
-          "options": [
-            "화이팅! (Hwaiting!)",
-            "잘 가! (Jal ga!)",
-            "미안해! (Mianhae!)",
-            "맛있어! (Masisseo!)"
-          ],
-          "explanationVi": "Hwaiting có nghĩa là Cố lên!",
-          "explanationEn": "Hwaiting means fighting / keep it up!"
-        }
-      ]
-    }
-  ],
-  "zh-CN": [
-    {
-      "id": "zh-stage-1",
-      "stageNum": 1,
-      "titleVi": "Ải 1: Vận Mẫu Đơn & 4 Thanh Điệu Huyền Ảo",
-      "titleEn": "Stage 1: Simple Finals & The 4 Tones",
-      "descVi": "Chinh phục 6 nguyên âm cơ bản và quy luật cao độ của 4 thanh điệu tiếng Trung.",
-      "descEn": "Master the 6 simple finals and pitch contour of the 4 tones.",
-      "bossNameVi": "Khí Linh Slime (Phonetic Slime)",
-      "bossNameEn": "Phonetic Slime",
-      "bossType": "slime",
-      "bossHp": 80,
-      "icon": "🟢",
-      "items": [
-        {
-          "char": "a",
-          "reading": "ā á ǎ à",
-          "meaningVi": "Vận mẫu A (Khẩu hình mở to, lưỡi phẳng)",
-          "meaningEn": "Final A",
-          "hint": "Âm vang sáng nhất trong hệ thống Pinyin"
-        },
-        {
-          "char": "o",
-          "reading": "ō ó ǒ ò",
-          "meaningVi": "Vận mẫu O (Môi tròn, phát âm ô/ua)",
-          "meaningEn": "Final O",
-          "hint": "Môi hơi chúm tròn như quả trứng"
-        },
-        {
-          "char": "e",
-          "reading": "ē é ě è",
-          "meaningVi": "Vận mẫu E (Khẩu hình dẹt, phát âm như 'ưa')",
-          "meaningEn": "Final E (Pronounced 'e/ue')",
-          "hint": "Kéo nhẹ mép sang hai bên"
-        },
-        {
-          "char": "ü",
-          "reading": "yū yú yǔ yù",
-          "meaningVi": "Vận mẫu Ü (Âm uy tròn môi, đầu lưỡi chạm răng dưới)",
-          "meaningEn": "Final Ü (Rounded high front vowel)",
-          "hint": "Giữ chặt môi tròn suốt quá trình phát âm"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Thanh 1 (Thanh ngang - ví dụ: mā) có đường đi cao độ như thế nào?",
-          "promptEn": "What is the pitch contour of Tone 1 (e.g. mā)?",
-          "cue": "Thanh 1 (55)",
-          "correct": "Cao đều và ngân dài ổn định ở mức 5-5",
-          "options": [
-            "Cao đều và ngân dài ổn định ở mức 5-5",
-            "Đi từ thấp vọt lên cao",
-            "Hạ xuống đáy rồi vút lên",
-            "Rơi nhanh dứt khoát từ cao xuống thấp"
-          ],
-          "explanationVi": "Thanh 1 là thanh cao bằng phẳng (55).",
-          "explanationEn": "Tone 1 is high and flat (55)."
-        },
-        {
-          "promptVi": "Thanh 4 (Thanh rơi - ví dụ: mà) có đặc điểm gì?",
-          "promptEn": "What is the characteristic of Tone 4 (e.g. mà)?",
-          "cue": "Thanh 4 (51)",
-          "correct": "Rơi cực nhanh và dứt khoát từ cao độ 5 xuống 1",
-          "options": [
-            "Rơi cực nhanh và dứt khoát từ cao độ 5 xuống 1",
-            "Hát ngân nga mềm mại",
-            "Không có thanh điệu",
-            "Ngắt quãng ở giữa"
-          ],
-          "explanationVi": "Thanh 4 là thanh rơi dứt khoát từ cao nhất xuống thấp nhất.",
-          "explanationEn": "Tone 4 falls sharply from 5 to 1."
-        },
-        {
-          "promptVi": "Khi phát âm vận mẫu 'ü', quy tắc quan trọng nhất là gì?",
-          "promptEn": "What is crucial when pronouncing the final 'ü'?",
-          "cue": "ü",
-          "correct": "Giữ chặt môi tròn cố định, không được mở mép ra",
-          "options": [
-            "Giữ chặt môi tròn cố định, không được mở mép ra",
-            "Mở rộng to hết cỡ",
-            "Thè lưỡi ra ngoài",
-            "Khép chặt răng lại"
-          ],
-          "explanationVi": "Vận mẫu ü đòi hỏi môi chu tròn cố định suốt quá trình.",
-          "explanationEn": "Maintain rounded lips without moving them."
-        },
-        {
-          "promptVi": "Vận mẫu 'e' trong tiếng Trung chuẩn Bắc Kinh đọc tương tự âm nào trong tiếng Việt?",
-          "promptEn": "How is Chinese Pinyin 'e' commonly pronounced?",
-          "cue": "e",
-          "correct": "Âm 'ưa' hoặc 'ơ'",
-          "options": [
-            "Âm 'ưa' hoặc 'ơ'",
-            "Âm 'e' bẹt",
-            "Âm 'i' dài",
-            "Âm 'u' tròn"
-          ],
-          "explanationVi": "Pinyin 'e' đọc giống âm 'ưa' trong tiếng Việt.",
-          "explanationEn": "Pinyin 'e' sounds close to 'uh/er'."
-        }
-      ]
-    },
-    {
-      "id": "zh-stage-2",
-      "stageNum": 2,
-      "titleVi": "Ải 2: Thanh Mẫu Cơ Bản & Lời Chào Nǐ Hǎo",
-      "titleEn": "Stage 2: Basic Initials & Nǐ Hǎo",
-      "descVi": "Phân biệt cặp âm bật hơi B-P, D-T và câu chào kinh điển 你好.",
-      "descEn": "Master aspirated vs unaspirated pairs B-P, D-T and iconic Nǐ Hǎo.",
-      "bossNameVi": "Linh Hồ Bách Biến (Mystic Fox)",
-      "bossNameEn": "Mystic Fox Spirit",
-      "bossType": "kitsune",
-      "bossHp": 100,
-      "icon": "🦊",
-      "items": [
-        {
-          "char": "b",
-          "reading": "bō",
-          "meaningVi": "Thanh mẫu B (Âm môi không bật hơi, tương tự p tiếng Việt)",
-          "meaningEn": "Initial B (Unaspirated)",
-          "hint": "Hai môi mím lại rồi mở ra, không có luồng khí phụt"
-        },
-        {
-          "char": "p",
-          "reading": "pō",
-          "meaningVi": "Thanh mẫu P (Âm môi bật hơi cực mạnh)",
-          "meaningEn": "Initial P (Aspirated)",
-          "hint": "Đặt tờ giấy trước miệng, giấy phải bay mạnh khi phát âm"
-        },
-        {
-          "char": "d / t",
-          "reading": "dē / tē",
-          "meaningVi": "Cặp D (không bật) vs T (bật hơi đầu lưỡi)",
-          "meaningEn": "Initials D vs T",
-          "hint": "Đầu lưỡi chạm nướu trên"
-        },
-        {
-          "char": "你好",
-          "reading": "Nǐ hǎo",
-          "meaningVi": "Xin chào (Biến điệu thanh 3: nǐ biến thành ní)",
-          "meaningEn": "Hello (3rd tone sandhi)",
-          "hint": "2 thanh 3 đi liền nhau, chữ đầu đọc thành thanh 2"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Khi hai thanh 3 đi liền nhau như trong '你好' (Nǐ hǎo), âm đầu tiên biến đổi ra sao?",
-          "promptEn": "In tone sandhi, when two 3rd tones meet (e.g. Nǐ hǎo), what happens to the first tone?",
-          "cue": "你好 (Nǐ hǎo)",
-          "correct": "Biến thành thanh 2 (đọc thành Ní hǎo)",
-          "options": [
-            "Biến thành thanh 2 (đọc thành Ní hǎo)",
-            "Biến thành thanh 4",
-            "Giữ nguyên không đổi",
-            "Biến thành thanh nhẹ"
-          ],
-          "explanationVi": "Quy tắc biến điệu: 3 + 3 -> 2 + 3 (Ní hǎo).",
-          "explanationEn": "Third tone sandhi: 3rd + 3rd tone becomes 2nd + 3rd tone."
-        },
-        {
-          "promptVi": "Điểm khác biệt quyết định giữa thanh mẫu 'b' và 'p' trong Pinyin là gì?",
-          "promptEn": "What is the key distinction between Pinyin 'b' and 'p'?",
-          "cue": "b vs p",
-          "correct": "'b' không bật hơi, 'p' bật hơi cực mạnh",
-          "options": [
-            "'b' không bật hơi, 'p' bật hơi cực mạnh",
-            "'b' dùng mũi, 'p' dùng tai",
-            "Cả hai đều bật hơi như nhau",
-            "'b' là nguyên âm"
-          ],
-          "explanationVi": "Trong Pinyin, p là âm bật hơi (aspirated), b không bật hơi.",
-          "explanationEn": "'p' is strongly aspirated, while 'b' is unaspirated."
-        },
-        {
-          "promptVi": "Từ '你好' mang ý nghĩa gì?",
-          "promptEn": "What does '你好' (Nǐ hǎo) mean?",
-          "cue": "你好",
-          "correct": "Xin chào",
-          "options": [
-            "Xin chào",
-            "Cảm ơn",
-            "Tạm biệt",
-            "Chúc ngủ ngon"
-          ],
-          "explanationVi": "你好 có nghĩa là Xin chào.",
-          "explanationEn": "你好 means Hello."
-        },
-        {
-          "promptVi": "Để kiểm tra xem mình phát âm âm bật hơi 'p' đúng chưa, mẹo hay nhất là gì?",
-          "promptEn": "What is the best trick to check if you aspirate 'p' correctly?",
-          "cue": "p bật hơi",
-          "correct": "Đặt tờ giấy ăn mỏng trước miệng xem giấy có bay mạnh không",
-          "options": [
-            "Đặt tờ giấy ăn mỏng trước miệng xem giấy có bay mạnh không",
-            "Ngậm nước trong miệng",
-            "Nhắm chặt hai mắt",
-            "Nói thật nhỏ"
-          ],
-          "explanationVi": "Luồng khí bật mạnh sẽ làm lay động tờ giấy.",
-          "explanationEn": "Hold a tissue in front of your mouth to feel the air burst."
-        }
-      ]
-    },
-    {
-      "id": "zh-stage-3",
-      "stageNum": 3,
-      "titleVi": "Ải 3: Bộ Cụm Từ Vàng Giao Tiếp Xã Hội",
-      "titleEn": "Stage 3: Golden Politeness Chunks",
-      "descVi": "Cảm ơn, xin lỗi và ứng xử thanh lịch theo phong cách người bản xứ.",
-      "descEn": "Thank you, apologies, and graceful etiquette in Chinese society.",
-      "bossNameVi": "Bàn Thạch Kim Cang (Stone Golem)",
-      "bossNameEn": "Ancient Stone Golem",
-      "bossType": "golem",
-      "bossHp": 120,
-      "icon": "🗿",
-      "items": [
-        {
-          "char": "谢谢",
-          "reading": "Xièxie",
-          "meaningVi": "Cảm ơn (Từ thứ hai đọc thanh nhẹ)",
-          "meaningEn": "Thank you",
-          "hint": "Xiè (thanh 4 dứt khoát) + xie (thanh nhẹ ngắn)"
-        },
-        {
-          "char": "不客气",
-          "reading": "Bù kèqi",
-          "meaningVi": "Đừng khách sáo / Không có chi",
-          "meaningEn": "You're welcome",
-          "hint": "Đáp lại lời cảm ơn chuẩn mực nhất"
-        },
-        {
-          "char": "对不起",
-          "reading": "Duìbuqǐ",
-          "meaningVi": "Xin lỗi (Chân thành)",
-          "meaningEn": "I'm sorry",
-          "hint": "Chữ bu ở giữa đọc nhẹ"
-        },
-        {
-          "char": "没关系",
-          "reading": "Méi guānxi",
-          "meaningVi": "Không sao đâu / Chuyện nhỏ ấy mà",
-          "meaningEn": "It doesn't matter / No problem",
-          "hint": "Đáp lại lời xin lỗi"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Khi ai đó nói '谢谢' (Xièxie) với bạn, câu đáp lịch sự chuẩn xác nhất là gì?",
-          "promptEn": "When someone says 'Xièxie', how do you politely reply?",
-          "cue": "谢谢",
-          "correct": "不客气 (Bù kèqi)",
-          "options": [
-            "不客气 (Bù kèqi)",
-            "对不起 (Duìbuqǐ)",
-            "再见 (Zàijiàn)",
-            "救命 (Jiùmìng)"
-          ],
-          "explanationVi": "Bù kèqi có nghĩa là Đừng khách sáo / Không có chi.",
-          "explanationEn": "Bù kèqi means 'You're welcome'."
-        },
-        {
-          "promptVi": "Khi ai đó nói '对不起' (Xin lỗi), bạn nên đáp lại bằng câu nào?",
-          "promptEn": "When someone apologizes with 'Duìbuqǐ', what do you say?",
-          "cue": "对不起",
-          "correct": "没关系 (Méi guānxi)",
-          "options": [
-            "没关系 (Méi guānxi)",
-            "谢谢 (Xièxie)",
-            "你好 (Nǐ hǎo)",
-            "不行 (Bù xíng)"
-          ],
-          "explanationVi": "Méi guānxi có nghĩa là Không sao đâu.",
-          "explanationEn": "Méi guānxi means 'It's okay / No problem'."
-        },
-        {
-          "promptVi": "Chữ 谢谢 (Cảm ơn) có thanh điệu như thế nào?",
-          "promptEn": "What are the tones of 谢谢 (Xièxie)?",
-          "cue": "谢谢",
-          "correct": "Thanh 4 + Thanh nhẹ",
-          "options": [
-            "Thanh 4 + Thanh nhẹ",
-            "Thanh 1 + Thanh 1",
-            "Thanh 2 + Thanh 3",
-            "Hai thanh 4 bằng nhau"
-          ],
-          "explanationVi": "Chữ thứ hai trong 谢谢 chuyển sang thanh nhẹ.",
-          "explanationEn": "The second syllable is a neutral tone."
-        },
-        {
-          "promptVi": "'没关系' (Méi guānxi) có nghĩa là gì?",
-          "promptEn": "What does 'Méi guānxi' mean?",
-          "cue": "没关系",
-          "correct": "Không sao, không có vấn đề gì",
-          "options": [
-            "Không sao, không có vấn đề gì",
-            "Tạm biệt",
-            "Đắt quá",
-            "Tôi không hiểu"
-          ],
-          "explanationVi": "Méi guānxi nghĩa là Không có hề gì.",
-          "explanationEn": "Méi guānxi means it doesn't matter."
-        }
-      ]
-    },
-    {
-      "id": "zh-stage-4",
-      "stageNum": 4,
-      "titleVi": "Ải 4: Thanh Mẫu Uốn Lưỡi (ZH, CH, SH, R)",
-      "titleEn": "Stage 4: Retroflex Consonants (ZH, CH, SH, R)",
-      "descVi": "Vượt qua thử thách khó khăn nhất của người học tiếng Trung: âm uốn lưỡi chuẩn Bắc Kinh.",
-      "descEn": "Conquer the famous Beijing retroflex sounds: tongue curled back.",
-      "bossNameVi": "La Sát Dạ Xoa (Shadow Rakshasa)",
-      "bossNameEn": "Shadow Rakshasa Oni",
-      "bossType": "oni",
-      "bossHp": 140,
-      "icon": "👹",
-      "items": [
-        {
-          "char": "zh",
-          "reading": "zhī",
-          "meaningVi": "Thanh mẫu ZH (Uốn đầu lưỡi lên ngạc cứng, không bật hơi)",
-          "meaningEn": "Retroflex ZH (Unaspirated)",
-          "hint": "Đầu lưỡi cong lên vòm miệng trên"
-        },
-        {
-          "char": "ch",
-          "reading": "chī",
-          "meaningVi": "Thanh mẫu CH (Uốn đầu lưỡi và BẬT HƠI cực mạnh)",
-          "meaningEn": "Retroflex CH (Aspirated)",
-          "hint": "Như âm 'tr' nhưng bật luồng gió mạnh"
-        },
-        {
-          "char": "sh",
-          "reading": "shī",
-          "meaningVi": "Thanh mẫu SH (Uốn đầu lưỡi, tạo luồng gió xát)",
-          "meaningEn": "Retroflex SH (Fricative)",
-          "hint": "Luồng khí lướt qua khe giữa đầu lưỡi và ngạc"
-        },
-        {
-          "char": "r",
-          "reading": "rì",
-          "meaningVi": "Thanh mẫu R (Uốn đầu lưỡi và rung dây thanh nhẹ)",
-          "meaningEn": "Retroflex R (Voiced)",
-          "hint": "Khác âm r tiếng Việt, môi hơi mở tự nhiên"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Điểm khác biệt cốt lõi giữa 'zh' và 'ch' trong tiếng Trung là gì?",
-          "promptEn": "What is the key difference between 'zh' and 'ch'?",
-          "cue": "zh vs ch",
-          "correct": "'zh' không bật hơi, 'ch' bật hơi cực mạnh",
-          "options": [
-            "'zh' không bật hơi, 'ch' bật hơi cực mạnh",
-            "'zh' thè lưỡi, 'ch' cắn môi",
-            "'zh' là nguyên âm",
-            "Không có khác biệt nào"
-          ],
-          "explanationVi": "CH là âm uốn lưỡi có luồng khí bật mạnh.",
-          "explanationEn": "'ch' is strongly aspirated retroflex."
-        },
-        {
-          "promptVi": "Khi phát âm nhóm thanh mẫu ZH, CH, SH, R, đầu lưỡi phải ở vị trí nào?",
-          "promptEn": "Where should the tongue tip be for ZH, CH, SH, R?",
-          "cue": "Vị trí lưỡi",
-          "correct": "Uốn cong lên hướng về phía vòm họng cứng (ngạc cứng)",
-          "options": [
-            "Uốn cong lên hướng về phía vòm họng cứng (ngạc cứng)",
-            "Cắm thẳng xuống sàn miệng",
-            "Kẹp chặt giữa hai hàm răng",
-            "Thè hẳn ra ngoài môi"
-          ],
-          "explanationVi": "Đây là nhóm âm đầu lưỡi sau / uốn lưỡi (retroflex).",
-          "explanationEn": "Curled back toward the hard palate."
-        },
-        {
-          "promptVi": "Từ '吃饭' (Ăn cơm) bắt đầu bằng thanh mẫu nào?",
-          "promptEn": "Which initial does '吃饭' (Chī fàn - eat) begin with?",
-          "cue": "吃饭",
-          "correct": "ch (bật hơi)",
-          "options": [
-            "ch (bật hơi)",
-            "zh",
-            "sh",
-            "z"
-          ],
-          "explanationVi": "Chī fàn bắt đầu bằng âm bật hơi ch.",
-          "explanationEn": "Chī begins with aspirated retroflex ch."
-        },
-        {
-          "promptVi": "Từ '老师' (Lǎoshī - Giáo viên) chứa âm uốn lưỡi nào?",
-          "promptEn": "Which retroflex initial is in '老师' (Lǎoshī)?",
-          "cue": "老师",
-          "correct": "sh",
-          "options": [
-            "sh",
-            "zh",
-            "ch",
-            "r"
-          ],
-          "explanationVi": "Chữ shī bắt đầu bằng thanh mẫu sh.",
-          "explanationEn": "Shī begins with retroflex sh."
-        }
-      ]
-    },
-    {
-      "id": "zh-stage-5",
-      "stageNum": 5,
-      "titleVi": "Ải 5: Khẩu Ngữ Phố Phường & Giới Trẻ Đương Đại",
-      "titleEn": "Stage 5: Street Slang & Beijing Flavor Final Boss",
-      "descVi": "Chinh phục những từ ngữ cực thịnh hành trên Douyin, Weibo và đời sống phố phường.",
-      "descEn": "Trendy slang and reactive expressions alive on modern Chinese social media.",
-      "bossNameVi": "Xích Diễm Thần Long (Crimson Dragon)",
-      "bossNameEn": "Crimson Dragon Emperor",
-      "bossType": "dragon",
-      "bossHp": 160,
-      "icon": "🐉",
-      "items": [
-        {
-          "char": "太棒了",
-          "reading": "Tài bàng le",
-          "meaningVi": "Tuyệt vời ông mặt trời! / Đỉnh quá!",
-          "meaningEn": "Awesome! / Fantastic!",
-          "hint": "Tài (thanh 4) + bàng (thanh 4) + le (thanh nhẹ)"
-        },
-        {
-          "char": "算了",
-          "reading": "Suàn le",
-          "meaningVi": "Thôi bỏ đi / Thôi dẹp đi / Thôi xong",
-          "meaningEn": "Forget it / Let it be",
-          "hint": "Câu cửa miệng khi không muốn bận tâm nữa"
-        },
-        {
-          "char": "加油",
-          "reading": "Jiāyóu",
-          "meaningVi": "Cố lên! / Thêm dầu nào! (Khẩu hiệu cổ vũ số 1)",
-          "meaningEn": "Add oil! / Keep it up!",
-          "hint": "Nghĩa đen là châm dầu/nạp nhiên liệu"
-        },
-        {
-          "char": "牛逼",
-          "reading": "Niúbī",
-          "meaningVi": "Quá trâu bò / Quá đỉnh cao (Tiếng lóng cực mạnh)",
-          "meaningEn": "Badass / Super awesome (Slang)",
-          "hint": "Thường viết tắt là NB"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Để cổ vũ bạn bè cố lên trong một kỳ thi hay trận đấu, người Trung Quốc hô:",
-          "promptEn": "To cheer someone on in China, what iconic phrase do they shout?",
-          "cue": "Cố lên!",
-          "correct": "加油! (Jiāyóu!)",
-          "options": [
-            "加油! (Jiāyóu!)",
-            "算了! (Suàn le!)",
-            "救命! (Jiùmìng!)",
-            "快走! (Kuài zǒu!)"
-          ],
-          "explanationVi": "Jiāyóu nghĩa đen là châm dầu, nghĩa bóng là Cố lên!",
-          "explanationEn": "Jiāyóu ('add oil') is the premier Chinese cheer."
-        },
-        {
-          "promptVi": "Khi muốn nói 'Thôi dẹp đi, đừng bận tâm nữa', người bản xứ dùng từ nào?",
-          "promptEn": "Which phrase means 'Forget it / Let it go'?",
-          "cue": "Thôi bỏ đi",
-          "correct": "算了 (Suàn le)",
-          "options": [
-            "算了 (Suàn le)",
-            "太棒了 (Tài bàng le)",
-            "很好 (Hěn hǎo)",
-            "谢谢 (Xièxie)"
-          ],
-          "explanationVi": "Suàn le mang nghĩa Thôi bỏ đi.",
-          "explanationEn": "Suàn le means 'Forget about it'."
-        },
-        {
-          "promptVi": "'太棒了' (Tài bàng le) thể hiện cảm xúc gì?",
-          "promptEn": "What emotion does '太棒了' (Tài bàng le) express?",
-          "cue": "太棒了",
-          "correct": "Khen ngợi điều gì đó vô cùng tuyệt vời, xuất sắc",
-          "options": [
-            "Khen ngợi điều gì đó vô cùng tuyệt vời, xuất sắc",
-            "Chê bai đồ ăn dở",
-            "Tức giận khi bị trễ tàu",
-            "Lời xin lỗi chân thành"
-          ],
-          "explanationVi": "Tài bàng le nghĩa là Tuyệt vời quá!",
-          "explanationEn": "Tài bàng le expresses delight / enthusiasm."
-        },
-        {
-          "promptVi": "Từ lóng '牛逼' (Niúbī, viết tắt NB) của giới trẻ Trung Quốc mang nghĩa gì?",
-          "promptEn": "What does the popular youth slang '牛逼' (Niúbī / NB) mean?",
-          "cue": "牛逼",
-          "correct": "Cực kỳ đỉnh cao, 'trâu bò', ấn tượng",
-          "options": [
-            "Cực kỳ đỉnh cao, 'trâu bò', ấn tượng",
-            "Con bò đang ăn cỏ",
-            "Rất buồn ngủ",
-            "Món thịt bò xào"
-          ],
-          "explanationVi": "Niúbī là tiếng lóng khen cái gì đó quá đỉnh.",
-          "explanationEn": "Niúbī is very popular slang for badass / awesome."
+          "char": "とりあえず",
+          "reading": "toriaezu",
+          "meaningVi": "Trước mắt cứ... / Tạm thời thì... (Từ cửa miệng người Nhật)",
+          "meaningEn": "For now / First of all",
+          "hint": "'Toriaezu biiru!' = Trước mắt cứ cho cốc bia đã!"
+        },
+        {
+          "char": "おつかれさまです",
+          "reading": "otsukaresama desu",
+          "meaningVi": "Hôm nay bạn vất vả rồi! (Câu chào khi hết giờ làm/học)",
+          "meaningEn": "Great job today! / Thank you for your hard work",
+          "hint": "Thể hiện sự trân trọng công sức của nhau"
+        },
+        {
+          "char": "おせわになります",
+          "reading": "osewa ni narimasu",
+          "meaningVi": "Cảm ơn sự quan tâm nâng đỡ của anh/chị",
+          "meaningEn": "Thank you for your ongoing support",
+          "hint": "Đỉnh cao giao tiếp lịch thiệp xã hội Nhật"
+        },
+        {
+          "char": "がんばってください",
+          "reading": "ganbatte kudasai",
+          "meaningVi": "Hãy cố gắng lên nhé! Chúc bạn thành công!",
+          "meaningEn": "Please do your best! Good luck!",
+          "hint": "Lời động viên chân thành nhất"
         }
       ]
     }
@@ -17684,6 +16339,9 @@ const QUEST_CAMPAIGNS = {
     {
       "id": "ja-stage-1",
       "stageNum": 1,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 1: 5 Nguyên Âm Cội Nguồn",
       "titleEn": "Stage 1: The 5 Core Vowels",
       "descVi": "Chinh phục 5 nguyên âm nền tảng của tiếng Nhật: A, I, U, E, O.",
@@ -17706,96 +16364,41 @@ const QUEST_CAMPAIGNS = {
           "reading": "i",
           "meaningVi": "Âm I (Môi hơi dẹt sang hai bên)",
           "meaningEn": "Vowel I (Slightly spread lips)",
-          "hint": "Nét trái móc nhẹ lên, nét phải ngắn hơn song song"
+          "hint": "Nét trái móc nhẹ, nét phải ngắn hơn"
         },
         {
           "char": "う",
           "reading": "u",
           "meaningVi": "Âm U (Môi không chúm tròn như tiếng Việt)",
-          "meaningEn": "Vowel U (Unrounded lips, relaxed)",
-          "hint": "Dấu phẩy nhỏ phía trên, nét móc cung lớn phía dưới"
+          "meaningEn": "Vowel U (Unrounded lips)",
+          "hint": "Nét phẩy trên, nét cong uốn lượn dưới"
         },
         {
           "char": "え",
           "reading": "e",
-          "meaningVi": "Âm E (Mở miệng vừa như 'e' tiếng Việt)",
-          "meaningEn": "Vowel E (Mid-open vowel)",
-          "hint": "Nét trên ngắn, nét dưới zíc zắc uốn lượn"
+          "meaningVi": "Âm E (Khẩu hình giữa A và I)",
+          "meaningEn": "Vowel E (Between A and I)",
+          "hint": "Nét phẩy trên, nét zic-zac kéo ngang"
         },
         {
           "char": "お",
           "reading": "o",
-          "meaningVi": "Âm O (Môi tròn nhẹ, phát âm gọn)",
-          "meaningEn": "Vowel O (Slightly rounded, short)",
-          "hint": "Ngang, sổ thắt nút tròn, thêm dấu phẩy góc phải"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Ký tự あ có phiên âm Romaji là gì?",
-          "promptEn": "What is the Romaji for character あ?",
-          "cue": "あ",
-          "correct": "a",
-          "options": [
-            "a",
-            "o",
-            "u",
-            "e"
-          ],
-          "explanationVi": "あ phát âm là 'a' trong tiếng Nhật.",
-          "explanationEn": "あ is read as 'a'."
-        },
-        {
-          "promptVi": "Âm 'u' trong tiếng Nhật được viết bằng chữ Hiragana nào?",
-          "promptEn": "Which Hiragana character represents 'u'?",
-          "cue": "u",
-          "correct": "う",
-          "options": [
-            "う",
-            "い",
-            "え",
-            "あ"
-          ],
-          "explanationVi": "う là chữ Hiragana của âm 'u'.",
-          "explanationEn": "う represents vowel 'u'."
-        },
-        {
-          "promptVi": "Ký tự nào sau đây là chữ 'i' (い)?",
-          "promptEn": "Which character is 'i' (い)?",
-          "cue": "い",
-          "correct": "い",
-          "options": [
-            "い",
-            "り",
-            "こ",
-            "お"
-          ],
-          "explanationVi": "い gồm 2 nét song song dẹt.",
-          "explanationEn": "い is the vowel 'i'."
-        },
-        {
-          "promptVi": "Ký tự お đọc là gì?",
-          "promptEn": "How is character お pronounced?",
-          "cue": "お",
-          "correct": "o",
-          "options": [
-            "o",
-            "a",
-            "e",
-            "u"
-          ],
-          "explanationVi": "お phát âm là 'o'.",
-          "explanationEn": "お is pronounced 'o'."
+          "meaningVi": "Âm O (Môi hơi tròn tự nhiên)",
+          "meaningEn": "Vowel O (Natural rounded lips)",
+          "hint": "Nét ngang, nét sổ uốn vòng tròn và dấu phẩy"
         }
       ]
     },
     {
       "id": "ja-stage-2",
       "stageNum": 2,
-      "titleVi": "Ải 2: Hàng Ka-Sa & Chào Hỏi",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 2: Hàng Ka-Sa & Lời Chào Mở Đầu",
       "titleEn": "Stage 2: Ka-Sa Row & Greetings",
-      "descVi": "Mở rộng phụ âm Ka, Sa và câu chào huyền thoại こんにちは.",
-      "descEn": "Expand to Ka and Sa rows plus the iconic greeting Konnichiwa.",
+      "descVi": "Ghi nhớ các phụ âm hàng Ka, Sa cùng câu chào hỏi kinh điển Konnichiwa.",
+      "descEn": "Learn Ka, Sa rows and the classic greeting Konnichiwa.",
       "bossNameVi": "Yêu Hồ Kitsune (Mystic Kitsune)",
       "bossNameEn": "Mystic Kitsune",
       "bossType": "kitsune",
@@ -17805,398 +16408,1065 @@ const QUEST_CAMPAIGNS = {
         {
           "char": "か",
           "reading": "ka",
-          "meaningVi": "Âm Ka (Phụ âm k bật nhẹ)",
-          "meaningEn": "Syllable Ka",
-          "hint": "Nét ngang móc, nét phẩy chéo và chấm bên phải"
+          "meaningVi": "Âm Ka (Phụ âm k tắc vô thanh)",
+          "meaningEn": "Sound Ka",
+          "hint": "Nét sổ cong có móc, nét phẩy chéo và dấu chấm"
         },
         {
           "char": "き",
           "reading": "ki",
           "meaningVi": "Âm Ki (Cười mỉm khi phát âm)",
-          "meaningEn": "Syllable Ki",
-          "hint": "2 nét ngang song song, nét sổ chéo và cung đáy"
+          "meaningEn": "Sound Ki",
+          "hint": "2 nét ngang song song, nét sổ chéo và nét cong dưới"
         },
         {
           "char": "さ",
           "reading": "sa",
-          "meaningVi": "Âm Sa (Gió lướt nhẹ kẽ răng)",
-          "meaningEn": "Syllable Sa",
-          "hint": "Nét ngang, nét sổ chéo móc và vòng cung"
+          "meaningVi": "Âm Sa (Lưỡi sát chân răng trên)",
+          "meaningEn": "Sound Sa",
+          "hint": "Nét ngang, nét sổ chéo móc và nét cong dưới"
         },
         {
           "char": "し",
           "reading": "shi",
-          "meaningVi": "Âm Shi (Âm gió nhẹ như 'she')",
-          "meaningEn": "Syllable Shi",
-          "hint": "1 nét duy nhất uốn như lưỡi câu"
+          "meaningVi": "Âm Shi (Âm hơi gió nhẹ, không chu môi)",
+          "meaningEn": "Sound Shi",
+          "hint": "Hình lưỡi câu câu cá vút lên"
         },
         {
           "char": "こんにちは",
-          "reading": "Konnichiwa",
-          "meaningVi": "Xin chào (Ban ngày / Phổ biến nhất)",
+          "reading": "konnichiwa",
+          "meaningVi": "Xin chào (Chào buổi chiều/ban ngày phổ biến nhất)",
           "meaningEn": "Hello / Good afternoon",
-          "hint": "Chú ý chữ は cuối câu đọc là 'wa'"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Chữ は trong câu 'こんにちは' được phát âm là gì?",
-          "promptEn": "How is the last character は in 'こんにちは' pronounced?",
-          "cue": "こんにちは",
-          "correct": "wa",
-          "options": [
-            "wa",
-            "ha",
-            "ba",
-            "pa"
-          ],
-          "explanationVi": "Khi đóng vai trò trợ từ, は đọc là 'wa'.",
-          "explanationEn": "As a particle ending, は is pronounced 'wa'."
-        },
-        {
-          "promptVi": "Ký tự uốn cong như lưỡi câu này là chữ gì?",
-          "promptEn": "Which character is shaped like a fishhook?",
-          "cue": "し",
-          "correct": "shi",
-          "options": [
-            "shi",
-            "tsu",
-            "no",
-            "ku"
-          ],
-          "explanationVi": "し là chữ 'shi'.",
-          "explanationEn": "し is 'shi'."
-        },
-        {
-          "promptVi": "Ký tự か có phiên âm là gì?",
-          "promptEn": "What is the reading for か?",
-          "cue": "か",
-          "correct": "ka",
-          "options": [
-            "ka",
-            "ga",
-            "ki",
-            "sa"
-          ],
-          "explanationVi": "か là âm 'ka'.",
-          "explanationEn": "か is 'ka'."
-        },
-        {
-          "promptVi": "'Xin chào' tiếng Nhật phổ biến nhất là câu nào?",
-          "promptEn": "What is the standard Japanese 'Hello'?",
-          "cue": "Xin chào",
-          "correct": "こんにちは",
-          "options": [
-            "こんにちは",
-            "さようなら",
-            "ありがとう",
-            "おはよう"
-          ],
-          "explanationVi": "こんにちは là lời chào ban ngày thông dụng.",
-          "explanationEn": "こんにちは means Hello."
+          "hint": "Chú ý chữ は đọc là 'wa'"
         }
       ]
     },
     {
       "id": "ja-stage-3",
       "stageNum": 3,
-      "titleVi": "Ải 3: Bộ Cụm Từ Sinh Tồn Tokyo",
-      "titleEn": "Stage 3: Tokyo Survival Chunks",
-      "descVi": "Bộ từ vựng then chốt giúp bạn tự tin giao tiếp mọi tình huống tại Nhật.",
-      "descEn": "Essential phrases to confidently navigate daily life in Japan.",
-      "bossNameVi": "Golem Đá Cổ (Ancient Stone Golem)",
-      "bossNameEn": "Ancient Stone Golem",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 3: Hàng Ta-Na-Ha & Lời Cảm Ơn",
+      "titleEn": "Stage 3: Ta-Na-Ha Row & Gratitude",
+      "descVi": "Thuần thục hàng Ta, Na, Ha cùng câu cảm ơn Arigatou gozaimasu.",
+      "descEn": "Master Ta, Na, Ha rows and polite gratitude.",
+      "bossNameVi": "Cóc Yêu Tinh Tsuchigumo",
+      "bossNameEn": "Cave Spider Spirit",
       "bossType": "golem",
-      "bossHp": 120,
+      "bossHp": 110,
       "icon": "🗿",
       "items": [
         {
+          "char": "た",
+          "reading": "ta",
+          "meaningVi": "Âm Ta (Đầu lưỡi chạm ngạc cứng)",
+          "meaningEn": "Sound Ta",
+          "hint": "Nét ngang, nét sổ chéo và hai nét nhỏ như chữ こ"
+        },
+        {
+          "char": "ち",
+          "reading": "chi",
+          "meaningVi": "Âm Chi (Giống chữ số 5)",
+          "meaningEn": "Sound Chi",
+          "hint": "Nét ngang ngắn, nét sổ cong bụng to"
+        },
+        {
+          "char": "な",
+          "reading": "na",
+          "meaningVi": "Âm Na (Đầu lưỡi chạm ngạc cứng)",
+          "meaningEn": "Sound Na",
+          "hint": "Ngang, sổ chéo, phẩy và vòng thòng lọng"
+        },
+        {
+          "char": "は",
+          "reading": "ha",
+          "meaningVi": "Âm Ha (Âm hơi từ họng)",
+          "meaningEn": "Sound Ha",
+          "hint": "Nét sổ dọc thẳng đứng, nét ngang và vòng thòng lọng"
+        },
+        {
           "char": "ありがとう",
-          "reading": "Arigatou",
-          "meaningVi": "Cảm ơn (Thân thiện, thường ngày)",
-          "meaningEn": "Thank you (Casual)",
-          "hint": "Âm 'to' kéo dài nhẹ với 'u'"
-        },
-        {
-          "char": "すみません",
-          "reading": "Sumimasen",
-          "meaningVi": "Xin lỗi / Xin làm phiền / Gọi phục vụ",
-          "meaningEn": "Excuse me / I'm sorry",
-          "hint": "Từ vạn năng nhất của người Nhật"
-        },
-        {
-          "char": "はい",
-          "reading": "Hai",
-          "meaningVi": "Vâng / Đúng vậy / Tôi nghe đây",
-          "meaningEn": "Yes / Understood",
-          "hint": "Dứt khoát, âm ngắn"
-        },
-        {
-          "char": "いいえ",
-          "reading": "Iie",
-          "meaningVi": "Không / Không có chi",
-          "meaningEn": "No / Not at all",
-          "hint": "Âm 'i' kép ngân dài nhẹ"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "'Sumimasen' dùng trong trường hợp nào?",
-          "promptEn": "When is 'Sumimasen' used?",
-          "cue": "すみません",
-          "correct": "Cả xin lỗi, cảm ơn và gọi nhân viên",
-          "options": [
-            "Cả xin lỗi, cảm ơn và gọi nhân viên",
-            "Chỉ dùng khi tức giận",
-            "Chỉ chào buổi sáng",
-            "Lời chúc ngủ ngon"
-          ],
-          "explanationVi": "Sumimasen là từ vạn năng dùng cả xin lỗi, cảm ơn và gọi phục vụ quán ăn.",
-          "explanationEn": "Sumimasen is a versatile phrase for apologizing, thanking, and getting attention."
-        },
-        {
-          "promptVi": "'Arigatou' (ありがとう) mang ý nghĩa gì?",
-          "promptEn": "What does 'Arigatou' mean?",
-          "cue": "ありがとう",
-          "correct": "Cảm ơn",
-          "options": [
-            "Cảm ơn",
-            "Tạm biệt",
-            "Xin lỗi",
-            "Chúc mừng"
-          ],
-          "explanationVi": "ありがとう có nghĩa là Cảm ơn.",
-          "explanationEn": "ありがとう means Thank you."
-        },
-        {
-          "promptVi": "Từ nào trong tiếng Nhật mang nghĩa 'Vâng / Đúng vậy'?",
-          "promptEn": "Which Japanese word means 'Yes'?",
-          "cue": "Yes",
-          "correct": "はい (Hai)",
-          "options": [
-            "はい (Hai)",
-            "いいえ (Iie)",
-            "だめ (Dame)",
-            "じゃあ (Jaa)"
-          ],
-          "explanationVi": "はい có nghĩa là Vâng, Đúng vậy.",
-          "explanationEn": "はい means Yes."
-        },
-        {
-          "promptVi": "Từ 'いいえ' phiên âm là gì?",
-          "promptEn": "What is the Romaji for いいえ?",
-          "cue": "いいえ",
-          "correct": "Iie",
-          "options": [
-            "Iie",
-            "Ie",
-            "Hai",
-            "Iya"
-          ],
-          "explanationVi": "いいえ đọc là Iie (Không).",
-          "explanationEn": "いいえ reads as Iie."
+          "reading": "arigatou",
+          "meaningVi": "Cảm ơn (Lời cảm ơn chân thành, ấm áp)",
+          "meaningEn": "Thank you",
+          "hint": "Âm 'gou' kéo dài nhẹ trường âm ou"
         }
       ]
     },
     {
       "id": "ja-stage-4",
+      "chapter": 1,
       "stageNum": 4,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 4: Biến Âm, Âm Đục & Âm Ngắt Sokuon",
-      "titleEn": "Stage 4: Dakuten & Sokuon Master",
-      "descVi": "Chinh phục âm đục (Tenten/Maru) và âm ngắt chữ nhỏ (っ).",
-      "descEn": "Tackle Dakuten voiced sounds and small Sokuon double consonants.",
+      "titleEn": "Stage 4: Dakuten & Sokuon Double Consonants",
+      "descVi": "Chinh phục dấu Dakuten (g, z, d, b, p) và âm ngắt đôi phụ âm っ (kk, ss, tt, pp).",
+      "descEn": "Conquer voiced Dakuten sounds and double consonant stop (っ).",
       "bossNameVi": "Hắc Dạ Quỷ Oni (Shadow Oni)",
       "bossNameEn": "Shadow Oni",
       "bossType": "oni",
-      "bossHp": 140,
+      "bossHp": 125,
       "icon": "👹",
       "items": [
         {
           "char": "が",
           "reading": "ga",
-          "meaningVi": "Âm Ga (Hàng Ka thêm dấu Tenten biến thành đục)",
-          "meaningEn": "Voiced Ga",
-          "hint": "か + hai dấu phẩy nhỏ góc phải trên"
+          "meaningVi": "Âm Ga (Biến âm đục của か, rung thanh quản)",
+          "meaningEn": "Voiced Ga sound",
+          "hint": "Chữ か thêm 2 dấu phẩy tenten phía trên bên phải"
         },
         {
-          "char": "ぱ",
-          "reading": "pa",
-          "meaningVi": "Âm Pa (Hàng Ha thêm dấu tròn Maru)",
-          "meaningEn": "Semi-voiced Pa",
-          "hint": "は + vòng tròn nhỏ góc phải trên"
+          "char": "ざ",
+          "reading": "za",
+          "meaningVi": "Âm Za (Biến âm đục của さ)",
+          "meaningEn": "Voiced Za sound",
+          "hint": "Chữ さ thêm 2 dấu phẩy tenten"
         },
         {
           "char": "きって",
           "reading": "kitte",
-          "meaningVi": "Âm ngắt tt: Con tem (Ngừng hơi 1 nhịp ở chữ っ)",
-          "meaningEn": "Sokuon example: Postage stamp",
-          "hint": "Chữ っ nhỏ không đọc thành tiếng mà tạo khoảng lặng"
+          "meaningVi": "Con tem (Ví dụ âm ngắt っ tạo phụ âm kép -tt-)",
+          "meaningEn": "Stamp (Sokuon double tt)",
+          "hint": "Khựng lại 1 nhịp ở chữ っ nhỏ trước khi bật te"
         },
         {
           "char": "がっこう",
           "reading": "gakkou",
-          "meaningVi": "Âm ngắt kk: Trường học",
-          "meaningEn": "Sokuon example: School",
-          "hint": "Khóa thanh quản ở 'kk' trước khi phát 'kou'"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Chữ っ nhỏ trong từ 'きって' (kitte) có tác dụng gì?",
-          "promptEn": "What role does the small っ play in 'kitte'?",
-          "cue": "きって",
-          "correct": "Tạo khoảng lặng ngắt hơi gấp đôi phụ âm sau",
-          "options": [
-            "Tạo khoảng lặng ngắt hơi gấp đôi phụ âm sau",
-            "Đọc là 'tsu' thật to",
-            "Kéo dài nguyên âm 'i'",
-            "Làm biến đổi thành dấu hỏi"
-          ],
-          "explanationVi": "っ (Sokuon) giữ hơi lại 1 nhịp, tạo thành phụ âm gấp đôi (kitte).",
-          "explanationEn": "Small っ causes a glottal stop / geminate consonant."
-        },
-        {
-          "promptVi": "Thêm hai dấu phẩy (Tenten ゛) vào chữ か sẽ tạo thành chữ gì?",
-          "promptEn": "Adding dakuten ゛ to か creates what character?",
-          "cue": "か + ゛",
-          "correct": "が (ga)",
-          "options": [
-            "が (ga)",
-            "ぱ (pa)",
-            "ざ (za)",
-            "だ (da)"
-          ],
-          "explanationVi": "か + ゛ = が (ga).",
-          "explanationEn": "か with dakuten becomes が (ga)."
-        },
-        {
-          "promptVi": "Từ 'がっこう' nghĩa là gì?",
-          "promptEn": "What does 'がっこう' (gakkou) mean?",
-          "cue": "がっこう",
-          "correct": "Trường học",
-          "options": [
-            "Trường học",
-            "Bệnh viện",
-            "Công viên",
-            "Nhà ga"
-          ],
-          "explanationVi": "Gakkou nghĩa là trường học.",
-          "explanationEn": "Gakkou means school."
-        },
-        {
-          "promptVi": "Dấu tròn nhỏ (゜) trên chữ ぱ được gọi là gì?",
-          "promptEn": "What is the small circle ゜ on ぱ called?",
-          "cue": "ぱ",
-          "correct": "Handakuten (Bán trọc âm)",
-          "options": [
-            "Handakuten (Bán trọc âm)",
-            "Dakuten",
-            "Choonpu",
-            "Furigana"
-          ],
-          "explanationVi": "Dấu tròn nhỏ gọi là Handakuten, tạo âm p.",
-          "explanationEn": "Handakuten creates the 'p' sound."
+          "meaningVi": "Trường học (Âm ngắt -kk- và trường âm -ou)",
+          "meaningEn": "School (Sokuon double kk)",
+          "hint": "Gak-kou: dừng 1 phách tại っ rồi bật kou"
         }
       ]
     },
     {
       "id": "ja-stage-5",
       "stageNum": 5,
-      "titleVi": "Ải 5: Đại Chiến Đàm Thoại Đời Thực",
-      "titleEn": "Stage 5: Tokyo Real Slang & Boss Battle",
-      "descVi": "Làm chủ những từ lóng và khẩu ngữ mà giới trẻ Tokyo sử dụng mỗi ngày!",
-      "descEn": "Master native Tokyo slang and casual expressions spoken on the street!",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 5: Âm Ghép Yoon & Trường Âm Chōonpu",
+      "titleEn": "Stage 5: Yoon Compound Sounds & Long Vowels",
+      "descVi": "Luyện âm ghép Ky, Sh, Ch và kéo dài trường âm chuẩn nhịp mora.",
+      "descEn": "Practice compound sounds (Kya, Shu, Cho) and long vowels.",
       "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
-      "bossNameEn": "Crimson Dragon Emperor",
+      "bossNameEn": "Crimson Dragon",
       "bossType": "dragon",
-      "bossHp": 160,
+      "bossHp": 140,
       "icon": "🐉",
       "items": [
         {
-          "char": "ヤバい",
-          "reading": "Yabai",
-          "meaningVi": "Đỉnh chóp / Điên rồ / Nguy rồi (Tùy ngữ cảnh)",
-          "meaningEn": "Crazy / Awesome / Dangerous (Context-dependent)",
-          "hint": "Từ cửa miệng phổ biến nhất Nhật Bản"
+          "char": "きゃ",
+          "reading": "kya",
+          "meaningVi": "Âm Kya (Ghép ki + ya nhỏ, phát âm 1 phách)",
+          "meaningEn": "Compound sound Kya",
+          "hint": "Chữ ya viết nhỏ bằng 1/2 chữ ki"
         },
+        {
+          "char": "しゃ",
+          "reading": "sha",
+          "meaningVi": "Âm Sha (Ghép shi + ya nhỏ)",
+          "meaningEn": "Compound sound Sha",
+          "hint": "Đọc liền mạch thành sha"
+        },
+        {
+          "char": "とうきょう",
+          "reading": "toukyou",
+          "meaningVi": "Tokyo (Thủ đô Nhật Bản - gồm 2 trường âm Tō-kyō)",
+          "meaningEn": "Tokyo (Capital of Japan)",
+          "hint": "Mỗi âm giữ đúng 2 nhịp mora: To-u-kyo-u"
+        },
+        {
+          "char": "コーヒー",
+          "reading": "koohii",
+          "meaningVi": "Cà phê (Từ Katakana có dấu gạch ngang trường âm ー)",
+          "meaningEn": "Coffee (Long vowel bar ー)",
+          "hint": "Kéo dài âm kō và âm hī"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-6",
+      "stageNum": 6,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 6: Số Đếm, Mua Sắm & Hỏi Giá Tiền",
+      "titleEn": "Stage 6: Numbers, Shopping & Asking Prices",
+      "descVi": "Nắm vững số đếm, đơn vị Yên và mẫu câu hỏi giá 'Ikura desu ka?'.",
+      "descEn": "Master Japanese numbers, Yen currency, and asking prices.",
+      "bossNameVi": "Golem Kim Tiền (Gold Golem)",
+      "bossNameEn": "Gold Golem",
+      "bossType": "golem",
+      "bossHp": 155,
+      "icon": "💰",
+      "items": [
+        {
+          "char": "いくらですか",
+          "reading": "ikura desu ka",
+          "meaningVi": "Bao nhiêu tiền vậy? (Câu hỏi giá kinh điển)",
+          "meaningEn": "How much is this?",
+          "hint": "Nhấn nhẹ ở 'i-ku-ra' và lên giọng ở 'ka'"
+        },
+        {
+          "char": "これ",
+          "reading": "kore",
+          "meaningVi": "Cái này (Vật ở gần người nói)",
+          "meaningEn": "This (near speaker)",
+          "hint": "Dùng khi chỉ vào món đồ ngay trước mặt"
+        },
+        {
+          "char": "それ",
+          "reading": "sore",
+          "meaningVi": "Cái đó (Vật ở gần người nghe)",
+          "meaningEn": "That (near listener)",
+          "hint": "Dùng khi chỉ món đồ bên phía đối phương"
+        },
+        {
+          "char": "せんえん",
+          "reading": "sen-en",
+          "meaningVi": "1,000 Yên (~170.000 VNĐ)",
+          "meaningEn": "1,000 Yen",
+          "hint": "sen (nghìn) + en (yên)"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-7",
+      "stageNum": 7,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 7: Gọi Món, Quán Ăn & Nhà Hàng Nhật",
+      "titleEn": "Stage 7: Ordering Food & Restaurant Etiquette",
+      "descVi": "Tự tin gọi phục vụ 'Sumimasen', chọn món 'kore onegaishimasu' và khen 'Oishii!'.",
+      "descEn": "Order food confidently with polite Japanese restaurant phrases.",
+      "bossNameVi": "Bếp Trưởng Tengu (Master Chef Tengu)",
+      "bossNameEn": "Master Chef Tengu",
+      "bossType": "oni",
+      "bossHp": 165,
+      "icon": "🍜",
+      "items": [
+        {
+          "char": "すみません",
+          "reading": "sumimasen",
+          "meaningVi": "Xin lỗi / Làm phiền một chút (Dùng gọi nhân viên quán)",
+          "meaningEn": "Excuse me / Pardon me",
+          "hint": "Nói rõ ràng, dứt khoát khi giơ tay gọi phục vụ"
+        },
+        {
+          "char": "これをおねがいします",
+          "reading": "kore o onegaishimasu",
+          "meaningVi": "Cho tôi món này nhé (Chỉ tay vào menu và gọi)",
+          "meaningEn": "This one please",
+          "hint": "Onegaishimasu: cụm từ lịch sự vạn năng"
+        },
+        {
+          "char": "おいしい",
+          "reading": "oishii",
+          "meaningVi": "Ngon quá! (Khen món ăn chuẩn bản xứ)",
+          "meaningEn": "Delicious!",
+          "hint": "Trường âm ii kéo dài thể hiện sự thích thú"
+        },
+        {
+          "char": "おかいけい",
+          "reading": "okaikei",
+          "meaningVi": "Tính tiền / Thanh toán hóa đơn",
+          "meaningEn": "The bill / check please",
+          "hint": "Có thể bắt chéo hai ngón trỏ hình chữ X khi nói"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-8",
+      "stageNum": 8,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 8: Đi Tàu Điện & Hỏi Đường Phố Tokyo",
+      "titleEn": "Stage 8: Tokyo Subway & Direction Finding",
+      "descVi": "Không bao giờ lạc đường với cấu trúc hỏi vị trí '... wa doko desu ka?'.",
+      "descEn": "Navigate train stations and ask for directions smoothly.",
+      "bossNameVi": "Linh Mã Thần Tốc (Kirin Rail Spirit)",
+      "bossNameEn": "Kirin Rail Spirit",
+      "bossType": "kitsune",
+      "bossHp": 175,
+      "icon": "🚅",
+      "items": [
+        {
+          "char": "えきはどこですか",
+          "reading": "eki wa doko desu ka",
+          "meaningVi": "Ga tàu ở đâu vậy ạ?",
+          "meaningEn": "Where is the train station?",
+          "hint": "eki = nhà ga; doko = ở đâu"
+        },
+        {
+          "char": "トイレはどこですか",
+          "reading": "toire wa doko desu ka",
+          "meaningVi": "Nhà vệ sinh ở đâu vậy?",
+          "meaningEn": "Where is the restroom?",
+          "hint": "toire là từ mượn Katakana của toilet"
+        },
+        {
+          "char": "みぎ",
+          "reading": "migi",
+          "meaningVi": "Bên phải",
+          "meaningEn": "Right (direction)",
+          "hint": "migi = phải; hidari = trái"
+        },
+        {
+          "char": "まっすぐ",
+          "reading": "massugu",
+          "meaningVi": "Đi thẳng (Có âm ngắt -ss-)",
+          "meaningEn": "Straight ahead",
+          "hint": "Nói rõ âm ngắt: mas-sugu"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-9",
+      "stageNum": 9,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 9: Cảm Thán, Đồng Ý & Từ Chối Khéo Léo",
+      "titleEn": "Stage 9: Reactions, Agreements & Polite Refusals",
+      "descVi": "Học văn hóa giao tiếp tinh tế: 'Daijoubu', 'Chotto...' và 'Naruhodo'.",
+      "descEn": "Master subtle Japanese conversational reactions and soft refusals.",
+      "bossNameVi": "Samurai Trúc Lâm (Bamboo Samurai)",
+      "bossNameEn": "Bamboo Samurai",
+      "bossType": "golem",
+      "bossHp": 185,
+      "icon": "🎋",
+      "items": [
+        {
+          "char": "だいじょうぶ",
+          "reading": "daijoubu",
+          "meaningVi": "Tôi ổn / Không sao đâu / Được rồi",
+          "meaningEn": "I'm okay / No problem",
+          "hint": "Có thể dùng cả khi hỏi 'Bạn ổn chứ?'"
+        },
+        {
+          "char": "ちょっと",
+          "reading": "chotto",
+          "meaningVi": "Hơi... / Một chút (Dùng từ chối khéo léo tránh mất lòng)",
+          "meaningEn": "A bit... (Polite soft decline)",
+          "hint": "Nói 'chotto...' và ngập ngừng là người Nhật hiểu bạn từ chối"
+        },
+        {
+          "char": "なるほど",
+          "reading": "naruhodo",
+          "meaningVi": "Hóa ra là vậy! / Ra là thế (Gật đầu đồng tình)",
+          "meaningEn": "I see! / That makes sense!",
+          "hint": "Thể hiện bạn đang chăm chú lắng nghe"
+        },
+        {
+          "char": "いいですね",
+          "reading": "ii desu ne",
+          "meaningVi": "Hay quá nhỉ! / Ý kiến tuyệt vời!",
+          "meaningEn": "Sounds good! / Nice idea!",
+          "hint": "Trợ từ ne thể hiện sự đồng điệu cảm xúc"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-10",
+      "stageNum": 10,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 10: Làm Quen, Kết Bạn & Giới Thiệu Bản Thân",
+      "titleEn": "Stage 10: Making Friends & Self Introduction",
+      "descVi": "Tự tin giới thiệu bản thân 'Hajimemashite' và 'Yoroshiku onegaishimasu'.",
+      "descEn": "Introduce yourself smoothly and make native friends.",
+      "bossNameVi": "Thủy Thần Kappa (River Guardian Kappa)",
+      "bossNameEn": "River Guardian Kappa",
+      "bossType": "slime",
+      "bossHp": 200,
+      "icon": "🥒",
+      "items": [
+        {
+          "char": "はじめまして",
+          "reading": "hajimemashite",
+          "meaningVi": "Rất vui được gặp bạn lần đầu tiên",
+          "meaningEn": "Nice to meet you (first time)",
+          "hint": "Cúi đầu nhẹ chào khi nói câu này"
+        },
+        {
+          "char": "よろしくおねがいします",
+          "reading": "yoroshiku onegaishimasu",
+          "meaningVi": "Mong nhận được sự giúp đỡ của bạn (Câu chốt kết bạn)",
+          "meaningEn": "Pleasure to meet you / Please treat me well",
+          "hint": "Trọng tâm của văn hóa gắn kết Nhật Bản"
+        },
+        {
+          "char": "ベトナムじんです",
+          "reading": "betonamu-jin desu",
+          "meaningVi": "Tôi là người Việt Nam",
+          "meaningEn": "I am Vietnamese",
+          "hint": "jin = người (quốc tịch)"
+        },
+        {
+          "char": "またね",
+          "reading": "mata ne",
+          "meaningVi": "Hẹn gặp lại nhé (Nói với bạn bè thân mật)",
+          "meaningEn": "See you again! (casual)",
+          "hint": "Cách chào tạm biệt tự nhiên nhất giữa bạn trẻ"
+        }
+      ]
+    },
+    {
+      "id": "ja-stage-11",
+      "stageNum": 11,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 11: Tiếng Lóng Giới Trẻ & Khẩu Ngữ Đời Thường",
+      "titleEn": "Stage 11: Japanese Youth Slang & Street Buzzwords",
+      "descVi": "Phản xạ thần tốc với các từ lóng: 'Maji de?', 'Yabai!', 'Metcha'.",
+      "descEn": "Sound like a Tokyo local with top native buzzwords.",
+      "bossNameVi": "Ảo Ảnh Cửu Vĩ (Nine-Tailed Illusionist)",
+      "bossNameEn": "Nine-Tailed Illusionist",
+      "bossType": "kitsune",
+      "bossHp": 220,
+      "icon": "🔥",
+      "items": [
         {
           "char": "まじで",
-          "reading": "Maji de",
-          "meaningVi": "Thật á?! / Nghiêm túc đấy chứ?",
-          "meaningEn": "Seriously?! / For real?",
-          "hint": "Lên giọng cuối câu khi ngạc nhiên"
+          "reading": "maji de",
+          "meaningVi": "Thật á?! / Nghiêm túc đấy à?! (Cực kỳ phổ biến)",
+          "meaningEn": "Seriously?! / For real?!",
+          "hint": "Lên giọng cuối câu khi ngạc nhiên: 'Maji de?!'"
         },
         {
-          "char": "お疲れ様",
-          "reading": "Otsukaresama",
-          "meaningVi": "Bạn đã vất vả rồi! (Chào sau giờ làm việc)",
-          "meaningEn": "Good work today / Thank you for your hard work",
-          "hint": "Văn hóa ứng xử công sở và đời sống Nhật Bản"
+          "char": "やばい",
+          "reading": "yabai",
+          "meaningVi": "Đỉnh chóp! / Đỉnh dã man! / Tiêu rồi! (Đa nghĩa theo ngữ cảnh)",
+          "meaningEn": "Crazy! / Amazing! / Oh shoot!",
+          "hint": "Khen ngon/đẹp cũng dùng 'yabai!'"
         },
         {
-          "char": "よろしく",
-          "reading": "Yoroshiku",
-          "meaningVi": "Nhờ bạn nhé / Rất vui được hợp tác",
-          "meaningEn": "Nice to meet you / Count on you",
-          "hint": "Dạng thân mật của Yoroshiku onegaishimasu"
+          "char": "めっちゃ",
+          "reading": "metcha",
+          "meaningVi": "Cực kỳ / Siêu cấp (Âm ngắt nhấn mạnh)",
+          "meaningEn": "Super / Extremely",
+          "hint": "metcha oishii = siêu ngon"
+        },
+        {
+          "char": "うそ",
+          "reading": "uso",
+          "meaningVi": "Điêu! / Thật không tin nổi!",
+          "meaningEn": "No way! / You're lying!",
+          "hint": "Kêu lên với bạn bè khi nghe tin sốc"
         }
-      ],
-      "bossQuestions": [
+      ]
+    },
+    {
+      "id": "ja-stage-12",
+      "stageNum": 12,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 12: Đại Chiến Đàm Thoại Đỉnh Cao (Final Boss)",
+      "titleEn": "Stage 12: Master Japanese Fluency Battle",
+      "descVi": "Trận chiến tổng kết toàn bộ kiến thức 3 chương với Hắc Long Hoàng Gia!",
+      "descEn": "The ultimate comprehensive battle uniting all 3 chapters of Japanese mastery!",
+      "bossNameVi": "Hắc Long Hoàng Gia (Imperial Void Dragon)",
+      "bossNameEn": "Imperial Void Dragon",
+      "bossType": "dragon",
+      "bossHp": 250,
+      "icon": "👑",
+      "items": [
         {
-          "promptVi": "Từ 'ヤバい' (Yabai) trong tiếng Nhật đường phố có thể mang nghĩa nào?",
-          "promptEn": "In casual Japanese, what can 'Yabai' mean?",
-          "cue": "ヤバい",
-          "correct": "Cả khen ngon/đỉnh lẫn lo lắng khi gặp rắc rối",
-          "options": [
-            "Cả khen ngon/đỉnh lẫn lo lắng khi gặp rắc rối",
-            "Chỉ dùng để chê bai đồ ăn",
-            "Lời tạm biệt trang trọng",
-            "Tên một loại sushi"
-          ],
-          "explanationVi": "Yabai cực kỳ linh hoạt, có thể khen 'ngon đỉnh chóp' hoặc than 'chết dở rồi'.",
-          "explanationEn": "Yabai can mean amazingly good or dangerously bad."
+          "char": "とりあえず",
+          "reading": "toriaezu",
+          "meaningVi": "Trước mắt cứ... / Tạm thời thì... (Từ cửa miệng người Nhật)",
+          "meaningEn": "For now / First of all",
+          "hint": "'Toriaezu biiru!' = Trước mắt cứ cho cốc bia đã!"
         },
         {
-          "promptVi": "Khi đồng nghiệp hoàn thành một ca làm việc vất vả, bạn nói câu gì?",
-          "promptEn": "What do you say when colleagues finish their work?",
-          "cue": "Tan sở",
-          "correct": "お疲れ様 (Otsukaresama)",
-          "options": [
-            "お疲れ様 (Otsukaresama)",
-            "おはよう (Ohayou)",
-            "さようなら (Sayounara)",
-            "ごめんなさい (Gomennasai)"
-          ],
-          "explanationVi": "Otsukaresama là câu chào tan ca bất hủ.",
-          "explanationEn": "Otsukaresama expresses gratitude for hard work."
+          "char": "おつかれさまです",
+          "reading": "otsukaresama desu",
+          "meaningVi": "Hôm nay bạn vất vả rồi! (Câu chào khi hết giờ làm/học)",
+          "meaningEn": "Great job today! / Thank you for your hard work",
+          "hint": "Thể hiện sự trân trọng công sức của nhau"
         },
         {
-          "promptVi": "'Maji de?' (まじで) tương đương với cụm từ tiếng Anh nào?",
-          "promptEn": "What does 'Maji de' correspond to in English?",
-          "cue": "まじで",
-          "correct": "Seriously?! / For real?!",
-          "options": [
-            "Seriously?! / For real?!",
-            "Goodbye",
-            "Excuse me",
-            "Good morning"
-          ],
-          "explanationVi": "Maji de có nghĩa là Thật á? / Nghiêm túc đấy chứ?",
-          "explanationEn": "Maji de means 'For real?!'."
+          "char": "おせわになります",
+          "reading": "osewa ni narimasu",
+          "meaningVi": "Cảm ơn sự quan tâm nâng đỡ của anh/chị",
+          "meaningEn": "Thank you for your ongoing support",
+          "hint": "Đỉnh cao giao tiếp lịch thiệp xã hội Nhật"
         },
         {
-          "promptVi": "Câu nói 'Yoroshiku' (よろしく) thường được dùng khi nào?",
-          "promptEn": "When is 'Yoroshiku' typically used?",
-          "cue": "よろしく",
-          "correct": "Khi bắt đầu hợp tác hoặc nhờ vả ai việc gì",
-          "options": [
-            "Khi bắt đầu hợp tác hoặc nhờ vả ai việc gì",
-            "Khi chuẩn bị đi ngủ",
-            "Khi từ chối ai đó",
-            "Khi ăn xong"
-          ],
-          "explanationVi": "Yoroshiku dùng khi nhờ vả hoặc mong được giúp đỡ.",
-          "explanationEn": "Yoroshiku is used when requesting cooperation."
+          "char": "がんばってください",
+          "reading": "ganbatte kudasai",
+          "meaningVi": "Hãy cố gắng lên nhé! Chúc bạn thành công!",
+          "meaningEn": "Please do your best! Good luck!",
+          "hint": "Lời động viên chân thành nhất"
+        }
+      ]
+    }
+  ],
+  "en-US": [
+    {
+      "id": "en-stage-1",
+      "stageNum": 1,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 1: 5 Nguyên Âm Cốt Lõi (A-E-I-O-U)",
+      "titleEn": "Stage 1: The 5 Core Vowels",
+      "descVi": "Luyện tập các nguyên âm cơ bản tiếng Anh: A, E, I, O, U kèm IPA.",
+      "descEn": "Master standard English vowels with accurate IPA readings.",
+      "bossNameVi": "Phonetic Slime",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "A a",
+          "reading": "/eɪ/ or /æ/",
+          "meaningVi": "Chữ cái A (Phát âm /eɪ/ trong name, /æ/ trong apple)",
+          "meaningEn": "Letter A (/eɪ/ in name, /æ/ in apple)",
+          "hint": "Khẩu hình mở rộng sang hai bên"
+        },
+        {
+          "char": "E e",
+          "reading": "/iː/ or /e/",
+          "meaningVi": "Chữ cái E (Phát âm /iː/ trong see, /e/ trong bed)",
+          "meaningEn": "Letter E (/iː/ in see, /e/ in bed)",
+          "hint": "Lưỡi đưa về phía trước"
+        },
+        {
+          "char": "I i",
+          "reading": "/aɪ/ or /ɪ/",
+          "meaningVi": "Chữ cái I (Phát âm /aɪ/ trong ice, /ɪ/ trong sit)",
+          "meaningEn": "Letter I (/aɪ/ in ice, /ɪ/ in sit)",
+          "hint": "Âm /ɪ/ ngắn dứt khoát"
+        },
+        {
+          "char": "O o",
+          "reading": "/oʊ/ or /ɒ/",
+          "meaningVi": "Chữ cái O (Phát âm /oʊ/ trong go, /ɒ/ trong hot)",
+          "meaningEn": "Letter O (/oʊ/ in go, /ɒ/ in hot)",
+          "hint": "Môi tròn tự nhiên"
+        },
+        {
+          "char": "U u",
+          "reading": "/juː/ or /ʌ/",
+          "meaningVi": "Chữ cái U (Phát âm /juː/ trong music, /ʌ/ trong cup)",
+          "meaningEn": "Letter U (/juː/ in music, /ʌ/ in cup)",
+          "hint": "Âm /ʌ/ mở miệng vừa, lưỡi thả lỏng"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-2",
+      "stageNum": 2,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 2: Phụ Âm Phổ Biến & Chào Hỏi Lịch Sự",
+      "titleEn": "Stage 2: Common Consonants & Polite Greetings",
+      "descVi": "Bật âm phụ âm B, C, D, G, P và câu chào Hello / Thank you.",
+      "descEn": "Practice stop consonants and standard courteous greetings.",
+      "bossNameVi": "Cáo Tinh Anh Ngữ (Urban Fox)",
+      "bossNameEn": "Urban Fox",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "B b",
+          "reading": "/b/",
+          "meaningVi": "Âm /b/ (Hai môi mím chặt rồi bật hơi, rung dây thanh)",
+          "meaningEn": "Voiced bilabial plosive /b/",
+          "hint": "Hai môi khép chặt rồi mở bung hơi"
+        },
+        {
+          "char": "P p",
+          "reading": "/p/",
+          "meaningVi": "Âm /p/ (Bật hơi mạnh, không rung thanh quản)",
+          "meaningEn": "Voiceless bilabial plosive /p/",
+          "hint": "Bật luồng hơi rõ rệt vào lòng bàn tay"
+        },
+        {
+          "char": "Hello",
+          "reading": "/həˈloʊ/",
+          "meaningVi": "Xin chào (Lời chào phổ biến và chuẩn mực nhất)",
+          "meaningEn": "Standard greeting",
+          "hint": "Nhấn trọng âm vào âm tiết thứ 2: hel-LO"
+        },
+        {
+          "char": "Thank you",
+          "reading": "/ˈθæŋk juː/",
+          "meaningVi": "Cảm ơn bạn (Âm /θ/ đặt lưỡi giữa 2 hàm răng)",
+          "meaningEn": "Thank you",
+          "hint": "Đầu lưỡi kẹp nhẹ giữa hai hàm răng khi nói 'Thank'"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-3",
+      "stageNum": 3,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 3: Cặp Âm IPA Dễ Nhầm Lẫn",
+      "titleEn": "Stage 3: Tricky IPA Minimal Pairs",
+      "descVi": "Phân biệt nguyên âm dài và ngắn: /iː/ vs /ɪ/, /e/ vs /æ/.",
+      "descEn": "Master tricky vowel pairs: sheep vs ship, bed vs bad.",
+      "bossNameVi": "Golem Thạch Đấu (Stone Golem)",
+      "bossNameEn": "Stone Golem",
+      "bossType": "golem",
+      "bossHp": 110,
+      "icon": "🗿",
+      "items": [
+        {
+          "char": "/iː/ (sheep)",
+          "reading": "/ʃiːp/",
+          "meaningVi": "Âm i dài: con cừu (Mỉm cười kéo dài 2 nhịp)",
+          "meaningEn": "Long /iː/ sound as in sheep",
+          "hint": "Căng khóe miệng như đang cười chụp ảnh"
+        },
+        {
+          "char": "/ɪ/ (ship)",
+          "reading": "/ʃɪp/",
+          "meaningVi": "Âm i ngắn: con tàu (Dứt khoát, thả lỏng cằm)",
+          "meaningEn": "Short /ɪ/ sound as in ship",
+          "hint": "Thả lỏng hàm dưới, phát âm nhanh gọn"
+        },
+        {
+          "char": "/æ/ (cat)",
+          "reading": "/kæt/",
+          "meaningVi": "Âm a bẹt: con mèo (Mở rộng miệng cả chiều ngang lẫn dọc)",
+          "meaningEn": "Trap vowel /æ/ as in cat",
+          "hint": "Cằm hạ sâu, lưỡi đè thấp"
+        },
+        {
+          "char": "/ʌ/ (cut)",
+          "reading": "/kʌt/",
+          "meaningVi": "Âm á ngắn: cắt (Miệng nửa mở, âm ở trung tâm)",
+          "meaningEn": "Strut vowel /ʌ/ as in cut",
+          "hint": "Âm bật nhanh, dứt khoát"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-4",
+      "chapter": 1,
+      "stageNum": 4,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 4: Cụm Phụ Âm Khó (TH, SH, CH, STR)",
+      "titleEn": "Stage 4: Consonant Clusters (TH, SH, CH, STR)",
+      "descVi": "Chinh phục âm kẹp lưỡi TH và các cụm phụ âm ghép đầu từ.",
+      "descEn": "Conquer dental fricative TH and multi-consonant clusters.",
+      "bossNameVi": "Bóng Ma Hư Vô (Shadow Phantom)",
+      "bossNameEn": "Shadow Phantom",
+      "bossType": "oni",
+      "bossHp": 125,
+      "icon": "👻",
+      "items": [
+        {
+          "char": "think",
+          "reading": "/θɪŋk/",
+          "meaningVi": "Suy nghĩ (Âm /θ/ vô thanh, thổi hơi qua kẽ răng)",
+          "meaningEn": "To think (/θ/ voiceless)",
+          "hint": "Lưỡi chạm nhẹ mép răng trên, phì hơi nhẹ"
+        },
+        {
+          "char": "this",
+          "reading": "/ðɪs/",
+          "meaningVi": "Cái này (Âm /ð/ hữu thanh, rung thanh quản)",
+          "meaningEn": "This (/ð/ voiced)",
+          "hint": "Đặt lưỡi ở răng như /θ/ nhưng rung cổ họng"
+        },
+        {
+          "char": "street",
+          "reading": "/striːt/",
+          "meaningVi": "Con đường (Cụm 3 phụ âm s-t-r liền mạch)",
+          "meaningEn": "Street (str- cluster)",
+          "hint": "Trượt mượt mà s-t-r không chèn nguyên âm ơ"
+        },
+        {
+          "char": "choice",
+          "reading": "/tʃɔɪs/",
+          "meaningVi": "Sự lựa chọn (Âm bật /tʃ/ và nhị trùng âm /ɔɪ/)",
+          "meaningEn": "Choice (/tʃ/ and diphthong /ɔɪ/)",
+          "hint": "Chu môi nhẹ và bật hơi dứt khoát"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-5",
+      "stageNum": 5,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 5: Nối Âm & Nhịp Điệu Bản Xứ (Connected Speech)",
+      "titleEn": "Stage 5: Connected Speech & Native Flow",
+      "descVi": "Nắm vững kỹ thuật nuốt âm, nối âm phụ âm sang nguyên âm.",
+      "descEn": "Master consonant-to-vowel linking and native rhythm.",
+      "bossNameVi": "Lôi Điểu Thunderbird (Electric Thunderbird)",
+      "bossNameEn": "Electric Thunderbird",
+      "bossType": "dragon",
+      "bossHp": 140,
+      "icon": "⚡",
+      "items": [
+        {
+          "char": "Check it out",
+          "reading": "/ˈtʃek ɪt aʊt/ -> [tʃe-kɪ-daʊt]",
+          "meaningVi": "Xem thử đi! / Thưởng thức đi! (Nối âm liên hoàn)",
+          "meaningEn": "Check it out! (linking k->i and t->a)",
+          "hint": "Nối âm: Che-ki-dout"
+        },
+        {
+          "char": "Hold on",
+          "reading": "/hoʊld ɒn/ -> [hoʊl-dɒn]",
+          "meaningVi": "Chờ một chút nhé (Nối âm d sang on)",
+          "meaningEn": "Wait a moment",
+          "hint": "Nối mượt thành 'hol-don'"
+        },
+        {
+          "char": "What's up",
+          "reading": "/wʌts ʌp/ -> [wʌt-sʌp]",
+          "meaningVi": "Dạo này thế nào? / Có chuyện gì thế?",
+          "meaningEn": "What's up? (casual hello)",
+          "hint": "Câu chào phổ biến nhất giữa bạn bè"
+        },
+        {
+          "char": "Not at all",
+          "reading": "/nɒt æt ɔːl/ -> [nɒ-tæ-tɔːl]",
+          "meaningVi": "Không có gì đâu! / Hoàn toàn không sao cả!",
+          "meaningEn": "Not at all! (You're welcome)",
+          "hint": "Hai âm t nối liên tiếp thành 'no-ta-toll'"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-6",
+      "stageNum": 6,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 6: Mua Sắm, Giá Cả & Mặc Cả (Shopping & Prices)",
+      "titleEn": "Stage 6: Shopping & Asking Prices",
+      "descVi": "Hỏi giá 'How much is this?', tiền tệ Dollars và mặc cả.",
+      "descEn": "Ask prices smoothly and understand currency denominations.",
+      "bossNameVi": "Bò Mộng Phố Wall (Wall Street Bull)",
+      "bossNameEn": "Wall Street Bull",
+      "bossType": "golem",
+      "bossHp": 155,
+      "icon": "🐂",
+      "items": [
+        {
+          "char": "How much is this?",
+          "reading": "/haʊ mʌtʃ ɪz ðɪs/",
+          "meaningVi": "Cái này giá bao nhiêu tiền vậy?",
+          "meaningEn": "How much does this cost?",
+          "hint": "Lên giọng nhẹ ở cuối câu hỏi"
+        },
+        {
+          "char": "Twenty dollars",
+          "reading": "/ˈtwenti ˈdɒlərz/",
+          "meaningVi": "20 Đô-la (~500.000 VNĐ)",
+          "meaningEn": "Twenty dollars ($20)",
+          "hint": "Người Mỹ thường đọc lướt thành 'twen-ny'"
+        },
+        {
+          "char": "Do you take cards?",
+          "reading": "/duː juː teɪk kɑːrdz/",
+          "meaningVi": "Ở đây có nhận quẹt thẻ không ạ?",
+          "meaningEn": "Do you accept credit cards?",
+          "hint": "take cards = thanh toán bằng thẻ"
+        },
+        {
+          "char": "I'll take it",
+          "reading": "/aɪl teɪk ɪt/",
+          "meaningVi": "Tôi sẽ lấy món này nhé!",
+          "meaningEn": "I will buy this one",
+          "hint": "Dùng khi bạn quyết định mua hàng"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-7",
+      "stageNum": 7,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 7: Cafe, Gọi Món & Nhà Hàng (Ordering Food)",
+      "titleEn": "Stage 7: Coffee Shop & Restaurant Ordering",
+      "descVi": "Mẫu câu gọi đồ tự nhiên 'Can I get a...' và yêu cầu hóa đơn.",
+      "descEn": "Order coffee and dining meals like a native speaker.",
+      "bossNameVi": "Master Chef Griffin",
+      "bossNameEn": "Master Chef Griffin",
+      "bossType": "oni",
+      "bossHp": 165,
+      "icon": "☕",
+      "items": [
+        {
+          "char": "Can I get a latte?",
+          "reading": "/kæn aɪ ɡet ə ˈlɑːteɪ/",
+          "meaningVi": "Cho tôi một ly cà phê latte nhé (Mẫu câu gọi đồ lịch sự nhất)",
+          "meaningEn": "Can I have a latte please?",
+          "hint": "Người bản xứ hay dùng 'Can I get...' hơn 'I want...'"
+        },
+        {
+          "char": "To go, please",
+          "reading": "/tuː ɡoʊ pliːz/",
+          "meaningVi": "Mang đi nhé ạ (Take-away)",
+          "meaningEn": "Takeout / For take away",
+          "hint": "Trái nghĩa với 'For here' (Dùng tại quán)"
+        },
+        {
+          "char": "Can we get the check?",
+          "reading": "/kæn wiː ɡet ðə tʃek/",
+          "meaningVi": "Làm ơn tính tiền giúp chúng tôi nhé (Mỹ: Check / Anh: Bill)",
+          "meaningEn": "Could we have the bill please?",
+          "hint": "check = hóa đơn tính tiền"
+        },
+        {
+          "char": "Keep the change",
+          "reading": "/kiːp ðə tʃeɪndʒ/",
+          "meaningVi": "Không cần thối tiền lại đâu ạ (Tiền boa/tip)",
+          "meaningEn": "Keep the spare coins as tip",
+          "hint": "change = tiền lẻ thối lại"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-8",
+      "stageNum": 8,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 8: Di Chuyển, Sân Bay & Hỏi Đường (Directions & Travel)",
+      "titleEn": "Stage 8: Directions & Airport Navigation",
+      "descVi": "Tự tin hỏi đường 'Excuse me, where is...' và đi tàu xe.",
+      "descEn": "Find restrooms, train platforms and ask for directions politely.",
+      "bossNameVi": "Phi Hành Gia Sky Navigator",
+      "bossNameEn": "Sky Navigator",
+      "bossType": "kitsune",
+      "bossHp": 175,
+      "icon": "✈️",
+      "items": [
+        {
+          "char": "Excuse me",
+          "reading": "/ɪkˈskjuːz miː/",
+          "meaningVi": "Xin lỗi / Làm phiền một chút ạ (Mở đầu trước khi hỏi)",
+          "meaningEn": "Excuse me (polite attention grabber)",
+          "hint": "Khởi đầu vàng cho mọi cuộc đối thoại nơi công cộng"
+        },
+        {
+          "char": "Where is the restroom?",
+          "reading": "/weər ɪz ðə ˈrestruːm/",
+          "meaningVi": "Nhà vệ sinh ở đâu vậy ạ? (Mỹ dùng restroom lịch sự)",
+          "meaningEn": "Where is the toilet / bathroom?",
+          "hint": "restroom = phòng vệ sinh công cộng"
+        },
+        {
+          "char": "Turn left at the corner",
+          "reading": "/tɜːrn left æt ðə ˈkɔːrnər/",
+          "meaningVi": "Rẽ trái ngay góc đường kia nhé",
+          "meaningEn": "Turn left at the intersection",
+          "hint": "turn left = rẽ trái; turn right = rẽ phải"
+        },
+        {
+          "char": "Go straight ahead",
+          "reading": "/ɡoʊ streɪt əˈhed/",
+          "meaningVi": "Cứ đi thẳng tiếp về phía trước",
+          "meaningEn": "Continue directly forward",
+          "hint": "straight ahead = thẳng một mạch"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-9",
+      "stageNum": 9,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 9: Đồng Ý, Cảm Thán & Từ Chối Khéo (Reactions)",
+      "titleEn": "Stage 9: Social Reactions & Polite Declines",
+      "descVi": "Phản hồi tự nhiên như người bản xứ: 'Sounds good', 'No worries'.",
+      "descEn": "React authentically with native conversational phrases.",
+      "bossNameVi": "Thiết Giáp Kim Cang (Iron Sentinel)",
+      "bossNameEn": "Iron Sentinel",
+      "bossType": "golem",
+      "bossHp": 185,
+      "icon": "🛡️",
+      "items": [
+        {
+          "char": "Sounds good to me",
+          "reading": "/saʊndz ɡʊd tuː miː/",
+          "meaningVi": "Tôi thấy ý đó rất hay đấy! / Nghe được đấy!",
+          "meaningEn": "I agree / That works for me",
+          "hint": "Cách đồng tình nhanh và thân thiện nhất"
+        },
+        {
+          "char": "No worries at all",
+          "reading": "/noʊ ˈwʌriz æt ɔːl/",
+          "meaningVi": "Đừng bận tâm! / Không sao đâu mà!",
+          "meaningEn": "You're welcome / Don't worry about it",
+          "hint": "Tự nhiên hơn nhiều so với 'You are welcome'"
+        },
+        {
+          "char": "I'd love to, but...",
+          "reading": "/aɪd lʌv tuː bʌt/",
+          "meaningVi": "Tôi rất muốn tham gia, nhưng mà... (Từ chối khéo)",
+          "meaningEn": "Polite soft rejection formula",
+          "hint": "Luôn khen trước khi từ chối để giữ lịch thiệp"
+        },
+        {
+          "char": "Are you sure?",
+          "reading": "/ɑːr juː ʃʊər/",
+          "meaningVi": "Bạn có chắc chắn về điều đó không?",
+          "meaningEn": "Are you certain about that?",
+          "hint": "sure phát âm với âm /ʃ/ chu môi nhẹ"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-10",
+      "stageNum": 10,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 10: Nghệ Thuật Small Talk & Kết Bạn",
+      "titleEn": "Stage 10: The Art of Small Talk & Networking",
+      "descVi": "Bắt chuyện dễ dàng trong thang máy, tiệc tùng và công sở.",
+      "descEn": "Master casual icebreakers and make friends effortlessly.",
+      "bossNameVi": "Neon Phantom (Bóng Ma Đô Thị)",
+      "bossNameEn": "Neon Phantom",
+      "bossType": "slime",
+      "bossHp": 200,
+      "icon": "🌆",
+      "items": [
+        {
+          "char": "How's your day going?",
+          "reading": "/haʊz jɔːr deɪ ˈɡoʊɪŋ/",
+          "meaningVi": "Hôm nay của bạn thế nào rồi? (Câu mở đầu thân thiện)",
+          "meaningEn": "How is everything today?",
+          "hint": "Câu hỏi thăm tự nhiên hơn 'How are you?'"
+        },
+        {
+          "char": "What do you do?",
+          "reading": "/wʌt duː juː duː/",
+          "meaningVi": "Bạn đang làm nghề gì vậy? (Hỏi công việc lịch thiệp)",
+          "meaningEn": "What is your job / profession?",
+          "hint": "Không nhầm với 'What are you doing?' (Đang làm gì đấy)"
+        },
+        {
+          "char": "Long time no see!",
+          "reading": "/lɒŋ taɪm noʊ siː/",
+          "meaningVi": "Lâu lắm rồi mới gặp lại bạn đó!",
+          "meaningEn": "Haven't seen you in a while!",
+          "hint": "Nói với sự hào hứng và nụ cười rạng rỡ"
+        },
+        {
+          "char": "Catch you later",
+          "reading": "/kætʃ juː ˈleɪtər/",
+          "meaningVi": "Hẹn gặp lại bạn sau nhé! (Chào tạm biệt cực ngầu)",
+          "meaningEn": "See you later!",
+          "hint": "Thay thế cho 'Goodbye' trang trọng"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-11",
+      "stageNum": 11,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 11: Tiếng Lóng Giới Trẻ Mỹ (American Street Slang)",
+      "titleEn": "Stage 11: Top American Street Slang & Buzzwords",
+      "descVi": "Bắt nhịp xu hướng với: 'No cap', 'For real', 'Low-key', 'I'm down'.",
+      "descEn": "Sound like Gen Z & native youth with viral buzzwords.",
+      "bossNameVi": "Cyber Werewolf (Người Sói Công Nghệ)",
+      "bossNameEn": "Cyber Werewolf",
+      "bossType": "kitsune",
+      "bossHp": 220,
+      "icon": "🐺",
+      "items": [
+        {
+          "char": "No cap",
+          "reading": "/noʊ kæp/",
+          "meaningVi": "Nói thật 100% không bốc phét! (Slang hot nhất giới trẻ)",
+          "meaningEn": "No lie / For real / Absolutely honest",
+          "hint": "cap = nói dối/bốc phét; no cap = nói thật đấy"
+        },
+        {
+          "char": "For real?",
+          "reading": "/fɔːr rɪəl/",
+          "meaningVi": "Thật đấy à?! Không đùa chứ?!",
+          "meaningEn": "Seriously? / Are you telling the truth?",
+          "hint": "Lên giọng cuối câu thể hiện ngạc nhiên"
+        },
+        {
+          "char": "I'm down",
+          "reading": "/aɪm daʊn/",
+          "meaningVi": "Tôi tham gia liền! / Chốt đơn luôn! (Đồng ý đi chơi)",
+          "meaningEn": "I am in / I want to join",
+          "hint": "Trái nghĩa với 'I'm out' (Tôi xin rút)"
+        },
+        {
+          "char": "Low-key",
+          "reading": "/loʊ kiː/",
+          "meaningVi": "Kín đáo / Kiểu như... / Thầm thích (Không muốn làm rùm beng)",
+          "meaningEn": "Somewhat / Secretly / Subtly",
+          "hint": "'I low-key love this song' = Tôi cũng khoái bài này ngấm ngầm"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-12",
+      "stageNum": 12,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 12: Đỉnh Cao Giao Tiếp Bản Xứ (Final Boss)",
+      "titleEn": "Stage 12: Master English Fluency Arena",
+      "descVi": "Vượt qua thử thách đàm thoại tổng hợp để giành danh hiệu Bậc Thầy!",
+      "descEn": "The ultimate test of fluency across all 3 chapters of English!",
+      "bossNameVi": "Apex Titan Dragon (Long Vương Tột Đỉnh)",
+      "bossNameEn": "Apex Titan Dragon",
+      "bossType": "dragon",
+      "bossHp": 250,
+      "icon": "👑",
+      "items": [
+        {
+          "char": "Cut to the chase",
+          "reading": "/kʌt tuː ðə tʃeɪs/",
+          "meaningVi": "Đi thẳng vào vấn đề chính đi! (Đừng vòng vo nữa)",
+          "meaningEn": "Get to the point without wasting time",
+          "hint": "Thành ngữ kinh điển trong phim ảnh và kinh doanh"
+        },
+        {
+          "char": "Call it a day",
+          "reading": "/kɔːl ɪt ə deɪ/",
+          "meaningVi": "Hôm nay nghỉ tay ở đây thôi! (Kết thúc buổi làm/học)",
+          "meaningEn": "Stop working for the rest of the day",
+          "hint": "'Let's call it a day!' = Nay tan ca thôi nào!"
+        },
+        {
+          "char": "It's up to you",
+          "reading": "/ɪts ʌp tuː juː/",
+          "meaningVi": "Tùy bạn quyết định đó! (Giao toàn quyền cho bạn)",
+          "meaningEn": "It is your decision / You decide",
+          "hint": "Dùng khi bạn để đối phương chọn quán ăn/kế hoạch"
+        },
+        {
+          "char": "Break a leg!",
+          "reading": "/breɪk ə leɡ/",
+          "meaningVi": "Chúc may mắn nhé! (Nói trước buổi biểu diễn/thi cử)",
+          "meaningEn": "Good luck! (traditional theatrical idiom)",
+          "hint": "Nghĩa đen là 'gãy chân', nghĩa bóng là may mắn rực rỡ"
         }
       ]
     }
@@ -18205,524 +17475,574 @@ const QUEST_CAMPAIGNS = {
     {
       "id": "en-stage-1",
       "stageNum": 1,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 1: 5 Nguyên Âm Cốt Lõi (A-E-I-O-U)",
-      "titleEn": "Stage 1: Core Vowels & Acoustic Resonance",
-      "descVi": "Làm chủ 5 nguyên âm IPA căn bản và khẩu hình mở khoang miệng chuẩn Mỹ.",
-      "descEn": "Master the 5 core English vowels and American resonance mouth placement.",
-      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
+      "titleEn": "Stage 1: The 5 Core Vowels",
+      "descVi": "Luyện tập các nguyên âm cơ bản tiếng Anh: A, E, I, O, U kèm IPA.",
+      "descEn": "Master standard English vowels with accurate IPA readings.",
+      "bossNameVi": "Phonetic Slime",
       "bossNameEn": "Phonetic Slime",
       "bossType": "slime",
       "bossHp": 80,
       "icon": "🟢",
       "items": [
         {
-          "char": "A /æ/",
-          "reading": "Cat /kæt/",
-          "meaningVi": "Âm A bẹt (Hạ cằm sâu, kéo mép sang hai bên)",
-          "meaningEn": "Short A /æ/ as in Cat",
-          "hint": "Hạ quai hàm thoải mái, âm vang sâu trong họng"
+          "char": "A a",
+          "reading": "/eɪ/ or /æ/",
+          "meaningVi": "Chữ cái A (Phát âm /eɪ/ trong name, /æ/ trong apple)",
+          "meaningEn": "Letter A (/eɪ/ in name, /æ/ in apple)",
+          "hint": "Khẩu hình mở rộng sang hai bên"
         },
         {
-          "char": "E /e/",
-          "reading": "Bed /bed/",
-          "meaningVi": "Âm E ngắn (Mở miệng vừa phải)",
-          "meaningEn": "Short E /e/ as in Bed",
-          "hint": "Khẩu hình hẹp hơn /æ/"
+          "char": "E e",
+          "reading": "/iː/ or /e/",
+          "meaningVi": "Chữ cái E (Phát âm /iː/ trong see, /e/ trong bed)",
+          "meaningEn": "Letter E (/iː/ in see, /e/ in bed)",
+          "hint": "Lưỡi đưa về phía trước"
         },
         {
-          "char": "I /ɪ/",
-          "reading": "Sit /sɪt/",
-          "meaningVi": "Âm I thả lỏng (Khác với /i:/ căng môi)",
-          "meaningEn": "Short I /ɪ/ as in Sit",
-          "hint": "Không cười kéo dài mép, phát âm ngắn gọn"
+          "char": "I i",
+          "reading": "/aɪ/ or /ɪ/",
+          "meaningVi": "Chữ cái I (Phát âm /aɪ/ trong ice, /ɪ/ trong sit)",
+          "meaningEn": "Letter I (/aɪ/ in ice, /ɪ/ in sit)",
+          "hint": "Âm /ɪ/ ngắn dứt khoát"
         },
         {
-          "char": "O /ɑː/",
-          "reading": "Hot /hɑːt/",
-          "meaningVi": "Âm O mở sâu (Anh-Mỹ hạ cằm tự nhiên)",
-          "meaningEn": "Open O /ɑː/ as in Hot",
-          "hint": "Khoang miệng mở tròn dọc"
+          "char": "O o",
+          "reading": "/oʊ/ or /ɒ/",
+          "meaningVi": "Chữ cái O (Phát âm /oʊ/ trong go, /ɒ/ trong hot)",
+          "meaningEn": "Letter O (/oʊ/ in go, /ɒ/ in hot)",
+          "hint": "Môi tròn tự nhiên"
         },
         {
-          "char": "U /ʌ/",
-          "reading": "Cup /kʌp/",
-          "meaningVi": "Âm Á ngắn (Bật từ đáy cổ họng)",
-          "meaningEn": "Short U /ʌ/ as in Cup",
-          "hint": "Thả lỏng toàn bộ khuôn mặt"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Từ 'Cat' trong tiếng Anh chứa âm nguyên âm IPA nào?",
-          "promptEn": "Which IPA vowel sound is in 'Cat'?",
-          "cue": "Cat",
-          "correct": "/æ/",
-          "options": [
-            "/æ/",
-            "/e/",
-            "/ʌ/",
-            "/i:/"
-          ],
-          "explanationVi": "Cat chứa âm A bẹt /æ/.",
-          "explanationEn": "Cat has the short /æ/ vowel."
-        },
-        {
-          "promptVi": "Khẩu hình chuẩn của âm /æ/ là gì?",
-          "promptEn": "What is the proper mouth position for /æ/?",
-          "cue": "/æ/",
-          "correct": "Hạ cằm sâu và mở rộng khóe miệng",
-          "options": [
-            "Hạ cằm sâu và mở rộng khóe miệng",
-            "Chu môi tròn như huýt sáo",
-            "Khép chặt hai hàm răng",
-            "Uốn cong đầu lưỡi chạm vòm họng"
-          ],
-          "explanationVi": "Âm /æ/ đòi hỏi hạ hàm sâu và khóe miệng mở tự nhiên.",
-          "explanationEn": "Drop your jaw and widen the corners of your mouth."
-        },
-        {
-          "promptVi": "Từ 'Sit' phát âm khác 'Seat' ở điểm mấu chốt nào?",
-          "promptEn": "How does 'Sit' differ from 'Seat'?",
-          "cue": "Sit vs Seat",
-          "correct": "'Sit' dùng âm /ɪ/ thả lỏng ngắn, 'Seat' dùng /i:/ căng dài",
-          "options": [
-            "'Sit' dùng âm /ɪ/ thả lỏng ngắn, 'Seat' dùng /i:/ căng dài",
-            "Hai từ phát âm y hệt nhau",
-            "'Sit' không phát âm chữ T",
-            "'Seat' bắt đầu bằng âm Z"
-          ],
-          "explanationVi": "/ɪ/ trong Sit ngắn và thư giãn, /i:/ trong Seat căng môi.",
-          "explanationEn": "/ɪ/ is relaxed and short, while /i:/ is tense and elongated."
-        },
-        {
-          "promptVi": "Âm nguyên âm trong từ 'Cup' /kʌp/ được phát âm ra sao?",
-          "promptEn": "How is the vowel in 'Cup' /kʌp/ produced?",
-          "cue": "Cup",
-          "correct": "Bật nhanh từ đáy họng, môi và hàm thư giãn",
-          "options": [
-            "Bật nhanh từ đáy họng, môi và hàm thư giãn",
-            "Chu tròn môi thật chặt",
-            "Rung lưỡi liên tục",
-            "Ngậm kín miệng phát âm qua mũi"
-          ],
-          "explanationVi": "/ʌ/ là âm ngắn bật dứt khoát từ họng.",
-          "explanationEn": "/ʌ/ is a short, relaxed central vowel."
+          "char": "U u",
+          "reading": "/juː/ or /ʌ/",
+          "meaningVi": "Chữ cái U (Phát âm /juː/ trong music, /ʌ/ trong cup)",
+          "meaningEn": "Letter U (/juː/ in music, /ʌ/ in cup)",
+          "hint": "Âm /ʌ/ mở miệng vừa, lưỡi thả lỏng"
         }
       ]
     },
     {
       "id": "en-stage-2",
       "stageNum": 2,
-      "titleVi": "Ải 2: Chào Hỏi & Lịch Sự Công Sở",
-      "titleEn": "Stage 2: Essential Greetings & Courtesy",
-      "descVi": "Các câu nói tự nhiên thay vì câu 'How are you? I'm fine thank you' cứng nhắc.",
-      "descEn": "Natural greetings instead of textbook stiffness.",
-      "bossNameVi": "Cáo Tinh Anh Ngữ (Mystic Fox)",
-      "bossNameEn": "Mystic Fox",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 2: Phụ Âm Phổ Biến & Chào Hỏi Lịch Sự",
+      "titleEn": "Stage 2: Common Consonants & Polite Greetings",
+      "descVi": "Bật âm phụ âm B, C, D, G, P và câu chào Hello / Thank you.",
+      "descEn": "Practice stop consonants and standard courteous greetings.",
+      "bossNameVi": "Cáo Tinh Anh Ngữ (Urban Fox)",
+      "bossNameEn": "Urban Fox",
       "bossType": "kitsune",
       "bossHp": 100,
       "icon": "🦊",
       "items": [
         {
-          "char": "Hey, how's it going?",
-          "reading": "/heɪ haʊz ɪt ˈɡoʊɪŋ/",
-          "meaningVi": "Dạo này thế nào rồi? (Chào phổ biến nhất)",
-          "meaningEn": "How are things with you?",
-          "hint": "Nối âm: how's-it going"
+          "char": "B b",
+          "reading": "/b/",
+          "meaningVi": "Âm /b/ (Hai môi mím chặt rồi bật hơi, rung dây thanh)",
+          "meaningEn": "Voiced bilabial plosive /b/",
+          "hint": "Hai môi khép chặt rồi mở bung hơi"
         },
         {
-          "char": "I appreciate it",
-          "reading": "/aɪ əˈpriːʃieɪt ɪt/",
-          "meaningVi": "Tôi rất trân trọng / Cảm ơn bạn rất nhiều",
-          "meaningEn": "Thank you genuinely",
-          "hint": "Nối âm: appreciate-it"
+          "char": "P p",
+          "reading": "/p/",
+          "meaningVi": "Âm /p/ (Bật hơi mạnh, không rung thanh quản)",
+          "meaningEn": "Voiceless bilabial plosive /p/",
+          "hint": "Bật luồng hơi rõ rệt vào lòng bàn tay"
         },
         {
-          "char": "Have a good one!",
-          "reading": "/hæv ə ɡʊd wʌn/",
-          "meaningVi": "Chúc bạn một ngày tốt lành! (Chào tạm biệt tự nhiên)",
-          "meaningEn": "Have a nice day",
-          "hint": "Người Mỹ dùng câu này ở mọi quầy tính tiền"
+          "char": "Hello",
+          "reading": "/həˈloʊ/",
+          "meaningVi": "Xin chào (Lời chào phổ biến và chuẩn mực nhất)",
+          "meaningEn": "Standard greeting",
+          "hint": "Nhấn trọng âm vào âm tiết thứ 2: hel-LO"
         },
         {
-          "char": "No problem at all",
-          "reading": "/noʊ ˈprɑːbləm æt ɔːl/",
-          "meaningVi": "Không có vấn đề gì cả / Rất vui được giúp",
-          "meaningEn": "You're welcome / Not a trouble",
-          "hint": "Thân mật hơn 'You are welcome'"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Người bản xứ thường nói câu nào ở quầy tính tiền khi chào tạm biệt?",
-          "promptEn": "What casual phrase do Americans say when parting at checkout?",
-          "cue": "Have a good one!",
-          "correct": "Have a good one!",
-          "options": [
-            "Have a good one!",
-            "Goodbye forever",
-            "Where is the exit?",
-            "Stop talking"
-          ],
-          "explanationVi": "'Have a good one' là cách chào tạm biệt cực kỳ phổ biến và thân thiện.",
-          "explanationEn": "'Have a good one!' is the quintessential American casual farewell."
-        },
-        {
-          "promptVi": "'How's it going?' thường được nối âm như thế nào?",
-          "promptEn": "How is 'How's it going?' linked naturally in speech?",
-          "cue": "How's it going",
-          "correct": "How-zit going",
-          "options": [
-            "How-zit going",
-            "How is it go-ing",
-            "Hows-it-going-sir",
-            "How going is it"
-          ],
-          "explanationVi": "Âm /z/ ở How's nối liền sang /ɪt/ thành 'How-zit'.",
-          "explanationEn": "The /z/ links smoothly to /ɪt/ becoming 'how-zit'."
-        },
-        {
-          "promptVi": "Để nói lời cảm ơn chân thành và lịch sự, câu nào sau đây phù hợp nhất?",
-          "promptEn": "Which phrase conveys sincere, professional gratitude?",
-          "cue": "Thank you",
-          "correct": "I really appreciate it",
-          "options": [
-            "I really appreciate it",
-            "Give me that",
-            "It is what it is",
-            "See ya"
-          ],
-          "explanationVi": "'I really appreciate it' thể hiện lòng biết ơn sâu sắc.",
-          "explanationEn": "'I appreciate it' shows genuine gratitude."
-        },
-        {
-          "promptVi": "'No problem at all' thường dùng để đáp lại câu nào?",
-          "promptEn": "What is 'No problem at all' commonly used to respond to?",
-          "cue": "No problem at all",
-          "correct": "Lời cảm ơn (Thank you)",
-          "options": [
-            "Lời cảm ơn (Thank you)",
-            "Lời chúc mừng sinh nhật",
-            "Câu hỏi mấy giờ rồi",
-            "Lời đề nghị kết bạn"
-          ],
-          "explanationVi": "No problem at all tương đương 'Không có chi'.",
-          "explanationEn": "'No problem at all' is a warm alternative to 'You're welcome'."
+          "char": "Thank you",
+          "reading": "/ˈθæŋk juː/",
+          "meaningVi": "Cảm ơn bạn (Âm /θ/ đặt lưỡi giữa 2 hàm răng)",
+          "meaningEn": "Thank you",
+          "hint": "Đầu lưỡi kẹp nhẹ giữa hai hàm răng khi nói 'Thank'"
         }
       ]
     },
     {
       "id": "en-stage-3",
       "stageNum": 3,
-      "titleVi": "Ải 3: Bộ Cụm Khối Giao Tiếp (Conversational Chunks)",
-      "titleEn": "Stage 3: Conversational Chunks & Connectors",
-      "descVi": "Nói tiếng Anh lưu loát không vấp nhờ các khối câu đệm tự nhiên.",
-      "descEn": "Speak fluidly without hesitations using natural speech chunks.",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 3: Cặp Âm IPA Dễ Nhầm Lẫn",
+      "titleEn": "Stage 3: Tricky IPA Minimal Pairs",
+      "descVi": "Phân biệt nguyên âm dài và ngắn: /iː/ vs /ɪ/, /e/ vs /æ/.",
+      "descEn": "Master tricky vowel pairs: sheep vs ship, bed vs bad.",
       "bossNameVi": "Golem Thạch Đấu (Stone Golem)",
       "bossNameEn": "Stone Golem",
       "bossType": "golem",
-      "bossHp": 120,
+      "bossHp": 110,
       "icon": "🗿",
       "items": [
         {
-          "char": "To be honest",
-          "reading": "/tə bi ˈɑːnɪst/",
-          "meaningVi": "Thành thật mà nói (Mở đầu quan điểm)",
-          "meaningEn": "Frankly speaking",
-          "hint": "Chữ H trong honest là âm câm"
+          "char": "/iː/ (sheep)",
+          "reading": "/ʃiːp/",
+          "meaningVi": "Âm i dài: con cừu (Mỉm cười kéo dài 2 nhịp)",
+          "meaningEn": "Long /iː/ sound as in sheep",
+          "hint": "Căng khóe miệng như đang cười chụp ảnh"
         },
         {
-          "char": "You know what I mean?",
-          "reading": "/ju noʊ wʌt aɪ miːn/",
-          "meaningVi": "Bạn hiểu ý tôi chứ? (Kiểm tra sự đồng thuận)",
-          "meaningEn": "Do you understand what I'm getting at?",
-          "hint": "Thường rút gọn thành 'Y'know what I mean?'"
+          "char": "/ɪ/ (ship)",
+          "reading": "/ʃɪp/",
+          "meaningVi": "Âm i ngắn: con tàu (Dứt khoát, thả lỏng cằm)",
+          "meaningEn": "Short /ɪ/ sound as in ship",
+          "hint": "Thả lỏng hàm dưới, phát âm nhanh gọn"
         },
         {
-          "char": "As far as I know",
-          "reading": "/æz fɑːr æz aɪ noʊ/",
-          "meaningVi": "Theo như tôi được biết",
-          "meaningEn": "To the best of my knowledge",
-          "hint": "Nối âm: as-far-as-I know"
+          "char": "/æ/ (cat)",
+          "reading": "/kæt/",
+          "meaningVi": "Âm a bẹt: con mèo (Mở rộng miệng cả chiều ngang lẫn dọc)",
+          "meaningEn": "Trap vowel /æ/ as in cat",
+          "hint": "Cằm hạ sâu, lưỡi đè thấp"
         },
         {
-          "char": "Never mind",
-          "reading": "/ˈnevər maɪnd/",
-          "meaningVi": "Thôi bỏ đi / Không sao đâu",
-          "meaningEn": "Don't worry about it / Forget it",
-          "hint": "Âm d cuối chặn hơi nhẹ"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Chữ cái nào bị câm trong từ 'honest'?",
-          "promptEn": "Which letter is silent in 'honest'?",
-          "cue": "honest",
-          "correct": "Chữ H",
-          "options": [
-            "Chữ H",
-            "Chữ O",
-            "Chữ N",
-            "Chữ T"
-          ],
-          "explanationVi": "Chữ H trong honest là âm câm, phát âm bắt đầu từ /ɑː/.",
-          "explanationEn": "The H in 'honest' is completely silent."
-        },
-        {
-          "promptVi": "'To be honest' được dùng nhằm mục đích gì trong hội thoại?",
-          "promptEn": "Why do speakers use 'To be honest'?",
-          "cue": "To be honest",
-          "correct": "Bày tỏ ý kiến cá nhân một cách chân thành, thẳng thắn",
-          "options": [
-            "Bày tỏ ý kiến cá nhân một cách chân thành, thẳng thắn",
-            "Nói dối người nghe",
-            "Kết thúc cuộc trò chuyện",
-            "Hỏi đường đi"
-          ],
-          "explanationVi": "Cụm từ này dùng để mở đầu quan điểm thẳng thắn.",
-          "explanationEn": "It introduces a candid, genuine perspective."
-        },
-        {
-          "promptVi": "Cụm 'As far as I know' có nghĩa là gì?",
-          "promptEn": "What does 'As far as I know' mean?",
-          "cue": "As far as I know",
-          "correct": "Theo như tôi được biết",
-          "options": [
-            "Theo như tôi được biết",
-            "Tôi không hề biết gì",
-            "Đi xa nhất có thể",
-            "Tôi chắc chắn 100%"
-          ],
-          "explanationVi": "Có nghĩa là theo những gì tôi nắm được đến nay.",
-          "explanationEn": "It means 'to the best of my knowledge'."
-        },
-        {
-          "promptVi": "Khi muốn bảo ai đó 'Thôi không sao, bỏ qua chuyện đó đi', bạn dùng:",
-          "promptEn": "To tell someone 'Forget about it / It's fine', you say:",
-          "cue": "Bỏ qua đi",
-          "correct": "Never mind",
-          "options": [
-            "Never mind",
-            "Always mind",
-            "Out of mind",
-            "Open your mind"
-          ],
-          "explanationVi": "Never mind mang nghĩa thôi bỏ qua, không sao đâu.",
-          "explanationEn": "'Never mind' means let it go / don't worry about it."
+          "char": "/ʌ/ (cut)",
+          "reading": "/kʌt/",
+          "meaningVi": "Âm á ngắn: cắt (Miệng nửa mở, âm ở trung tâm)",
+          "meaningEn": "Strut vowel /ʌ/ as in cut",
+          "hint": "Âm bật nhanh, dứt khoát"
         }
       ]
     },
     {
       "id": "en-stage-4",
+      "chapter": 1,
       "stageNum": 4,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 4: Cụm Phụ Âm Khó (TH, SH, CH, STR)",
-      "titleEn": "Stage 4: Tough Consonant Clusters",
-      "descVi": "Xóa bỏ thói quen phát âm sai âm TH và cụm 3 phụ âm STR chuẩn đét.",
-      "descEn": "Eliminate TH errors and master challenging 3-consonant clusters.",
-      "bossNameVi": "Bóng Ma Oni (Shadow Demon)",
-      "bossNameEn": "Shadow Oni",
+      "titleEn": "Stage 4: Consonant Clusters (TH, SH, CH, STR)",
+      "descVi": "Chinh phục âm kẹp lưỡi TH và các cụm phụ âm ghép đầu từ.",
+      "descEn": "Conquer dental fricative TH and multi-consonant clusters.",
+      "bossNameVi": "Bóng Ma Hư Vô (Shadow Phantom)",
+      "bossNameEn": "Shadow Phantom",
       "bossType": "oni",
-      "bossHp": 140,
-      "icon": "👹",
+      "bossHp": 125,
+      "icon": "👻",
       "items": [
         {
-          "char": "TH vô thanh /θ/",
-          "reading": "Think /θɪŋk/",
-          "meaningVi": "Âm TH thổi hơi (Đặt đầu lưỡi giữa 2 hàm răng và thổi)",
-          "meaningEn": "Voiceless TH /θ/ as in Think",
-          "hint": "Đầu lưỡi lộ nhẹ giữa răng, tuyệt đối không đọc thành S hay T"
+          "char": "think",
+          "reading": "/θɪŋk/",
+          "meaningVi": "Suy nghĩ (Âm /θ/ vô thanh, thổi hơi qua kẽ răng)",
+          "meaningEn": "To think (/θ/ voiceless)",
+          "hint": "Lưỡi chạm nhẹ mép răng trên, phì hơi nhẹ"
         },
         {
-          "char": "TH hữu thanh /ð/",
-          "reading": "This /ðɪs/",
-          "meaningVi": "Âm TH rung cổ họng (Lưỡi kẹp nhẹ, rung dây thanh)",
-          "meaningEn": "Voiced TH /ð/ as in This",
-          "hint": "Đặt ngón tay lên cổ họng để cảm nhận độ rung"
+          "char": "this",
+          "reading": "/ðɪs/",
+          "meaningVi": "Cái này (Âm /ð/ hữu thanh, rung thanh quản)",
+          "meaningEn": "This (/ð/ voiced)",
+          "hint": "Đặt lưỡi ở răng như /θ/ nhưng rung cổ họng"
         },
         {
-          "char": "SH /ʃ/ vs CH /tʃ/",
-          "reading": "Ship /ʃɪp/ vs Chip /tʃɪp/",
-          "meaningVi": "SH kéo dài êm dịu, CH bật hơi dứt khoát",
-          "meaningEn": "Continuant /ʃ/ vs Affricate /tʃ/",
-          "hint": "Chu môi về phía trước"
+          "char": "street",
+          "reading": "/striːt/",
+          "meaningVi": "Con đường (Cụm 3 phụ âm s-t-r liền mạch)",
+          "meaningEn": "Street (str- cluster)",
+          "hint": "Trượt mượt mà s-t-r không chèn nguyên âm ơ"
         },
         {
-          "char": "Cụm STR /str/",
-          "reading": "Street /striːt/",
-          "meaningVi": "Cụm 3 phụ âm liền mạch không chèn âm 'ờ'",
-          "meaningEn": "Triple cluster /str/ as in Street",
-          "hint": "Lướt từ S sang T rồi cuộn lưỡi R"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Vị trí đặt lưỡi chuẩn xác khi phát âm /θ/ trong 'Think' là ở đâu?",
-          "promptEn": "Where is tongue placement for /θ/ in 'Think'?",
-          "cue": "Think /θ/",
-          "correct": "Đầu lưỡi đặt giữa hai hàm răng và thổi luồng khí nhẹ",
-          "options": [
-            "Đầu lưỡi đặt giữa hai hàm răng và thổi luồng khí nhẹ",
-            "Đầu lưỡi thụt sâu vào trong họng",
-            "Lưỡi áp chặt lên vòm miệng trên",
-            "Hai môi mím chặt lại"
-          ],
-          "explanationVi": "Âm /θ/ là âm kẹp lưỡi giữa răng thổi hơi.",
-          "explanationEn": "Place tongue tip between teeth and release air."
-        },
-        {
-          "promptVi": "Điểm khác biệt cốt lõi giữa âm /θ/ (Think) và /ð/ (This) là gì?",
-          "promptEn": "What is the key difference between /θ/ (Think) and /ð/ (This)?",
-          "cue": "/θ/ vs /ð/",
-          "correct": "/θ/ không rung dây thanh (vô thanh), /ð/ có rung (hữu thanh)",
-          "options": [
-            "/θ/ không rung dây thanh (vô thanh), /ð/ có rung (hữu thanh)",
-            "/θ/ phát âm qua mũi",
-            "/ð/ không cần dùng lưỡi",
-            "Cả hai hoàn toàn giống nhau"
-          ],
-          "explanationVi": "/θ/ là voiceless (vô thanh), /ð/ là voiced (hữu thanh).",
-          "explanationEn": "/θ/ is voiceless, /ð/ vibrates the vocal cords."
-        },
-        {
-          "promptVi": "Lỗi phổ biến nhất của người Việt khi phát âm từ 'Street' /striːt/ là gì?",
-          "promptEn": "What is a common mispronunciation of 'Street'?",
-          "cue": "Street",
-          "correct": "Chèn thêm âm 'sờ-tơ-rít' thay vì trượt liền mạch /str/",
-          "options": [
-            "Chèn thêm âm 'sờ-tơ-rít' thay vì trượt liền mạch /str/",
-            "Đọc thành chữ Z",
-            "Quên phát âm nguyên âm",
-            "Nói quá nhanh"
-          ],
-          "explanationVi": "Cụm phụ âm cần lướt liền mạch không chèn nguyên âm đệm.",
-          "explanationEn": "Avoid inserting extra vowels between s-t-r."
-        },
-        {
-          "promptVi": "Cặp từ nào minh họa rõ nhất sự khác nhau giữa /ʃ/ và /tʃ/?",
-          "promptEn": "Which pair demonstrates /ʃ/ vs /tʃ/?",
-          "cue": "/ʃ/ vs /tʃ/",
-          "correct": "Ship vs Chip",
-          "options": [
-            "Ship vs Chip",
-            "Cat vs Bat",
-            "Run vs Sun",
-            "Pen vs Ten"
-          ],
-          "explanationVi": "Ship có âm /ʃ/ kéo dài, Chip có âm /tʃ/ bật tắc.",
-          "explanationEn": "Ship uses /ʃ/, Chip uses affricate /tʃ/."
+          "char": "choice",
+          "reading": "/tʃɔɪs/",
+          "meaningVi": "Sự lựa chọn (Âm bật /tʃ/ và nhị trùng âm /ɔɪ/)",
+          "meaningEn": "Choice (/tʃ/ and diphthong /ɔɪ/)",
+          "hint": "Chu môi nhẹ và bật hơi dứt khoát"
         }
       ]
     },
     {
       "id": "en-stage-5",
       "stageNum": 5,
-      "titleVi": "Ải 5: Tiếng Lóng Mỹ Thực Chiến (American Street Slang)",
-      "titleEn": "Stage 5: Street Slang & Fluency Final Boss",
-      "descVi": "Chinh phục các câu lóng thực tế trong podcast, phim ảnh và đời sống New York/LA.",
-      "descEn": "Tackle real slang heard in American podcasts, cinema, and modern culture.",
-      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
-      "bossNameEn": "Crimson Dragon Emperor",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 5: Nối Âm & Nhịp Điệu Bản Xứ (Connected Speech)",
+      "titleEn": "Stage 5: Connected Speech & Native Flow",
+      "descVi": "Nắm vững kỹ thuật nuốt âm, nối âm phụ âm sang nguyên âm.",
+      "descEn": "Master consonant-to-vowel linking and native rhythm.",
+      "bossNameVi": "Lôi Điểu Thunderbird (Electric Thunderbird)",
+      "bossNameEn": "Electric Thunderbird",
       "bossType": "dragon",
-      "bossHp": 160,
-      "icon": "🐉",
+      "bossHp": 140,
+      "icon": "⚡",
       "items": [
         {
-          "char": "I'm down for that",
-          "reading": "/aɪm daʊn fər ðæt/",
-          "meaningVi": "Tôi sẵn sàng tham gia / Tôi ủng hộ kèo này!",
-          "meaningEn": "I'm ready / Count me in!",
-          "hint": "Đồng nghĩa với 'I'm in!'"
+          "char": "Check it out",
+          "reading": "/ˈtʃek ɪt aʊt/ -> [tʃe-kɪ-daʊt]",
+          "meaningVi": "Xem thử đi! / Thưởng thức đi! (Nối âm liên hoàn)",
+          "meaningEn": "Check it out! (linking k->i and t->a)",
+          "hint": "Nối âm: Che-ki-dout"
+        },
+        {
+          "char": "Hold on",
+          "reading": "/hoʊld ɒn/ -> [hoʊl-dɒn]",
+          "meaningVi": "Chờ một chút nhé (Nối âm d sang on)",
+          "meaningEn": "Wait a moment",
+          "hint": "Nối mượt thành 'hol-don'"
+        },
+        {
+          "char": "What's up",
+          "reading": "/wʌts ʌp/ -> [wʌt-sʌp]",
+          "meaningVi": "Dạo này thế nào? / Có chuyện gì thế?",
+          "meaningEn": "What's up? (casual hello)",
+          "hint": "Câu chào phổ biến nhất giữa bạn bè"
+        },
+        {
+          "char": "Not at all",
+          "reading": "/nɒt æt ɔːl/ -> [nɒ-tæ-tɔːl]",
+          "meaningVi": "Không có gì đâu! / Hoàn toàn không sao cả!",
+          "meaningEn": "Not at all! (You're welcome)",
+          "hint": "Hai âm t nối liên tiếp thành 'no-ta-toll'"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-6",
+      "stageNum": 6,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 6: Mua Sắm, Giá Cả & Mặc Cả (Shopping & Prices)",
+      "titleEn": "Stage 6: Shopping & Asking Prices",
+      "descVi": "Hỏi giá 'How much is this?', tiền tệ Dollars và mặc cả.",
+      "descEn": "Ask prices smoothly and understand currency denominations.",
+      "bossNameVi": "Bò Mộng Phố Wall (Wall Street Bull)",
+      "bossNameEn": "Wall Street Bull",
+      "bossType": "golem",
+      "bossHp": 155,
+      "icon": "🐂",
+      "items": [
+        {
+          "char": "How much is this?",
+          "reading": "/haʊ mʌtʃ ɪz ðɪs/",
+          "meaningVi": "Cái này giá bao nhiêu tiền vậy?",
+          "meaningEn": "How much does this cost?",
+          "hint": "Lên giọng nhẹ ở cuối câu hỏi"
+        },
+        {
+          "char": "Twenty dollars",
+          "reading": "/ˈtwenti ˈdɒlərz/",
+          "meaningVi": "20 Đô-la (~500.000 VNĐ)",
+          "meaningEn": "Twenty dollars ($20)",
+          "hint": "Người Mỹ thường đọc lướt thành 'twen-ny'"
+        },
+        {
+          "char": "Do you take cards?",
+          "reading": "/duː juː teɪk kɑːrdz/",
+          "meaningVi": "Ở đây có nhận quẹt thẻ không ạ?",
+          "meaningEn": "Do you accept credit cards?",
+          "hint": "take cards = thanh toán bằng thẻ"
+        },
+        {
+          "char": "I'll take it",
+          "reading": "/aɪl teɪk ɪt/",
+          "meaningVi": "Tôi sẽ lấy món này nhé!",
+          "meaningEn": "I will buy this one",
+          "hint": "Dùng khi bạn quyết định mua hàng"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-7",
+      "stageNum": 7,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 7: Cafe, Gọi Món & Nhà Hàng (Ordering Food)",
+      "titleEn": "Stage 7: Coffee Shop & Restaurant Ordering",
+      "descVi": "Mẫu câu gọi đồ tự nhiên 'Can I get a...' và yêu cầu hóa đơn.",
+      "descEn": "Order coffee and dining meals like a native speaker.",
+      "bossNameVi": "Master Chef Griffin",
+      "bossNameEn": "Master Chef Griffin",
+      "bossType": "oni",
+      "bossHp": 165,
+      "icon": "☕",
+      "items": [
+        {
+          "char": "Can I get a latte?",
+          "reading": "/kæn aɪ ɡet ə ˈlɑːteɪ/",
+          "meaningVi": "Cho tôi một ly cà phê latte nhé (Mẫu câu gọi đồ lịch sự nhất)",
+          "meaningEn": "Can I have a latte please?",
+          "hint": "Người bản xứ hay dùng 'Can I get...' hơn 'I want...'"
+        },
+        {
+          "char": "To go, please",
+          "reading": "/tuː ɡoʊ pliːz/",
+          "meaningVi": "Mang đi nhé ạ (Take-away)",
+          "meaningEn": "Takeout / For take away",
+          "hint": "Trái nghĩa với 'For here' (Dùng tại quán)"
+        },
+        {
+          "char": "Can we get the check?",
+          "reading": "/kæn wiː ɡet ðə tʃek/",
+          "meaningVi": "Làm ơn tính tiền giúp chúng tôi nhé (Mỹ: Check / Anh: Bill)",
+          "meaningEn": "Could we have the bill please?",
+          "hint": "check = hóa đơn tính tiền"
+        },
+        {
+          "char": "Keep the change",
+          "reading": "/kiːp ðə tʃeɪndʒ/",
+          "meaningVi": "Không cần thối tiền lại đâu ạ (Tiền boa/tip)",
+          "meaningEn": "Keep the spare coins as tip",
+          "hint": "change = tiền lẻ thối lại"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-8",
+      "stageNum": 8,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 8: Di Chuyển, Sân Bay & Hỏi Đường (Directions & Travel)",
+      "titleEn": "Stage 8: Directions & Airport Navigation",
+      "descVi": "Tự tin hỏi đường 'Excuse me, where is...' và đi tàu xe.",
+      "descEn": "Find restrooms, train platforms and ask for directions politely.",
+      "bossNameVi": "Phi Hành Gia Sky Navigator",
+      "bossNameEn": "Sky Navigator",
+      "bossType": "kitsune",
+      "bossHp": 175,
+      "icon": "✈️",
+      "items": [
+        {
+          "char": "Excuse me",
+          "reading": "/ɪkˈskjuːz miː/",
+          "meaningVi": "Xin lỗi / Làm phiền một chút ạ (Mở đầu trước khi hỏi)",
+          "meaningEn": "Excuse me (polite attention grabber)",
+          "hint": "Khởi đầu vàng cho mọi cuộc đối thoại nơi công cộng"
+        },
+        {
+          "char": "Where is the restroom?",
+          "reading": "/weər ɪz ðə ˈrestruːm/",
+          "meaningVi": "Nhà vệ sinh ở đâu vậy ạ? (Mỹ dùng restroom lịch sự)",
+          "meaningEn": "Where is the toilet / bathroom?",
+          "hint": "restroom = phòng vệ sinh công cộng"
+        },
+        {
+          "char": "Turn left at the corner",
+          "reading": "/tɜːrn left æt ðə ˈkɔːrnər/",
+          "meaningVi": "Rẽ trái ngay góc đường kia nhé",
+          "meaningEn": "Turn left at the intersection",
+          "hint": "turn left = rẽ trái; turn right = rẽ phải"
+        },
+        {
+          "char": "Go straight ahead",
+          "reading": "/ɡoʊ streɪt əˈhed/",
+          "meaningVi": "Cứ đi thẳng tiếp về phía trước",
+          "meaningEn": "Continue directly forward",
+          "hint": "straight ahead = thẳng một mạch"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-9",
+      "stageNum": 9,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 9: Đồng Ý, Cảm Thán & Từ Chối Khéo (Reactions)",
+      "titleEn": "Stage 9: Social Reactions & Polite Declines",
+      "descVi": "Phản hồi tự nhiên như người bản xứ: 'Sounds good', 'No worries'.",
+      "descEn": "React authentically with native conversational phrases.",
+      "bossNameVi": "Thiết Giáp Kim Cang (Iron Sentinel)",
+      "bossNameEn": "Iron Sentinel",
+      "bossType": "golem",
+      "bossHp": 185,
+      "icon": "🛡️",
+      "items": [
+        {
+          "char": "Sounds good to me",
+          "reading": "/saʊndz ɡʊd tuː miː/",
+          "meaningVi": "Tôi thấy ý đó rất hay đấy! / Nghe được đấy!",
+          "meaningEn": "I agree / That works for me",
+          "hint": "Cách đồng tình nhanh và thân thiện nhất"
         },
         {
           "char": "No worries at all",
-          "reading": "/noʊ ˈwɜːriz æt ɔːl/",
-          "meaningVi": "Đừng bận tâm / Chuyện nhỏ ấy mà!",
-          "meaningEn": "Don't sweat it / It's fine",
-          "hint": "Cách nói cực kỳ thân mật của người trẻ"
+          "reading": "/noʊ ˈwʌriz æt ɔːl/",
+          "meaningVi": "Đừng bận tâm! / Không sao đâu mà!",
+          "meaningEn": "You're welcome / Don't worry about it",
+          "hint": "Tự nhiên hơn nhiều so với 'You are welcome'"
         },
         {
-          "char": "Hit me up later",
-          "reading": "/hɪt mi ʌp ˈleɪtər/",
-          "meaningVi": "Nhắn tin / Gọi cho tôi sau nhé (HMU)",
-          "meaningEn": "Text me or call me later",
-          "hint": "Nối âm: hit-me-up"
+          "char": "I'd love to, but...",
+          "reading": "/aɪd lʌv tuː bʌt/",
+          "meaningVi": "Tôi rất muốn tham gia, nhưng mà... (Từ chối khéo)",
+          "meaningEn": "Polite soft rejection formula",
+          "hint": "Luôn khen trước khi từ chối để giữ lịch thiệp"
         },
         {
-          "char": "It is what it is",
-          "reading": "/ɪt ɪz wʌt ɪt ɪz/",
-          "meaningVi": "Chấp nhận sự thật thôi / Đành vậy chứ biết sao",
-          "meaningEn": "Accept the reality / Can't change it",
-          "hint": "Thành ngữ chấp nhận hoàn cảnh phổ biến nhất"
+          "char": "Are you sure?",
+          "reading": "/ɑːr juː ʃʊər/",
+          "meaningVi": "Bạn có chắc chắn về điều đó không?",
+          "meaningEn": "Are you certain about that?",
+          "hint": "sure phát âm với âm /ʃ/ chu môi nhẹ"
         }
-      ],
-      "bossQuestions": [
+      ]
+    },
+    {
+      "id": "en-stage-10",
+      "stageNum": 10,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 10: Nghệ Thuật Small Talk & Kết Bạn",
+      "titleEn": "Stage 10: The Art of Small Talk & Networking",
+      "descVi": "Bắt chuyện dễ dàng trong thang máy, tiệc tùng và công sở.",
+      "descEn": "Master casual icebreakers and make friends effortlessly.",
+      "bossNameVi": "Neon Phantom (Bóng Ma Đô Thị)",
+      "bossNameEn": "Neon Phantom",
+      "bossType": "slime",
+      "bossHp": 200,
+      "icon": "🌆",
+      "items": [
         {
-          "promptVi": "Khi một người bạn rủ đi ăn pizza và bạn nói 'I'm down!', câu đó nghĩa là gì?",
-          "promptEn": "If a friend invites you for pizza and you say 'I'm down!', what does it mean?",
-          "cue": "I'm down!",
-          "correct": "Tôi đồng ý, tôi tham gia kèo này!",
-          "options": [
-            "Tôi đồng ý, tôi tham gia kèo này!",
-            "Tôi đang buồn bã",
-            "Tôi không có tiền",
-            "Tôi vừa bị ngã xuống đất"
-          ],
-          "explanationVi": "'I'm down' là tiếng lóng thể hiện sự hào hứng tham gia.",
-          "explanationEn": "'I'm down' means 'count me in!'."
+          "char": "How's your day going?",
+          "reading": "/haʊz jɔːr deɪ ˈɡoʊɪŋ/",
+          "meaningVi": "Hôm nay của bạn thế nào rồi? (Câu mở đầu thân thiện)",
+          "meaningEn": "How is everything today?",
+          "hint": "Câu hỏi thăm tự nhiên hơn 'How are you?'"
         },
         {
-          "promptVi": "Cụm 'Hit me up' viết tắt là HMU trong tin nhắn nghĩa là gì?",
-          "promptEn": "What does the text abbreviation 'HMU' (Hit me up) mean?",
-          "cue": "Hit me up (HMU)",
-          "correct": "Nhắn tin hoặc liên lạc với tôi nhé",
-          "options": [
-            "Nhắn tin hoặc liên lạc với tôi nhé",
-            "Đánh vào người tôi đi",
-            "Hãy chạy trốn",
-            "Xóa số điện thoại"
-          ],
-          "explanationVi": "Hit me up = Liên lạc với tôi nhé.",
-          "explanationEn": "Hit me up means contact me."
+          "char": "What do you do?",
+          "reading": "/wʌt duː juː duː/",
+          "meaningVi": "Bạn đang làm nghề gì vậy? (Hỏi công việc lịch thiệp)",
+          "meaningEn": "What is your job / profession?",
+          "hint": "Không nhầm với 'What are you doing?' (Đang làm gì đấy)"
         },
         {
-          "promptVi": "Người Mỹ nói 'It is what it is' trong tâm trạng nào?",
-          "promptEn": "In what mindset do speakers say 'It is what it is'?",
-          "cue": "It is what it is",
-          "correct": "Chấp nhận thực tế dù không như ý muốn",
-          "options": [
-            "Chấp nhận thực tế dù không như ý muốn",
-            "Vô cùng phấn khích",
-            "Muốn tranh luận gay gắt",
-            "Báo tin mừng trúng số"
-          ],
-          "explanationVi": "Đây là câu thành ngữ thể hiện sự chấp nhận thực tế khách quan.",
-          "explanationEn": "It conveys stoic acceptance of an unchangeable situation."
+          "char": "Long time no see!",
+          "reading": "/lɒŋ taɪm noʊ siː/",
+          "meaningVi": "Lâu lắm rồi mới gặp lại bạn đó!",
+          "meaningEn": "Haven't seen you in a while!",
+          "hint": "Nói với sự hào hứng và nụ cười rạng rỡ"
         },
         {
-          "promptVi": "'No worries' tương đương với cách diễn đạt nào?",
-          "promptEn": "What is 'No worries' equivalent to?",
-          "cue": "No worries",
-          "correct": "Don't worry about it / You're welcome",
-          "options": [
-            "Don't worry about it / You're welcome",
-            "Be very worried",
-            "Leave immediately",
-            "I don't know you"
-          ],
-          "explanationVi": "No worries mang nghĩa đừng lo lắng, chuyện nhỏ.",
-          "explanationEn": "'No worries' means no problem at all."
+          "char": "Catch you later",
+          "reading": "/kætʃ juː ˈleɪtər/",
+          "meaningVi": "Hẹn gặp lại bạn sau nhé! (Chào tạm biệt cực ngầu)",
+          "meaningEn": "See you later!",
+          "hint": "Thay thế cho 'Goodbye' trang trọng"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-11",
+      "stageNum": 11,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 11: Tiếng Lóng Giới Trẻ Mỹ (American Street Slang)",
+      "titleEn": "Stage 11: Top American Street Slang & Buzzwords",
+      "descVi": "Bắt nhịp xu hướng với: 'No cap', 'For real', 'Low-key', 'I'm down'.",
+      "descEn": "Sound like Gen Z & native youth with viral buzzwords.",
+      "bossNameVi": "Cyber Werewolf (Người Sói Công Nghệ)",
+      "bossNameEn": "Cyber Werewolf",
+      "bossType": "kitsune",
+      "bossHp": 220,
+      "icon": "🐺",
+      "items": [
+        {
+          "char": "No cap",
+          "reading": "/noʊ kæp/",
+          "meaningVi": "Nói thật 100% không bốc phét! (Slang hot nhất giới trẻ)",
+          "meaningEn": "No lie / For real / Absolutely honest",
+          "hint": "cap = nói dối/bốc phét; no cap = nói thật đấy"
+        },
+        {
+          "char": "For real?",
+          "reading": "/fɔːr rɪəl/",
+          "meaningVi": "Thật đấy à?! Không đùa chứ?!",
+          "meaningEn": "Seriously? / Are you telling the truth?",
+          "hint": "Lên giọng cuối câu thể hiện ngạc nhiên"
+        },
+        {
+          "char": "I'm down",
+          "reading": "/aɪm daʊn/",
+          "meaningVi": "Tôi tham gia liền! / Chốt đơn luôn! (Đồng ý đi chơi)",
+          "meaningEn": "I am in / I want to join",
+          "hint": "Trái nghĩa với 'I'm out' (Tôi xin rút)"
+        },
+        {
+          "char": "Low-key",
+          "reading": "/loʊ kiː/",
+          "meaningVi": "Kín đáo / Kiểu như... / Thầm thích (Không muốn làm rùm beng)",
+          "meaningEn": "Somewhat / Secretly / Subtly",
+          "hint": "'I low-key love this song' = Tôi cũng khoái bài này ngấm ngầm"
+        }
+      ]
+    },
+    {
+      "id": "en-stage-12",
+      "stageNum": 12,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 12: Đỉnh Cao Giao Tiếp Bản Xứ (Final Boss)",
+      "titleEn": "Stage 12: Master English Fluency Arena",
+      "descVi": "Vượt qua thử thách đàm thoại tổng hợp để giành danh hiệu Bậc Thầy!",
+      "descEn": "The ultimate test of fluency across all 3 chapters of English!",
+      "bossNameVi": "Apex Titan Dragon (Long Vương Tột Đỉnh)",
+      "bossNameEn": "Apex Titan Dragon",
+      "bossType": "dragon",
+      "bossHp": 250,
+      "icon": "👑",
+      "items": [
+        {
+          "char": "Cut to the chase",
+          "reading": "/kʌt tuː ðə tʃeɪs/",
+          "meaningVi": "Đi thẳng vào vấn đề chính đi! (Đừng vòng vo nữa)",
+          "meaningEn": "Get to the point without wasting time",
+          "hint": "Thành ngữ kinh điển trong phim ảnh và kinh doanh"
+        },
+        {
+          "char": "Call it a day",
+          "reading": "/kɔːl ɪt ə deɪ/",
+          "meaningVi": "Hôm nay nghỉ tay ở đây thôi! (Kết thúc buổi làm/học)",
+          "meaningEn": "Stop working for the rest of the day",
+          "hint": "'Let's call it a day!' = Nay tan ca thôi nào!"
+        },
+        {
+          "char": "It's up to you",
+          "reading": "/ɪts ʌp tuː juː/",
+          "meaningVi": "Tùy bạn quyết định đó! (Giao toàn quyền cho bạn)",
+          "meaningEn": "It is your decision / You decide",
+          "hint": "Dùng khi bạn để đối phương chọn quán ăn/kế hoạch"
+        },
+        {
+          "char": "Break a leg!",
+          "reading": "/breɪk ə leɡ/",
+          "meaningVi": "Chúc may mắn nhé! (Nói trước buổi biểu diễn/thi cử)",
+          "meaningEn": "Good luck! (traditional theatrical idiom)",
+          "hint": "Nghĩa đen là 'gãy chân', nghĩa bóng là may mắn rực rỡ"
         }
       ]
     }
   ],
-  "ko": [
+  "ko-KR": [
     {
       "id": "ko-stage-1",
       "stageNum": 1,
-      "titleVi": "Ải 1: Nguyên Âm Hangul Cội Nguồn (ㅏ, ㅓ, ㅗ, ㅜ, ㅣ)",
-      "titleEn": "Stage 1: Core Hangul Vowels",
-      "descVi": "Khám phá nguyên lý triết học Thiên - Địa - Nhân tạo nên chữ viết Hàn Quốc.",
-      "descEn": "Discover the philosophical harmony of Heaven, Earth, and Humanity in Hangul.",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 1: Nguyên Âm Hangul Cội Nguồn",
+      "titleEn": "Stage 1: Foundational Hangul Vowels",
+      "descVi": "Chinh phục 5 nguyên âm cơ bản: ㅏ (a), ㅓ (eo), ㅗ (o), ㅜ (u), ㅣ (i).",
+      "descEn": "Master the core Hangul vowels based on Heaven, Earth, and Man.",
       "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
       "bossNameEn": "Phonetic Slime",
       "bossType": "slime",
@@ -18732,506 +18052,1686 @@ const QUEST_CAMPAIGNS = {
         {
           "char": "ㅏ",
           "reading": "a",
-          "meaningVi": "Nguyên âm A (Nét sổ dọc với nét phẩy hướng sang phải)",
+          "meaningVi": "Nguyên âm A (Mở miệng vừa phải, lưỡi hạ thấp)",
           "meaningEn": "Vowel A",
-          "hint": "Nét phẩy sang phải tượng trưng cho mặt trời mọc"
+          "hint": "Nét sổ dọc trước, nét gạch ngang hướng sang phải"
         },
         {
           "char": "ㅓ",
-          "reading": "eo",
-          "meaningVi": "Nguyên âm Ơ/O mở (Nét phẩy hướng vào trong)",
-          "meaningEn": "Vowel Eo (Open O)",
-          "hint": "Mở miệng như âm 'ơ' nhưng khẩu hình hơi sâu"
+          "reading": "eo / ơ",
+          "meaningVi": "Nguyên âm Ơ/O (Mở miệng to hơn âm o)",
+          "meaningEn": "Vowel EO",
+          "hint": "Nét gạch ngang sang trái trước, nét sổ dọc sau"
         },
         {
           "char": "ㅗ",
           "reading": "o",
-          "meaningVi": "Nguyên âm Ô (Nét phẩy hướng lên trên trời)",
-          "meaningEn": "Vowel O (Rounded)",
-          "hint": "Chu môi tròn như chữ 'ô' tiếng Việt"
+          "meaningVi": "Nguyên âm Ô (Tròn môi nhô về phía trước)",
+          "meaningEn": "Vowel O",
+          "hint": "Nét đứng trên, nét ngang dài dưới"
         },
         {
           "char": "ㅜ",
           "reading": "u",
-          "meaningVi": "Nguyên âm U (Nét phẩy hướng xuống đất)",
+          "meaningVi": "Nguyên âm U (Chu môi tròn nhỏ)",
           "meaningEn": "Vowel U",
-          "hint": "Chu môi hướng thẳng ra trước"
+          "hint": "Nét ngang dài trên, nét đứng dưới"
         },
         {
           "char": "ㅣ",
           "reading": "i",
-          "meaningVi": "Nguyên âm I (Thanh dọc tượng trưng cho con người đứng thẳng)",
+          "meaningVi": "Nguyên âm I (Môi dẹt sang hai bên)",
           "meaningEn": "Vowel I",
-          "hint": "Môi dẹt kéo sang hai bên"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Nguyên âm Hangul nào có nét phẩy chỉ sang bên PHẢI?",
-          "promptEn": "Which Hangul vowel has a tick pointing to the RIGHT?",
-          "cue": "ㅏ",
-          "correct": "ㅏ (a)",
-          "options": [
-            "ㅏ (a)",
-            "ㅓ (eo)",
-            "ㅗ (o)",
-            "ㅜ (u)"
-          ],
-          "explanationVi": "ㅏ có nét phẩy hướng sang phải, đọc là 'a'.",
-          "explanationEn": "ㅏ points right and sounds like 'a'."
-        },
-        {
-          "promptVi": "Nguyên âm ㅓ trong tiếng Hàn phát âm gần giống âm nào?",
-          "promptEn": "How is the vowel ㅓ pronounced?",
-          "cue": "ㅓ",
-          "correct": "Âm 'ơ' hoặc 'o' mở",
-          "options": [
-            "Âm 'ơ' hoặc 'o' mở",
-            "Âm 'u' chu môi",
-            "Âm 'i' kéo dài",
-            "Âm 'e' bẹt"
-          ],
-          "explanationVi": "ㅓ phát âm giữa ơ và o.",
-          "explanationEn": "ㅓ is an open mid back vowel."
-        },
-        {
-          "promptVi": "Chữ ㅣ tượng trưng cho yếu tố nào trong triết lý sáng tạo Hangul?",
-          "promptEn": "What does ㅣ represent in King Sejong's Hangul philosophy?",
-          "cue": "ㅣ",
-          "correct": "Con người đứng thẳng giữa trời và đất",
-          "options": [
-            "Con người đứng thẳng giữa trời và đất",
-            "Dòng sông chảy xiết",
-            "Ngọn núi cao",
-            "Ánh trăng rằm"
-          ],
-          "explanationVi": "Vua Sejong dùng nét dọc ㅣ biểu thị Con người (Nhân).",
-          "explanationEn": "Vertical ㅣ represents humanity standing between heaven and earth."
-        },
-        {
-          "promptVi": "Nguyên âm nào có nét phẩy hướng XUỐNG DƯỚI?",
-          "promptEn": "Which vowel has a short stroke pointing DOWN?",
-          "cue": "ㅜ",
-          "correct": "ㅜ (u)",
-          "options": [
-            "ㅜ (u)",
-            "ㅗ (o)",
-            "ㅏ (a)",
-            "ㅣ (i)"
-          ],
-          "explanationVi": "ㅜ có nét phẩy xuống đất, đọc là 'u'.",
-          "explanationEn": "ㅜ points downward representing 'u'."
+          "hint": "Một nét sổ dọc thẳng đứng"
         }
       ]
     },
     {
       "id": "ko-stage-2",
       "stageNum": 2,
-      "titleVi": "Ải 2: Phụ Âm Đầu & Lời Chào Seoul",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 2: Phụ Âm Đầu & Lời Chào Annyeong",
       "titleEn": "Stage 2: Basic Consonants & Annyeonghaseyo",
-      "descVi": "Học các phụ âm cơ bản và câu chào quốc dân 안녕하세요.",
-      "descEn": "Learn fundamental consonants and master Annyeonghaseyo.",
+      "descVi": "Luyện phụ âm ㄱ, ㄴ, ㄷ, ㄹ, ㅁ và câu chào kinh điển của xứ kim chi.",
+      "descEn": "Learn initial consonants and master Annyeonghaseyo.",
       "bossNameVi": "Cửu Vĩ Hồ Kitsune (Nine-Tailed Fox)",
-      "bossNameEn": "Nine-Tailed Fox Gumiho",
+      "bossNameEn": "Nine-Tailed Fox",
       "bossType": "kitsune",
       "bossHp": 100,
       "icon": "🦊",
       "items": [
         {
           "char": "ㄱ",
-          "reading": "g/k",
-          "meaningVi": "Phụ âm Giyeok (Mô phỏng cuống lưỡi chặn họng)",
-          "meaningEn": "Consonant Giyeok (G/K)",
-          "hint": "Viết ngang rồi sổ vuông góc"
+          "reading": "g / k",
+          "meaningVi": "Phụ âm Giyeok (Cuống lưỡi nâng chạm ngạc mềm)",
+          "meaningEn": "Consonant G/K",
+          "hint": "Hình dáng cuống lưỡi che kín cuống họng"
         },
         {
           "char": "ㄴ",
           "reading": "n",
-          "meaningVi": "Phụ âm Nieun (Mô phỏng đầu lưỡi chạm nướu trên)",
-          "meaningEn": "Consonant Nieun (N)",
-          "hint": "Viết sổ rồi ngang vuông góc"
+          "meaningVi": "Phụ âm Nieun (Đầu lưỡi chạm nướu trên)",
+          "meaningEn": "Consonant N",
+          "hint": "Hình dáng đầu lưỡi chạm vào nướu răng trên"
         },
         {
-          "char": "ㅁ",
-          "reading": "m",
-          "meaningVi": "Phụ âm Mieum (Mô phỏng đôi môi khép lại)",
-          "meaningEn": "Consonant Mieum (M)",
-          "hint": "Hình vuông khép kín"
+          "char": "ㄷ",
+          "reading": "d / t",
+          "meaningVi": "Phụ âm Digeut (Bật nhẹ đầu lưỡi)",
+          "meaningEn": "Consonant D/T",
+          "hint": "Thêm một nét ngang phía trên chữ ㄴ"
         },
         {
-          "char": "ㅅ",
-          "reading": "s",
-          "meaningVi": "Phụ âm Siot (Mô phỏng hình chiếc răng)",
-          "meaningEn": "Consonant Siot (S)",
-          "hint": "Hai nét rẽ nhánh như mái nhà"
+          "char": "ㄹ",
+          "reading": "r / l",
+          "meaningVi": "Phụ âm Rieul (Âm uốn lưỡi nhẹ giữa r và l)",
+          "meaningEn": "Consonant R/L",
+          "hint": "Hình zic-zac uốn lượn của lưỡi"
         },
         {
           "char": "안녕하세요",
-          "reading": "Annyeonghaseyo",
-          "meaningVi": "Xin chào (Trang trọng, phổ biến nhất)",
-          "meaningEn": "Hello (Standard polite)",
-          "hint": "Cúi đầu nhẹ khi nói câu này"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Hình vuông 'ㅁ' trong Hangul mô phỏng bộ phận phát âm nào?",
-          "promptEn": "What vocal organ does the square consonant 'ㅁ' represent?",
-          "cue": "ㅁ",
-          "correct": "Hình dạng đôi môi khép lại",
-          "options": [
-            "Hình dạng đôi môi khép lại",
-            "Chiếc răng cửa",
-            "Cuống họng",
-            "Lỗ mũi"
-          ],
-          "explanationVi": "ㅁ mô phỏng đôi môi khi phát âm m.",
-          "explanationEn": "ㅁ represents closed lips."
-        },
-        {
-          "promptVi": "'Xin chào' tiếng Hàn lịch sự chuẩn mực là câu nào?",
-          "promptEn": "What is the standard polite Korean greeting for 'Hello'?",
-          "cue": "Xin chào",
-          "correct": "안녕하세요 (Annyeonghaseyo)",
-          "options": [
-            "안녕하세요 (Annyeonghaseyo)",
-            "감사합니다 (Gamsahamnida)",
-            "죄송합니다 (Joesonghamnida)",
-            "잘 가요 (Jal gayo)"
-          ],
-          "explanationVi": "안녕하세요 là lời chào chuẩn mực.",
-          "explanationEn": "안녕하세요 is standard polite Hello."
-        },
-        {
-          "promptVi": "Phụ âm ㄱ (Giyeok) mô phỏng khẩu hình gì?",
-          "promptEn": "What does consonant ㄱ (Giyeok) imitate?",
-          "cue": "ㄱ",
-          "correct": "Cuống lưỡi nâng lên chặn vòm họng mềm",
-          "options": [
-            "Cuống lưỡi nâng lên chặn vòm họng mềm",
-            "Hai hàm răng nghiến lại",
-            "Môi chúm tròn",
-            "Lưỡi thè ra ngoài"
-          ],
-          "explanationVi": "ㄱ mô phỏng cuống lưỡi uốn lên chạm ngạc gà.",
-          "explanationEn": "ㄱ illustrates the tongue blocking the throat."
-        },
-        {
-          "promptVi": "Ký tự có hình dáng như mái nhà hai nhánh 'ㅅ' phát âm là gì?",
-          "promptEn": "What sound does the tent-shaped consonant 'ㅅ' produce?",
-          "cue": "ㅅ",
-          "correct": "Âm s",
-          "options": [
-            "Âm s",
-            "Âm m",
-            "Âm n",
-            "Âm b"
-          ],
-          "explanationVi": "ㅅ đọc là s.",
-          "explanationEn": "ㅅ produces the 's' sound."
+          "reading": "annyeonghaseyo",
+          "meaningVi": "Xin chào (Lời chào chuẩn mực và tôn kính nhất)",
+          "meaningEn": "Hello / Good day",
+          "hint": "Cúi đầu nhẹ khoảng 30 độ khi chào"
         }
       ]
     },
     {
       "id": "ko-stage-3",
       "stageNum": 3,
-      "titleVi": "Ải 3: Bộ Cụm Từ Lịch Thiệp Hàng Ngày",
-      "titleEn": "Stage 3: Essential Polite Expressions",
-      "descVi": "Bộ câu từ chuẩn mực giúp bạn hòa nhập ngay tại Hàn Quốc.",
-      "descEn": "Standard polite phrases to navigate everyday life in Korea.",
-      "bossNameVi": "Golem Thạch Đấu (Stone Guardian)",
-      "bossNameEn": "Stone Guardian Golem",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 3: Phụ Âm Bật Hơi & Lời Cảm Ơn",
+      "titleEn": "Stage 3: Aspirated Consonants & Kamsahamnida",
+      "descVi": "Phân biệt phụ âm thường và phụ âm bật hơi ㅋ, ㅌ, ㅍ, ㅎ cùng câu cảm ơn.",
+      "descEn": "Distinguish aspirated consonants and say thank you politely.",
+      "bossNameVi": "Hộ Vệ Haechi (Stone Guardian Haechi)",
+      "bossNameEn": "Stone Guardian Haechi",
       "bossType": "golem",
-      "bossHp": 120,
-      "icon": "🗿",
+      "bossHp": 110,
+      "icon": "🦁",
       "items": [
         {
+          "char": "ㅋ",
+          "reading": "k (bật hơi)",
+          "meaningVi": "Kieuk (Bật hơi mạnh từ cuống họng)",
+          "meaningEn": "Aspirated K",
+          "hint": "Chữ ㄱ thêm nét gạch ngang ở giữa biểu thị luồng hơi"
+        },
+        {
+          "char": "ㅌ",
+          "reading": "t (bật hơi)",
+          "meaningVi": "Tieut (Bật hơi mạnh ở đầu lưỡi)",
+          "meaningEn": "Aspirated T",
+          "hint": "Giống chữ E La-tinh"
+        },
+        {
+          "char": "ㅍ",
+          "reading": "p (bật hơi)",
+          "meaningVi": "Pieup (Hai môi bật hơi mạnh)",
+          "meaningEn": "Aspirated P",
+          "hint": "Hình cổng làng cổ truyền Hàn Quốc"
+        },
+        {
           "char": "감사합니다",
-          "reading": "Gamsahamnida",
-          "meaningVi": "Cảm ơn rất nhiều (Lịch sự, trang trọng)",
-          "meaningEn": "Thank you (Formal)",
-          "hint": "Âm 합 đọc là 'ham' do biến âm Batchim"
-        },
-        {
-          "char": "죄송합니다",
-          "reading": "Joesonghamnida",
-          "meaningVi": "Xin lỗi (Chân thành, lịch sự cao)",
-          "meaningEn": "I am sorry (Formal)",
-          "hint": "Dùng khi va chạm hoặc gây phiền hà"
-        },
-        {
-          "char": "네",
-          "reading": "Ne",
-          "meaningVi": "Vâng / Đúng rồi / Tôi hiểu",
-          "meaningEn": "Yes / Understood",
-          "hint": "Thường phát âm hơi hướng 'đê' nhẹ trong đời sống"
-        },
-        {
-          "char": "아니요",
-          "reading": "Aniyo",
-          "meaningVi": "Không / Không phải đâu ạ",
-          "meaningEn": "No (Polite)",
-          "hint": "Âm ngắn gọn, lịch sự"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Tại sao chữ '합' trong '감사합니다' lại đọc là 'ham' thay vì 'hap'?",
-          "promptEn": "Why is '합' in 'Gamsahamnida' read as 'ham'?",
-          "cue": "감사합니다",
-          "correct": "Hiện tượng đồng hóa âm: patchim ㅂ gặp phụ âm ㄴ biến thành ㅁ",
-          "options": [
-            "Hiện tượng đồng hóa âm: patchim ㅂ gặp phụ âm ㄴ biến thành ㅁ",
-            "Do người nói phát âm nhầm",
-            "Chữ này là tiếng Hán cổ",
-            "Không có quy tắc nào cả"
-          ],
-          "explanationVi": "Patchim ㅂ gặp ㄴ sẽ biến âm thành âm mũi m (Gamsahamnida).",
-          "explanationEn": "Nasal assimilation turns patchim ㅂ into ㅁ before ㄴ."
-        },
-        {
-          "promptVi": "Từ '죄송합니다' mang ý nghĩa gì?",
-          "promptEn": "What does '죄송합니다' (Joesonghamnida) mean?",
-          "cue": "죄송합니다",
-          "correct": "Xin lỗi một cách chân thành",
-          "options": [
-            "Xin lỗi một cách chân thành",
-            "Chúc mừng sinh nhật",
-            "Cảm ơn bữa ăn",
-            "Tạm biệt"
-          ],
-          "explanationVi": "Joesonghamnida có nghĩa là Xin lỗi chân thành.",
-          "explanationEn": "Joesonghamnida is the formal apology."
-        },
-        {
-          "promptVi": "Từ nào trong tiếng Hàn có nghĩa là 'Vâng / Đúng vậy'?",
-          "promptEn": "Which word means 'Yes' in Korean?",
-          "cue": "Vâng",
-          "correct": "네 (Ne)",
-          "options": [
-            "네 (Ne)",
-            "아니요 (Aniyo)",
-            "글쎄요 (Geulsseyo)",
-            "안돼 (Andwae)"
-          ],
-          "explanationVi": "네 nghĩa là Vâng.",
-          "explanationEn": "네 means Yes."
-        },
-        {
-          "promptVi": "'아니요' (Aniyo) có nghĩa là gì?",
-          "promptEn": "What does '아니요' (Aniyo) mean?",
-          "cue": "아니요",
-          "correct": "Không ạ",
-          "options": [
-            "Không ạ",
-            "Vâng ạ",
-            "Xin chào",
-            "Đi thong thả"
-          ],
-          "explanationVi": "아니요 có nghĩa là Không.",
-          "explanationEn": "아니요 means No."
+          "reading": "kamsahamnida",
+          "meaningVi": "Xin chân thành cảm ơn (Trang trọng, lịch sự)",
+          "meaningEn": "Thank you very much",
+          "hint": "Chú ý chữ 합 đọc là 'ham' do quy tắc đồng hóa âm"
         }
       ]
     },
     {
       "id": "ko-stage-4",
+      "chapter": 1,
       "stageNum": 4,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 4: Phụ Âm Căng & Phụ Âm Cuối (Batchim)",
-      "titleEn": "Stage 4: Double Consonants & Batchim",
-      "descVi": "Làm chủ 5 phụ âm căng (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ) và âm cuối giữ hơi.",
-      "descEn": "Master tense double consonants and final consonant stop rules.",
+      "titleEn": "Stage 4: Tense Consonants & Batchim Final Sounds",
+      "descVi": "Chinh phục 5 phụ âm căng (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ) và các âm cuối Batchim.",
+      "descEn": "Conquer tense double consonants and bottom Batchim stops.",
       "bossNameVi": "Yêu Tinh Dokkaebi (Shadow Dokkaebi)",
       "bossNameEn": "Shadow Dokkaebi",
       "bossType": "oni",
-      "bossHp": 140,
+      "bossHp": 125,
       "icon": "👹",
       "items": [
         {
           "char": "ㄲ",
-          "reading": "kk",
-          "meaningVi": "Phụ âm căng Sang-giyeok (Gồng thanh quản, không bật hơi)",
-          "meaningEn": "Tense Kk",
-          "hint": "Nén hơi trong họng rồi phát ra dứt khoát"
-        },
-        {
-          "char": "ㅃ",
-          "reading": "pp",
-          "meaningVi": "Phụ âm căng Sang-bieup (Mím chặt môi, bật âm đanh)",
-          "meaningEn": "Tense Pp",
-          "hint": "Âm 'p' căng mạnh"
+          "reading": "kk (căng)",
+          "meaningVi": "Ssang-giyeok (Gồng thanh quản, phát âm căng không bật hơi)",
+          "meaningEn": "Tense double KK",
+          "hint": "Gấp đôi chữ ㄱ, nén hơi ở cổ họng rồi bật"
         },
         {
           "char": "ㅆ",
-          "reading": "ss",
-          "meaningVi": "Phụ âm căng Sang-siot (Rít hơi mạnh kẽ răng)",
-          "meaningEn": "Tense Ss",
-          "hint": "Âm 'x' căng rít sắc nét"
+          "reading": "ss (căng)",
+          "meaningVi": "Ssang-siot (Âm s căng, răng khép chặt)",
+          "meaningEn": "Tense double SS",
+          "hint": "Gấp đôi chữ ㅅ, phát âm x xắc nét"
         },
         {
           "char": "밥",
-          "reading": "Bap",
-          "meaningVi": "Cơm (Batchim ㅂ khép môi giữ hơi không bật ra)",
-          "meaningEn": "Rice / Meal (Batchim ㅂ)",
-          "hint": "Âm cuối ngậm môi không nhả hơi"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Phụ âm căng 'ㄲ' khác phụ âm cơ bản 'ㄱ' ở đặc điểm nào?",
-          "promptEn": "How does tense 'ㄲ' differ from basic 'ㄱ'?",
-          "cue": "ㄲ vs ㄱ",
-          "correct": "Cơ thanh quản gồng siết mạnh hơn, phát âm đanh và dứt khoát",
-          "options": [
-            "Cơ thanh quản gồng siết mạnh hơn, phát âm đanh và dứt khoát",
-            "Bật hơi gió cực mạnh ra ngoài",
-            "Phát âm nhỏ như tiếng thì thầm",
-            "Hoàn toàn giống nhau"
-          ],
-          "explanationVi": "Phụ âm căng (doen sori) đòi hỏi căng cơ họng dứt khoát.",
-          "explanationEn": "Tense consonants require strong glottal tension."
+          "reading": "bap",
+          "meaningVi": "Cơm / Bữa ăn (Ví dụ Batchim ㅂ khép môi)",
+          "meaningEn": "Rice / Meal (Batchim p)",
+          "hint": "Đến âm p cuối thì ngậm hai môi lại không bật hơi ra"
         },
         {
-          "promptVi": "Khi từ '밥' (Cơm) đứng một mình, phụ âm cuối ㅂ được phát âm thế nào?",
-          "promptEn": "How is the final batchim ㅂ in '밥' pronounced?",
-          "cue": "밥",
-          "correct": "Mím chặt môi chặn luồng khí lại, không bật hơi 'pờ'",
-          "options": [
-            "Mím chặt môi chặn luồng khí lại, không bật hơi 'pờ'",
-            "Bật hơi 'pờ' thật to",
-            "Đọc thành âm 'm'",
-            "Bỏ qua không đọc"
-          ],
-          "explanationVi": "Batchim trong tiếng Hàn là âm tắc không nhả (unreleased stop).",
-          "explanationEn": "Korean final consonants are unreleased stops."
-        },
-        {
-          "promptVi": "Có bao nhiêu phụ âm đôi căng trong bảng chữ cái Hangul?",
-          "promptEn": "How many double tense consonants exist in Hangul?",
-          "cue": "Phụ âm căng",
-          "correct": "5 phụ âm (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ)",
-          "options": [
-            "5 phụ âm (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ)",
-            "3 phụ âm",
-            "7 phụ âm",
-            "10 phụ âm"
-          ],
-          "explanationVi": "Có đúng 5 phụ âm căng: kk, tt, pp, ss, jj.",
-          "explanationEn": "There are exactly 5 tense consonants."
-        },
-        {
-          "promptVi": "Từ '오빠' (Oppa) chứa phụ âm căng nào?",
-          "promptEn": "Which double consonant does '오빠' (Oppa) contain?",
-          "cue": "오빠",
-          "correct": "ㅃ (Sang-bieup)",
-          "options": [
-            "ㅃ (Sang-bieup)",
-            "ㄲ (Sang-giyeok)",
-            "ㄸ (Sang-digeut)",
-            "ㅆ (Sang-siot)"
-          ],
-          "explanationVi": "오빠 chứa phụ âm căng ㅃ.",
-          "explanationEn": "Oppa has the tense ㅃ."
+          "char": "물",
+          "reading": "mul",
+          "meaningVi": "Nước uống (Ví dụ Batchim ㄹ uốn lưỡi)",
+          "meaningEn": "Water (Batchim l)",
+          "hint": "Đầu lưỡi uốn nhẹ chạm vòm miệng trên"
         }
       ]
     },
     {
       "id": "ko-stage-5",
       "stageNum": 5,
-      "titleVi": "Ải 5: Khẩu Ngữ Phim Hàn & Giới Trẻ K-Wave",
-      "titleEn": "Stage 5: K-Wave Slang & Seoul Street Boss",
-      "descVi": "Bộ từ cửa miệng cực hot trong phim K-Drama và giới trẻ Seoul.",
-      "descEn": "Trendy slang and reactive expressions straight out of K-Dramas.",
-      "bossNameVi": "Hỏa Diễm Thần Long (Crimson Dragon)",
-      "bossNameEn": "Crimson Dragon Emperor",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 5: Nguyên Âm Ghép Phức Tạp & Tên Quốc Gia",
+      "titleEn": "Stage 5: Compound Vowels & Country Names",
+      "descVi": "Ghép các nguyên âm đôi: ㅐ (ae), ㅔ (e), ㅘ (wa), ㅝ (wo) và đọc 'Hanguk'.",
+      "descEn": "Master diphthongs and read the official name of Korea.",
+      "bossNameVi": "Thanh Long Cheongnyong (Azure Dragon)",
+      "bossNameEn": "Azure Dragon Cheongnyong",
       "bossType": "dragon",
-      "bossHp": 160,
+      "bossHp": 140,
       "icon": "🐉",
       "items": [
         {
-          "char": "대박",
-          "reading": "Daebak",
-          "meaningVi": "Đỉnh chóp / Cực đỉnh / Không thể tin được!",
-          "meaningEn": "Awesome / Jackpot / Unbelievable!",
-          "hint": "Từ cảm thán số 1 của giới trẻ Hàn"
+          "char": "ㅐ",
+          "reading": "ae",
+          "meaningVi": "Nguyên âm E/Ae (Ghép ㅏ + ㅣ)",
+          "meaningEn": "Vowel AE",
+          "hint": "Mở rộng miệng phát âm e"
         },
         {
-          "char": "진짜?",
-          "reading": "Jinjja?",
-          "meaningVi": "Thật á?! / Thật không đấy?!",
-          "meaningEn": "Really?! / For real?",
-          "hint": "Lên giọng cuối câu thể hiện ngạc nhiên"
+          "char": "ㅔ",
+          "reading": "e",
+          "meaningVi": "Nguyên âm Ê (Ghép ㅓ + ㅣ)",
+          "meaningEn": "Vowel E",
+          "hint": "Miệng hơi hẹp hơn ㅐ"
+        },
+        {
+          "char": "ㅘ",
+          "reading": "wa",
+          "meaningVi": "Nguyên âm Wa (Ghép ㅗ + ㅏ)",
+          "meaningEn": "Compound vowel WA",
+          "hint": "Tròn môi rồi mở nhanh sang âm a"
+        },
+        {
+          "char": "한국",
+          "reading": "hanguk",
+          "meaningVi": "Hàn Quốc (Tên đất nước)",
+          "meaningEn": "South Korea",
+          "hint": "han + guk (Han-guk)"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-6",
+      "stageNum": 6,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 6: Mua Sắm & Hỏi Giá Tiền Ở Myeongdong",
+      "titleEn": "Stage 6: Shopping & Asking Prices in Myeongdong",
+      "descVi": "Mua hàng tự tin với câu hỏi giá 'Eolmayeyo?' và đơn vị Won.",
+      "descEn": "Ask prices and negotiate bargains in Korean won.",
+      "bossNameVi": "Thần Tài Bokgolem (Fortune Golem)",
+      "bossNameEn": "Fortune Golem",
+      "bossType": "golem",
+      "bossHp": 155,
+      "icon": "💰",
+      "items": [
+        {
+          "char": "얼마예요?",
+          "reading": "eolmayeyo",
+          "meaningVi": "Bao nhiêu tiền vậy ạ? (Câu hỏi giá thông dụng nhất)",
+          "meaningEn": "How much is it?",
+          "hint": "Lên giọng ở cuối câu: eol-ma-ye-yo?"
+        },
+        {
+          "char": "이거",
+          "reading": "igeo",
+          "meaningVi": "Cái này (Món đồ ở gần mình)",
+          "meaningEn": "This one",
+          "hint": "Dùng kết hợp: 'Igeo eolmayeyo?' (Cái này bao nhiêu tiền?)"
+        },
+        {
+          "char": "만원",
+          "reading": "man-won",
+          "meaningVi": "10,000 Won (~180.000 VNĐ)",
+          "meaningEn": "10,000 Won",
+          "hint": "Tờ tiền màu xanh lá cây phổ biến nhất"
+        },
+        {
+          "char": "깎아주세요",
+          "reading": "kkakk-ajuseyo",
+          "meaningVi": "Bớt giá cho cháu một chút nhé ạ! (Mặc cả ở chợ truyền thống)",
+          "meaningEn": "Please give me a discount",
+          "hint": "Nói với giọng điệu dễ thương, thân thiện"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-7",
+      "stageNum": 7,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 7: Gọi Món, Quán Ăn & Trải Nghiệm K-BBQ",
+      "titleEn": "Stage 7: Ordering K-BBQ & Korean Dining",
+      "descVi": "Tự tin gọi phục vụ 'Jumunhalgeyo', xin thêm nước và khen 'Masisseoyo!'.",
+      "descEn": "Order delicious Korean food and praise the cooking.",
+      "bossNameVi": "Vua Đầu Bếp Joseon (Joseon Master Chef)",
+      "bossNameEn": "Joseon Master Chef",
+      "bossType": "oni",
+      "bossHp": 165,
+      "icon": "🍖",
+      "items": [
+        {
+          "char": "주문할게요",
+          "reading": "jumun-halgeyo",
+          "meaningVi": "Cho tôi gọi món với ạ!",
+          "meaningEn": "I would like to order please",
+          "hint": "Giơ tay nhẹ khi gọi nhân viên quán"
+        },
+        {
+          "char": "맛있어요",
+          "reading": "masisseoyo",
+          "meaningVi": "Ngon tuyệt vời luôn ạ!",
+          "meaningEn": "It is delicious!",
+          "hint": "Nối âm: ma-si-sseo-yo"
+        },
+        {
+          "char": "물 좀 주세요",
+          "reading": "mul jom juseyo",
+          "meaningVi": "Làm ơn cho tôi xin thêm ít nước lọc",
+          "meaningEn": "Please give me some water",
+          "hint": "jom = một chút (làm câu nói mềm mại và lịch sự hơn)"
+        },
+        {
+          "char": "계산해 주세요",
+          "reading": "gyesan-hae juseyo",
+          "meaningVi": "Làm ơn tính tiền giúp tôi ạ",
+          "meaningEn": "Please give me the bill",
+          "hint": "Dùng khi ra quầy thanh toán"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-8",
+      "stageNum": 8,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 8: Tàu Điện Ngầm Seoul & Hỏi Vị Trí",
+      "titleEn": "Stage 8: Seoul Subway & Direction Navigation",
+      "descVi": "Không lo lạc tàu điện với cấu trúc '... eodieyo?' và chỉ hướng.",
+      "descEn": "Navigate the Seoul metro and ask where places are located.",
+      "bossNameVi": "Mã Tốc KTX Guardian (KTX Speed Guardian)",
+      "bossNameEn": "KTX Speed Guardian",
+      "bossType": "kitsune",
+      "bossHp": 175,
+      "icon": "🚇",
+      "items": [
+        {
+          "char": "지하철역이 어디예요?",
+          "reading": "jihacheol-yeogi eodieyo?",
+          "meaningVi": "Ga tàu điện ngầm ở đâu vậy ạ?",
+          "meaningEn": "Where is the subway station?",
+          "hint": "jihacheol = tàu điện ngầm; eodieyo = ở đâu"
+        },
+        {
+          "char": "화장실",
+          "reading": "hwajangsil",
+          "meaningVi": "Nhà vệ sinh",
+          "meaningEn": "Restroom / Bathroom",
+          "hint": "hwa-jang-sil"
+        },
+        {
+          "char": "오른쪽",
+          "reading": "oreunjjok",
+          "meaningVi": "Bên tay phải",
+          "meaningEn": "Right side",
+          "hint": "oreunjjok = phải; oenjjok = trái"
+        },
+        {
+          "char": "직진하세요",
+          "reading": "jikjin-haseyo",
+          "meaningVi": "Xin hãy đi thẳng một mạch",
+          "meaningEn": "Please go straight",
+          "hint": "jikjin = trực tiến (đi thẳng)"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-9",
+      "stageNum": 9,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 9: Biểu Cảm, Đồng Tình & Lịch Sự Hàng Ngày",
+      "titleEn": "Stage 9: Daily Reactions & Polite Empathy",
+      "descVi": "Học phản xạ tự nhiên: 'Gwaenchanhayo', 'Majayo', 'Jinjja?'.",
+      "descEn": "React with authentic Korean empathy and agreement.",
+      "bossNameVi": "Tướng Quân Gwisin (Samurai Gwisin)",
+      "bossNameEn": "General Gwisin",
+      "bossType": "golem",
+      "bossHp": 185,
+      "icon": "⚔️",
+      "items": [
+        {
+          "char": "괜찮아요",
+          "reading": "gwaenchanhayo",
+          "meaningVi": "Không sao đâu ạ / Tôi ổn mà",
+          "meaningEn": "It's okay / I am fine",
+          "hint": "Cụm từ cứu cánh đa năng trong mọi tình huống"
+        },
+        {
+          "char": "맞아요",
+          "reading": "majayo",
+          "meaningVi": "Đúng rồi đó! / Chuẩn luôn!",
+          "meaningEn": "That's right! / Exactly!",
+          "hint": "Gật đầu khi nói để thể hiện sự đồng cảm"
+        },
+        {
+          "char": "진짜요?",
+          "reading": "jinjja-yo?",
+          "meaningVi": "Thật thế á?! Có thật không vậy?!",
+          "meaningEn": "Really?! / Are you serious?",
+          "hint": "Từ cửa miệng phổ biến hàng đầu trong phim ảnh"
+        },
+        {
+          "char": "좋아요",
+          "reading": "joayo",
+          "meaningVi": "Tốt lắm! / Tôi thích điều đó! / Đồng ý!",
+          "meaningEn": "Good! / I like it!",
+          "hint": "jo-a-yo (âm h câm trước nguyên âm)"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-10",
+      "stageNum": 10,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 10: Làm Quen, Hỏi Tuổi & Kết Bạn K-Friend",
+      "titleEn": "Stage 10: Making Friends & Age Etiquette",
+      "descVi": "Văn hóa xưng hô theo tuổi tác, hỏi tên và kết nối bạn bè.",
+      "descEn": "Understand age hierarchy and make native Korean friends.",
+      "bossNameVi": "Hồ Ly Trăng Tròn (Moon Fox)",
+      "bossNameEn": "Moon Fox",
+      "bossType": "slime",
+      "bossHp": 200,
+      "icon": "🌕",
+      "items": [
+        {
+          "char": "만나서 반가워요",
+          "reading": "mannaseo bangawoyo",
+          "meaningVi": "Rất vui được gặp bạn!",
+          "meaningEn": "Nice to meet you",
+          "hint": "Nói với nụ cười thân thiện khi bắt tay"
+        },
+        {
+          "char": "이름이 뭐예요?",
+          "reading": "ireumi mwoyeyo?",
+          "meaningVi": "Tên bạn là gì vậy?",
+          "meaningEn": "What is your name?",
+          "hint": "ireum = tên; mwo = cái gì"
+        },
+        {
+          "char": "몇 살이에요?",
+          "reading": "myeot sarieyo?",
+          "meaningVi": "Bạn bao nhiêu tuổi vậy? (Để tiện xưng hô hyung/oppa/unnie)",
+          "meaningEn": "How old are you?",
+          "hint": "Người Hàn rất coi trọng tuổi để xưng hô đúng mực"
+        },
+        {
+          "char": "잘 부탁드립니다",
+          "reading": "jal butakdeurimnida",
+          "meaningVi": "Trăm sự nhờ bạn giúp đỡ cho tôi nhé (Rất tôn kính)",
+          "meaningEn": "Please treat me kindly",
+          "hint": "Câu chào trang trọng khi vào nhóm hoặc công ty"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-11",
+      "stageNum": 11,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 11: Tiếng Lóng Phim Hàn & Giới Trẻ K-Wave",
+      "titleEn": "Stage 11: K-Drama Slang & Viral Internet Buzzwords",
+      "descVi": "Cực ngầu với các từ lóng: 'Daebak', 'Heol', 'Jjang', 'Simkung'.",
+      "descEn": "Sound like an idol with trending K-Wave viral slang.",
+      "bossNameVi": "K-Pop Cyber Dokkaebi",
+      "bossNameEn": "K-Pop Cyber Dokkaebi",
+      "bossType": "kitsune",
+      "bossHp": 220,
+      "icon": "🎤",
+      "items": [
+        {
+          "char": "대박",
+          "reading": "daebak",
+          "meaningVi": "Đỉnh chóp! / Đỉnh của chóp! / Trúng mánh lớn!",
+          "meaningEn": "Awesome! / Jackpot! / Incredible!",
+          "hint": "Thốt lên khi thấy điều gì quá tuyệt vời"
         },
         {
           "char": "헐",
-          "reading": "Heol",
-          "meaningVi": "Trời đất ơi! / Cạn lời / Shock!",
-          "meaningEn": "OMG / No way / Speechless",
-          "hint": "Bật âm ngắn thể hiện ngỡ ngàng"
+          "reading": "heol",
+          "meaningVi": "Trời ơi! / Cạn lời! (Thở dài khi sốc hoặc thất vọng)",
+          "meaningEn": "OMG! / What the heck! / Speechless",
+          "hint": "Âm cảm thán phổ biến số 1 của giới trẻ"
+        },
+        {
+          "char": "짱",
+          "reading": "jjang",
+          "meaningVi": "Số 1! / Tuyệt đỉnh! (Dùng ngón tay cái chỉ)",
+          "meaningEn": "The best! / Top notch!",
+          "hint": "'Neol jjang-iya!' = Cậu là đỉnh nhất đấy!"
+        },
+        {
+          "char": "심쿵",
+          "reading": "sim-kung",
+          "meaningVi": "Rụng tim! / Đốn tim! (Trái tim đập thình thịch vì ai đó quá đẹp)",
+          "meaningEn": "Heart-throb / Heart skipping a beat",
+          "hint": "Viết tắt của 'simjang kung-kung' (tim đập thình thịch)"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-12",
+      "stageNum": 12,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 12: Đại Chiến Hangul Thực Chiến (Final Boss)",
+      "titleEn": "Stage 12: Master Korean Fluency Battle",
+      "descVi": "Trận chiến tổng kết 3 chương trước Hoàng Gia Thần Long!",
+      "descEn": "The ultimate test of Korean mastery across all 3 chapters!",
+      "bossNameVi": "Hộ Vệ Hoàng Gia Thần Long (Imperial Guardian Dragon)",
+      "bossNameEn": "Imperial Guardian Dragon",
+      "bossType": "dragon",
+      "bossHp": 250,
+      "icon": "👑",
+      "items": [
+        {
+          "char": "수고하셨습니다",
+          "reading": "sugohasyeossseumnida",
+          "meaningVi": "Hôm nay bạn đã vất vả nhiều rồi! (Câu chào kết thúc ngày)",
+          "meaningEn": "Thank you for your hard work!",
+          "hint": "Nói với đồng nghiệp khi tan sở"
+        },
+        {
+          "char": "어쩔 수 없지",
+          "reading": "eojjeol su eopji",
+          "meaningVi": "Biết làm sao được bây giờ / Đành chịu thôi mà",
+          "meaningEn": "It cannot be helped / What can you do",
+          "hint": "Thể hiện sự chấp nhận thực tế nhẹ nhàng"
         },
         {
           "char": "화이팅",
-          "reading": "Hwaiting",
-          "meaningVi": "Cố lên! / Cố gắng lên nhé!",
-          "meaningEn": "Fighting! / Cheer up!",
-          "hint": "Nắm chặt tay khi hô khẩu hiệu này"
+          "reading": "hwaiting",
+          "meaningVi": "Cố lên nhé! Quyết thắng! (Lời cổ vũ kinh điển)",
+          "meaningEn": "Fighting! / Cheer up! / You can do it!",
+          "hint": "Nắm chặt nắm đấm tay khi hô to"
+        },
+        {
+          "char": "행복하세요",
+          "reading": "haengbok-haseyo",
+          "meaningVi": "Chúc bạn luôn luôn ngập tràn hạnh phúc!",
+          "meaningEn": "Please always be happy!",
+          "hint": "Lời chúc tốt đẹp và sâu sắc nhất"
         }
-      ],
-      "bossQuestions": [
+      ]
+    }
+  ],
+  "ko": [
+    {
+      "id": "ko-stage-1",
+      "stageNum": 1,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 1: Nguyên Âm Hangul Cội Nguồn",
+      "titleEn": "Stage 1: Foundational Hangul Vowels",
+      "descVi": "Chinh phục 5 nguyên âm cơ bản: ㅏ (a), ㅓ (eo), ㅗ (o), ㅜ (u), ㅣ (i).",
+      "descEn": "Master the core Hangul vowels based on Heaven, Earth, and Man.",
+      "bossNameVi": "Slime Ngữ Âm (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
         {
-          "promptVi": "Khi chứng kiến một điều kỳ diệu hoặc quá đỗi ấn tượng, người Hàn hô:",
-          "promptEn": "When witnessing something amazing, Koreans exclaim:",
-          "cue": "Đỉnh chóp!",
-          "correct": "대박! (Daebak!)",
-          "options": [
-            "대박! (Daebak!)",
-            "안돼! (Andwae!)",
-            "바보! (Babo!)",
-            "몰라! (Molla!)"
-          ],
-          "explanationVi": "Daebak tương đương 'Đỉnh chóp / Tuyệt vời'.",
-          "explanationEn": "Daebak means awesome / jackpot."
+          "char": "ㅏ",
+          "reading": "a",
+          "meaningVi": "Nguyên âm A (Mở miệng vừa phải, lưỡi hạ thấp)",
+          "meaningEn": "Vowel A",
+          "hint": "Nét sổ dọc trước, nét gạch ngang hướng sang phải"
         },
         {
-          "promptVi": "Từ '진짜?' (Jinjja?) thường dùng khi nào?",
-          "promptEn": "When is '진짜?' (Jinjja?) used?",
-          "cue": "진짜?",
-          "correct": "Khi muốn hỏi 'Thật á?! / Thật không đấy?!'",
-          "options": [
-            "Khi muốn hỏi 'Thật á?! / Thật không đấy?!'",
-            "Khi muốn nói tạm biệt",
-            "Khi gọi món ăn",
-            "Khi cảm ơn"
-          ],
-          "explanationVi": "Jinjja có nghĩa là thật sự, thật sao.",
-          "explanationEn": "Jinjja means really / genuinely."
+          "char": "ㅓ",
+          "reading": "eo / ơ",
+          "meaningVi": "Nguyên âm Ơ/O (Mở miệng to hơn âm o)",
+          "meaningEn": "Vowel EO",
+          "hint": "Nét gạch ngang sang trái trước, nét sổ dọc sau"
         },
         {
-          "promptVi": "Từ cảm thán '헐' (Heol) trong phim Hàn diễn tả cảm xúc gì?",
-          "promptEn": "What emotion does the Korean exclamation '헐' (Heol) convey?",
-          "cue": "헐",
-          "correct": "Bất ngờ, sốc hoặc cạn lời",
-          "options": [
-            "Bất ngờ, sốc hoặc cạn lời",
-            "Vô cùng hạnh phúc",
-            "Buồn ngủ",
-            "Đói bụng"
-          ],
-          "explanationVi": "Heol diễn tả sự cạn lời hoặc bất ngờ.",
-          "explanationEn": "Heol expresses shock or being speechless."
+          "char": "ㅗ",
+          "reading": "o",
+          "meaningVi": "Nguyên âm Ô (Tròn môi nhô về phía trước)",
+          "meaningEn": "Vowel O",
+          "hint": "Nét đứng trên, nét ngang dài dưới"
         },
         {
-          "promptVi": "Để cổ vũ, động viên ai đó cố lên, người Hàn nói câu gì?",
-          "promptEn": "To cheer someone on with 'Fighting!', Koreans say:",
-          "cue": "Cố lên!",
-          "correct": "화이팅! (Hwaiting!)",
-          "options": [
-            "화이팅! (Hwaiting!)",
-            "잘 가! (Jal ga!)",
-            "미안해! (Mianhae!)",
-            "맛있어! (Masisseo!)"
-          ],
-          "explanationVi": "Hwaiting có nghĩa là Cố lên!",
-          "explanationEn": "Hwaiting means fighting / keep it up!"
+          "char": "ㅜ",
+          "reading": "u",
+          "meaningVi": "Nguyên âm U (Chu môi tròn nhỏ)",
+          "meaningEn": "Vowel U",
+          "hint": "Nét ngang dài trên, nét đứng dưới"
+        },
+        {
+          "char": "ㅣ",
+          "reading": "i",
+          "meaningVi": "Nguyên âm I (Môi dẹt sang hai bên)",
+          "meaningEn": "Vowel I",
+          "hint": "Một nét sổ dọc thẳng đứng"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-2",
+      "stageNum": 2,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 2: Phụ Âm Đầu & Lời Chào Annyeong",
+      "titleEn": "Stage 2: Basic Consonants & Annyeonghaseyo",
+      "descVi": "Luyện phụ âm ㄱ, ㄴ, ㄷ, ㄹ, ㅁ và câu chào kinh điển của xứ kim chi.",
+      "descEn": "Learn initial consonants and master Annyeonghaseyo.",
+      "bossNameVi": "Cửu Vĩ Hồ Kitsune (Nine-Tailed Fox)",
+      "bossNameEn": "Nine-Tailed Fox",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "ㄱ",
+          "reading": "g / k",
+          "meaningVi": "Phụ âm Giyeok (Cuống lưỡi nâng chạm ngạc mềm)",
+          "meaningEn": "Consonant G/K",
+          "hint": "Hình dáng cuống lưỡi che kín cuống họng"
+        },
+        {
+          "char": "ㄴ",
+          "reading": "n",
+          "meaningVi": "Phụ âm Nieun (Đầu lưỡi chạm nướu trên)",
+          "meaningEn": "Consonant N",
+          "hint": "Hình dáng đầu lưỡi chạm vào nướu răng trên"
+        },
+        {
+          "char": "ㄷ",
+          "reading": "d / t",
+          "meaningVi": "Phụ âm Digeut (Bật nhẹ đầu lưỡi)",
+          "meaningEn": "Consonant D/T",
+          "hint": "Thêm một nét ngang phía trên chữ ㄴ"
+        },
+        {
+          "char": "ㄹ",
+          "reading": "r / l",
+          "meaningVi": "Phụ âm Rieul (Âm uốn lưỡi nhẹ giữa r và l)",
+          "meaningEn": "Consonant R/L",
+          "hint": "Hình zic-zac uốn lượn của lưỡi"
+        },
+        {
+          "char": "안녕하세요",
+          "reading": "annyeonghaseyo",
+          "meaningVi": "Xin chào (Lời chào chuẩn mực và tôn kính nhất)",
+          "meaningEn": "Hello / Good day",
+          "hint": "Cúi đầu nhẹ khoảng 30 độ khi chào"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-3",
+      "stageNum": 3,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 3: Phụ Âm Bật Hơi & Lời Cảm Ơn",
+      "titleEn": "Stage 3: Aspirated Consonants & Kamsahamnida",
+      "descVi": "Phân biệt phụ âm thường và phụ âm bật hơi ㅋ, ㅌ, ㅍ, ㅎ cùng câu cảm ơn.",
+      "descEn": "Distinguish aspirated consonants and say thank you politely.",
+      "bossNameVi": "Hộ Vệ Haechi (Stone Guardian Haechi)",
+      "bossNameEn": "Stone Guardian Haechi",
+      "bossType": "golem",
+      "bossHp": 110,
+      "icon": "🦁",
+      "items": [
+        {
+          "char": "ㅋ",
+          "reading": "k (bật hơi)",
+          "meaningVi": "Kieuk (Bật hơi mạnh từ cuống họng)",
+          "meaningEn": "Aspirated K",
+          "hint": "Chữ ㄱ thêm nét gạch ngang ở giữa biểu thị luồng hơi"
+        },
+        {
+          "char": "ㅌ",
+          "reading": "t (bật hơi)",
+          "meaningVi": "Tieut (Bật hơi mạnh ở đầu lưỡi)",
+          "meaningEn": "Aspirated T",
+          "hint": "Giống chữ E La-tinh"
+        },
+        {
+          "char": "ㅍ",
+          "reading": "p (bật hơi)",
+          "meaningVi": "Pieup (Hai môi bật hơi mạnh)",
+          "meaningEn": "Aspirated P",
+          "hint": "Hình cổng làng cổ truyền Hàn Quốc"
+        },
+        {
+          "char": "감사합니다",
+          "reading": "kamsahamnida",
+          "meaningVi": "Xin chân thành cảm ơn (Trang trọng, lịch sự)",
+          "meaningEn": "Thank you very much",
+          "hint": "Chú ý chữ 합 đọc là 'ham' do quy tắc đồng hóa âm"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-4",
+      "chapter": 1,
+      "stageNum": 4,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 4: Phụ Âm Căng & Phụ Âm Cuối (Batchim)",
+      "titleEn": "Stage 4: Tense Consonants & Batchim Final Sounds",
+      "descVi": "Chinh phục 5 phụ âm căng (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ) và các âm cuối Batchim.",
+      "descEn": "Conquer tense double consonants and bottom Batchim stops.",
+      "bossNameVi": "Yêu Tinh Dokkaebi (Shadow Dokkaebi)",
+      "bossNameEn": "Shadow Dokkaebi",
+      "bossType": "oni",
+      "bossHp": 125,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "ㄲ",
+          "reading": "kk (căng)",
+          "meaningVi": "Ssang-giyeok (Gồng thanh quản, phát âm căng không bật hơi)",
+          "meaningEn": "Tense double KK",
+          "hint": "Gấp đôi chữ ㄱ, nén hơi ở cổ họng rồi bật"
+        },
+        {
+          "char": "ㅆ",
+          "reading": "ss (căng)",
+          "meaningVi": "Ssang-siot (Âm s căng, răng khép chặt)",
+          "meaningEn": "Tense double SS",
+          "hint": "Gấp đôi chữ ㅅ, phát âm x xắc nét"
+        },
+        {
+          "char": "밥",
+          "reading": "bap",
+          "meaningVi": "Cơm / Bữa ăn (Ví dụ Batchim ㅂ khép môi)",
+          "meaningEn": "Rice / Meal (Batchim p)",
+          "hint": "Đến âm p cuối thì ngậm hai môi lại không bật hơi ra"
+        },
+        {
+          "char": "물",
+          "reading": "mul",
+          "meaningVi": "Nước uống (Ví dụ Batchim ㄹ uốn lưỡi)",
+          "meaningEn": "Water (Batchim l)",
+          "hint": "Đầu lưỡi uốn nhẹ chạm vòm miệng trên"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-5",
+      "stageNum": 5,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 5: Nguyên Âm Ghép Phức Tạp & Tên Quốc Gia",
+      "titleEn": "Stage 5: Compound Vowels & Country Names",
+      "descVi": "Ghép các nguyên âm đôi: ㅐ (ae), ㅔ (e), ㅘ (wa), ㅝ (wo) và đọc 'Hanguk'.",
+      "descEn": "Master diphthongs and read the official name of Korea.",
+      "bossNameVi": "Thanh Long Cheongnyong (Azure Dragon)",
+      "bossNameEn": "Azure Dragon Cheongnyong",
+      "bossType": "dragon",
+      "bossHp": 140,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "ㅐ",
+          "reading": "ae",
+          "meaningVi": "Nguyên âm E/Ae (Ghép ㅏ + ㅣ)",
+          "meaningEn": "Vowel AE",
+          "hint": "Mở rộng miệng phát âm e"
+        },
+        {
+          "char": "ㅔ",
+          "reading": "e",
+          "meaningVi": "Nguyên âm Ê (Ghép ㅓ + ㅣ)",
+          "meaningEn": "Vowel E",
+          "hint": "Miệng hơi hẹp hơn ㅐ"
+        },
+        {
+          "char": "ㅘ",
+          "reading": "wa",
+          "meaningVi": "Nguyên âm Wa (Ghép ㅗ + ㅏ)",
+          "meaningEn": "Compound vowel WA",
+          "hint": "Tròn môi rồi mở nhanh sang âm a"
+        },
+        {
+          "char": "한국",
+          "reading": "hanguk",
+          "meaningVi": "Hàn Quốc (Tên đất nước)",
+          "meaningEn": "South Korea",
+          "hint": "han + guk (Han-guk)"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-6",
+      "stageNum": 6,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 6: Mua Sắm & Hỏi Giá Tiền Ở Myeongdong",
+      "titleEn": "Stage 6: Shopping & Asking Prices in Myeongdong",
+      "descVi": "Mua hàng tự tin với câu hỏi giá 'Eolmayeyo?' và đơn vị Won.",
+      "descEn": "Ask prices and negotiate bargains in Korean won.",
+      "bossNameVi": "Thần Tài Bokgolem (Fortune Golem)",
+      "bossNameEn": "Fortune Golem",
+      "bossType": "golem",
+      "bossHp": 155,
+      "icon": "💰",
+      "items": [
+        {
+          "char": "얼마예요?",
+          "reading": "eolmayeyo",
+          "meaningVi": "Bao nhiêu tiền vậy ạ? (Câu hỏi giá thông dụng nhất)",
+          "meaningEn": "How much is it?",
+          "hint": "Lên giọng ở cuối câu: eol-ma-ye-yo?"
+        },
+        {
+          "char": "이거",
+          "reading": "igeo",
+          "meaningVi": "Cái này (Món đồ ở gần mình)",
+          "meaningEn": "This one",
+          "hint": "Dùng kết hợp: 'Igeo eolmayeyo?' (Cái này bao nhiêu tiền?)"
+        },
+        {
+          "char": "만원",
+          "reading": "man-won",
+          "meaningVi": "10,000 Won (~180.000 VNĐ)",
+          "meaningEn": "10,000 Won",
+          "hint": "Tờ tiền màu xanh lá cây phổ biến nhất"
+        },
+        {
+          "char": "깎아주세요",
+          "reading": "kkakk-ajuseyo",
+          "meaningVi": "Bớt giá cho cháu một chút nhé ạ! (Mặc cả ở chợ truyền thống)",
+          "meaningEn": "Please give me a discount",
+          "hint": "Nói với giọng điệu dễ thương, thân thiện"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-7",
+      "stageNum": 7,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 7: Gọi Món, Quán Ăn & Trải Nghiệm K-BBQ",
+      "titleEn": "Stage 7: Ordering K-BBQ & Korean Dining",
+      "descVi": "Tự tin gọi phục vụ 'Jumunhalgeyo', xin thêm nước và khen 'Masisseoyo!'.",
+      "descEn": "Order delicious Korean food and praise the cooking.",
+      "bossNameVi": "Vua Đầu Bếp Joseon (Joseon Master Chef)",
+      "bossNameEn": "Joseon Master Chef",
+      "bossType": "oni",
+      "bossHp": 165,
+      "icon": "🍖",
+      "items": [
+        {
+          "char": "주문할게요",
+          "reading": "jumun-halgeyo",
+          "meaningVi": "Cho tôi gọi món với ạ!",
+          "meaningEn": "I would like to order please",
+          "hint": "Giơ tay nhẹ khi gọi nhân viên quán"
+        },
+        {
+          "char": "맛있어요",
+          "reading": "masisseoyo",
+          "meaningVi": "Ngon tuyệt vời luôn ạ!",
+          "meaningEn": "It is delicious!",
+          "hint": "Nối âm: ma-si-sseo-yo"
+        },
+        {
+          "char": "물 좀 주세요",
+          "reading": "mul jom juseyo",
+          "meaningVi": "Làm ơn cho tôi xin thêm ít nước lọc",
+          "meaningEn": "Please give me some water",
+          "hint": "jom = một chút (làm câu nói mềm mại và lịch sự hơn)"
+        },
+        {
+          "char": "계산해 주세요",
+          "reading": "gyesan-hae juseyo",
+          "meaningVi": "Làm ơn tính tiền giúp tôi ạ",
+          "meaningEn": "Please give me the bill",
+          "hint": "Dùng khi ra quầy thanh toán"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-8",
+      "stageNum": 8,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 8: Tàu Điện Ngầm Seoul & Hỏi Vị Trí",
+      "titleEn": "Stage 8: Seoul Subway & Direction Navigation",
+      "descVi": "Không lo lạc tàu điện với cấu trúc '... eodieyo?' và chỉ hướng.",
+      "descEn": "Navigate the Seoul metro and ask where places are located.",
+      "bossNameVi": "Mã Tốc KTX Guardian (KTX Speed Guardian)",
+      "bossNameEn": "KTX Speed Guardian",
+      "bossType": "kitsune",
+      "bossHp": 175,
+      "icon": "🚇",
+      "items": [
+        {
+          "char": "지하철역이 어디예요?",
+          "reading": "jihacheol-yeogi eodieyo?",
+          "meaningVi": "Ga tàu điện ngầm ở đâu vậy ạ?",
+          "meaningEn": "Where is the subway station?",
+          "hint": "jihacheol = tàu điện ngầm; eodieyo = ở đâu"
+        },
+        {
+          "char": "화장실",
+          "reading": "hwajangsil",
+          "meaningVi": "Nhà vệ sinh",
+          "meaningEn": "Restroom / Bathroom",
+          "hint": "hwa-jang-sil"
+        },
+        {
+          "char": "오른쪽",
+          "reading": "oreunjjok",
+          "meaningVi": "Bên tay phải",
+          "meaningEn": "Right side",
+          "hint": "oreunjjok = phải; oenjjok = trái"
+        },
+        {
+          "char": "직진하세요",
+          "reading": "jikjin-haseyo",
+          "meaningVi": "Xin hãy đi thẳng một mạch",
+          "meaningEn": "Please go straight",
+          "hint": "jikjin = trực tiến (đi thẳng)"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-9",
+      "stageNum": 9,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 9: Biểu Cảm, Đồng Tình & Lịch Sự Hàng Ngày",
+      "titleEn": "Stage 9: Daily Reactions & Polite Empathy",
+      "descVi": "Học phản xạ tự nhiên: 'Gwaenchanhayo', 'Majayo', 'Jinjja?'.",
+      "descEn": "React with authentic Korean empathy and agreement.",
+      "bossNameVi": "Tướng Quân Gwisin (Samurai Gwisin)",
+      "bossNameEn": "General Gwisin",
+      "bossType": "golem",
+      "bossHp": 185,
+      "icon": "⚔️",
+      "items": [
+        {
+          "char": "괜찮아요",
+          "reading": "gwaenchanhayo",
+          "meaningVi": "Không sao đâu ạ / Tôi ổn mà",
+          "meaningEn": "It's okay / I am fine",
+          "hint": "Cụm từ cứu cánh đa năng trong mọi tình huống"
+        },
+        {
+          "char": "맞아요",
+          "reading": "majayo",
+          "meaningVi": "Đúng rồi đó! / Chuẩn luôn!",
+          "meaningEn": "That's right! / Exactly!",
+          "hint": "Gật đầu khi nói để thể hiện sự đồng cảm"
+        },
+        {
+          "char": "진짜요?",
+          "reading": "jinjja-yo?",
+          "meaningVi": "Thật thế á?! Có thật không vậy?!",
+          "meaningEn": "Really?! / Are you serious?",
+          "hint": "Từ cửa miệng phổ biến hàng đầu trong phim ảnh"
+        },
+        {
+          "char": "좋아요",
+          "reading": "joayo",
+          "meaningVi": "Tốt lắm! / Tôi thích điều đó! / Đồng ý!",
+          "meaningEn": "Good! / I like it!",
+          "hint": "jo-a-yo (âm h câm trước nguyên âm)"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-10",
+      "stageNum": 10,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 10: Làm Quen, Hỏi Tuổi & Kết Bạn K-Friend",
+      "titleEn": "Stage 10: Making Friends & Age Etiquette",
+      "descVi": "Văn hóa xưng hô theo tuổi tác, hỏi tên và kết nối bạn bè.",
+      "descEn": "Understand age hierarchy and make native Korean friends.",
+      "bossNameVi": "Hồ Ly Trăng Tròn (Moon Fox)",
+      "bossNameEn": "Moon Fox",
+      "bossType": "slime",
+      "bossHp": 200,
+      "icon": "🌕",
+      "items": [
+        {
+          "char": "만나서 반가워요",
+          "reading": "mannaseo bangawoyo",
+          "meaningVi": "Rất vui được gặp bạn!",
+          "meaningEn": "Nice to meet you",
+          "hint": "Nói với nụ cười thân thiện khi bắt tay"
+        },
+        {
+          "char": "이름이 뭐예요?",
+          "reading": "ireumi mwoyeyo?",
+          "meaningVi": "Tên bạn là gì vậy?",
+          "meaningEn": "What is your name?",
+          "hint": "ireum = tên; mwo = cái gì"
+        },
+        {
+          "char": "몇 살이에요?",
+          "reading": "myeot sarieyo?",
+          "meaningVi": "Bạn bao nhiêu tuổi vậy? (Để tiện xưng hô hyung/oppa/unnie)",
+          "meaningEn": "How old are you?",
+          "hint": "Người Hàn rất coi trọng tuổi để xưng hô đúng mực"
+        },
+        {
+          "char": "잘 부탁드립니다",
+          "reading": "jal butakdeurimnida",
+          "meaningVi": "Trăm sự nhờ bạn giúp đỡ cho tôi nhé (Rất tôn kính)",
+          "meaningEn": "Please treat me kindly",
+          "hint": "Câu chào trang trọng khi vào nhóm hoặc công ty"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-11",
+      "stageNum": 11,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 11: Tiếng Lóng Phim Hàn & Giới Trẻ K-Wave",
+      "titleEn": "Stage 11: K-Drama Slang & Viral Internet Buzzwords",
+      "descVi": "Cực ngầu với các từ lóng: 'Daebak', 'Heol', 'Jjang', 'Simkung'.",
+      "descEn": "Sound like an idol with trending K-Wave viral slang.",
+      "bossNameVi": "K-Pop Cyber Dokkaebi",
+      "bossNameEn": "K-Pop Cyber Dokkaebi",
+      "bossType": "kitsune",
+      "bossHp": 220,
+      "icon": "🎤",
+      "items": [
+        {
+          "char": "대박",
+          "reading": "daebak",
+          "meaningVi": "Đỉnh chóp! / Đỉnh của chóp! / Trúng mánh lớn!",
+          "meaningEn": "Awesome! / Jackpot! / Incredible!",
+          "hint": "Thốt lên khi thấy điều gì quá tuyệt vời"
+        },
+        {
+          "char": "헐",
+          "reading": "heol",
+          "meaningVi": "Trời ơi! / Cạn lời! (Thở dài khi sốc hoặc thất vọng)",
+          "meaningEn": "OMG! / What the heck! / Speechless",
+          "hint": "Âm cảm thán phổ biến số 1 của giới trẻ"
+        },
+        {
+          "char": "짱",
+          "reading": "jjang",
+          "meaningVi": "Số 1! / Tuyệt đỉnh! (Dùng ngón tay cái chỉ)",
+          "meaningEn": "The best! / Top notch!",
+          "hint": "'Neol jjang-iya!' = Cậu là đỉnh nhất đấy!"
+        },
+        {
+          "char": "심쿵",
+          "reading": "sim-kung",
+          "meaningVi": "Rụng tim! / Đốn tim! (Trái tim đập thình thịch vì ai đó quá đẹp)",
+          "meaningEn": "Heart-throb / Heart skipping a beat",
+          "hint": "Viết tắt của 'simjang kung-kung' (tim đập thình thịch)"
+        }
+      ]
+    },
+    {
+      "id": "ko-stage-12",
+      "stageNum": 12,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 12: Đại Chiến Hangul Thực Chiến (Final Boss)",
+      "titleEn": "Stage 12: Master Korean Fluency Battle",
+      "descVi": "Trận chiến tổng kết 3 chương trước Hoàng Gia Thần Long!",
+      "descEn": "The ultimate test of Korean mastery across all 3 chapters!",
+      "bossNameVi": "Hộ Vệ Hoàng Gia Thần Long (Imperial Guardian Dragon)",
+      "bossNameEn": "Imperial Guardian Dragon",
+      "bossType": "dragon",
+      "bossHp": 250,
+      "icon": "👑",
+      "items": [
+        {
+          "char": "수고하셨습니다",
+          "reading": "sugohasyeossseumnida",
+          "meaningVi": "Hôm nay bạn đã vất vả nhiều rồi! (Câu chào kết thúc ngày)",
+          "meaningEn": "Thank you for your hard work!",
+          "hint": "Nói với đồng nghiệp khi tan sở"
+        },
+        {
+          "char": "어쩔 수 없지",
+          "reading": "eojjeol su eopji",
+          "meaningVi": "Biết làm sao được bây giờ / Đành chịu thôi mà",
+          "meaningEn": "It cannot be helped / What can you do",
+          "hint": "Thể hiện sự chấp nhận thực tế nhẹ nhàng"
+        },
+        {
+          "char": "화이팅",
+          "reading": "hwaiting",
+          "meaningVi": "Cố lên nhé! Quyết thắng! (Lời cổ vũ kinh điển)",
+          "meaningEn": "Fighting! / Cheer up! / You can do it!",
+          "hint": "Nắm chặt nắm đấm tay khi hô to"
+        },
+        {
+          "char": "행복하세요",
+          "reading": "haengbok-haseyo",
+          "meaningVi": "Chúc bạn luôn luôn ngập tràn hạnh phúc!",
+          "meaningEn": "Please always be happy!",
+          "hint": "Lời chúc tốt đẹp và sâu sắc nhất"
+        }
+      ]
+    }
+  ],
+  "zh-CN": [
+    {
+      "id": "zh-stage-1",
+      "stageNum": 1,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 1: Vận Mẫu Đơn & 4 Thanh Điệu Huyền Ảo",
+      "titleEn": "Stage 1: Simple Finals & The 4 Tones",
+      "descVi": "Nắm vững 6 nguyên âm đơn (a, o, e, i, u, ü) và cao độ 4 thanh điệu Pinyin.",
+      "descEn": "Master simple finals and the 4 distinctive Mandarin tones.",
+      "bossNameVi": "Khí Linh Slime (Phonetic Slime)",
+      "bossNameEn": "Phonetic Slime",
+      "bossType": "slime",
+      "bossHp": 80,
+      "icon": "🟢",
+      "items": [
+        {
+          "char": "ā (Thanh 1)",
+          "reading": "a1",
+          "meaningVi": "Thanh 1: Cao và bằng phẳng (Độ cao 5-5 như hát nốt Sol)",
+          "meaningEn": "Tone 1: High and level (55)",
+          "hint": "Giữ hơi đều đặn, không lên không xuống"
+        },
+        {
+          "char": "á (Thanh 2)",
+          "reading": "a2",
+          "meaningVi": "Thanh 2: Đi lên như dấu sắc tiếng Việt (Độ cao 3-5)",
+          "meaningEn": "Tone 2: Rising tone (35)",
+          "hint": "Lên giọng dứt khoát như khi ngạc nhiên 'Hả?'"
+        },
+        {
+          "char": "ǎ (Thanh 3)",
+          "reading": "a3",
+          "meaningVi": "Thanh 3: Xuống thấp rồi vòng lên (Độ cao 2-1-4)",
+          "meaningEn": "Tone 3: Dipping tone (214)",
+          "hint": "Hạ giọng xuống trầm nhất rồi hơi hất nhẹ"
+        },
+        {
+          "char": "à (Thanh 4)",
+          "reading": "a4",
+          "meaningVi": "Thanh 4: Rơi dốc mạnh mẽ từ trên đỉnh xuống (Độ cao 5-1)",
+          "meaningEn": "Tone 4: Falling tone (51)",
+          "hint": "Phát âm dứt khoát như ra lệnh, hạ giọng cực nhanh"
+        },
+        {
+          "char": "ü",
+          "reading": "yu",
+          "meaningVi": "Vận mẫu ü (Tròn môi như huýt sáo, phát âm chữ i)",
+          "meaningEn": "Final ü (rounded i)",
+          "hint": "Giữ chặt môi tròn chúm và phát âm âm i bên trong"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-2",
+      "stageNum": 2,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 2: Thanh Mẫu Cơ Bản & Lời Chào Nǐ Hǎo",
+      "titleEn": "Stage 2: Basic Initials & Nǐ Hǎo",
+      "descVi": "Luyện âm môi b, p, m, f và âm đầu lưỡi d, t, n, l cùng lời chào Nǐ Hǎo.",
+      "descEn": "Practice labial and alveolar consonants with standard greetings.",
+      "bossNameVi": "Linh Hồ Bách Biến (Mystic Fox)",
+      "bossNameEn": "Mystic Fox",
+      "bossType": "kitsune",
+      "bossHp": 100,
+      "icon": "🦊",
+      "items": [
+        {
+          "char": "b",
+          "reading": "b (như p)",
+          "meaningVi": "Âm hai môi không bật hơi (Tiếng Việt đọc gần giống p)",
+          "meaningEn": "Unaspirated labial /p/",
+          "hint": "Không rung dây thanh, không bật hơi mạnh"
+        },
+        {
+          "char": "p",
+          "reading": "p (bật hơi)",
+          "meaningVi": "Âm hai môi bật hơi cực mạnh (Phải làm bay tờ giấy trước miệng)",
+          "meaningEn": "Aspirated labial /pʰ/",
+          "hint": "Bật luồng hơi rõ ràng, dứt khoát"
+        },
+        {
+          "char": "m",
+          "reading": "m (âm mũi)",
+          "meaningVi": "Âm hai môi thoát khí qua mũi",
+          "meaningEn": "Nasal consonant /m/",
+          "hint": "Khép môi rung khoang mũi"
+        },
+        {
+          "char": "你好",
+          "reading": "nǐ hǎo",
+          "meaningVi": "Xin chào (Quy tắc biến điệu: 2 thanh 3 đi liền thì chữ đầu đọc thanh 2 -> 'ní hǎo')",
+          "meaningEn": "Hello (Tone sandhi: ní hǎo)",
+          "hint": "Biến điệu thanh 3 kinh điển: nǐ hǎo -> ní hǎo"
+        },
+        {
+          "char": "谢谢",
+          "reading": "xièxie",
+          "meaningVi": "Cảm ơn (Âm mặt lưỡi x và thanh nhẹ ở chữ sau)",
+          "meaningEn": "Thank you",
+          "hint": "Chữ sau đọc nhẹ và ngắn hơn"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-3",
+      "stageNum": 3,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 3: Thanh Mẫu Mặt Lưỡi (J, Q, X) & Lời Tạm Biệt",
+      "titleEn": "Stage 3: Palatal Consonants & Zàijiàn",
+      "descVi": "Chinh phục bộ ba mặt lưỡi j, q, x và câu chào tạm biệt Zàijiàn.",
+      "descEn": "Master palatal initials j, q, x and courteous farewells.",
+      "bossNameVi": "Kim Kê Thần Điêu (Golden Falcon)",
+      "bossNameEn": "Golden Falcon",
+      "bossType": "golem",
+      "bossHp": 110,
+      "icon": "🦅",
+      "items": [
+        {
+          "char": "j",
+          "reading": "ji",
+          "meaningVi": "Mặt lưỡi trên chạm ngạc cứng (Gần giống ch tiếng Việt)",
+          "meaningEn": "Unaspirated palatal /tɕ/",
+          "hint": "Đầu lưỡi hạ xuống răng dưới, mặt lưỡi dâng lên"
+        },
+        {
+          "char": "q",
+          "reading": "qi (bật hơi)",
+          "meaningVi": "Mặt lưỡi bật luồng hơi mạnh",
+          "meaningEn": "Aspirated palatal /tɕʰ/",
+          "hint": "Vị trí như j nhưng tống luồng hơi cực mạnh"
+        },
+        {
+          "char": "x",
+          "reading": "xi",
+          "meaningVi": "Mặt lưỡi xát nhẹ, hơi gió lướt qua kẽ răng",
+          "meaningEn": "Palatal fricative /ɕ/",
+          "hint": "Mặt lưỡi sát ngạc cứng, thổi hơi nhẹ"
+        },
+        {
+          "char": "再见",
+          "reading": "zàijiàn",
+          "meaningVi": "Hẹn gặp lại / Tạm biệt (Cả 2 chữ đều mang thanh 4 dứt khoát)",
+          "meaningEn": "Goodbye / See you again",
+          "hint": "Hạ giọng dứt khoát: zài-jiàn"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-4",
+      "chapter": 1,
+      "stageNum": 4,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 4: Thanh Mẫu Uốn Lưỡi (ZH, CH, SH, R)",
+      "titleEn": "Stage 4: Retroflex Initials (ZH, CH, SH, R)",
+      "descVi": "Đặc trưng tiếng Bắc Kinh: uốn cong đầu lưỡi lên ngạc cứng.",
+      "descEn": "Master the authentic Beijing retroflex initials zh, ch, sh, r.",
+      "bossNameVi": "La Sát Dạ Xoa (Shadow Rakshasa)",
+      "bossNameEn": "Shadow Rakshasa",
+      "bossType": "oni",
+      "bossHp": 125,
+      "icon": "👹",
+      "items": [
+        {
+          "char": "zh",
+          "reading": "zhi",
+          "meaningVi": "Đầu lưỡi uốn cong chạm ngạc cứng, không bật hơi",
+          "meaningEn": "Retroflex zh /ʈʂ/",
+          "hint": "Đầu lưỡi cong lên ngạc cứng rồi nhả nhẹ"
+        },
+        {
+          "char": "ch",
+          "reading": "chi (bật hơi)",
+          "meaningVi": "Đầu lưỡi uốn cong và bật hơi mạnh mẽ",
+          "meaningEn": "Aspirated retroflex ch /ʈʂʰ/",
+          "hint": "Vị trí như zh nhưng bắn luồng hơi mạnh"
+        },
+        {
+          "char": "sh",
+          "reading": "shi",
+          "meaningVi": "Đầu lưỡi uốn cong xát nhẹ qua ngạc",
+          "meaningEn": "Retroflex sh /ʂ/",
+          "hint": "Đầu lưỡi cong lên, phì hơi gió qua khe"
+        },
+        {
+          "char": "老师",
+          "reading": "lǎoshī",
+          "meaningVi": "Thầy giáo / Cô giáo (Thanh 3 lǎo + thanh 1 uốn lưỡi shī)",
+          "meaningEn": "Teacher",
+          "hint": "shī giữ âm uốn lưỡi cao bằng phẳng"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-5",
+      "stageNum": 5,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 5: Biến Điệu Khẩu Âm & Vận Mẫu Mũi (AN, ANG, ENG, ONG)",
+      "titleEn": "Stage 5: Nasal Finals & Tone Sandhi Rules",
+      "descVi": "Quy tắc biến điệu của chữ Bù (不) và Yī (一) cùng các âm mũi.",
+      "descEn": "Master tone changes for 'Bu' and 'Yi' plus nasal resonance.",
+      "bossNameVi": "Xích Diễm Thần Long (Crimson Dragon)",
+      "bossNameEn": "Crimson Dragon",
+      "bossType": "dragon",
+      "bossHp": 140,
+      "icon": "🐉",
+      "items": [
+        {
+          "char": "ang",
+          "reading": "ang (mũi sau)",
+          "meaningVi": "Vận mẫu mũi sau (Khoang miệng mở rộng, vang ở vòm họng)",
+          "meaningEn": "Back nasal final -ang",
+          "hint": "Lưỡi thụt lùi về sau, rung cuống họng"
+        },
+        {
+          "char": "eng",
+          "reading": "eng",
+          "meaningVi": "Vận mẫu mũi sau (Khẩu hình nửa mở)",
+          "meaningEn": "Back nasal final -eng",
+          "hint": "Âm vang sâu trong khoang mũi"
+        },
+        {
+          "char": "不客气",
+          "reading": "bú kèqi",
+          "meaningVi": "Không cần khách sáo / Đừng ngại (Chữ 不 biến thành thanh 2)",
+          "meaningEn": "You're welcome",
+          "hint": "Bù đứng trước thanh 4 kè thì biến thành bú"
+        },
+        {
+          "char": "中国",
+          "reading": "zhōngguó",
+          "meaningVi": "Trung Quốc (zhōng thanh 1 bằng phẳng, guó thanh 2 đi lên)",
+          "meaningEn": "China",
+          "hint": "zhōng uốn lưỡi nốt Sol + guó dấu sắc"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-6",
+      "stageNum": 6,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 6: Mua Sắm, Giá Cả & Mặc Cả Chợ Truyền Thống",
+      "titleEn": "Stage 6: Shopping & Bargaining in Local Markets",
+      "descVi": "Hỏi giá 'Zhège duōshao qián?', kêu đắt 'Tài guì le!' và mặc cả.",
+      "descEn": "Ask prices and bargain like a pro in local Chinese markets.",
+      "bossNameVi": "Kim Giác Đại Vương (Golden Horn King)",
+      "bossNameEn": "Golden Horn King",
+      "bossType": "golem",
+      "bossHp": 155,
+      "icon": "💰",
+      "items": [
+        {
+          "char": "这个多少钱？",
+          "reading": "zhège duōshao qián?",
+          "meaningVi": "Cái này bao nhiêu tiền vậy ạ?",
+          "meaningEn": "How much is this?",
+          "hint": "Câu hỏi giá kinh điển trong mọi khu chợ"
+        },
+        {
+          "char": "太贵了！",
+          "reading": "tài guì le!",
+          "meaningVi": "Đắt quá đi mất! (Kêu lên để bắt đầu mặc cả)",
+          "meaningEn": "Too expensive!",
+          "hint": "Thanh 4 nhấn mạnh biểu cảm ngạc nhiên"
+        },
+        {
+          "char": "便宜一点吧",
+          "reading": "piányi yīdiǎn ba",
+          "meaningVi": "Bớt cho cháu một chút xíu đi mà!",
+          "meaningEn": "Make it a bit cheaper please",
+          "hint": "Trợ từ ba ở cuối câu làm dịu lời đề nghị"
+        },
+        {
+          "char": "十块钱",
+          "reading": "shí kuài qián",
+          "meaningVi": "10 Đồng / 10 Tệ (~35.000 VNĐ)",
+          "meaningEn": "10 Yuan / Kuai",
+          "hint": "Khẩu ngữ đời thực hay dùng 'kuài' thay cho 'yuán'"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-7",
+      "stageNum": 7,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 7: Gọi Món, Trà Sữa & Nhà Hàng Trung Hoa",
+      "titleEn": "Stage 7: Ordering Chinese Food & Bubble Tea",
+      "descVi": "Tự tin gọi phục vụ 'Fúwùyuán!', dặn 'Bù yào là' (không cay) và tính tiền.",
+      "descEn": "Order delicious dim sum and customize bubble tea sweetness.",
+      "bossNameVi": "Bếp Thần Thao Thiết (Chef Taotie)",
+      "bossNameEn": "Chef Taotie",
+      "bossType": "oni",
+      "bossHp": 165,
+      "icon": "🥟",
+      "items": [
+        {
+          "char": "服务员！",
+          "reading": "fúwùyuán!",
+          "meaningVi": "Phục vụ ơi! (Cách gọi nhân viên quán chuẩn mực và lịch sự)",
+          "meaningEn": "Waiter / Waitress!",
+          "hint": "Gọi to, rõ ràng và giơ tay mỉm cười"
+        },
+        {
+          "char": "我要点菜",
+          "reading": "wǒ yào diǎncài",
+          "meaningVi": "Tôi muốn gọi món ăn",
+          "meaningEn": "I would like to order",
+          "hint": "diǎncài = điểm thái (chọn món)"
+        },
+        {
+          "char": "不要辣",
+          "reading": "bù yào là",
+          "meaningVi": "Đừng cho cay nhé! / Không ăn cay được đâu!",
+          "meaningEn": "No spicy please!",
+          "hint": "Câu cứu mạng tối thượng cho người không ăn được ớt Tứ Xuyên"
+        },
+        {
+          "char": "买单！",
+          "reading": "mǎidān!",
+          "meaningVi": "Tính tiền giùm tôi với nhé!",
+          "meaningEn": "The bill please!",
+          "hint": "Mǎidān là cụm từ tính tiền ngắn gọn nhất"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-8",
+      "stageNum": 8,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 8: Tàu Điện, Bắt Taxi & Hỏi Đường Phố",
+      "titleEn": "Stage 8: Subway, Taxi & City Directions",
+      "descVi": "Hỏi vị trí ga tàu điện, nhà vệ sinh và chỉ hướng đi.",
+      "descEn": "Take the metro and ask directions smoothly across city blocks.",
+      "bossNameVi": "Trấn Môn Thạch Sư (Guardian Lion)",
+      "bossNameEn": "Guardian Lion",
+      "bossType": "kitsune",
+      "bossHp": 175,
+      "icon": "🚖",
+      "items": [
+        {
+          "char": "地铁站在哪里？",
+          "reading": "dìtiězhàn zài nǎlǐ?",
+          "meaningVi": "Ga tàu điện ngầm nằm ở đâu vậy ạ?",
+          "meaningEn": "Where is the subway station?",
+          "hint": "dìtiě = địa thiết (tàu điện ngầm); nǎlǐ = ở đâu"
+        },
+        {
+          "char": "洗手间",
+          "reading": "xǐshǒujiān",
+          "meaningVi": "Nhà vệ sinh (nghĩa đen: phòng rửa tay)",
+          "meaningEn": "Restroom / Washroom",
+          "hint": "Từ ngữ lịch thiệp nhất để hỏi WC"
+        },
+        {
+          "char": "往右拐",
+          "reading": "wǎng yòu guǎi",
+          "meaningVi": "Rẽ về phía bên tay phải",
+          "meaningEn": "Turn right",
+          "hint": "yòu = phải; zuǒ = trái"
+        },
+        {
+          "char": "一直往前走",
+          "reading": "yīzhí wǎng qián zǒu",
+          "meaningVi": "Cứ đi thẳng mãi về phía trước",
+          "meaningEn": "Walk straight ahead",
+          "hint": "qián = phía trước; zǒu = đi"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-9",
+      "stageNum": 9,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 9: Cụm Từ Vàng Cảm Thán & Xã Giao Lịch Lãm",
+      "titleEn": "Stage 9: Social Politeness & Emotional Reactions",
+      "descVi": "Phản xạ tự nhiên: 'Méi guānxi', 'Bù kèqi', 'Zhēn de ma?'.",
+      "descEn": "Polite native reactions: no problem, really, good idea.",
+      "bossNameVi": "Hắc Bạch Vô Thường (Yin Yang Sentinels)",
+      "bossNameEn": "Yin Yang Sentinels",
+      "bossType": "golem",
+      "bossHp": 185,
+      "icon": "☯️",
+      "items": [
+        {
+          "char": "没关系",
+          "reading": "méi guānxi",
+          "meaningVi": "Không sao đâu! / Đừng bận tâm nhé!",
+          "meaningEn": "It doesn't matter / No problem",
+          "hint": "Dùng đáp lại khi người khác xin lỗi mình"
+        },
+        {
+          "char": "真的吗？",
+          "reading": "zhēn de ma?",
+          "meaningVi": "Thật thế á?! Có thật không vậy?!",
+          "meaningEn": "Really?! / Are you serious?",
+          "hint": "Lên giọng cuối câu thể hiện ngạc nhiên"
+        },
+        {
+          "char": "好的",
+          "reading": "hǎo de",
+          "meaningVi": "Được rồi / Nhất trí / Ok nhé!",
+          "meaningEn": "Okay / Alright / Sure",
+          "hint": "Cách chốt giao kèo nhanh gọn và thân thiện nhất"
+        },
+        {
+          "char": "太棒了！",
+          "reading": "tài bàng le!",
+          "meaningVi": "Tuyệt vời ông mặt trời! / Đỉnh quá đi!",
+          "meaningEn": "Awesome! / Fantastic!",
+          "hint": "Khen ngợi thành tích hoặc tin vui"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-10",
+      "stageNum": 10,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 10: Làm Quen, Hỏi Thăm & Quét Mã WeChat",
+      "titleEn": "Stage 10: Making Friends & Exchanging WeChat",
+      "descVi": "Hỏi tên, làm quen kết bạn và quét mã kết nối WeChat.",
+      "descEn": "Introduce yourself and connect on WeChat like a local.",
+      "bossNameVi": "Bạch Xà Tinh Anh (White Snake Spirit)",
+      "bossNameEn": "White Snake Spirit",
+      "bossType": "slime",
+      "bossHp": 200,
+      "icon": "🐍",
+      "items": [
+        {
+          "char": "很高兴认识你",
+          "reading": "hěn gāoxìng rènshi nǐ",
+          "meaningVi": "Rất vui mừng khi được làm quen với bạn!",
+          "meaningEn": "Nice to meet you!",
+          "hint": "Nói với sự ấm áp khi bắt tay kết bạn"
+        },
+        {
+          "char": "你叫什么名字？",
+          "reading": "nǐ jiào shénme míngzi?",
+          "meaningVi": "Bạn tên là gì vậy?",
+          "meaningEn": "What is your name?",
+          "hint": "shénme = cái gì; míngzi = tên"
+        },
+        {
+          "char": "加个微信吧",
+          "reading": "jiā ge wēixìn ba",
+          "meaningVi": "Cho mình xin kết bạn WeChat với nhé! (Bắt buộc khi ở Trung Quốc)",
+          "meaningEn": "Let's add each other on WeChat",
+          "hint": "Văn hóa kết nối hàng đầu: giơ mã QR quét nhau"
+        },
+        {
+          "char": "下次再聊",
+          "reading": "xiàcì zài liáo",
+          "meaningVi": "Lần sau chúng mình lại trò chuyện tiếp nhé!",
+          "meaningEn": "Let's talk more next time",
+          "hint": "xiàcì = lần sau; liáo = tán gẫu"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-11",
+      "stageNum": 11,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 11: Khẩu Ngữ Đời Thực & Tiếng Lóng Mạng Xã Hội",
+      "titleEn": "Stage 11: Top Internet Slang & Modern Street Buzzwords",
+      "descVi": "Bắt trend với: 'Gěilì', 'Méiménr', 'Jué le', 'Chàbuduō'.",
+      "descEn": "Sound like a Douyin & Weibo native with viral buzzwords.",
+      "bossNameVi": "Tôn Ngộ Không Chiến Giáp (Mecha Monkey King)",
+      "bossNameEn": "Mecha Monkey King",
+      "bossType": "kitsune",
+      "bossHp": 220,
+      "icon": "🐒",
+      "items": [
+        {
+          "char": "给力",
+          "reading": "gěilì",
+          "meaningVi": "Đỉnh chóp! / Đỉnh cao! / Tiếp thêm sức mạnh!",
+          "meaningEn": "Awesome / Powerful / Effective",
+          "hint": "Nghĩa đen: tiếp lực; nghĩa bóng: siêu tuyệt vời"
+        },
+        {
+          "char": "绝了！",
+          "reading": "jué le!",
+          "meaningVi": "Hết nước chấm! / Tuyệt đỉnh không còn lời nào diễn tả!",
+          "meaningEn": "Incredible! / Beyond words!",
+          "hint": "Khen ngợi món ăn hoặc trang phục xuất sắc"
+        },
+        {
+          "char": "没门儿",
+          "reading": "méiménr",
+          "meaningVi": "Không có cửa đâu nhé! / Đừng có mơ! (Từ chối dứt khoát)",
+          "meaningEn": "No way / Out of the question",
+          "hint": "Uốn lưỡi âm r ở cuối: méi-ménr"
+        },
+        {
+          "char": "差不多",
+          "reading": "chàbuduō",
+          "meaningVi": "Cũng hòm hòm rồi / Gần như vậy / Tương đối thôi",
+          "meaningEn": "Almost / Good enough / Close enough",
+          "hint": "Triết lý sống nổi tiếng: 'Chàbuduō jiù xíng le!'"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-12",
+      "stageNum": 12,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 12: Đỉnh Cao Giao Tiếp Trung Hoa (Final Boss)",
+      "titleEn": "Stage 12: Master Chinese Fluency Challenge",
+      "descVi": "Trận chiến tối thượng chứng minh khả năng đàm thoại Hoa ngữ lưu loát!",
+      "descEn": "The ultimate comprehensive test of fluency across all 3 chapters!",
+      "bossNameVi": "Kim Giác Hoàng Long (Imperial Golden Dragon)",
+      "bossNameEn": "Imperial Golden Dragon",
+      "bossType": "dragon",
+      "bossHp": 250,
+      "icon": "👑",
+      "items": [
+        {
+          "char": "辛苦了",
+          "reading": "xīnkǔ le",
+          "meaningVi": "Hôm nay bạn vất vả nhiều rồi! (Lời cảm ơn đồng nghiệp)",
+          "meaningEn": "Thank you for your hard work!",
+          "hint": "Nói khi kết thúc công việc cùng đối tác"
+        },
+        {
+          "char": "加油！",
+          "reading": "jiāyóu!",
+          "meaningVi": "Cố lên nhé! (Lời động viên phổ biến số một)",
+          "meaningEn": "Cheer up! / Keep fighting!",
+          "hint": "Nghĩa đen: châm thêm dầu vào đèn để cháy sáng"
+        },
+        {
+          "char": "没问题",
+          "reading": "méi wèntí",
+          "meaningVi": "Không vấn đề gì cả! Chắc chắn ổn thỏa!",
+          "meaningEn": "No problem at all!",
+          "hint": "Dùng khẳng định sự tin cậy khi nhận nhiệm vụ"
+        },
+        {
+          "char": "祝你一路顺风",
+          "reading": "zhù nǐ yīlù shùnfēng",
+          "meaningVi": "Chúc bạn thuận buồm xuôi gió trên mọi nẻo đường!",
+          "meaningEn": "Wishing you a smooth and safe journey!",
+          "hint": "Lời chúc tốt đẹp nhất tiễn bạn lên đường"
         }
       ]
     }
@@ -19240,10 +19740,13 @@ const QUEST_CAMPAIGNS = {
     {
       "id": "zh-stage-1",
       "stageNum": 1,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 1: Vận Mẫu Đơn & 4 Thanh Điệu Huyền Ảo",
       "titleEn": "Stage 1: Simple Finals & The 4 Tones",
-      "descVi": "Chinh phục 6 nguyên âm cơ bản và quy luật cao độ của 4 thanh điệu tiếng Trung.",
-      "descEn": "Master the 6 simple finals and pitch contour of the 4 tones.",
+      "descVi": "Nắm vững 6 nguyên âm đơn (a, o, e, i, u, ü) và cao độ 4 thanh điệu Pinyin.",
+      "descEn": "Master simple finals and the 4 distinctive Mandarin tones.",
       "bossNameVi": "Khí Linh Slime (Phonetic Slime)",
       "bossNameEn": "Phonetic Slime",
       "bossType": "slime",
@@ -19251,516 +19754,557 @@ const QUEST_CAMPAIGNS = {
       "icon": "🟢",
       "items": [
         {
-          "char": "a",
-          "reading": "ā á ǎ à",
-          "meaningVi": "Vận mẫu A (Khẩu hình mở to, lưỡi phẳng)",
-          "meaningEn": "Final A",
-          "hint": "Âm vang sáng nhất trong hệ thống Pinyin"
+          "char": "ā (Thanh 1)",
+          "reading": "a1",
+          "meaningVi": "Thanh 1: Cao và bằng phẳng (Độ cao 5-5 như hát nốt Sol)",
+          "meaningEn": "Tone 1: High and level (55)",
+          "hint": "Giữ hơi đều đặn, không lên không xuống"
         },
         {
-          "char": "o",
-          "reading": "ō ó ǒ ò",
-          "meaningVi": "Vận mẫu O (Môi tròn, phát âm ô/ua)",
-          "meaningEn": "Final O",
-          "hint": "Môi hơi chúm tròn như quả trứng"
+          "char": "á (Thanh 2)",
+          "reading": "a2",
+          "meaningVi": "Thanh 2: Đi lên như dấu sắc tiếng Việt (Độ cao 3-5)",
+          "meaningEn": "Tone 2: Rising tone (35)",
+          "hint": "Lên giọng dứt khoát như khi ngạc nhiên 'Hả?'"
         },
         {
-          "char": "e",
-          "reading": "ē é ě è",
-          "meaningVi": "Vận mẫu E (Khẩu hình dẹt, phát âm như 'ưa')",
-          "meaningEn": "Final E (Pronounced 'e/ue')",
-          "hint": "Kéo nhẹ mép sang hai bên"
+          "char": "ǎ (Thanh 3)",
+          "reading": "a3",
+          "meaningVi": "Thanh 3: Xuống thấp rồi vòng lên (Độ cao 2-1-4)",
+          "meaningEn": "Tone 3: Dipping tone (214)",
+          "hint": "Hạ giọng xuống trầm nhất rồi hơi hất nhẹ"
+        },
+        {
+          "char": "à (Thanh 4)",
+          "reading": "a4",
+          "meaningVi": "Thanh 4: Rơi dốc mạnh mẽ từ trên đỉnh xuống (Độ cao 5-1)",
+          "meaningEn": "Tone 4: Falling tone (51)",
+          "hint": "Phát âm dứt khoát như ra lệnh, hạ giọng cực nhanh"
         },
         {
           "char": "ü",
-          "reading": "yū yú yǔ yù",
-          "meaningVi": "Vận mẫu Ü (Âm uy tròn môi, đầu lưỡi chạm răng dưới)",
-          "meaningEn": "Final Ü (Rounded high front vowel)",
-          "hint": "Giữ chặt môi tròn suốt quá trình phát âm"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Thanh 1 (Thanh ngang - ví dụ: mā) có đường đi cao độ như thế nào?",
-          "promptEn": "What is the pitch contour of Tone 1 (e.g. mā)?",
-          "cue": "Thanh 1 (55)",
-          "correct": "Cao đều và ngân dài ổn định ở mức 5-5",
-          "options": [
-            "Cao đều và ngân dài ổn định ở mức 5-5",
-            "Đi từ thấp vọt lên cao",
-            "Hạ xuống đáy rồi vút lên",
-            "Rơi nhanh dứt khoát từ cao xuống thấp"
-          ],
-          "explanationVi": "Thanh 1 là thanh cao bằng phẳng (55).",
-          "explanationEn": "Tone 1 is high and flat (55)."
-        },
-        {
-          "promptVi": "Thanh 4 (Thanh rơi - ví dụ: mà) có đặc điểm gì?",
-          "promptEn": "What is the characteristic of Tone 4 (e.g. mà)?",
-          "cue": "Thanh 4 (51)",
-          "correct": "Rơi cực nhanh và dứt khoát từ cao độ 5 xuống 1",
-          "options": [
-            "Rơi cực nhanh và dứt khoát từ cao độ 5 xuống 1",
-            "Hát ngân nga mềm mại",
-            "Không có thanh điệu",
-            "Ngắt quãng ở giữa"
-          ],
-          "explanationVi": "Thanh 4 là thanh rơi dứt khoát từ cao nhất xuống thấp nhất.",
-          "explanationEn": "Tone 4 falls sharply from 5 to 1."
-        },
-        {
-          "promptVi": "Khi phát âm vận mẫu 'ü', quy tắc quan trọng nhất là gì?",
-          "promptEn": "What is crucial when pronouncing the final 'ü'?",
-          "cue": "ü",
-          "correct": "Giữ chặt môi tròn cố định, không được mở mép ra",
-          "options": [
-            "Giữ chặt môi tròn cố định, không được mở mép ra",
-            "Mở rộng to hết cỡ",
-            "Thè lưỡi ra ngoài",
-            "Khép chặt răng lại"
-          ],
-          "explanationVi": "Vận mẫu ü đòi hỏi môi chu tròn cố định suốt quá trình.",
-          "explanationEn": "Maintain rounded lips without moving them."
-        },
-        {
-          "promptVi": "Vận mẫu 'e' trong tiếng Trung chuẩn Bắc Kinh đọc tương tự âm nào trong tiếng Việt?",
-          "promptEn": "How is Chinese Pinyin 'e' commonly pronounced?",
-          "cue": "e",
-          "correct": "Âm 'ưa' hoặc 'ơ'",
-          "options": [
-            "Âm 'ưa' hoặc 'ơ'",
-            "Âm 'e' bẹt",
-            "Âm 'i' dài",
-            "Âm 'u' tròn"
-          ],
-          "explanationVi": "Pinyin 'e' đọc giống âm 'ưa' trong tiếng Việt.",
-          "explanationEn": "Pinyin 'e' sounds close to 'uh/er'."
+          "reading": "yu",
+          "meaningVi": "Vận mẫu ü (Tròn môi như huýt sáo, phát âm chữ i)",
+          "meaningEn": "Final ü (rounded i)",
+          "hint": "Giữ chặt môi tròn chúm và phát âm âm i bên trong"
         }
       ]
     },
     {
       "id": "zh-stage-2",
       "stageNum": 2,
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 2: Thanh Mẫu Cơ Bản & Lời Chào Nǐ Hǎo",
       "titleEn": "Stage 2: Basic Initials & Nǐ Hǎo",
-      "descVi": "Phân biệt cặp âm bật hơi B-P, D-T và câu chào kinh điển 你好.",
-      "descEn": "Master aspirated vs unaspirated pairs B-P, D-T and iconic Nǐ Hǎo.",
+      "descVi": "Luyện âm môi b, p, m, f và âm đầu lưỡi d, t, n, l cùng lời chào Nǐ Hǎo.",
+      "descEn": "Practice labial and alveolar consonants with standard greetings.",
       "bossNameVi": "Linh Hồ Bách Biến (Mystic Fox)",
-      "bossNameEn": "Mystic Fox Spirit",
+      "bossNameEn": "Mystic Fox",
       "bossType": "kitsune",
       "bossHp": 100,
       "icon": "🦊",
       "items": [
         {
           "char": "b",
-          "reading": "bō",
-          "meaningVi": "Thanh mẫu B (Âm môi không bật hơi, tương tự p tiếng Việt)",
-          "meaningEn": "Initial B (Unaspirated)",
-          "hint": "Hai môi mím lại rồi mở ra, không có luồng khí phụt"
+          "reading": "b (như p)",
+          "meaningVi": "Âm hai môi không bật hơi (Tiếng Việt đọc gần giống p)",
+          "meaningEn": "Unaspirated labial /p/",
+          "hint": "Không rung dây thanh, không bật hơi mạnh"
         },
         {
           "char": "p",
-          "reading": "pō",
-          "meaningVi": "Thanh mẫu P (Âm môi bật hơi cực mạnh)",
-          "meaningEn": "Initial P (Aspirated)",
-          "hint": "Đặt tờ giấy trước miệng, giấy phải bay mạnh khi phát âm"
+          "reading": "p (bật hơi)",
+          "meaningVi": "Âm hai môi bật hơi cực mạnh (Phải làm bay tờ giấy trước miệng)",
+          "meaningEn": "Aspirated labial /pʰ/",
+          "hint": "Bật luồng hơi rõ ràng, dứt khoát"
         },
         {
-          "char": "d / t",
-          "reading": "dē / tē",
-          "meaningVi": "Cặp D (không bật) vs T (bật hơi đầu lưỡi)",
-          "meaningEn": "Initials D vs T",
-          "hint": "Đầu lưỡi chạm nướu trên"
+          "char": "m",
+          "reading": "m (âm mũi)",
+          "meaningVi": "Âm hai môi thoát khí qua mũi",
+          "meaningEn": "Nasal consonant /m/",
+          "hint": "Khép môi rung khoang mũi"
         },
         {
           "char": "你好",
-          "reading": "Nǐ hǎo",
-          "meaningVi": "Xin chào (Biến điệu thanh 3: nǐ biến thành ní)",
-          "meaningEn": "Hello (3rd tone sandhi)",
-          "hint": "2 thanh 3 đi liền nhau, chữ đầu đọc thành thanh 2"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Khi hai thanh 3 đi liền nhau như trong '你好' (Nǐ hǎo), âm đầu tiên biến đổi ra sao?",
-          "promptEn": "In tone sandhi, when two 3rd tones meet (e.g. Nǐ hǎo), what happens to the first tone?",
-          "cue": "你好 (Nǐ hǎo)",
-          "correct": "Biến thành thanh 2 (đọc thành Ní hǎo)",
-          "options": [
-            "Biến thành thanh 2 (đọc thành Ní hǎo)",
-            "Biến thành thanh 4",
-            "Giữ nguyên không đổi",
-            "Biến thành thanh nhẹ"
-          ],
-          "explanationVi": "Quy tắc biến điệu: 3 + 3 -> 2 + 3 (Ní hǎo).",
-          "explanationEn": "Third tone sandhi: 3rd + 3rd tone becomes 2nd + 3rd tone."
+          "reading": "nǐ hǎo",
+          "meaningVi": "Xin chào (Quy tắc biến điệu: 2 thanh 3 đi liền thì chữ đầu đọc thanh 2 -> 'ní hǎo')",
+          "meaningEn": "Hello (Tone sandhi: ní hǎo)",
+          "hint": "Biến điệu thanh 3 kinh điển: nǐ hǎo -> ní hǎo"
         },
         {
-          "promptVi": "Điểm khác biệt quyết định giữa thanh mẫu 'b' và 'p' trong Pinyin là gì?",
-          "promptEn": "What is the key distinction between Pinyin 'b' and 'p'?",
-          "cue": "b vs p",
-          "correct": "'b' không bật hơi, 'p' bật hơi cực mạnh",
-          "options": [
-            "'b' không bật hơi, 'p' bật hơi cực mạnh",
-            "'b' dùng mũi, 'p' dùng tai",
-            "Cả hai đều bật hơi như nhau",
-            "'b' là nguyên âm"
-          ],
-          "explanationVi": "Trong Pinyin, p là âm bật hơi (aspirated), b không bật hơi.",
-          "explanationEn": "'p' is strongly aspirated, while 'b' is unaspirated."
-        },
-        {
-          "promptVi": "Từ '你好' mang ý nghĩa gì?",
-          "promptEn": "What does '你好' (Nǐ hǎo) mean?",
-          "cue": "你好",
-          "correct": "Xin chào",
-          "options": [
-            "Xin chào",
-            "Cảm ơn",
-            "Tạm biệt",
-            "Chúc ngủ ngon"
-          ],
-          "explanationVi": "你好 có nghĩa là Xin chào.",
-          "explanationEn": "你好 means Hello."
-        },
-        {
-          "promptVi": "Để kiểm tra xem mình phát âm âm bật hơi 'p' đúng chưa, mẹo hay nhất là gì?",
-          "promptEn": "What is the best trick to check if you aspirate 'p' correctly?",
-          "cue": "p bật hơi",
-          "correct": "Đặt tờ giấy ăn mỏng trước miệng xem giấy có bay mạnh không",
-          "options": [
-            "Đặt tờ giấy ăn mỏng trước miệng xem giấy có bay mạnh không",
-            "Ngậm nước trong miệng",
-            "Nhắm chặt hai mắt",
-            "Nói thật nhỏ"
-          ],
-          "explanationVi": "Luồng khí bật mạnh sẽ làm lay động tờ giấy.",
-          "explanationEn": "Hold a tissue in front of your mouth to feel the air burst."
+          "char": "谢谢",
+          "reading": "xièxie",
+          "meaningVi": "Cảm ơn (Âm mặt lưỡi x và thanh nhẹ ở chữ sau)",
+          "meaningEn": "Thank you",
+          "hint": "Chữ sau đọc nhẹ và ngắn hơn"
         }
       ]
     },
     {
       "id": "zh-stage-3",
       "stageNum": 3,
-      "titleVi": "Ải 3: Bộ Cụm Từ Vàng Giao Tiếp Xã Hội",
-      "titleEn": "Stage 3: Golden Politeness Chunks",
-      "descVi": "Cảm ơn, xin lỗi và ứng xử thanh lịch theo phong cách người bản xứ.",
-      "descEn": "Thank you, apologies, and graceful etiquette in Chinese society.",
-      "bossNameVi": "Bàn Thạch Kim Cang (Stone Golem)",
-      "bossNameEn": "Ancient Stone Golem",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 3: Thanh Mẫu Mặt Lưỡi (J, Q, X) & Lời Tạm Biệt",
+      "titleEn": "Stage 3: Palatal Consonants & Zàijiàn",
+      "descVi": "Chinh phục bộ ba mặt lưỡi j, q, x và câu chào tạm biệt Zàijiàn.",
+      "descEn": "Master palatal initials j, q, x and courteous farewells.",
+      "bossNameVi": "Kim Kê Thần Điêu (Golden Falcon)",
+      "bossNameEn": "Golden Falcon",
       "bossType": "golem",
-      "bossHp": 120,
-      "icon": "🗿",
+      "bossHp": 110,
+      "icon": "🦅",
       "items": [
         {
-          "char": "谢谢",
-          "reading": "Xièxie",
-          "meaningVi": "Cảm ơn (Từ thứ hai đọc thanh nhẹ)",
-          "meaningEn": "Thank you",
-          "hint": "Xiè (thanh 4 dứt khoát) + xie (thanh nhẹ ngắn)"
+          "char": "j",
+          "reading": "ji",
+          "meaningVi": "Mặt lưỡi trên chạm ngạc cứng (Gần giống ch tiếng Việt)",
+          "meaningEn": "Unaspirated palatal /tɕ/",
+          "hint": "Đầu lưỡi hạ xuống răng dưới, mặt lưỡi dâng lên"
         },
         {
-          "char": "不客气",
-          "reading": "Bù kèqi",
-          "meaningVi": "Đừng khách sáo / Không có chi",
-          "meaningEn": "You're welcome",
-          "hint": "Đáp lại lời cảm ơn chuẩn mực nhất"
+          "char": "q",
+          "reading": "qi (bật hơi)",
+          "meaningVi": "Mặt lưỡi bật luồng hơi mạnh",
+          "meaningEn": "Aspirated palatal /tɕʰ/",
+          "hint": "Vị trí như j nhưng tống luồng hơi cực mạnh"
         },
         {
-          "char": "对不起",
-          "reading": "Duìbuqǐ",
-          "meaningVi": "Xin lỗi (Chân thành)",
-          "meaningEn": "I'm sorry",
-          "hint": "Chữ bu ở giữa đọc nhẹ"
+          "char": "x",
+          "reading": "xi",
+          "meaningVi": "Mặt lưỡi xát nhẹ, hơi gió lướt qua kẽ răng",
+          "meaningEn": "Palatal fricative /ɕ/",
+          "hint": "Mặt lưỡi sát ngạc cứng, thổi hơi nhẹ"
         },
         {
-          "char": "没关系",
-          "reading": "Méi guānxi",
-          "meaningVi": "Không sao đâu / Chuyện nhỏ ấy mà",
-          "meaningEn": "It doesn't matter / No problem",
-          "hint": "Đáp lại lời xin lỗi"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Khi ai đó nói '谢谢' (Xièxie) với bạn, câu đáp lịch sự chuẩn xác nhất là gì?",
-          "promptEn": "When someone says 'Xièxie', how do you politely reply?",
-          "cue": "谢谢",
-          "correct": "不客气 (Bù kèqi)",
-          "options": [
-            "不客气 (Bù kèqi)",
-            "对不起 (Duìbuqǐ)",
-            "再见 (Zàijiàn)",
-            "救命 (Jiùmìng)"
-          ],
-          "explanationVi": "Bù kèqi có nghĩa là Đừng khách sáo / Không có chi.",
-          "explanationEn": "Bù kèqi means 'You're welcome'."
-        },
-        {
-          "promptVi": "Khi ai đó nói '对不起' (Xin lỗi), bạn nên đáp lại bằng câu nào?",
-          "promptEn": "When someone apologizes with 'Duìbuqǐ', what do you say?",
-          "cue": "对不起",
-          "correct": "没关系 (Méi guānxi)",
-          "options": [
-            "没关系 (Méi guānxi)",
-            "谢谢 (Xièxie)",
-            "你好 (Nǐ hǎo)",
-            "不行 (Bù xíng)"
-          ],
-          "explanationVi": "Méi guānxi có nghĩa là Không sao đâu.",
-          "explanationEn": "Méi guānxi means 'It's okay / No problem'."
-        },
-        {
-          "promptVi": "Chữ 谢谢 (Cảm ơn) có thanh điệu như thế nào?",
-          "promptEn": "What are the tones of 谢谢 (Xièxie)?",
-          "cue": "谢谢",
-          "correct": "Thanh 4 + Thanh nhẹ",
-          "options": [
-            "Thanh 4 + Thanh nhẹ",
-            "Thanh 1 + Thanh 1",
-            "Thanh 2 + Thanh 3",
-            "Hai thanh 4 bằng nhau"
-          ],
-          "explanationVi": "Chữ thứ hai trong 谢谢 chuyển sang thanh nhẹ.",
-          "explanationEn": "The second syllable is a neutral tone."
-        },
-        {
-          "promptVi": "'没关系' (Méi guānxi) có nghĩa là gì?",
-          "promptEn": "What does 'Méi guānxi' mean?",
-          "cue": "没关系",
-          "correct": "Không sao, không có vấn đề gì",
-          "options": [
-            "Không sao, không có vấn đề gì",
-            "Tạm biệt",
-            "Đắt quá",
-            "Tôi không hiểu"
-          ],
-          "explanationVi": "Méi guānxi nghĩa là Không có hề gì.",
-          "explanationEn": "Méi guānxi means it doesn't matter."
+          "char": "再见",
+          "reading": "zàijiàn",
+          "meaningVi": "Hẹn gặp lại / Tạm biệt (Cả 2 chữ đều mang thanh 4 dứt khoát)",
+          "meaningEn": "Goodbye / See you again",
+          "hint": "Hạ giọng dứt khoát: zài-jiàn"
         }
       ]
     },
     {
       "id": "zh-stage-4",
+      "chapter": 1,
       "stageNum": 4,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
       "titleVi": "Ải 4: Thanh Mẫu Uốn Lưỡi (ZH, CH, SH, R)",
-      "titleEn": "Stage 4: Retroflex Consonants (ZH, CH, SH, R)",
-      "descVi": "Vượt qua thử thách khó khăn nhất của người học tiếng Trung: âm uốn lưỡi chuẩn Bắc Kinh.",
-      "descEn": "Conquer the famous Beijing retroflex sounds: tongue curled back.",
+      "titleEn": "Stage 4: Retroflex Initials (ZH, CH, SH, R)",
+      "descVi": "Đặc trưng tiếng Bắc Kinh: uốn cong đầu lưỡi lên ngạc cứng.",
+      "descEn": "Master the authentic Beijing retroflex initials zh, ch, sh, r.",
       "bossNameVi": "La Sát Dạ Xoa (Shadow Rakshasa)",
-      "bossNameEn": "Shadow Rakshasa Oni",
+      "bossNameEn": "Shadow Rakshasa",
       "bossType": "oni",
-      "bossHp": 140,
+      "bossHp": 125,
       "icon": "👹",
       "items": [
         {
           "char": "zh",
-          "reading": "zhī",
-          "meaningVi": "Thanh mẫu ZH (Uốn đầu lưỡi lên ngạc cứng, không bật hơi)",
-          "meaningEn": "Retroflex ZH (Unaspirated)",
-          "hint": "Đầu lưỡi cong lên vòm miệng trên"
+          "reading": "zhi",
+          "meaningVi": "Đầu lưỡi uốn cong chạm ngạc cứng, không bật hơi",
+          "meaningEn": "Retroflex zh /ʈʂ/",
+          "hint": "Đầu lưỡi cong lên ngạc cứng rồi nhả nhẹ"
         },
         {
           "char": "ch",
-          "reading": "chī",
-          "meaningVi": "Thanh mẫu CH (Uốn đầu lưỡi và BẬT HƠI cực mạnh)",
-          "meaningEn": "Retroflex CH (Aspirated)",
-          "hint": "Như âm 'tr' nhưng bật luồng gió mạnh"
+          "reading": "chi (bật hơi)",
+          "meaningVi": "Đầu lưỡi uốn cong và bật hơi mạnh mẽ",
+          "meaningEn": "Aspirated retroflex ch /ʈʂʰ/",
+          "hint": "Vị trí như zh nhưng bắn luồng hơi mạnh"
         },
         {
           "char": "sh",
-          "reading": "shī",
-          "meaningVi": "Thanh mẫu SH (Uốn đầu lưỡi, tạo luồng gió xát)",
-          "meaningEn": "Retroflex SH (Fricative)",
-          "hint": "Luồng khí lướt qua khe giữa đầu lưỡi và ngạc"
+          "reading": "shi",
+          "meaningVi": "Đầu lưỡi uốn cong xát nhẹ qua ngạc",
+          "meaningEn": "Retroflex sh /ʂ/",
+          "hint": "Đầu lưỡi cong lên, phì hơi gió qua khe"
         },
         {
-          "char": "r",
-          "reading": "rì",
-          "meaningVi": "Thanh mẫu R (Uốn đầu lưỡi và rung dây thanh nhẹ)",
-          "meaningEn": "Retroflex R (Voiced)",
-          "hint": "Khác âm r tiếng Việt, môi hơi mở tự nhiên"
-        }
-      ],
-      "bossQuestions": [
-        {
-          "promptVi": "Điểm khác biệt cốt lõi giữa 'zh' và 'ch' trong tiếng Trung là gì?",
-          "promptEn": "What is the key difference between 'zh' and 'ch'?",
-          "cue": "zh vs ch",
-          "correct": "'zh' không bật hơi, 'ch' bật hơi cực mạnh",
-          "options": [
-            "'zh' không bật hơi, 'ch' bật hơi cực mạnh",
-            "'zh' thè lưỡi, 'ch' cắn môi",
-            "'zh' là nguyên âm",
-            "Không có khác biệt nào"
-          ],
-          "explanationVi": "CH là âm uốn lưỡi có luồng khí bật mạnh.",
-          "explanationEn": "'ch' is strongly aspirated retroflex."
-        },
-        {
-          "promptVi": "Khi phát âm nhóm thanh mẫu ZH, CH, SH, R, đầu lưỡi phải ở vị trí nào?",
-          "promptEn": "Where should the tongue tip be for ZH, CH, SH, R?",
-          "cue": "Vị trí lưỡi",
-          "correct": "Uốn cong lên hướng về phía vòm họng cứng (ngạc cứng)",
-          "options": [
-            "Uốn cong lên hướng về phía vòm họng cứng (ngạc cứng)",
-            "Cắm thẳng xuống sàn miệng",
-            "Kẹp chặt giữa hai hàm răng",
-            "Thè hẳn ra ngoài môi"
-          ],
-          "explanationVi": "Đây là nhóm âm đầu lưỡi sau / uốn lưỡi (retroflex).",
-          "explanationEn": "Curled back toward the hard palate."
-        },
-        {
-          "promptVi": "Từ '吃饭' (Ăn cơm) bắt đầu bằng thanh mẫu nào?",
-          "promptEn": "Which initial does '吃饭' (Chī fàn - eat) begin with?",
-          "cue": "吃饭",
-          "correct": "ch (bật hơi)",
-          "options": [
-            "ch (bật hơi)",
-            "zh",
-            "sh",
-            "z"
-          ],
-          "explanationVi": "Chī fàn bắt đầu bằng âm bật hơi ch.",
-          "explanationEn": "Chī begins with aspirated retroflex ch."
-        },
-        {
-          "promptVi": "Từ '老师' (Lǎoshī - Giáo viên) chứa âm uốn lưỡi nào?",
-          "promptEn": "Which retroflex initial is in '老师' (Lǎoshī)?",
-          "cue": "老师",
-          "correct": "sh",
-          "options": [
-            "sh",
-            "zh",
-            "ch",
-            "r"
-          ],
-          "explanationVi": "Chữ shī bắt đầu bằng thanh mẫu sh.",
-          "explanationEn": "Shī begins with retroflex sh."
+          "char": "老师",
+          "reading": "lǎoshī",
+          "meaningVi": "Thầy giáo / Cô giáo (Thanh 3 lǎo + thanh 1 uốn lưỡi shī)",
+          "meaningEn": "Teacher",
+          "hint": "shī giữ âm uốn lưỡi cao bằng phẳng"
         }
       ]
     },
     {
       "id": "zh-stage-5",
       "stageNum": 5,
-      "titleVi": "Ải 5: Khẩu Ngữ Phố Phường & Giới Trẻ Đương Đại",
-      "titleEn": "Stage 5: Street Slang & Beijing Flavor Final Boss",
-      "descVi": "Chinh phục những từ ngữ cực thịnh hành trên Douyin, Weibo và đời sống phố phường.",
-      "descEn": "Trendy slang and reactive expressions alive on modern Chinese social media.",
+      "chapter": 1,
+      "chapterTitleVi": "Chương 1: Nền tảng Chữ cái & Âm vị",
+      "chapterTitleEn": "Chapter 1: Alphabet & Phonetic Core",
+      "titleVi": "Ải 5: Biến Điệu Khẩu Âm & Vận Mẫu Mũi (AN, ANG, ENG, ONG)",
+      "titleEn": "Stage 5: Nasal Finals & Tone Sandhi Rules",
+      "descVi": "Quy tắc biến điệu của chữ Bù (不) và Yī (一) cùng các âm mũi.",
+      "descEn": "Master tone changes for 'Bu' and 'Yi' plus nasal resonance.",
       "bossNameVi": "Xích Diễm Thần Long (Crimson Dragon)",
-      "bossNameEn": "Crimson Dragon Emperor",
+      "bossNameEn": "Crimson Dragon",
       "bossType": "dragon",
-      "bossHp": 160,
+      "bossHp": 140,
       "icon": "🐉",
       "items": [
         {
-          "char": "太棒了",
-          "reading": "Tài bàng le",
-          "meaningVi": "Tuyệt vời ông mặt trời! / Đỉnh quá!",
-          "meaningEn": "Awesome! / Fantastic!",
-          "hint": "Tài (thanh 4) + bàng (thanh 4) + le (thanh nhẹ)"
+          "char": "ang",
+          "reading": "ang (mũi sau)",
+          "meaningVi": "Vận mẫu mũi sau (Khoang miệng mở rộng, vang ở vòm họng)",
+          "meaningEn": "Back nasal final -ang",
+          "hint": "Lưỡi thụt lùi về sau, rung cuống họng"
         },
         {
-          "char": "算了",
-          "reading": "Suàn le",
-          "meaningVi": "Thôi bỏ đi / Thôi dẹp đi / Thôi xong",
-          "meaningEn": "Forget it / Let it be",
-          "hint": "Câu cửa miệng khi không muốn bận tâm nữa"
+          "char": "eng",
+          "reading": "eng",
+          "meaningVi": "Vận mẫu mũi sau (Khẩu hình nửa mở)",
+          "meaningEn": "Back nasal final -eng",
+          "hint": "Âm vang sâu trong khoang mũi"
         },
         {
-          "char": "加油",
-          "reading": "Jiāyóu",
-          "meaningVi": "Cố lên! / Thêm dầu nào! (Khẩu hiệu cổ vũ số 1)",
-          "meaningEn": "Add oil! / Keep it up!",
-          "hint": "Nghĩa đen là châm dầu/nạp nhiên liệu"
+          "char": "不客气",
+          "reading": "bú kèqi",
+          "meaningVi": "Không cần khách sáo / Đừng ngại (Chữ 不 biến thành thanh 2)",
+          "meaningEn": "You're welcome",
+          "hint": "Bù đứng trước thanh 4 kè thì biến thành bú"
         },
         {
-          "char": "牛逼",
-          "reading": "Niúbī",
-          "meaningVi": "Quá trâu bò / Quá đỉnh cao (Tiếng lóng cực mạnh)",
-          "meaningEn": "Badass / Super awesome (Slang)",
-          "hint": "Thường viết tắt là NB"
+          "char": "中国",
+          "reading": "zhōngguó",
+          "meaningVi": "Trung Quốc (zhōng thanh 1 bằng phẳng, guó thanh 2 đi lên)",
+          "meaningEn": "China",
+          "hint": "zhōng uốn lưỡi nốt Sol + guó dấu sắc"
         }
-      ],
-      "bossQuestions": [
+      ]
+    },
+    {
+      "id": "zh-stage-6",
+      "stageNum": 6,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 6: Mua Sắm, Giá Cả & Mặc Cả Chợ Truyền Thống",
+      "titleEn": "Stage 6: Shopping & Bargaining in Local Markets",
+      "descVi": "Hỏi giá 'Zhège duōshao qián?', kêu đắt 'Tài guì le!' và mặc cả.",
+      "descEn": "Ask prices and bargain like a pro in local Chinese markets.",
+      "bossNameVi": "Kim Giác Đại Vương (Golden Horn King)",
+      "bossNameEn": "Golden Horn King",
+      "bossType": "golem",
+      "bossHp": 155,
+      "icon": "💰",
+      "items": [
         {
-          "promptVi": "Để cổ vũ bạn bè cố lên trong một kỳ thi hay trận đấu, người Trung Quốc hô:",
-          "promptEn": "To cheer someone on in China, what iconic phrase do they shout?",
-          "cue": "Cố lên!",
-          "correct": "加油! (Jiāyóu!)",
-          "options": [
-            "加油! (Jiāyóu!)",
-            "算了! (Suàn le!)",
-            "救命! (Jiùmìng!)",
-            "快走! (Kuài zǒu!)"
-          ],
-          "explanationVi": "Jiāyóu nghĩa đen là châm dầu, nghĩa bóng là Cố lên!",
-          "explanationEn": "Jiāyóu ('add oil') is the premier Chinese cheer."
+          "char": "这个多少钱？",
+          "reading": "zhège duōshao qián?",
+          "meaningVi": "Cái này bao nhiêu tiền vậy ạ?",
+          "meaningEn": "How much is this?",
+          "hint": "Câu hỏi giá kinh điển trong mọi khu chợ"
         },
         {
-          "promptVi": "Khi muốn nói 'Thôi dẹp đi, đừng bận tâm nữa', người bản xứ dùng từ nào?",
-          "promptEn": "Which phrase means 'Forget it / Let it go'?",
-          "cue": "Thôi bỏ đi",
-          "correct": "算了 (Suàn le)",
-          "options": [
-            "算了 (Suàn le)",
-            "太棒了 (Tài bàng le)",
-            "很好 (Hěn hǎo)",
-            "谢谢 (Xièxie)"
-          ],
-          "explanationVi": "Suàn le mang nghĩa Thôi bỏ đi.",
-          "explanationEn": "Suàn le means 'Forget about it'."
+          "char": "太贵了！",
+          "reading": "tài guì le!",
+          "meaningVi": "Đắt quá đi mất! (Kêu lên để bắt đầu mặc cả)",
+          "meaningEn": "Too expensive!",
+          "hint": "Thanh 4 nhấn mạnh biểu cảm ngạc nhiên"
         },
         {
-          "promptVi": "'太棒了' (Tài bàng le) thể hiện cảm xúc gì?",
-          "promptEn": "What emotion does '太棒了' (Tài bàng le) express?",
-          "cue": "太棒了",
-          "correct": "Khen ngợi điều gì đó vô cùng tuyệt vời, xuất sắc",
-          "options": [
-            "Khen ngợi điều gì đó vô cùng tuyệt vời, xuất sắc",
-            "Chê bai đồ ăn dở",
-            "Tức giận khi bị trễ tàu",
-            "Lời xin lỗi chân thành"
-          ],
-          "explanationVi": "Tài bàng le nghĩa là Tuyệt vời quá!",
-          "explanationEn": "Tài bàng le expresses delight / enthusiasm."
+          "char": "便宜一点吧",
+          "reading": "piányi yīdiǎn ba",
+          "meaningVi": "Bớt cho cháu một chút xíu đi mà!",
+          "meaningEn": "Make it a bit cheaper please",
+          "hint": "Trợ từ ba ở cuối câu làm dịu lời đề nghị"
         },
         {
-          "promptVi": "Từ lóng '牛逼' (Niúbī, viết tắt NB) của giới trẻ Trung Quốc mang nghĩa gì?",
-          "promptEn": "What does the popular youth slang '牛逼' (Niúbī / NB) mean?",
-          "cue": "牛逼",
-          "correct": "Cực kỳ đỉnh cao, 'trâu bò', ấn tượng",
-          "options": [
-            "Cực kỳ đỉnh cao, 'trâu bò', ấn tượng",
-            "Con bò đang ăn cỏ",
-            "Rất buồn ngủ",
-            "Món thịt bò xào"
-          ],
-          "explanationVi": "Niúbī là tiếng lóng khen cái gì đó quá đỉnh.",
-          "explanationEn": "Niúbī is very popular slang for badass / awesome."
+          "char": "十块钱",
+          "reading": "shí kuài qián",
+          "meaningVi": "10 Đồng / 10 Tệ (~35.000 VNĐ)",
+          "meaningEn": "10 Yuan / Kuai",
+          "hint": "Khẩu ngữ đời thực hay dùng 'kuài' thay cho 'yuán'"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-7",
+      "stageNum": 7,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 7: Gọi Món, Trà Sữa & Nhà Hàng Trung Hoa",
+      "titleEn": "Stage 7: Ordering Chinese Food & Bubble Tea",
+      "descVi": "Tự tin gọi phục vụ 'Fúwùyuán!', dặn 'Bù yào là' (không cay) và tính tiền.",
+      "descEn": "Order delicious dim sum and customize bubble tea sweetness.",
+      "bossNameVi": "Bếp Thần Thao Thiết (Chef Taotie)",
+      "bossNameEn": "Chef Taotie",
+      "bossType": "oni",
+      "bossHp": 165,
+      "icon": "🥟",
+      "items": [
+        {
+          "char": "服务员！",
+          "reading": "fúwùyuán!",
+          "meaningVi": "Phục vụ ơi! (Cách gọi nhân viên quán chuẩn mực và lịch sự)",
+          "meaningEn": "Waiter / Waitress!",
+          "hint": "Gọi to, rõ ràng và giơ tay mỉm cười"
+        },
+        {
+          "char": "我要点菜",
+          "reading": "wǒ yào diǎncài",
+          "meaningVi": "Tôi muốn gọi món ăn",
+          "meaningEn": "I would like to order",
+          "hint": "diǎncài = điểm thái (chọn món)"
+        },
+        {
+          "char": "不要辣",
+          "reading": "bù yào là",
+          "meaningVi": "Đừng cho cay nhé! / Không ăn cay được đâu!",
+          "meaningEn": "No spicy please!",
+          "hint": "Câu cứu mạng tối thượng cho người không ăn được ớt Tứ Xuyên"
+        },
+        {
+          "char": "买单！",
+          "reading": "mǎidān!",
+          "meaningVi": "Tính tiền giùm tôi với nhé!",
+          "meaningEn": "The bill please!",
+          "hint": "Mǎidān là cụm từ tính tiền ngắn gọn nhất"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-8",
+      "stageNum": 8,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 8: Tàu Điện, Bắt Taxi & Hỏi Đường Phố",
+      "titleEn": "Stage 8: Subway, Taxi & City Directions",
+      "descVi": "Hỏi vị trí ga tàu điện, nhà vệ sinh và chỉ hướng đi.",
+      "descEn": "Take the metro and ask directions smoothly across city blocks.",
+      "bossNameVi": "Trấn Môn Thạch Sư (Guardian Lion)",
+      "bossNameEn": "Guardian Lion",
+      "bossType": "kitsune",
+      "bossHp": 175,
+      "icon": "🚖",
+      "items": [
+        {
+          "char": "地铁站在哪里？",
+          "reading": "dìtiězhàn zài nǎlǐ?",
+          "meaningVi": "Ga tàu điện ngầm nằm ở đâu vậy ạ?",
+          "meaningEn": "Where is the subway station?",
+          "hint": "dìtiě = địa thiết (tàu điện ngầm); nǎlǐ = ở đâu"
+        },
+        {
+          "char": "洗手间",
+          "reading": "xǐshǒujiān",
+          "meaningVi": "Nhà vệ sinh (nghĩa đen: phòng rửa tay)",
+          "meaningEn": "Restroom / Washroom",
+          "hint": "Từ ngữ lịch thiệp nhất để hỏi WC"
+        },
+        {
+          "char": "往右拐",
+          "reading": "wǎng yòu guǎi",
+          "meaningVi": "Rẽ về phía bên tay phải",
+          "meaningEn": "Turn right",
+          "hint": "yòu = phải; zuǒ = trái"
+        },
+        {
+          "char": "一直往前走",
+          "reading": "yīzhí wǎng qián zǒu",
+          "meaningVi": "Cứ đi thẳng mãi về phía trước",
+          "meaningEn": "Walk straight ahead",
+          "hint": "qián = phía trước; zǒu = đi"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-9",
+      "stageNum": 9,
+      "chapter": 2,
+      "chapterTitleVi": "Chương 2: Từ vựng & Cụm từ sống còn",
+      "chapterTitleEn": "Chapter 2: Survival Vocabulary & Chunks",
+      "titleVi": "Ải 9: Cụm Từ Vàng Cảm Thán & Xã Giao Lịch Lãm",
+      "titleEn": "Stage 9: Social Politeness & Emotional Reactions",
+      "descVi": "Phản xạ tự nhiên: 'Méi guānxi', 'Bù kèqi', 'Zhēn de ma?'.",
+      "descEn": "Polite native reactions: no problem, really, good idea.",
+      "bossNameVi": "Hắc Bạch Vô Thường (Yin Yang Sentinels)",
+      "bossNameEn": "Yin Yang Sentinels",
+      "bossType": "golem",
+      "bossHp": 185,
+      "icon": "☯️",
+      "items": [
+        {
+          "char": "没关系",
+          "reading": "méi guānxi",
+          "meaningVi": "Không sao đâu! / Đừng bận tâm nhé!",
+          "meaningEn": "It doesn't matter / No problem",
+          "hint": "Dùng đáp lại khi người khác xin lỗi mình"
+        },
+        {
+          "char": "真的吗？",
+          "reading": "zhēn de ma?",
+          "meaningVi": "Thật thế á?! Có thật không vậy?!",
+          "meaningEn": "Really?! / Are you serious?",
+          "hint": "Lên giọng cuối câu thể hiện ngạc nhiên"
+        },
+        {
+          "char": "好的",
+          "reading": "hǎo de",
+          "meaningVi": "Được rồi / Nhất trí / Ok nhé!",
+          "meaningEn": "Okay / Alright / Sure",
+          "hint": "Cách chốt giao kèo nhanh gọn và thân thiện nhất"
+        },
+        {
+          "char": "太棒了！",
+          "reading": "tài bàng le!",
+          "meaningVi": "Tuyệt vời ông mặt trời! / Đỉnh quá đi!",
+          "meaningEn": "Awesome! / Fantastic!",
+          "hint": "Khen ngợi thành tích hoặc tin vui"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-10",
+      "stageNum": 10,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 10: Làm Quen, Hỏi Thăm & Quét Mã WeChat",
+      "titleEn": "Stage 10: Making Friends & Exchanging WeChat",
+      "descVi": "Hỏi tên, làm quen kết bạn và quét mã kết nối WeChat.",
+      "descEn": "Introduce yourself and connect on WeChat like a local.",
+      "bossNameVi": "Bạch Xà Tinh Anh (White Snake Spirit)",
+      "bossNameEn": "White Snake Spirit",
+      "bossType": "slime",
+      "bossHp": 200,
+      "icon": "🐍",
+      "items": [
+        {
+          "char": "很高兴认识你",
+          "reading": "hěn gāoxìng rènshi nǐ",
+          "meaningVi": "Rất vui mừng khi được làm quen với bạn!",
+          "meaningEn": "Nice to meet you!",
+          "hint": "Nói với sự ấm áp khi bắt tay kết bạn"
+        },
+        {
+          "char": "你叫什么名字？",
+          "reading": "nǐ jiào shénme míngzi?",
+          "meaningVi": "Bạn tên là gì vậy?",
+          "meaningEn": "What is your name?",
+          "hint": "shénme = cái gì; míngzi = tên"
+        },
+        {
+          "char": "加个微信吧",
+          "reading": "jiā ge wēixìn ba",
+          "meaningVi": "Cho mình xin kết bạn WeChat với nhé! (Bắt buộc khi ở Trung Quốc)",
+          "meaningEn": "Let's add each other on WeChat",
+          "hint": "Văn hóa kết nối hàng đầu: giơ mã QR quét nhau"
+        },
+        {
+          "char": "下次再聊",
+          "reading": "xiàcì zài liáo",
+          "meaningVi": "Lần sau chúng mình lại trò chuyện tiếp nhé!",
+          "meaningEn": "Let's talk more next time",
+          "hint": "xiàcì = lần sau; liáo = tán gẫu"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-11",
+      "stageNum": 11,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 11: Khẩu Ngữ Đời Thực & Tiếng Lóng Mạng Xã Hội",
+      "titleEn": "Stage 11: Top Internet Slang & Modern Street Buzzwords",
+      "descVi": "Bắt trend với: 'Gěilì', 'Méiménr', 'Jué le', 'Chàbuduō'.",
+      "descEn": "Sound like a Douyin & Weibo native with viral buzzwords.",
+      "bossNameVi": "Tôn Ngộ Không Chiến Giáp (Mecha Monkey King)",
+      "bossNameEn": "Mecha Monkey King",
+      "bossType": "kitsune",
+      "bossHp": 220,
+      "icon": "🐒",
+      "items": [
+        {
+          "char": "给力",
+          "reading": "gěilì",
+          "meaningVi": "Đỉnh chóp! / Đỉnh cao! / Tiếp thêm sức mạnh!",
+          "meaningEn": "Awesome / Powerful / Effective",
+          "hint": "Nghĩa đen: tiếp lực; nghĩa bóng: siêu tuyệt vời"
+        },
+        {
+          "char": "绝了！",
+          "reading": "jué le!",
+          "meaningVi": "Hết nước chấm! / Tuyệt đỉnh không còn lời nào diễn tả!",
+          "meaningEn": "Incredible! / Beyond words!",
+          "hint": "Khen ngợi món ăn hoặc trang phục xuất sắc"
+        },
+        {
+          "char": "没门儿",
+          "reading": "méiménr",
+          "meaningVi": "Không có cửa đâu nhé! / Đừng có mơ! (Từ chối dứt khoát)",
+          "meaningEn": "No way / Out of the question",
+          "hint": "Uốn lưỡi âm r ở cuối: méi-ménr"
+        },
+        {
+          "char": "差不多",
+          "reading": "chàbuduō",
+          "meaningVi": "Cũng hòm hòm rồi / Gần như vậy / Tương đối thôi",
+          "meaningEn": "Almost / Good enough / Close enough",
+          "hint": "Triết lý sống nổi tiếng: 'Chàbuduō jiù xíng le!'"
+        }
+      ]
+    },
+    {
+      "id": "zh-stage-12",
+      "stageNum": 12,
+      "chapter": 3,
+      "chapterTitleVi": "Chương 3: Giao tiếp Thực chiến & Tiếng lóng",
+      "chapterTitleEn": "Chapter 3: Native Street Slang & Fluency",
+      "titleVi": "Ải 12: Đỉnh Cao Giao Tiếp Trung Hoa (Final Boss)",
+      "titleEn": "Stage 12: Master Chinese Fluency Challenge",
+      "descVi": "Trận chiến tối thượng chứng minh khả năng đàm thoại Hoa ngữ lưu loát!",
+      "descEn": "The ultimate comprehensive test of fluency across all 3 chapters!",
+      "bossNameVi": "Kim Giác Hoàng Long (Imperial Golden Dragon)",
+      "bossNameEn": "Imperial Golden Dragon",
+      "bossType": "dragon",
+      "bossHp": 250,
+      "icon": "👑",
+      "items": [
+        {
+          "char": "辛苦了",
+          "reading": "xīnkǔ le",
+          "meaningVi": "Hôm nay bạn vất vả nhiều rồi! (Lời cảm ơn đồng nghiệp)",
+          "meaningEn": "Thank you for your hard work!",
+          "hint": "Nói khi kết thúc công việc cùng đối tác"
+        },
+        {
+          "char": "加油！",
+          "reading": "jiāyóu!",
+          "meaningVi": "Cố lên nhé! (Lời động viên phổ biến số một)",
+          "meaningEn": "Cheer up! / Keep fighting!",
+          "hint": "Nghĩa đen: châm thêm dầu vào đèn để cháy sáng"
+        },
+        {
+          "char": "没问题",
+          "reading": "méi wèntí",
+          "meaningVi": "Không vấn đề gì cả! Chắc chắn ổn thỏa!",
+          "meaningEn": "No problem at all!",
+          "hint": "Dùng khẳng định sự tin cậy khi nhận nhiệm vụ"
+        },
+        {
+          "char": "祝你一路顺风",
+          "reading": "zhù nǐ yīlù shùnfēng",
+          "meaningVi": "Chúc bạn thuận buồm xuôi gió trên mọi nẻo đường!",
+          "meaningEn": "Wishing you a smooth and safe journey!",
+          "hint": "Lời chúc tốt đẹp nhất tiễn bạn lên đường"
         }
       ]
     }
   ]
 };
-QUEST_CAMPAIGNS['ja'] = QUEST_CAMPAIGNS['ja-JP'];
-QUEST_CAMPAIGNS['en'] = QUEST_CAMPAIGNS['en-US'];
-QUEST_CAMPAIGNS['ko'] = QUEST_CAMPAIGNS['ko-KR'];
-QUEST_CAMPAIGNS['zh'] = QUEST_CAMPAIGNS['zh-CN'];
-
-if (typeof window !== 'undefined') {
-  window.QUEST_CAMPAIGNS = QUEST_CAMPAIGNS;
-}
-if (typeof global !== 'undefined') {
-  global.QUEST_CAMPAIGNS = QUEST_CAMPAIGNS;
-  global.LINGUA_DATA = LINGUA_DATA;
-  global.LANG_DATA = LINGUA_DATA;
-}
-
-// ============================================================================
-// STROKE ORDER DATABASE & SHOP CATALOG
-// ============================================================================
 const STROKE_DATABASE = {
   // Hiragana Core
   'あ': [
@@ -20082,9 +20626,11 @@ if (typeof window !== 'undefined') {
   window.STROKE_DATABASE = STROKE_DATABASE;
   window.getStrokeData = getStrokeData;
   window.SHOP_ITEMS = SHOP_ITEMS;
+  window.QUEST_CAMPAIGNS = QUEST_CAMPAIGNS;
 }
 if (typeof global !== 'undefined') {
   global.STROKE_DATABASE = STROKE_DATABASE;
   global.getStrokeData = getStrokeData;
   global.SHOP_ITEMS = SHOP_ITEMS;
+  global.QUEST_CAMPAIGNS = QUEST_CAMPAIGNS;
 }

@@ -2805,7 +2805,7 @@ body {
 .char-giant {
   font-size: clamp(1.6rem, 2.8vw, 2.5rem);
   font-weight: 800;
-  color: #fff;
+  color: var(--text-highlight, #0f172a);
   line-height: 1.1;
   white-space: nowrap;
   word-break: keep-all;
@@ -2854,7 +2854,7 @@ body {
   margin-bottom: 4px;
   line-height: 1.35;
   word-break: break-word;
-  color: #fff;
+  color: var(--text-highlight, #0f172a);
 }
 
 .inspect-type {
@@ -2936,12 +2936,14 @@ body {
 }
 
 .mouth-tips {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.45;
+  font-size: 0.84rem;
+  color: #f1f5f9;
+  background: rgba(15, 23, 42, 0.85);
+  line-height: 1.5;
   margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border-glass);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Audio Player Controls */
@@ -2971,9 +2973,16 @@ body {
 }
 
 .btn-play-sound.slow {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-glass);
+  background: var(--bg-card, #ffffff);
+  border: 2px solid var(--border-tactile, #cbd5e1);
+  border-bottom: 3px solid var(--border-tactile, #cbd5e1);
+  color: var(--text-highlight, #0f172a);
   box-shadow: none;
+}
+
+.btn-play-sound.slow:hover {
+  background: var(--bg-surface, #f8fafc);
+  transform: translateY(-1px);
 }
 
 .btn-play-sound:hover {
@@ -3652,7 +3661,7 @@ body {
 }
 
 /* ==========================================================================
-   Tab 4: Real-time Online Community (Firebase RTDB)
+   Tab 4: Real-time Online Community (Online Community)
    ========================================================================== */
 
 .community-layout {
@@ -4895,8 +4904,8 @@ body {
   position: relative !important;
   width: 100% !important;
   max-width: 520px !important;
-  min-height: 850px !important;
-  height: 850px !important;
+  min-height: 2350px !important;
+  height: 2350px !important;
   margin: 0 auto !important;
 }
 
@@ -4904,8 +4913,8 @@ body {
   position: relative !important;
   z-index: 5 !important;
   width: 100% !important;
-  min-height: 850px !important;
-  height: 850px !important;
+  min-height: 2350px !important;
+  height: 2350px !important;
 }
 
 .quest-svg-line {
@@ -4926,10 +4935,17 @@ body {
 }
 
 .quest-node-item.node-1 { top: 60px !important;  left: 50% !important; }
-.quest-node-item.node-2 { top: 220px !important; left: 75% !important; }
-.quest-node-item.node-3 { top: 380px !important; left: 25% !important; }
-.quest-node-item.node-4 { top: 540px !important; left: 70% !important; }
-.quest-node-item.node-5 { top: 700px !important; left: 50% !important; }
+.quest-node-item.node-2 { top: 230px !important; left: 80% !important; }
+.quest-node-item.node-3 { top: 410px !important; left: 20% !important; }
+.quest-node-item.node-4 { top: 590px !important; left: 80% !important; }
+.quest-node-item.node-5 { top: 770px !important; left: 50% !important; }
+.quest-node-item.node-6 { top: 1000px !important; left: 20% !important; }
+.quest-node-item.node-7 { top: 1180px !important; left: 80% !important; }
+.quest-node-item.node-8 { top: 1360px !important; left: 25% !important; }
+.quest-node-item.node-9 { top: 1540px !important; left: 50% !important; }
+.quest-node-item.node-10 { top: 1770px !important; left: 80% !important; }
+.quest-node-item.node-11 { top: 1950px !important; left: 20% !important; }
+.quest-node-item.node-12 { top: 2150px !important; left: 50% !important; }
 
 .quest-node-btn {
   width: 88px !important;
@@ -7034,4 +7050,551 @@ body {
   background: rgba(245, 158, 11, 0.12);
   border-color: #f59e0b;
   color: #b45309;
+}
+
+/* ==========================================================================
+   ENHANCED GAMEPLAY, ANATOMICAL SVG, VOICE AUDIO & DRILL ADDITIONS
+   ========================================================================== */
+
+/* 1. Daily Endless Drill CTA & Modal */
+.campaign-daily-drill-cta {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-tactile, #cbd5e1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.drill-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drill-icon-sparkle {
+  font-size: 1.8rem;
+  animation: floatBounce 2.5s ease-in-out infinite;
+}
+
+.drill-cta-title {
+  font-weight: 800;
+  font-size: 0.98rem;
+  color: var(--text-highlight, #0f172a);
+}
+
+.drill-cta-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted, #64748b);
+  margin-top: 2px;
+}
+
+.btn-daily-drill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 0.92rem;
+  border: 2px solid #047857;
+  border-bottom: 4px solid #065f46;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-daily-drill:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.btn-daily-drill:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+/* Daily Drill Modal Dialog */
+.daily-drill-card {
+  max-width: 580px;
+  width: 95%;
+  background: var(--bg-card, #ffffff);
+  border: 3px solid var(--border-tactile, #cbd5e1);
+  border-bottom: 6px solid var(--border-tactile, #94a3b8);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  color: var(--text-highlight, #0f172a);
+}
+
+.daily-drill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.daily-drill-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.daily-drill-title-wrap h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text-highlight, #0f172a);
+}
+
+.drill-count-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+  border-radius: 20px;
+  border: 1px solid #10b981;
+}
+
+.daily-drill-progress-bar {
+  height: 10px;
+  background: var(--bg-surface, #f1f5f9);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-tactile, #cbd5e1);
+}
+
+.daily-drill-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.daily-drill-question-box {
+  background: var(--bg-surface, #f8fafc);
+  border: 2px solid var(--border-tactile, #cbd5e1);
+  border-radius: 18px;
+  padding: 24px 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.drill-prompt-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.drill-prompt-target {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--text-highlight, #0f172a);
+  margin-bottom: 12px;
+}
+
+.drill-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--primary-color, #e63946);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.drill-audio-btn:hover {
+  transform: translateY(-2px);
+}
+
+.daily-drill-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.drill-option-btn {
+  background: var(--bg-card, #ffffff);
+  border: 2px solid var(--border-tactile, #cbd5e1);
+  border-bottom: 4px solid var(--border-tactile, #94a3b8);
+  border-radius: 14px;
+  padding: 14px 12px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-highlight, #0f172a);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.drill-option-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--primary-color, #e63946);
+}
+
+.drill-option-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+.drill-option-btn.correct {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #047857 !important;
+  border-bottom-color: #065f46 !important;
+}
+
+.drill-option-btn.wrong {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #b91c1c !important;
+  border-bottom-color: #991b1b !important;
+}
+
+.daily-drill-summary {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.drill-summary-trophy {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  animation: floatBounce 2s ease-in-out infinite;
+}
+
+.drill-summary-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--text-highlight, #0f172a);
+  margin-bottom: 8px;
+}
+
+.drill-summary-meta {
+  color: var(--text-muted, #64748b);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.drill-summary-rewards {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.drill-reward-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.drill-reward-box.xp {
+  background: rgba(234, 179, 8, 0.15);
+  color: #b45309;
+  border: 2px solid #eab308;
+}
+
+.drill-reward-box.coins {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+  border: 2px solid #f59e0b;
+}
+
+/* 2. Anatomical Mouth & Vocal Tract Diagram */
+.mouth-visualizer-container {
+  background: rgba(15, 23, 42, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.anatomical-diagram-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#articulationSvg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 12px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.articulatory-focus-group {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.focus-glow-ring {
+  animation: pulseGlow 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% { r: 12; opacity: 0.8; stroke-width: 2.5; }
+  50% { r: 18; opacity: 0.2; stroke-width: 4; }
+  100% { r: 12; opacity: 0.8; stroke-width: 2.5; }
+}
+
+/* 3. Smart Canvas Handwriting Verification */
+.btn-verify-writing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-card, #ffffff);
+  border: 2px solid var(--border-tactile, #cbd5e1);
+  border-bottom: 3px solid var(--border-tactile, #94a3b8);
+  border-radius: 12px;
+  color: var(--text-highlight, #0f172a);
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-verify-writing:hover {
+  background: var(--bg-surface, #f8fafc);
+  transform: translateY(-1px);
+}
+
+.btn-verify-writing:active {
+  transform: translateY(1px);
+  border-bottom-width: 2px;
+}
+
+.writing-score-feedback {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.writing-score-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  border: 1.5px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.writing-score-pill.pass {
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+  border-color: #10b981;
+}
+
+.writing-score-pill.retry {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+  border-color: #f59e0b;
+}
+
+.writing-score-pill.low {
+  background: rgba(239, 68, 68, 0.15);
+  color: #b91c1c;
+  border-color: #ef4444;
+}
+
+.btn-link-skip {
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #64748b);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px 8px;
+  transition: color 0.15s ease;
+}
+
+.btn-link-skip:hover {
+  color: var(--text-highlight, #0f172a);
+}
+
+/* 4. Community Chat Voice Recording & Audio Playback */
+.btn-real-voice {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.btn-real-voice.recording {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #b91c1c !important;
+  animation: pulseVoiceRec 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseVoiceRec {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.voice-recording-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid #ef4444;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #b91c1c;
+}
+
+.rec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: blinkRec 0.8s ease-in-out infinite;
+}
+
+@keyframes blinkRec {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Voice message audio bubble */
+.voice-audio-bubble {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1.5px solid rgba(99, 102, 241, 0.3);
+  border-radius: 16px;
+  margin-top: 4px;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.btn-play-voice {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary-color, #e63946);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn-play-voice:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.voice-waveform-track {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.voice-waveform-bar {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.voice-waveform-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--primary-color, #e63946);
+  border-radius: 999px;
+  transition: width 0.1s linear;
+}
+
+.voice-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted, #64748b);
+}
+
+/* 5. Quest Chapter Dividers */
+.quest-chapter-divider {
+  width: 100%;
+  max-width: 480px;
+  margin: 28px auto 16px;
+  padding: 10px 16px;
+  background: var(--bg-card, #ffffff);
+  border: 2px solid var(--border-tactile, #cbd5e1);
+  border-bottom: 4px solid var(--border-tactile, #94a3b8);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 2;
+}
+
+.chapter-badge-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chapter-number-pill {
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 8px;
+  background: var(--primary-color, #e63946);
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.chapter-name-text {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-highlight, #0f172a);
+}
+
+.chapter-status-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted, #64748b);
 }

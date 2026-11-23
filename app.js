@@ -74,7 +74,7 @@
     mediaStream: null,
     waveformAnimId: null,
 
-    // Tab 4 Community (Firebase RTDB)
+    // Tab 4 Community (Online Community)
     rtdb: null,
     rtdbConnected: false,
     currentCommunityRoom: 'ja', // 'ja' | 'en' | 'ko' | 'zh'
@@ -452,6 +452,24 @@
     DOM.profilePin = document.getElementById('profilePin');
     DOM.btnAnimateStrokesTab1 = document.getElementById('btnAnimateStrokesTab1');
     DOM.btnAnimateStrokesQuest = document.getElementById('btnAnimateStrokesQuest');
+
+    // Daily Drill Elements
+    DOM.btnStartDailyDrill = document.getElementById('btnStartDailyDrill');
+    DOM.dailyDrillModalOverlay = document.getElementById('dailyDrillModalOverlay');
+    DOM.btnCloseDailyDrill = document.getElementById('btnCloseDailyDrill');
+    DOM.btnDailyDrillAudio = document.getElementById('btnDailyDrillAudio');
+    DOM.btnFinishDailyDrill = document.getElementById('btnFinishDailyDrill');
+
+    // Handwriting Verification Elements
+    DOM.btnCheckWritingTab1 = document.getElementById('btnCheckWritingTab1');
+    DOM.btnCheckWritingQuest = document.getElementById('btnCheckWritingQuest');
+    DOM.questWritingScorePill = document.getElementById('questWritingScorePill');
+    DOM.btnSkipWritingQuest = document.getElementById('btnSkipWritingQuest');
+
+    // Community Voice & Audio
+    DOM.btnVoiceRecord = document.getElementById('btnVoiceRecord');
+    DOM.voiceRecordingTimer = document.getElementById('voiceRecordingTimer');
+    DOM.voiceTimerSec = document.getElementById('voiceTimerSec');
 
     // Quest 4-Step Elements
     DOM.questStepDot4 = document.getElementById('questStepDot4');
@@ -1032,6 +1050,89 @@
       if (this.currentChar) {
         this.drawStrokeGuides(this.currentChar);
       }
+    }
+
+    checkHandwritingAccuracy(targetChar) {
+      if (!this.canvas || !this.ctx) return { score: 100, pass: true, message: 'Rất tốt!' };
+      const char = targetChar || this.currentChar;
+      if (!char) return { score: 100, pass: true, message: 'Rất tốt!' };
+
+      const W = this.canvas.width;
+      const H = this.canvas.height;
+
+      // Offscreen canvas for template comparison
+      const offCanvas = document.createElement('canvas');
+      offCanvas.width = W;
+      offCanvas.height = H;
+      const offCtx = offCanvas.getContext('2d');
+      if (!offCtx) return { score: 80, pass: true, message: 'Nét viết tốt!' };
+
+      offCtx.fillStyle = '#000000';
+      offCtx.textAlign = 'center';
+      offCtx.textBaseline = 'middle';
+      offCtx.font = `bold ${Math.round(W * 0.65)}px "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", sans-serif`;
+      offCtx.fillText(char, W / 2, H / 2);
+
+      const templateData = offCtx.getImageData(0, 0, W, H).data;
+      const userData = this.ctx.getImageData(0, 0, W, H).data;
+
+      let templatePixels = 0;
+      let userPixels = 0;
+      let matchPixels = 0;
+
+      const step = 2;
+      let uMinX = W, uMaxX = 0, uMinY = H, uMaxY = 0;
+
+      for (let y = 0; y < H; y += step) {
+        const row = y * W * 4;
+        for (let x = 0; x < W; x += step) {
+          const idx = row + x * 4;
+          const isTemplate = templateData[idx + 3] > 40;
+          const isUser = userData[idx + 3] > 40;
+
+          if (isTemplate) templatePixels++;
+          if (isUser) {
+            userPixels++;
+            if (x < uMinX) uMinX = x;
+            if (x > uMaxX) uMaxX = x;
+            if (y < uMinY) uMinY = y;
+            if (y > uMaxY) uMaxY = y;
+          }
+          if (isTemplate && isUser) matchPixels++;
+        }
+      }
+
+      if (userPixels < 25) {
+        return {
+          score: 0,
+          pass: false,
+          message: STATE.uiLang === 'vi' ? 'Bạn chưa viết chữ lên bảng!' : 'No strokes drawn on canvas!'
+        };
+      }
+
+      // Coverage with dilation factor
+      const coverage = Math.min(1.0, (matchPixels / Math.max(1, templatePixels)) * 1.55);
+      const overdraw = userPixels / Math.max(1, templatePixels);
+      let penalty = 0;
+      if (overdraw > 2.2) penalty += Math.min(40, (overdraw - 2.2) * 20);
+
+      const span = Math.max(uMaxX - uMinX, uMaxY - uMinY);
+      if (span < W * 0.22) penalty += 30;
+
+      const rawScore = Math.round((coverage * 100) - penalty);
+      const score = Math.max(5, Math.min(99, rawScore));
+      const pass = score >= 55;
+
+      let message = '';
+      if (score >= 80) {
+        message = STATE.uiLang === 'vi' ? 'Xuất sắc! Nét viết rất chuẩn xác.' : 'Excellent! Highly accurate strokes.';
+      } else if (score >= 55) {
+        message = STATE.uiLang === 'vi' ? 'Đạt chuẩn! Nét vẽ đã đúng hướng.' : 'Passed! Good stroke flow.';
+      } else {
+        message = STATE.uiLang === 'vi' ? 'Chưa đạt 55%. Hãy đồ theo các chấm số ①②③ nhé!' : 'Below 55%. Trace numbered dots ①②③!';
+      }
+
+      return { score, pass, message };
     }
 
     setGuide(char) {
@@ -2631,28 +2732,76 @@
       DOM.campaignCurrentLangLabel.textContent = themeTitles[themeKey].name;
     }
 
+    const totalStages = stages.length || 12;
     const completedCount = currentProg.completed ? currentProg.completed.length : 0;
-    const progressPercent = Math.min(100, Math.round((completedCount / 5) * 100));
+    const progressPercent = Math.min(100, Math.round((completedCount / totalStages) * 100));
     if (DOM.campaignProgressText) {
       DOM.campaignProgressText.textContent = STATE.uiLang === 'vi' 
-        ? `Tiến độ: ${completedCount} / 5 ải (Đạt ${progressPercent}%)` 
-        : `Progress: ${completedCount} / 5 stages (${progressPercent}%)`;
+        ? `Tiến độ: ${completedCount} / ${totalStages} ải (Đạt ${progressPercent}%)` 
+        : `Progress: ${completedCount} / ${totalStages} stages (${progressPercent}%)`;
     }
     if (DOM.campaignTrackFill) {
-      DOM.campaignTrackFill.style.width = `${Math.max(12, progressPercent)}%`;
+      DOM.campaignTrackFill.style.width = `${Math.max(6, progressPercent)}%`;
     }
 
     // Render Quest Nodes into #questNodesList
     if (!DOM.questNodesList) return;
     DOM.questNodesList.innerHTML = '';
 
+    // Node coordinate map along winding 2400px SVG path
+    const nodeCoords = [
+      { top: 60, left: 50 },
+      { top: 230, left: 80 },
+      { top: 410, left: 20 },
+      { top: 590, left: 80 },
+      { top: 770, left: 50 },
+      { top: 1000, left: 20 },
+      { top: 1180, left: 80 },
+      { top: 1360, left: 25 },
+      { top: 1540, left: 50 },
+      { top: 1770, left: 80 },
+      { top: 1950, left: 20 },
+      { top: 2150, left: 50 }
+    ];
+
+    const chapterDefinitions = [
+      { atIdx: 0, top: 0, vi: 'Chương 1: Nền tảng Chữ cái & Âm vị', en: 'Chapter 1: Alphabet & Phonetics' },
+      { atIdx: 5, top: 890, vi: 'Chương 2: Từ vựng & Cụm từ sống còn', en: 'Chapter 2: Essential Chunks & Everyday Words' },
+      { atIdx: 9, top: 1660, vi: 'Chương 3: Giao tiếp Thực chiến & Tiếng lóng', en: 'Chapter 3: Native Conversations & Slang' }
+    ];
+
     stages.forEach((stage, idx) => {
+      // Insert Chapter Divider if matching index
+      const chapter = chapterDefinitions.find(c => c.atIdx === idx);
+      if (chapter) {
+        const divEl = document.createElement('div');
+        divEl.className = 'quest-chapter-divider tactile-card';
+        divEl.style.position = 'absolute';
+        divEl.style.top = `${chapter.top}px`;
+        divEl.style.left = '50%';
+        divEl.style.transform = 'translateX(-50%)';
+        const chName = STATE.uiLang === 'vi' ? chapter.vi : chapter.en;
+        divEl.innerHTML = `
+          <div class="chapter-badge-title">
+            <span class="chapter-number-pill">${idx === 0 ? 'CH 1' : idx === 5 ? 'CH 2' : 'CH 3'}</span>
+            <span class="chapter-name-text">${escapeHtml(chName)}</span>
+          </div>
+          <span class="chapter-status-tag">${idx < completedCount ? '⭐ Đang học' : '🔒 Mục tiêu'}</span>
+        `;
+        DOM.questNodesList.appendChild(divEl);
+      }
+
       const stageNum = stage.stageNum || idx + 1;
       const isCompleted = currentProg.completed && currentProg.completed.includes(stageNum);
       const isUnlocked = isCompleted || (stageNum <= currentProg.unlocked);
 
       const nodeWrap = document.createElement('div');
       nodeWrap.className = `quest-node-item node-${stageNum} ${isCompleted ? 'completed' : isUnlocked ? 'unlocked' : 'locked'}`;
+
+      if (nodeCoords[idx]) {
+        nodeWrap.style.top = `${nodeCoords[idx].top}px`;
+        nodeWrap.style.left = `${nodeCoords[idx].left}%`;
+      }
 
       const btn = document.createElement('button');
       btn.type = 'button';
@@ -2772,6 +2921,205 @@
       BattleArena.stopLoop();
     }
   }
+
+
+  // ==========================================================================
+  // Daily Endless Drill Manager (Infinite Random Mixed Practice)
+  // ==========================================================================
+  const DailyDrillManager = {
+    questions: [],
+    currentIndex: 0,
+    score: 0,
+    totalQuestions: 10,
+    answered: false,
+
+    start() {
+      this.currentIndex = 0;
+      this.score = 0;
+      this.answered = false;
+      this.questions = this.generateQuestions();
+
+      if (!this.questions.length) {
+        showToast(STATE.uiLang === 'vi' ? 'Chưa đủ dữ liệu ôn tập cho ngôn ngữ này!' : 'Not enough drill data for this language!', 'warning');
+        return;
+      }
+
+      const modal = document.getElementById('dailyDrillModalOverlay');
+      if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.add('open');
+      }
+
+      const questionBox = document.getElementById('dailyDrillQuestionBox');
+      const summaryCard = document.getElementById('dailyDrillSummaryCard');
+      if (questionBox) questionBox.style.display = 'block';
+      if (summaryCard) summaryCard.style.display = 'none';
+
+      this.renderQuestion();
+    },
+
+    close() {
+      const modal = document.getElementById('dailyDrillModalOverlay');
+      if (modal) {
+        modal.style.display = 'none';
+        modal.classList.remove('open');
+      }
+    },
+
+    generateQuestions() {
+      const currentLang = STATE.currentLang;
+      const langObj = (typeof LANG_DATA !== 'undefined' && (LANG_DATA[currentLang] || LANG_DATA[getThemeKey(currentLang)])) || {};
+      const alphaData = langObj.alphabet || [];
+      const phraseData = langObj.phrases || [];
+      const exprData = langObj.expressions || [];
+
+      let pool = [];
+      if (Array.isArray(alphaData)) {
+        alphaData.forEach(sub => {
+          if (sub.items && Array.isArray(sub.items)) {
+            pool.push(...sub.items);
+          }
+        });
+      }
+      if (Array.isArray(phraseData)) {
+        phraseData.forEach(sub => {
+          if (sub.items && Array.isArray(sub.items)) {
+            pool.push(...sub.items);
+          }
+        });
+      }
+      if (Array.isArray(exprData)) {
+        exprData.forEach(sub => {
+          if (sub.items && Array.isArray(sub.items)) {
+            pool.push(...sub.items);
+          }
+        });
+      }
+
+      if (pool.length < 4) {
+        pool = [
+          { char: 'あ', reading: 'a', meaningVi: 'Âm a', meaningEn: 'Sound a' },
+          { char: 'い', reading: 'i', meaningVi: 'Âm i', meaningEn: 'Sound i' },
+          { char: 'う', reading: 'u', meaningVi: 'Âm u', meaningEn: 'Sound u' },
+          { char: 'え', reading: 'e', meaningVi: 'Âm e', meaningEn: 'Sound e' },
+          { char: 'お', reading: 'o', meaningVi: 'Âm o', meaningEn: 'Sound o' }
+        ];
+      }
+
+      const shuffled = [...pool].sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, Math.min(this.totalQuestions, shuffled.length));
+
+      return selected.map(item => {
+        const correctText = STATE.uiLang === 'vi' 
+          ? (item.meaningVi || item.meaning_vi || item.meaning || item.reading || item.romaji || item.char)
+          : (item.meaningEn || item.meaning_en || item.meaning || item.reading || item.romaji || item.char);
+
+        const distractors = pool
+          .filter(p => p !== item)
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 3)
+          .map(p => STATE.uiLang === 'vi' 
+            ? (p.meaningVi || p.meaning_vi || p.meaning || p.reading || p.romaji || p.char)
+            : (p.meaningEn || p.meaning_en || p.meaning || p.reading || p.romaji || p.char)
+          );
+
+        const options = Array.from(new Set([correctText, ...distractors])).sort(() => 0.5 - Math.random());
+
+        return {
+          prompt: item.char || item.text || item.phrase || item.word || '',
+          reading: item.reading || item.romaji || item.ipa || '',
+          correctText,
+          options
+        };
+      });
+    },
+
+    renderQuestion() {
+      if (this.currentIndex >= this.questions.length) {
+        this.showSummary();
+        return;
+      }
+
+      this.answered = false;
+      const q = this.questions[this.currentIndex];
+
+      const countBadge = document.getElementById('dailyDrillCountBadge');
+      if (countBadge) countBadge.textContent = `${this.currentIndex + 1} / ${this.questions.length}`;
+
+      const progressFill = document.getElementById('dailyDrillProgressFill');
+      if (progressFill) {
+        const pct = (this.currentIndex / this.questions.length) * 100;
+        progressFill.style.width = `${pct}%`;
+      }
+
+      const promptTarget = document.getElementById('dailyDrillPromptTarget');
+      if (promptTarget) promptTarget.textContent = q.prompt;
+
+      const audioBtn = document.getElementById('btnDailyDrillAudio');
+      if (audioBtn) {
+        audioBtn.onclick = () => {
+          playTargetLanguageAudio(q.prompt);
+        };
+      }
+
+      const optionsContainer = document.getElementById('dailyDrillOptions');
+      if (optionsContainer) {
+        optionsContainer.innerHTML = '';
+        q.options.forEach(opt => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'drill-option-btn';
+          btn.textContent = opt;
+
+          btn.addEventListener('click', () => {
+            if (this.answered) return;
+            this.answered = true;
+
+            const isCorrect = opt === q.correctText;
+            if (isCorrect) {
+              btn.classList.add('correct');
+              this.score++;
+              SoundFX.playCorrect();
+            } else {
+              btn.classList.add('wrong');
+              SoundFX.playWrong();
+              optionsContainer.querySelectorAll('.drill-option-btn').forEach(b => {
+                if (b.textContent === q.correctText) b.classList.add('correct');
+              });
+            }
+
+            setTimeout(() => {
+              this.currentIndex++;
+              this.renderQuestion();
+            }, 750);
+          });
+
+          optionsContainer.appendChild(btn);
+        });
+      }
+    },
+
+    showSummary() {
+      const questionBox = document.getElementById('dailyDrillQuestionBox');
+      const summaryCard = document.getElementById('dailyDrillSummaryCard');
+      const progressFill = document.getElementById('dailyDrillProgressFill');
+      if (progressFill) progressFill.style.width = '100%';
+
+      if (questionBox) questionBox.style.display = 'none';
+      if (summaryCard) summaryCard.style.display = 'block';
+
+      const scoreMeta = document.getElementById('dailyDrillScoreMeta');
+      if (scoreMeta) {
+        scoreMeta.textContent = STATE.uiLang === 'vi'
+          ? `Bạn đã hoàn thành xuất sắc: Đúng ${this.score} / ${this.questions.length} câu hỏi!`
+          : `Great job! You got ${this.score} / ${this.questions.length} questions correct!`;
+      }
+
+      awardXP(30, 'Ôn tập hàng ngày');
+      awardCoins(25, 'Ôn tập hàng ngày');
+      SoundFX.playVictory();
+    }
+  };
 
   // Warm-up Quiz (Step 3) Engine
   const WarmupQuiz = {
@@ -3929,6 +4277,30 @@
       DOM.inspectMouthTip.textContent = tip || (STATE.uiLang === 'vi' ? 'Thả lỏng quai hàm, phát âm rõ ràng và dứt khoát.' : 'Relax your jaw and pronounce clearly.');
     }
 
+    // Anatomical vocal tract articulation focus position
+    const focusGroup = document.getElementById('articulatoryFocusGroup');
+    const focusTag = document.getElementById('articulatoryFocusTag');
+    if (focusGroup) {
+      let pos = [216, 126];
+      let tag = STATE.uiLang === 'vi' ? 'Vòm họng & Dây thanh' : 'Vocal tract & Glottis';
+      const str = ((item.romaji || '') + ' ' + (item.ipa || '') + ' ' + (item.char || '')).toLowerCase();
+      if (/[mpb]/.test(str)) {
+        pos = [126, 92];
+        tag = STATE.uiLang === 'vi' ? 'Hai môi (Bilabial)' : 'Lips (Bilabial)';
+      } else if (/[tdsznrl]|ts|th/.test(str)) {
+        pos = [144, 82];
+        tag = STATE.uiLang === 'vi' ? 'Đầu lưỡi & Nướu (Alveolar)' : 'Tongue & Alveolar';
+      } else if (/sh|ch|[jy]|zh/.test(str)) {
+        pos = [178, 76];
+        tag = STATE.uiLang === 'vi' ? 'Vòm cứng (Palatal)' : 'Hard palate (Palatal)';
+      } else if (/[kg]|ng/.test(str)) {
+        pos = [208, 86];
+        tag = STATE.uiLang === 'vi' ? 'Ngạc mềm / Cuống lưỡi (Velar)' : 'Soft palate (Velar)';
+      }
+      focusGroup.setAttribute('transform', `translate(${pos[0]}, ${pos[1]})`);
+      if (focusTag) focusTag.textContent = tag;
+    }
+
     // Example words
     if (DOM.exampleWordsList) {
       DOM.exampleWordsList.innerHTML = '';
@@ -4761,15 +5133,14 @@
   }
 
   // ==========================================================================
-  // Tab 4: Real-time Online Community (Firebase RTDB)
+  // Tab 4: Real-time Online Community (Online Community)
   // ==========================================================================
 
   function initCommunityFirebase() {
     try {
       if (typeof firebase === 'undefined' || !firebase) {
-        console.warn('Firebase SDK not loaded.');
         if (DOM.rtdbStatusText) {
-          DOM.rtdbStatusText.textContent = STATE.uiLang === 'vi' ? 'Chế độ ngoại tuyến (Firebase SDK không khả dụng)' : 'Offline mode (Firebase SDK unavailable)';
+          DOM.rtdbStatusText.textContent = STATE.uiLang === 'vi' ? '⚪ Chế độ ngoại tuyến' : '⚪ Offline mode';
         }
         return;
       }
@@ -4788,8 +5159,8 @@
 
         if (DOM.rtdbStatusText) {
           DOM.rtdbStatusText.textContent = isConnected
-            ? (STATE.uiLang === 'vi' ? 'Đã kết nối Firebase RTDB' : 'Connected to Firebase RTDB')
-            : (STATE.uiLang === 'vi' ? 'Mất kết nối RTDB...' : 'RTDB Disconnected...');
+            ? (STATE.uiLang === 'vi' ? '🟢 Phòng học trực tuyến' : '🟢 Online Classroom')
+            : (STATE.uiLang === 'vi' ? '⚪ Đang kết nối lại...' : '⚪ Reconnecting...');
         }
 
         if (isConnected) {
@@ -4801,7 +5172,7 @@
       setupRoomCounts();
       attachRoomChatListener(STATE.currentCommunityRoom);
     } catch (err) {
-      console.warn('Firebase RTDB init error:', err);
+      console.warn('Online Community init error:', err);
       STATE.rtdbConnected = false;
       if (DOM.rtdbStatusText) {
         DOM.rtdbStatusText.textContent = STATE.uiLang === 'vi' ? 'Chế độ ngoại tuyến' : 'Offline mode';
@@ -4938,35 +5309,98 @@
     const frameClass = msg.equippedFrame ? `user-avatar-framed ${msg.equippedFrame}` : '';
     const titleTag = msg.equippedTitle ? `<span style="font-size:0.7rem; background:rgba(230,57,70,0.1); border:1px solid rgba(230,57,70,0.3); border-radius:4px; padding:1px 6px; margin-left:4px; font-weight:700; color:var(--primary-color,#e63946);">${escapeHtml(msg.equippedTitle)}</span>` : '';
 
-    bubble.innerHTML = `
-      <div class="bubble-sender-row">
-        <span style="display:inline-flex; align-items:center; gap:6px;">
-          <span class="${frameClass}" style="width:24px; height:24px; font-size:0.95rem; display:inline-flex; align-items:center; justify-content:center;">${msg.avatar || '🦊'}</span>
-          <strong>${msg.nickname || 'Learner'}</strong>
-          ${titleTag}
-        </span>
-        <span>•</span>
-        <span>${timeStr}</span>
-      </div>
-      <div class="bubble-text">${escapeHtml(msg.text)}</div>
-      <div class="bubble-actions">
-        <button type="button" class="btn-bubble-tts" title="Nghe phát âm">🔊</button>
-      </div>
-    `;
+    if (msg.type === 'voice' && msg.audioData) {
+      const durationStr = `${msg.duration || 3}s`;
+      bubble.innerHTML = `
+        <div class="bubble-sender-row">
+          <span style="display:inline-flex; align-items:center; gap:6px;">
+            <span class="${frameClass}" style="width:24px; height:24px; font-size:0.95rem; display:inline-flex; align-items:center; justify-content:center;">${msg.avatar || '🦊'}</span>
+            <strong>${msg.nickname || 'Learner'}</strong>
+            ${titleTag}
+          </span>
+          <span>•</span>
+          <span>${timeStr}</span>
+        </div>
+        <div class="voice-audio-bubble">
+          <button type="button" class="btn-play-voice" title="Nghe tin nhắn thoại">▶</button>
+          <div class="voice-waveform-track">
+            <div class="voice-waveform-bar">
+              <div class="voice-waveform-fill"></div>
+            </div>
+            <div class="voice-meta-row">
+              <span>🎙️ Tin nhắn thoại</span>
+              <span class="voice-duration">${durationStr}</span>
+            </div>
+          </div>
+        </div>
+      `;
 
-    // TTS button on chat bubble
-    const ttsBtn = bubble.querySelector('.btn-bubble-tts');
-    ttsBtn.addEventListener('click', () => {
-      const langMap = { ja: 'ja-JP', en: 'en-US', ko: 'ko-KR', zh: 'zh-CN' };
-      speakText(msg.text, langMap[STATE.currentCommunityRoom] || 'ja-JP', 1.0);
-    });
+      const playBtn = bubble.querySelector('.btn-play-voice');
+      const waveFill = bubble.querySelector('.voice-waveform-fill');
+      let currentAudio = null;
+
+      playBtn.addEventListener('click', () => {
+        if (currentAudio && !currentAudio.paused) {
+          currentAudio.pause();
+          playBtn.textContent = '▶';
+          return;
+        }
+
+        try {
+          currentAudio = new Audio(msg.audioData);
+          playBtn.textContent = '⏸';
+
+          currentAudio.ontimeupdate = () => {
+            if (currentAudio.duration) {
+              const pct = (currentAudio.currentTime / currentAudio.duration) * 100;
+              if (waveFill) waveFill.style.width = `${pct}%`;
+            }
+          };
+
+          currentAudio.onended = () => {
+            playBtn.textContent = '▶';
+            if (waveFill) waveFill.style.width = '0%';
+          };
+
+          currentAudio.play().catch(err => {
+            console.warn('Audio play error:', err);
+            playBtn.textContent = '▶';
+          });
+        } catch (e) {
+          console.warn('Audio error:', e);
+          playBtn.textContent = '▶';
+        }
+      });
+    } else {
+      bubble.innerHTML = `
+        <div class="bubble-sender-row">
+          <span style="display:inline-flex; align-items:center; gap:6px;">
+            <span class="${frameClass}" style="width:24px; height:24px; font-size:0.95rem; display:inline-flex; align-items:center; justify-content:center;">${msg.avatar || '🦊'}</span>
+            <strong>${msg.nickname || 'Learner'}</strong>
+            ${titleTag}
+          </span>
+          <span>•</span>
+          <span>${timeStr}</span>
+        </div>
+        <div class="bubble-text">${escapeHtml(msg.text || '')}</div>
+        <div class="bubble-actions">
+          <button type="button" class="btn-bubble-tts" title="Nghe phát âm">🔊</button>
+        </div>
+      `;
+
+      const ttsBtn = bubble.querySelector('.btn-bubble-tts');
+      ttsBtn.addEventListener('click', () => {
+        const langMap = { ja: 'ja-JP', en: 'en-US', ko: 'ko-KR', zh: 'zh-CN' };
+        speakText(msg.text, langMap[STATE.currentCommunityRoom] || 'ja-JP', 1.0);
+      });
+    }
 
     DOM.chatStream.appendChild(bubble);
     DOM.chatStream.scrollTop = DOM.chatStream.scrollHeight;
   }
 
   function sendChatMessage() {
-    if (!STATE.rtdb || !DOM.chatTextInput) return;
+    if (!DOM.chatTextInput) return;
     const text = DOM.chatTextInput.value.trim();
     if (!text) return;
 
@@ -4975,64 +5409,141 @@
       nickname: STATE.userProfile.nickname,
       avatar: STATE.userProfile.avatar,
       text: text,
-      timestamp: firebase.database.ServerValue.TIMESTAMP
+      equippedTitle: typeof getEquippedTitleName === 'function' ? getEquippedTitleName() : '',
+      equippedFrame: typeof getEquippedFrameId === 'function' ? getEquippedFrameId() : '',
+      timestamp: (typeof firebase !== 'undefined' && firebase.database) ? firebase.database.ServerValue.TIMESTAMP : Date.now()
     };
 
-    STATE.rtdb.ref(`/rooms/${STATE.currentCommunityRoom}/messages`).push(messageData);
     DOM.chatTextInput.value = '';
+
+    if (STATE.rtdb && STATE.rtdbConnected) {
+      STATE.rtdb.ref(`/rooms/${STATE.currentCommunityRoom}/messages`).push(messageData)
+        .catch(err => {
+          console.warn('Firebase push failed, rendering locally:', err);
+          renderChatMessageBubble({ ...messageData, timestamp: Date.now() });
+        });
+    } else {
+      renderChatMessageBubble({ ...messageData, timestamp: Date.now() });
+    }
   }
+
+  let mediaVoiceRecorder = null;
+  let voiceAudioChunks = [];
+  let voiceRecordTimerId = null;
+  let voiceRecordSeconds = 0;
+  let isRecordingRealVoice = false;
 
   function initChatVoiceDictation() {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SpeechRecognition) return;
-
-    STATE.chatDictationRecognition = new SpeechRecognition();
-    STATE.chatDictationRecognition.continuous = false;
-    STATE.chatDictationRecognition.interimResults = false;
-
-    STATE.chatDictationRecognition.onstart = () => {
-      STATE.isChatDictating = true;
-      if (DOM.btnVoiceDictate) DOM.btnVoiceDictate.classList.add('recording');
-      showToast(STATE.uiLang === 'vi' ? 'Đang nghe tin nhắn của bạn...' : 'Listening to your voice...');
-    };
-
-    STATE.chatDictationRecognition.onresult = (event) => {
-      if (event.results && event.results.length > 0) {
-        const text = event.results[0][0].transcript;
-        if (DOM.chatTextInput) {
-          DOM.chatTextInput.value = (DOM.chatTextInput.value + ' ' + text).trim();
-          DOM.chatTextInput.focus();
-        }
-      }
-    };
-
-    STATE.chatDictationRecognition.onerror = () => {
-      stopChatDictation();
-    };
-
-    STATE.chatDictationRecognition.onend = () => {
-      stopChatDictation();
-    };
+    // Replaced by Real Audio Voice Recording
+    const btnRecord = document.getElementById('btnVoiceRecord') || DOM.btnVoiceRecord;
+    if (btnRecord) {
+      btnRecord.addEventListener('click', toggleRealVoiceRecording);
+    }
   }
 
-  function toggleChatVoiceDictation() {
-    if (!STATE.chatDictationRecognition) {
-      showToast(STATE.uiLang === 'vi' ? 'Trình duyệt chưa hỗ trợ nhận diện giọng nói.' : 'Speech recognition not supported.');
+  async function toggleRealVoiceRecording() {
+    const btnRecord = document.getElementById('btnVoiceRecord') || DOM.btnVoiceRecord;
+    const timerWrap = document.getElementById('voiceRecordingTimer') || DOM.voiceRecordingTimer;
+    const timerSec = document.getElementById('voiceTimerSec') || DOM.voiceTimerSec;
+
+    if (isRecordingRealVoice) {
+      if (mediaVoiceRecorder && mediaVoiceRecorder.state !== 'inactive') {
+        mediaVoiceRecorder.stop();
+      }
       return;
     }
 
-    if (STATE.isChatDictating) {
-      STATE.chatDictationRecognition.stop();
-    } else {
-      const langMap = { ja: 'ja-JP', en: 'en-US', ko: 'ko-KR', zh: 'zh-CN' };
-      STATE.chatDictationRecognition.lang = langMap[STATE.currentCommunityRoom] || 'ja-JP';
-      STATE.chatDictationRecognition.start();
+    try {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        showToast(STATE.uiLang === 'vi' ? 'Trình duyệt chưa hỗ trợ thu âm qua Micro.' : 'Microphone recording not supported on this browser.', 'warning');
+        return;
+      }
+
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      voiceAudioChunks = [];
+      voiceRecordSeconds = 0;
+      isRecordingRealVoice = true;
+
+      if (btnRecord) btnRecord.classList.add('recording');
+      if (timerWrap) timerWrap.style.display = 'inline-flex';
+      if (timerSec) timerSec.textContent = '0:00';
+
+      mediaVoiceRecorder = new MediaRecorder(stream);
+      mediaVoiceRecorder.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) {
+          voiceAudioChunks.push(e.data);
+        }
+      };
+
+      mediaVoiceRecorder.onstop = () => {
+        clearInterval(voiceRecordTimerId);
+        isRecordingRealVoice = false;
+        if (btnRecord) btnRecord.classList.remove('recording');
+        if (timerWrap) timerWrap.style.display = 'none';
+
+        stream.getTracks().forEach(t => t.stop());
+
+        if (!voiceAudioChunks.length || voiceRecordSeconds < 1) {
+          showToast(STATE.uiLang === 'vi' ? 'Bản ghi âm quá ngắn.' : 'Recording too short.', 'info');
+          return;
+        }
+
+        const audioBlob = new Blob(voiceAudioChunks, { type: 'audio/webm' });
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          sendVoiceAudioMessage(reader.result, voiceRecordSeconds);
+        };
+        reader.readAsDataURL(audioBlob);
+      };
+
+      mediaVoiceRecorder.start(250);
+
+      voiceRecordTimerId = setInterval(() => {
+        voiceRecordSeconds++;
+        const displaySec = voiceRecordSeconds < 10 ? `0:0${voiceRecordSeconds}` : `0:${voiceRecordSeconds}`;
+        if (timerSec) timerSec.textContent = displaySec;
+
+        if (voiceRecordSeconds >= 10) {
+          if (mediaVoiceRecorder && mediaVoiceRecorder.state !== 'inactive') {
+            mediaVoiceRecorder.stop();
+          }
+        }
+      }, 1000);
+
+      showToast(STATE.uiLang === 'vi' ? '🎙️ Đang ghi âm (tối đa 10s)... Bấm lại để gửi!' : '🎙️ Recording voice (max 10s)... Click again to send!');
+    } catch (err) {
+      console.warn('Microphone error:', err);
+      showToast(STATE.uiLang === 'vi' ? 'Không thể truy cập Microphone để ghi âm.' : 'Cannot access microphone.', 'warning');
+      isRecordingRealVoice = false;
+      if (btnRecord) btnRecord.classList.remove('recording');
+      if (timerWrap) timerWrap.style.display = 'none';
+      if (voiceRecordTimerId) clearInterval(voiceRecordTimerId);
     }
   }
 
-  function stopChatDictation() {
-    STATE.isChatDictating = false;
-    if (DOM.btnVoiceDictate) DOM.btnVoiceDictate.classList.remove('recording');
+  function sendVoiceAudioMessage(base64Audio, duration) {
+    const messageData = {
+      senderId: STATE.userProfile.userId,
+      nickname: STATE.userProfile.nickname,
+      avatar: STATE.userProfile.avatar,
+      type: 'voice',
+      audioData: base64Audio,
+      duration: duration,
+      equippedTitle: typeof getEquippedTitleName === 'function' ? getEquippedTitleName() : '',
+      equippedFrame: typeof getEquippedFrameId === 'function' ? getEquippedFrameId() : '',
+      timestamp: (typeof firebase !== 'undefined' && firebase.database) ? firebase.database.ServerValue.TIMESTAMP : Date.now()
+    };
+
+    if (STATE.rtdb && STATE.rtdbConnected) {
+      STATE.rtdb.ref(`/rooms/${STATE.currentCommunityRoom}/messages`).push(messageData)
+        .catch(err => {
+          console.warn('Voice send error, local render:', err);
+          renderChatMessageBubble({ ...messageData, timestamp: Date.now() });
+        });
+    } else {
+      renderChatMessageBubble({ ...messageData, timestamp: Date.now() });
+    }
+    showToast(STATE.uiLang === 'vi' ? 'Đã gửi tin nhắn thoại thành công! 🎙️' : 'Voice message sent! 🎙️', 'success');
   }
 
   function selectCommunityRoom(room) {
@@ -5712,6 +6223,80 @@
       DOM.btnAnimateStrokesQuest.addEventListener('click', () => {
         if (questWritingPadInstance) questWritingPadInstance.animateStrokes();
         SoundFX.playClick();
+      });
+    }
+
+    // Daily Endless Drill bindings
+    if (DOM.btnStartDailyDrill) {
+      DOM.btnStartDailyDrill.addEventListener('click', () => {
+        DailyDrillManager.start();
+        SoundFX.playClick();
+      });
+    }
+    if (DOM.btnCloseDailyDrill) {
+      DOM.btnCloseDailyDrill.addEventListener('click', () => {
+        DailyDrillManager.close();
+      });
+    }
+    if (DOM.btnFinishDailyDrill) {
+      DOM.btnFinishDailyDrill.addEventListener('click', () => {
+        DailyDrillManager.close();
+      });
+    }
+
+    // Handwriting Verification bindings
+    if (DOM.btnCheckWritingTab1) {
+      DOM.btnCheckWritingTab1.addEventListener('click', () => {
+        if (!tab1WritingPadInstance) return;
+        const char = STATE.selectedSoundItem ? STATE.selectedSoundItem.char : '';
+        const res = tab1WritingPadInstance.checkHandwritingAccuracy(char);
+        if (res.pass) {
+          awardXP(5, 'Luyện viết Tab 1');
+          SoundFX.playCorrect();
+          showToast(`✅ ${res.message} (${res.score}%)`, 'success');
+        } else {
+          SoundFX.playWrong();
+          showToast(`⚡ ${res.message} (${res.score}%)`, 'info');
+        }
+      });
+    }
+
+    if (DOM.btnCheckWritingQuest) {
+      DOM.btnCheckWritingQuest.addEventListener('click', () => {
+        if (!questWritingPadInstance) return;
+        const item = CURRENT_QUEST_STAGE && CURRENT_QUEST_STAGE.items ? CURRENT_QUEST_STAGE.items[CURRENT_QUEST_CHAR_INDEX] : null;
+        const char = item ? item.char : '';
+        const res = questWritingPadInstance.checkHandwritingAccuracy(char);
+
+        if (DOM.questWritingScorePill) {
+          DOM.questWritingScorePill.style.display = 'inline-flex';
+          DOM.questWritingScorePill.textContent = `Điểm nét viết: ${res.score}% • ${res.message}`;
+          DOM.questWritingScorePill.className = `writing-score-pill ${res.pass ? 'pass' : (res.score >= 35 ? 'retry' : 'low')}`;
+        }
+
+        if (res.pass) {
+          if (DOM.btnQuestGoStep3) {
+            DOM.btnQuestGoStep3.disabled = false;
+            DOM.btnQuestGoStep3.classList.add('pulse-action');
+          }
+          awardXP(5, 'Luyện viết Ải');
+          SoundFX.playCorrect();
+          showToast(`🎉 Xuất sắc! Mở khóa Bước Khởi động (+5 XP)!`, 'success');
+        } else {
+          SoundFX.playWrong();
+          showToast(res.message, 'info');
+        }
+      });
+    }
+
+    if (DOM.btnSkipWritingQuest) {
+      DOM.btnSkipWritingQuest.addEventListener('click', () => {
+        if (DOM.btnQuestGoStep3) {
+          DOM.btnQuestGoStep3.disabled = false;
+        }
+        switchQuestStep(3);
+        SoundFX.playClick();
+        showToast(STATE.uiLang === 'vi' ? 'Đã bỏ qua bước viết. Sang Khởi động!' : 'Skipped writing step. Moving to Warm-up!', 'info');
       });
     }
 
