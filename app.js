@@ -77,7 +77,7 @@
     // Tab 4 Community (Online Community)
     rtdb: null,
     rtdbConnected: false,
-    currentCommunityRoom: 'ja', // 'ja' | 'en' | 'ko' | 'zh'
+    currentCommunityRoom: getThemeKey(getSafeStorage('lingua_selected_lang', 'ja-JP')), // 'ja' | 'en' | 'ko' | 'zh'
     currentPresenceRef: null,
     roomMessageRef: null,
     chatDictationRecognition: null,
@@ -130,9 +130,21 @@
         equippedTitle: 'title-novice'
       };
     })(),
-    friends: JSON.parse(localStorage.getItem('lingua_friends') || '[]'),
-    weakSpots: JSON.parse(localStorage.getItem('lingua_weak_spots') || '[]'),
-    bookmarks: JSON.parse(localStorage.getItem('lingua_bookmarks') || '[]'),
+    friends: (function () {
+      try {
+        return JSON.parse(localStorage.getItem('lingua_friends') || '[]');
+      } catch (e) { return []; }
+    })(),
+    weakSpots: (function () {
+      try {
+        return JSON.parse(localStorage.getItem('lingua_weak_spots') || '[]');
+      } catch (e) { return []; }
+    })(),
+    bookmarks: (function () {
+      try {
+        return JSON.parse(localStorage.getItem('lingua_bookmarks') || '[]');
+      } catch (e) { return []; }
+    })(),
 
     // Gamification (Duolingo & Renshuu inspired)
     gamification: (function () {
@@ -1047,9 +1059,6 @@
       if (!this.ctx || !this.canvas) return;
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.hasDrawn = false;
-      if (this.currentChar) {
-        this.drawStrokeGuides(this.currentChar);
-      }
     }
 
     checkHandwritingAccuracy(targetChar) {
@@ -1129,7 +1138,7 @@
       } else if (score >= 55) {
         message = STATE.uiLang === 'vi' ? 'Đạt chuẩn! Nét vẽ đã đúng hướng.' : 'Passed! Good stroke flow.';
       } else {
-        message = STATE.uiLang === 'vi' ? 'Chưa đạt 55%. Hãy đồ theo các chấm số ①②③ nhé!' : 'Below 55%. Trace numbered dots ①②③!';
+        message = STATE.uiLang === 'vi' ? 'Chưa đạt 55%. Hãy đồ theo nét chữ mờ trên bảng nhé!' : 'Below 55%. Trace the character watermark on the pad!';
       }
 
       return { score, pass, message };
@@ -1142,7 +1151,6 @@
       }
       if (this.ctx && this.canvas) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.drawStrokeGuides(this.currentChar);
       }
     }
 
@@ -1161,192 +1169,25 @@
     }
 
     drawStrokeGuides(char) {
-      if (!this.ctx || !this.canvas || !char) return;
-      const strokeData = typeof getStrokeData === 'function' ? getStrokeData(char) : null;
-      if (!strokeData || !strokeData.length) return;
-
-      const W = this.canvas.width;
-      const H = this.canvas.height;
-
-      strokeData.forEach((stroke, idx) => {
-        if (!stroke || stroke.length < 2) return;
-
-        // 1. Draw dashed guide path
-        this.ctx.save();
-        this.ctx.setLineDash([5, 5]);
-        this.ctx.lineWidth = 3;
-        this.ctx.strokeStyle = 'rgba(225, 29, 72, 0.45)';
-        this.ctx.lineCap = 'round';
-        this.ctx.lineJoin = 'round';
-        this.ctx.beginPath();
-        const startX = (stroke[0][0] / 100) * W;
-        const startY = (stroke[0][1] / 100) * H;
-        this.ctx.moveTo(startX, startY);
-
-        for (let i = 1; i < stroke.length; i++) {
-          const px = (stroke[i][0] / 100) * W;
-          const py = (stroke[i][1] / 100) * H;
-          this.ctx.lineTo(px, py);
-        }
-        this.ctx.stroke();
-
-        // 2. Draw directional arrow near start/mid of stroke
-        const p1X = (stroke[1][0] / 100) * W;
-        const p1Y = (stroke[1][1] / 100) * H;
-        const angle = Math.atan2(p1Y - startY, p1X - startX);
-        const midX = (startX + p1X) / 2;
-        const midY = (startY + p1Y) / 2;
-        const arrowLen = 7;
-
-        this.ctx.setLineDash([]);
-        this.ctx.fillStyle = 'rgba(225, 29, 72, 0.7)';
-        this.ctx.beginPath();
-        this.ctx.moveTo(midX + Math.cos(angle) * arrowLen, midY + Math.sin(angle) * arrowLen);
-        this.ctx.lineTo(
-          midX + Math.cos(angle + 2.5) * arrowLen,
-          midY + Math.sin(angle + 2.5) * arrowLen
-        );
-        this.ctx.lineTo(
-          midX + Math.cos(angle - 2.5) * arrowLen,
-          midY + Math.sin(angle - 2.5) * arrowLen
-        );
-        this.ctx.closePath();
-        this.ctx.fill();
-
-        // 3. Draw numbered starting circle (①, ②, ③...)
-        this.ctx.beginPath();
-        this.ctx.arc(startX, startY, 11, 0, Math.PI * 2);
-        this.ctx.fillStyle = '#e11d48';
-        this.ctx.shadowColor = 'rgba(225, 29, 72, 0.6)';
-        this.ctx.shadowBlur = 4;
-        this.ctx.fill();
-        this.ctx.shadowBlur = 0;
-        this.ctx.strokeStyle = '#ffffff';
-        this.ctx.lineWidth = 1.5;
-        this.ctx.stroke();
-
-        this.ctx.fillStyle = '#ffffff';
-        this.ctx.font = 'bold 11px sans-serif';
-        this.ctx.textAlign = 'center';
-        this.ctx.textBaseline = 'middle';
-        this.ctx.fillText(String(idx + 1), startX, startY);
-
-        this.ctx.restore();
-      });
+      // Inaccurate vector overlays removed in favor of authentic font watermark
     }
 
     animateStrokes(onComplete) {
-      if (!this.ctx || !this.canvas || !this.currentChar) return;
-      const strokeData = typeof getStrokeData === 'function' ? getStrokeData(this.currentChar) : null;
-      if (!strokeData || !strokeData.length) return;
-
-      this.cancelAnimation();
-      this.isAnimating = true;
-
-      // Clear canvas to start fresh animation
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-      const W = this.canvas.width;
-      const H = this.canvas.height;
-      let strokeIndex = 0;
-      let segmentIndex = 0;
-      let progress = 0;
-      const speed = 0.045; // interpolation step per frame
-
-      // Keep previously completed strokes drawn
-      const completedStrokes = [];
-
-      const animateFrame = () => {
-        if (!this.isAnimating) return;
-
-        // Clear canvas for next frame
-        this.ctx.clearRect(0, 0, W, H);
-
-        // Re-draw all fully completed strokes
-        this.ctx.save();
-        this.ctx.lineWidth = 6;
-        this.ctx.lineCap = 'round';
-        this.ctx.lineJoin = 'round';
-        this.ctx.strokeStyle = '#e11d48';
-        this.ctx.shadowColor = 'rgba(225, 29, 72, 0.4)';
-        this.ctx.shadowBlur = 4;
-
-        completedStrokes.forEach(st => {
-          this.ctx.beginPath();
-          this.ctx.moveTo(st[0][0], st[0][1]);
-          for (let i = 1; i < st.length; i++) {
-            this.ctx.lineTo(st[i][0], st[i][1]);
-          }
-          this.ctx.stroke();
-        });
-
-        // Draw current animating stroke
-        const currentStroke = strokeData[strokeIndex];
-        if (currentStroke && currentStroke.length >= 2) {
-          this.ctx.beginPath();
-          const startPtX = (currentStroke[0][0] / 100) * W;
-          const startPtY = (currentStroke[0][1] / 100) * H;
-          this.ctx.moveTo(startPtX, startPtY);
-
-          // Draw full previous segments of this stroke
-          for (let i = 1; i <= segmentIndex; i++) {
-            const px = (currentStroke[i][0] / 100) * W;
-            const py = (currentStroke[i][1] / 100) * H;
-            this.ctx.lineTo(px, py);
-          }
-
-          // Interpolate current segment
-          const pA_X = (currentStroke[segmentIndex][0] / 100) * W;
-          const pA_Y = (currentStroke[segmentIndex][1] / 100) * H;
-          const pB_X = (currentStroke[segmentIndex + 1][0] / 100) * W;
-          const pB_Y = (currentStroke[segmentIndex + 1][1] / 100) * H;
-
-          const curX = pA_X + (pB_X - pA_X) * progress;
-          const curY = pA_Y + (pB_Y - pA_Y) * progress;
-          this.ctx.lineTo(curX, curY);
-          this.ctx.stroke();
-
-          // Draw animated brush tip glow
-          this.ctx.beginPath();
-          this.ctx.arc(curX, curY, 6, 0, Math.PI * 2);
-          this.ctx.fillStyle = '#f59e0b';
-          this.ctx.shadowColor = '#f59e0b';
-          this.ctx.shadowBlur = 8;
-          this.ctx.fill();
-        }
-
-        this.ctx.restore();
-
-        // Advance progress
-        progress += speed;
-        if (progress >= 1) {
-          progress = 0;
-          segmentIndex++;
-          if (segmentIndex >= strokeData[strokeIndex].length - 1) {
-            // Completed current stroke
-            const renderedStroke = strokeData[strokeIndex].map(pt => [(pt[0] / 100) * W, (pt[1] / 100) * H]);
-            completedStrokes.push(renderedStroke);
-
-            strokeIndex++;
-            segmentIndex = 0;
-
-            if (strokeIndex >= strokeData.length) {
-              // Finished all strokes!
-              this.isAnimating = false;
-              setTimeout(() => {
-                this.ctx.clearRect(0, 0, W, H);
-                this.drawStrokeGuides(this.currentChar);
-                if (typeof onComplete === 'function') onComplete();
-              }, 400);
-              return;
-            }
-          }
-        }
-
-        this.animId = requestAnimationFrame(animateFrame);
-      };
-
-      this.animId = requestAnimationFrame(animateFrame);
+      if (this.watermarkEl) {
+        this.watermarkEl.classList.remove('hide');
+        this.watermarkEl.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        this.watermarkEl.style.opacity = '0.3';
+        this.watermarkEl.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.watermarkEl.style.opacity = '0.9';
+          this.watermarkEl.style.transform = 'scale(1.05)';
+          setTimeout(() => {
+            this.watermarkEl.style.opacity = '';
+            this.watermarkEl.style.transform = '';
+            if (typeof onComplete === 'function') onComplete();
+          }, 400);
+        }, 300);
+      }
     }
   }
 
@@ -2765,9 +2606,9 @@
     ];
 
     const chapterDefinitions = [
-      { atIdx: 0, top: 0, vi: 'Chương 1: Nền tảng Chữ cái & Âm vị', en: 'Chapter 1: Alphabet & Phonetics' },
-      { atIdx: 5, top: 890, vi: 'Chương 2: Từ vựng & Cụm từ sống còn', en: 'Chapter 2: Essential Chunks & Everyday Words' },
-      { atIdx: 9, top: 1660, vi: 'Chương 3: Giao tiếp Thực chiến & Tiếng lóng', en: 'Chapter 3: Native Conversations & Slang' }
+      { atIdx: 0, top: -45, vi: 'Chương 1: Nền tảng Chữ cái & Âm vị', en: 'Chapter 1: Alphabet & Phonetics' },
+      { atIdx: 5, top: 885, vi: 'Chương 2: Từ vựng & Cụm từ sống còn', en: 'Chapter 2: Essential Chunks & Everyday Words' },
+      { atIdx: 9, top: 1655, vi: 'Chương 3: Giao tiếp Thực chiến & Tiếng lóng', en: 'Chapter 3: Native Conversations & Slang' }
     ];
 
     stages.forEach((stage, idx) => {
@@ -3399,6 +3240,9 @@
     renderLangDropdownMenu();
     toggleLanguageDropdown(false);
 
+    // Auto-sync community room to active language
+    selectCommunityRoom(getThemeKey(langCode));
+
     // Re-render Tab content AND update Tab 3 immediately!
     renderActiveTab();
     renderTabLab();
@@ -3624,6 +3468,10 @@
       if (found) return STATE.uiLang === 'vi' ? found.nameVi : found.nameEn;
     }
     return STATE.uiLang === 'vi' ? 'Tân thủ' : 'Novice';
+  }
+
+  function getEquippedFrameId() {
+    return (STATE.inventory && STATE.inventory.equippedFrame) ? STATE.inventory.equippedFrame : 'frame-default';
   }
 
   function updateGamificationUI() {
@@ -4230,86 +4078,14 @@
   }
 
   // ==========================================================================
-  // Friendly Front-View Cartoon Mouth Visualizer Engine
+  // Pronunciation Guide Card Engine
   // ==========================================================================
   function updateCartoonMouth(item) {
-    if (!item) return;
-
-    const cavity = document.getElementById('cartoonMouthCavity');
-    const outerLips = document.getElementById('cartoonOuterLips');
-    const tongue = document.getElementById('cartoonTongue');
-    const lowerTeeth = document.getElementById('cartoonLowerTeeth');
-
-    const tagLip = document.getElementById('mouthTagLip');
-    const tagTongue = document.getElementById('mouthTagTongue');
-    const tagAir = document.getElementById('mouthTagAir');
-    const waveLabel = document.getElementById('miniSoundwaveLabel');
-
-    const str = ((item.romaji || '') + ' ' + (item.ipa || '') + ' ' + (item.char || '')).toLowerCase();
-
-    if (/[mpb]/.test(str)) {
-      // Bilabial: Closed lips
-      if (cavity) cavity.setAttribute('d', 'M 60 75 Q 120 74 180 75 Q 120 76 60 75 Z');
-      if (outerLips) outerLips.setAttribute('d', 'M 55 75 Q 90 71 120 73 Q 150 71 185 75 Q 150 82 120 81 Q 90 82 55 75 Z');
-      if (tongue) tongue.setAttribute('d', 'M 90 80 Q 120 78 150 80 Q 135 84 120 84 Q 105 84 90 80 Z');
-      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0');
-
-      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Hai môi khép chặt' : 'Lips pressed together';
-      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Thả lỏng đáy hàm' : 'Resting low';
-      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Tích khí bật dứt khoát' : 'Plosive / Nasal burst';
-      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Âm môi bật dứt khoát' : 'Crisp bilabial burst';
-    } else if (/[iy]|ee|ch|sh|zh|ji/.test(str)) {
-      // Flat smile / Spread lips
-      if (cavity) cavity.setAttribute('d', 'M 45 70 Q 120 62 195 70 Q 192 84 120 86 Q 48 84 45 70 Z');
-      if (outerLips) outerLips.setAttribute('d', 'M 38 70 Q 90 60 120 63 Q 150 60 202 70 Q 160 92 120 90 Q 80 92 38 70 Z');
-      if (tongue) tongue.setAttribute('d', 'M 75 75 Q 120 70 165 75 Q 150 84 120 84 Q 90 84 75 75 Z');
-      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0.9');
-
-      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Môi dẹt kéo sang hai bên' : 'Spread wide in smile';
-      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Đầu lưỡi nâng vòm cứng' : 'Raised near hard palate';
-      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Hơi ép qua kẽ răng' : 'Friction through teeth';
-      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Cao độ thanh sáng' : 'High bright pitch';
-    } else if (/[uow]|oo|ou/.test(str)) {
-      // Rounded / Puckered lips
-      if (cavity) cavity.setAttribute('d', 'M 90 68 Q 120 52 150 68 Q 155 96 120 100 Q 85 96 90 68 Z');
-      if (outerLips) outerLips.setAttribute('d', 'M 82 68 Q 105 50 120 54 Q 135 50 158 68 Q 145 106 120 106 Q 95 106 82 68 Z');
-      if (tongue) tongue.setAttribute('d', 'M 100 86 Q 120 80 140 86 Q 135 98 120 98 Q 105 98 100 86 Z');
-      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0');
-
-      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Môi tròn chúm về trước' : 'Rounded & protruded';
-      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Cuống lưỡi nâng vòm mềm' : 'Retracted back';
-      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Cộng hưởng khoang miệng' : 'Oral resonance';
-      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Âm trầm sâu ấm' : 'Deep rounded tone';
-    } else if (/th|[tdsznlr]|ts/.test(str)) {
-      // Dental / Tongue tip touching teeth
-      if (cavity) cavity.setAttribute('d', 'M 55 68 Q 120 54 185 68 Q 180 88 120 92 Q 60 88 55 68 Z');
-      if (outerLips) outerLips.setAttribute('d', 'M 48 68 Q 90 56 120 60 Q 150 56 192 68 Q 155 98 120 96 Q 85 98 48 68 Z');
-      if (tongue) tongue.setAttribute('d', 'M 85 76 Q 120 64 155 76 Q 145 88 120 88 Q 95 88 85 76 Z');
-      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0.7');
-
-      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Mở hé tự nhiên' : 'Slightly open';
-      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Đầu lưỡi chạm chân răng' : 'Tip at teeth / alveolar';
-      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Bật gió qua kẽ răng' : 'Fricative dental flow';
-      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Âm sắc xát / bật dứt khoát' : 'Sharp dental burst';
-    } else {
-      // Open natural (a, ha, e, etc.)
-      if (cavity) cavity.setAttribute('d', 'M 65 62 Q 120 40 175 62 Q 185 98 120 106 Q 55 98 65 62 Z');
-      if (outerLips) outerLips.setAttribute('d', 'M 55 62 Q 90 48 120 54 Q 150 48 185 62 Q 150 116 120 114 Q 90 116 55 62 Z');
-      if (tongue) tongue.setAttribute('d', 'M 85 88 Q 120 78 155 88 Q 140 104 120 104 Q 100 104 85 88 Z');
-      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0.8');
-
-      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Mở rộng tự nhiên' : 'Open wide naturally';
-      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Hạ thấp đáy khoang miệng' : 'Resting low';
-      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Luồng hơi tự do' : 'Free vocal airflow';
-      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Âm vang khoang miệng' : 'Full resonant vowel';
-    }
+    // Replaced by clean Pronunciation Guide Card
   }
 
   function setCartoonMouthSpeaking(isSpeaking) {
-    const stage = document.querySelector('.cartoon-mouth-stage');
-    const waveWrap = document.getElementById('miniSoundwaveWrap');
-    if (stage) stage.classList.toggle('speaking', !!isSpeaking);
-    if (waveWrap) waveWrap.classList.toggle('speaking', !!isSpeaking);
+    // Audio speaking indicator handled cleanly
   }
 
   function updateInspectorCard(item) {
@@ -5517,6 +5293,7 @@
   let voiceRecordTimerId = null;
   let voiceRecordSeconds = 0;
   let isRecordingRealVoice = false;
+  let bgmWasPlayingBeforeRecord = false;
 
   function initChatVoiceDictation() {
     // Replaced by Real Audio Voice Recording
@@ -5544,16 +5321,48 @@
         return;
       }
 
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      // 1. Automatically pause BGM so music never bleeds into mic
+      if (typeof BGMPlayer !== 'undefined' && BGMPlayer.isPlaying) {
+        bgmWasPlayingBeforeRecord = true;
+        BGMPlayer.stop();
+      } else {
+        bgmWasPlayingBeforeRecord = false;
+      }
+
+      // 2. Request clean mic constraints with echo cancellation & noise suppression
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true
+        }
+      });
+
       voiceAudioChunks = [];
       voiceRecordSeconds = 0;
       isRecordingRealVoice = true;
+
+      // 3. Detect supported MIME type dynamically
+      const mimeCandidates = [
+        'audio/webm;codecs=opus',
+        'audio/webm',
+        'audio/ogg;codecs=opus',
+        'audio/mp4'
+      ];
+      let chosenMimeType = '';
+      for (const mime of mimeCandidates) {
+        if (typeof MediaRecorder !== 'undefined' && typeof MediaRecorder.isTypeSupported === 'function' && MediaRecorder.isTypeSupported(mime)) {
+          chosenMimeType = mime;
+          break;
+        }
+      }
 
       if (btnRecord) btnRecord.classList.add('recording');
       if (timerWrap) timerWrap.style.display = 'inline-flex';
       if (timerSec) timerSec.textContent = '0:00';
 
-      mediaVoiceRecorder = new MediaRecorder(stream);
+      const recorderOptions = chosenMimeType ? { mimeType: chosenMimeType } : undefined;
+      mediaVoiceRecorder = new MediaRecorder(stream, recorderOptions);
       mediaVoiceRecorder.ondataavailable = (e) => {
         if (e.data && e.data.size > 0) {
           voiceAudioChunks.push(e.data);
@@ -5566,14 +5375,20 @@
         if (btnRecord) btnRecord.classList.remove('recording');
         if (timerWrap) timerWrap.style.display = 'none';
 
+        // Clean up all tracks immediately
         stream.getTracks().forEach(t => t.stop());
+
+        // Resume BGM after recording finishes if it was previously playing
+        if (bgmWasPlayingBeforeRecord && typeof BGMPlayer !== 'undefined' && !BGMPlayer.isPlaying && BGMPlayer.enabled) {
+          BGMPlayer.start();
+        }
 
         if (!voiceAudioChunks.length || voiceRecordSeconds < 1) {
           showToast(STATE.uiLang === 'vi' ? 'Bản ghi âm quá ngắn.' : 'Recording too short.', 'info');
           return;
         }
 
-        const audioBlob = new Blob(voiceAudioChunks, { type: 'audio/webm' });
+        const audioBlob = new Blob(voiceAudioChunks, { type: chosenMimeType || 'audio/webm' });
         const reader = new FileReader();
         reader.onloadend = () => {
           sendVoiceAudioMessage(reader.result, voiceRecordSeconds);
@@ -5603,6 +5418,9 @@
       if (btnRecord) btnRecord.classList.remove('recording');
       if (timerWrap) timerWrap.style.display = 'none';
       if (voiceRecordTimerId) clearInterval(voiceRecordTimerId);
+      if (bgmWasPlayingBeforeRecord && typeof BGMPlayer !== 'undefined' && !BGMPlayer.isPlaying && BGMPlayer.enabled) {
+        BGMPlayer.start();
+      }
     }
   }
 
@@ -6810,15 +6628,49 @@
       });
     }
 
-    // Dismiss drawer when clicking on dark backdrop
-    [DOM.weakSpotsOverlay, DOM.bookmarksOverlay, DOM.friendsOverlay, DOM.quizModalOverlay].forEach(overlay => {
+    // Dismiss modal/drawer when clicking on dark backdrop
+    const allBackdropOverlays = [
+      DOM.weakSpotsOverlay,
+      DOM.bookmarksOverlay,
+      DOM.friendsOverlay,
+      DOM.quizModalOverlay,
+      DOM.questModalOverlay,
+      DOM.shopModalOverlay,
+      DOM.profileModalOverlay,
+      DOM.dailyDrillModalOverlay
+    ];
+
+    allBackdropOverlays.forEach(overlay => {
       if (overlay) {
         overlay.addEventListener('click', (e) => {
           if (e.target === overlay) {
             if (overlay === DOM.quizModalOverlay) closeQuizModal();
-            else overlay.classList.remove('open');
+            else if (overlay === DOM.questModalOverlay) closeQuestModal();
+            else if (overlay === DOM.shopModalOverlay) closeShopModal();
+            else if (overlay === DOM.dailyDrillModalOverlay && typeof DailyDrillManager !== 'undefined') DailyDrillManager.close();
+            else if (overlay === DOM.profileModalOverlay) overlay.style.display = 'none';
+            else {
+              overlay.classList.remove('open');
+              overlay.style.display = 'none';
+            }
           }
         });
+      }
+    });
+
+    // Global Escape Key listener for all active modals and drawers
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllDrawers();
+        if (DOM.quizModalOverlay && DOM.quizModalOverlay.style.display !== 'none') closeQuizModal();
+        if (DOM.questModalOverlay && DOM.questModalOverlay.style.display !== 'none') closeQuestModal();
+        if (DOM.shopModalOverlay && DOM.shopModalOverlay.style.display !== 'none') closeShopModal();
+        if (DOM.dailyDrillModalOverlay && DOM.dailyDrillModalOverlay.style.display !== 'none' && typeof DailyDrillManager !== 'undefined') {
+          DailyDrillManager.close();
+        }
+        if (DOM.profileModalOverlay && DOM.profileModalOverlay.style.display !== 'none') {
+          DOM.profileModalOverlay.style.display = 'none';
+        }
       }
     });
   }

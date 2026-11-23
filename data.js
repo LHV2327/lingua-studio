@@ -44,7 +44,7 @@ const UI_I18N = {
     "chooseSentence": "Chọn mẫu câu luyện:",
     "tabCampaign": "Lộ trình Ải",
     "campaignTitle": "Lộ Trình Thám Hiểm Ngôn Ngữ",
-    "campaignSubtitle": "Vượt qua 5 ải thử thách, luyện viết chữ, đánh bại Boss để làm chủ tiếng bản xứ!",
+    "campaignSubtitle": "Chinh phục 3 chương học toàn diện (12 Ải), luyện viết nét chữ, hạ gục Boss để làm chủ tiếng bản xứ!",
     "stageBoss": "Đấu Boss Ải",
     "practiceWriting": "Tập viết chữ",
     "clearCanvas": "Xóa",
@@ -102,7 +102,7 @@ const UI_I18N = {
     "nicknameLabel": "Tên hiển thị / Biệt danh:",
     "nativeLangLabel": "Ngôn ngữ mẹ đẻ:",
     "targetLangLabel": "Ngôn ngữ đang rèn luyện:",
-    "avatarLabel": "Biểu tượng đại diện:",
+    "avatarLabel": "Chọn Biểu Tượng Avatar (18 lựa chọn):",
     "roomsHubTitle": "Chọn Phòng Ngôn ngữ",
     "roomJaTitle": "Phòng Tiếng Nhật (日本語)",
     "roomEnTitle": "Phòng Tiếng Anh (English)",
@@ -181,7 +181,7 @@ const UI_I18N = {
     "chooseSentence": "Choose sentence to practice:",
     "tabCampaign": "Quest Path",
     "campaignTitle": "Language Adventure Campaign",
-    "campaignSubtitle": "Conquer 5 stages, trace characters, and defeat Stage Bosses to achieve native mastery!",
+    "campaignSubtitle": "Conquer 3 comprehensive chapters (12 Stages), trace characters, and defeat Stage Bosses to achieve native mastery!",
     "stageBoss": "Stage Boss",
     "practiceWriting": "Practice Writing",
     "clearCanvas": "Clear",
@@ -239,7 +239,7 @@ const UI_I18N = {
     "nicknameLabel": "Display Name / Nickname:",
     "nativeLangLabel": "Native Language:",
     "targetLangLabel": "Target Learning Language:",
-    "avatarLabel": "Avatar Symbol:",
+    "avatarLabel": "Choose Avatar Emoji (18 options):",
     "roomsHubTitle": "Select Language Room",
     "roomJaTitle": "Japanese Room (日本語)",
     "roomEnTitle": "English Room (English)",
@@ -20824,49 +20824,109 @@ function getStrokeData(char) {
 }
 
 const SHOP_ITEMS = [
-  // Avatar Frames
+  // 8 Polished Avatar Frames
+  {
+    id: 'frame-wood',
+    nameVi: 'Khung Gỗ Tân Thủ',
+    nameEn: 'Rookie Wooden Frame',
+    category: 'frames',
+    price: 30,
+    icon: '🪵',
+    descVi: 'Khung gỗ mộc mạc cho ngày đầu bước chân vào hành trình',
+    descEn: 'Rustic handcrafted wooden frame for adventurous beginners'
+  },
+  {
+    id: 'frame-bronze',
+    nameVi: 'Huy Hiệu Đồng Cổ Điển',
+    nameEn: 'Classic Bronze Frame',
+    category: 'frames',
+    price: 60,
+    icon: '🥉',
+    descVi: 'Viền đồng thau đúc bóng bẩy, ghi nhận nỗ lực rèn luyện',
+    descEn: 'Polished antique bronze border marking early diligence'
+  },
+  {
+    id: 'frame-silver',
+    nameVi: 'Khung Bạc Ánh Kim',
+    nameEn: 'Luminous Silver Frame',
+    category: 'frames',
+    price: 90,
+    icon: '🥈',
+    descVi: 'Khung bạc nguyên chất sáng bóng dành cho học viên chăm chỉ',
+    descEn: 'Brightly polished sterling silver chrome frame'
+  },
   {
     id: 'frame-sakura',
     nameVi: 'Viền Hoa Anh Đào',
     nameEn: 'Sakura Petal Frame',
     category: 'frames',
-    price: 100,
+    price: 120,
     icon: '🌸',
-    descVi: 'Viền hồng ánh sáng hoa anh đào rơi lãng mạn',
-    descEn: 'Soft glowing pink cherry blossom frame'
+    descVi: 'Viền hồng ánh sáng hoa anh đào rơi lãng mạn xứ Phù Tang',
+    descEn: 'Soft glowing pink cherry blossom animated petal border'
   },
   {
-    id: 'frame-dragon',
+    id: 'frame-fire',
     nameVi: 'Hào Quang Lửa Rồng',
     nameEn: 'Dragon Flame Frame',
     category: 'frames',
-    price: 200,
+    price: 180,
     icon: '🔥',
-    descVi: 'Viền lửa rồng phương Đông rực cháy dũng mãnh',
-    descEn: 'Blazing dragon flame animated border'
+    descVi: 'Viền lửa rồng đỏ rực bùng cháy nhiệt huyết chinh phục',
+    descEn: 'Blazing vermilion dragon flame animated border'
   },
   {
     id: 'frame-cyber',
     nameVi: 'Khung Neon Cyber',
     nameEn: 'Cyber Neon Frame',
     category: 'frames',
-    price: 300,
+    price: 250,
     icon: '⚡',
-    descVi: 'Viền neon xanh cyan công nghệ tương lai',
-    descEn: 'Pulsing electric cyan neon border'
+    descVi: 'Viền neon xanh cyan công nghệ tương lai hiện đại',
+    descEn: 'Pulsing electric cyan neon border from Tokyo future'
   },
   {
     id: 'frame-royal',
     nameVi: 'Vương Miện Hoàng Gia',
     nameEn: 'Royal Crown Frame',
     category: 'frames',
-    price: 500,
+    price: 400,
     icon: '👑',
-    descVi: 'Khung vàng hoàng gia nạm ngọc lung linh',
-    descEn: 'Regal golden border with glistening rubies'
+    descVi: 'Khung vàng hoàng tộc nạm ngọc quý uy nghiêm',
+    descEn: 'Regal golden border crowned with gleaming rubies'
+  },
+  {
+    id: 'frame-cosmic-rainbow',
+    nameVi: 'Quầng Sáng Vũ Trụ',
+    nameEn: 'Cosmic Rainbow Frame',
+    category: 'frames',
+    price: 600,
+    icon: '🌌',
+    descVi: 'Viền quang phổ cầu vồng đa sắc xoay chuyển kỳ ảo',
+    descEn: 'Prismatic rotating rainbow aurora border across galaxies'
   },
 
-  // Custom Titles
+  // 11 Progression Titles
+  {
+    id: 'title-novice',
+    nameVi: 'Tân Thủ Cần Cù',
+    nameEn: 'Diligent Rookie',
+    category: 'titles',
+    price: 20,
+    icon: '🌱',
+    descVi: 'Bước chân đầu tiên khám phá thế giới đa ngôn ngữ',
+    descEn: 'First step into the exciting multilingual journey'
+  },
+  {
+    id: 'title-streak',
+    nameVi: 'Ngọn Lửa Chuỗi Ngày',
+    nameEn: 'Streak Igniter',
+    category: 'titles',
+    price: 80,
+    icon: '🔥',
+    descVi: 'Duy trì ngọn lửa học tập bền bỉ không ngừng nghỉ',
+    descEn: 'Keeping the learning streak burning brightly every day'
+  },
   {
     id: 'title-kyoto',
     nameVi: 'Lãng Khách Kyoto',
@@ -20875,27 +20935,77 @@ const SHOP_ITEMS = [
     price: 120,
     icon: '⛩️',
     descVi: 'Danh hiệu lãng khách ngao du xứ sở Phù Tang',
-    descEn: 'Title of the poetic traveler in ancient Kyoto'
+    descEn: 'Title of the poetic traveler wandering ancient Kyoto'
+  },
+  {
+    id: 'title-phonetics',
+    nameVi: 'Thẩm Âm Bản Xứ',
+    nameEn: 'Phonetics Virtuoso',
+    category: 'titles',
+    price: 160,
+    icon: '🎧',
+    descVi: 'Đôi tai nhạy bén, nhận biết mọi âm vị chuẩn xác',
+    descEn: 'Sharp ear attuned to authentic native phonetic nuances'
+  },
+  {
+    id: 'title-washi',
+    nameVi: 'Bút Thần Thư Pháp',
+    nameEn: 'Washi Calligrapher',
+    category: 'titles',
+    price: 200,
+    icon: '✍️',
+    descVi: 'Đạt điểm chuẩn xác cao trên bảng viết giấy Washi',
+    descEn: 'Master of precise, elegant strokes on washi canvas'
+  },
+  {
+    id: 'title-dragon',
+    nameVi: 'Võ Sĩ Rồng Lửa',
+    nameEn: 'Fire Dragon Warrior',
+    category: 'titles',
+    price: 220,
+    icon: '🐉',
+    descVi: 'Chiến binh hăng say vượt mọi thử thách cam go',
+    descEn: 'Fierce warrior conquering all challenges on the path'
   },
   {
     id: 'title-shadowing',
     nameVi: 'Bậc Thầy Shadowing',
     nameEn: 'Shadowing Master',
     category: 'titles',
-    price: 250,
+    price: 260,
     icon: '🎙️',
     descVi: 'Kỹ năng nhại giọng đạt chuẩn ngữ điệu bản xứ',
-    descEn: 'Master of real-time native speech imitation'
+    descEn: 'Master of real-time native speech imitation in the Lab'
+  },
+  {
+    id: 'title-boss-slayer',
+    nameVi: 'Kẻ Diệt Trùm Ải',
+    nameEn: 'Stage Boss Slayer',
+    category: 'titles',
+    price: 320,
+    icon: '⚔️',
+    descVi: 'Chiến thắng vang dội trước các Boss Ải của mọi Chương',
+    descEn: 'Glorious champion defeating all Chapter Stage Bosses'
   },
   {
     id: 'title-polyglot',
     nameVi: 'Chúa Tể Ngôn Ngữ',
     nameEn: 'Polyglot Sovereign',
     category: 'titles',
-    price: 400,
+    price: 420,
     icon: '🌍',
     descVi: 'Thống trị cả 4 ngôn ngữ Nhật, Anh, Hàn, Trung',
-    descEn: 'Master of Japanese, English, Korean, Chinese'
+    descEn: 'Master of Japanese, English, Korean, and Chinese'
+  },
+  {
+    id: 'title-sensei',
+    nameVi: 'Đại Tông Sư',
+    nameEn: 'Language Sensei',
+    category: 'titles',
+    price: 500,
+    icon: '📜',
+    descVi: 'Học giả uyên bác truyền cảm hứng cho cộng đồng bạn học',
+    descEn: 'Venerable scholar inspiring peers across classrooms'
   },
   {
     id: 'title-voyager',
@@ -20905,7 +21015,7 @@ const SHOP_ITEMS = [
     price: 600,
     icon: '🚀',
     descVi: 'Vươn tầm vũ trụ tri thức và văn hoá nhân loại',
-    descEn: 'Exploring the infinite universe of languages'
+    descEn: 'Exploring the infinite universe of human languages'
   }
 ];
 

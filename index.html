@@ -346,98 +346,16 @@
                 </div>
               </div>
 
-              <!-- Animated SVG Articulation & Acoustic Visualizer -->
-              <div class="articulatory-visualizer" id="articulatoryVisualizer">
-                <div class="visualizer-header">
-                  <span class="v-label" data-i18n="articulatoryGuide">Khẩu hình & Phát âm chuẩn</span>
+              <!-- Clean Pronunciation Guide Card -->
+              <div class="pronunciation-guide-card" id="articulatoryVisualizer">
+                <div class="pronunciation-guide-header">
+                  <span class="guide-title">
+                    <span class="guide-icon">💡</span>
+                    <span data-i18n="articulatoryGuide">Khẩu hình & Phát âm chuẩn</span>
+                  </span>
                   <span class="v-status" id="vAcousticStatus">Sẵn sàng</span>
                 </div>
-
-                <!-- Friendly Front-View Cartoon Mouth Stage -->
-                <div class="cartoon-mouth-stage">
-                  <svg id="cartoonMouthSvg" viewBox="0 0 240 130" width="100%" height="130" class="cartoon-mouth-svg">
-                    <defs>
-                      <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#FFF5EE" />
-                        <stop offset="100%" stop-color="#FFE4D6" />
-                      </linearGradient>
-                      <linearGradient id="lipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#FB7185" />
-                        <stop offset="100%" stop-color="#E11D48" />
-                      </linearGradient>
-                      <linearGradient id="mouthInteriorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#4C0519" />
-                        <stop offset="100%" stop-color="#881337" />
-                      </linearGradient>
-                      <linearGradient id="tongueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#FDA4AF" />
-                        <stop offset="100%" stop-color="#F43F5E" />
-                      </linearGradient>
-                    </defs>
-
-                    <!-- Face Contour -->
-                    <rect x="15" y="10" width="210" height="110" rx="34" fill="url(#skinGrad)" stroke="#FED7AA" stroke-width="2" />
-                    <!-- Cute Cheeks -->
-                    <circle cx="45" cy="55" r="9" fill="#FDA4AF" opacity="0.45" />
-                    <circle cx="195" cy="55" r="9" fill="#FDA4AF" opacity="0.45" />
-
-                    <!-- Mouth Cavity / Interior (Shape morphs per sound) -->
-                    <path id="cartoonMouthCavity" d="M 65 65 Q 120 42 175 65 Q 185 95 120 102 Q 55 95 65 65 Z" fill="url(#mouthInteriorGrad)" />
-
-                    <!-- Upper Teeth Row -->
-                    <path id="cartoonUpperTeeth" d="M 78 62 Q 120 54 162 62 L 158 72 Q 120 66 82 72 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
-
-                    <!-- Lower Teeth Row -->
-                    <path id="cartoonLowerTeeth" d="M 85 92 Q 120 95 155 92 L 152 86 Q 120 89 88 86 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" opacity="0" />
-
-                    <!-- Tongue Tip / Body (Dynamic Position) -->
-                    <path id="cartoonTongue" d="M 88 86 Q 120 72 152 86 Q 140 102 120 102 Q 100 102 88 86 Z" fill="url(#tongueGrad)" />
-
-                    <!-- Outer Lips Outline & Fill -->
-                    <path id="cartoonOuterLips" d="M 55 65 Q 90 52 120 58 Q 150 52 185 65 Q 150 112 120 110 Q 90 112 55 65 Z" fill="none" stroke="url(#lipGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-
-                    <!-- Lip Highlight -->
-                    <path d="M 105 58 Q 120 55 135 58" stroke="#FFE4E6" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8" />
-                  </svg>
-                </div>
-
-                <!-- 3 Clean Articulation Pill Tags -->
-                <div class="mouth-quick-tags-row">
-                  <div class="mouth-tag-pill" title="Trạng thái khẩu hình môi">
-                    <span class="tag-emoji">👄</span>
-                    <span class="tag-label">Môi:</span>
-                    <strong class="tag-val" id="mouthTagLip">Mở vừa tự nhiên</strong>
-                  </div>
-                  <div class="mouth-tag-pill" title="Vị trí đầu lưỡi & nướu">
-                    <span class="tag-emoji">👅</span>
-                    <span class="tag-label">Lưỡi:</span>
-                    <strong class="tag-val" id="mouthTagTongue">Thả lỏng đáy hàm</strong>
-                  </div>
-                  <div class="mouth-tag-pill" title="Luồng hơi & thanh quản">
-                    <span class="tag-emoji">💨</span>
-                    <span class="tag-label">Hơi:</span>
-                    <strong class="tag-val" id="mouthTagAir">Rung dây thanh</strong>
-                  </div>
-                </div>
-
-                <!-- Sleek Mini Pitch / Tone Wave -->
-                <div class="mini-soundwave-wrap" id="miniSoundwaveWrap">
-                  <div class="wave-track">
-                    <span class="sound-wave-bar"></span>
-                    <span class="sound-wave-bar"></span>
-                    <span class="sound-wave-bar"></span>
-                    <span class="sound-wave-bar"></span>
-                    <span class="sound-wave-bar"></span>
-                    <span class="sound-wave-bar"></span>
-                    <span class="sound-wave-bar"></span>
-                    <span class="sound-wave-bar"></span>
-                    <span class="sound-wave-bar"></span>
-                    <span class="sound-wave-bar"></span>
-                  </div>
-                  <span class="wave-caption" id="miniSoundwaveLabel">Thanh điệu / Cao độ chuẩn bản xứ</span>
-                </div>
-
-                <div class="mouth-tips" id="inspectMouthTip">
+                <div class="pronunciation-tip-box" id="inspectMouthTip">
                   Thả lỏng quai hàm, phát âm rõ ràng và dứt khoát.
                 </div>
               </div>
@@ -951,20 +869,28 @@
           </div>
         </div>
 
-        <!-- Avatar Emoji Selector (10 emojis) -->
+        <!-- Avatar Emoji Selector (18 avatars) -->
         <div class="form-group">
-          <label class="form-label" data-i18n="profileAvatarLabel">Chọn Biểu Tượng Avatar (10 lựa chọn):</label>
+          <label class="form-label" data-i18n="avatarLabel">Chọn Biểu Tượng Avatar (18 lựa chọn):</label>
           <div class="avatar-selector avatar-emoji-picker" id="avatarSelector">
             <button type="button" class="avatar-option active" data-avatar="🦊">🦊</button>
             <button type="button" class="avatar-option" data-avatar="🐱">🐱</button>
             <button type="button" class="avatar-option" data-avatar="🐼">🐼</button>
             <button type="button" class="avatar-option" data-avatar="🦁">🦁</button>
             <button type="button" class="avatar-option" data-avatar="🐯">🐯</button>
-            <button type="button" class="avatar-option" data-avatar="🐉">🐉</button>
+            <button type="button" class="avatar-option" data-avatar="🐰">🐰</button>
+            <button type="button" class="avatar-option" data-avatar="🐸">🐸</button>
+            <button type="button" class="avatar-option" data-avatar="🦉">🦉</button>
             <button type="button" class="avatar-option" data-avatar="🥷">🥷</button>
+            <button type="button" class="avatar-option" data-avatar="⚔️">⚔️</button>
+            <button type="button" class="avatar-option" data-avatar="🧙‍♂️">🧙‍♂️</button>
+            <button type="button" class="avatar-option" data-avatar="👨‍🚀">👨‍🚀</button>
             <button type="button" class="avatar-option" data-avatar="👑">👑</button>
             <button type="button" class="avatar-option" data-avatar="🌸">🌸</button>
+            <button type="button" class="avatar-option" data-avatar="🐉">🐉</button>
             <button type="button" class="avatar-option" data-avatar="⚡">⚡</button>
+            <button type="button" class="avatar-option" data-avatar="🍵">🍵</button>
+            <button type="button" class="avatar-option" data-avatar="🚀">🚀</button>
           </div>
         </div>
 

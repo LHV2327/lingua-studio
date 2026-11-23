@@ -62,6 +62,11 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-app);
@@ -5158,14 +5163,14 @@ body {
 .campaign-title {
   font-size: 1.85rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-highlight, #0f172a) !important;
   margin: 0 0 8px 0;
   letter-spacing: -0.5px;
 }
 
 .campaign-subtitle {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text-muted, #64748b);
   margin: 0 0 20px 0;
   line-height: 1.5;
 }
@@ -5182,11 +5187,11 @@ body {
   align-items: center;
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: var(--text-main, #1e293b);
 }
 
 .campaign-xp-badge {
-  color: var(--theme-gold);
+  color: var(--theme-gold, #f59e0b);
   background: rgba(245, 158, 11, 0.15);
   padding: 3px 10px;
   border-radius: 12px;
@@ -5196,11 +5201,11 @@ body {
 .campaign-track-bg {
   width: 100%;
   height: 14px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.12);
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .campaign-track-fill {
@@ -5216,7 +5221,7 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 30px 10px 60px 10px;
+  padding: 55px 10px 60px 10px;
   min-height: 720px;
 }
 
@@ -6561,7 +6566,25 @@ body {
   color: var(--text-muted, #64748b);
 }
 
-/* Avatar Frames Animations */
+/* 8 Polished Avatar Frames */
+.user-avatar-framed.frame-wood {
+  border: 3px solid #854d0e !important;
+  background: #fef3c7;
+  box-shadow: 0 2px 8px rgba(120, 53, 15, 0.35);
+}
+
+.user-avatar-framed.frame-bronze {
+  border: 3px solid #b45309 !important;
+  background: #ffedd5;
+  box-shadow: 0 0 10px rgba(180, 83, 9, 0.5), inset 0 0 4px rgba(217, 119, 6, 0.4);
+}
+
+.user-avatar-framed.frame-silver {
+  border: 3px solid #94a3b8 !important;
+  background: #f1f5f9;
+  box-shadow: 0 0 12px rgba(148, 163, 184, 0.7), inset 0 0 6px #ffffff;
+}
+
 .user-avatar-framed.frame-sakura {
   border: 3px solid #ff758c !important;
   box-shadow: 0 0 10px rgba(255, 117, 140, 0.6), inset 0 0 6px rgba(255, 182, 193, 0.5);
@@ -6573,6 +6596,7 @@ body {
   50% { box-shadow: 0 0 16px rgba(255, 117, 140, 0.9), 0 0 24px rgba(255, 182, 193, 0.4); }
 }
 
+.user-avatar-framed.frame-fire,
 .user-avatar-framed.frame-dragon {
   border: 3px solid #f97316 !important;
   box-shadow: 0 0 10px rgba(249, 115, 22, 0.7), inset 0 0 6px rgba(234, 88, 12, 0.5);
@@ -6604,6 +6628,19 @@ body {
 @keyframes royalShimmer {
   0%, 100% { box-shadow: 0 0 10px rgba(234, 179, 8, 0.6); }
   50% { box-shadow: 0 0 20px rgba(250, 204, 21, 1), 0 0 28px rgba(234, 179, 8, 0.5); }
+}
+
+.user-avatar-framed.frame-cosmic-rainbow {
+  border: 3px solid transparent !important;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              conic-gradient(#ff0080, #7928ca, #0070f3, #00dfd8, #7928ca, #ff0080) border-box !important;
+  box-shadow: 0 0 16px rgba(121, 40, 202, 0.6);
+  animation: cosmicRotate 3s linear infinite;
+}
+
+@keyframes cosmicRotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
 }
 
 /* Shop Modal Styles */
@@ -7091,21 +7128,71 @@ body {
   margin-top: 2px;
 }
 
+.daily-drill-banner {
+  margin: 14px 0 16px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .btn-daily-drill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 12px 18px !important;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
   color: #ffffff !important;
   font-weight: 800;
   font-size: 0.92rem;
-  border: 2px solid #047857;
-  border-bottom: 4px solid #065f46;
-  border-radius: 14px;
+  border: 2px solid #047857 !important;
+  border-bottom: 4px solid #065f46 !important;
+  border-radius: 16px !important;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
   transition: all 0.15s ease;
+  white-space: normal !important;
+  text-align: left;
+  box-sizing: border-box !important;
+}
+
+.daily-drill-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.daily-drill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.daily-drill-title {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.daily-drill-sub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.daily-drill-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 10px;
+  color: #ffffff;
+  flex-shrink: 0;
   white-space: nowrap;
 }
 
@@ -7556,7 +7643,7 @@ body {
 .quest-chapter-divider {
   width: 100%;
   max-width: 480px;
-  margin: 28px auto 16px;
+  margin: 0 auto !important;
   padding: 10px 16px;
   background: var(--bg-card, #ffffff);
   border: 2px solid var(--border-tactile, #cbd5e1);
@@ -7567,8 +7654,51 @@ body {
   justify-content: space-between;
   gap: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  position: relative;
+  position: absolute;
   z-index: 2;
+  box-sizing: border-box !important;
+}
+
+/* Pronunciation Guide Card */
+.pronunciation-guide-card {
+  background: var(--bg-card, #ffffff);
+  border: 2px solid var(--border-tactile, #cbd5e1);
+  border-bottom: 4px solid var(--border-tactile, #94a3b8);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.pronunciation-guide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.guide-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-highlight, #0f172a);
+}
+
+.guide-icon {
+  font-size: 1.1rem;
+}
+
+.pronunciation-tip-box {
+  background: var(--bg-surface, #f8fafc);
+  border: 1.5px solid var(--border-tactile, #e2e8f0);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-main, #1e293b);
+  font-weight: 600;
 }
 
 .chapter-badge-title {
