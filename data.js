@@ -7523,6 +7523,90 @@ const LINGUA_DATA = {
               "meaning_vi": "Bây giờ",
               "meaning_en": "At present moment"
             }
+          },
+          {
+            "char": "/ɒ/",
+            "romaji": "short o",
+            "ipa": "/ɒ/",
+            "meaning_vi": "Âm O ngắn chuẩn Anh (Lot, Hot, Box)",
+            "meaning_en": "Short open back rounded vowel as in 'lot' and 'hot'",
+            "mouthTip_vi": "Hạ cằm xuống, mở tròn miệng rộng vừa phải, phát âm /ɒ/ ngắn và dứt khoát.",
+            "mouthTip_en": "Open jaw and round lips slightly, short and crisp.",
+            "examples": [
+              { "word": "Hot", "reading": "[hɒt]", "meaning_vi": "Nóng", "meaning_en": "Having high temperature" },
+              { "word": "Box", "reading": "[bɒks]", "meaning_vi": "Cái hộp", "meaning_en": "A container" }
+            ],
+            "example": {
+              "word": "Lot",
+              "reading": "[lɒt]",
+              "vi": "Nhiều / Lô",
+              "en": "A large number or amount",
+              "meaning_vi": "Nhiều / Lô",
+              "meaning_en": "A large number or amount"
+            }
+          },
+          {
+            "char": "/ɪə/",
+            "romaji": "ear sound",
+            "ipa": "/ɪə/",
+            "meaning_vi": "Nguyên âm đôi /ɪə/ (Near, Ear, Here)",
+            "meaning_en": "Centring diphthong gliding from /ɪ/ to /ə/",
+            "mouthTip_vi": "Bắt đầu từ âm /ɪ/ thả lỏng rồi lướt nhẹ về âm /ə/ ở trung tâm vòm họng.",
+            "mouthTip_en": "Start from relaxed /ɪ/ and glide smoothly to central /ə/.",
+            "examples": [
+              { "word": "Near", "reading": "[nɪə]", "meaning_vi": "Gần", "meaning_en": "Close to" },
+              { "word": "Ear", "reading": "[ɪə]", "meaning_vi": "Tai", "meaning_en": "Hearing organ" }
+            ],
+            "example": {
+              "word": "Here",
+              "reading": "[hɪə]",
+              "vi": "Ở đây",
+              "en": "In this place",
+              "meaning_vi": "Ở đây",
+              "meaning_en": "In this place"
+            }
+          },
+          {
+            "char": "/eə/",
+            "romaji": "air sound",
+            "ipa": "/eə/",
+            "meaning_vi": "Nguyên âm đôi /eə/ (Hair, Care, Square)",
+            "meaning_en": "Centring diphthong gliding from /e/ to /ə/",
+            "mouthTip_vi": "Miệng hơi mở như phát âm /e/ rồi thả lỏng lướt về /ə/.",
+            "mouthTip_en": "Open slightly for /e/ then glide smoothly to /ə/.",
+            "examples": [
+              { "word": "Hair", "reading": "[heə]", "meaning_vi": "Mái tóc", "meaning_en": "Strands growing on head" },
+              { "word": "Care", "reading": "[keə]", "meaning_vi": "Chăm sóc", "meaning_en": "Looking after" }
+            ],
+            "example": {
+              "word": "Square",
+              "reading": "[skweə]",
+              "vi": "Quảng trường / Hình vuông",
+              "en": "Open plaza or four-sided shape",
+              "meaning_vi": "Quảng trường / Hình vuông",
+              "meaning_en": "Open plaza or four-sided shape"
+            }
+          },
+          {
+            "char": "/ʊə/",
+            "romaji": "ure sound",
+            "ipa": "/ʊə/",
+            "meaning_vi": "Nguyên âm đôi /ʊə/ (Pure, Cure, Tour)",
+            "meaning_en": "Centring diphthong gliding from /ʊ/ to /ə/",
+            "mouthTip_vi": "Môi chụm nhẹ như /ʊ/ rồi thả lỏng mở về /ə/.",
+            "mouthTip_en": "Start with rounded /ʊ/ and open into /ə/.",
+            "examples": [
+              { "word": "Pure", "reading": "[pjʊə]", "meaning_vi": "Thuần khiết", "meaning_en": "Clean and unmixed" },
+              { "word": "Cure", "reading": "[kjʊə]", "meaning_vi": "Chữa lành", "meaning_en": "Relieve illness" }
+            ],
+            "example": {
+              "word": "Tour",
+              "reading": "[tʊə]",
+              "vi": "Chuyến du lịch",
+              "en": "A journey visiting several places",
+              "meaning_vi": "Chuyến du lịch",
+              "meaning_en": "A journey visiting several places"
+            }
           }
         ]
       },
@@ -13313,9 +13397,9 @@ const LINGUA_DATA = {
       {
         "id": "finals",
         "labelVi": "Vận mẫu (Finals)",
-        "labelEn": "Finals (韵母 - 24)",
-        "descriptionVi": "24 nguyên âm và vần gồm nguyên âm đơn, nguyên âm kép, âm mũi và nguyên âm tròn môi ü.",
-        "descriptionEn": "The 24 standard finals comprising simple vowels, compounds, and nasal endings.",
+        "labelEn": "Finals (韵母 - 36)",
+        "descriptionVi": "Trọn bộ 36 nguyên âm và vần gồm nguyên âm đơn, nguyên âm kép, âm mũi và nguyên âm tròn môi ü.",
+        "descriptionEn": "The full 36 standard finals comprising simple vowels, compounds, and nasal endings.",
         "items": [
           {
             "char": "a",
@@ -14179,6 +14263,209 @@ const LINGUA_DATA = {
               "en": "Red",
               "meaning_vi": "Màu đỏ",
               "meaning_en": "Red"
+            }
+          },
+          {
+            "char": "ia",
+            "romaji": "ia",
+            "ipa": "/ia/",
+            "meaning_vi": "Vận mẫu kép ia (jia, xia, lia)",
+            "meaning_en": "Compound final ia as in 'jiā' (home)",
+            "mouthTip_vi": "Khẩu hình lướt nhanh từ i sang a dứt khoát.",
+            "mouthTip_en": "Glide quickly from /i/ to /a/.",
+            "examples": [
+              { "word": "家 (jiā)", "reading": "jiā", "meaning_vi": "Gia đình / Nhà", "meaning_en": "Home / Family" },
+              { "word": "下 (xià)", "reading": "xià", "meaning_vi": "Bên dưới", "meaning_en": "Below / Down" }
+            ],
+            "example": {
+              "word": "家 (jiā)", "reading": "jiā", "vi": "Gia đình / Nhà", "en": "Home / Family",
+              "meaning_vi": "Gia đình / Nhà", "meaning_en": "Home / Family"
+            }
+          },
+          {
+            "char": "iao",
+            "romaji": "iao",
+            "ipa": "/iau/",
+            "meaning_vi": "Vận mẫu kép iao (biao, tiao, niao)",
+            "meaning_en": "Compound final iao as in 'niǎo' (bird)",
+            "mouthTip_vi": "Khởi đầu từ i, mở sang a và kết thúc tròn môi u/o.",
+            "mouthTip_en": "Glide smoothly from /i/ through /a/ to /u/.",
+            "examples": [
+              { "word": "鸟 (niǎo)", "reading": "niǎo", "meaning_vi": "Con chim", "meaning_en": "Bird" },
+              { "word": "小 (xiǎo)", "reading": "xiǎo", "meaning_vi": "Nhỏ bé", "meaning_en": "Small" }
+            ],
+            "example": {
+              "word": "鸟 (niǎo)", "reading": "niǎo", "vi": "Con chim", "en": "Bird",
+              "meaning_vi": "Con chim", "meaning_en": "Bird"
+            }
+          },
+          {
+            "char": "ua",
+            "romaji": "ua",
+            "ipa": "/ua/",
+            "meaning_vi": "Vận mẫu kép ua (hua, gua, zhua)",
+            "meaning_en": "Compound final ua as in 'huā' (flower)",
+            "mouthTip_vi": "Môi tròn u rồi mở rộng sang a.",
+            "mouthTip_en": "Round lips for /u/ then open wide to /a/.",
+            "examples": [
+              { "word": "花 (huā)", "reading": "huā", "meaning_vi": "Bông hoa", "meaning_en": "Flower" },
+              { "word": "画 (huà)", "reading": "huà", "meaning_vi": "Bức tranh", "meaning_en": "Painting" }
+            ],
+            "example": {
+              "word": "花 (huā)", "reading": "huā", "vi": "Bông hoa", "en": "Flower",
+              "meaning_vi": "Bông hoa", "meaning_en": "Flower"
+            }
+          },
+          {
+            "char": "uo",
+            "romaji": "uo",
+            "ipa": "/uo/",
+            "meaning_vi": "Vận mẫu kép uo (duo, guo, luo, zuo)",
+            "meaning_en": "Compound final uo as in 'guó' (country)",
+            "mouthTip_vi": "Tròn môi u rồi mở nhẹ chuyển sang o.",
+            "mouthTip_en": "Round lips /u/ then transition to /o/.",
+            "examples": [
+              { "word": "国 (guó)", "reading": "guó", "meaning_vi": "Đất nước", "meaning_en": "Country" },
+              { "word": "多 (duō)", "reading": "duō", "meaning_vi": "Nhiều", "meaning_en": "Many" }
+            ],
+            "example": {
+              "word": "国 (guó)", "reading": "guó", "vi": "Đất nước", "en": "Country",
+              "meaning_vi": "Đất nước", "meaning_en": "Country"
+            }
+          },
+          {
+            "char": "uai",
+            "romaji": "uai",
+            "ipa": "/uai/",
+            "meaning_vi": "Vận mẫu kép uai (kuai, shuai, guai)",
+            "meaning_en": "Compound final uai as in 'kuài' (fast)",
+            "mouthTip_vi": "Tròn môi u lướt nhanh qua a và dẹt môi ở i.",
+            "mouthTip_en": "Glide from /u/ to /a/ and finish at /i/.",
+            "examples": [
+              { "word": "快 (kuài)", "reading": "kuài", "meaning_vi": "Nhanh nhẹn", "meaning_en": "Fast" },
+              { "word": "怪 (guài)", "reading": "guài", "meaning_vi": "Kỳ lạ", "meaning_en": "Strange" }
+            ],
+            "example": {
+              "word": "快 (kuài)", "reading": "kuài", "vi": "Nhanh nhẹn", "en": "Fast",
+              "meaning_vi": "Nhanh nhẹn", "meaning_en": "Fast"
+            }
+          },
+          {
+            "char": "ian",
+            "romaji": "ian",
+            "ipa": "/iɛn/",
+            "meaning_vi": "Vận mẫu mũi ian (tian, xian, bian)",
+            "meaning_en": "Nasal final ian as in 'tiān' (sky / day)",
+            "mouthTip_vi": "Bắt đầu ở i, mở miệng đọc như 'i-en' rồi chạm đầu lưỡi lên nướu răng.",
+            "mouthTip_en": "Start at /i/, glide to /ɛ/ and finish with tongue on alveolar ridge for /n/.",
+            "examples": [
+              { "word": "天 (tiān)", "reading": "tiān", "meaning_vi": "Bầu trời / Ngày", "meaning_en": "Sky / Day" },
+              { "word": "电 (diàn)", "reading": "diàn", "meaning_vi": "Điện lực", "meaning_en": "Electricity" }
+            ],
+            "example": {
+              "word": "天 (tiān)", "reading": "tiān", "vi": "Bầu trời / Ngày", "en": "Sky / Day",
+              "meaning_vi": "Bầu trời / Ngày", "meaning_en": "Sky / Day"
+            }
+          },
+          {
+            "char": "uan",
+            "romaji": "uan",
+            "ipa": "/uan/",
+            "meaning_vi": "Vận mẫu mũi uan (guan, duan, luan)",
+            "meaning_en": "Nasal final uan as in 'guān' (close)",
+            "mouthTip_vi": "Tròn môi u mở sang a và khép đầu lưỡi chặn ở n.",
+            "mouthTip_en": "Round lips /u/, open to /a/ and close tongue on roof for /n/.",
+            "examples": [
+              { "word": "关 (guān)", "reading": "guān", "meaning_vi": "Đóng cửa / Quan lại", "meaning_en": "Close / Gate" },
+              { "word": "短 (duǎn)", "reading": "duǎn", "meaning_vi": "Ngắn", "meaning_en": "Short" }
+            ],
+            "example": {
+              "word": "关 (guān)", "reading": "guān", "vi": "Đóng cửa", "en": "Close",
+              "meaning_vi": "Đóng cửa", "meaning_en": "Close"
+            }
+          },
+          {
+            "char": "üan",
+            "romaji": "üan",
+            "ipa": "/yan/",
+            "meaning_vi": "Vận mẫu mũi tròn môi üan (yuan, xuan, juan)",
+            "meaning_en": "Rounded nasal final üan as in 'yuǎn' (far)",
+            "mouthTip_vi": "Giữ môi chúm tròn ü rồi chuyển sang an.",
+            "mouthTip_en": "Round lips for /y/ and glide into /an/.",
+            "examples": [
+              { "word": "远 (yuǎn)", "reading": "yuǎn", "meaning_vi": "Xa xôi", "meaning_en": "Far" },
+              { "word": "选 (xuǎn)", "reading": "xuǎn", "meaning_vi": "Chọn lựa", "meaning_en": "Choose" }
+            ],
+            "example": {
+              "word": "远 (yuǎn)", "reading": "yuǎn", "vi": "Xa xôi", "en": "Far",
+              "meaning_vi": "Xa xôi", "meaning_en": "Far"
+            }
+          },
+          {
+            "char": "iang",
+            "romaji": "iang",
+            "ipa": "/iaŋ/",
+            "meaning_vi": "Vận mẫu mũi iang (liang, xiang, jiang)",
+            "meaning_en": "Nasal final iang as in 'liàng' (bright)",
+            "mouthTip_vi": "Lướt từ i sang a và đưa cuống lưỡi lên vòm họng ngạc mềm tạo âm ng.",
+            "mouthTip_en": "Glide from /i/ to /a/ and raise back of tongue for /ŋ/.",
+            "examples": [
+              { "word": "亮 (liàng)", "reading": "liàng", "meaning_vi": "Sáng sủa", "meaning_en": "Bright" },
+              { "word": "想 (xiǎng)", "reading": "xiǎng", "meaning_vi": "Nhớ / Muốn", "meaning_en": "Think / Want" }
+            ],
+            "example": {
+              "word": "亮 (liàng)", "reading": "liàng", "vi": "Sáng sủa", "en": "Bright",
+              "meaning_vi": "Sáng sủa", "meaning_en": "Bright"
+            }
+          },
+          {
+            "char": "uang",
+            "romaji": "uang",
+            "ipa": "/uaŋ/",
+            "meaning_vi": "Vận mẫu mũi uang (guang, zhuang, shuang)",
+            "meaning_en": "Nasal final uang as in 'guāng' (light)",
+            "mouthTip_vi": "Tròn môi u lướt qua a và nâng cuống lưỡi kết thúc ở ng.",
+            "mouthTip_en": "Round lips /u/, open to /a/ and close with velar /ŋ/.",
+            "examples": [
+              { "word": "光 (guāng)", "reading": "guāng", "meaning_vi": "Ánh sáng", "meaning_en": "Light" },
+              { "word": "双 (shuāng)", "reading": "shuāng", "meaning_vi": "Đôi / Cặp", "meaning_en": "Pair" }
+            ],
+            "example": {
+              "word": "光 (guāng)", "reading": "guāng", "vi": "Ánh sáng", "en": "Light",
+              "meaning_vi": "Ánh sáng", "meaning_en": "Light"
+            }
+          },
+          {
+            "char": "ueng",
+            "romaji": "ueng",
+            "ipa": "/uəŋ/",
+            "meaning_vi": "Vận mẫu mũi ueng (weng)",
+            "meaning_en": "Nasal final ueng as in 'wēng' (old man)",
+            "mouthTip_vi": "Tròn môi u lướt qua eng ngắn vang khoang mũi.",
+            "mouthTip_en": "Start rounded at /u/ and glide to nasal /əŋ/.",
+            "examples": [
+              { "word": "翁 (wēng)", "reading": "wēng", "meaning_vi": "Ông lão", "meaning_en": "Old man" }
+            ],
+            "example": {
+              "word": "翁 (wēng)", "reading": "wēng", "vi": "Ông lão", "en": "Old man",
+              "meaning_vi": "Ông lão", "meaning_en": "Old man"
+            }
+          },
+          {
+            "char": "iong",
+            "romaji": "iong",
+            "ipa": "/ioŋ/",
+            "meaning_vi": "Vận mẫu mũi iong (xiong, qiong, jiong)",
+            "meaning_en": "Nasal final iong as in 'xióng' (bear)",
+            "mouthTip_vi": "Khởi đầu từ i rồi lướt nhanh sang ong tròn môi vang mũi.",
+            "mouthTip_en": "Glide from /i/ to rounded nasal /oŋ/.",
+            "examples": [
+              { "word": "熊 (xióng)", "reading": "xióng", "meaning_vi": "Con gấu", "meaning_en": "Bear" },
+              { "word": "穷 (qióng)", "reading": "qióng", "meaning_vi": "Nghèo", "meaning_en": "Poor" }
+            ],
+            "example": {
+              "word": "熊 (xióng)", "reading": "xióng", "vi": "Con gấu", "en": "Bear",
+              "meaning_vi": "Con gấu", "meaning_en": "Bear"
             }
           }
         ]

@@ -7598,3 +7598,359 @@ body {
   font-weight: 700;
   color: var(--text-muted, #64748b);
 }
+
+/* ==========================================================================
+   CARTOON MOUTH, QUICK PILL TAGS, LIGHT WASHI WRITING PAD & POLISH PASS
+   ========================================================================== */
+
+/* 1. Friendly Front-View Cartoon Mouth Stage */
+.cartoon-mouth-stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFF9F5;
+  border: 2px solid #FED7AA;
+  border-bottom: 4px solid #FDBA74;
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.cartoon-mouth-svg {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+}
+
+#cartoonMouthCavity,
+#cartoonOuterLips,
+#cartoonTongue,
+#cartoonUpperTeeth,
+#cartoonLowerTeeth {
+  transition: d 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+}
+
+@keyframes mouthTalkBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06, 1.14); }
+}
+
+.cartoon-mouth-stage.speaking #cartoonMouthCavity,
+.cartoon-mouth-stage.speaking #cartoonOuterLips {
+  animation: mouthTalkBounce 0.2s ease-in-out infinite alternate;
+  transform-origin: 120px 75px;
+}
+
+/* 2. Three Clean Articulation Pill Tags */
+.mouth-quick-tags-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.mouth-tag-pill {
+  flex: 1 1 calc(33.333% - 6px);
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  background: var(--bg-card, #ffffff);
+  border: 1.5px solid var(--border-tactile, #cbd5e1);
+  border-bottom: 2.5px solid var(--border-tactile, #94a3b8);
+  border-radius: 12px;
+  font-size: 0.78rem;
+  color: var(--text-highlight, #0f172a);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mouth-tag-pill .tag-emoji {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.mouth-tag-pill .tag-label {
+  font-weight: 700;
+  color: var(--text-muted, #64748b);
+  flex-shrink: 0;
+}
+
+.mouth-tag-pill .tag-val {
+  font-weight: 800;
+  color: var(--text-highlight, #0f172a);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 3. Sleek Mini Soundwave / Pitch Track */
+.mini-soundwave-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(241, 245, 249, 0.85);
+  border: 1.5px solid var(--border-tactile, #cbd5e1);
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.wave-track {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 16px;
+}
+
+.sound-wave-bar {
+  width: 3px;
+  height: 5px;
+  border-radius: 2px;
+  background: var(--primary-color, #e63946);
+  transition: height 0.15s ease;
+}
+
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(1) { animation: barBounce 0.4s ease infinite alternate 0.05s; }
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(2) { animation: barBounce 0.4s ease infinite alternate 0.15s; }
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(3) { animation: barBounce 0.4s ease infinite alternate 0.25s; }
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(4) { animation: barBounce 0.4s ease infinite alternate 0.1s; }
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(5) { animation: barBounce 0.4s ease infinite alternate 0.3s; }
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(6) { animation: barBounce 0.4s ease infinite alternate 0.2s; }
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(7) { animation: barBounce 0.4s ease infinite alternate 0.12s; }
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(8) { animation: barBounce 0.4s ease infinite alternate 0.28s; }
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(9) { animation: barBounce 0.4s ease infinite alternate 0.18s; }
+.mini-soundwave-wrap.speaking .sound-wave-bar:nth-child(10){ animation: barBounce 0.4s ease infinite alternate 0.08s; }
+
+@keyframes barBounce {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+.wave-caption {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-muted, #64748b);
+}
+
+/* 4. Tab 1 Detail Panel Title & Romaji Badge Alignment */
+.inspect-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.inspect-title-row .inspect-title {
+  margin-bottom: 0 !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: var(--text-highlight, #0f172a) !important;
+}
+
+.inspect-title-row .romaji-badge {
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  padding: 3px 10px !important;
+  border-radius: 20px !important;
+  background: rgba(230, 57, 70, 0.1) !important;
+  color: var(--primary-color, #e63946) !important;
+  border: 1.5px solid rgba(230, 57, 70, 0.25) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* 5. Writing Pad Clean Light Washi Paper Theme */
+.writing-canvas-wrapper,
+.canvas-box {
+  background: #FAF7F2 !important;
+  border: 2px solid #D6CEBE !important;
+  border-bottom: 4px solid #B8AE9C !important;
+  border-radius: 18px !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.canvas-crosshair::before {
+  border-left: 1.5px dashed rgba(225, 29, 72, 0.22) !important;
+}
+
+.canvas-crosshair::after {
+  border-top: 1.5px dashed rgba(225, 29, 72, 0.22) !important;
+}
+
+.canvas-watermark {
+  color: rgba(15, 23, 42, 0.12) !important;
+}
+
+/* 6. Writing Practice Header on separate row + buttons on single row */
+.inspect-writing-header-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.writing-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.writing-title-row .section-subtitle {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-highlight, #0f172a);
+  margin: 0;
+}
+
+.writing-tools-row {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.writing-tools-row .btn-tool-sm {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 6px 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap;
+  border-radius: 10px;
+  background: var(--bg-card, #ffffff);
+  border: 1.5px solid var(--border-tactile, #cbd5e1);
+  border-bottom: 3px solid var(--border-tactile, #94a3b8);
+  color: var(--text-highlight, #0f172a);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.writing-tools-row .btn-tool-sm:hover {
+  background: var(--bg-surface, #f8fafc);
+  transform: translateY(-1px);
+}
+
+.writing-tools-row .btn-tool-sm:active {
+  transform: translateY(1px);
+  border-bottom-width: 2px;
+}
+
+/* 7. Header Audio Settings Popover Quick Toggles */
+.popover-quick-toggles {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.btn-quick-audio {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--bg-surface, #f8fafc);
+  border: 2px solid var(--border-tactile, #cbd5e1);
+  border-bottom: 3px solid var(--border-tactile, #94a3b8);
+  color: var(--text-highlight, #0f172a);
+  transition: all 0.15s ease;
+}
+
+.btn-quick-audio:hover {
+  transform: translateY(-1px);
+}
+
+.btn-quick-audio.muted {
+  opacity: 0.65;
+  background: #FEE2E2 !important;
+  border-color: #FCA5A5 !important;
+  border-bottom-color: #F87171 !important;
+  color: #B91C1C !important;
+}
+
+/* 8. Chat Bubble Crisp Contrast in All Themes */
+.chat-bubble.theirs {
+  background: var(--bg-card, #ffffff) !important;
+  border: 2px solid var(--border-tactile, #cbd5e1) !important;
+  border-bottom: 3px solid var(--border-tactile, #94a3b8) !important;
+  color: var(--text-highlight, #0f172a) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.chat-bubble.theirs .bubble-sender-row {
+  color: var(--text-muted, #64748b) !important;
+}
+
+.chat-bubble.theirs .bubble-text {
+  color: var(--text-highlight, #0f172a) !important;
+  font-weight: 500;
+}
+
+.chat-bubble.mine {
+  background: var(--primary-color, #e63946) !important;
+  border: 2px solid rgba(0, 0, 0, 0.12) !important;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.22) !important;
+  color: #ffffff !important;
+}
+
+.chat-bubble.mine .bubble-sender-row {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.chat-bubble.mine .bubble-text {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.chat-bubble.mine .voice-audio-bubble {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  color: #ffffff !important;
+}
+
+.chat-bubble.mine .voice-audio-bubble .voice-meta-row {
+  color: #ffffff !important;
+}
+
+.chat-bubble.theirs .voice-audio-bubble {
+  background: var(--bg-surface, #f8fafc) !important;
+  border: 1.5px solid var(--border-tactile, #cbd5e1) !important;
+  color: var(--text-highlight, #0f172a) !important;
+}
+
+.chat-bubble.theirs .voice-audio-bubble .voice-meta-row {
+  color: var(--text-muted, #64748b) !important;
+}
+
+/* 9. High Contrast Status Labels */
+.v-status {
+  font-size: 0.76rem !important;
+  font-weight: 800 !important;
+  color: #047857 !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+  border: 1.5px solid rgba(16, 185, 129, 0.35) !important;
+  padding: 3px 10px !important;
+  border-radius: 12px !important;
+}
+
+#recStatusMessage {
+  color: var(--text-highlight, #0f172a) !important;
+  font-weight: 700 !important;
+}

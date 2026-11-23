@@ -4229,6 +4229,89 @@
     updateInspectorCard(item);
   }
 
+  // ==========================================================================
+  // Friendly Front-View Cartoon Mouth Visualizer Engine
+  // ==========================================================================
+  function updateCartoonMouth(item) {
+    if (!item) return;
+
+    const cavity = document.getElementById('cartoonMouthCavity');
+    const outerLips = document.getElementById('cartoonOuterLips');
+    const tongue = document.getElementById('cartoonTongue');
+    const lowerTeeth = document.getElementById('cartoonLowerTeeth');
+
+    const tagLip = document.getElementById('mouthTagLip');
+    const tagTongue = document.getElementById('mouthTagTongue');
+    const tagAir = document.getElementById('mouthTagAir');
+    const waveLabel = document.getElementById('miniSoundwaveLabel');
+
+    const str = ((item.romaji || '') + ' ' + (item.ipa || '') + ' ' + (item.char || '')).toLowerCase();
+
+    if (/[mpb]/.test(str)) {
+      // Bilabial: Closed lips
+      if (cavity) cavity.setAttribute('d', 'M 60 75 Q 120 74 180 75 Q 120 76 60 75 Z');
+      if (outerLips) outerLips.setAttribute('d', 'M 55 75 Q 90 71 120 73 Q 150 71 185 75 Q 150 82 120 81 Q 90 82 55 75 Z');
+      if (tongue) tongue.setAttribute('d', 'M 90 80 Q 120 78 150 80 Q 135 84 120 84 Q 105 84 90 80 Z');
+      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0');
+
+      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Hai môi khép chặt' : 'Lips pressed together';
+      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Thả lỏng đáy hàm' : 'Resting low';
+      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Tích khí bật dứt khoát' : 'Plosive / Nasal burst';
+      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Âm môi bật dứt khoát' : 'Crisp bilabial burst';
+    } else if (/[iy]|ee|ch|sh|zh|ji/.test(str)) {
+      // Flat smile / Spread lips
+      if (cavity) cavity.setAttribute('d', 'M 45 70 Q 120 62 195 70 Q 192 84 120 86 Q 48 84 45 70 Z');
+      if (outerLips) outerLips.setAttribute('d', 'M 38 70 Q 90 60 120 63 Q 150 60 202 70 Q 160 92 120 90 Q 80 92 38 70 Z');
+      if (tongue) tongue.setAttribute('d', 'M 75 75 Q 120 70 165 75 Q 150 84 120 84 Q 90 84 75 75 Z');
+      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0.9');
+
+      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Môi dẹt kéo sang hai bên' : 'Spread wide in smile';
+      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Đầu lưỡi nâng vòm cứng' : 'Raised near hard palate';
+      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Hơi ép qua kẽ răng' : 'Friction through teeth';
+      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Cao độ thanh sáng' : 'High bright pitch';
+    } else if (/[uow]|oo|ou/.test(str)) {
+      // Rounded / Puckered lips
+      if (cavity) cavity.setAttribute('d', 'M 90 68 Q 120 52 150 68 Q 155 96 120 100 Q 85 96 90 68 Z');
+      if (outerLips) outerLips.setAttribute('d', 'M 82 68 Q 105 50 120 54 Q 135 50 158 68 Q 145 106 120 106 Q 95 106 82 68 Z');
+      if (tongue) tongue.setAttribute('d', 'M 100 86 Q 120 80 140 86 Q 135 98 120 98 Q 105 98 100 86 Z');
+      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0');
+
+      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Môi tròn chúm về trước' : 'Rounded & protruded';
+      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Cuống lưỡi nâng vòm mềm' : 'Retracted back';
+      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Cộng hưởng khoang miệng' : 'Oral resonance';
+      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Âm trầm sâu ấm' : 'Deep rounded tone';
+    } else if (/th|[tdsznlr]|ts/.test(str)) {
+      // Dental / Tongue tip touching teeth
+      if (cavity) cavity.setAttribute('d', 'M 55 68 Q 120 54 185 68 Q 180 88 120 92 Q 60 88 55 68 Z');
+      if (outerLips) outerLips.setAttribute('d', 'M 48 68 Q 90 56 120 60 Q 150 56 192 68 Q 155 98 120 96 Q 85 98 48 68 Z');
+      if (tongue) tongue.setAttribute('d', 'M 85 76 Q 120 64 155 76 Q 145 88 120 88 Q 95 88 85 76 Z');
+      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0.7');
+
+      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Mở hé tự nhiên' : 'Slightly open';
+      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Đầu lưỡi chạm chân răng' : 'Tip at teeth / alveolar';
+      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Bật gió qua kẽ răng' : 'Fricative dental flow';
+      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Âm sắc xát / bật dứt khoát' : 'Sharp dental burst';
+    } else {
+      // Open natural (a, ha, e, etc.)
+      if (cavity) cavity.setAttribute('d', 'M 65 62 Q 120 40 175 62 Q 185 98 120 106 Q 55 98 65 62 Z');
+      if (outerLips) outerLips.setAttribute('d', 'M 55 62 Q 90 48 120 54 Q 150 48 185 62 Q 150 116 120 114 Q 90 116 55 62 Z');
+      if (tongue) tongue.setAttribute('d', 'M 85 88 Q 120 78 155 88 Q 140 104 120 104 Q 100 104 85 88 Z');
+      if (lowerTeeth) lowerTeeth.setAttribute('opacity', '0.8');
+
+      if (tagLip) tagLip.textContent = STATE.uiLang === 'vi' ? 'Mở rộng tự nhiên' : 'Open wide naturally';
+      if (tagTongue) tagTongue.textContent = STATE.uiLang === 'vi' ? 'Hạ thấp đáy khoang miệng' : 'Resting low';
+      if (tagAir) tagAir.textContent = STATE.uiLang === 'vi' ? 'Luồng hơi tự do' : 'Free vocal airflow';
+      if (waveLabel) waveLabel.textContent = STATE.uiLang === 'vi' ? 'Âm vang khoang miệng' : 'Full resonant vowel';
+    }
+  }
+
+  function setCartoonMouthSpeaking(isSpeaking) {
+    const stage = document.querySelector('.cartoon-mouth-stage');
+    const waveWrap = document.getElementById('miniSoundwaveWrap');
+    if (stage) stage.classList.toggle('speaking', !!isSpeaking);
+    if (waveWrap) waveWrap.classList.toggle('speaking', !!isSpeaking);
+  }
+
   function updateInspectorCard(item) {
     if (!DOM.inspectorDetail || !DOM.inspectorEmptyState || !item) return;
 
@@ -4277,29 +4360,8 @@
       DOM.inspectMouthTip.textContent = tip || (STATE.uiLang === 'vi' ? 'Thả lỏng quai hàm, phát âm rõ ràng và dứt khoát.' : 'Relax your jaw and pronounce clearly.');
     }
 
-    // Anatomical vocal tract articulation focus position
-    const focusGroup = document.getElementById('articulatoryFocusGroup');
-    const focusTag = document.getElementById('articulatoryFocusTag');
-    if (focusGroup) {
-      let pos = [216, 126];
-      let tag = STATE.uiLang === 'vi' ? 'Vòm họng & Dây thanh' : 'Vocal tract & Glottis';
-      const str = ((item.romaji || '') + ' ' + (item.ipa || '') + ' ' + (item.char || '')).toLowerCase();
-      if (/[mpb]/.test(str)) {
-        pos = [126, 92];
-        tag = STATE.uiLang === 'vi' ? 'Hai môi (Bilabial)' : 'Lips (Bilabial)';
-      } else if (/[tdsznrl]|ts|th/.test(str)) {
-        pos = [144, 82];
-        tag = STATE.uiLang === 'vi' ? 'Đầu lưỡi & Nướu (Alveolar)' : 'Tongue & Alveolar';
-      } else if (/sh|ch|[jy]|zh/.test(str)) {
-        pos = [178, 76];
-        tag = STATE.uiLang === 'vi' ? 'Vòm cứng (Palatal)' : 'Hard palate (Palatal)';
-      } else if (/[kg]|ng/.test(str)) {
-        pos = [208, 86];
-        tag = STATE.uiLang === 'vi' ? 'Ngạc mềm / Cuống lưỡi (Velar)' : 'Soft palate (Velar)';
-      }
-      focusGroup.setAttribute('transform', `translate(${pos[0]}, ${pos[1]})`);
-      if (focusTag) focusTag.textContent = tag;
-    }
+    // Update friendly front-view cartoon mouth & quick tags
+    updateCartoonMouth(item);
 
     // Example words
     if (DOM.exampleWordsList) {
@@ -4352,19 +4414,14 @@
   }
 
   function animateArticulation(isPlaying) {
+    setCartoonMouthSpeaking(isPlaying);
     if (!DOM.vAcousticStatus) return;
     const dict = UI_I18N[STATE.uiLang] || UI_I18N.vi;
 
     if (isPlaying) {
       DOM.vAcousticStatus.textContent = dict.acousticSpeaking || 'Đang phát âm...';
-      DOM.vAcousticStatus.style.color = 'var(--emerald-light)';
-      if (DOM.resonanceAir) DOM.resonanceAir.setAttribute('fill', 'rgba(6,182,212,0.6)');
-      if (DOM.acousticWave1) DOM.acousticWave1.style.animation = 'waveFlow 1s linear infinite';
     } else {
       DOM.vAcousticStatus.textContent = dict.acousticReady || 'Sẵn sàng';
-      DOM.vAcousticStatus.style.color = 'var(--text-dim)';
-      if (DOM.resonanceAir) DOM.resonanceAir.setAttribute('fill', 'rgba(6,182,212,0.2)');
-      if (DOM.acousticWave1) DOM.acousticWave1.style.animation = 'waveFlow 3s linear infinite';
     }
   }
 
@@ -5197,11 +5254,16 @@
       avatar: STATE.userProfile.avatar,
       nativeLang: STATE.userProfile.nativeLang,
       targetLang: STATE.userProfile.targetLang,
-      onlineAt: firebase.database.ServerValue.TIMESTAMP
+      onlineAt: (typeof firebase !== 'undefined' && firebase.database) ? firebase.database.ServerValue.TIMESTAMP : Date.now()
     };
 
-    presenceRef.set(presenceData);
-    presenceRef.onDisconnect().remove();
+    presenceRef.set(presenceData).catch(err => {
+      console.warn('Presence set error:', err);
+      if (err && err.code === 'PERMISSION_DENIED') {
+        showToast(STATE.uiLang === 'vi' ? 'Trạng thái trực tuyến bị giới hạn (Quyền máy chủ).' : 'Presence sync limited (Permission denied).', 'info');
+      }
+    });
+    presenceRef.onDisconnect().remove().catch(() => {});
   }
 
   function setupRoomCounts() {
@@ -5278,6 +5340,8 @@
     });
   }
 
+  const RENDERED_MESSAGE_IDS = new Set();
+
   function attachRoomChatListener(room) {
     if (!STATE.rtdb || !DOM.chatStream) return;
 
@@ -5286,6 +5350,7 @@
     }
 
     DOM.chatStream.innerHTML = '';
+    RENDERED_MESSAGE_IDS.clear();
 
     const messagesRef = STATE.rtdb.ref(`/rooms/${room}/messages`).limitToLast(50);
     STATE.roomMessageRef = messagesRef;
@@ -5293,7 +5358,15 @@
     messagesRef.on('child_added', (snap) => {
       const msg = snap.val();
       if (!msg) return;
-      renderChatMessageBubble(msg);
+      const msgId = msg.id || snap.key;
+      if (msgId && RENDERED_MESSAGE_IDS.has(msgId)) return;
+      if (msgId) RENDERED_MESSAGE_IDS.add(msgId);
+      renderChatMessageBubble({ ...msg, id: msgId });
+    }, (err) => {
+      console.warn('Firebase chat listen error:', err);
+      if (err && err.code === 'PERMISSION_DENIED') {
+        showToast(STATE.uiLang === 'vi' ? 'Phòng học đang ở chế độ cục bộ (Quyền máy chủ bị khóa).' : 'Chat room in local mode (Permission denied).', 'warning');
+      }
     });
   }
 
@@ -5404,26 +5477,38 @@
     const text = DOM.chatTextInput.value.trim();
     if (!text) return;
 
+    const clientMsgId = 'msg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6);
     const messageData = {
+      id: clientMsgId,
       senderId: STATE.userProfile.userId,
       nickname: STATE.userProfile.nickname,
       avatar: STATE.userProfile.avatar,
       text: text,
       equippedTitle: typeof getEquippedTitleName === 'function' ? getEquippedTitleName() : '',
       equippedFrame: typeof getEquippedFrameId === 'function' ? getEquippedFrameId() : '',
-      timestamp: (typeof firebase !== 'undefined' && firebase.database) ? firebase.database.ServerValue.TIMESTAMP : Date.now()
+      timestamp: Date.now()
     };
 
     DOM.chatTextInput.value = '';
 
+    // 1. Instant optimistic render so user sees their message immediately with 0ms lag
+    RENDERED_MESSAGE_IDS.add(clientMsgId);
+    renderChatMessageBubble(messageData);
+
+    // 2. Firebase write with visible error feedback if network offline or PERMISSION_DENIED
     if (STATE.rtdb && STATE.rtdbConnected) {
-      STATE.rtdb.ref(`/rooms/${STATE.currentCommunityRoom}/messages`).push(messageData)
-        .catch(err => {
-          console.warn('Firebase push failed, rendering locally:', err);
-          renderChatMessageBubble({ ...messageData, timestamp: Date.now() });
-        });
+      STATE.rtdb.ref(`/rooms/${STATE.currentCommunityRoom}/messages`).push({
+        ...messageData,
+        timestamp: (typeof firebase !== 'undefined' && firebase.database) ? firebase.database.ServerValue.TIMESTAMP : Date.now()
+      }).catch(err => {
+        console.warn('Firebase message push failed:', err);
+        const errText = (err && err.code === 'PERMISSION_DENIED')
+          ? (STATE.uiLang === 'vi' ? 'Không thể lưu tin nhắn lên máy chủ (PERMISSION_DENIED). Tin nhắn đã hiển thị cục bộ.' : 'Server write error (PERMISSION_DENIED). Displayed locally.')
+          : (STATE.uiLang === 'vi' ? 'Lỗi kết nối máy chủ. Tin nhắn đã hiển thị cục bộ.' : 'Network error. Displayed locally.');
+        showToast(errText, 'warning');
+      });
     } else {
-      renderChatMessageBubble({ ...messageData, timestamp: Date.now() });
+      showToast(STATE.uiLang === 'vi' ? 'Chế độ ngoại tuyến: Tin nhắn hiển thị trên máy của bạn.' : 'Offline mode: Message displayed locally.', 'info');
     }
   }
 
@@ -5522,7 +5607,9 @@
   }
 
   function sendVoiceAudioMessage(base64Audio, duration) {
+    const clientMsgId = 'voice_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6);
     const messageData = {
+      id: clientMsgId,
       senderId: STATE.userProfile.userId,
       nickname: STATE.userProfile.nickname,
       avatar: STATE.userProfile.avatar,
@@ -5531,17 +5618,27 @@
       duration: duration,
       equippedTitle: typeof getEquippedTitleName === 'function' ? getEquippedTitleName() : '',
       equippedFrame: typeof getEquippedFrameId === 'function' ? getEquippedFrameId() : '',
-      timestamp: (typeof firebase !== 'undefined' && firebase.database) ? firebase.database.ServerValue.TIMESTAMP : Date.now()
+      timestamp: Date.now()
     };
 
+    // 1. Instant optimistic render
+    RENDERED_MESSAGE_IDS.add(clientMsgId);
+    renderChatMessageBubble(messageData);
+
+    // 2. Firebase write with visible error handling
     if (STATE.rtdb && STATE.rtdbConnected) {
-      STATE.rtdb.ref(`/rooms/${STATE.currentCommunityRoom}/messages`).push(messageData)
-        .catch(err => {
-          console.warn('Voice send error, local render:', err);
-          renderChatMessageBubble({ ...messageData, timestamp: Date.now() });
-        });
+      STATE.rtdb.ref(`/rooms/${STATE.currentCommunityRoom}/messages`).push({
+        ...messageData,
+        timestamp: (typeof firebase !== 'undefined' && firebase.database) ? firebase.database.ServerValue.TIMESTAMP : Date.now()
+      }).catch(err => {
+        console.warn('Voice push failed:', err);
+        const errText = (err && err.code === 'PERMISSION_DENIED')
+          ? (STATE.uiLang === 'vi' ? 'Không thể lưu tin nhắn thoại lên máy chủ (PERMISSION_DENIED). Đã phát cục bộ.' : 'Server write error (PERMISSION_DENIED). Played locally.')
+          : (STATE.uiLang === 'vi' ? 'Lỗi kết nối máy chủ. Tin nhắn thoại lưu cục bộ.' : 'Network error. Voice played locally.');
+        showToast(errText, 'warning');
+      });
     } else {
-      renderChatMessageBubble({ ...messageData, timestamp: Date.now() });
+      showToast(STATE.uiLang === 'vi' ? 'Chế độ ngoại tuyến: Tin nhắn thoại phát trên máy của bạn.' : 'Offline mode: Voice played locally.', 'info');
     }
     showToast(STATE.uiLang === 'vi' ? 'Đã gửi tin nhắn thoại thành công! 🎙️' : 'Voice message sent! 🎙️', 'success');
   }
@@ -6093,17 +6190,51 @@
       }
     });
 
-    // Procedural Web Audio SFX Toggle
+    function updateMasterAudioButtonState() {
+      const isSfxMuted = SoundFX.muted;
+      const isBgmMuted = !BGMPlayer.isPlaying;
+
+      const masterIcon = document.getElementById('masterAudioIcon');
+      if (masterIcon) {
+        masterIcon.textContent = (isSfxMuted && isBgmMuted) ? '🔇' : '🔊';
+      }
+
+      const bgmLabel = document.getElementById('bgmStateLabel');
+      if (bgmLabel) {
+        bgmLabel.textContent = isBgmMuted
+          ? (STATE.uiLang === 'vi' ? 'BGM: Tắt' : 'BGM: Off')
+          : (STATE.uiLang === 'vi' ? 'BGM: Bật' : 'BGM: On');
+      }
+      if (DOM.btnToggleBgm) {
+        DOM.btnToggleBgm.classList.toggle('muted', isBgmMuted);
+      }
+
+      const sfxLabel = document.getElementById('sfxStateLabel');
+      if (sfxLabel) {
+        sfxLabel.textContent = isSfxMuted
+          ? (STATE.uiLang === 'vi' ? 'SFX: Tắt' : 'SFX: Off')
+          : (STATE.uiLang === 'vi' ? 'SFX: Bật' : 'SFX: On');
+      }
+      if (DOM.btnToggleSfx) {
+        DOM.btnToggleSfx.classList.toggle('muted', isSfxMuted);
+      }
+    }
+
+    // Quick SFX Toggle
     if (DOM.btnToggleSfx) {
-      DOM.btnToggleSfx.addEventListener('click', () => {
+      DOM.btnToggleSfx.addEventListener('click', (e) => {
+        e.stopPropagation();
         SoundFX.toggleMute();
+        updateMasterAudioButtonState();
       });
     }
 
-    // Procedural Web Audio BGM Toggle
+    // Quick BGM Toggle
     if (DOM.btnToggleBgm) {
-      DOM.btnToggleBgm.addEventListener('click', () => {
+      DOM.btnToggleBgm.addEventListener('click', (e) => {
+        e.stopPropagation();
         BGMPlayer.toggle();
+        updateMasterAudioButtonState();
       });
     }
 

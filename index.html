@@ -148,30 +148,29 @@
 
         <!-- Audio Controls Container with Volume Popover -->
         <div class="audio-controls-group">
-          <!-- Procedural Web Audio SFX Toggle Button -->
-          <button class="icon-btn-text glass-pill" id="btnToggleSfx" title="Bật/Tắt âm thanh hiệu ứng (SFX)">
-            <span class="btn-icon" id="sfxIcon">🔊</span>
-            <span class="btn-label" data-i18n="sfxToggle">SFX</span>
+          <!-- Combined Compact Audio Button -->
+          <button class="icon-btn-text tactile-pill" id="btnAudioSettings" title="Cài đặt âm thanh (BGM & SFX)">
+            <span class="btn-icon" id="masterAudioIcon">🔊</span>
+            <span class="btn-label" data-i18n="audioControls">Âm thanh</span>
           </button>
 
-          <!-- Procedural Web Audio BGM Toggle Button -->
-          <button class="icon-btn-text glass-pill" id="btnToggleBgm" title="Bật/Tắt nhạc nền văn hóa (BGM)">
-            <span class="btn-icon" id="bgmIcon">🎵</span>
-            <span class="btn-label">BGM</span>
-          </button>
-
-          <!-- Audio Settings Slider Button -->
-          <button class="icon-btn-text glass-pill" id="btnAudioSettings" title="Cài đặt âm lượng BGM / SFX">
-            <span class="btn-icon">🎚️</span>
-          </button>
-
-          <!-- Audio Settings Popover -->
-          <div class="audio-settings-popover" id="audioSettingsPopover" hidden>
+          <!-- Audio Settings Popover with Quick Mute/Unmute Toggles -->
+          <div class="audio-settings-popover tactile-card" id="audioSettingsPopover" hidden>
             <div class="popover-header">
-              <span class="popover-title">🔊 Cài Đặt Âm Lượng</span>
+              <span class="popover-title">🔊 Cài Đặt Âm Thanh</span>
               <button class="popover-close-btn" id="btnCloseAudioSettings" type="button" aria-label="Đóng">&times;</button>
             </div>
             <div class="popover-body">
+              <div class="popover-quick-toggles">
+                <button type="button" class="btn-quick-audio tactile-pill" id="btnToggleBgm" title="Bật/Tắt nhạc nền (BGM)">
+                  <span id="bgmIcon">🎵</span>
+                  <span id="bgmStateLabel">BGM: Bật</span>
+                </button>
+                <button type="button" class="btn-quick-audio tactile-pill" id="btnToggleSfx" title="Bật/Tắt hiệu ứng (SFX)">
+                  <span id="sfxIcon">🔊</span>
+                  <span id="sfxStateLabel">SFX: Bật</span>
+                </button>
+              </div>
               <div class="volume-slider-row">
                 <div class="volume-info">
                   <span class="volume-name">🎵 Nhạc nền (BGM)</span>
@@ -331,10 +330,10 @@
                   <span class="char-giant" id="inspectChar">あ</span>
                 </div>
                 <div class="inspector-meta">
-                  <div class="inspect-phonetic-badge-wrap">
+                  <div class="inspect-title-row">
+                    <h3 class="inspect-title" id="inspectTitle">Hiragana</h3>
                     <span class="romaji-badge" id="inspectRomaji">a</span>
                   </div>
-                  <h3 class="inspect-title" id="inspectTitle">Hiragana</h3>
                   <p class="inspect-type" id="inspectType">Nguyên âm cơ bản</p>
                   <div class="action-row">
                     <button class="icon-btn-round" id="btnToggleBookmark" title="Lưu vào sổ tay">
@@ -350,72 +349,96 @@
               <!-- Animated SVG Articulation & Acoustic Visualizer -->
               <div class="articulatory-visualizer" id="articulatoryVisualizer">
                 <div class="visualizer-header">
-                  <span class="v-label" data-i18n="articulatoryGuide">Mô phỏng khẩu hình & sóng âm</span>
+                  <span class="v-label" data-i18n="articulatoryGuide">Khẩu hình & Phát âm chuẩn</span>
                   <span class="v-status" id="vAcousticStatus">Sẵn sàng</span>
                 </div>
-                <div class="svg-stage anatomical-stage">
-                  <svg id="articulationSvg" viewBox="0 0 340 180" width="100%" height="180">
+
+                <!-- Friendly Front-View Cartoon Mouth Stage -->
+                <div class="cartoon-mouth-stage">
+                  <svg id="cartoonMouthSvg" viewBox="0 0 240 130" width="100%" height="130" class="cartoon-mouth-svg">
                     <defs>
-                      <linearGradient id="vocalTractGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15" />
-                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0.05" />
+                      <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#FFF5EE" />
+                        <stop offset="100%" stop-color="#FFE4D6" />
                       </linearGradient>
-                      <filter id="focusGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="4" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                      </filter>
+                      <linearGradient id="lipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#FB7185" />
+                        <stop offset="100%" stop-color="#E11D48" />
+                      </linearGradient>
+                      <linearGradient id="mouthInteriorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#4C0519" />
+                        <stop offset="100%" stop-color="#881337" />
+                      </linearGradient>
+                      <linearGradient id="tongueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#FDA4AF" />
+                        <stop offset="100%" stop-color="#F43F5E" />
+                      </linearGradient>
                     </defs>
 
-                    <!-- Vocal Tract Cavity Silhouette Fill -->
-                    <path d="M 40 40 Q 90 40 110 60 Q 120 72 135 80 L 145 80 Q 170 60 215 68 Q 240 76 250 95 L 250 160 L 225 160 Q 215 130 195 110 Q 165 95 142 98 L 132 98 Q 115 105 105 125 Q 90 155 40 160 Z" fill="url(#vocalTractGrad)"/>
+                    <!-- Face Contour -->
+                    <rect x="15" y="10" width="210" height="110" rx="34" fill="url(#skinGrad)" stroke="#FED7AA" stroke-width="2" />
+                    <!-- Cute Cheeks -->
+                    <circle cx="45" cy="55" r="9" fill="#FDA4AF" opacity="0.45" />
+                    <circle cx="195" cy="55" r="9" fill="#FDA4AF" opacity="0.45" />
 
-                    <!-- Upper Anatomy Outline: Nose -> Upper Lip -> Upper Teeth -> Hard Palate -> Soft Palate (Velum) -> Pharynx -->
-                    <path class="tract-upper" d="M 40 40 Q 90 40 110 60 Q 120 72 135 80 L 145 80 Q 170 60 215 68 Q 240 76 250 95 L 250 160" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
-                    
-                    <!-- Upper Incisor Tooth -->
-                    <rect x="142" y="78" width="5" height="7" rx="1.5" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+                    <!-- Mouth Cavity / Interior (Shape morphs per sound) -->
+                    <path id="cartoonMouthCavity" d="M 65 65 Q 120 42 175 65 Q 185 95 120 102 Q 55 95 65 65 Z" fill="url(#mouthInteriorGrad)" />
 
-                    <!-- Lower Anatomy Outline: Chin -> Lower Lip -> Lower Teeth -> Lower Jaw -->
-                    <path class="tract-lower" d="M 40 160 Q 90 155 105 125 Q 115 105 132 98 L 140 98" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
-                    
-                    <!-- Lower Incisor Tooth -->
-                    <rect x="139" y="93" width="5" height="7" rx="1.5" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+                    <!-- Upper Teeth Row -->
+                    <path id="cartoonUpperTeeth" d="M 78 62 Q 120 54 162 62 L 158 72 Q 120 66 82 72 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
 
-                    <!-- Anatomical Tongue Body & Blade (Dynamic Shape) -->
-                    <path id="tongueShape" class="tract-tongue" d="M 225 160 Q 215 130 195 110 Q 165 95 142 94 Q 135 102 145 112 Q 170 120 195 135 L 225 160 Z" fill="rgba(244, 63, 94, 0.28)" stroke="#f43f5e" stroke-width="2.2" stroke-linejoin="round"/>
+                    <!-- Lower Teeth Row -->
+                    <path id="cartoonLowerTeeth" d="M 85 92 Q 120 95 155 92 L 152 86 Q 120 89 88 86 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" opacity="0" />
 
-                    <!-- Air Stream Flow Indicator (Dashed Guide) -->
-                    <path id="airStreamLine" d="M 235 155 Q 225 110 185 85 Q 155 80 130 88 L 80 88" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-width="2" stroke-dasharray="4 4"/>
+                    <!-- Tongue Tip / Body (Dynamic Position) -->
+                    <path id="cartoonTongue" d="M 88 86 Q 120 72 152 86 Q 140 102 120 102 Q 100 102 88 86 Z" fill="url(#tongueGrad)" />
 
-                    <!-- Anatomical Guide Labels (Crisp & Legible) -->
-                    <g class="tract-labels" font-size="10" font-weight="700" fill="#94a3b8">
-                      <text x="80" y="75" text-anchor="middle">Môi (Lips)</text>
-                      <line x1="102" y1="75" x2="128" y2="82" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
+                    <!-- Outer Lips Outline & Fill -->
+                    <path id="cartoonOuterLips" d="M 55 65 Q 90 52 120 58 Q 150 52 185 65 Q 150 112 120 110 Q 90 112 55 65 Z" fill="none" stroke="url(#lipGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
 
-                      <text x="145" y="55" text-anchor="middle">Răng (Teeth)</text>
-                      <line x1="145" y1="58" x2="145" y2="76" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
-
-                      <text x="210" y="50" text-anchor="middle">Vòm họng (Palate)</text>
-                      <line x1="210" y1="54" x2="210" y2="68" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
-
-                      <text x="138" y="130" text-anchor="middle">Đầu lưỡi</text>
-                      <line x1="138" y1="120" x2="142" y2="98" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
-
-                      <text x="200" y="145" text-anchor="middle">Cuống lưỡi</text>
-                      <line x1="195" y1="135" x2="190" y2="115" stroke="rgba(148,163,184,0.4)" stroke-width="1" />
-                    </g>
-
-                    <!-- Interactive Glowing Articulation Focus Point -->
-                    <g id="articulatoryFocusGroup" transform="translate(142, 85)" style="transition: transform 0.3s ease;">
-                      <circle r="14" fill="none" stroke="#e63946" stroke-width="2.5" class="focus-glow-ring" filter="url(#focusGlow)"/>
-                      <circle r="5" fill="#e63946" stroke="#ffffff" stroke-width="1.5"/>
-                      <rect x="-35" y="-24" width="70" height="17" rx="8.5" fill="#e63946" />
-                      <text id="articulatoryFocusTag" x="0" y="-12" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">Đầu Lưỡi</text>
-                    </g>
+                    <!-- Lip Highlight -->
+                    <path d="M 105 58 Q 120 55 135 58" stroke="#FFE4E6" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8" />
                   </svg>
                 </div>
+
+                <!-- 3 Clean Articulation Pill Tags -->
+                <div class="mouth-quick-tags-row">
+                  <div class="mouth-tag-pill" title="Trạng thái khẩu hình môi">
+                    <span class="tag-emoji">👄</span>
+                    <span class="tag-label">Môi:</span>
+                    <strong class="tag-val" id="mouthTagLip">Mở vừa tự nhiên</strong>
+                  </div>
+                  <div class="mouth-tag-pill" title="Vị trí đầu lưỡi & nướu">
+                    <span class="tag-emoji">👅</span>
+                    <span class="tag-label">Lưỡi:</span>
+                    <strong class="tag-val" id="mouthTagTongue">Thả lỏng đáy hàm</strong>
+                  </div>
+                  <div class="mouth-tag-pill" title="Luồng hơi & thanh quản">
+                    <span class="tag-emoji">💨</span>
+                    <span class="tag-label">Hơi:</span>
+                    <strong class="tag-val" id="mouthTagAir">Rung dây thanh</strong>
+                  </div>
+                </div>
+
+                <!-- Sleek Mini Pitch / Tone Wave -->
+                <div class="mini-soundwave-wrap" id="miniSoundwaveWrap">
+                  <div class="wave-track">
+                    <span class="sound-wave-bar"></span>
+                    <span class="sound-wave-bar"></span>
+                    <span class="sound-wave-bar"></span>
+                    <span class="sound-wave-bar"></span>
+                    <span class="sound-wave-bar"></span>
+                    <span class="sound-wave-bar"></span>
+                    <span class="sound-wave-bar"></span>
+                    <span class="sound-wave-bar"></span>
+                    <span class="sound-wave-bar"></span>
+                    <span class="sound-wave-bar"></span>
+                  </div>
+                  <span class="wave-caption" id="miniSoundwaveLabel">Thanh điệu / Cao độ chuẩn bản xứ</span>
+                </div>
+
                 <div class="mouth-tips" id="inspectMouthTip">
-                  Mở khẩu hình miệng tự nhiên, thả lỏng quai hàm, lưỡi nằm ở đáy khoang miệng.
+                  Thả lỏng quai hàm, phát âm rõ ràng và dứt khoát.
                 </div>
               </div>
 
@@ -435,22 +458,24 @@
 
                             <!-- Writing Pad Practice in Tab 1 Detail Panel -->
               <div class="inspect-writing-section" id="inspectWritingSection">
-                <div class="inspect-writing-header">
-                  <h4 class="section-subtitle" data-i18n="practiceWriting">Tập viết chữ này:</h4>
-                  <div class="writing-tools">
-                    <button type="button" class="btn-tool-sm glass-pill btn-check-writing" id="btnCheckWritingTab1" title="Kiểm tra độ chính xác của nét chữ bạn vừa viết">
+                <div class="inspect-writing-header-col">
+                  <div class="writing-title-row">
+                    <h4 class="section-subtitle" data-i18n="practiceWriting">✍️ Tập viết chữ</h4>
+                  </div>
+                  <div class="writing-tools-row">
+                    <button type="button" class="btn-tool-sm tactile-pill btn-check-writing" id="btnCheckWritingTab1" title="Kiểm tra độ chính xác của nét chữ bạn vừa viết">
                       <span class="btn-icon">✅</span>
                       <span>Kiểm tra</span>
                     </button>
-                    <button type="button" class="btn-tool-sm glass-pill" id="btnAnimateStrokesTab1" title="Xem hoạt họa thứ tự nét (Animate Strokes)">
+                    <button type="button" class="btn-tool-sm tactile-pill" id="btnAnimateStrokesTab1" title="Xem hoạt họa thứ tự nét (Animate Strokes)">
                       <span class="btn-icon">▶</span>
                       <span>Xem nét</span>
                     </button>
-                    <button type="button" class="btn-tool-sm glass-pill" id="btnToggleGuideTab1" title="Bật/Tắt mẫu mờ">
+                    <button type="button" class="btn-tool-sm tactile-pill" id="btnToggleGuideTab1" title="Bật/Tắt mẫu mờ">
                       <span class="btn-icon">👁️</span>
                       <span data-i18n="toggleGuide">Mẫu mờ</span>
                     </button>
-                    <button type="button" class="btn-tool-sm glass-pill" id="btnClearCanvasTab1" title="Xóa bảng viết">
+                    <button type="button" class="btn-tool-sm tactile-pill" id="btnClearCanvasTab1" title="Xóa bảng viết">
                       <span class="btn-icon">🧹</span>
                       <span data-i18n="clearCanvas">Xóa</span>
                     </button>
