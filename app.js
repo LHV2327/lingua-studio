@@ -1,5 +1,5 @@
 // ==========================================================================
-// LinguaStudio Pro 2.0 — Core Interactive Application Logic
+// NativaLab Pro 2.0 — Core Interactive Application Logic
 // ==========================================================================
 
 (function () {
@@ -15,7 +15,7 @@
     : (typeof cancelAnimationFrame !== 'undefined' ? cancelAnimationFrame : (id) => clearTimeout(id));
 
 
-  // Firebase Realtime Database Configuration
+  // Firebase Realtime Database Configuration (Cloud RTDB project backing NativaLab)
   const FIREBASE_CONFIG = {
     apiKey: "AIzaSyDummyKeyForCompatClientSetupOnly",
     authDomain: "linguastudio-3b453.firebaseapp.com",
@@ -35,8 +35,8 @@
   ];
 
   // Resolve Dataset safely from window or globals
-  const LANG_DATA = (typeof window !== 'undefined' && (window.LANG_DATA || window.LINGUA_DATA)) ||
-                    (typeof LINGUA_DATA !== 'undefined' ? LINGUA_DATA : {});
+  const LANG_DATA = (typeof window !== 'undefined' && (window.LANG_DATA || window.NATIVA_DATA)) ||
+                    (typeof NATIVA_DATA !== 'undefined' ? NATIVA_DATA : {});
 
   // Safe localStorage helper
   function getSafeStorage(key, defaultVal) {
@@ -50,9 +50,9 @@
 
   // State Management
   const STATE = {
-    uiLang: getSafeStorage('lingua_ui_lang', 'vi'),
-    currentLang: getSafeStorage('lingua_selected_lang', 'ja-JP'),
-    activeTab: getSafeStorage('lingua_active_tab', 'tab-campaign'),
+    uiLang: getSafeStorage('nativalab_ui_lang', 'vi'),
+    currentLang: getSafeStorage('nativalab_selected_lang', 'ja-JP'),
+    activeTab: getSafeStorage('nativalab_active_tab', 'tab-campaign'),
     
     // Tab 1 Alphabet
     alphabetCategory: null,
@@ -77,7 +77,7 @@
     // Tab 4 Community (Online Community)
     rtdb: null,
     rtdbConnected: false,
-    currentCommunityRoom: getThemeKey(getSafeStorage('lingua_selected_lang', 'ja-JP')), // 'ja' | 'en' | 'ko' | 'zh'
+    currentCommunityRoom: getThemeKey(getSafeStorage('nativalab_selected_lang', 'ja-JP')), // 'ja' | 'en' | 'ko' | 'zh'
     currentPresenceRef: null,
     roomMessageRef: null,
     chatDictationRecognition: null,
@@ -86,7 +86,7 @@
     // Storage: User Profile, Friends, Weak Spots, Bookmarks
     userProfile: (function () {
       try {
-        const stored = localStorage.getItem('lingua_user_profile');
+        const stored = localStorage.getItem('nativalab_user_profile');
         if (stored) {
           const p = JSON.parse(stored);
           if (!p.pin) p.pin = '1234';
@@ -108,19 +108,19 @@
         equippedFrame: 'frame-default',
         equippedTitle: 'title-novice'
       };
-      localStorage.setItem('lingua_user_profile', JSON.stringify(defaultProf));
+      localStorage.setItem('nativalab_user_profile', JSON.stringify(defaultProf));
       return defaultProf;
     })(),
     coins: (function () {
       try {
-        const stored = localStorage.getItem('lingua_coins');
+        const stored = localStorage.getItem('nativalab_coins');
         if (stored !== null) return parseInt(stored, 10);
       } catch (e) {}
       return 150;
     })(),
     inventory: (function () {
       try {
-        const stored = localStorage.getItem('lingua_inventory');
+        const stored = localStorage.getItem('nativalab_inventory');
         if (stored) return JSON.parse(stored);
       } catch (e) {}
       return {
@@ -132,24 +132,24 @@
     })(),
     friends: (function () {
       try {
-        return JSON.parse(localStorage.getItem('lingua_friends') || '[]');
+        return JSON.parse(localStorage.getItem('nativalab_friends') || '[]');
       } catch (e) { return []; }
     })(),
     weakSpots: (function () {
       try {
-        return JSON.parse(localStorage.getItem('lingua_weak_spots') || '[]');
+        return JSON.parse(localStorage.getItem('nativalab_weak_spots') || '[]');
       } catch (e) { return []; }
     })(),
     bookmarks: (function () {
       try {
-        return JSON.parse(localStorage.getItem('lingua_bookmarks') || '[]');
+        return JSON.parse(localStorage.getItem('nativalab_bookmarks') || '[]');
       } catch (e) { return []; }
     })(),
 
     // Gamification (Duolingo & Renshuu inspired)
     gamification: (function () {
       try {
-        const stored = localStorage.getItem('lingua_gamification');
+        const stored = localStorage.getItem('nativalab_gamification');
         if (stored) return JSON.parse(stored);
       } catch (e) {}
       return {
@@ -544,8 +544,8 @@
   // Procedural Web Audio API Sound Synthesizer (SFX)
   const SoundFX = {
     audioCtx: null,
-    muted: getSafeStorage('lingua_sfx_muted', 'false') === 'true',
-    volume: parseFloat(getSafeStorage('lingua_sfx_volume', '0.70')),
+    muted: getSafeStorage('nativalab_sfx_muted', 'false') === 'true',
+    volume: parseFloat(getSafeStorage('nativalab_sfx_volume', '0.70')),
 
     getAudioContext() {
       if (!this.audioCtx && typeof window !== 'undefined') {
@@ -563,14 +563,14 @@
     setVolume(val) {
       this.volume = Math.max(0, Math.min(1, val));
       try {
-        localStorage.setItem('lingua_sfx_volume', String(this.volume));
+        localStorage.setItem('nativalab_sfx_volume', String(this.volume));
       } catch (e) {}
     },
 
     toggleMute() {
       this.muted = !this.muted;
       try {
-        localStorage.setItem('lingua_sfx_muted', String(this.muted));
+        localStorage.setItem('nativalab_sfx_muted', String(this.muted));
       } catch (e) {}
       if (DOM.sfxIcon) {
         DOM.sfxIcon.textContent = this.muted ? '🔇' : '🔊';
@@ -734,8 +734,8 @@
   const BGMPlayer = {
     audioCtx: null,
     isPlaying: false,
-    enabled: getSafeStorage('lingua_bgm_enabled', 'false') === 'true',
-    volume: parseFloat(getSafeStorage('lingua_bgm_volume', '0.70')),
+    enabled: getSafeStorage('nativalab_bgm_enabled', 'false') === 'true',
+    volume: parseFloat(getSafeStorage('nativalab_bgm_volume', '0.70')),
     currentTheme: 'ja',
     loopTimer: null,
     step: 0,
@@ -757,7 +757,7 @@
     setVolume(val) {
       this.volume = Math.max(0, Math.min(1, val));
       try {
-        localStorage.setItem('lingua_bgm_volume', String(this.volume));
+        localStorage.setItem('nativalab_bgm_volume', String(this.volume));
       } catch (e) {}
       if (this.masterGain && this.audioCtx) {
         this.masterGain.gain.setValueAtTime(0.22 * this.volume, this.audioCtx.currentTime);
@@ -785,7 +785,7 @@
       if (!ctx) return;
       this.enabled = !this.enabled;
       try {
-        localStorage.setItem('lingua_bgm_enabled', String(this.enabled));
+        localStorage.setItem('nativalab_bgm_enabled', String(this.enabled));
       } catch (e) {}
 
       if (this.enabled) {
@@ -2519,7 +2519,7 @@
   // Campaign & 5-Stage Guided Quest Path Controller
   function getCampaignProgress() {
     try {
-      const raw = localStorage.getItem('lingua_campaign_progress');
+      const raw = localStorage.getItem('nativalab_campaign_progress');
       if (raw) return JSON.parse(raw);
     } catch (e) {}
     return {
@@ -2532,7 +2532,7 @@
 
   function saveCampaignProgress(prog) {
     try {
-      localStorage.setItem('lingua_campaign_progress', JSON.stringify(prog));
+      localStorage.setItem('nativalab_campaign_progress', JSON.stringify(prog));
     } catch (e) {}
   }
 
@@ -3122,7 +3122,7 @@
   function setUILanguage(lang) {
     if (lang !== 'vi' && lang !== 'en') lang = 'vi';
     STATE.uiLang = lang;
-    localStorage.setItem('lingua_ui_lang', lang);
+    localStorage.setItem('nativalab_ui_lang', lang);
     document.documentElement.lang = lang;
 
     // Update switcher buttons
@@ -3226,7 +3226,7 @@
     }
 
     STATE.currentLang = langCode;
-    localStorage.setItem('lingua_selected_lang', langCode);
+    localStorage.setItem('nativalab_selected_lang', langCode);
 
     // Reset sub-category and selection
     STATE.alphabetCategory = null;
@@ -3260,7 +3260,7 @@
 
   function saveGamification() {
     try {
-      localStorage.setItem('lingua_gamification', JSON.stringify(STATE.gamification));
+      localStorage.setItem('nativalab_gamification', JSON.stringify(STATE.gamification));
     } catch (e) {}
   }
 
@@ -3299,7 +3299,7 @@
   function awardCoins(amount, reason = '') {
     if (typeof STATE.coins !== 'number') STATE.coins = 0;
     STATE.coins += amount;
-    localStorage.setItem('lingua_coins', String(STATE.coins));
+    localStorage.setItem('nativalab_coins', String(STATE.coins));
     updateCoinsUI();
     showFloatingCoinsToast(amount, reason);
     SoundFX.playCoins();
@@ -3420,18 +3420,18 @@
     if (!item) return;
 
     if ((STATE.coins || 0) < item.price) {
-      showToast(STATE.uiLang === 'vi' ? 'Bạn không đủ Lingua Coins! Hãy làm thêm bài tập để tích lũy.' : 'Not enough Lingua Coins!', 'error');
+      showToast(STATE.uiLang === 'vi' ? 'Bạn không đủ Nativa Coins! Hãy làm thêm bài tập để tích lũy.' : 'Not enough Nativa Coins!', 'error');
       return;
     }
 
     STATE.coins -= item.price;
-    localStorage.setItem('lingua_coins', String(STATE.coins));
+    localStorage.setItem('nativalab_coins', String(STATE.coins));
 
     if (!STATE.inventory[itemCat]) STATE.inventory[itemCat] = [];
     if (!STATE.inventory[itemCat].includes(itemId)) {
       STATE.inventory[itemCat].push(itemId);
     }
-    localStorage.setItem('lingua_inventory', JSON.stringify(STATE.inventory));
+    localStorage.setItem('nativalab_inventory', JSON.stringify(STATE.inventory));
 
     SoundFX.playCoins();
     showToast(STATE.uiLang === 'vi' ? `Đã mua thành công ${item.nameVi}!` : `Purchased ${item.nameEn}!`);
@@ -3452,8 +3452,8 @@
       STATE.userProfile.equippedTitle = itemId;
     }
 
-    localStorage.setItem('lingua_inventory', JSON.stringify(STATE.inventory));
-    localStorage.setItem('lingua_user_profile', JSON.stringify(STATE.userProfile));
+    localStorage.setItem('nativalab_inventory', JSON.stringify(STATE.inventory));
+    localStorage.setItem('nativalab_user_profile', JSON.stringify(STATE.userProfile));
 
     SoundFX.playClick();
     showToast(STATE.uiLang === 'vi' ? `Đã trang bị ${item.nameVi}!` : `Equipped ${item.nameEn}!`);
@@ -3797,7 +3797,7 @@
         lang: STATE.currentLang,
         savedAt: Date.now()
       });
-      localStorage.setItem('lingua_weak_spots', JSON.stringify(STATE.weakSpots));
+      localStorage.setItem('nativalab_weak_spots', JSON.stringify(STATE.weakSpots));
       updateBadges();
     }
   }
@@ -5575,7 +5575,7 @@
     STATE.userProfile.nativeLang = nativeLang;
     STATE.userProfile.targetLang = targetLang;
 
-    localStorage.setItem('lingua_user_profile', JSON.stringify(STATE.userProfile));
+    localStorage.setItem('nativalab_user_profile', JSON.stringify(STATE.userProfile));
     updateUserProfileBadge();
     closeProfileModal();
 
@@ -5618,7 +5618,7 @@
       addedAt: Date.now()
     });
 
-    localStorage.setItem('lingua_friends', JSON.stringify(STATE.friends));
+    localStorage.setItem('nativalab_friends', JSON.stringify(STATE.friends));
     updateBadges();
     triggerConfettiBurst();
     showToast(`${STATE.uiLang === 'vi' ? 'Đã kết bạn với' : 'Added friend'} ${user.nickname}! 🎉`);
@@ -5650,7 +5650,7 @@
 
       item.querySelector('.btn-item-delete').addEventListener('click', () => {
         STATE.friends.splice(idx, 1);
-        localStorage.setItem('lingua_friends', JSON.stringify(STATE.friends));
+        localStorage.setItem('nativalab_friends', JSON.stringify(STATE.friends));
         updateBadges();
         renderFriendsDrawer();
       });
@@ -5682,7 +5682,7 @@
       showToast(STATE.uiLang === 'vi' ? 'Đã lưu vào Sổ tay! ⭐' : 'Saved to bookmarks! ⭐');
     }
 
-    localStorage.setItem('lingua_bookmarks', JSON.stringify(STATE.bookmarks));
+    localStorage.setItem('nativalab_bookmarks', JSON.stringify(STATE.bookmarks));
     updateBadges();
     if (DOM.btnToggleBookmark) DOM.btnToggleBookmark.classList.toggle('active', idx < 0);
   }
@@ -5706,7 +5706,7 @@
       showToast(STATE.uiLang === 'vi' ? 'Đã đánh dấu cần luyện lại! 🎯' : 'Marked for practice! 🎯');
     }
 
-    localStorage.setItem('lingua_weak_spots', JSON.stringify(STATE.weakSpots));
+    localStorage.setItem('nativalab_weak_spots', JSON.stringify(STATE.weakSpots));
     updateBadges();
     if (DOM.btnToggleWeakSpot) DOM.btnToggleWeakSpot.classList.toggle('active', idx < 0);
   }
@@ -5758,7 +5758,7 @@
       item.querySelector('.btn-play-item').addEventListener('click', () => speakText(b.char, b.lang, 1.0));
       item.querySelector('.btn-del-item').addEventListener('click', () => {
         STATE.bookmarks.splice(idx, 1);
-        localStorage.setItem('lingua_bookmarks', JSON.stringify(STATE.bookmarks));
+        localStorage.setItem('nativalab_bookmarks', JSON.stringify(STATE.bookmarks));
         updateBadges();
         renderBookmarksDrawer();
       });
@@ -5797,7 +5797,7 @@
       item.querySelector('.btn-play-item').addEventListener('click', () => speakText(w.char, w.lang, 1.0));
       item.querySelector('.btn-del-item').addEventListener('click', () => {
         STATE.weakSpots.splice(idx, 1);
-        localStorage.setItem('lingua_weak_spots', JSON.stringify(STATE.weakSpots));
+        localStorage.setItem('nativalab_weak_spots', JSON.stringify(STATE.weakSpots));
         updateBadges();
         renderWeakSpotsDrawer();
       });
@@ -5812,7 +5812,7 @@
 
   function switchTab(tabId) {
     STATE.activeTab = tabId;
-    localStorage.setItem('lingua_active_tab', tabId);
+    localStorage.setItem('nativalab_active_tab', tabId);
 
     // Update Tab Buttons
     if (DOM.navTabs) {
@@ -6602,7 +6602,7 @@
     if (DOM.btnClearBookmarks) {
       DOM.btnClearBookmarks.addEventListener('click', () => {
         STATE.bookmarks = [];
-        localStorage.setItem('lingua_bookmarks', '[]');
+        localStorage.setItem('nativalab_bookmarks', '[]');
         updateBadges();
         renderBookmarksDrawer();
       });
@@ -6622,7 +6622,7 @@
     if (DOM.btnClearWeakSpots) {
       DOM.btnClearWeakSpots.addEventListener('click', () => {
         STATE.weakSpots = [];
-        localStorage.setItem('lingua_weak_spots', '[]');
+        localStorage.setItem('nativalab_weak_spots', '[]');
         updateBadges();
         renderWeakSpotsDrawer();
       });

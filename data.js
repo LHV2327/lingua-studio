@@ -1,4 +1,4 @@
-// LinguaStudio Built-in Multi-Language Dataset & Localization
+// NativaLab Built-in Multi-Language Dataset & Localization
 // Supported Target Languages: Japanese (ja-JP), English (en-US), Korean (ko-KR), Chinese (zh-CN)
 // UI Localization: Vietnamese (vi) & English (en)
 // Scalable Architecture: Alphabet (A-Z, Radicals, Kana, Hangul), Key Phrases & Real-life Expressions
@@ -280,7 +280,7 @@ const UI_I18N = {
   }
 };
 
-const LINGUA_DATA = {
+const NATIVA_DATA = {
   "ja-JP": {
     "name": "Japanese",
     "nativeName": "日本語",
@@ -16027,24 +16027,24 @@ const LANGUAGES = [
 ];
 
 // Map both short and long language codes for seamless interoperability
-if (LINGUA_DATA['ja-JP']) LINGUA_DATA['ja'] = LINGUA_DATA['ja-JP'];
-if (LINGUA_DATA['en-US']) LINGUA_DATA['en'] = LINGUA_DATA['en-US'];
-if (LINGUA_DATA['ko-KR']) LINGUA_DATA['ko'] = LINGUA_DATA['ko-KR'];
-if (LINGUA_DATA['zh-CN']) LINGUA_DATA['zh'] = LINGUA_DATA['zh-CN'];
+if (NATIVA_DATA['ja-JP']) NATIVA_DATA['ja'] = NATIVA_DATA['ja-JP'];
+if (NATIVA_DATA['en-US']) NATIVA_DATA['en'] = NATIVA_DATA['en-US'];
+if (NATIVA_DATA['ko-KR']) NATIVA_DATA['ko'] = NATIVA_DATA['ko-KR'];
+if (NATIVA_DATA['zh-CN']) NATIVA_DATA['zh'] = NATIVA_DATA['zh-CN'];
 
 // Alias for backwards & forwards compatibility
-const LANG_DATA = LINGUA_DATA;
+const LANG_DATA = NATIVA_DATA;
 
 // Expose to window for global access
 if (typeof window !== 'undefined') {
   window.UI_I18N = UI_I18N;
-  window.LINGUA_DATA = LINGUA_DATA;
-  window.LANG_DATA = LINGUA_DATA;
+  window.NATIVA_DATA = NATIVA_DATA;
+  window.LANG_DATA = NATIVA_DATA;
   window.LANGUAGES = LANGUAGES;
 }
 
 // ==========================================================================
-// 5-STAGE QUEST CAMPAIGNS FOR LINGUASTUDIO PRO 2.0 (Duolingo/Renshuu Guided Path)
+// 12-STAGE QUEST CAMPAIGNS FOR NATIVALAB PRO 2.0 (Duolingo/Renshuu Guided Path)
 // ==========================================================================
 const QUEST_CAMPAIGNS = {
   "ja-JP": [
